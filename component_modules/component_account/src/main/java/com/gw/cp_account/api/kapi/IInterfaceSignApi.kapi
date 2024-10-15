@@ -1,0 +1,22 @@
+package com.gw.cp_account.api.kapi
+
+import android.content.Context
+
+/**
+ * Author: yanzheng@gwell.cc
+ * Time: 2023/11/30 15:36
+ * Description: IInterfaceSignApi
+ */
+interface IInterfaceSignApi {
+
+    /**
+     * 设置匿名签名信息
+     */
+    fun setAnonymousInfo(appID: String)
+
+    /**
+     * 获取匿名签名信息
+     */
+    fun getAnonymousInfo(context: Context, appID: String): Array<String>
+
+}

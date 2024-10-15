@@ -1,0 +1,104 @@
+package com.gw.cp_config.api
+
+import com.gw.cp_config.entity.DevConfigEntity
+
+/**
+ * Author: yanzheng@gwell.cc
+ * Time: 2023/9/5 17:38
+ * Description: IGlobalApi
+ */
+interface IAppConfigApi {
+
+    /**
+     * 同步更新配置
+     */
+    fun uploadConfig()
+
+    /**
+     * 获取支持手机号的国家码列表
+     *
+     * @return List<String>? 国家码列表
+     */
+    fun getCountryCodeList(): List<String>
+
+    /**
+     * 获取场景信息
+     *
+     * @param language String 语言
+     * @param country String 地区
+     *
+     * @return List<String>? 场景信息
+     */
+    fun getSystemScenes(language: String, country: String?): List<String>?
+
+    /**
+     * 获取所有设备配置信息
+     *
+     * @return Map<String, DevConfigEntity>? String: 设备pid, DevConfigEntity: 产品配置信息
+     */
+    fun getDevConfig(): Map<String, DevConfigEntity>?
+
+    /**
+     * 根据产品ID获取产品图片
+     */
+    fun getProductImgUrl(pid: String?, imgType: ProductImgType = ProductImgType.LIST): String?
+
+    /**
+     * 通过设备pid来获取设备配置信息
+     *
+     * @param pid String 设备pid
+     * @return DevConfigEntity? 配置信息
+     */
+    fun getDevConfigByPid(pid: String): DevConfigEntity?
+
+    /**
+     * 根据产品id获取产品名称（自动国际化）
+     */
+    fun getProductName(pid: String): String?
+
+    /**
+     * 获取配置权限模式
+     *
+     * @return Int 0：旧版本权限模式，1：新版本权限模式
+     */
+    fun getPermissionMode(): Int
+
+    /**
+     * 设置权限模式
+     *
+     * @param mode Int 权限模式（PermissionMode）
+     */
+    fun setPermissionMode(mode: Int)
+}
+
+enum class PermissionMode(val mode: Int) {
+    /**
+     * 旧版本权限模式
+     */
+    OLD(0),
+
+    /**
+     * 新版本权限模式
+     */
+    NEW(1),
+}
+
+/**
+ * 产品图类型
+ */
+enum class ProductImgType {
+    /**
+     * 列表
+     */
+    LIST,
+
+    /**
+     * 配网
+     */
+    CONFIG,
+
+    /**
+     * 介紹
+     */
+    INTRODUCTION,
+}

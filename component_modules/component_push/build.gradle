@@ -1,0 +1,36 @@
+import com.gw.buildsrc.dependlibs.GwDependLibs
+import com.gw.buildsrc.version.Versions
+
+apply from: "${rootDir.absolutePath}/script/gradle/component_depends.gradle"
+
+android {
+    namespace 'com.gw.component_push'
+
+    /**
+     * 资源文件前缀
+     */
+    resourcePrefix("push_")
+
+}
+
+dependencies {
+//    implementation "com.gwell.lib_gpush:version_google_brand:${Versions.GwVersions.VERSION_GW_PUSH}"
+
+    implementation("com.squareup.moshi:moshi-kotlin:${Versions.ThirdVersions.VERSION_MOSHI}")
+
+    /**
+     * 云存相关
+     */
+    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_IOT_VAS}:${Versions.GwVersions.VERSION_IOT_VAS}"
+
+}
+
+dependencies {
+    implementation("com.gwell.reoqoo_lib:lib_iotvideo:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+}
+
+dependencies {
+    implementation project(path: ':component_modules:component_push_api')
+    implementation project(path: ':component_modules:component_config_api')
+    implementation project(path: ':component_modules:component_account_api')
+}

@@ -1,0 +1,6 @@
+[submodule "lib_modules/lib_plugin_service"]
+	path = lib_modules/lib_plugin_service
+	url = https://gitlab.gwell.cc/androidprivate/androidcomponentlibs/lib_plugin_service.git
+[submodule "hilinkiotplugin"]
+	path = hilinkiotplugin
+	url = https://gitlab.gwell.cc/androidprivate/hilinkiotplugin.git

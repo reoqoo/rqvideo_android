@@ -1,0 +1,18 @@
+apply from: "${rootDir.absolutePath}/script/gradle/component_depends.gradle"
+def isApplication = project.name == debug_module_name
+android {
+    namespace 'com.gw.component_house_watch'
+    defaultConfig {
+        if (isApplication) {
+            applicationId "com.gw.component_house_watch"
+        }
+    }
+    /**
+     * 资源文件前缀
+     */
+    resourcePrefix("house_watch_")
+}
+
+dependencies {
+    implementation(project(path: ":component_modules:component_house_watch_api"))
+}
