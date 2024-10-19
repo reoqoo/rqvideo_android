@@ -1,30 +1,29 @@
 {
-    "config_version": "1",
-    "platform": {
-        "newSharePermissionMode": 1
-    },
+    "config_version": "999",
     "pids": {
         "343597383680547": {
             "productModule": "C400G",
             "productName": "C400G",
             "isSupport5Gwifi": false,
-            "supportLinkTypes": "0x0084",
-            "linkGuideURL": "https://trade-sg.reoqoo.com/h5/vas/default/#/device/guide/X10",
+            "supportLinkTypes": "0x0010",
+            "linkGuideURL": "https://trade.dophigo.com/h5/vas/default/#/device/guide/X10",
             "linkGuideURLPath": "h5/vas/default/#/device/guide/X10",
-            "firstPriorityLinkType": "0x0084",
+            "firstPriorityLinkType": "0x0010",
             "productImageURL": "https://saas-trade-prod-1251981983.cos.ap-beijing.myqcloud.com/comm/resource/7331b407-5996-401d-ac0e-86e043bdc9fbicon_C_1008_1008.png",
-            "deviceType": 0
+            "deviceType": 0,
+            "iOSMinVersion": "1.0"
         },
         "343597383680548": {
             "productModule": "C500G",
             "productName": "C500G",
             "isSupport5Gwifi": false,
-            "supportLinkTypes": "0x0084",
-            "linkGuideURL": "https://trade-sg.reoqoo.com/h5/vas/default/#/device/guide/X10",
+            "supportLinkTypes": "0x0010",
+            "linkGuideURL": "https://trade.dophigo.com/h5/vas/default/#/device/guide/X10",
             "linkGuideURLPath": "h5/vas/default/#/device/guide/X10",
-            "firstPriorityLinkType": "0x0084",
+            "firstPriorityLinkType": "0x0010",
             "productImageURL": "https://saas-trade-prod-1251981983.cos.ap-beijing.myqcloud.com/comm/resource/7331b407-5996-401d-ac0e-86e043bdc9fbicon_C_1008_1008.png",
-            "deviceType": 0
+            "deviceType": 0,
+            "iOSMinVersion": "1.0"
         }
     },
 
