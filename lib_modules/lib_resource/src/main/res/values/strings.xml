@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="AA0001">你好，这是测试数据</string>
+    <string name="AA0001">Hello , demo ！</string>
     <string name="AA0002">E-mail address/phone number</string>
     <string name="AA0003">Password</string>
     <string name="AA0004">Login</string>
