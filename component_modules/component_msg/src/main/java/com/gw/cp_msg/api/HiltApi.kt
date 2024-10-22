@@ -1,8 +1,12 @@
 package com.gw.cp_msg.api
 
+import com.gw.cp_msg.api.interfaces.IBrowserApi
+import com.gw.cp_msg.api.interfaces.IDevShareParse
 import com.gw.cp_msg.api.interfaces.ILocalMsgApi
 import com.gw.cp_msg.api.kapi.IMsgExternalApi
 import com.gw.cp_msg.api.kapi.INoticeMgrApi
+import com.gw.cp_msg.impl.BrowserImpl
+import com.gw.cp_msg.impl.DevShareParseImpl
 import com.gw.cp_msg.manger.LocalMsgExternalManager
 import com.gw.cp_msg.manger.NoticeMgrImpl
 import dagger.Binds
@@ -31,5 +35,13 @@ abstract class HiltApi {
     @Singleton
     @Binds
     abstract fun getNoticeMsgApi(impl: NoticeMgrImpl): INoticeMgrApi
+
+    @Singleton
+    @Binds
+    abstract fun getBrowserApi(impl: BrowserImpl): IBrowserApi
+
+    @Singleton
+    @Binds
+    abstract fun getDevShareParseApi(impl: DevShareParseImpl): IDevShareParse
 
 }

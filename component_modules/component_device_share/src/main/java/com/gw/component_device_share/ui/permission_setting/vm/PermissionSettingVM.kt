@@ -10,8 +10,8 @@ import com.gw.lib_http.jsonToEntity
 import com.gw.lib_plugin_service.IResultCallback
 import com.gw.lib_utils.ktx.bitAt
 import com.gw.lib_utils.ktx.bitUpdate
-import com.gw.reoqoosdk.monitor.IMonitorService
-import com.gw.reoqoosdk.monitor.ModeResponse
+import com.gw.reoqoosdk.dev_monitor.IMonitorService
+import com.gw.reoqoosdk.dev_monitor.ModeResponse
 import com.gwell.loglibs.GwellLogUtils
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

@@ -8,7 +8,7 @@ import com.gw.cp_mine.api.kapi.IMineModuleApi
 import com.gw.cp_mine.databinding.MineActivityAboutBinding
 import com.gw.lib_base_architecture.view.ABaseMVVMDBActivity
 import com.gw.lib_router.ReoqooRouterPath
-import com.gw.reoqoosdk.cloud_service.ICloudService
+import com.gw.reoqoosdk.paid_service.IPaidService
 import com.therouter.router.Route
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -26,7 +26,7 @@ class AboutActivity : ABaseMVVMDBActivity<MineActivityAboutBinding, AboutVM>() {
     }
 
     @Inject
-    lateinit var iCloudService: ICloudService
+    lateinit var iCloudService: IPaidService
 
     @Inject
     lateinit var mineApi: IMineModuleApi

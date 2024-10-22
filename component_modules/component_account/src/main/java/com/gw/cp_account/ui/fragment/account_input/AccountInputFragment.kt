@@ -18,7 +18,7 @@ import com.gw.lib_base_architecture.view.ABaseMVVMDBFragment
 import com.gw.lib_utils.ktx.dp
 import com.gw.lib_utils.ktx.visible
 import com.gw.lib_widget.dialog.CommonDialog
-import com.gw.reoqoosdk.cloud_service.ICloudService
+import com.gw.reoqoosdk.paid_service.IPaidService
 import com.gwell.loglibs.GwellLogUtils
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -41,7 +41,7 @@ class AccountInputFragment :
     }
 
     @Inject
-    lateinit var iCloudService: ICloudService
+    lateinit var iCloudService: IPaidService
 
     /**
      * 共享VM，主要处理数据回传的问题

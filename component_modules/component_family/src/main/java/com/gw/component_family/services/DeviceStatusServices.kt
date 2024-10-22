@@ -5,8 +5,8 @@ import androidx.lifecycle.LifecycleService
 import com.gw.component_family.repository.DeviceRepository
 import com.gw.cp_account.api.kapi.IAccountApi
 import com.gw.lib_plugin_service.IPluginDeviceStatusListener
+import com.gw.reoqoosdk.dev_monitor.IMonitorService
 import com.gw.reoqoosdk.dev_upgrade.IDevUpgradeService
-import com.gw.reoqoosdk.monitor.IMonitorService
 import com.gwell.loglibs.GwellLogUtils
 import com.tencentcs.iotvideo.IoTVideoSdkConstant.IoTSdkState.APP_LINK_OFFLINE
 import com.tencentcs.iotvideo.IoTVideoSdkConstant.IoTSdkState.APP_LINK_ONLINE

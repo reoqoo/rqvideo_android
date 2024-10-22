@@ -3,7 +3,7 @@ package com.gw.component_push.api.impl
 import com.gw.component_push.api.interfaces.IDevCallApi
 import com.gw.component_push.entity.AlarmEventEntity
 import com.gw.component_push.entity.PushMsgContentEntity
-import com.gw.reoqoosdk.monitor.IMonitorService
+import com.gw.reoqoosdk.dev_monitor.IMonitorService
 import com.gwell.loglibs.GwellLogUtils
 import javax.inject.Inject
 import javax.inject.Singleton

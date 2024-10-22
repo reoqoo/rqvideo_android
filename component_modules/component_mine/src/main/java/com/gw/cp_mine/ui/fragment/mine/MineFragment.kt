@@ -14,8 +14,8 @@ import com.gw.lib_router.ReoqooRouterPath
 import com.gw.lib_utils.ktx.loadUrl
 import com.gw.lib_utils.ktx.setSingleClickListener
 import com.gw.lib_utils.ktx.visible
-import com.gw.reoqoosdk.cloud_service.ICloudService
 import com.gw.reoqoosdk.dev_upgrade.IDevUpgradeService
+import com.gw.reoqoosdk.paid_service.IPaidService
 import com.gw.reoqoosdk.setting_service.ISettingService
 import com.gwell.loglibs.GwellLogUtils
 import com.therouter.router.Route
@@ -41,7 +41,7 @@ class MineFragment : ABaseMVVMDBFragment<MineFragmentMineBinding, MineFgVM>() {
     private var mAdapter: MenuListAdapter? = null
 
     @Inject
-    lateinit var iCloudService: ICloudService
+    lateinit var iCloudService: IPaidService
 
     @Inject
     lateinit var iSettingService: ISettingService
@@ -73,10 +73,10 @@ class MineFragment : ABaseMVVMDBFragment<MineFragmentMineBinding, MineFgVM>() {
             mFgViewModel.jumpToNext(ReoqooRouterPath.DevShare.ACTIVITY_SHARE_MANAGER_PATH)
         }
         mViewBinding.btnCloud.setSingleClickListener {
-            iCloudService.startCloudService()
+            iCloudService.offerCloudService()
         }
         mViewBinding.btn4g.setSingleClickListener {
-            iCloudService.start4GService()
+            iCloudService.offer4GService()
         }
         mViewBinding.rvMenuList.layoutManager = LinearLayoutManager(context)
         mAdapter = MenuListAdapter().also {

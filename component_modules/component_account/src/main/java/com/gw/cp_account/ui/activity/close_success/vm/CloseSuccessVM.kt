@@ -5,7 +5,7 @@ import com.gw.cp_account.repository.UserInfoRepository
 import com.gw.lib_base_architecture.PageJumpData
 import com.gw.lib_base_architecture.vm.ABaseVM
 import com.gw.lib_router.ReoqooRouterPath
-import com.gw.reoqoosdk.monitor.IMonitorService
+import com.gw.reoqoosdk.dev_monitor.IMonitorService
 import com.jwkj.base_lifecycle.activity_lifecycle.ActivityLifecycleManager
 import com.tencentcs.iotvideo.IoTVideoSdk
 import com.therouter.TheRouter

@@ -5,9 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.gw.component_device_share.api.DevShareApi.Companion.PARAM_DEV_SHARE_ENTITY
 import com.gw.component_family.api.interfaces.FamilyModeApi
-import com.gw.cp_config_net.entity.ShareQRCodeEntity
+import com.gw.cp_msg.api.interfaces.IBrowserApi
 import com.gw.cp_msg.entity.http.MsgDetailEntity
 import com.gw.cp_msg.entity.http.MsgInfoListEntity
+import com.gw.cp_msg.impl.DevShareParseImpl
 import com.gw.cp_msg.repository.MsgInfoRepository
 import com.gw.lib_base_architecture.PageJumpData
 import com.gw.lib_base_architecture.ToastIntentData
@@ -15,9 +16,6 @@ import com.gw.lib_base_architecture.vm.ABaseVM
 import com.gw.lib_http.HttpErrUtils
 import com.gw.lib_router.ReoqooRouterPath
 import com.gw.lib_router.with
-import com.gw.reoqoosdk.cloud_service.ICloudService
-import com.gw.reoqoosdk.constant.NetConfigConstant
-import com.gw.reoqoosdk.net_config.api.INetConfigService
 import com.gwell.loglibs.GwellLogUtils
 import com.therouter.TheRouter
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -47,14 +45,13 @@ class MsgInfoVM @Inject constructor() : ABaseVM() {
     lateinit var repository: MsgInfoRepository
 
     @Inject
-    lateinit var iCloudService: ICloudService
-
-    @Inject
-    lateinit var configApi: INetConfigService
-
-    @Inject
     lateinit var familyModeApi: FamilyModeApi
 
+    @Inject
+    lateinit var devShareParseImpl: DevShareParseImpl
+
+    @Inject
+    lateinit var iBrowserApi: IBrowserApi
 
     /**
      * 获取消息详情列表成功
@@ -124,7 +121,7 @@ class MsgInfoVM @Inject constructor() : ABaseVM() {
             GwellLogUtils.e(TAG, "open webView fail, url is null")
             return
         }
-        iCloudService.openWebView(url, title)
+        iBrowserApi.openWebView(url, title)
     }
 
     /**
@@ -134,35 +131,7 @@ class MsgInfoVM @Inject constructor() : ABaseVM() {
      * @return Map<String, String>? 参数集
      */
     fun devShareMsg(shareUrl: String): Map<String, String>? {
-        shareUrl.run {
-            if (isNullOrEmpty()) {
-                GwellLogUtils.e(TAG, "redirectUrl is empty")
-                return null
-            }
-            if (this.startsWith("AppNativeUrl?", true)) {
-                val url = this.replace(
-                    "AppNativeUrl?",
-                    ShareQRCodeEntity.HOST_DEV_SHARE
-                )
-                GwellLogUtils.i(TAG, "url $url")
-
-                val qrcodeEntity = configApi.parseShareUrl(url, INetConfigService.Type.SHARE)
-                GwellLogUtils.i(TAG, "qrcodeEntity $qrcodeEntity")
-                val inviteCode = qrcodeEntity[NetConfigConstant.PARAMS_INVITE_CODE]
-                val deviceID = qrcodeEntity[NetConfigConstant.PARAMS_DEVICE_ID]
-                val sharerName = qrcodeEntity[NetConfigConstant.PARAMS_SHARER_NAME]
-                if (inviteCode.isNullOrEmpty() || deviceID.isNullOrEmpty()) {
-                    GwellLogUtils.e(TAG, "inviteCode $inviteCode, deviceID $deviceID")
-                    return null
-                }
-                return mapOf(
-                    "inviteCode" to inviteCode,
-                    "deviceID" to deviceID,
-                    "sharerName" to (sharerName ?: "")
-                )
-            }
-        }
-        return null
+        return devShareParseImpl.devShareMsg(shareUrl)
     }
 
     /**

@@ -27,7 +27,7 @@ import com.gw.lib_room.device.DeviceInfo
 import com.gw.lib_room.ktx.isMaster
 import com.gw.lib_router.ReoqooRouterPath
 import com.gw.reoqoosdk.constant.NetConfigConstant
-import com.gw.reoqoosdk.monitor.IMonitorService
+import com.gw.reoqoosdk.dev_monitor.IMonitorService
 import com.gwell.loglibs.GwellLogUtils
 import com.tencentcs.iotvideo.http.interceptor.flow.HttpAction
 import dagger.hilt.android.lifecycle.HiltViewModel

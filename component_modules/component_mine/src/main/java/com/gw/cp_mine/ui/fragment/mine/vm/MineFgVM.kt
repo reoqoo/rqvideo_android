@@ -13,8 +13,8 @@ import com.gw.cp_msg.api.kapi.IMsgExternalApi
 import com.gw.lib_base_architecture.PageJumpData
 import com.gw.lib_base_architecture.vm.ABaseVM
 import com.gw.lib_router.ReoqooRouterPath
+import com.gw.reoqoosdk.dev_monitor.IMonitorService
 import com.gw.reoqoosdk.dev_upgrade.IDevUpgradeService
-import com.gw.reoqoosdk.monitor.IMonitorService
 import com.gwell.loglibs.GwellLogUtils
 import com.therouter.TheRouter
 import dagger.hilt.android.lifecycle.HiltViewModel

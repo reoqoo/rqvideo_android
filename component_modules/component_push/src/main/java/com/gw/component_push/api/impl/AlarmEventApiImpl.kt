@@ -9,7 +9,7 @@ import com.gw.component_push.entity.PushMsgContentEntity
 import com.gw.component_push.entity.PushMsgType
 import com.gw.lib_iotvideo.EventTopicType
 import com.gw.lib_utils.ktx.bitAt
-import com.gw.reoqoosdk.monitor.IMonitorService
+import com.gw.reoqoosdk.dev_monitor.IMonitorService
 import com.gwell.loglibs.GwellLogUtils
 import com.tencentcs.iotvideo.messagemgr.EventMessage
 import com.tencentcs.iotvideo.utils.JSONUtils

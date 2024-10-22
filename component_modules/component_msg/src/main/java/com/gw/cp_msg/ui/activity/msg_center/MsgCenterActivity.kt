@@ -14,7 +14,7 @@ import com.gw.cp_msg.ui.activity.msg_center.vm.MsgCenterVM
 import com.gw.cp_msg.ui.fragment.system_msg.SystemMsgFragment
 import com.gw.lib_base_architecture.view.ABaseMVVMDBActivity
 import com.gw.lib_router.ReoqooRouterPath
-import com.gw.reoqoosdk.cloud_service.ICloudService
+import com.gw.reoqoosdk.paid_service.IPaidService
 import com.gw.widget_webview.jsinterface.WebViewJSCallbackImpl
 import com.gwell.loglibs.GwellLogUtils
 import com.jwkj.base_utils.activity_utils.ActivityUtils
@@ -60,7 +60,7 @@ class MsgCenterActivity : ABaseMVVMDBActivity<MsgActivityMsgCenterBinding, MsgCe
     private var showMsgType = SHOW_SYSTEM_MSG_TYPE
 
     @Inject
-    lateinit var iCloudService: ICloudService
+    lateinit var iCloudService: IPaidService
 
     override fun initView() {
         mViewBinding.layoutTitle.run {
@@ -114,7 +114,7 @@ class MsgCenterActivity : ABaseMVVMDBActivity<MsgActivityMsgCenterBinding, MsgCe
         viewModel.mainNoticeEntityList.observe(this) {
             val notice = it[0]
             if (ActivityUtils.isActivityUsable(this@MsgCenterActivity)) {
-                iCloudService.showWebViewDialog(
+                iCloudService.openWebViewDialog(
                     activity = this@MsgCenterActivity,
                     width = DensityUtil.getScreenWidth(this),
                     height = DensityUtil.getScreenHeight(this),

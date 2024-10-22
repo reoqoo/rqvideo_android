@@ -19,8 +19,8 @@ import com.gw.cp_msg.entity.http.ShowWayType
 import com.gw.cp_msg.entity.http.TagType
 import com.gw.cp_msg.entity.http.UserMessageListBean
 import com.gw.cp_msg.repository.NoticeRepository
-import com.gw.reoqoosdk.cloud_service.ICloudService
 import com.gw.reoqoosdk.net_config.api.INetConfigService
+import com.gw.reoqoosdk.paid_service.IPaidService
 import com.gw.widget_webview.jsinterface.WebViewJSCallbackImpl
 import com.gwell.loglibs.GwellLogUtils
 import com.jwkj.base_lifecycle.activity_lifecycle.ActivityLifecycleManager
@@ -42,7 +42,7 @@ import javax.inject.Singleton
  */
 @Singleton
 class NoticeMgrImpl @Inject constructor(
-    private val iCloudService: ICloudService,
+    private val iCloudService: IPaidService,
     private val repository: NoticeRepository,
     private val iNetConfigService: INetConfigService
 ) : INoticeMgrApi, WeakHandler.IHandler {
@@ -673,7 +673,7 @@ class NoticeMgrImpl @Inject constructor(
         }
         activity?.let {
             Handler(Looper.getMainLooper()).post {
-                iCloudService.showWebViewDialog(
+                iCloudService.openWebViewDialog(
                     activity = it,
                     width = DensityUtil.getScreenWidth(it),
                     height = DensityUtil.getScreenHeight(it),

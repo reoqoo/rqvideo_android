@@ -43,9 +43,9 @@ import com.gw.lib_widget.dialog.comm_dialog.entity.TextContent
 import com.gw.lib_widget.dialog.comm_dialog.ext.showCommDialog
 import com.gw.lib_widget.popups.CommListPopup
 import com.gw.lib_widget.popups.GuidePopup
-import com.gw.reoqoosdk.cloud_service.ICloudService
 import com.gw.reoqoosdk.constant.NetConfigConstant
-import com.gw.reoqoosdk.monitor.IMonitorService
+import com.gw.reoqoosdk.dev_monitor.IMonitorService
+import com.gw.reoqoosdk.paid_service.IPaidService
 import com.gw.widget_webview.jsinterface.WebViewJSCallbackImpl
 import com.gwell.loglibs.GwellLogUtils
 import com.jwkj.base_statistics.sa.kits.SA
@@ -100,7 +100,7 @@ class FamilyFragment : ABaseMVVMDBFragment<FamilyFragmentFamilyBinding, FamilyVM
     lateinit var accountMgrApi: IAccountMgrApi
 
     @Inject
-    lateinit var iCloudService: ICloudService
+    lateinit var iCloudService: IPaidService
 
     @Inject
     lateinit var noticeMgrApi: INoticeMgrApi
@@ -320,7 +320,7 @@ class FamilyFragment : ABaseMVVMDBFragment<FamilyFragmentFamilyBinding, FamilyVM
         viewModel.mainNoticeEntity.observe(this) { notice ->
             val context = this.requireActivity()
             if (ActivityUtils.isActivityUsable(context)) {
-                iCloudService.showWebViewDialog(
+                iCloudService.openWebViewDialog(
                     activity = context,
                     width = DensityUtil.getScreenWidth(context),
                     height = DensityUtil.getScreenHeight(context),

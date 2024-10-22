@@ -7,7 +7,7 @@ import com.gw.cp_account.kits.AccountMgrKit
 import com.gw.cp_account.repository.UserInfoRepository
 import com.gw.lib_router.ReoqooRouterPath
 import com.gw.lib_router.navigation
-import com.gw.reoqoosdk.monitor.IMonitorService
+import com.gw.reoqoosdk.dev_monitor.IMonitorService
 import com.jwkj.base_lifecycle.activity_lifecycle.ActivityLifecycleManager
 import com.jwkj.base_statistics.sa.kits.SA
 import kotlinx.coroutines.MainScope

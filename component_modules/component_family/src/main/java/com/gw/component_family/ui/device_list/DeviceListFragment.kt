@@ -36,7 +36,7 @@ import com.gw.lib_widget.dialog.comm_dialog.entity.CommDialogAction
 import com.gw.lib_widget.dialog.comm_dialog.entity.TextContent
 import com.gw.lib_widget.dialog.comm_dialog.ext.showCommDialog
 import com.gw.lib_widget.popups.GuidePopup
-import com.gw.reoqoosdk.monitor.IMonitorService
+import com.gw.reoqoosdk.dev_monitor.IMonitorService
 import com.gwell.loglibs.GwellLogUtils
 import com.tencentcs.iotvideo.http.interceptor.flow.HttpAction
 import com.therouter.router.Route

@@ -16,7 +16,7 @@ import com.gw.lib_base_architecture.vm.ABaseVM
 import com.gw.lib_http.toJson
 import com.gw.lib_router.ReoqooRouterPath
 import com.gw.lib_utils.version.Version
-import com.gw.reoqoosdk.cloud_service.ICloudService
+import com.gw.reoqoosdk.paid_service.IPaidService
 import com.gwell.loglibs.GwellLogUtils
 import com.therouter.TheRouter
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -34,7 +34,7 @@ import javax.inject.Inject
 class SystemMsgVM @Inject constructor(
     private val app: Application,
     private val msgApi: ILocalMsgApi,
-    private val iCloudService: ICloudService,
+    private val iCloudService: IPaidService,
     private val repository: MsgCenterRepository,
     private val msgDataStore: IMsgDataStoreApi,
     private val mineApi: IMineModuleApi
