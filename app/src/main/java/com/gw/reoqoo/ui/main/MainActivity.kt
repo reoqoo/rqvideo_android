@@ -15,7 +15,7 @@ import com.gw.reoqoo.R
 import com.gw.reoqoo.databinding.AppActivityMainBinding
 import com.gw.reoqoo.ui.fragment.FamilyFragment
 import com.gw.reoqoo.ui.fragment.MineFragment
-import com.gw.reoqoosdk.monitor.IMonitorService
+import com.gw.reoqoosdk.dev_monitor.IMonitorService
 import com.gwell.loglibs.GwellLogUtils
 import com.tencentcs.iotvideo.IoTVideoSdkConstant
 import com.therouter.router.Route

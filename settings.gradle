@@ -58,6 +58,7 @@ include ":component_modules:component_aar_libs"
 
 def includeModules = Arrays.asList(
         ":lib_modules:lib_api_root",
+        ":lib_modules:lib_resource",
 )
 includeModules.forEach(new Consumer<String>() {
     @Override

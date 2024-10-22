@@ -29,7 +29,7 @@ import com.gw.reoqoo.BuildConfig
 import com.gw.reoqoo.app.crash.CrashCallbackImpl
 import com.gw.reoqoo.ui.logo.LogoActivity
 import com.gw.reoqoo.ui.main.MainActivity
-import com.gw.reoqoosdk.monitor.IMonitorService
+import com.gw.reoqoosdk.dev_monitor.IMonitorService
 import com.gwell.loglibs.GwellLogUtils
 import com.jwkj.base_crash.CrashManager
 import com.jwkj.base_lifecycle.LifecycleInitializer

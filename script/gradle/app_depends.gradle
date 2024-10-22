@@ -147,6 +147,7 @@ dependencies {
  */
 dependencies {
     implementation(project(":lib_modules:lib_api_root"))
+    implementation(project(":lib_modules:lib_resource"))
 }
 
 dependencies {
