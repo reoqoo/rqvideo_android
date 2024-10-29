@@ -51,9 +51,9 @@ dependencies {
 
 dependencies {
 
-    implementation("com.gwell.reoqoo_lib:lib_log:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.gwell.reoqoo_lib:lib_webview:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.gwell.reoqoo_lib:lib_pickphoto:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_lib:lib_log:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_lib:lib_webview:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_lib:lib_pickphoto:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
 
     if (isApplication) {
         // 屏幕适配

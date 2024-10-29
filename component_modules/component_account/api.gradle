@@ -3,5 +3,5 @@ import com.gw.buildsrc.version.Versions
 // TODO SDK模块需要依赖的，后续需要修改
 dependencies {
 //    api project(path: ":lib_modules:lib_room")
-    api("com.gwell.reoqoo_lib:lib_room:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    api("com.reoqoo_lib:lib_room:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
 }

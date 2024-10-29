@@ -145,8 +145,7 @@ class Versions {
     }
 
     static class GwLibVersions {
-//        public static final String VERSION_LIB_UTILS = "0.0.1"
-        public static final String VERSION_LIB_UTILS = "1.0.0-SNAPSHOT"
+        public static final String VERSION_LIB_UTILS = "1.0.1"
     }
 
     /**
@@ -231,6 +230,11 @@ class Versions {
          * 高斯模糊
          */
         public static final String VERSION_BLUR_VIEW = "version-2.0.4"
+
+        /**
+         * 高斯模糊
+         */
+        public static final String VERSION_PT_PLUGIN = "0.0.0.60"
 
     }
 

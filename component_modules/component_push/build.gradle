@@ -14,7 +14,9 @@ android {
 }
 
 dependencies {
-//    implementation "com.gwell.lib_gpush:version_google_brand:${Versions.GwVersions.VERSION_GW_PUSH}"
+    implementation "com.gwell.lib_gpush:version_google_brand:${Versions.GwVersions.VERSION_GW_PUSH}"
+
+    implementation "com.google.firebase:firebase-messaging:${Versions.ThirdVersions.VERSION_FIREBASE_MESSAGE}"
 
     implementation("com.squareup.moshi:moshi-kotlin:${Versions.ThirdVersions.VERSION_MOSHI}")
 
@@ -26,7 +28,7 @@ dependencies {
 }
 
 dependencies {
-    implementation("com.gwell.reoqoo_lib:lib_iotvideo:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_lib:lib_iotvideo:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
 }
 
 dependencies {

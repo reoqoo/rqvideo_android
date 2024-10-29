@@ -1,5 +1,4 @@
 import com.gw.buildsrc.utils.DataUtils
-import com.gw.buildsrc.version.Versions
 
 apply from: "${rootDir.absolutePath}/script/gradle/app_depends.gradle"
 apply from: "${rootDir.absolutePath}/script/gradle/reoqoo.gradle"

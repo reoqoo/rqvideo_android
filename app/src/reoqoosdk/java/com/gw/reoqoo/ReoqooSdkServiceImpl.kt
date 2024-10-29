@@ -1,6 +1,7 @@
 package com.gw.reoqoo
 
 import android.app.Application
+import com.gw.cp_config.api.IAppParamApi
 import com.gw.reoqoo.app.api.IReoqooSdkService
 import com.gw.reoqoosdk.sdk.api.IReoqooSdkMgr
 import com.gw.reoqoosdk.sdk.repository.ConfigEntity
@@ -26,18 +27,17 @@ class ReoqooSdkServiceImpl @Inject constructor() : IReoqooSdkService {
     @Inject
     lateinit var sdkMgrImpl: IReoqooSdkMgr
 
+    @Inject
+    lateinit var appParamApi: IAppParamApi
+
     override fun initService() {
         GwellLogUtils.i(TAG, "initService")
         val configEntity = ConfigEntity(
-            BuildConfig.APPLICATION_ID,
+            appParamApi.getAppID(),
+            appParamApi.getAppToken(),
+            appParamApi.getAppName(),
             BuildConfig.VERSION_NAME,
-            BuildConfig.VERSION_CODE,
-            BuildConfig.SUB_VERSION,
-            BuildConfig.BUILD_NUMBER,
-            BuildConfig.BUILD_TIME,
-            BuildConfig.BUILD_TYPE,
-            BuildConfig.FLAVOR,
-            BuildConfig.IS_JENKINS_ENV
+            BuildConfig.APPLICATION_ID,
         )
         sdkMgrImpl.init(app = app, config = configEntity)
 

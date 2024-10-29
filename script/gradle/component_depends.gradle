@@ -217,16 +217,16 @@ dependencies {
  */
 dependencies {
     implementation(project(":lib_modules:lib_api_root"))
-    implementation("com.gwell.reoqoo_lib:lib_resource:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.gwell.reoqoo_lib:lib_module_mounter:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.gwell.reoqoo_lib:lib_datastore:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.gwell.reoqoo_lib:lib_router:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.gwell.reoqoo_lib:lib_widget:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.gwell.reoqoo_lib:lib_utils:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.gwell.reoqoo_lib:lib_http:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.gwell.reoqoo_lib:lib_architecture:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_lib:lib_resource:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_lib:lib_module_mounter:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_lib:lib_datastore:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_lib:lib_router:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_lib:lib_widget:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_lib:lib_utils:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_lib:lib_http:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_lib:lib_architecture:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
 }
 
 dependencies {
-    implementation("com.gwell:reoqoo_sdk:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_comp:reoqoo_sdk:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
 }

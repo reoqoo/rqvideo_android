@@ -140,6 +140,11 @@ dependencies {
     implementation "com.gitee.zackratos:UltimateBarX:${Versions.ThirdVersions.VERSION_ULTIMATE_BAR_X}"
     // 屏幕适配
     implementation "me.jessyan:autosize:${Versions.ThirdVersions.VERSION_AUTO_SIZE}"
+
+    api("com.gwell:aar_plugin_service:${Versions.ThirdVersions.VERSION_PT_PLUGIN}") {
+        exclude group: 'com.tencentcs'
+        exclude group: 'org.permissionsdispatcher'
+    }
 }
 
 /**
@@ -151,11 +156,14 @@ dependencies {
 }
 
 dependencies {
-    api("com.gwell:reoqoo_sdk:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    api("com.reoqoo_comp:reoqoo_sdk:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
 }
 
 configurations.configureEach {
     resolutionStrategy {
         force "${GwDependLibs.GwLibs.DEPEND_LIB_IOT_ACCOUNT_MGR}:${Versions.GwVersions.VERSION_ACCOUNT_MGR}"
+        /**
+         * 日志库*/
+        force "com.gwell:log-adapter:${Versions.GwVersions.VERSION_GWELL_LOG}"
     }
 }

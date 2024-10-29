@@ -129,7 +129,6 @@ class AppCoreInitTask @Inject constructor() : AInitializeTask() {
         initGwHttp(app)
         initStatistics(app)
         initPluginService(app)
-        initAppConfigModule()
         initAccountModule()
         initPushServer(app)
     }
@@ -388,13 +387,6 @@ class AppCoreInitTask @Inject constructor() : AInitializeTask() {
                 // saveCrashInfo(uuid, crashType, errorType, errorMessage, errorStack)
             }
         }
-    }
-
-    /**
-     * 更新app配置文件
-     */
-    private fun initAppConfigModule() {
-        globalApi.uploadConfig()
     }
 
     /**

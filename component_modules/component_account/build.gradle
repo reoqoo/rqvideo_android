@@ -61,11 +61,11 @@ dependencies {
 }
 
 dependencies {
-    implementation("com.gwell.reoqoo_lib:lib_room:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.gwell.reoqoo_lib:lib_widget:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.gwell.reoqoo_lib:lib_http:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.gwell.reoqoo_lib:lib_utils:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.gwell.reoqoo_lib:lib_iotvideo:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_lib:lib_room:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_lib:lib_widget:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_lib:lib_http:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_lib:lib_utils:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_lib:lib_iotvideo:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
 
     if (isApplication) {
         // 屏幕适配
