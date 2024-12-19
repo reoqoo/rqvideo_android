@@ -40,6 +40,17 @@ class MineFgVM @Inject constructor(
 
     companion object {
         private const val TAG = "MineFgVM"
+
+        /**
+         * 我的订单
+         */
+        const val MY_ORDERS = "my_orders"
+
+        /**
+         * 我的卡券
+         */
+        const val MY_COUPONS = "my_coupons"
+
     }
 
     /**
@@ -67,6 +78,16 @@ class MineFgVM @Inject constructor(
      */
     private val menuItems = listOf(
         MenuListEntity(
+            R.drawable.ic_orders,
+            RR.string.AA0653,
+            MY_ORDERS
+        ),
+        MenuListEntity(
+            R.drawable.ic_coupons,
+            RR.string.AA0654,
+            MY_COUPONS
+        ),
+        MenuListEntity(
             R.drawable.mine_ic_feedback,
             RR.string.AA0223,
             ReoqooRouterPath.MinePath.ACTIVITY_FEEDBACK
@@ -78,7 +99,23 @@ class MineFgVM @Inject constructor(
         )
     )
 
-    fun initLMenuList() = menuItems
+    /**
+     * 设置项item数据
+     */
+    private val noDevsItems = listOf(
+        MenuListEntity(
+            R.drawable.mine_ic_feedback,
+            RR.string.AA0223,
+            ReoqooRouterPath.MinePath.ACTIVITY_FEEDBACK
+        ),
+        MenuListEntity(
+            R.drawable.mine_ic_about,
+            RR.string.AA0224,
+            ReoqooRouterPath.MinePath.ACTIVITY_ABOUT
+        )
+    )
+
+    fun initLMenuList(isNoDevs: Boolean = false) = if (isNoDevs) noDevsItems else menuItems
 
     fun watchUserInfo(owner: LifecycleOwner) {
         accountApi.watchUserInfo().observe(owner) {
@@ -95,11 +132,14 @@ class MineFgVM @Inject constructor(
     fun checkAreaCloudServer() {
         viewModelScope.launch(Dispatchers.IO) {
             accountApi.getAsyncUserId()?.let {
-                val device = familyModeApi.getDeviceList(it).firstOrNull()
-                if (device == null || familyModeApi.deviceSupportCloud(deviceId = device.deviceId) != true) {
-                    isSupportCloud.postValue(false)
-                }
-            } ?: GwellLogUtils.e(TAG, "startAlbumPage error: userID is null")
+                val devices = familyModeApi.getDeviceList(it)
+                    .filter { iDevice -> familyModeApi.deviceSupportCloud(deviceId = iDevice.deviceId) == true }
+                GwellLogUtils.i(TAG, "devices $devices")
+                isSupportCloud.postValue(devices.isNotEmpty())
+            } ?: let {
+                GwellLogUtils.e(TAG, "device is not Support Cloud")
+                isSupportCloud.postValue(false)
+            }
         }
     }
 
@@ -112,6 +152,7 @@ class MineFgVM @Inject constructor(
                 val deviceList = familyModeApi.getDeviceList(it)
                 val device4G =
                     deviceList.filter { device -> familyModeApi.is4GDevice(deviceId = device.deviceId) == true }
+                GwellLogUtils.i(TAG, "device4G $device4G")
                 isSupport4G.postValue(device4G.isNotEmpty())
             } ?: let {
                 GwellLogUtils.e(TAG, "deviceList has no 4g device")
@@ -163,5 +204,9 @@ class MineFgVM @Inject constructor(
      */
     fun jumpToNext(routerPath: String) {
         pageJumpData.postValue(PageJumpData(TheRouter.build(routerPath)))
+    }
+
+    fun getUserId(): String {
+        return accountApi.getSyncUserId() ?: ""
     }
 }

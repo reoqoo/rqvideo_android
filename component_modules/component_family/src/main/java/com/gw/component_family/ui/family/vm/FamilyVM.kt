@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.asFlow
 import androidx.lifecycle.viewModelScope
+import com.gw.component_debug.api.interfaces.IShakeApi
 import com.gw.component_family.api.interfaces.IGuideDataStore
 import com.gw.component_family.api.interfaces.IShareDeviceApi
 import com.gw.component_family.entrties.Scene
@@ -13,9 +14,11 @@ import com.gw.component_family.repository.DeviceRepository
 import com.gw.component_family.repository.SceneRepository
 import com.gw.component_family.repository.UserMsgRepository
 import com.gw.component_family.ui.family.bean.FragmentBeanWrapper
+import com.gw.component_plugin_service.api.IPluginManager
 import com.gw.cp_account.api.kapi.IAccountApi
 import com.gw.cp_account.api.kapi.IUserInfo
 import com.gw.cp_config.api.IAppConfigApi
+import com.gw.cp_config_net.api.interfaces.DevShareConstant
 import com.gw.cp_msg.api.kapi.INoticeMgrApi
 import com.gw.cp_msg.entity.http.BannerEntity
 import com.gw.cp_msg.entity.http.MainNoticeEntity
@@ -26,8 +29,6 @@ import com.gw.lib_http.entities.ScanShareQRCodeResult
 import com.gw.lib_room.device.DeviceInfo
 import com.gw.lib_room.ktx.isMaster
 import com.gw.lib_router.ReoqooRouterPath
-import com.gw.reoqoosdk.constant.NetConfigConstant
-import com.gw.reoqoosdk.dev_monitor.IMonitorService
 import com.gwell.loglibs.GwellLogUtils
 import com.tencentcs.iotvideo.http.interceptor.flow.HttpAction
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -48,7 +49,7 @@ import com.gw.resource.R as RS
  * @param deviceRepository 设备的Repository
  * @param sceneRepository 场景的Repository
  * @param userMsgRepository 用户消息的Repository
- * @param iMonitorService 插件模块的控制器
+ * @param pluginManager 插件模块的控制器
  * @param accountApi 用户信息模块的API
  * @param guideDataStore 引导信息的DataStore
  * @param scanShareDeviceApi 扫分享设备二维码
@@ -58,12 +59,13 @@ class FamilyVM @Inject constructor(
     private val deviceRepository: DeviceRepository,
     private val sceneRepository: SceneRepository,
     private val userMsgRepository: UserMsgRepository,
-    private val iMonitorService: IMonitorService,
+    private val pluginManager: IPluginManager,
     private val accountApi: IAccountApi,
     private val guideDataStore: IGuideDataStore,
     private val scanShareDeviceApi: IShareDeviceApi,
     private val configApi: IAppConfigApi,
     private val noticeMgrApi: INoticeMgrApi,
+    private val shakeMgrApi: IShakeApi,
 ) : ABaseVM() {
 
     companion object {
@@ -372,9 +374,9 @@ class FamilyVM @Inject constructor(
                 is HttpAction.Fail -> {}
                 is HttpAction.Success -> {
                     if (device.isMaster) {
-                        iMonitorService.onDeviceDeleted(device.deviceId)
+                        pluginManager.onDeviceDeleted(device.deviceId)
                     } else {
-                        iMonitorService.onDeviceCancelShare(device.deviceId)
+                        pluginManager.onDeviceCancelShare(device.deviceId)
                     }
                     loadRemoteDeviceList()
                 }
@@ -407,9 +409,9 @@ class FamilyVM @Inject constructor(
      * 通过扫描别人分享的设备二维码添加设备
      */
     fun addDeviceByScanShareCode(params: Map<String, String>): Flow<HttpAction<ScanShareQRCodeResult>>? {
-        val qrcodeToken = params[NetConfigConstant.PARAMS_INVITE_CODE]
+        val qrcodeToken = params[DevShareConstant.PARAMS_INVITE_CODE]
         val pid = params[PARAM_PID_KEY]
-        val deviceId = params[NetConfigConstant.PARAMS_DEVICE_ID] ?: ""
+        val deviceId = params[DevShareConstant.PARAMS_DEVICE_ID] ?: ""
         val productName = configApi.getProductName(pid ?: "")
         GwellLogUtils.i(
             TAG,
@@ -431,6 +433,7 @@ class FamilyVM @Inject constructor(
                 info?.let(_accountInfo::postValue)
             }
         }
+        shakeMgrApi.initShakeMgr()
     }
 
 

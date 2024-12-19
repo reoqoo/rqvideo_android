@@ -13,6 +13,7 @@ import com.gw.component_family.datasource.RemoteSceneDataSource
 import com.gw.component_family.services.DeviceStatusServices
 import com.gw.cp_account.api.kapi.IAccountApi
 import com.gw.lib_http.entities.ScanShareQRCodeResult
+import com.gw.lib_http.toJson
 import com.gw.lib_room.device.DeviceInfo
 import com.gw.lib_room.device.DeviceService
 import com.gw.lib_utils.ktx.bitAt
@@ -161,7 +162,8 @@ class DeviceRepository @Inject constructor(
                     modifyTime = calendar.time.time.toString(),
                     productId = deviceModel.saas?.productId,
                     sn = deviceModel.saas?.sn,
-                    status = deviceModel.status
+                    status = deviceModel.status,
+                    originJson = deviceModel.toJson()
                 )
                 val service = DeviceService(
                     deviceId = deviceModel.devId.toString(),
@@ -174,7 +176,7 @@ class DeviceRepository @Inject constructor(
                     isSupport4g = deviceModel.fourCard?.support == 1,
                     fourGCornerUrl = deviceModel.fourCard?.cornerUrl,
                     is4gReNew = deviceModel.fourCard?.fgRenew == 1,
-                    fourGExpireTime = deviceModel.fourCard?.fgExpireTime?.let { Date(it) },
+                    fourGExpireTime = deviceModel.fourCard?.fgExpireTime?.let { Date(it * 1000) },
                     fourGWebUrl = deviceModel.fourCard?.purchaseUrl,
                     surplusFlow = deviceModel.fourCard?.surplusFlow
                 )
@@ -255,6 +257,20 @@ class DeviceRepository @Inject constructor(
         val vasExpireTime = deviceServiceBean?.vasExpireTime
         return if (deviceServiceBean?.isAreaSupportVas == true) {
             ((vasExpireTime != null && vasExpireTime > Calendar.getInstance().time))
+        } else {
+            null
+        }
+    }
+
+    /**
+     * 根据设备ID，查询设备是否开启4g服务
+     * @param deviceId 设备ID
+     */
+    fun checkDevice4gOn(deviceId: String): Boolean? {
+        val deviceServiceBean = localDeviceDataSource.getDeviceServiceByDevId(deviceId)
+        val fourGExpireTime = deviceServiceBean?.fourGExpireTime
+        return if (deviceServiceBean?.isSupport4g == true) {
+            ((fourGExpireTime != null && fourGExpireTime > Calendar.getInstance().time))
         } else {
             null
         }

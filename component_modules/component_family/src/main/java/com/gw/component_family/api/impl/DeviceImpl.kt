@@ -24,7 +24,8 @@ data class DeviceImpl(
     override val powerOn: Boolean?,
     override val productId: String?,
     override val sn: String?,
-    override val hasShared: Boolean?
+    override val hasShared: Boolean?,
+    override val originJson: String?
 ) : IDevice, Parcelable {
     constructor(parcel: Parcel) : this(
         deviceId = parcel.readString() ?: "",
@@ -38,7 +39,8 @@ data class DeviceImpl(
         powerOn = parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
         productId = parcel.readString(),
         sn = parcel.readString(),
-        hasShared = parcel.readValue(Boolean::class.java.classLoader) as? Boolean
+        hasShared = parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
+        originJson = parcel.readString()
     )
 
     constructor(info: DeviceInfo) : this(
@@ -53,7 +55,8 @@ data class DeviceImpl(
         powerOn = info.powerOn,
         productId = info.productId,
         sn = info.sn,
-        hasShared = info.status?.bitAt(1) == 1
+        hasShared = info.status?.bitAt(1) == 1,
+        originJson = info.originJson
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -69,6 +72,7 @@ data class DeviceImpl(
         parcel.writeString(productId)
         parcel.writeString(sn)
         parcel.writeValue(hasShared)
+        parcel.writeString(originJson)
     }
 
     override fun describeContents(): Int {

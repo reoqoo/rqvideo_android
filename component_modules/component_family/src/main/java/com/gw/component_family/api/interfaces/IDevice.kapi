@@ -39,6 +39,7 @@ interface IDevice {
         const val PRODUCTID_KEY = "productId"
         const val SN_KEY = "sn"
         const val HASSHARED_KEY = "hasShared"
+        const val ORIGINJSON_KEY = "originJson"
         const val TOSTRING_KEY = "toString"
     }
 
@@ -135,6 +136,11 @@ interface IDevice {
      */
     val hasShared: Boolean?
 
+    /**
+     * 设备信息原始json，仅用于H5 session中的deviceList 中，其他场景场景勿用
+     */
+    val originJson: String?
+
     override fun toString(): String
 
     fun toBundle() = bundleOf(
@@ -150,6 +156,7 @@ interface IDevice {
         PRODUCTID_KEY to productId,
         SN_KEY to sn,
         HASSHARED_KEY to hasShared,
+        ORIGINJSON_KEY to originJson,
         TOSTRING_KEY to toString(),
     )
 }
@@ -170,5 +177,6 @@ data class BundleDevice(private val bundle: Bundle?) : IDevice {
     override val productId: String? get() = bundle?.getString(IDevice.PRODUCTID_KEY)
     override val sn: String? get() = bundle?.getString(IDevice.SN_KEY)
     override val hasShared: Boolean? get() = bundle?.getBoolean(IDevice.HASSHARED_KEY)
+    override val originJson: String? get() = bundle?.getString(IDevice.ORIGINJSON_KEY)
     override fun toString() = bundle?.getString(IDevice.TOSTRING_KEY) ?: ""
 }

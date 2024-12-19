@@ -3,10 +3,10 @@ package com.gw.component_family.services
 import android.content.Intent
 import androidx.lifecycle.LifecycleService
 import com.gw.component_family.repository.DeviceRepository
+import com.gw.component_plugin_service.api.IPluginManager
 import com.gw.cp_account.api.kapi.IAccountApi
+import com.gw.cp_upgrade.api.interfaces.IUpgradeMgrApi
 import com.gw.lib_plugin_service.IPluginDeviceStatusListener
-import com.gw.reoqoosdk.dev_monitor.IMonitorService
-import com.gw.reoqoosdk.dev_upgrade.IDevUpgradeService
 import com.gwell.loglibs.GwellLogUtils
 import com.tencentcs.iotvideo.IoTVideoSdkConstant.IoTSdkState.APP_LINK_OFFLINE
 import com.tencentcs.iotvideo.IoTVideoSdkConstant.IoTSdkState.APP_LINK_ONLINE
@@ -35,13 +35,13 @@ class DeviceStatusServices : LifecycleService(), IPluginDeviceStatusListener {
      * 插件管理器
      */
     @Inject
-    lateinit var pluginManager: IMonitorService
+    lateinit var pluginManager: IPluginManager
 
     @Inject
     lateinit var iAccountApi: IAccountApi
 
     @Inject
-    lateinit var upgradeMgr: IDevUpgradeService
+    lateinit var upgradeMgr: IUpgradeMgrApi
 
     override fun onCreate() {
         super.onCreate()

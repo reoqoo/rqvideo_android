@@ -40,6 +40,16 @@ data class DevConfigEntity(
 
     val productImageURL: String? = null,
 
+    /**
+     * 设备类型的扩展数据
+     */
+    val deviceType: Int? = null,
+
+    /**
+     * 设备厂家
+     */
+    val factoryName: String? = null
+
 ) : Serializable, IJsonEntity
 
 data class ProductNameBean(

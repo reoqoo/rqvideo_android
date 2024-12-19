@@ -4,16 +4,16 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModel
 import com.gw.component_family.R
-import com.gw.component_family.api.interfaces.SaEvent.AddDevice.BUTTON_CLICK
 import com.gw.component_family.databinding.FamilyFragmentDeviceEmptyBinding
 import com.gw.component_family.ui.device_empty.vm.EmptyDeviceVM
-import com.gw.lib_base_architecture.view.ABaseMVVMDBFragment
+import com.gw.cp_config_net.api.interfaces.ISaEventApi
 import com.gw.lib_router.ReoqooRouterPath
+import com.gw.lib_base_architecture.view.ABaseMVVMDBFragment
 import com.gw.lib_router.navigation
-import com.jwkj.base_statistics.sa.kits.SA
 import com.therouter.router.Autowired
 import com.therouter.router.Route
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 /**
  * @Description: - 当设备列表为空的时候，则以此页面替换
@@ -27,6 +27,8 @@ class EmptyDeviceFragment : ABaseMVVMDBFragment<FamilyFragmentDeviceEmptyBinding
     @Autowired
     lateinit var userId: String
 
+    @Inject
+    lateinit var saEventApi: ISaEventApi
 
     override fun getLayoutId() = R.layout.family_fragment_device_empty
 
@@ -34,9 +36,8 @@ class EmptyDeviceFragment : ABaseMVVMDBFragment<FamilyFragmentDeviceEmptyBinding
 
     override fun initView(view: View, savedInstanceState: Bundle?) {
         super.initView(view, savedInstanceState)
-        // 点击添加假数据
         mViewBinding.addBtn.setOnClickListener {
-            SA.track(BUTTON_CLICK)
+            saEventApi.addEvent(ISaEventApi.BUTTON_CLICK)
             ReoqooRouterPath
                 .ConfigPath
                 .CONFIG_SCAN_ACTIVITY_PATH

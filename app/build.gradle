@@ -32,7 +32,7 @@ android {
             includeAndroidResources = true
         }
     }
-    def appNamePrefix = "ReoqooV_"
+    def appNamePrefix = "ipTIME_"
 
     flavorDimensions += "version"
     productFlavors {

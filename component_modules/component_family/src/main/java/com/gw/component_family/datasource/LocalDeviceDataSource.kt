@@ -23,26 +23,26 @@ class LocalDeviceDataSource @Inject constructor(
     companion object {
         private const val TAG = "LocalDeviceDataSource"
     }
-    
+
     /**
      * 根据用户ID获取所有的设备
      */
     fun getAllDeviceSyncBy(userId: String): List<DeviceInfo> {
         return deviceInfoDao.getAllDeviceSyncBy(userId)
     }
-    
+
     /**
      * 根据用户ID获取所有的设备ID
      */
     fun getAllDeviceIdSyncBy(userId: String): List<String> {
         return deviceInfoDao.getAllDeviceIdSyncBy(userId)
     }
-    
+
     /**
      * 获取用户名下所有的设备
      */
     fun getAllDeviceBy(userId: String) = deviceInfoDao.getAllDeviceBy(userId)
-    
+
     /**
      * 添加设备
      */
@@ -57,7 +57,7 @@ class LocalDeviceDataSource @Inject constructor(
             false
         }
     }
-    
+
     /**
      * 批量添加设备
      */
@@ -72,7 +72,7 @@ class LocalDeviceDataSource @Inject constructor(
             false
         }
     }
-    
+
     /**
      * 删除设备
      */
@@ -85,14 +85,21 @@ class LocalDeviceDataSource @Inject constructor(
             false
         }
     }
-    
+
     /**
      * 根据设备ID删除设备
      */
     fun deleteDeviceById(deviceIds: List<String>) {
         deviceInfoDao.deleteDeviceById(deviceIds)
     }
-    
+
+    /**
+     * 根据设备ID获取设备原始信息
+     * @param deviceId String 设备ID
+     * @return String?
+     */
+    fun getOriginJsonById(deviceId: String) = deviceInfoDao.getOriginJsonById(deviceId)
+
     /**
      * 删除设备
      */
@@ -105,14 +112,14 @@ class LocalDeviceDataSource @Inject constructor(
             false
         }
     }
-    
+
     /**
      * 根据设备ID查找设备信息
      */
     fun deviceInfo(deviceId: String): DeviceInfo? {
         return deviceInfoDao.getDeviceInfoByIdSync(deviceId)
     }
-    
+
     /**
      * 更新设备信息
      */
@@ -126,7 +133,7 @@ class LocalDeviceDataSource @Inject constructor(
         }
         deviceInfoDao.update(device)
     }
-    
+
     /**
      * 更新设备的开机状态
      *
@@ -136,7 +143,7 @@ class LocalDeviceDataSource @Inject constructor(
     fun updateDevicePowerOn(deviceId: String, powerOn: Boolean) {
         deviceInfoDao.updateDevicePowerOn(deviceId, powerOn)
     }
-    
+
     /**
      * 更新设备的在线状态
      *
@@ -146,7 +153,7 @@ class LocalDeviceDataSource @Inject constructor(
     fun updateDeviceOnlineStatus(deviceId: String, status: Int) {
         deviceInfoDao.updateDeviceOnlineStatus(deviceId, status)
     }
-    
+
     /**
      * 更新设备信息
      */
@@ -155,7 +162,7 @@ class LocalDeviceDataSource @Inject constructor(
             updateDevice(device)
         }
     }
-    
+
     /**
      * 根据设备ID观察最新设备信息
      * @param deviceId 设备ID
@@ -163,7 +170,7 @@ class LocalDeviceDataSource @Inject constructor(
     fun watchDevice(deviceId: String): LiveData<DeviceInfo?> {
         return deviceInfoDao.getDeviceInfoByIdAsync(deviceId)
     }
-    
+
     /**
      * 根据设备ID获取设备服务信息
      * @param deviceId 设备ID

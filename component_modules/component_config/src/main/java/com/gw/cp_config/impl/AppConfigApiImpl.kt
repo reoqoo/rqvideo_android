@@ -174,11 +174,11 @@ class AppConfigApiImpl @Inject constructor(
     }
 
     override fun getPermissionMode(): Int {
-        return 1
+        return api.getPermissionMode()
     }
 
     override fun setPermissionMode(mode: Int) {
-        api.setPermissionMode(1)
+        api.setPermissionMode(mode)
     }
 
     /**

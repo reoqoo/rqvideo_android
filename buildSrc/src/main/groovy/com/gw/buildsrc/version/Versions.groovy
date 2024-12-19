@@ -130,7 +130,7 @@ class Versions {
         /**
          * IotVideo版本
          */
-        public static final String VERSION_IOT_VIDEO = "1.0.162"
+        public static final String VERSION_IOT_VIDEO = "1.0.169"
 
         /**
          * IoTVideo云存
@@ -145,7 +145,7 @@ class Versions {
     }
 
     static class GwLibVersions {
-        public static final String VERSION_LIB_UTILS = "1.0.1"
+        public static final String VERSION_LIB_UTILS = "1.1.1"
     }
 
     /**
@@ -234,7 +234,7 @@ class Versions {
         /**
          * 高斯模糊
          */
-        public static final String VERSION_PT_PLUGIN = "0.0.0.60"
+        public static final String VERSION_PT_PLUGIN = "0.0.0.64"
 
     }
 

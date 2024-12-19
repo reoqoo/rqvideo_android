@@ -1,9 +1,6 @@
 package com.gw.cp_config.data.datasource
 
-import com.gw.cp_account.api.kapi.IAccountMgrApi
 import com.gw.cp_account.api.kapi.IInterfaceSignApi
-import com.gw.cp_config.api.IAppParamApi
-import com.gw.cp_config.impl.AppConfigApiImpl
 import com.gw.cp_config.impl.AppParamApiImpl
 import com.gw.lib_http.RespResult
 import com.gw.lib_http.ResponseNotSuccessException
@@ -56,6 +53,7 @@ class RemoteConfigDataSource @Inject constructor(
         if (isLogin) {
             httpService.getReoqooConfigWithLogin(listener)
         } else {
+            signApi.setAnonymousInfo(appParamApiImpl.getAppID())
             httpService.getReoqooConfig(listener)
         }
         return result.receive()

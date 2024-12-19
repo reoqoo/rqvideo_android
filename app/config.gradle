@@ -18,7 +18,7 @@ project.ext {
     GOOGLE_VERSION_CODE = PropertyUtils.getIntProperty(project, "GOOGLE_VERSION_CODE", 1000)
 
     // 版本名
-    VERSION_NAME = PropertyUtils.getProperty(project, "VERSION_NAME", "00.08.01.01")
+    VERSION_NAME = PropertyUtils.getProperty(project, "VERSION_NAME", "01.08.01.01")
 
     // 子版本号.
     //          local渠道包: 每个版本 第一次 打 集成提测包 时, 都 从 "101" 开始; 后继 每一轮打集成提测包 都 增 1.

@@ -9,6 +9,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.gw.cp_mine.R
 import com.gw.cp_mine.entity.MenuListEntity
+import com.gw.lib_utils.ktx.setSingleClickListener
 import com.gw.lib_utils.ktx.visible
 
 /**
@@ -58,7 +59,7 @@ class MenuListAdapter : RecyclerView.Adapter<MenuListAdapter.ViewHolder>() {
             holder.tvFunction.setText(it.functionName)
         }
         holder.notice.visible(menuListEntity?.showNotice == true)
-        holder.clItem.setOnClickListener {
+        holder.clItem.setSingleClickListener {
             entity?.let {
                 mListener?.onItemClick(entity)
             }

@@ -7,6 +7,7 @@ import com.gw.lib_base_architecture.PageJumpData
 import com.gw.lib_base_architecture.vm.ABaseVM
 import com.gw.lib_iotvideo.IoTSdkInitMgr
 import com.gw.lib_router.ReoqooRouterPath
+import com.gw.reoqoosdk.acount.IAccountService
 import com.gwell.loglibs.GwellLogUtils
 import com.therouter.TheRouter
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -21,7 +22,8 @@ import javax.inject.Inject
 @HiltViewModel
 class LogoVM @Inject constructor(
     private val pushApi: IPushApi,
-    private val ioTSdkInitMgr: IoTSdkInitMgr
+    private val ioTSdkInitMgr: IoTSdkInitMgr,
+    private val iAccountService: IAccountService
 ) : ABaseVM() {
 
     companion object {
@@ -40,9 +42,9 @@ class LogoVM @Inject constructor(
         if (iUserInfo != null) {
             val accessId = iUserInfo.accessId
             val accessToken = iUserInfo.accessToken
-            ioTSdkInitMgr.registerSdk(accessId, accessToken)
+            iAccountService.setUserInfo(accessId, accessToken)
         } else {
-            ioTSdkInitMgr.unregisterSdk()
+            iAccountService.logout()
         }
     }
 

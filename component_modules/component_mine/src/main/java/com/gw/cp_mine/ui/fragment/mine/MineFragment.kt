@@ -2,21 +2,25 @@ package com.gw.cp_mine.ui.fragment.mine
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.gw.component_family.api.interfaces.FamilyModeApi
+import com.gw.component_website.api.interfaces.IWebsiteApi
+import com.gw.component_webview.api.interfaces.IWebViewApi
 import com.gw.cp_mine.R
 import com.gw.cp_mine.databinding.MineFragmentMineBinding
 import com.gw.cp_mine.entity.MenuListEntity
 import com.gw.cp_mine.ui.fragment.mine.adapter.MenuListAdapter
 import com.gw.cp_mine.ui.fragment.mine.vm.MineFgVM
+import com.gw.cp_mine.ui.fragment.mine.vm.MineFgVM.Companion.MY_COUPONS
+import com.gw.cp_mine.ui.fragment.mine.vm.MineFgVM.Companion.MY_ORDERS
+import com.gw.cp_upgrade.api.interfaces.IUpgradeMgrApi
 import com.gw.lib_base_architecture.view.ABaseMVVMDBFragment
 import com.gw.lib_router.ReoqooRouterPath
 import com.gw.lib_utils.ktx.loadUrl
 import com.gw.lib_utils.ktx.setSingleClickListener
 import com.gw.lib_utils.ktx.visible
-import com.gw.reoqoosdk.dev_upgrade.IDevUpgradeService
-import com.gw.reoqoosdk.paid_service.IPaidService
-import com.gw.reoqoosdk.setting_service.ISettingService
 import com.gwell.loglibs.GwellLogUtils
 import com.therouter.router.Route
 import com.zackratos.ultimatebarx.ultimatebarx.addStatusBarTopPadding
@@ -41,13 +45,16 @@ class MineFragment : ABaseMVVMDBFragment<MineFragmentMineBinding, MineFgVM>() {
     private var mAdapter: MenuListAdapter? = null
 
     @Inject
-    lateinit var iCloudService: IPaidService
+    lateinit var iWebViewApi: IWebViewApi
 
     @Inject
-    lateinit var iSettingService: ISettingService
+    lateinit var upgradeApi: IUpgradeMgrApi
 
     @Inject
-    lateinit var upgradeApi: IDevUpgradeService
+    lateinit var websiteApi: IWebsiteApi
+
+    @Inject
+    lateinit var familyModeApi: FamilyModeApi
 
     override fun initView(view: View, savedInstanceState: Bundle?) {
         super.initView(view, savedInstanceState)
@@ -73,10 +80,10 @@ class MineFragment : ABaseMVVMDBFragment<MineFragmentMineBinding, MineFgVM>() {
             mFgViewModel.jumpToNext(ReoqooRouterPath.DevShare.ACTIVITY_SHARE_MANAGER_PATH)
         }
         mViewBinding.btnCloud.setSingleClickListener {
-            iCloudService.offerCloudService()
+            iWebViewApi.openWebView(websiteApi.getCloudPrivilegeUrl(), getString(RR.string.AA0247))
         }
         mViewBinding.btn4g.setSingleClickListener {
-            iCloudService.offer4GService()
+            iWebViewApi.openWebView(websiteApi.get4GPrivilegeUrl(), getString(RR.string.AA0652))
         }
         mViewBinding.rvMenuList.layoutManager = LinearLayoutManager(context)
         mAdapter = MenuListAdapter().also {
@@ -84,11 +91,29 @@ class MineFragment : ABaseMVVMDBFragment<MineFragmentMineBinding, MineFgVM>() {
                 override fun onItemClick(item: MenuListEntity) {
                     item.routerPath.let { _path ->
                         if (_path.isNotEmpty()) {
-                            if (_path == ReoqooRouterPath.MinePath.ACTIVITY_FEEDBACK) {
-                                iSettingService.goFeedbackPage(null, -1)
-                                return
+                            when (_path) {
+                                ReoqooRouterPath.MinePath.ACTIVITY_FEEDBACK -> {
+                                    iWebViewApi.openWebView(websiteApi.getHelpAndFeedbackUrl(), "")
+                                }
+
+                                MY_ORDERS -> {
+                                    iWebViewApi.openWebView(
+                                        websiteApi.getMyOrderUrl(),
+                                        getString(RR.string.AA0653)
+                                    )
+                                }
+
+                                MY_COUPONS -> {
+                                    iWebViewApi.openWebView(
+                                        websiteApi.getMyCouponUrl(),
+                                        getString(RR.string.AA0654)
+                                    )
+                                }
+
+                                else -> {
+                                    mFgViewModel.jumpToNext(_path)
+                                }
                             }
-                            mFgViewModel.jumpToNext(_path)
                             GwellLogUtils.i(TAG, "MenuListAdapter: start jump")
                         }
                     }
@@ -103,14 +128,14 @@ class MineFragment : ABaseMVVMDBFragment<MineFragmentMineBinding, MineFgVM>() {
         mAdapter?.updateData(mFgViewModel.initLMenuList())
 
         mFgViewModel.updateUserInfo()
-        mFgViewModel.checkAreaCloudServer()
-        mFgViewModel.checkHas4GDevice()
         mFgViewModel.initUpgradeInfo()
     }
 
     override fun onResume() {
         super.onResume()
         mFgViewModel.updateMsgRedPoint()
+        mFgViewModel.checkAreaCloudServer()
+        mFgViewModel.checkHas4GDevice()
     }
 
     override fun onHiddenChanged(hidden: Boolean) {
@@ -147,33 +172,35 @@ class MineFragment : ABaseMVVMDBFragment<MineFragmentMineBinding, MineFgVM>() {
         }
 
         mFgViewModel.isSupportCloud.observe(this) {
-            if (!it) {
-                mViewBinding.btnCloud.visible(false)
-                if (mFgViewModel.isSupport4G.value == false) {
-                    mViewBinding.clEquityServices.visible(false)
-                }
-            } else {
-                mViewBinding.btnCloud.visible(true)
-                mViewBinding.clEquityServices.visible(true)
-                mViewBinding.btn4g.visible(mFgViewModel.isSupport4G.value ?: false)
-            }
+            mViewBinding.btnCloud.visible(it)
+            updateEquityServicesStatus()
         }
         mFgViewModel.isSupport4G.observe(this) {
-            if (!it) {
-                mViewBinding.btn4g.visible(false)
-                if (mFgViewModel.isSupportCloud.value == false) {
-                    mViewBinding.clEquityServices.visible(false)
-                }
-            } else {
-                mViewBinding.btn4g.visible(true)
-                mViewBinding.clEquityServices.visible(true)
-                mViewBinding.btnCloud.visible(mFgViewModel.isSupportCloud.value ?: false)
-            }
+            mViewBinding.btn4g.visible(it)
+            updateEquityServicesStatus()
+        }
+
+        familyModeApi.watchDeviceList(mFgViewModel.getUserId()).observe(this) {
+            mFgViewModel.checkAreaCloudServer()
+            mFgViewModel.checkHas4GDevice()
+            mAdapter?.updateData(mFgViewModel.initLMenuList(it.isNullOrEmpty()))
         }
     }
 
     override fun getLayoutId(): Int = R.layout.mine_fragment_mine
 
     override fun <T : ViewModel?> loadViewModel(): Class<T> = MineFgVM::class.java as Class<T>
+
+    /**
+     * 更新权益服务状态
+     */
+    private fun updateEquityServicesStatus() {
+        GwellLogUtils.i(TAG, "Cloud: ${mViewBinding.btnCloud.isVisible}, 4g: ${mViewBinding.btn4g.isVisible}")
+        if (mViewBinding.btnCloud.isVisible || mViewBinding.btn4g.isVisible) {
+            mViewBinding.clEquityServices.visible(true)
+        } else {
+            mViewBinding.clEquityServices.visible(false)
+        }
+    }
 
 }

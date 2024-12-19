@@ -59,7 +59,15 @@ class DeviceListVM @Inject constructor(
     fun checkDeviceCloudOn(deviceId: String): Boolean? {
         return deviceRepository.checkDeviceCloudOn(deviceId)
     }
-    
+
+    /**
+     * 根据设备ID，查询设备是否开启4g服务
+     * @param deviceId 设备ID
+     */
+    fun checkDevice4gOn(deviceId: String): Boolean? {
+        return deviceRepository.checkDevice4gOn(deviceId)
+    }
+
     /**
      * 加载第一个设备的新手引导
      */

@@ -3,6 +3,7 @@ package com.gw.cp_msg.repository
 import android.app.Application
 import com.gw.component_family.api.interfaces.FamilyModeApi
 import com.gw.component_family.api.interfaces.IDevice
+import com.gw.component_plugin_service.api.IPluginManager.Result.ON_FAILURE
 import com.gw.cp_account.api.kapi.IAccountApi
 import com.gw.cp_msg.datasource.RemoteMsgDataSource
 import com.gw.cp_msg.datastore.MsgDataStore
@@ -14,6 +15,7 @@ import com.gw.cp_msg.entity.http.VersionInfoEntity
 import com.gw.lib_http.RespResult
 import com.gw.lib_http.entities.AlarmEvent
 import com.gw.lib_http.entities.AppUpgradeEntity
+import com.gw.reoqoosdk.dev_monitor.IMonitorService
 import com.gwell.loglibs.GwellLogUtils
 import com.jwkj.base_utils.str_utils.GwStringUtils
 import kotlinx.coroutines.Dispatchers
@@ -32,7 +34,8 @@ class MsgCenterRepository @Inject constructor(
     private val remoteMsgDataSource: RemoteMsgDataSource,
     private val dataStore: MsgDataStore,
     private val familyModeApi: FamilyModeApi,
-    private val accountApi: IAccountApi
+    private val accountApi: IAccountApi,
+    private val iPluginManager: IMonitorService
 ) {
 
     companion object {
@@ -104,6 +107,9 @@ class MsgCenterRepository @Inject constructor(
                 familyModeApi.getDeviceList(this).mapNotNull { iDevice ->
                     if (iDevice.isMaster && iDevice.isOnline) {
                         val curVersion = getDevVersionForPlugin(iDevice.deviceId)
+                        if (curVersion.isNullOrEmpty()) {
+                            return@mapNotNull null
+                        }
                         remoteMsgDataSource.getDevUpdateMsg(iDevice.deviceId, curVersion)
                             .onSuccess {
                                 this?.run {
@@ -167,58 +173,7 @@ class MsgCenterRepository @Inject constructor(
             }
 
             else -> {
-                // TODO 需要从物模型获取报警类型，放到二期来处理
                 ""
-//                val alarmType = if (IoTDeviceUtils.isIoTDevice(alarmEvent.deviceId.toString())) {
-//                    GwCompoMediator.g().getCompoApi(IotAlarmUtilsApi::class.java)
-//                        ?.getAlarmType(alarmEvent.eventType.toInt())
-//                } else {
-//                    GwCompoMediator.g().getCompoApi(IDevVasAndCloudApi::class.java)
-//                        ?.getGDevEventType(alarmEvent.eventType.toInt())
-//                }
-//                when (alarmType) {
-//                    P2PValue.AlarmType.ALARM_TYPE_ONE_TOUCH_CALL -> {
-//                        GwStringUtils.formatStr(
-//                            AppEnv.APP.resources.getString(R.string.AA2521),
-//                            device?.contactName ?: alarmEvent.deviceId
-//                        )
-//                    }
-//
-//                    P2PValue.AlarmType.ALARM_TYPE_HUMANOID_DETECTION -> {
-//                        GwStringUtils.formatStr(
-//                            AppEnv.APP.resources.getString(R.string.AA2518),
-//                            device?.contactName ?: alarmEvent.deviceId
-//                        )
-//                    }
-//
-//                    P2PValue.AlarmType.ALARM_PET -> {
-//                        GwStringUtils.formatStr(
-//                            AppEnv.APP.resources.getString(R.string.AA2520),
-//                            device?.contactName ?: alarmEvent.deviceId
-//                        )
-//                    }
-//
-//                    P2PValue.AlarmType.ALARM_CAR -> {
-//                        GwStringUtils.formatStr(
-//                            AppEnv.APP.resources.getString(R.string.AA2519),
-//                            device?.contactName ?: alarmEvent.deviceId
-//                        )
-//                    }
-//
-//                    P2PValue.AlarmType.ALARM_TYPE_SMOKE_ALARM -> {
-//                        GwStringUtils.formatStr(
-//                            AppEnv.APP.resources.getString(R.string.AA2670),
-//                            device?.contactName ?: alarmEvent.deviceId
-//                        )
-//                    }
-//
-//                    else -> {
-//                        GwStringUtils.formatStr(
-//                            AppEnv.APP.resources.getString(R.string.AA2517),
-//                            device?.contactName ?: alarmEvent.deviceId
-//                        )
-//                    }
-//                }
             }
         }
     }
@@ -226,10 +181,12 @@ class MsgCenterRepository @Inject constructor(
     /**
      * 通过插件的接口查询当前设备的版本号
      */
-    private fun getDevVersionForPlugin(devID: String): String {
-        // TODO 这里的接口需要和插件对接
-        return ""
+    private suspend fun getDevVersionForPlugin(devID: String): String? {
+        val version = iPluginManager.queryDevVersion(devID)
+        if (version.isEmpty() || version.keys.first() == ON_FAILURE) {
+            return null
+        }
+        return version.values.first()
     }
-
 
 }

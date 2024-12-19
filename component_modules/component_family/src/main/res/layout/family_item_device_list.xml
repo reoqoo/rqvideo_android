@@ -52,6 +52,21 @@
                     android:background="@color/split_line_color" />
 
                 <ImageView
+                    android:id="@+id/iv_4g"
+                    android:layout_width="@dimen/dp_17"
+                    android:layout_height="@dimen/dp_17"
+                    android:layout_gravity="start|bottom"
+                    android:src="@drawable/family_icon_4g_on" />
+
+                <View
+                    android:id="@+id/v_split_line"
+                    android:layout_width="@dimen/dp_1"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_marginStart="@dimen/dp_6"
+                    android:layout_marginEnd="@dimen/dp_6"
+                    android:background="@color/split_line_color" />
+
+                <ImageView
                     android:id="@+id/iv_cloud"
                     android:layout_width="@dimen/dp_17"
                     android:layout_height="@dimen/dp_17"

@@ -4,12 +4,12 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
-import android.view.View.OnTouchListener
 import android.view.ViewConfiguration
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SimpleItemAnimator
 import com.gw.component_device_share.api.DevShareApi.Companion.KEY_PARAM_PAGE_FROM
 import com.gw.component_device_share.api.DevShareApi.Companion.PARAM_DEV_SHARE_ENTITY
@@ -18,9 +18,11 @@ import com.gw.component_family.api.impl.DeviceImpl
 import com.gw.component_family.databinding.FamilyFragmentDeviceBinding
 import com.gw.component_family.ui.device_list.adapter.DeviceListAdapter
 import com.gw.component_family.ui.device_list.popups.ItemMenuPopup
-import com.gw.component_family.ui.device_list.touch_helper.ItemTouchCallback
+import com.gw.component_family.ui.device_list.touch_helper.OnRecyclerItemClickListener
+import com.gw.component_family.ui.device_list.touch_helper.RecyItemTouchHelperCallback
 import com.gw.component_family.ui.device_list.vm.DeviceListVM
 import com.gw.component_family.ui.family.vm.FamilyVM
+import com.gw.component_plugin_service.api.IPluginManager
 import com.gw.cp_config.api.IAppConfigApi
 import com.gw.lib_base_architecture.view.ABaseMVVMDBFragment
 import com.gw.lib_http.ResponseNotSuccessException
@@ -36,7 +38,6 @@ import com.gw.lib_widget.dialog.comm_dialog.entity.CommDialogAction
 import com.gw.lib_widget.dialog.comm_dialog.entity.TextContent
 import com.gw.lib_widget.dialog.comm_dialog.ext.showCommDialog
 import com.gw.lib_widget.popups.GuidePopup
-import com.gw.reoqoosdk.dev_monitor.IMonitorService
 import com.gwell.loglibs.GwellLogUtils
 import com.tencentcs.iotvideo.http.interceptor.flow.HttpAction
 import com.therouter.router.Route
@@ -45,6 +46,7 @@ import javax.inject.Inject
 import kotlin.math.pow
 import kotlin.math.sqrt
 import com.gw.resource.R as RR
+
 
 /**
  * @Description: - 设备列表界面
@@ -59,6 +61,7 @@ class DeviceListFragment : ABaseMVVMDBFragment<FamilyFragmentDeviceBinding, Devi
     }
 
     override fun getLayoutId() = R.layout.family_fragment_device
+
     override fun <T : ViewModel?> loadViewModel() = DeviceListVM::class.java as Class<T>
 
     /**
@@ -78,7 +81,7 @@ class DeviceListFragment : ABaseMVVMDBFragment<FamilyFragmentDeviceBinding, Devi
      * 插件管理器
      */
     @Inject
-    lateinit var pluginManager: IMonitorService
+    lateinit var pluginManager: IPluginManager
 
     private var itemMenuPopup: ItemMenuPopup? = null
 
@@ -97,7 +100,7 @@ class DeviceListFragment : ABaseMVVMDBFragment<FamilyFragmentDeviceBinding, Devi
             // 适配器
             adapter = deviceListAdapter
             // 拖拽排序
-            val callback = ItemTouchCallback(this,
+            val callback = RecyItemTouchHelperCallback(this,
                 onMove = {
                     itemMenuPopup?.dismiss()
                     GwellLogUtils.i(TAG, "onMove-itemMenuPopup?.dismiss()")
@@ -108,8 +111,76 @@ class DeviceListFragment : ABaseMVVMDBFragment<FamilyFragmentDeviceBinding, Devi
                 })
             val helper = ItemTouchHelper(callback)
             helper.attachToRecyclerView(this)
+            addOnItemTouchListener(object : OnRecyclerItemClickListener(this) {
+                override fun onItemClick(viewHolder: RecyclerView.ViewHolder?, position: Int) {
+                    val devInfo = deviceListAdapter.data[position]
+                    pluginManager.startMonitorActivity(devInfo.deviceId)
+                }
+
+                override fun onLongClick(viewHolder: RecyclerView.ViewHolder?, position: Int) {
+                    val context = context ?: return
+                    val info = deviceListAdapter.data[position]
+                    itemMenuPopup = ItemMenuPopup(context, info,
+                        onShareClick = {
+                            val device = mapOf(
+                                KEY_PARAM_PAGE_FROM to "DeviceListActivity",
+                                PARAM_DEV_SHARE_ENTITY to DeviceImpl(info),
+                            )
+                            ReoqooRouterPath
+                                .DevShare
+                                .ACTIVITY_SHARE_MANAGER_OWNER_PATH
+                                .navigation(
+                                    fragment = this@DeviceListFragment,
+                                    with = device
+                                )
+                        },
+                        onDeleteClick = {
+                            showCommDialog {
+                                content = TextContent(
+                                    getString(RR.string.AA0173)
+                                )
+                                actions = listOf(
+                                    CommDialogAction(getString(RR.string.AA0059)),
+                                    CommDialogAction(
+                                        getString(RR.string.AA0058),
+                                        isDestructiveAction = true,
+                                        onClick = {
+                                            launch {
+                                                parentViewModel.deleteDevice(info).collect { action ->
+                                                    when (action) {
+                                                        is HttpAction.Loading -> Unit
+                                                        is HttpAction.Success -> Unit
+                                                        is HttpAction.Fail -> {
+                                                            when (val throwable = action.t) {
+                                                                is ResponseNotSuccessException -> {
+                                                                    val respCode =
+                                                                        ResponseCode.getRespCode(throwable.code)
+                                                                    respCode?.msgRes?.let(toast::show)
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ),
+                                )
+                            }
+                        }
+                    ).apply {
+                        setOnDismissListener {
+                            itemMenuPopup = null
+                        }
+                        val anchorActivity = activity
+                        if (anchorActivity != null && viewHolder != null) {
+                            show(viewHolder.itemView, anchorActivity)
+                        }
+                    }
+                }
+
+            })
             // 触摸事件，抬起手指，父控件恢复
-            this.setOnTouchListener(object : OnTouchListener {
+            this.setOnTouchListener(object : View.OnTouchListener {
                 private var downEvent: MotionEvent? = null
                 override fun onTouch(v: View?, event: MotionEvent): Boolean {
                     when (event.action) {
@@ -144,70 +215,6 @@ class DeviceListFragment : ABaseMVVMDBFragment<FamilyFragmentDeviceBinding, Devi
             // 去掉刷新闪白动画
             (itemAnimator as? SimpleItemAnimator?)?.supportsChangeAnimations = false
         }
-        // 长按事件
-        deviceListAdapter.setOnItemLongClick { v, info ->
-            val context = context ?: return@setOnItemLongClick
-            itemMenuPopup = ItemMenuPopup(context, info,
-                onShareClick = {
-                    val device = mapOf(
-                        KEY_PARAM_PAGE_FROM to "DeviceListActivity",
-                        PARAM_DEV_SHARE_ENTITY to DeviceImpl(info),
-                    )
-                    ReoqooRouterPath
-                        .DevShare
-                        .ACTIVITY_SHARE_MANAGER_OWNER_PATH
-                        .navigation(
-                            fragment = this,
-                            with = device
-                        )
-                },
-                onDeleteClick = {
-                    showCommDialog {
-                        content = TextContent(
-                            getString(RR.string.AA0173)
-                        )
-                        actions = listOf(
-                            CommDialogAction(getString(RR.string.AA0059)),
-                            CommDialogAction(
-                                getString(RR.string.AA0058),
-                                isDestructiveAction = true,
-                                onClick = {
-                                    launch {
-                                        parentViewModel.deleteDevice(info).collect { action ->
-                                            when (action) {
-                                                is HttpAction.Loading -> Unit
-                                                is HttpAction.Success -> Unit
-                                                is HttpAction.Fail -> {
-                                                    when (val throwable = action.t) {
-                                                        is ResponseNotSuccessException -> {
-                                                            val respCode =
-                                                                ResponseCode.getRespCode(throwable.code)
-                                                            respCode?.msgRes?.let(toast::show)
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            ),
-                        )
-                    }
-                }
-            ).apply {
-                setOnDismissListener {
-                    itemMenuPopup = null
-                }
-                val anchorActivity = activity
-                if (anchorActivity != null) {
-                    show(v, anchorActivity)
-                }
-            }
-        }
-        // item点击事件
-        deviceListAdapter.setOnItemClick { devInfo ->
-            pluginManager.startMonitorActivity(devInfo.deviceId)
-        }
         // 点击开机/关机
         deviceListAdapter.setOnTurnOnOrOffClick { info, view, onConfirm ->
             val powerOn = info.powerOn ?: return@setOnTurnOnOrOffClick
@@ -233,6 +240,8 @@ class DeviceListFragment : ABaseMVVMDBFragment<FamilyFragmentDeviceBinding, Devi
         }
         // 设置根据设备ID查询是否开启云服务的回调
         deviceListAdapter.setCheckCloudOn(mFgViewModel::checkDeviceCloudOn)
+        // 设置根据设备ID查询是否开启4g服务的回调
+        deviceListAdapter.setCheck4gOn(mFgViewModel::checkDevice4gOn)
     }
 
     override fun initLiveData(viewModel: DeviceListVM, savedInstanceState: Bundle?) {

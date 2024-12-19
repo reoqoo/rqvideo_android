@@ -12,22 +12,22 @@ import com.gw.component_family.api.interfaces.IShareDeviceApi
 import com.gw.component_family.databinding.FamilyDialogDevShareDetailBinding
 import com.gw.component_family.datasource.RemoteUserMsgDataSource
 import com.gw.component_family.repository.UserMsgRepository
+import com.gw.component_plugin_service.api.IPluginManager
 import com.gw.cp_config.api.IAppConfigApi
 import com.gw.cp_config.api.ProductImgType
 import com.gw.lib_base_architecture.SingleLiveEvent
 import com.gw.lib_http.ResponseNotSuccessException
 import com.gw.lib_http.entities.DeviceShareDetail
 import com.gw.lib_http.error.ResponseCode
+import com.tencentcs.iotvideo.http.interceptor.flow.HttpAction
 import com.gw.lib_utils.ktx.loadUrl
 import com.gw.lib_utils.toast.IToast
 import com.gw.lib_widget.dialog.comm_dialog.entity.CommDialogAction
 import com.gw.lib_widget.dialog.comm_dialog.entity.CustomContent
 import com.gw.lib_widget.dialog.comm_dialog.entity.TextContent
 import com.gw.lib_widget.dialog.comm_dialog.ext.showCommDialog
-import com.gw.reoqoosdk.dev_monitor.IMonitorService
 import com.gw.resource.R
 import com.gwell.loglibs.GwellLogUtils
-import com.tencentcs.iotvideo.http.interceptor.flow.HttpAction
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import java.util.Calendar
@@ -45,7 +45,7 @@ class ShareDeviceImpl @Inject constructor(
     private val userMsgDataSource: RemoteUserMsgDataSource,
     private val toast: IToast,
     private val configApi: IAppConfigApi,
-    private val pluginManager: IMonitorService
+    private val pluginManager: IPluginManager
 ) : IShareDeviceApi {
 
     companion object {

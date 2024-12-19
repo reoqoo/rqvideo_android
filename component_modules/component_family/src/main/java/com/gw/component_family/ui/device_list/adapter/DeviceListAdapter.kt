@@ -5,7 +5,6 @@ import android.animation.Animator.AnimatorListener
 import android.view.View
 import androidx.core.view.isVisible
 import com.gw.component_family.R
-import com.gw.resource.R as RS
 import com.gw.component_family.databinding.FamilyItemDeviceListBinding
 import com.gw.cp_config.api.IAppConfigApi
 import com.gw.lib_room.device.DeviceInfo
@@ -17,6 +16,8 @@ import com.gw.lib_utils.ktx.loadUrl
 import com.gw.lib_utils.ktx.setSingleClickListener
 import com.gw.lib_utils.ktx.visible
 import com.gw.lib_widget.adapter.AbsDiffBDAdapter
+import com.gwell.loglibs.GwellLogUtils
+import com.gw.resource.R as RS
 
 /**
  * @Description: - 设备列表适配器
@@ -26,6 +27,10 @@ import com.gw.lib_widget.adapter.AbsDiffBDAdapter
 class DeviceListAdapter(
     private var configApi: IAppConfigApi
 ) : AbsDiffBDAdapter<FamilyItemDeviceListBinding, DeviceInfo>() {
+
+    companion object {
+        private const val TAG = "DeviceListAdapter"
+    }
 
     /**
      * 点击item的事件
@@ -46,6 +51,11 @@ class DeviceListAdapter(
      * 根据ID查询云服务是否开启
      */
     private var checkCloudOn: ((deviceId: String) -> Boolean?)? = null
+
+    /**
+     * 根据ID查询4G服务是否开启
+     */
+    private var check4gOn: ((deviceId: String) -> Boolean?)? = null
 
     /**
      * 设置Item长按
@@ -75,8 +85,14 @@ class DeviceListAdapter(
         this.checkCloudOn = block
     }
 
-    override val layoutId: Int get() = R.layout.family_item_device_list
+    /**
+     * 设置根据设备ID，查询4g服务是否开启的函数
+     */
+    fun setCheck4gOn(block: (deviceId: String) -> Boolean?) {
+        this.check4gOn = block
+    }
 
+    override val layoutId: Int get() = R.layout.family_item_device_list
 
     override fun onCreateViewHolder(binding: FamilyItemDeviceListBinding) {
         // 点击设备
@@ -123,8 +139,10 @@ class DeviceListAdapter(
 
             override fun onAnimationRepeat(animation: Animator) = Unit
         })
+        binding.ivProduct.post {
+            GwellLogUtils.i(TAG, "onCreateViewHolder ivProduct: width=${binding.ivProduct.width}, height=${binding.ivProduct.height}")
+        }
     }
-
 
     override fun onBindViewHolder(binding: FamilyItemDeviceListBinding, position: Int) {
         val info = this.getItemData(position)
@@ -160,12 +178,27 @@ class DeviceListAdapter(
         binding.tvShare.isVisible = !info.isMaster
         binding.btTurnOffOrOn.isVisible = info.isMaster
         binding.btTurnOffOrOn.progress = 0f
-        if (checkCloudOn?.invoke(info.deviceId) == null) {
-            binding.ivCloud.visible(false)
+        if (check4gOn?.invoke(info.deviceId) == null) {
+            binding.iv4g.visible(false)
             binding.vSplit.visible(false)
         } else {
-            binding.ivCloud.visible(true)
+            binding.iv4g.visible(true)
             binding.vSplit.visible(true)
+            val is4gOn = check4gOn?.invoke(info.deviceId) ?: false
+            binding.iv4g.setImageResource(
+                if (is4gOn) {
+                    R.drawable.family_icon_4g_on
+                } else {
+                    R.drawable.family_icon_4g_off
+                }
+            )
+        }
+        if (checkCloudOn?.invoke(info.deviceId) == null) {
+            binding.ivCloud.visible(false)
+            binding.vSplitLine.visible(false)
+        } else {
+            binding.ivCloud.visible(true)
+            binding.vSplitLine.visible(true)
             val isCloudOn = checkCloudOn?.invoke(info.deviceId) ?: false
             binding.ivCloud.setImageResource(
                 if (isCloudOn) {
