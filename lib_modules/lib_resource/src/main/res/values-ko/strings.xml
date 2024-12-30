@@ -151,7 +151,7 @@
     <string name="AA0205">보이는 범위 조정</string>
     <string name="AA0207">사건</string>
     <string name="AA0208">전체 선택</string>
-    <string name="AA0209">누군가 움직이고 있음</string>
+    <string name="AA0209">사람의 움직임</string>
     <string name="AA0210">화면 변화</string>
     <string name="AA0211">시나리오 연동</string>
     <string name="AA0212">차량 이동</string>
@@ -441,7 +441,7 @@
     <string name="AA0579">비밀번호를 입력하세요</string>
     <string name="AA0580">전화번호</string>
     <string name="AA0581">이메일</string>
-    <string name="AA0582">인식됨 %s</string>
+    <string name="AA0582">감지됨 %s</string>
     <string name="AA0596">계정 ID</string>
     <string name="AA0597">복사 완료</string>
     <string name="AA0598">카메라가 꺼져있습니다</string>
