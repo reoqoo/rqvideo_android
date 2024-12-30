@@ -145,7 +145,7 @@ class Versions {
     }
 
     static class GwLibVersions {
-        public static final String VERSION_LIB_UTILS = "1.1.3"
+        public static final String VERSION_LIB_UTILS = "1.1.4"
     }
 
     /**
