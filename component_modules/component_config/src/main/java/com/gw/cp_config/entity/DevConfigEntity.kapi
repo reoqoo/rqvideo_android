@@ -38,6 +38,10 @@ data class DevConfigEntity(
 
     @SerializedName("firstPriorityLinkType") val priorityNetworkMode: String? = null,
 
+    @SerializedName("multiFunctionkeyImage_power_lightURL") val powerLightUrl: String? = null,
+
+    @SerializedName("multiFunctionkeyImage_call_lightURL") val callLightUrl: String? = null,
+
     val productImageURL: String? = null,
 
     /**
