@@ -28,10 +28,10 @@ dependencies {
 }
 
 dependencies {
-    implementation("com.reoqoo_lib:lib_architecture:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.reoqoo_lib:lib_resource:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.reoqoo_lib:lib_router:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.reoqoo_lib:lib_qrcode:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_lib:lib_architecture:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_resource:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_router:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_qrcode:${Versions.ReoqooSdkVer.VERSION_CODE}")
 
     implementation project(path: ':component_modules:component_device_share_api')
     implementation project(path: ':component_modules:component_family_api')

@@ -217,16 +217,16 @@ dependencies {
  */
 dependencies {
     implementation(project(":lib_modules:lib_api_root"))
-    implementation("com.reoqoo_lib:lib_resource:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.reoqoo_lib:lib_module_mounter:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.reoqoo_lib:lib_datastore:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.reoqoo_lib:lib_router:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.reoqoo_lib:lib_widget:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.reoqoo_lib:lib_utils:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.reoqoo_lib:lib_http:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.reoqoo_lib:lib_architecture:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_lib:lib_resource:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_module_mounter:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_datastore:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_router:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_widget:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_utils:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_http:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_architecture:${Versions.ReoqooSdkVer.VERSION_CODE}")
 }
 
 dependencies {
-    implementation("com.reoqoo_comp:reoqoo_sdk:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_comp:reoqoo_sdk:${Versions.ReoqooSdkVer.VERSION_CODE}")
 }

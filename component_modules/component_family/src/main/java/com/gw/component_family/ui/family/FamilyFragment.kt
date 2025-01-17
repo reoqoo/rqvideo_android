@@ -449,6 +449,7 @@ class FamilyFragment : ABaseMVVMDBFragment<FamilyFragmentFamilyBinding, FamilyVM
                     if (it.topic?.contains("unbindGuest") == true) {
                         iMonitorService.onDeviceCancelShare(eventSysEntity.data.did)
                     } else if (it.topic?.contains("unbindOwner") == true) {
+                        iMonitorService.deviceDelByOwner(eventSysEntity.data.did)
                         mFgViewModel.loadDeviceAndSceneList(this)
                     }
                 }

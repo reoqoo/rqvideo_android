@@ -21,7 +21,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -156,7 +156,7 @@ dependencies {
 }
 
 dependencies {
-    api("com.reoqoo_comp:reoqoo_sdk:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    api("com.reoqoo_comp:reoqoo_sdk:${Versions.ReoqooSdkVer.VERSION_CODE}")
 }
 
 configurations.configureEach {

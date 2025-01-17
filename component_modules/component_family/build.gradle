@@ -16,14 +16,14 @@ android {
 }
 
 dependencies {
-    implementation("com.reoqoo_lib:lib_architecture:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.reoqoo_lib:lib_room:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.reoqoo_lib:lib_resource:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.reoqoo_lib:lib_router:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.reoqoo_lib:lib_http:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.reoqoo_lib:lib_qrcode:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.reoqoo_lib:lib_iotvideo:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.reoqoo_lib:lib_webview:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_lib:lib_architecture:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_room:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_resource:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_router:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_http:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_qrcode:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_iotvideo:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_webview:${Versions.ReoqooSdkVer.VERSION_CODE}")
 }
 
 dependencies {

@@ -28,7 +28,7 @@ dependencies {
 }
 
 dependencies {
-    implementation("com.reoqoo_lib:lib_iotvideo:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_lib:lib_iotvideo:${Versions.ReoqooSdkVer.VERSION_CODE}")
 }
 
 dependencies {

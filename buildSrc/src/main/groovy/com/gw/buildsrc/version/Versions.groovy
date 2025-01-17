@@ -115,7 +115,7 @@ class Versions {
         /**
          * 技威网络请求库
          */
-        public static final String VERSION_ACCOUNT_MGR = "1.0.71.2"
+        public static final String VERSION_ACCOUNT_MGR = "1.0.78"
 
         /**
          * 技威json库
@@ -130,7 +130,7 @@ class Versions {
         /**
          * IotVideo版本
          */
-        public static final String VERSION_IOT_VIDEO = "1.0.169"
+        public static final String VERSION_IOT_VIDEO = "1.0.173"
 
         /**
          * IoTVideo云存
@@ -144,8 +144,8 @@ class Versions {
 
     }
 
-    static class GwLibVersions {
-        public static final String VERSION_LIB_UTILS = "1.1.5"
+    static class ReoqooSdkVer {
+        public static final String VERSION_CODE = "1.1.6"
     }
 
     /**

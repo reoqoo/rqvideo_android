@@ -20,9 +20,9 @@ android {
 }
 
 dependencies {
-    implementation("com.reoqoo_lib:lib_log:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.reoqoo_lib:lib_http:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
-    implementation("com.reoqoo_lib:lib_webview:${Versions.GwLibVersions.VERSION_LIB_UTILS}")
+    implementation("com.reoqoo_lib:lib_log:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_http:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("com.reoqoo_lib:lib_webview:${Versions.ReoqooSdkVer.VERSION_CODE}")
 }
 
 dependencies {

@@ -25,6 +25,10 @@ import com.gw.lib_utils.file.StorageUtils
 import com.gw.lib_utils.toast.IToast
 import com.gw.module_mount.initializetask.AInitializeTask
 import com.gw.module_mount.initializetask.TaskPriority
+import com.tencentcs.iotvideo.IoTVideoSdk
+import com.tencentcs.iotvideo.accountmgr.AccountMgr
+import com.tencentcs.iotvideo.accountmgr.AccountMgr.PLATFORM_REOQOO
+import com.tencentcs.iotvideo.accountmgr.IIoTVideoAbility
 import com.gw.reoqoo.BuildConfig
 import com.gw.reoqoo.app.crash.CrashCallbackImpl
 import com.gw.reoqoo.ui.logo.LogoActivity
@@ -36,9 +40,6 @@ import com.jwkj.base_lifecycle.LifecycleInitializer
 import com.jwkj.base_lifecycle.activity_lifecycle.ActivityLifecycleManager
 import com.jwkj.base_lifecycle.activity_lifecycle.listener.ActivityLifecycleListener
 import com.jwkj.base_statistics.GwStatisticsKits
-import com.tencentcs.iotvideo.accountmgr.AccountMgr
-import com.tencentcs.iotvideo.accountmgr.AccountMgr.PLATFORM_REOQOO
-import com.tencentcs.iotvideo.http.interceptor.IInterceptorCallback
 import com.tencentcs.iotvideo.http.interceptor.RedirectType
 import com.therouter.router.Navigator
 import com.therouter.router.RouteItem
@@ -309,22 +310,25 @@ class AppCoreInitTask @Inject constructor() : AInitializeTask() {
             PLATFORM_REOQOO,
             BuildConfig.IS_GOOGLE,
             "",
-            countryCode
+            countryCode,
+            object : IIoTVideoAbility {
+                override fun getAnonymousSecureKey(): Array<String> {
+                    return signApi.getAnonymousInfo(context, appParamApi.getAppID())
+                }
+
+                override fun onRedirectRequest(type: RedirectType): String {
+                    return ""
+                }
+
+                override fun sha1WithBase256(signContent: String, accessToken: String): String {
+                    return IoTVideoSdk.sha1WithBase256(signContent, accessToken)
+                }
+
+            }
         )
         // 设置地区
         accountMgr.setRegion(countryCode)
-        accountMgr.setInterceptorCallback(object : IInterceptorCallback {
-            override fun getAnonymousSignatureParams(): Array<String> {
-                val anonymousInfo = signApi.getAnonymousInfo(app, appParamApi.getAppID())
-                GwellLogUtils.i(TAG, "anonymousInfo: $anonymousInfo")
-                return anonymousInfo
-            }
 
-            override fun onRedirectRequest(type: RedirectType): String {
-                return ""
-            }
-
-        })
         accountMgr.setPlatformInfo(
             appParamApi.getAppName(),
             appParamApi.getAppID(),
