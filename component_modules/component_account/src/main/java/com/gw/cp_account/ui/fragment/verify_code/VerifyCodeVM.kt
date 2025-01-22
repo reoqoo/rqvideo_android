@@ -21,6 +21,7 @@ import com.gw.lib_http.HttpErrorCode.ERROR_10902029
 import com.gw.lib_http.HttpResponse
 import com.gw.lib_http.IBaseResultCallback
 import com.gw.lib_http.entities.DistrictEntity
+import com.gw.lib_http.error.ResponseCode
 import com.gw.resource.R
 import com.gwell.loglibs.GwellLogUtils
 import com.jwkj.base_utils.str_utils.GwStringUtils
@@ -179,7 +180,12 @@ class VerifyCodeVM @Inject constructor(
                 result.onServerError { code, msg ->
                     GwellLogUtils.e(TAG, "onServerError: code $code, msg $msg")
                     loadDialogState.postValue(IGwBaseVm.LOAD_DIALOG_STATE_CLOSE)
-                    toastIntentData.postValue(ToastIntentData(HttpErrUtils.showErrorToast(code.toString())))
+                    when (val resp = ResponseCode.getRespCode(code)) {
+                        null -> Unit
+                        else -> {
+                            toastIntentData.postValue(ToastIntentData(resp.msgRes))
+                        }
+                    }
                 }
                 result.onLocalError {
                     loadDialogState.postValue(IGwBaseVm.LOAD_DIALOG_STATE_CLOSE)

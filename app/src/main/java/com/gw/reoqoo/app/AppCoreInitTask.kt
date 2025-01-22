@@ -9,6 +9,7 @@ import android.os.Bundle
 import androidx.annotation.MainThread
 import com.google.gson.JsonObject
 import com.gw.component_push.api.interfaces.IPushApi
+import com.gw.component_website.api.interfaces.IWebsiteApi
 import com.gw.cp_account.api.kapi.IAccountApi
 import com.gw.cp_account.api.kapi.IAccountMgrApi
 import com.gw.cp_account.api.kapi.IInterfaceSignApi
@@ -115,6 +116,9 @@ class AppCoreInitTask @Inject constructor() : AInitializeTask() {
 
     @Inject
     lateinit var signApi: IInterfaceSignApi
+
+    @Inject
+    lateinit var websiteApi: IWebsiteApi
 
     private val scope by lazy {
         MainScope()
@@ -317,6 +321,9 @@ class AppCoreInitTask @Inject constructor() : AInitializeTask() {
                 }
 
                 override fun onRedirectRequest(type: RedirectType): String {
+                    if (type == RedirectType.SAAS_VAS) {
+                        return websiteApi.getPluginHost()
+                    }
                     return ""
                 }
 
