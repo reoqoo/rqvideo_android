@@ -14,8 +14,8 @@
       "firstPriorityLinkType": "0x0010",
       "productImageURL": "https://saas-trade-prod-1251981983.cos.ap-beijing.myqcloud.com/comm/resource/c9f0fe9a-7c1f-4df0-81cc-857255e8752cicon_C_1008_1008.png",
       "MultiFunctionkeyLightURL": "https://saas-trade-prod-1251981983.cos.ap-beijing.myqcloud.com/comm/resource/c9f0fe9a-7c1f-4df0-81cc-857255e8752cicon_C_1008_1008.png",
-      "multiFunctionkeyImage_power_lightURL": "https://saas-trade-prod-1251981983.cos.ap-beijing.myqcloud.com/comm/resource/3c73464f-cf1b-48dd-8d3e-d84ba5a9894b%E4%B8%80%E9%94%AE%E5%91%BC%E5%8F%AB%E5%9B%BE%E7%89%87@3x.png",
-      "multiFunctionkeyImage_call_lightURL": "https://saas-trade-prod-1251981983.cos.ap-beijing.myqcloud.com/comm/resource/dd4044f8-7f33-4811-b87d-ce5d7a03967d%E4%B8%80%E9%94%AE%E5%BC%80%E5%85%B3%E6%9C%BA%E5%9B%BE%E7%89%87@3x.png",
+      "multiFunctionkeyImage_power_lightURL": "https://saas-trade-prod-1251981983.cos.ap-beijing.myqcloud.com/comm/resource/dd4044f8-7f33-4811-b87d-ce5d7a03967d%E4%B8%80%E9%94%AE%E5%BC%80%E5%85%B3%E6%9C%BA%E5%9B%BE%E7%89%87@3x.png",
+      "multiFunctionkeyImage_call_lightURL": "https://saas-trade-prod-1251981983.cos.ap-beijing.myqcloud.com/comm/resource/3c73464f-cf1b-48dd-8d3e-d84ba5a9894b%E4%B8%80%E9%94%AE%E5%91%BC%E5%8F%AB%E5%9B%BE%E7%89%87@3x.png",
       "deviceType": 0,
       "factoryName": "ipTIME"
     },
@@ -32,8 +32,8 @@
       "firstPriorityLinkType": "0x0010",
       "productImageURL": "https://saas-trade-prod-1251981983.cos.ap-beijing.myqcloud.com/comm/resource/c9f0fe9a-7c1f-4df0-81cc-857255e8752cicon_C_1008_1008.png",
       "MultiFunctionkeyLightURL": "https://saas-trade-prod-1251981983.cos.ap-beijing.myqcloud.com/comm/resource/c9f0fe9a-7c1f-4df0-81cc-857255e8752cicon_C_1008_1008.png",
-      "multiFunctionkeyImage_power_lightURL": "https://saas-trade-prod-1251981983.cos.ap-beijing.myqcloud.com/comm/resource/3c73464f-cf1b-48dd-8d3e-d84ba5a9894b%E4%B8%80%E9%94%AE%E5%91%BC%E5%8F%AB%E5%9B%BE%E7%89%87@3x.png",
-      "multiFunctionkeyImage_call_lightURL": "https://saas-trade-prod-1251981983.cos.ap-beijing.myqcloud.com/comm/resource/dd4044f8-7f33-4811-b87d-ce5d7a03967d%E4%B8%80%E9%94%AE%E5%BC%80%E5%85%B3%E6%9C%BA%E5%9B%BE%E7%89%87@3x.png",
+      "multiFunctionkeyImage_power_lightURL": "https://saas-trade-prod-1251981983.cos.ap-beijing.myqcloud.com/comm/resource/dd4044f8-7f33-4811-b87d-ce5d7a03967d%E4%B8%80%E9%94%AE%E5%BC%80%E5%85%B3%E6%9C%BA%E5%9B%BE%E7%89%87@3x.png",
+      "multiFunctionkeyImage_call_lightURL": "https://saas-trade-prod-1251981983.cos.ap-beijing.myqcloud.com/comm/resource/3c73464f-cf1b-48dd-8d3e-d84ba5a9894b%E4%B8%80%E9%94%AE%E5%91%BC%E5%8F%AB%E5%9B%BE%E7%89%87@3x.png",
       "deviceType": 0,
       "factoryName": "ipTIME"
     }

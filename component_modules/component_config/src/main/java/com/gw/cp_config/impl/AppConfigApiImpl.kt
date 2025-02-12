@@ -62,7 +62,7 @@ class AppConfigApiImpl @Inject constructor(
                             GwellLogUtils.i(TAG, "countryCodeList $it")
                             api.setCountryCodeList(it)
                         } ?: GwellLogUtils.e(TAG, "uploadGlobal: countryCodeList is null")
-                        GwellLogUtils.i(TAG, "getProductConfVer ${api.getProductConfVer()}")
+                        GwellLogUtils.i(TAG, "getProductConfVer ${api.getProductConfVer()} productConfVer==$productConfVer")
                         if (api.getProductConfVer() >= productConfVer) {
                             repository.initConfigFile()
                             return@run
