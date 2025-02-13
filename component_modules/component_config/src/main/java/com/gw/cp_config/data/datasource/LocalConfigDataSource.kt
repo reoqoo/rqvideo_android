@@ -45,6 +45,7 @@ class LocalConfigDataSource @Inject constructor(
     suspend fun initConfig() {
         withContext(Dispatchers.IO) {
             val json = GwFileUtils.readFile2String(pidConfigPath)
+            GwellLogUtils.i(TAG, "initConfig（） json===$json")
             val configJsonEntity: ConfigJsonEntity? =
                 Gson().fromJson(json, object : TypeToken<ConfigJsonEntity>() {}.type)
             GwellLogUtils.i(TAG, "configJsonEntity $configJsonEntity")

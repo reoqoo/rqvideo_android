@@ -322,11 +322,15 @@ class VerifyCodeVM @Inject constructor(
             override fun onError(errorCode: String?, throwable: Throwable?) {
                 loadDialogState.postValue(IGwBaseVm.LOAD_DIALOG_STATE_CLOSE)
                 errorCode?.let {
-                    toastIntentData.postValue(ToastIntentData(HttpErrUtils.showErrorToast(it)))
-                } ?: let {
-                    throwable?.let {
-                        HttpErrUtils.throwableToErrCode(it)
+                    when (val resp = ResponseCode.getRespCode(errorCode.toInt())) {
+                        null -> Unit
+
+                        else -> {
+                            toastIntentData.postValue(ToastIntentData(resp.msgRes))
+                        }
                     }
+                } ?: run {
+                    toastIntentData.postValue(ToastIntentData(strResId = R.string.AA0573))
                 }
             }
 
