@@ -26,7 +26,7 @@ class AppParamApiImpl @Inject constructor() : IAppParamApi {
         /**
          * appName 值（这个名称是协议的参数，与app的名称是两个不同的数据）
          */
-        private const val APP_NAME = "ipTIME CCTV_andorid"
+        private const val APP_NAME = "ipTIME CCTV_android"
 
     }
 
