@@ -25,6 +25,9 @@ android {
         buildConfigField("boolean", "IS_PROTECTED_APP", "$IS_PROTECTED_APP")
         buildConfigField("boolean", "IS_JENKINS_ENV", "$IS_JENKINS_ENV")
         buildConfigField("String", "BUILD_TIME", "$BUILD_TIME")
+
+        // 设置支持的语言
+        resConfigs "ko", "en"
     }
 
     testOptions {
