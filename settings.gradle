@@ -2,7 +2,14 @@ import java.util.function.Consumer
 
 pluginManagement {
     repositories {
-        maven { url 'https://nexus-sg.gwell.cc/nexus/repository/maven-releases/' }
+        maven {
+            url 'https://nexus-sg.gwell.cc/nexus/repository/maven-releases/'
+            allowInsecureProtocol = true
+            credentials {
+                username = 'admin'
+                password = "admin@321GW"
+            }
+        }
 
         maven { url 'https://maven.aliyun.com/repository/central' }
         maven { url 'https://maven.aliyun.com/repository/jcenter' }
@@ -20,7 +27,14 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        maven { url 'https://nexus-sg.gwell.cc/nexus/repository/maven-releases/' }
+        maven {
+            url 'https://nexus-sg.gwell.cc/nexus/repository/maven-releases/'
+            allowInsecureProtocol = true
+            credentials {
+                username = 'admin'
+                password = "admin@321GW"
+            }
+        }
 
         maven { url 'https://maven.aliyun.com/repository/central' }
         maven { url 'https://maven.aliyun.com/repository/jcenter' }
