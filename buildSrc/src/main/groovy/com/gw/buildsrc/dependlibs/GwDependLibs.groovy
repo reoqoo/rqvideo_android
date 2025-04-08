@@ -11,7 +11,7 @@ class GwDependLibs {
         /**
          * IoTVideo网络请求库
          */
-        public static final String DEPEND_LIB_IOT_ACCOUNT_MGR = "com.tencentcs:accountmgr_beta"
+        public static final String DEPEND_LIB_IOT_ACCOUNT_MGR = "com.tencentcs:accountmgr"
 
         /**
          * VAS库
