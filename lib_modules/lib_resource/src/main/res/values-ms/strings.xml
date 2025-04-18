@@ -35,7 +35,7 @@
     <string name="AA0043">Saya</string>
     <string name="AA0044">Perjanjian Pengguna</string>
     <string name="AA0045">Ringkasan Perjanjian Perkhidmatan dan Polisi Privasi Pengguna</string>
-    <string name="AA0046">Anda dialu-alukan untuk menggunakan teknologi video demo ou ialah platform audio dalam talian yang dibangunkan dan dikendalikan oleh XXXXXXXX. (selepas ini dirujuk sebagai \&quot;Anda Membantu Kami\&quot;). Harap maklum bahawa kami akan mengumpul, menggunakan, Bagaimana maklumat disimpan dan dikongsi, video yang anda lihat tentang kami. Gambar video, maklumat peranti, log dan maklumat peribadi lain;\nAnda boleh mengakses, membetulkan dan memadamkan kebenaran anda;\nKami akan menggunakan teknologi keselamatan peribadi di pusat operasi teratas untuk melindungi maklumat peribadi anda. \nAnda boleh membaca versi %1$s dan %2$s untuk butiran penuh. \nJika anda bersetuju, sila klik \&quot;Setuju\&quot; untuk menerima perkhidmatan kami.</string>
+    <string name="AA0046">Anda dialu-alukan untuk menggunakan teknologi video demo ou ialah platform audio dalam talian yang dibangunkan dan dikendalikan oleh demo IoT XXXXXXXX., Ltd. (selepas ini dirujuk sebagai \"Anda Membantu Kami\"). Harap maklum bahawa kami akan mengumpul, menggunakan, Bagaimana maklumat disimpan dan dikongsi, video yang anda lihat tentang kami. Gambar video, maklumat peranti, log dan maklumat peribadi lain;\nAnda boleh mengakses, membetulkan dan memadamkan kebenaran anda;\nKami akan menggunakan teknologi keselamatan peribadi di pusat operasi teratas untuk melindungi maklumat peribadi anda. \nAnda boleh membaca versi %1$s dan %2$s untuk butiran penuh. \nJika anda bersetuju, sila klik \"Setuju\" untuk menerima perkhidmatan kami.</string>
     <string name="AA0047">Rumah %s</string>
     <string name="AA0049">Tambah peranti</string>
     <string name="AA0050">Berkongsi peranti</string>
@@ -83,13 +83,13 @@
     <string name="AA0121">Model:</string>
     <string name="AA0122">SN：</string>
     <string name="AA0123">Sambungkan Wi-Fi peranti</string>
-    <string name="AA0124">1. Sambungkan telefon anda ke tempat liputan kamera: Wi-Fi bermula dengan \&quot;XT-\&quot;</string>
+    <string name="AA0124">1. Sambungkan telefon anda ke tempat liputan kamera: Wi-Fi bermula dengan \"XT-\"</string>
     <string name="AA0125">2. Kembali ke APP</string>
-    <string name="AA0126">Apa yang perlu dilakukan jika \&quot;XT-\&quot; tidak dijumpai?</string>
+    <string name="AA0126">Apa yang perlu dilakukan jika \"XT-\" tidak dijumpai?</string>
     <string name="AA0127">1.Mungkin peranti tidak menyokong penyambungan cepat (penyambungan hotspot).Sila pilih kaedah sambungan mengikut maklumat suara peranti.</string>
     <string name="AA0128">2. Jarak telefon bimbit dan peranti terlalu jauh. Jarak yang dalam 30cm adalah sesuai.</string>
-    <string name="AA0129">Sambungkan Wi-Fi bermula dengan \&quot;XT-\&quot;</string>
-    <string name="AA0130">Pastikan anda melengkapkan proses penambahan dengan kembali ke APP selepas menyambung ke Wi-Fi yang bermula dengan \&quot;XT-\&quot;~</string>
+    <string name="AA0129">Sambungkan Wi-Fi bermula dengan \"XT-\"</string>
+    <string name="AA0130">Pastikan anda melengkapkan proses penambahan dengan kembali ke APP selepas menyambung ke Wi-Fi yang bermula dengan \"XT-\"~</string>
     <string name="AA0131">Saya mendapatkannya</string>
     <string name="AA0132">Sedang mengimbas</string>
     <string name="AA0133">Memastikan peralatan adalah dalam keadaan menunggu sambungan,sila letakkan telefon anda dekat dengan kamera</string>
@@ -245,7 +245,7 @@
     <string name="AA0324">Kenal pasti identiti</string>
     <string name="AA0325">Untuk keselamatan akaun, sila kenal pasti kata laluan log masuk dahulu</string>
     <string name="AA0326">Kata laluan log masuk</string>
-    <string name="AA0327">Jika anda lupa kata laluan asal, sila log keluar, klik \&quot;Terlupa kata laluan\&quot; dan set semula kata laluan dengan kod pengesahan</string>
+    <string name="AA0327">Jika anda lupa kata laluan asal, sila log keluar, klik \"Terlupa kata laluan\" dan set semula kata laluan dengan kod pengesahan</string>
     <string name="AA0328">Anda benar-benar mahu log keluar akaun ini?</string>
     <string name="AA0329">Selepas akaun dibatalkan, semua maklumat dan data akan dipadam</string>
     <string name="AA0330">Pembatalan akaun berjaya! Terima kasih kerana menggunakannya</string>
@@ -316,7 +316,7 @@
     <string name="AA0405">Kejayaan akan dicapai, sila tunggu</string>
     <string name="AA0406">ID peranti tidak sah</string>
     <string name="AA0407">Wi-Fi tidak disambung</string>
-    <string name="AA0408">\&quot;Perjanjian Privasi\&quot;</string>
+    <string name="AA0408">\"Perjanjian Privasi\"</string>
     <string name="AA0409">Format nombor telefon yang salah</string>
     <string name="AA0410">masukkan kata laluan</string>
     <string name="AA0412">Adalah ralat segera? Anda juga boleh menghantar maklum balas melalui emel</string>
@@ -423,7 +423,7 @@ Untuk menghindari kehabisan kuasa terlalu cepat, ia telah menukar secara automat
     <string name="AA0530">Pelawat tidak wujud</string>
     <string name="AA0531">Hanya induk peranti boleh berkongsi/mengubah suai; Peranti semasa sudah mempunyai induk dan mengubah suai pelawat sebagai kebenaran induk tidak dibenarkan</string>
     <string name="AA0537">Version</string>
-    <string name="AA0545">Saya telah membaca dan bersetuju dengan \&quot;Perjanjian Pengguna\&quot; dan \&quot;Perjanjian Privasi\&quot;</string>
+    <string name="AA0545">Saya telah membaca dan bersetuju dengan \"Perjanjian Pengguna\" dan \"Perjanjian Privasi\"</string>
     <string name="AA0546">Kamera</string>
     <string name="AA0559">Kod QR tidak sah</string>
     <string name="AA0560">Kod QR lama telah tamat</string>
@@ -432,7 +432,7 @@ Untuk menghindari kehabisan kuasa terlalu cepat, ia telah menukar secara automat
     <string name="AA0566">Akaun sasaran tidak tersedia</string>
     <string name="AA0567">Akaun sasaran tidak wujud</string>
     <string name="AA0569">《Perjanjian Privasi》</string>
-    <string name="AA0570">\&quot;Perjanjian Pengguna\&quot;</string>
+    <string name="AA0570">\"Perjanjian Pengguna\"</string>
     <string name="AA0571">Enjoy your real cool life</string>
     <string name="AA0572">Perkhidmatan awan sedang ditatar, sila tetap tuned</string>
     <string name="AA0573">Ralat rangkaian</string>
@@ -495,4 +495,5 @@ Untuk menghindari kehabisan kuasa terlalu cepat, ia telah menukar secara automat
     <string name="AA0652">aliran</string>
     <string name="AA0653">Arahan saya</string>
     <string name="AA0654">Guru kad saya</string>
+    <string name="AA0656">Luar talian, kemas kini tidak tersedia</string>
 </resources>

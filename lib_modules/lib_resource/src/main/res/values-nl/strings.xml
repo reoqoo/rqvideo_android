@@ -35,7 +35,8 @@
     <string name="AA0043">Mijn</string>
     <string name="AA0044">Gebruikersovereenkomst</string>
     <string name="AA0045">Samenvatting van gebruikersovereenkomst en privacybeleid</string>
-    <string name="AA0046">U bent van harte welkom om demo. demo is een online audioplatform dat is ontwikkeld en beheerd door XXXXXXXX. (hierna \&quot;You Help Us\&quot; genoemd). Begrijp alsjeblieft dat we zullen verzamelen, gebruiken, hoe informatie wordt opgeslagen en gedeelde video\'s die u over ons ziet. Videobeelden, apparaatinformatie, logboeken en andere persoonlijke informatie;\nU kunt uw autorisatie openen, corrigeren en verwijderen;\nWe zullen persoonlijke beveiligingstechnologie gebruiken in het topoperatiecentrum om uw persoonlijke informatie te beschermen. \nU kunt de versie %1$s en %2$s lezen voor volledige details. \nAls u akkoord gaat, klikt u op \&quot;Akkoord\&quot; om onze service te accepteren.</string>
+    <string name="AA0046">U bent van harte welkom om demo. demo is een online audioplatform dat is ontwikkeld en beheerd door demo IoT XXXXXXXX., Ltd. (hierna \"You Help Us\" genoemd). Begrijp alsjeblieft dat we zullen verzamelen, gebruiken, hoe informatie wordt opgeslagen en gedeelde video\'s die u over ons ziet. Videobeelden, apparaatinformatie, logboeken en andere persoonlijke informatie;\nU kunt uw autorisatie openen, corrigeren en verwijderen;\nWe zullen persoonlijke beveiligingstechnologie gebruiken in het topoperatiecentrum om uw persoonlijke informatie te beschermen. \nU kunt de versie %1$s en %2$s lezen voor volledige details. \nAls u akkoord gaat, klikt u op \"Akkoord\" om onze service te accepteren.</string>
+    <string name="AA0047">%s\'s huis</string>
     <string name="AA0049">Apparaat toevoegen</string>
     <string name="AA0050">Apparaat delen</string>
     <string name="AA0051">Scan het</string>
@@ -83,7 +84,7 @@
     <string name="AA0123">Apparaat Wi-Fi verbinden</string>
     <string name="AA0124">1. Verbind je telefoon met de camerahotspot: Wi-Fi begint met \'XT-\'</string>
     <string name="AA0125">2. Terug naar de APP</string>
-    <string name="AA0126">Kunt u \&quot;XT-\&quot; niet vinden?</string>
+    <string name="AA0126">Kunt u \"XT-\" niet vinden?</string>
     <string name="AA0127">1. Het apparaat ondersteunt mogelijk geen snel netwerk (hotspot-verbinding). Volg de stemprompts van het apparaat om de verbindingsmethode.</string>
     <string name="AA0128">2. De afstand tussen de mobiele telefoon en het apparaat is te groot. Een geschikte afstand is 30 cm.</string>
     <string name="AA0129">Verbind met het Wi-Fi dat begint met \'XT-\'</string>
@@ -242,7 +243,7 @@
     <string name="AA0324">Identiteit controleren</string>
     <string name="AA0325">Voor accountbeveiliging dient u eerst het login-wachtwoord te controleren</string>
     <string name="AA0326">Login wachtwoord</string>
-    <string name="AA0327">Als u het originele wachtwoord bent vergeten, log dan uit, klik dan op \&quot;Wachtwoord vergeten\&quot; en stel het wachtwoord opnieuw in met de verificatiecode</string>
+    <string name="AA0327">Als u het originele wachtwoord bent vergeten, log dan uit, klik dan op \"Wachtwoord vergeten\" en stel het wachtwoord opnieuw in met de verificatiecode</string>
     <string name="AA0328">Wilt u het echt annuleren?</string>
     <string name="AA0329">Nadat de account is geannuleerd, worden alle informatie en gegevens gewist.</string>
     <string name="AA0330">Account annuleren is succesvol!  Bedankt voor het gebruik ervan</string>
@@ -382,8 +383,8 @@ Om te voorkomen dat de stroom te snel op raakt, is hij automatisch overgeschakel
     <string name="AA0489">Bijnaam mag niet leeg zijn</string>
     <string name="AA0490">Telefoonnummer mag niet leeg zijn</string>
     <string name="AA0491">E-mail mag niet leeg zijn</string>
-    <string name="AA0492">?? Alle in de cloud opgeslagen persoonlijke gegevens en historische informatie zullen niet toegankelijk zijn; \n\n?? Uw aankoopgeschiedenis wordt gewist en kan niet worden hersteld, geen restitutie; \n\n?? Alle eerder verzamelde niveaus, punten, rechten enz. worden ongeldig en kunnen niet worden hersteld; \n\n?? U kunt zich niet meer aanmelden met het gekoppelde telefoonnummer/e-mailadres of een derde partij-account; \n\n?? Uw gekoppelde apparaten worden allemaal ontkoppeld. Om ze te blijven gebruiken, registreert u zich opnieuw en voegt u ze opnieuw toe.</string>
-    <string name="AA0493">?? Kan het oorspronkelijke telefoonnummer/e-mailadres of een derde-partijaccount niet gebruiken om in te loggen; \n\n?? Alle aan het oorspronkelijke account gekoppelde apparaten zijn losgekoppeld. Om ze te gebruiken, registreert u zich en voegt u ze opnieuw toe.</string>
+    <string name="AA0492">• Alle in de cloud opgeslagen persoonlijke gegevens en historische informatie zullen niet toegankelijk zijn; \n\n• Uw aankoopgeschiedenis wordt gewist en kan niet worden hersteld, geen restitutie; \n\n• Alle eerder verzamelde niveaus, punten, rechten enz. worden ongeldig en kunnen niet worden hersteld; \n\n• U kunt zich niet meer aanmelden met het gekoppelde telefoonnummer/e-mailadres of een derde partij-account; \n\n• Uw gekoppelde apparaten worden allemaal ontkoppeld. Om ze te blijven gebruiken, registreert u zich opnieuw en voegt u ze opnieuw toe.</string>
+    <string name="AA0493">• Kan het oorspronkelijke telefoonnummer/e-mailadres of een derde-partijaccount niet gebruiken om in te loggen; \n\n• Alle aan het oorspronkelijke account gekoppelde apparaten zijn losgekoppeld. Om ze te gebruiken, registreert u zich en voegt u ze opnieuw toe.</string>
     <string name="AA0494">Het wijzigen van het avatar is mislukt</string>
     <string name="AA0495">APP update-uitnodiging</string>
     <string name="AA0496">%sNu online. Bekijk updates &gt;&gt;</string>
@@ -492,4 +493,5 @@ Om te voorkomen dat de stroom te snel op raakt, is hij automatisch overgeschakel
     <string name="AA0652">Dataverkeer</string>
     <string name="AA0653">Mijn bestellingen</string>
     <string name="AA0654">Mijn bonnen</string>
+    <string name="AA0656">Offline, upgrade niet mogelijk</string>
 </resources>

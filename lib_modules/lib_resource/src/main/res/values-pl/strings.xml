@@ -35,7 +35,8 @@
     <string name="AA0043">O mnie</string>
     <string name="AA0044">Umowa użytkownika</string>
     <string name="AA0045">Podsumowanie umowy o świadczenie usług dla użytkownika i zasad zachowania poufności</string>
-    <string name="AA0046">Witamy w demo! demo jest internetową platformą audio-wideo opracowaną i obsługiwaną przez firmę XXXXXXXX. (zwaną dalej „my/nas”). Można lepiej zrozumieć zasadę zbierania, wykorzystywania, przechowywania i udostępniania przez nas danych osobowych użytkowników po zapoznaniu się z „Zasadami ochrony prywatności” i „Umowa z użytkownikiem”. \n Aby zapewnić bieżący obraz, odtwarzanie wideo, subskrypcję kolekcji, interakcję ze społecznością i inne usługi, musimy zebrać dane osobowe użytkowników, takie jak nagrania wideo, obrazy wideo, informacje o urządzeniu, dzienniki operacji itp. \nUżytkownik może uzyskać dostęp, korygować, usuwać swoje dane osobowe, a także zarządzać autoryzacją w Centrum Osobistym. \n Będziemy korzystać z wiodącej w branży technologii zabezpieczeń w celu ochrony Twoich danych osobowych. \n Więcej informacji można uzyskać, czytając pełny tekst %1$s i %2$s. \n Jeśli wyrażasz zgodę, naciśnij przycisk „Zgadzam się”, aby zaakceptować nasze warunki świadczenia usług.</string>
+    <string name="AA0046">Witamy w demo! demo jest internetową platformą audio-wideo opracowaną i obsługiwaną przez firmę demo IoT XXXXXXXX., Ltd. (zwaną dalej „my/nas”). Można lepiej zrozumieć zasadę zbierania, wykorzystywania, przechowywania i udostępniania przez nas danych osobowych użytkowników po zapoznaniu się z „Zasadami ochrony prywatności” i „Umowa z użytkownikiem”. \n Aby zapewnić bieżący obraz, odtwarzanie wideo, subskrypcję kolekcji, interakcję ze społecznością i inne usługi, musimy zebrać dane osobowe użytkowników, takie jak nagrania wideo, obrazy wideo, informacje o urządzeniu, dzienniki operacji itp. \nUżytkownik może uzyskać dostęp, korygować, usuwać swoje dane osobowe, a także zarządzać autoryzacją w Centrum Osobistym. \n Będziemy korzystać z wiodącej w branży technologii zabezpieczeń w celu ochrony Twoich danych osobowych. \n Więcej informacji można uzyskać, czytając pełny tekst %1$s i %2$s. \n Jeśli wyrażasz zgodę, naciśnij przycisk „Zgadzam się”, aby zaakceptować nasze warunki świadczenia usług.</string>
+    <string name="AA0047">Dom %s</string>
     <string name="AA0049">Dodaj Urządzenie</string>
     <string name="AA0050">Udostępnij urządzenie</string>
     <string name="AA0051">Zeskanować</string>
@@ -383,8 +384,8 @@ Aby uniknąć zbyt szybkiego braku mocy, automatycznie przełączył się na try
     <string name="AA0489">Pseudonim nie może być pusty</string>
     <string name="AA0490">Numer telefonu nie może być pusty</string>
     <string name="AA0491">E-mail nie może być pusty</string>
-    <string name="AA0492">?? Wszystkie zapisane w chmurze dane osobowe i informacje historyczne będą nieodwracalne; \n\n?? Historia zakupów zostanie usunięta i nie będzie mogła być odzyskana, bez zwrotu pieniędzy; \n\n?? Wszystkie wcześniej zgromadzone poziomy, punkty, prawa itp. zostaną unieważnione i nie można ich odzyskać; \n\n?? Nie będziesz mógł używać powiązanego numeru telefonu/adresu e-mail lub konta zewnętrznego do logowania; \n\n?? Wszystkie powiązane urządzenia zostaną odłączone. Aby nadal z nich korzystać, zarejestruj się i dodaj ponownie.</string>
-    <string name="AA0493">?? Nie można używać oryginalnego numeru telefonu/emaila ani konta zewnętrznego do logowania; \n\n?? Wszystkie urządzenia powiązane z oryginalnym kontem zostały odłączone. Aby z nich korzystać, zarejestruj się i dodaj ponownie.</string>
+    <string name="AA0492">• Wszystkie zapisane w chmurze dane osobowe i informacje historyczne będą nieodwracalne; \n\n• Historia zakupów zostanie usunięta i nie będzie mogła być odzyskana, bez zwrotu pieniędzy; \n\n• Wszystkie wcześniej zgromadzone poziomy, punkty, prawa itp. zostaną unieważnione i nie można ich odzyskać; \n\n• Nie będziesz mógł używać powiązanego numeru telefonu/adresu e-mail lub konta zewnętrznego do logowania; \n\n• Wszystkie powiązane urządzenia zostaną odłączone. Aby nadal z nich korzystać, zarejestruj się i dodaj ponownie.</string>
+    <string name="AA0493">• Nie można używać oryginalnego numeru telefonu/emaila ani konta zewnętrznego do logowania; \n\n• Wszystkie urządzenia powiązane z oryginalnym kontem zostały odłączone. Aby z nich korzystać, zarejestruj się i dodaj ponownie.</string>
     <string name="AA0494">Zmiana awatara nie powiodła się</string>
     <string name="AA0495">Zaproszenie do aktualizacji aplikacji</string>
     <string name="AA0496">%sTeraz online. Zobacz aktualizacje &gt;&gt;</string>
@@ -493,4 +494,5 @@ Aby uniknąć zbyt szybkiego braku mocy, automatycznie przełączył się na try
     <string name="AA0652">Przepływ danych</string>
     <string name="AA0653">Moje zamówienia</string>
     <string name="AA0654">Moje kupony</string>
+    <string name="AA0656">Offline, aktualizacja niedostępna</string>
 </resources>

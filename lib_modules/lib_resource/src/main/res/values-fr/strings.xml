@@ -35,7 +35,8 @@
     <string name="AA0043">Mon compte</string>
     <string name="AA0044">Accord de l\'utilisateur</string>
     <string name="AA0045">Résumé de l\'accord de service à utilisateur et de la politique de confidentialité</string>
-    <string name="AA0046">Bienvenue à utiliser demo ! C’est une plate-forme audio et vidéo en ligne développée et exploitée par XXXXXXXX. (ci-après dénommée « nous »). Veuillez lire saignement la « Politique de confidentialité » et « Accord de l’utilisateur » pour connaître et comprendre notre collecte, utilisation, stockage et partage des informations personnelles et vos droits associés. n\ Pour vous fournir des vidéos en direct, la rediffusion de vidéos, l\'abonnement et la collection, l\'interaction de la communauté et d\'autres services, nous devons collecter vos informations personnelles telles que les enregistrements vidéo, les images vidéo, les informations sur les appareils, les journaux des opérations, etc. n\ Vous pouvez accéder, corriger et supprimer vos informations personelles et gérer votre autorisation dans le Centre Personnel; n\nous utiliserons une technologie de sécurité de pointe pour protéger vos informations personnelles. n\ Vous pouvez en savoir plus en lisant la version complète de %1$s et de %2$s. \n Si vous êtes d’accord, veuillez cliquer sur « D’accord » pour accepter nos services.</string>
+    <string name="AA0046">Bienvenue à utiliser demo ! C’est une plate-forme audio et vidéo en ligne développée et exploitée par demo IoT XXXXXXXX., Ltd. (ci-après dénommée « nous »). Veuillez lire saignement la « Politique de confidentialité » et « Accord de l’utilisateur » pour connaître et comprendre notre collecte, utilisation, stockage et partage des informations personnelles et vos droits associés. n\ Pour vous fournir des vidéos en direct, la rediffusion de vidéos, l\'abonnement et la collection, l\'interaction de la communauté et d\'autres services, nous devons collecter vos informations personnelles telles que les enregistrements vidéo, les images vidéo, les informations sur les appareils, les journaux des opérations, etc. n\ Vous pouvez accéder, corriger et supprimer vos informations personelles et gérer votre autorisation dans le Centre Personnel; n\nous utiliserons une technologie de sécurité de pointe pour protéger vos informations personnelles. n\ Vous pouvez en savoir plus en lisant la version complète de %1$s et de %2$s. \n Si vous êtes d’accord, veuillez cliquer sur « D’accord » pour accepter nos services.</string>
+    <string name="AA0047">Maison de %s</string>
     <string name="AA0049">Ajouter un appareil</string>
     <string name="AA0050">Partager appareil</string>
     <string name="AA0051">Scannez</string>
@@ -83,7 +84,7 @@
     <string name="AA0123">Connexion Wi-Fi de l\'appareil</string>
     <string name="AA0124">1. Veuillez connecter votre téléphone au point d\'accès de la caméra : Wi-Fi commence par \'XT-\'</string>
     <string name="AA0125">2. Retourner à l\'APP</string>
-    <string name="AA0126">\&quot;XT-\&quot; n\'est pas trouvé, comment faire?</string>
+    <string name="AA0126">\"XT-\" n\'est pas trouvé, comment faire?</string>
     <string name="AA0127">1. La caméra ne supporterait pas l’accès rapide au réseau (Par point d\'accès). Veuillez choisir le mode de connexion selon les instructions vocales de la caméra.</string>
     <string name="AA0128">2. Votre Smartphone et la caméra sont trop loin. La distance appropriée est de 30 cm maximum. Essayez de faire un reset de la caméra puis réessayez.</string>
     <string name="AA0129">Connectez-vous au Wi-Fi commençant par \'XT-\'</string>
@@ -382,8 +383,8 @@ Pour éviter qu\'il ne s\'épuise trop vite, il est passé automatiquement en mo
     <string name="AA0489">Le surnom ne peut pas être vide</string>
     <string name="AA0490">Le numéro de téléphone ne peut pas être vide</string>
     <string name="AA0491">L\'email ne peut pas être vide</string>
-    <string name="AA0492">?? Toutes vos données personnelles et historiques sauvegardées dans le cloud seront irrécupérables ; \n\n?? Votre historique d\'achat sera effacé et ne pourra pas être récupéré, pas de remboursement ; \n\n?? Tous les niveaux, points, droits, etc., accumulés auparavant, seront invalidés et ne pourront pas être récupérés ; \n\n?? Vous ne pourrez plus utiliser le numéro de téléphone / l\'e-mail lié et le compte tiers pour vous connecter ; \n\n?? Vos appareils liés seront tous dissociés. Pour continuer à les utiliser, veuillez vous inscrire et les ajouter à nouveau.</string>
-    <string name="AA0493">?? Impossible d\'utiliser le numéro de téléphone/l\'e-mail original ou le compte tiers pour se connecter ; \n\n?? Les appareils liés au compte d\'origine ont été dissociés. Pour les utiliser, veuillez vous inscrire et les ajouter à nouveau.</string>
+    <string name="AA0492">• Toutes vos données personnelles et historiques sauvegardées dans le cloud seront irrécupérables ; \n\n• Votre historique d\'achat sera effacé et ne pourra pas être récupéré, pas de remboursement ; \n\n• Tous les niveaux, points, droits, etc., accumulés auparavant, seront invalidés et ne pourront pas être récupérés ; \n\n • Vous ne pourrez plus utiliser le numéro de téléphone / l\'e-mail lié et le compte tiers pour vous connecter ; \n\n• Vos appareils liés seront tous dissociés. Pour continuer à les utiliser, veuillez vous inscrire et les ajouter à nouveau.</string>
+    <string name="AA0493">• Impossible d\'utiliser le numéro de téléphone/l\'e-mail original ou le compte tiers pour se connecter ; \n\n• Les appareils liés au compte d\'origine ont été dissociés. Pour les utiliser, veuillez vous inscrire et les ajouter à nouveau.</string>
     <string name="AA0494">Échec de la modification de l\'avatar</string>
     <string name="AA0495">Indication de mise à jour de l\'APP</string>
     <string name="AA0496">%s est publiée. Afficher les derniers contenus &gt;&gt;</string>
@@ -492,4 +493,5 @@ Pour éviter qu\'il ne s\'épuise trop vite, il est passé automatiquement en mo
     <string name="AA0652">Données</string>
     <string name="AA0653">Mes commandes</string>
     <string name="AA0654">Mes coupons</string>
+    <string name="AA0656">Hors ligne, mise à jour indispo</string>
 </resources>

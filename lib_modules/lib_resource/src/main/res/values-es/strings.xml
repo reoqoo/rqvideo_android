@@ -35,7 +35,8 @@
     <string name="AA0043">Usuario</string>
     <string name="AA0044">Acuerdo de Usuario</string>
     <string name="AA0045">Resumen del acuerdo de servicio del usuario y la política de privacidad</string>
-    <string name="AA0046">¡Bienvenido a demo! demo es  una plataforma de audio y video en línea desarrollada y operada por XXXXXXXX. (abreviado en adelante, \&quot;nosotros\&quot;). Le ayudaremos a comprender la situación de nuestra recopilación, uso, almacenamiento y los datos personales compartidos y sus derechos relacionados a través de la \&quot;Política de Privacidad\&quot; y el \&quot;Acuerdo de Usuario\&quot;. \n Para proporcionarle los servicios de videos en vivo, reproducción de video, colección de suscripción , interacción con la comunidad , etc., necesitamos recopilar sus datos personales como grabaciones de video, imágenes de video, información del dispositivo, registros de operaciones, etc. ;  \n Puede acceder,corregir, eliminar su información personal y gestionar su autorización en el centro personal;   \n Utilizaremos tecnología de seguridad avanzada en la industria para proteger su información personal. \n Puede aprender más detalles leyendo la versión completa %1$sy%2$s. \n Si está de acuerdo, haga clic en \&quot;De Acuerdo\&quot; para acceder a nuestros servicios.</string>
+    <string name="AA0046">¡Bienvenido a demo! demo es  una plataforma de audio y video en línea desarrollada y operada por demo IoT XXXXXXXX., Ltd. (abreviado en adelante, \"nosotros\"). Le ayudaremos a comprender la situación de nuestra recopilación, uso, almacenamiento y los datos personales compartidos y sus derechos relacionados a través de la \"Política de Privacidad\" y el \"Acuerdo de Usuario\". \n Para proporcionarle los servicios de videos en vivo, reproducción de video, colección de suscripción , interacción con la comunidad , etc., necesitamos recopilar sus datos personales como grabaciones de video, imágenes de video, información del dispositivo, registros de operaciones, etc. ;  \n Puede acceder,corregir, eliminar su información personal y gestionar su autorización en el centro personal;   \n Utilizaremos tecnología de seguridad avanzada en la industria para proteger su información personal. \n Puede aprender más detalles leyendo la versión completa %1$sy%2$s. \n Si está de acuerdo, haga clic en \"De Acuerdo\" para acceder a nuestros servicios.</string>
+    <string name="AA0047">Casa de %s</string>
     <string name="AA0049">Añadir dispositivo</string>
     <string name="AA0050">Compartir dispositivo</string>
     <string name="AA0051">Escanear</string>
@@ -242,7 +243,7 @@
     <string name="AA0324">Verificar identidad</string>
     <string name="AA0325">Para la seguridad de la cuenta, verifique primero su contraseña de acceso.</string>
     <string name="AA0326">Contraseña de acceso</string>
-    <string name="AA0327">Si olvida la contraseña original, cierre sesión, clic \&quot;Olvidé mi contraseña\&quot;, use el código de verificación para restablecer la contraseña.</string>
+    <string name="AA0327">Si olvida la contraseña original, cierre sesión, clic \"Olvidé mi contraseña\", use el código de verificación para restablecer la contraseña.</string>
     <string name="AA0328">¿Realmente desea anular la Cuenta?</string>
     <string name="AA0329">Toda información y los datos se borrarán una vez que se anule la cuenta.</string>
     <string name="AA0330">¡Cancelada la cuenta con éxito! ¡Gracias por su uso!</string>
@@ -313,7 +314,7 @@
     <string name="AA0405">Un éxito se alcanzará, os rogamos esperar con paciencia</string>
     <string name="AA0406">ID del dispositivo inválido</string>
     <string name="AA0407">Wi-Fi desconectado</string>
-    <string name="AA0408">\&quot;Política de Privacidad\&quot;</string>
+    <string name="AA0408">\"Política de Privacidad\"</string>
     <string name="AA0409">Error en formato del número de celular</string>
     <string name="AA0410">Introducir la constraseña</string>
     <string name="AA0412">¿Tiene problema urgente? También puede enviar correo para dejar su opinión</string>
@@ -382,8 +383,8 @@ Se cambia automáticamente al modo de ahorro de energía para evitar que la bate
     <string name="AA0489">El apodo no puede estar vacío</string>
     <string name="AA0490">El número de teléfono no puede estar vacío</string>
     <string name="AA0491">El correo electrónico no puede estar vacío</string>
-    <string name="AA0492">?? Toda la información personal y de historial guardada en la nube no se podrá recuperar; \n\n?? Su historial de compras será eliminado y no podrá recuperarse, sin reembolsos; \n\n?? Cualquier nivel, puntos, derechos, etc., acumulados, se invalidará y no podrán recuperarse; \n\n?? No podrá usar el número de teléfono/correo electrónico vinculado, ni la cuenta de terceros para seguir iniciando sesión; \n\n?? Sus dispositivos vinculados se desvincularán. Para seguir usándolos, por favor regístrese y añádalos de nuevo.</string>
-    <string name="AA0493">?? No se puede usar el número de teléfono/correo electrónico original o una cuenta de terceros para iniciar sesión; \n\n?? Todos los dispositivos vinculados a la cuenta original se han desvinculado. Para usarlos, por favor regístrese y añádalos de nuevo.</string>
+    <string name="AA0492">• Toda la información personal y de historial guardada en la nube no se podrá recuperar; \n\n• Su historial de compras será eliminado y no podrá recuperarse, sin reembolsos; \n\n• Cualquier nivel, puntos, derechos, etc., acumulados, se invalidará y no podrán recuperarse; \n\n• No podrá usar el número de teléfono/correo electrónico vinculado, ni la cuenta de terceros para seguir iniciando sesión; \n\n• Sus dispositivos vinculados se desvincularán. Para seguir usándolos, por favor regístrese y añádalos de nuevo.</string>
+    <string name="AA0493">• No se puede usar el número de teléfono/correo electrónico original o una cuenta de terceros para iniciar sesión; \n\n• Todos los dispositivos vinculados a la cuenta original se han desvinculado. Para usarlos, por favor regístrese y añádalos de nuevo.</string>
     <string name="AA0494">Error al cambiar el avatar</string>
     <string name="AA0495">Invitación a la actualización de la APP</string>
     <string name="AA0496">%s ya está en línea. Ver las actualizaciones&gt;&gt;</string>
@@ -492,4 +493,5 @@ Se cambia automáticamente al modo de ahorro de energía para evitar que la bate
     <string name="AA0652">Tráfico de datos</string>
     <string name="AA0653">Mis órdenes</string>
     <string name="AA0654">Mis cupones</string>
+    <string name="AA0656">Fuera de línea, no disponible</string>
 </resources>

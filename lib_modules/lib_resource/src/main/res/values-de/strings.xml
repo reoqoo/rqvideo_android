@@ -35,7 +35,8 @@
     <string name="AA0043">Mein</string>
     <string name="AA0044">Vereinbarung</string>
     <string name="AA0045">Zusammenfassung der Nutzerservicevereinbarung und Datenschutzrichtlinie</string>
-    <string name="AA0046">Willkommen bei demo! demo ist eine Online-Audio- und -Videoplattform, die von XXXXXXXX  (im Folgenden als „wir“ bezeichnet) entwickelt und betrieben wird. Wir helfen Ihnen zu verstehen, wie wir Ihre persönlichen Daten im Rahmen der Datenschutzrichtlinie und der Benutzervereinbarung sammeln, verwenden, speichern und weitergeben und was für Rechte Sie haben. \n Um Ihnen Live-Video, Videowiedergabe, Sammlungsabonnement, Community-Interaktion und andere Dienste zur Verfügung zu stellen, müssen wir Ihre persönlichen Daten wie Videoaufzeichnungen, Videobilder, Geräteinformationen, Betriebsprotokolle usw. sammeln. \n Sie können auf Ihre persönlichen Daten zugreifen, diese korrigieren, löschen und Ihre Autorisierung im Persönlichen Zentrum verwalten. \n Wir werden branchenführende Sicherheitstechnologien verwenden, um Ihre persönlichen Daten zu schützen. \n Sie können mehr erfahren, indem Sie die Vollversionen von %1$s und %2$s lesen. \n Wenn Sie damit einverstanden sind, klicken Sie bitte auf „Zustimmen“, um unsere Dienstleistungen zu akzeptieren.</string>
+    <string name="AA0046">Willkommen bei demo! demo ist eine Online-Audio- und -Videoplattform, die von Shenzhen DophiGo IoT Technology  (im Folgenden als „wir“ bezeichnet) entwickelt und betrieben wird. Wir helfen Ihnen zu verstehen, wie wir Ihre persönlichen Daten im Rahmen der Datenschutzrichtlinie und der Benutzervereinbarung sammeln, verwenden, speichern und weitergeben und was für Rechte Sie haben. \n Um Ihnen Live-Video, Videowiedergabe, Sammlungsabonnement, Community-Interaktion und andere Dienste zur Verfügung zu stellen, müssen wir Ihre persönlichen Daten wie Videoaufzeichnungen, Videobilder, Geräteinformationen, Betriebsprotokolle usw. sammeln. \n Sie können auf Ihre persönlichen Daten zugreifen, diese korrigieren, löschen und Ihre Autorisierung im Persönlichen Zentrum verwalten. \n Wir werden branchenführende Sicherheitstechnologien verwenden, um Ihre persönlichen Daten zu schützen. \n Sie können mehr erfahren, indem Sie die Vollversionen von %1$s und %2$s lesen. \n Wenn Sie damit einverstanden sind, klicken Sie bitte auf „Zustimmen“, um unsere Dienstleistungen zu akzeptieren.</string>
+    <string name="AA0047">%ss Zuhause</string>
     <string name="AA0049">Geräte hinzufügen</string>
     <string name="AA0050">Gerät teilen</string>
     <string name="AA0051">scannen</string>
@@ -64,7 +65,10 @@
     <string name="AA0082">Bitte sicherstellen, dass sich das Handy in der Nähe der Kamera befindet</string>
     <string name="AA0088">erneut versuchen</string>
     <string name="AA0089">erfolgreich hinzugefügt</string>
-    <string name="AA0099">andere</string>
+    <string name="AA0099">Andere</string>
+    <string name="AA0100">Speichern Sie den Geräte-QR-Code im Album</string>
+    <string name="AA0101">Beginnen Sie</string>
+    <string name="AA0102">Gerätename ändern</string>
     <string name="AA0103">Einstellung</string>
     <string name="AA0104">WLAN konfigurieren</string>
     <string name="AA0105">Gerät unterstützt 2.4GHz Wi-Fi</string>
@@ -80,7 +84,7 @@
     <string name="AA0123">Geräte Wi-Fi verbinden</string>
     <string name="AA0124">1. Bitte das Handy mit dem Kamerahotspot verbinden: Wi-Fi beginnt mit \'XT-\'</string>
     <string name="AA0125">2. Zurück zur APP</string>
-    <string name="AA0126">“XT-\&quot; nicht finden？</string>
+    <string name="AA0126">“XT-\" nicht finden？</string>
     <string name="AA0127">1. Es ist möglich, Gerät Schnell-Zugang nicht zu unterstützen (Hotspot-Verbindung). Folgen Sie die Sprachanweisungen des Geräts, um die Verbindungsmittels auszuwählen.</string>
     <string name="AA0128">2. Handy ist zu fern mit Gerät. Abstand von 30 cm ist ziemlich geeignet.</string>
     <string name="AA0129">Verbinde dich mit dem Wi-Fi, das mit \'XT-\' beginnt</string>
@@ -239,7 +243,7 @@
     <string name="AA0324">Identität überprüfen</string>
     <string name="AA0325">Zur Sicherheit des Kontos überprüfen Sie bitte zuerst das Anmeldepasswort</string>
     <string name="AA0326">Anmelde-Passwort</string>
-    <string name="AA0327">Wenn Sie das ursprüngliche Passwort vergessen haben, melden Sie sich bitte ab, klicken Sie auf \&quot;Passwort vergessen\&quot; und setzen Sie das Passwort mit dem Bestätigungscode zurück</string>
+    <string name="AA0327">Wenn Sie das ursprüngliche Passwort vergessen haben, melden Sie sich bitte ab, klicken Sie auf \"Passwort vergessen\" und setzen Sie das Passwort mit dem Bestätigungscode zurück</string>
     <string name="AA0328">Wollen Sie es wirklich kündigen?</string>
     <string name="AA0329">Nachdem das Konto gekündigt wurde, werden alle Informationen und Daten gelöscht.</string>
     <string name="AA0330">Die Kündigung des Kontos ist erfolgreich! Danke, dass Sie es benutzt haben</string>
@@ -379,8 +383,8 @@ Um zu vermeiden, dass der Strom zu schnell ausgeht, wurde das Gerät automatisch
     <string name="AA0489">Spitzname darf nicht leer sein</string>
     <string name="AA0490">Telefonnummer darf nicht leer sein</string>
     <string name="AA0491">E-Mail darf nicht leer sein</string>
-    <string name="AA0492">??Alle in der Cloud gespeicherten persönlichen Daten und Verlaufsinformationen sind nicht abrufbar; \n\n?? Ihre Kaufhistorie wird gelöscht und kann nicht wiederhergestellt werden, keine Rückerstattung; \n\n?? Alle zuvor akkumulierten Level, Punkte, Rechte usw. werden ungültig und können nicht wiederhergestellt werden; \n\n?? Sie können sich nicht mehr mit der gebundenen Telefonnummer/E-Mail oder einem Drittanbieter-Konto anmelden; \n\n?? Ihre gebundenen Geräte werden alle abgebunden. Um sie weiterhin zu verwenden, bitte nach der Anmeldung erneut hinzufügen.</string>
-    <string name="AA0493">??Nicht mehr mit der ursprünglichen Telefonnummer/E-Mail oder einem Drittanbieter-Konto einloggen können; \n\n?? Ursprüngliche Kontoverknüpfung mit Geräten wurde aufgehoben. Um sie weiterhin zu verwenden, bitte nach der Anmeldung erneut hinzufügen.</string>
+    <string name="AA0492">• Alle in der Cloud gespeicherten persönlichen Daten und Verlaufsinformationen sind nicht abrufbar; \n\n• Ihre Kaufhistorie wird gelöscht und kann nicht wiederhergestellt werden, keine Rückerstattung; \n\n • Alle zuvor akkumulierten Level, Punkte, Rechte usw. werden ungültig und können nicht wiederhergestellt werden; \n\n• Sie können sich nicht mehr mit der gebundenen Telefonnummer/E-Mail oder einem Drittanbieter-Konto anmelden; \n\n• Ihre gebundenen Geräte werden alle abgebunden. Um sie weiterhin zu verwenden, bitte nach der Anmeldung erneut hinzufügen.</string>
+    <string name="AA0493">• Nicht mehr mit der ursprünglichen Telefonnummer/E-Mail oder einem Drittanbieter-Konto einloggen können; \n\n• Ursprüngliche Kontoverknüpfung mit Geräten wurde aufgehoben. Um sie weiterhin zu verwenden, bitte nach der Anmeldung erneut hinzufügen.</string>
     <string name="AA0494">Ändern des Avatars fehlgeschlagen</string>
     <string name="AA0495">Einladung zum APP/Update</string>
     <string name="AA0496">%s ist jetzt online. Updates anzeigen&gt;&gt;</string>
@@ -489,4 +493,5 @@ Um zu vermeiden, dass der Strom zu schnell ausgeht, wurde das Gerät automatisch
     <string name="AA0652">Datenverkehr</string>
     <string name="AA0653">Meine Bestellungen</string>
     <string name="AA0654">Meine Gutscheine</string>
+    <string name="AA0656">Offline, Update nicht möglich</string>
 </resources>

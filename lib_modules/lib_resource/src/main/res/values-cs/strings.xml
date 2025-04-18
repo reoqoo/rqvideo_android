@@ -35,7 +35,7 @@
     <string name="AA0043">Moje</string>
     <string name="AA0044">Souhlas uživatele</string>
     <string name="AA0045">Shrnutí smlouvy o službách pro uživatele a zásadách ochrany osobních údajů</string>
-    <string name="AA0046">Jste vítáni k používání video technologie demo u je online audio platforma vyvinutá a provozovaná společností XXXXXXXX. (dále jen „Pomůžete nám“). sdílená, videa, která o nás vidíte. Video obrázky, informace o zařízení, protokoly a další osobní informace;\nMůžete získat přístup, opravit a odstranit své oprávnění;\nK ochraně vašich osobních údajů použijeme technologii osobního zabezpečení v nejvyšším operačním středisku. \nPro úplné podrobnosti si můžete přečíst verzi %1$s a %2$s. \nPokud souhlasíte, kliknutím na „Souhlasím“ přijměte naši službu.</string>
+    <string name="AA0046">Jste vítáni k používání video technologie demo u je online audio platforma vyvinutá a provozovaná společností demo IoT XXXXXXXX., Ltd. (dále jen „Pomůžete nám“). sdílená, videa, která o nás vidíte. Video obrázky, informace o zařízení, protokoly a další osobní informace;\nMůžete získat přístup, opravit a odstranit své oprávnění;\nK ochraně vašich osobních údajů použijeme technologii osobního zabezpečení v nejvyšším operačním středisku. \nPro úplné podrobnosti si můžete přečíst verzi %1$s a %2$s. \nPokud souhlasíte, kliknutím na „Souhlasím“ přijměte naši službu.</string>
     <string name="AA0047">%sDomů</string>
     <string name="AA0049">Přidat zařízení</string>
     <string name="AA0050">Sdílení zařízení</string>
@@ -83,14 +83,14 @@
     <string name="AA0121">Typ:</string>
     <string name="AA0122">SN：</string>
     <string name="AA0123">Připojit zařízení Wi-Fi</string>
-    <string name="AA0124">1. Připojte telefon k hotspotu fotoaparátu: Wi-Fi začínající na \&quot;XT -\&quot;</string>
+    <string name="AA0124">1. Připojte telefon k hotspotu fotoaparátu: Wi-Fi začínající na \"XT -\"</string>
     <string name="AA0125">2. Návrat do aplikace</string>
-    <string name="AA0126">Nelze najít \&quot;XT-\&quot;?</string>
+    <string name="AA0126">Nelze najít \"XT-\"?</string>
     <string name="AA0127">1. Přístroj nemusí podporovat rychlé připojení k síti (připojení hotspotu). Postupujte podle hlasových výzev zařízení a zvolte způsob připojení.</string>
     <string name="AA0128">2. Vzdálenost mezi mobilním telefonem a přístrojem je příliš velká. Měla by být do
 30 cm.</string>
     <string name="AA0129">Připojení k Wi-Fi začínající na \'XT -\'</string>
-    <string name="AA0130">Po připojení k Wi-Fi začínajícím na \&quot;XT -\&quot;, nezapomeňte se vrátit do aplikace, abyste dokončili proces přidávání~</string>
+    <string name="AA0130">Po připojení k Wi-Fi začínajícím na \"XT -\", nezapomeňte se vrátit do aplikace, abyste dokončili proces přidávání~</string>
     <string name="AA0131">Rozumím</string>
     <string name="AA0132">Skenování</string>
     <string name="AA0133">Potvrďte, že zařízení čeká na připojení,umístěte prosím telefon blízko kamery</string>
@@ -317,7 +317,7 @@
     <string name="AA0405">Prosím, čekejte...</string>
     <string name="AA0406">Neplatné ID zařízení</string>
     <string name="AA0407">Wi-Fi není připojeno</string>
-    <string name="AA0408">\&quot;Dohoda o ochraně osobních údajů\&quot;</string>
+    <string name="AA0408">\"Dohoda o ochraně osobních údajů\"</string>
     <string name="AA0409">Špatný formát telefonního čísla</string>
     <string name="AA0410">Zadat heslo</string>
     <string name="AA0412">Naléhavý problém? Pošlete nám e-mail.</string>
@@ -386,8 +386,8 @@ Aby se zabránilo příliš rychlému vyčerpání energie, automaticky se přep
     <string name="AA0489">Přezdívka nemůže být prázdná</string>
     <string name="AA0490">Mobilní telefonní číslo nemůže být prázdné</string>
     <string name="AA0491">E-mail nemůže být prázdný</string>
-    <string name="AA0492">Všechny osobní údaje a historické údaje uložené v cloudu nebudou získávat; \Vaše nákupní záznamy budou vymazány a nelze je obnovit a nebude vydáno žádné vrácení peněz; \Všechny dříve nahromaděné úrovně, body, benefity atd. budou neplatné a nelze je obnovit; \nebudete se moci přihlásit pomocí vázaného telefonního čísla/e-mailu, stejně jako účtů třetích stran; \Všechna zařízení, která jste svázali, budou odpojena. Chcete-li pokračovat v používání, zaregistrujte se a přidejte znovu.</string>
-    <string name="AA0493">Nelze použít telefonní číslo/e-mail propojené s původním účtem, stejně jako účty třetích stran k pokračování přihlášení; \Zařízení spojená s původním účtem byla všechna odpojena. Chcete-li pokračovat v používání, zaregistrujte se a přidejte znovu.</string>
+    <string name="AA0492">• Všechny osobní údaje a historické údaje uložené v cloudu nebudou získávat; \n\n• Vaše nákupní záznamy budou vymazány a nelze je obnovit a nebude vydáno žádné vrácení peněz; \n\n• Všechny dříve nahromaděné úrovně, body, benefity atd. budou neplatné a nelze je obnovit; \n\n• Nebudete se moci přihlásit pomocí vázaného telefonního čísla/e-mailu, stejně jako účtů třetích stran; \n\n• Všechna zařízení, která jste svázali, budou odpojena. Chcete-li pokračovat v používání, zaregistrujte se a přidejte znovu.</string>
+    <string name="AA0493">• Nelze použít telefonní číslo/e-mail propojené s původním účtem, stejně jako účty třetích stran k pokračování přihlášení; \n\n• Zařízení spojená s původním účtem byla všechna odpojena. Chcete-li pokračovat v používání, zaregistrujte se a přidejte znovu.</string>
     <string name="AA0494">Nepodařilo se upravit avatar</string>
     <string name="AA0495">Pozvánka na aktualizaci APP</string>
     <string name="AA0496">%sNyní online. Zobrazit aktualizace &gt;&gt;</string>
@@ -424,7 +424,7 @@ Aby se zabránilo příliš rychlému vyčerpání energie, automaticky se přep
     <string name="AA0530">Návštěvník neexistuje</string>
     <string name="AA0531">Sdílet/upravovat může pouze vlastník zařízení; Aktuální zařízení již má vlastníka a úprava hosta jako oprávnění vlastníka není povolena</string>
     <string name="AA0537">Version</string>
-    <string name="AA0545">Přečetl jsem si a souhlasím s \&quot;Uživatelskou smlouvou\&quot; a \&quot;Zásadami ochrany osobních údajů\&quot;</string>
+    <string name="AA0545">Přečetl jsem si a souhlasím s \"Uživatelskou smlouvou\" a \"Zásadami ochrany osobních údajů\"</string>
     <string name="AA0546">fotoaparát</string>
     <string name="AA0559">Neplatný QR kód</string>
     <string name="AA0560">Starý QR kód vypršel</string>
@@ -433,11 +433,11 @@ Aby se zabránilo příliš rychlému vyčerpání energie, automaticky se přep
     <string name="AA0566">Cílový účet není k dispozici</string>
     <string name="AA0567">Cílový účet neexistuje</string>
     <string name="AA0569">《Dohoda o ochraně osobních údajů》</string>
-    <string name="AA0570">\&quot;Souhlas uživatele\&quot;</string>
+    <string name="AA0570">\"Souhlas uživatele\"</string>
     <string name="AA0571">Enjoy your real cool life</string>
     <string name="AA0572">Cloudová služba je v současné době aktualizována, zůstaňte prosím naladěni</string>
     <string name="AA0573">Chyba sítě</string>
-    <string name="AA0574">Přečetl jsem si a souhlasím s \&quot;Uživatelskou smlouvou\&quot; a \&quot;Zásadami ochrany osobních údajů\&quot;</string>
+    <string name="AA0574">Přečetl jsem si a souhlasím s \"Uživatelskou smlouvou\" a \"Zásadami ochrany osobních údajů\"</string>
     <string name="AA0577">Zadejte správnou e-mailovou adresu</string>
     <string name="AA0578">Zadejte prosím svůj účet a heslo</string>
     <string name="AA0579">Zadejte heslo</string>
@@ -496,4 +496,5 @@ Aby se zabránilo příliš rychlému vyčerpání energie, automaticky se přep
     <string name="AA0652">průtok</string>
     <string name="AA0653">Moje objednávka</string>
     <string name="AA0654">Můj poukaz na kartu</string>
+    <string name="AA0656">Offline, aktualizace nedostupná</string>
 </resources>
