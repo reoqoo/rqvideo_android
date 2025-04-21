@@ -141,10 +141,10 @@ dependencies {
     // 屏幕适配
     implementation "me.jessyan:autosize:${Versions.ThirdVersions.VERSION_AUTO_SIZE}"
 
-    api("com.gwell:aar_plugin_service:${Versions.ThirdVersions.VERSION_PT_PLUGIN}") {
-        exclude group: 'com.tencentcs'
-        exclude group: 'org.permissionsdispatcher'
-    }
+//    api("com.gwell:aar_plugin_service:${Versions.ThirdVersions.VERSION_PT_PLUGIN}") {
+//        exclude group: 'com.tencentcs'
+//        exclude group: 'org.permissionsdispatcher'
+//    }
 }
 
 /**
