@@ -35,7 +35,7 @@
     <string name="AA0043">Account</string>
     <string name="AA0044">User agreement</string>
     <string name="AA0045">User agreement and privacy policy</string>
-    <string name="AA0046">Welcome to demo! demo is developed and operated by XXXXXXXX. It\'s a platform to provide online video and audio.\n User Agreement &amp; Privacy Policy will help you get a comprehensive understanding of how we collect, use, store and share your personal information, as well as what rights you enjoy. \n In order to provide services such as live video, video playback, favorite subscription, community interaction, etc., we may collect the following types of personal information, including video recording, videos and pictures, device information, operation logs, etc. \n You can access/update/delete your information and manage the permissions via \&quot;Me\&quot; interface on the app. \n We will take all practicable steps to safeguard your personal information.\n You can get more information via %1$s &amp; %2$s. \n If your agree to it, please click \&quot;Agree\&quot; to get the service.</string>
+    <string name="AA0046">Welcome to demo! demo is developed and operated by demo IoT XXXXXXXX., Ltd. It\'s a platform to provide online video and audio.\n User Agreement &amp; Privacy Policy will help you get a comprehensive understanding of how we collect, use, store and share your personal information, as well as what rights you enjoy. \n In order to provide services such as live video, video playback, favorite subscription, community interaction, etc., we may collect the following types of personal information, including video recording, videos and pictures, device information, operation logs, etc. \n You can access/update/delete your information and manage the permissions via \"Me\" interface on the app. \n We will take all practicable steps to safeguard your personal information.\n You can get more information via %1$s &amp; %2$s. \n If your agree to it, please click \"Agree\" to get the service.</string>
     <string name="AA0047">%s\'s home</string>
     <string name="AA0049">Add device</string>
     <string name="AA0050">Device sharing</string>
@@ -51,11 +51,11 @@
     <string name="AA0062">Scan the QR code on the device</string>
     <string name="AA0063">Flashlight</string>
     <string name="AA0064">Album</string>
-    <string name="AA0065">Allow \&quot;demo\&quot; to use your Camera?</string>
+    <string name="AA0065">Allow \"demo\" to use your Camera?</string>
     <string name="AA0066">Need to scan the QR code to connect and bind the device, is it allowed to open the camera?</string>
     <string name="AA0067">Reject</string>
     <string name="AA0068">No camera authorization, please enable in Settings</string>
-    <string name="AA0069">Allow \&quot;demo\&quot; to use your location information?</string>
+    <string name="AA0069">Allow \"demo\" to use your location information?</string>
     <string name="AA0070">To successfully added equipment, you need allow the use of the Location Services for getting Wi-Fi information.Please turn on Location Services</string>
     <string name="AA0071">The positioning permission is disabled. Please enable it in Settings</string>
     <string name="AA0076">The Bluetooth permission is disabled. Please enable it in Settings</string>
@@ -83,13 +83,13 @@
     <string name="AA0121">Model:</string>
     <string name="AA0122">SN：</string>
     <string name="AA0123">Connect device Wi-Fi</string>
-    <string name="AA0124">1. Connect your phone to the camera hotspot: Wi-Fi starting with \&quot;XT-\&quot;</string>
+    <string name="AA0124">1. Connect your phone to the camera hotspot: Wi-Fi starting with \"XT-\"</string>
     <string name="AA0125">2. Return to the APP</string>
-    <string name="AA0126">Cannot find \&quot;XT-\&quot;?</string>
+    <string name="AA0126">Cannot find \"XT-\"?</string>
     <string name="AA0127">1. The device may not support fast networking (hotspot connection).Please follow the device voice prompts to select the connection method.</string>
     <string name="AA0128">2. The distance between the mobile phone and the device is too far. A suitable distance is within 30 cm.</string>
-    <string name="AA0129">Connect the Wi-Fi starting with \&quot;XT-\&quot;</string>
-    <string name="AA0130">Make sure to complete the adding process by returning to APP after connecting to the Wi-Fi that starts with \&quot;XT-\&quot;.</string>
+    <string name="AA0129">Connect the Wi-Fi starting with \"XT-\"</string>
+    <string name="AA0130">Make sure to complete the adding process by returning to APP after connecting to the Wi-Fi that starts with \"XT-\".</string>
     <string name="AA0131">I get it</string>
     <string name="AA0132">Scanning</string>
     <string name="AA0133">Confirm the device is waiting to connect,put your cellphone close to the camera</string>
@@ -494,4 +494,5 @@
     <string name="AA0652">Data</string>
     <string name="AA0653">My Orders</string>
     <string name="AA0654">My Coupons</string>
+    <string name="AA0656">Offline, upgrade unavailable</string>
 </resources>

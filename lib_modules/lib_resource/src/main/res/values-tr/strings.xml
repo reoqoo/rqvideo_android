@@ -35,7 +35,8 @@
     <string name="AA0043">Benim</string>
     <string name="AA0044">Kullanıcı Sözleşmesi</string>
     <string name="AA0045">Kullanıcı hizmet sözleşmesi ve gizlilik politikasının özeti</string>
-    <string name="AA0046">demo kullandığınız için teşekkür ederiz! demo, XXXXXXXX. (bundan sonra \&quot;biz\&quot; olarak anılacaktır) tarafından geliştirilen ve işletilen bir çevrimiçi ses ve video platformudur. Gizlilik Sözleşmesi ve  Kullanıcı Sözleşmesi ile kişisel bilgileri topladığımız, kullandığımız, sakladığımız ve paylaştığımız durumu anlamanıza yardım edeceğiz. \n size canlı yayın, video oynatma, koleksiyon aboneliği, topluluk etkileşimi ve diğer hizmetleri sağlamak için video kayıtları, video resimleri, cihaz bilgileri, işlem günlükleri vb. kişisel bilgilerinizi toplamamız gerekir. \n siz kişisel merkezde, kişisel bilgileri gözden geçirme, düzeltme, silme işlemleri ile ilgili yetkilendirme ve yönetme yapabilirsiniz. \n Kişisel bilgilerinizi korumak için sektör lideri güvenlik teknolojisini kullanacaktır. \n siz tam eksiksiz olan %1$s ve %2$s okuyarak detaylı bilgilere sahip olabilirsiniz.  \n Kabul ediyorsanız, hizmetlerimizi kabul etmek için lütfen \&quot;Kabul Ediyorum\&quot; u tıklayın.</string>
+    <string name="AA0046">demo kullandığınız için teşekkür ederiz! demo, demo IoT XXXXXXXX., Ltd. (bundan sonra \"biz\" olarak anılacaktır) tarafından geliştirilen ve işletilen bir çevrimiçi ses ve video platformudur. Gizlilik Sözleşmesi ve  Kullanıcı Sözleşmesi ile kişisel bilgileri topladığımız, kullandığımız, sakladığımız ve paylaştığımız durumu anlamanıza yardım edeceğiz. \n size canlı yayın, video oynatma, koleksiyon aboneliği, topluluk etkileşimi ve diğer hizmetleri sağlamak için video kayıtları, video resimleri, cihaz bilgileri, işlem günlükleri vb. kişisel bilgilerinizi toplamamız gerekir. \n siz kişisel merkezde, kişisel bilgileri gözden geçirme, düzeltme, silme işlemleri ile ilgili yetkilendirme ve yönetme yapabilirsiniz. \n Kişisel bilgilerinizi korumak için sektör lideri güvenlik teknolojisini kullanacaktır. \n siz tam eksiksiz olan %1$s ve %2$s okuyarak detaylı bilgilere sahip olabilirsiniz.  \n Kabul ediyorsanız, hizmetlerimizi kabul etmek için lütfen \"Kabul Ediyorum\" u tıklayın.</string>
+    <string name="AA0047">%s\'in evi</string>
     <string name="AA0049">Cihaz ekle</string>
     <string name="AA0050">Cihazı paylaş</string>
     <string name="AA0051">Tarayın</string>
@@ -243,7 +244,7 @@
     <string name="AA0324">Kimlik doğrulama</string>
     <string name="AA0325">Hesap güvenliği için, lütfen önce giriş şifrenizi doğrulayın.</string>
     <string name="AA0326">Giriş şifresi</string>
-    <string name="AA0327">Eski şifrenizi unuttuysanız, lütfen oturumu kapatın, \&quot;Şifremi unuttumu\&quot;u tıklayın ve doğrulama kodu ile tekrar ayarlayın.</string>
+    <string name="AA0327">Eski şifrenizi unuttuysanız, lütfen oturumu kapatın, \"Şifremi unuttumu\"u tıklayın ve doğrulama kodu ile tekrar ayarlayın.</string>
     <string name="AA0328">Gerçekten kapatmak istiyor musunuz?</string>
     <string name="AA0329">Hesap kapatıldıktan sonra tüm bilgiler ve veriler silinecek.</string>
     <string name="AA0330">Hesabı başarıyla kapattınız! Kullandığınız için teşekkür ederiz</string>
@@ -383,8 +384,8 @@ Pilin çok çabuk bitmesini önlemek için otomatik olarak güç tasarrufu modun
     <string name="AA0489">Takma ad boş olamaz</string>
     <string name="AA0490">Telefon numarası boş olamaz</string>
     <string name="AA0491">E-posta boş olamaz</string>
-    <string name="AA0492">?? Bulutta saklanan tüm kişisel veriler ve geçmiş bilgiler geri alınamaz; \n\n?? Alışveriş geçmişiniz silinir ve geri getirilemez, iade yok; \n\n?? Önceden biriktirdiğiniz seviyeler, puanlar, haklar vb. geçersiz olacak ve geri alınamaz; \n\n?? Bağlı telefon numarası/e-posta adresini ve üçüncü taraf hesabını giriş yapmak için kullanamazsınız; \n\n?? Tüm bağlı cihazlarınızın bağlantısı kesilecektir. Onları kullanmaya devam etmek için, lütfen kaydolun ve yeniden ekleyin.</string>
-    <string name="AA0493">?? Orijinal telefon numarası/e-posta veya üçüncü taraf hesabı ile giriş yapılamıyor; \n\n?? Orijinal hesaba bağlı tüm cihazlar bağlantıdan çıkarıldı. Kullanmak için, lütfen kaydolun ve tekrar ekleyin.</string>
+    <string name="AA0492">• Bulutta saklanan tüm kişisel veriler ve geçmiş bilgiler geri alınamaz; \n\n• Alışveriş geçmişiniz silinir ve geri getirilemez, iade yok; \n\n• Önceden biriktirdiğiniz seviyeler, puanlar, haklar vb. geçersiz olacak ve geri alınamaz; \n\n• Bağlı telefon numarası/e-posta adresini ve üçüncü taraf hesabını giriş yapmak için kullanamazsınız; \n\n• Tüm bağlı cihazlarınızın bağlantısı kesilecektir. Onları kullanmaya devam etmek için, lütfen kaydolun ve yeniden ekleyin.</string>
+    <string name="AA0493">• Orijinal telefon numarası/e-posta veya üçüncü taraf hesabı ile giriş yapılamıyor; \n\n• Orijinal hesaba bağlı tüm cihazlar bağlantıdan çıkarıldı. Kullanmak için, lütfen kaydolun ve tekrar ekleyin.</string>
     <string name="AA0494">Avatar değiştirme başarısız</string>
     <string name="AA0495">APP güncelleme daveti</string>
     <string name="AA0496">%sÇevrim içi oldu. Güncellemeleri görüntüle &gt;&gt;</string>
@@ -493,4 +494,5 @@ Pilin çok çabuk bitmesini önlemek için otomatik olarak güç tasarrufu modun
     <string name="AA0652">Veri trafiği</string>
     <string name="AA0653">Siparişlerim</string>
     <string name="AA0654">Kuponlarım</string>
+    <string name="AA0656">Çevrimdışı, güncelleme yok</string>
 </resources>

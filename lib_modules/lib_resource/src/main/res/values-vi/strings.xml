@@ -35,7 +35,7 @@
     <string name="AA0043">Của tôi</string>
     <string name="AA0044">Thỏa thuận người dùng</string>
     <string name="AA0045">Tóm tắt chính sách riêng tư và hiệp thương dịch vụ người dùng</string>
-    <string name="AA0046">Chào mừng bạn sử dụng demo! demo là nền tảng âm thanh và video trực tuyến do demo IoT Technology Co., Ltd. nghiên cứu và phát triển đồng thời đưa vào hoạt động (Sau đây gọi là \&quot;chúng tôi\&quot;). Chúng tôi sẽ giúp bạn hiểu cách chúng tôi thu thập, sử dụng, lưu trữ và chia sẻ thông tin cá nhân và các quyền liên quan của bạn thông qua \&quot;Chính sách Bảo mật\&quot; và \&quot;Thỏa thuận Người dùng\&quot; của chúng tôi. \nĐể cung cấp cho bạn video phát trực tiếp, phát lại video, đăng ký lưu trữ, tương tác cộng đồng và các dịch vụ khác,chúng tôi cần thu thập thông tin cá nhân của bạn như quay video, hình ảnh video, thông tin thiết bị, nhật ký hoạt động, v.v; \nBạn có thể truy cập, sửa, xóa thông tin cá nhân của mình và quản lý các ủy quyền của bạn trong trung tâm cá nhân; \nChúng tôi bảo vệ thông tin cá nhân của bạn bằng các công nghệ bảo mật hàng đầu trong ngành. \nBạn có thể tìm hiểu thông tin kỹ càng đầy đủ bằng cách đọc phiên bản đầy đủ %1$s và %2$s. \nNếu bạn đồng ý, vui lòng nhấp vào \&quot;Đồng ý\&quot; để chấp nhận dịch vụ của chúng tôi.</string>
+    <string name="AA0046">Chào mừng bạn sử dụng demo! demo là nền tảng âm thanh và video trực tuyến do demo IoT XXXXXXXX., Ltd. nghiên cứu và phát triển đồng thời đưa vào hoạt động (Sau đây gọi là \"chúng tôi\"). Chúng tôi sẽ giúp bạn hiểu cách chúng tôi thu thập, sử dụng, lưu trữ và chia sẻ thông tin cá nhân và các quyền liên quan của bạn thông qua \"Chính sách Bảo mật\" và \"Thỏa thuận Người dùng\" của chúng tôi. \nĐể cung cấp cho bạn video phát trực tiếp, phát lại video, đăng ký lưu trữ, tương tác cộng đồng và các dịch vụ khác,chúng tôi cần thu thập thông tin cá nhân của bạn như quay video, hình ảnh video, thông tin thiết bị, nhật ký hoạt động, v.v; \nBạn có thể truy cập, sửa, xóa thông tin cá nhân của mình và quản lý các ủy quyền của bạn trong trung tâm cá nhân; \nChúng tôi bảo vệ thông tin cá nhân của bạn bằng các công nghệ bảo mật hàng đầu trong ngành. \nBạn có thể tìm hiểu thông tin kỹ càng đầy đủ bằng cách đọc phiên bản đầy đủ %1$s và %2$s. \nNếu bạn đồng ý, vui lòng nhấp vào \"Đồng ý\" để chấp nhận dịch vụ của chúng tôi.</string>
     <string name="AA0047">Nhà của %s</string>
     <string name="AA0049">Thêm thiết bị</string>
     <string name="AA0050">Chia sẻ thiết bị</string>
@@ -83,13 +83,13 @@
     <string name="AA0121">Model:</string>
     <string name="AA0122">SN：</string>
     <string name="AA0123">Kết nối Wi-Fi thiết bị</string>
-    <string name="AA0124">1. Vui lòng kết nối điện thoại của bạn với điểm phát sóng camera: Wi-Fi bắt đầu bằng \&quot;XT-\&quot;</string>
+    <string name="AA0124">1. Vui lòng kết nối điện thoại của bạn với điểm phát sóng camera: Wi-Fi bắt đầu bằng \"XT-\"</string>
     <string name="AA0125">2. Quay lại APP</string>
-    <string name="AA0126">Làm thế nào khi không tìm thấy \&quot;XT-\&quot;?</string>
+    <string name="AA0126">Làm thế nào khi không tìm thấy \"XT-\"?</string>
     <string name="AA0127">1. Thiết bị khả năng không hỗ trợ kết nối mạng tốc độ nhanh (điểm truy cập). Xin lựa chọn phương thức liên kết theo lời nhắc thoại của thiết bị.</string>
     <string name="AA0128">2. Khoảng cách di động với thiết bị quá xa. Khoảng cách trong phạm vị 30cm là hợp lý.</string>
-    <string name="AA0129">Tới kết nối Wi-Fi bắt đầu bằng \&quot;XT-\&quot;</string>
-    <string name="AA0130">Sau khi kết nối với Wi-Fi bắt đầu bằng \&quot;XT-\&quot;, hãy nhớ quay lại APP để hoàn tất quá trình thêm~</string>
+    <string name="AA0129">Tới kết nối Wi-Fi bắt đầu bằng \"XT-\"</string>
+    <string name="AA0130">Sau khi kết nối với Wi-Fi bắt đầu bằng \"XT-\", hãy nhớ quay lại APP để hoàn tất quá trình thêm~</string>
     <string name="AA0131">Tôi đã biết</string>
     <string name="AA0132">Đang quét</string>
     <string name="AA0133">Vui lòng xác nhận thiết bị đang ở trạng thái chờ liên kết và vui lòng nhớ để điện thoại gần camera</string>
@@ -137,7 +137,7 @@
     <string name="AA0191">Chia sẻ người dùng</string>
     <string name="AA0192">Giám sát nhà</string>
     <string name="AA0193">Để bật tính năng giám sát nhà cửa thông minh, cần thêm 1 camera</string>
-    <string name="AA0194">Đi đến \&quot;Thêm\&quot;</string>
+    <string name="AA0194">Đi đến \"Thêm\"</string>
     <string name="AA0195">Hình ảnh thời gian thực</string>
     <string name="AA0196">Cửa sổ</string>
     <string name="AA0197">Sắp xếp</string>
@@ -245,7 +245,7 @@
     <string name="AA0324">Xác minh danh tính</string>
     <string name="AA0325">Để an toàn tài khoản, xin xác minh mật khẩu đăng nhập của bạn trước</string>
     <string name="AA0326">Đăng nhập mật khẩu</string>
-    <string name="AA0327">Nếu bạn quên mật khẩu ban đầu, xin đăng xuất, nhấp vào \&quot;Quên mật khẩu\&quot;, sử dụng mã xác minh để đặt lại mật khẩu</string>
+    <string name="AA0327">Nếu bạn quên mật khẩu ban đầu, xin đăng xuất, nhấp vào \"Quên mật khẩu\", sử dụng mã xác minh để đặt lại mật khẩu</string>
     <string name="AA0328">Xác nhận đóng tài khoản chứ?</string>
     <string name="AA0329">Tất cả thông tin và dữ liệu sẽ bị xóa sau khi tài khoản bị gạch bỏ</string>
     <string name="AA0330">Gạch bỏ tài khoản thành công! Cảm ơn bạn đã sử dụng</string>
@@ -338,7 +338,7 @@
     <string name="AA0436">Phút</string>
     <string name="AA0437">Hủy livestream</string>
     <string name="AA0438">Bật bluetooth của điện thoại và nhanh chóng thêm thiết bị</string>
-    <string name="AA0439">Vui lòng ấn vào \&quot;Cho phép các kết nối mới\&quot; trong cài đặt Bluetooth</string>
+    <string name="AA0439">Vui lòng ấn vào \"Cho phép các kết nối mới\" trong cài đặt Bluetooth</string>
     <string name="AA0440">Kết nối Wi-Fi đã hết hạn</string>
     <string name="AA0441">Thêm lại</string>
     <string name="AA0442">Không thể tải danh sách Wi-Fi mà không bật GPS, vui lòng mở ngay bây giờ.</string>
@@ -386,7 +386,7 @@
     <string name="AA0490">Không được để trống số điện thoại</string>
     <string name="AA0491">Không được để trống email</string>
     <string name="AA0492">• Sau khi tài khoản bị gạch bỏ, bạn sẽ bỏ đi các tài sản và lợi ích sau đây. \n\n • Tất cả tài liệu cá nhân và thông tin lịch sử của bạn sẽ không  lấy lại được. \n\n  • Nhật ký tải và mua hàng của bạn sẽ được làm trống và không thể được phục hồi. Không hoàn lại tiền đã được thanh toán. \n\n • Bất kỳ cấp, điểm, lợi ích vv... mà bạn đã tích lũy trước đó sẽ bị xỏa bỏ và không thể được phục hồi. \n\n • Bạn sẽ không thể sử dụng số điện thoại / hộp thư gắn với tài khoản và tài khoản bên thứ ba tiếp tục đăng nhập. \n\n • Các thiết bị bạn liên kết sẽ bị gỡ. Nếu bạn muốn tiếp tục sử dụng, xin đăng ký lại sau đó thêm lại.</string>
-    <string name="AA0493">Không thể sử dụng số điện thoại / hộp thư được liên kết với tài khoản gốc và tài khoản bên thứ ba để tiếp tục đăng nhập. \n\n • Các thiết bị được liên kết với tài khoản gốc đều bị gỡ. Nếu bạn muốn tiếp tục sử dụng nó, xin đăng ký lại sau đó thêm lại.</string>
+    <string name="AA0493">• Không thể sử dụng số điện thoại / hộp thư được liên kết với tài khoản gốc và tài khoản bên thứ ba để tiếp tục đăng nhập. \n\n • Các thiết bị được liên kết với tài khoản gốc đều bị gỡ. Nếu bạn muốn tiếp tục sử dụng nó, xin đăng ký lại sau đó thêm lại.</string>
     <string name="AA0494">Chỉnh sửa ảnh đại diện thất bại</string>
     <string name="AA0495">Lời mời cập nhật APP</string>
     <string name="AA0496">%s đã trực tuyến. Xem thông tin cập nhật &gt;&gt;</string>
@@ -495,4 +495,5 @@
     <string name="AA0652">Dung lượng</string>
     <string name="AA0653">Đơn hàng của tôi</string>
     <string name="AA0654">Phiếu giảm giá</string>
+    <string name="AA0656">Ngoại tuyến, không thể nâng cấp</string>
 </resources>
