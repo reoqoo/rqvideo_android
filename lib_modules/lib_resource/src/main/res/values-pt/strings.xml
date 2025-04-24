@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="AA0001">Hello , demo ！</string>
+    <string name="AA0001">Hello , ipTIME ！</string>
     <string name="AA0002">Endereço de e-mail/número de celular</string>
     <string name="AA0003">Senha</string>
     <string name="AA0004">Login</string>
@@ -23,7 +23,7 @@
     <string name="AA0025">A nova senha deve conter 8-30 caracteres, contendo letras e números</string>
     <string name="AA0026">Digite novamente</string>
     <string name="AA0031">Recuperação de senha</string>
-    <string name="AA0032">Digite o ID demo</string>
+    <string name="AA0032">Digite o ID ipTIME</string>
     <string name="AA0034">Digite o código de verificação</string>
     <string name="AA0035">O código de verificação já foi enviado para</string>
     <string name="AA0036">Reenviar</string>
@@ -32,10 +32,10 @@
     <string name="AA0040">O código de verificação foi enviado</string>
     <string name="AA0041">Casa</string>
     <string name="AA0042">Monitoramento</string>
-    <string name="AA0043">Meu demo</string>
+    <string name="AA0043">Meu ipTIME</string>
     <string name="AA0044">Termo de Acordo do Usuário</string>
     <string name="AA0045">Resumo do acordo de serviço do usuário e política de privacidade</string>
-    <string name="AA0046">Seja bem-vindo a usar demo! demo é uma plataforma de áudio e vídeo on-line pequisada e desenvolvida e operada pela demo IoT XXXXXXXX., Ltd.(Doravante denominado \"nós\"), usaremos a Acordo de Privacidade e o  Acordo de Usuário para ajudá-lo a entender a situação como coletamos, usamos, armazenamos e compartilhamos informações pessoais e seus direitos relacionados. \n Para fornecer vídeo ao vivo, reprodução de vídeo, assinatura de coleção, interação com a comunidade e outros serviços, precisamos coletar suas informações pessoais, como gravações de vídeo, imagens de vídeo, informações de dispositivo, registros de operação, etc; \n Você pode acessar, corrigir, excluir suas informações pessoais e gerenciar sua autorização no Centro Pessoal; \n Utilizaremos tecnologias de segurança líderes do setor para proteger suas informações pessoais.\n Você pode entender os detalhes lendo a versão completa de %1$s e %2$s.\n Se você concordar, clique em \"Concordo\" para aceitar os nossos serviços.</string>
+    <string name="AA0046">Seja bem-vindo a usar ipTIME! ipTIME é uma plataforma de áudio e vídeo on-line pequisada e desenvolvida e operada pela ipTIME IoT XXXXXXXX., Ltd.(Doravante denominado \"nós\"), usaremos a Acordo de Privacidade e o  Acordo de Usuário para ajudá-lo a entender a situação como coletamos, usamos, armazenamos e compartilhamos informações pessoais e seus direitos relacionados. \n Para fornecer vídeo ao vivo, reprodução de vídeo, assinatura de coleção, interação com a comunidade e outros serviços, precisamos coletar suas informações pessoais, como gravações de vídeo, imagens de vídeo, informações de dispositivo, registros de operação, etc; \n Você pode acessar, corrigir, excluir suas informações pessoais e gerenciar sua autorização no Centro Pessoal; \n Utilizaremos tecnologias de segurança líderes do setor para proteger suas informações pessoais.\n Você pode entender os detalhes lendo a versão completa de %1$s e %2$s.\n Se você concordar, clique em \"Concordo\" para aceitar os nossos serviços.</string>
     <string name="AA0047">Casa de %s</string>
     <string name="AA0049">Adicionar dispositivo</string>
     <string name="AA0050">Compartilhar dispositivo</string>
@@ -50,11 +50,11 @@
     <string name="AA0062">Escanear QR code no dispositivo para adicionar</string>
     <string name="AA0063">Lanterna</string>
     <string name="AA0064">Álbum</string>
-    <string name="AA0065">demo deseja usar sua câmera</string>
+    <string name="AA0065">ipTIME deseja usar sua câmera</string>
     <string name="AA0066">É necessário digitalizar o código QR para conectar e ligar o dispositivo. Você permite acessar a câmera?</string>
     <string name="AA0067">Rejeitar</string>
     <string name="AA0068">Sem permissão de câmera, ative nas Configurações</string>
-    <string name="AA0069">demo deseja usar suas informações de localização</string>
+    <string name="AA0069">ipTIME deseja usar suas informações de localização</string>
     <string name="AA0070">Para adicionar equipamentos com sucesso, é necessário permitir o uso dos Serviços de Localização para obter informações sobre o Wi-Fi. Por favor ative os Serviços de Localização.</string>
     <string name="AA0071">Sem permissão de localização, ative-a nas configurações</string>
     <string name="AA0076">Sem permissão de Bluetooth, ative-a nas configurações</string>
@@ -98,8 +98,8 @@
     <string name="AA0145">Escolha o dispositivo para compartilhar</string>
     <string name="AA0146">É possível adicionar no máximo X visitantes. Exclua alguns se quiser continuar compartilhando com outras pessoas.</string>
     <string name="AA0147">Gestão de compartilhamento</string>
-    <string name="AA0148">Digite a conta demo para compartilhar o dispositivo</string>
-    <string name="AA0149">Por favor, insira a conta demo</string>
+    <string name="AA0148">Digite a conta ipTIME para compartilhar o dispositivo</string>
+    <string name="AA0149">Por favor, insira a conta ipTIME</string>
     <string name="AA0150">Compartilhado recentemente</string>
     <string name="AA0151">Compartilhamento face a face</string>
     <string name="AA0153">Nome de usuário incorreto, por favor, tente novamente</string>
@@ -107,7 +107,7 @@
     <string name="AA0155">Já compartilhado com este amigo</string>
     <string name="AA0156">Compartilhado com sucesso</string>
     <string name="AA0157">Válido até</string>
-    <string name="AA0158">Escaneie o QR code acima com o APP demo para compartilhar o dispositivo</string>
+    <string name="AA0158">Escaneie o QR code acima com o APP ipTIME para compartilhar o dispositivo</string>
     <string name="AA0159">Amigos já compartilhados</string>
     <string name="AA0160">Falha ao obter o QR code, clique para atualizar</string>
     <string name="AA0161">%s compartilhou um equipamento com você</string>
@@ -163,9 +163,9 @@
     <string name="AA0221">Idioma</string>
     <string name="AA0222">Feedback</string>
     <string name="AA0223">Ajuda e feedback</string>
-    <string name="AA0224">Sobre demo</string>
+    <string name="AA0224">Sobre ipTIME</string>
     <string name="AA0225">Centro de Notificação</string>
-    <string name="AA0227">Ativar a permissão de notificação do APP demo para obter as últimas notícias a tempo</string>
+    <string name="AA0227">Ativar a permissão de notificação do APP ipTIME para obter as últimas notícias a tempo</string>
     <string name="AA0228">Não há mais mensagens</string>
     <string name="AA0230">Selecionar</string>
     <string name="AA0232">Compartilhar</string>
@@ -344,7 +344,7 @@
     <string name="AA0444">Continue adicionando</string>
     <string name="AA0445">Voltar</string>
     <string name="AA0446">excluir falhou</string>
-    <string name="AA0447">demo</string>
+    <string name="AA0447">ipTIME</string>
     <string name="AA0448">Feito(%1$s/%2$s)</string>
     <string name="AA0450">Visualizar</string>
     <string name="AA0451">Visualizar(%s)</string>
@@ -420,7 +420,8 @@
     <string name="AA0530">O visitante não existe</string>
     <string name="AA0531">Somente o proprietário pode compartilhar/alterar; dispositivo atual já tem um proprietário, não é permitido alterar o visitante para proprietário</string>
     <string name="AA0537">Versão</string>
-    <string name="AA0545">Li e concordo com o Acordo de Utilizador e a Política de Privacidade da demo</string>
+    <string name="AA0538">Atualização bem-sucedida</string>
+    <string name="AA0545">Li e concordo com o Acordo de Utilizador e a Política de Privacidade da ipTIME</string>
     <string name="AA0546">câmara</string>
     <string name="AA0559">Código QR inválido.</string>
     <string name="AA0560">Código QR antigo expirado.</string>
@@ -456,7 +457,7 @@
     <string name="AA0613">Configurações de notificação push</string>
     <string name="AA0614">Configurações de permissões do sistema</string>
     <string name="AA0615">Notificação de mensagem push</string>
-    <string name="AA0616">Ao ativar, você receberá oportunamente as últimas notícias do aplicativo demo</string>
+    <string name="AA0616">Ao ativar, você receberá oportunamente as últimas notícias do aplicativo ipTIME</string>
     <string name="AA0617">Autorizar</string>
     <string name="AA0618">Ativado</string>
     <string name="AA0619">Localização</string>
@@ -473,7 +474,7 @@
     <string name="AA0630">Ao ativar, pode usar o reprodução de vídeo em pequena janela e notificações de sino de monitoramento</string>
     <string name="AA0631">Interface em janela pop-up em segundo plano</string>
     <string name="AA0632">Ao ativar, você pode receber notificações do sino de monitoramento</string>
-    <string name="AA0633">Para oferecer uma melhor experiência ao usuário, a demo solicitará as seguintes permissões do sistema em determinadas situações.</string>
+    <string name="AA0633">Para oferecer uma melhor experiência ao usuário, a ipTIME solicitará as seguintes permissões do sistema em determinadas situações.</string>
     <string name="AA0634">Autorizado</string>
     <string name="AA0635">Não autorizado</string>
     <string name="AA0637">Monitoramento em tempo real</string>
@@ -493,4 +494,5 @@
     <string name="AA0653">Meus pedidos</string>
     <string name="AA0654">Meus cupons</string>
     <string name="AA0656">Offline, atualização indisponível</string>
+    <string name="AA0657">Anomalia do sistema</string>
 </resources>

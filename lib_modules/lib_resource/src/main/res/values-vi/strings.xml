@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="AA0001">Hello, demo!</string>
+    <string name="AA0001">Hello, ipTIME!</string>
     <string name="AA0002">Email/Số di động</string>
     <string name="AA0003">Mật khẩu</string>
     <string name="AA0004">Đăng nhập</string>
@@ -23,7 +23,7 @@
     <string name="AA0025">Mật khẩu gồm 8~30 ký tự, gồm cả chữ và số</string>
     <string name="AA0026">Nhập lần nữa</string>
     <string name="AA0031">Lấy lại mật khẩu</string>
-    <string name="AA0032">Vui lòng nhập tài khoản demo của bạn</string>
+    <string name="AA0032">Vui lòng nhập tài khoản ipTIME của bạn</string>
     <string name="AA0034">Vui lòng nhập mã xác nhận</string>
     <string name="AA0035">Mã xác minh đã được gửi đến</string>
     <string name="AA0036">Gửi lại</string>
@@ -35,7 +35,7 @@
     <string name="AA0043">Của tôi</string>
     <string name="AA0044">Thỏa thuận người dùng</string>
     <string name="AA0045">Tóm tắt chính sách riêng tư và hiệp thương dịch vụ người dùng</string>
-    <string name="AA0046">Chào mừng bạn sử dụng demo! demo là nền tảng âm thanh và video trực tuyến do demo IoT XXXXXXXX., Ltd. nghiên cứu và phát triển đồng thời đưa vào hoạt động (Sau đây gọi là \"chúng tôi\"). Chúng tôi sẽ giúp bạn hiểu cách chúng tôi thu thập, sử dụng, lưu trữ và chia sẻ thông tin cá nhân và các quyền liên quan của bạn thông qua \"Chính sách Bảo mật\" và \"Thỏa thuận Người dùng\" của chúng tôi. \nĐể cung cấp cho bạn video phát trực tiếp, phát lại video, đăng ký lưu trữ, tương tác cộng đồng và các dịch vụ khác,chúng tôi cần thu thập thông tin cá nhân của bạn như quay video, hình ảnh video, thông tin thiết bị, nhật ký hoạt động, v.v; \nBạn có thể truy cập, sửa, xóa thông tin cá nhân của mình và quản lý các ủy quyền của bạn trong trung tâm cá nhân; \nChúng tôi bảo vệ thông tin cá nhân của bạn bằng các công nghệ bảo mật hàng đầu trong ngành. \nBạn có thể tìm hiểu thông tin kỹ càng đầy đủ bằng cách đọc phiên bản đầy đủ %1$s và %2$s. \nNếu bạn đồng ý, vui lòng nhấp vào \"Đồng ý\" để chấp nhận dịch vụ của chúng tôi.</string>
+    <string name="AA0046">Chào mừng bạn sử dụng ipTIME! ipTIME là nền tảng âm thanh và video trực tuyến do ipTIME IoT XXXXXXXX., Ltd. nghiên cứu và phát triển đồng thời đưa vào hoạt động (Sau đây gọi là \"chúng tôi\"). Chúng tôi sẽ giúp bạn hiểu cách chúng tôi thu thập, sử dụng, lưu trữ và chia sẻ thông tin cá nhân và các quyền liên quan của bạn thông qua \"Chính sách Bảo mật\" và \"Thỏa thuận Người dùng\" của chúng tôi. \nĐể cung cấp cho bạn video phát trực tiếp, phát lại video, đăng ký lưu trữ, tương tác cộng đồng và các dịch vụ khác,chúng tôi cần thu thập thông tin cá nhân của bạn như quay video, hình ảnh video, thông tin thiết bị, nhật ký hoạt động, v.v; \nBạn có thể truy cập, sửa, xóa thông tin cá nhân của mình và quản lý các ủy quyền của bạn trong trung tâm cá nhân; \nChúng tôi bảo vệ thông tin cá nhân của bạn bằng các công nghệ bảo mật hàng đầu trong ngành. \nBạn có thể tìm hiểu thông tin kỹ càng đầy đủ bằng cách đọc phiên bản đầy đủ %1$s và %2$s. \nNếu bạn đồng ý, vui lòng nhấp vào \"Đồng ý\" để chấp nhận dịch vụ của chúng tôi.</string>
     <string name="AA0047">Nhà của %s</string>
     <string name="AA0049">Thêm thiết bị</string>
     <string name="AA0050">Chia sẻ thiết bị</string>
@@ -51,11 +51,11 @@
     <string name="AA0062">Quét mã QR trên thân thiết bị để thêm thiết bị</string>
     <string name="AA0063">Đèn pin</string>
     <string name="AA0064">Album ảnh</string>
-    <string name="AA0065">demo muốn sử dụng máy ảnh của bạn</string>
+    <string name="AA0065">ipTIME muốn sử dụng máy ảnh của bạn</string>
     <string name="AA0066">Bạn cần quét mã QR để kết nối và ràng buộc các thiết bị. Có được phép mở camera không?</string>
     <string name="AA0067">Từ chối</string>
     <string name="AA0068">Không có quyền đối với máy ảnh, vui lòng bật trong Cài đặt</string>
-    <string name="AA0069">demo muốn sử dụng thông tin vị trí của bạn</string>
+    <string name="AA0069">ipTIME muốn sử dụng thông tin vị trí của bạn</string>
     <string name="AA0070">Để thiết bị thêm thành công, bạn cần cho phép việc sử dụng các dịch vụ Location để nhận thông tin Wi-Fi. Hãy bật Location Services</string>
     <string name="AA0071">Không có quyền định vị, vui lòng bật quyền trong Cài đặt</string>
     <string name="AA0076">Không có quyền Bluetooth, vui lòng bật quyền trong Cài đặt</string>
@@ -99,8 +99,8 @@
     <string name="AA0145">Chọn thiết bị để chia sẻ</string>
     <string name="AA0146">Chỉ có thể chia sẻ cho tối đa %s người, nếu muốn tiếp tục chia sẻ cho người khác, xin hãy xóa bớt một số khách!</string>
     <string name="AA0147">Chia sẻ quản lý</string>
-    <string name="AA0148">Nhập tài khoản demo bạn muốn chia sẻ thiết bị</string>
-    <string name="AA0149">Vui lòng nhập tài khoản demo của bạn</string>
+    <string name="AA0148">Nhập tài khoản ipTIME bạn muốn chia sẻ thiết bị</string>
+    <string name="AA0149">Vui lòng nhập tài khoản ipTIME của bạn</string>
     <string name="AA0150">Chia sẻ gần đây</string>
     <string name="AA0151">Chia sẻ ngay</string>
     <string name="AA0153">Tên người dùng sai, vui lòng nhập lại</string>
@@ -108,7 +108,7 @@
     <string name="AA0155">Đã chia sẻ với người bạn này</string>
     <string name="AA0156">Chia sẻ thành công</string>
     <string name="AA0157">Có hiệu lực đến</string>
-    <string name="AA0158">Sử dụng APP demo để quét mã QR ở trên để chia sẻ thiết bị</string>
+    <string name="AA0158">Sử dụng APP ipTIME để quét mã QR ở trên để chia sẻ thiết bị</string>
     <string name="AA0159">Những người bạn đã chia sẻ</string>
     <string name="AA0160">Không lấy được mã QR, nhấn vào để làm mới</string>
     <string name="AA0161">%s đã chia sẻ một thiết bị cho bạn</string>
@@ -164,9 +164,9 @@
     <string name="AA0221">Ngôn ngữ</string>
     <string name="AA0222">Phản hồi vấn đề</string>
     <string name="AA0223">Trợ giúp và Phản hồi</string>
-    <string name="AA0224">Về demo</string>
+    <string name="AA0224">Về ipTIME</string>
     <string name="AA0225">Trung tâm Tin nhắn</string>
-    <string name="AA0227">Bật quyền thông báo của Ứng dụng demo để nhận tin tức mới nhất kịp thời</string>
+    <string name="AA0227">Bật quyền thông báo của Ứng dụng ipTIME để nhận tin tức mới nhất kịp thời</string>
     <string name="AA0228">Không có thông tin</string>
     <string name="AA0230">Lựa chọn</string>
     <string name="AA0232">Chia sẻ</string>
@@ -346,7 +346,7 @@
     <string name="AA0444">Tiếp tục thêm</string>
     <string name="AA0445">Quay lại</string>
     <string name="AA0446">Xóa thất bại</string>
-    <string name="AA0447">demo</string>
+    <string name="AA0447">ipTIME</string>
     <string name="AA0448">Hoàn thành(%1$s/%2$s)</string>
     <string name="AA0450">Xem trước</string>
     <string name="AA0451">Xem trước(%s)</string>
@@ -423,6 +423,7 @@
     <string name="AA0530">Khách không tồn tại</string>
     <string name="AA0531">Chỉ chủ sở hữu thiết bị mới có thể chia sẻ/chỉnh sửa; thiết bị hiện tại đã có chủ sở hữu, không được phép đổi quyền khách thành chủ sở hữu</string>
     <string name="AA0537">Version</string>
+    <string name="AA0538">Nâng cấp thành công</string>
     <string name="AA0545">Tôi đã đọc và đồng ý với 《Thỏa thuận người dùng》và《Chính sách Bảo mật》</string>
     <string name="AA0546">Máy ảnh</string>
     <string name="AA0559">Mã QR không hợp lệ</string>
@@ -459,7 +460,7 @@
     <string name="AA0613">Cài đặt đẩy tin nhắn</string>
     <string name="AA0614">Cài đặt quyền hệ thống</string>
     <string name="AA0615">Thông báo đẩy tin nhắn</string>
-    <string name="AA0616">Sau khi bật, có thể nhận thông tin mới nhất từ APP demo</string>
+    <string name="AA0616">Sau khi bật, có thể nhận thông tin mới nhất từ APP ipTIME</string>
     <string name="AA0617">Đến ủy quyền</string>
     <string name="AA0618">Đã mở</string>
     <string name="AA0619">Vị trí</string>
@@ -476,7 +477,7 @@
     <string name="AA0630">Sau khi bật, có thể dùng tính năng phát lại cửa sổ nhỏ của video giám sát, cửa sổ nổi chuông giám sát</string>
     <string name="AA0631">Giao diện bật lên trong nền</string>
     <string name="AA0632">Sau khi bật, có thể nhận được thông báo về chuông giám sát</string>
-    <string name="AA0633">Để cung cấp cho bạn trải nghiệm người dùng tốt hơn, demo sẽ xin bạn cấp quyền hệ thống điện thoại sau trong các trường hợp cụ thể</string>
+    <string name="AA0633">Để cung cấp cho bạn trải nghiệm người dùng tốt hơn, ipTIME sẽ xin bạn cấp quyền hệ thống điện thoại sau trong các trường hợp cụ thể</string>
     <string name="AA0634">Đã ủy quyền</string>
     <string name="AA0635">Chưa ủy quyền</string>
     <string name="AA0637">Giám sát thời gian thực</string>
@@ -496,4 +497,5 @@
     <string name="AA0653">Đơn hàng của tôi</string>
     <string name="AA0654">Phiếu giảm giá</string>
     <string name="AA0656">Ngoại tuyến, không thể nâng cấp</string>
+    <string name="AA0657">Hệ thống ngoại lệ</string>
 </resources>

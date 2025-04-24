@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="AA0001">Hello , demo ！</string>
+    <string name="AA0001">Hello , ipTIME ！</string>
     <string name="AA0002">E-mail adres / telefoonnummer</string>
     <string name="AA0003">Wachtwoord</string>
     <string name="AA0004">Login</string>
@@ -23,7 +23,7 @@
     <string name="AA0025">Wachtwoord moet 8-30 tekens lang zijn, en zowel letters als cijfers bevatten.</string>
     <string name="AA0026">Voer nogmaals in</string>
     <string name="AA0031">Wachtwoord opvragen</string>
-    <string name="AA0032">Vul demo ID</string>
+    <string name="AA0032">Vul ipTIME ID</string>
     <string name="AA0034">Voer verificatiecode in</string>
     <string name="AA0035">De verificatiecode is verzonden naar</string>
     <string name="AA0036">Opnieuw versturen</string>
@@ -35,7 +35,7 @@
     <string name="AA0043">Mijn</string>
     <string name="AA0044">Gebruikersovereenkomst</string>
     <string name="AA0045">Samenvatting van gebruikersovereenkomst en privacybeleid</string>
-    <string name="AA0046">U bent van harte welkom om demo. demo is een online audioplatform dat is ontwikkeld en beheerd door demo IoT XXXXXXXX., Ltd. (hierna \"You Help Us\" genoemd). Begrijp alsjeblieft dat we zullen verzamelen, gebruiken, hoe informatie wordt opgeslagen en gedeelde video\'s die u over ons ziet. Videobeelden, apparaatinformatie, logboeken en andere persoonlijke informatie;\nU kunt uw autorisatie openen, corrigeren en verwijderen;\nWe zullen persoonlijke beveiligingstechnologie gebruiken in het topoperatiecentrum om uw persoonlijke informatie te beschermen. \nU kunt de versie %1$s en %2$s lezen voor volledige details. \nAls u akkoord gaat, klikt u op \"Akkoord\" om onze service te accepteren.</string>
+    <string name="AA0046">U bent van harte welkom om ipTIME. ipTIME is een online audioplatform dat is ontwikkeld en beheerd door ipTIME IoT XXXXXXXX., Ltd. (hierna \"You Help Us\" genoemd). Begrijp alsjeblieft dat we zullen verzamelen, gebruiken, hoe informatie wordt opgeslagen en gedeelde video\'s die u over ons ziet. Videobeelden, apparaatinformatie, logboeken en andere persoonlijke informatie;\nU kunt uw autorisatie openen, corrigeren en verwijderen;\nWe zullen persoonlijke beveiligingstechnologie gebruiken in het topoperatiecentrum om uw persoonlijke informatie te beschermen. \nU kunt de versie %1$s en %2$s lezen voor volledige details. \nAls u akkoord gaat, klikt u op \"Akkoord\" om onze service te accepteren.</string>
     <string name="AA0047">%s\'s huis</string>
     <string name="AA0049">Apparaat toevoegen</string>
     <string name="AA0050">Apparaat delen</string>
@@ -50,11 +50,11 @@
     <string name="AA0062">Scan de QR-code op het apparaat om toe te voegen</string>
     <string name="AA0063">Zaklamp</string>
     <string name="AA0064">Fotoalbum</string>
-    <string name="AA0065">demo wil uw camera gebruiken</string>
+    <string name="AA0065">ipTIME wil uw camera gebruiken</string>
     <string name="AA0066">U moet de QR-code scannen om verbinding te maken en het apparaat te binden. Is het toegestaan om de camera te openen?</string>
     <string name="AA0067">Afwijzen</string>
     <string name="AA0068">Geen cameratoestemming, schakel in de Instellingen in</string>
-    <string name="AA0069">demo wil uw locatiegegevens gebruiken</string>
+    <string name="AA0069">ipTIME wil uw locatiegegevens gebruiken</string>
     <string name="AA0070">Om succesvol toegevoegd apparatuur, moet u toestaan bdat het gebruik van de Location Services voor het verkrijgen van Wi-Fi informatie.Schakel op Location Services.</string>
     <string name="AA0071">Geen locatie-rechten, schakel dit in instellingen in</string>
     <string name="AA0076">Geen Bluetooth-rechten, schakel dit in instellingen in</string>
@@ -98,8 +98,8 @@
     <string name="AA0145">Selecteer het apparaat om te delen</string>
     <string name="AA0146">Er kunnen maximaal X bezoekers worden toegevoegd, verwijder een aantal bezoekers als je wilt blijven delen met anderen.</string>
     <string name="AA0147">Beheer delen</string>
-    <string name="AA0148">Voer het demo-account in om het apparaat te delen</string>
-    <string name="AA0149">Voer alstublieft het demo-account in</string>
+    <string name="AA0148">Voer het ipTIME-account in om het apparaat te delen</string>
+    <string name="AA0149">Voer alstublieft het ipTIME-account in</string>
     <string name="AA0150">Recent gedeeld</string>
     <string name="AA0151">Face-to-face delen</string>
     <string name="AA0153">Foutieve gebruikersnaam, voer opnieuw in</string>
@@ -107,7 +107,7 @@
     <string name="AA0155">Al gedeeld met deze vriend</string>
     <string name="AA0156">Het delen is gelukt</string>
     <string name="AA0157">Geldig tot</string>
-    <string name="AA0158">Scan de bovenstaande QR-code met de demo-app om het apparaat te delen</string>
+    <string name="AA0158">Scan de bovenstaande QR-code met de ipTIME-app om het apparaat te delen</string>
     <string name="AA0159">Reeds gedeelde vrienden</string>
     <string name="AA0160">QR-code ophalen mislukt, klik om te vernieuwen</string>
     <string name="AA0161">%s heeft een apparaat met je gedeeld</string>
@@ -163,7 +163,7 @@
     <string name="AA0221">Taal</string>
     <string name="AA0222">Feedback</string>
     <string name="AA0223">Hulp en feedback</string>
-    <string name="AA0224">Over demo</string>
+    <string name="AA0224">Over ipTIME</string>
     <string name="AA0225">Notificatie centrum</string>
     <string name="AA0227">Schakel de meldingstoestemming van Youkanto APP in om het laatste nieuws op tijd te ontvangen</string>
     <string name="AA0228">Geen nieuwe beirchten meer</string>
@@ -344,7 +344,7 @@
     <string name="AA0444">Doorgaan met toevoegen</string>
     <string name="AA0445">Terug</string>
     <string name="AA0446">Verwijderen is mislukt</string>
-    <string name="AA0447">demo</string>
+    <string name="AA0447">ipTIME</string>
     <string name="AA0448">Finish(%1$s/%2$s)</string>
     <string name="AA0450">voorbeeld</string>
     <string name="AA0451">voorbeeld(%s)</string>
@@ -421,7 +421,8 @@ Om te voorkomen dat de stroom te snel op raakt, is hij automatisch overgeschakel
     <string name="AA0530">Gast bestaat niet</string>
     <string name="AA0531">Alleen de eigenaar kan delen/wijzigen; huidig apparaat heeft al een eigenaar, wijziging van gast naar eigenaar is niet toegestaan</string>
     <string name="AA0537">Versie</string>
-    <string name="AA0545">Ik heb de demo Gebruikersovereenkomst en Privacybeleid gelezen en ga akkoord</string>
+    <string name="AA0538">Update geslaagd</string>
+    <string name="AA0545">Ik heb de ipTIME Gebruikersovereenkomst en Privacybeleid gelezen en ga akkoord</string>
     <string name="AA0546">camera</string>
     <string name="AA0559">Ongeldige QR-code.</string>
     <string name="AA0560">Oude QR-code verlopen.</string>
@@ -457,7 +458,7 @@ Om te voorkomen dat de stroom te snel op raakt, is hij automatisch overgeschakel
     <string name="AA0613">Instellingen voor pushmeldingen</string>
     <string name="AA0614">Instellingen voor systeemrechten</string>
     <string name="AA0615">Melding van pushberichten</string>
-    <string name="AA0616">Als deze functie is ingeschakeld, ontvang je tijdig het laatste nieuws van de demo APP</string>
+    <string name="AA0616">Als deze functie is ingeschakeld, ontvang je tijdig het laatste nieuws van de ipTIME APP</string>
     <string name="AA0617">Autoriseren</string>
     <string name="AA0618">Ingeschakeld</string>
     <string name="AA0619">Locatie</string>
@@ -474,7 +475,7 @@ Om te voorkomen dat de stroom te snel op raakt, is hij automatisch overgeschakel
     <string name="AA0630">Bij inschakeling kan de minivenster videoweergave en bewakingbelmelding worden gebruikt</string>
     <string name="AA0631">Achtergrond pop-up interface</string>
     <string name="AA0632">Bij inschakeling kunt u meldingen van de zorgbel ontvangen</string>
-    <string name="AA0633">Om u een betere gebruikerservaring te bieden, vraagt demo in bepaalde situaties de volgende systeemrechten.</string>
+    <string name="AA0633">Om u een betere gebruikerservaring te bieden, vraagt ipTIME in bepaalde situaties de volgende systeemrechten.</string>
     <string name="AA0634">Toegestaan</string>
     <string name="AA0635">Niet toegestaan</string>
     <string name="AA0637">Live bewaking</string>
@@ -494,4 +495,5 @@ Om te voorkomen dat de stroom te snel op raakt, is hij automatisch overgeschakel
     <string name="AA0653">Mijn bestellingen</string>
     <string name="AA0654">Mijn bonnen</string>
     <string name="AA0656">Offline, upgrade niet mogelijk</string>
+    <string name="AA0657">Systeemafwijkingen</string>
 </resources>

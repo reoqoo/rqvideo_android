@@ -53,7 +53,6 @@ class RemoteConfigDataSource @Inject constructor(
         if (isLogin) {
             httpService.getReoqooConfigWithLogin(listener)
         } else {
-            signApi.setAnonymousInfo(appParamApiImpl.getAppID())
             httpService.getReoqooConfig(listener)
         }
         return result.receive()

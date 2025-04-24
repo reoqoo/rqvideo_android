@@ -115,7 +115,7 @@ class Versions {
         /**
          * 技威网络请求库
          */
-        public static final String VERSION_ACCOUNT_MGR = "1.0.83"
+        public static final String VERSION_ACCOUNT_MGR = "1.0.85"
 
         /**
          * 技威json库
@@ -145,7 +145,7 @@ class Versions {
     }
 
     static class ReoqooSdkVer {
-        public static final String VERSION_CODE = "1.1.11"
+        public static final String VERSION_CODE = "1.1.12"
     }
 
     /**

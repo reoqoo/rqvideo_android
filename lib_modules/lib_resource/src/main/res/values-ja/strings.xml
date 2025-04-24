@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="AA0001">Hello , demo ！</string>
+    <string name="AA0001">Hello , ipTIME ！</string>
     <string name="AA0002">E-メールアドレス/电话番号</string>
     <string name="AA0003">パスワード</string>
     <string name="AA0004">ログイン</string>
@@ -23,7 +23,7 @@
     <string name="AA0025">パッスワートはアルファベット、数字を含める8～30位の文字です</string>
     <string name="AA0026">再度入力</string>
     <string name="AA0031">パスワードの取得</string>
-    <string name="AA0032">demoアカウントを入力してください</string>
+    <string name="AA0032">ipTIMEアカウントを入力してください</string>
     <string name="AA0034">认証コードを入力してください</string>
     <string name="AA0035">認証コードがに送信されました</string>
     <string name="AA0036">再送</string>
@@ -35,7 +35,7 @@
     <string name="AA0043">私の</string>
     <string name="AA0044">ユーザー规约</string>
     <string name="AA0045">利用规约とプライバシーポリシーの概要</string>
-    <string name="AA0046">demoへようこそ、demoはdemo IoT XXXXXXXX., Ltd.（以下は当社といいます）からオンラインオーディオおよびビデオプラットフォームの研究开発と运用です。＜利用规约＞と＜プライバシーポリシー＞を使用して、个人情报の収集、使用、保存、共有の方法、および关连する権利の理解を支持します。\nライブビデオ、ビデオ再生、コレクション购読、コミュニティインタラクションおよびその他のサービスを提供するために、ビデオ録画、ビデオ写真、デバイス情报、操作ログなどの个人情报を収集する必要があります。センターはお客様の个人情报にアクセスし、修正し、削除し、认证を管理します; \n私たちは业界最先端のセキュリティ技术を使用してお客様の个人情报を保护します。 \nフルバージョン%1$sおよび%2$sを読むことで详细を确认できます。 \n同意する场合は、[同意する]をクリックしてサービスに同意してください。</string>
+    <string name="AA0046">ipTIMEへようこそ、ipTIMEはipTIME IoT XXXXXXXX., Ltd.（以下は当社といいます）からオンラインオーディオおよびビデオプラットフォームの研究开発と运用です。＜利用规约＞と＜プライバシーポリシー＞を使用して、个人情报の収集、使用、保存、共有の方法、および关连する権利の理解を支持します。\nライブビデオ、ビデオ再生、コレクション购読、コミュニティインタラクションおよびその他のサービスを提供するために、ビデオ録画、ビデオ写真、デバイス情报、操作ログなどの个人情报を収集する必要があります。センターはお客様の个人情报にアクセスし、修正し、削除し、认证を管理します; \n私たちは业界最先端のセキュリティ技术を使用してお客様の个人情报を保护します。 \nフルバージョン%1$sおよび%2$sを読むことで详细を确认できます。 \n同意する场合は、[同意する]をクリックしてサービスに同意してください。</string>
     <string name="AA0047">%sの家</string>
     <string name="AA0049">端末の登録</string>
     <string name="AA0050">デバイスの共有</string>
@@ -51,11 +51,11 @@
     <string name="AA0062">デバイス本体にあるQRコードをスキャンしてデバイスを追加します</string>
     <string name="AA0063">ライト</string>
     <string name="AA0064">アルバム</string>
-    <string name="AA0065">demoはあなたのカメラを使いたいです</string>
+    <string name="AA0065">ipTIMEはあなたのカメラを使いたいです</string>
     <string name="AA0066">あなたはデバイスを接続してバインドするためにQRコードをスキャンする必要があります。 それは、カメラを开くことが许可されていますか？</string>
     <string name="AA0067">拒否</string>
     <string name="AA0068">カメラの権限がありません。設定で有効にしてください</string>
-    <string name="AA0069">demoはあなたの位置情報を使用したい</string>
+    <string name="AA0069">ipTIMEはあなたの位置情報を使用したい</string>
     <string name="AA0070">成功した机器を追加するには、无线LANの情报を取得するための位置サービスの使用を许可する必要があります。位置情报サービスをオンにしてください</string>
     <string name="AA0071">位置づけの権限がありません。設定で有効にしてください</string>
     <string name="AA0076">Bluetooth権限がないため、設定で有効にしてください</string>
@@ -99,8 +99,8 @@
     <string name="AA0145">共有したいデバイスを選択</string>
     <string name="AA0146">ゲストX人まで追加できます。もし他人にシェアしてほしい场合は、先ず一部のゲストを削除してください！</string>
     <string name="AA0147">シェア管理</string>
-    <string name="AA0148">共有するdemoアカウントを入力</string>
-    <string name="AA0149">demoアカウントを入力してください</string>
+    <string name="AA0148">共有するipTIMEアカウントを入力</string>
+    <string name="AA0149">ipTIMEアカウントを入力してください</string>
     <string name="AA0150">最近の共有内容</string>
     <string name="AA0151">直対面シェアリング</string>
     <string name="AA0153">ユーザー名エラーです。再度入力してください</string>
@@ -108,7 +108,7 @@
     <string name="AA0155">既にこの友達に共有しました</string>
     <string name="AA0156">投稿しました</string>
     <string name="AA0157">有効期限満了日</string>
-    <string name="AA0158">demoアプリで上のQRコードをスキャンしてデバイスを共有します</string>
+    <string name="AA0158">ipTIMEアプリで上のQRコードをスキャンしてデバイスを共有します</string>
     <string name="AA0159">共有先の友達</string>
     <string name="AA0160">QRコードを取得できません。クリックして再読込みしてください</string>
     <string name="AA0161">%sはあなたとデバイスを共有しました</string>
@@ -164,7 +164,7 @@
     <string name="AA0221">言語</string>
     <string name="AA0222">ご意見・ご感想</string>
     <string name="AA0223">ヘルプ及びフィードバック</string>
-    <string name="AA0224">demoについて</string>
+    <string name="AA0224">ipTIMEについて</string>
     <string name="AA0225">メッセージセンター</string>
     <string name="AA0227">Youkanto APPの通知許可をオンにして、最新ニュースを時間内に取得します</string>
     <string name="AA0228">情报はこれだけです</string>
@@ -346,7 +346,7 @@
     <string name="AA0444">追加を続ける</string>
     <string name="AA0445">戻ります</string>
     <string name="AA0446">削除に失败しました</string>
-    <string name="AA0447">demo</string>
+    <string name="AA0447">ipTIME</string>
     <string name="AA0448">完了(%1$s/%2$s)</string>
     <string name="AA0450">プレビュー</string>
     <string name="AA0451">プレビュー(%s)</string>
@@ -423,6 +423,7 @@
     <string name="AA0530">存在しないゲストです</string>
     <string name="AA0531">デバイス所有者でなければ共有と変更できません。現在のデバイスは既に所有者があって、ゲストに所有者の権限を与えることはできません</string>
     <string name="AA0537">Version</string>
+    <string name="AA0538">アップグレードに成功しました</string>
     <string name="AA0545">私は『ユーザー规约』と『プライバシー契約』をよく読んだ上、これに同意しました</string>
     <string name="AA0546">カメラです</string>
     <string name="AA0559">無効のQRコード</string>
@@ -459,7 +460,7 @@
     <string name="AA0613">プッシュ通知を設定</string>
     <string name="AA0614">システム権限を設定</string>
     <string name="AA0615">プッシュ通知</string>
-    <string name="AA0616">オンにすると、demoアプリからのメッセージをいち早く入手できます</string>
+    <string name="AA0616">オンにすると、ipTIMEアプリからのメッセージをいち早く入手できます</string>
     <string name="AA0617">権限を許可</string>
     <string name="AA0618">オン</string>
     <string name="AA0619">位置情報</string>
@@ -476,7 +477,7 @@
     <string name="AA0630">オンにすると、監視映像の小窓表示機能と見守りベルのフローティング機能を利用できます</string>
     <string name="AA0631">バックグラウンドのポップアップウィンドウ</string>
     <string name="AA0632">オンにすると、見守りベルの通知をいち早く確認できます</string>
-    <string name="AA0633">demoは、ユーザー体験の向上に努めており、一部の場面において以下のシステム権限の許可を求めることがあります</string>
+    <string name="AA0633">ipTIMEは、ユーザー体験の向上に努めており、一部の場面において以下のシステム権限の許可を求めることがあります</string>
     <string name="AA0634">権限を許可した</string>
     <string name="AA0635">権限を許可していない</string>
     <string name="AA0637">リアルタイム監視</string>
@@ -496,4 +497,5 @@
     <string name="AA0653">私の注文</string>
     <string name="AA0654">マイカード券</string>
     <string name="AA0656">オフライン、アップデート不可</string>
+    <string name="AA0657">システム異常</string>
 </resources>

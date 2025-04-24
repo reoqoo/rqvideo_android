@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="AA0001">Hello , demo ！</string>
+    <string name="AA0001">Hello , ipTIME ！</string>
     <string name="AA0002">E-mailová adresa / telefónne číslo</string>
     <string name="AA0003">Heslo</string>
     <string name="AA0004">Prihlásiť sa</string>
@@ -23,7 +23,7 @@
     <string name="AA0025">Heslo musí obsahovať 8-30 znakov a obsahovať písmená aj číslice.</string>
     <string name="AA0026">Zadajte znovu</string>
     <string name="AA0031">Načítať heslo</string>
-    <string name="AA0032">Prosím, zadajte demo ID</string>
+    <string name="AA0032">Prosím, zadajte ipTIME ID</string>
     <string name="AA0034">Zadajte overovací kód</string>
     <string name="AA0035">Overovací kód bol zaslaný</string>
     <string name="AA0036">Znova odoslať</string>
@@ -35,7 +35,7 @@
     <string name="AA0043">Moje</string>
     <string name="AA0044">Súhlas užívateľa</string>
     <string name="AA0045">Zhrnutie zmluvy o službách pre užívateľov a zásadách ochrany osobných údajov</string>
-    <string name="AA0046">Môžete používať videotechnológiu demo je online audio platforma vyvinutá a prevádzkovaná spoločnosťou demo IoT XXXXXXXX., Ltd. (ďalej len „Pomôžete nám“). Prosím, pochopte, že budeme zhromažďovať, používať, ako sa informácie ukladajú a zdieľané, videá, ktoré o nás vidíte. Video obrázky, informácie o zariadení, denníky a ďalšie osobné informácie;\nMôžete pristupovať k svojej autorizácii, opravovať ju a mazať;\nNa ochranu vašich osobných údajov použijeme technológiu ochrany osobných údajov v najvyššom operačnom stredisku. \nÚplné podrobnosti si môžete prečítať vo verzii %1$s a %2$s. \nAk súhlasíte, kliknite na „Súhlasím“ a prijmite našu službu.</string>
+    <string name="AA0046">Môžete používať videotechnológiu ipTIME je online audio platforma vyvinutá a prevádzkovaná spoločnosťou ipTIME IoT XXXXXXXX., Ltd. (ďalej len „Pomôžete nám“). Prosím, pochopte, že budeme zhromažďovať, používať, ako sa informácie ukladajú a zdieľané, videá, ktoré o nás vidíte. Video obrázky, informácie o zariadení, denníky a ďalšie osobné informácie;\nMôžete pristupovať k svojej autorizácii, opravovať ju a mazať;\nNa ochranu vašich osobných údajov použijeme technológiu ochrany osobných údajov v najvyššom operačnom stredisku. \nÚplné podrobnosti si môžete prečítať vo verzii %1$s a %2$s. \nAk súhlasíte, kliknite na „Súhlasím“ a prijmite našu službu.</string>
     <string name="AA0047">%s Home</string>
     <string name="AA0049">Pridať zariadenie</string>
     <string name="AA0050">Spoločné zariadenia</string>
@@ -51,11 +51,11 @@
     <string name="AA0062">Prehľadať QR kód tela zariadenia a pridať zariadenie</string>
     <string name="AA0063">svetlo</string>
     <string name="AA0064">Fotoalbum</string>
-    <string name="AA0065">Program demo chce použiť váš fotoaparát</string>
+    <string name="AA0065">Program ipTIME chce použiť váš fotoaparát</string>
     <string name="AA0066">Musíte skenovať kód QR na pripojenie a viazanie zariadenia. Je povolené otvoriť fotoaparát?</string>
     <string name="AA0067">Odmietnuť</string>
     <string name="AA0068">Žiadne povolenie na kameru, prosím, spustite ho v Settings</string>
-    <string name="AA0069">Program demo chce použiť informácie o vašej polohe</string>
+    <string name="AA0069">Program ipTIME chce použiť informácie o vašej polohe</string>
     <string name="AA0070">Ak chcete úspešne pridaný zariadenie, je potrebné umožniť využívanie služby určovania polohy pre získavanie informácií o Wi-Fi.Prosím, zapnite služby určovania polohy.</string>
     <string name="AA0071">Žiadne povolenie na umiestnenie, prosím, spustite ho v nastaveniach</string>
     <string name="AA0076">Žiadne povolenie Bluetooth, prosím, spustite ho v nastaveniach</string>
@@ -99,8 +99,8 @@
     <string name="AA0145">Vyberte zariadenie na zdieľanie</string>
     <string name="AA0146">Maximálny možný počet návštevníkov je X, ak chcete pokračovať v zdieľaní s ďalšími, odstráňte niektorých súčasných návštevníkov.</string>
     <string name="AA0147">Správa zdieľaní</string>
-    <string name="AA0148">Zadajte účet demo na zdieľanie zariadenia s</string>
-    <string name="AA0149">Zadajte prosím účt demo</string>
+    <string name="AA0148">Zadajte účet ipTIME na zdieľanie zariadenia s</string>
+    <string name="AA0149">Zadajte prosím účt ipTIME</string>
     <string name="AA0150">Nedávno zdieľané</string>
     <string name="AA0151">Zdieľanie tvárou v tvár</string>
     <string name="AA0153">Chyba používateľského mena, prosím opäť zadajte</string>
@@ -108,7 +108,7 @@
     <string name="AA0155">Bol zdieľaný s týmto priateľom</string>
     <string name="AA0156">Zdieľanie prebehlo úspešne</string>
     <string name="AA0157">Dátum uplynutia platnosti</string>
-    <string name="AA0158">Použite aplikáciu demo na skenovanie QR kódu vyššie a zdieľanie zariadenia</string>
+    <string name="AA0158">Použite aplikáciu ipTIME na skenovanie QR kódu vyššie a zdieľanie zariadenia</string>
     <string name="AA0159">Priatelia už zdieľaní</string>
     <string name="AA0160">Akvizícia QR kódu zlyhala, kliknite na obnovenie</string>
     <string name="AA0161">%s s vami zdieľal zariadenie</string>
@@ -164,7 +164,7 @@
     <string name="AA0221">jazyk</string>
     <string name="AA0222">Spätná väzba problémov</string>
     <string name="AA0223">Nápoveď a spätná väzba</string>
-    <string name="AA0224">O demo</string>
+    <string name="AA0224">O ipTIME</string>
     <string name="AA0225">Centrum oznámení</string>
     <string name="AA0227">Ak chcete dostávať najnovšie správy včas, zapnite si povolenie na upozornenia v aplikácii Youkanto</string>
     <string name="AA0228">Žiadne ďalšie správy</string>
@@ -346,7 +346,7 @@
     <string name="AA0444">Pokračovať v pridávaní</string>
     <string name="AA0445">vrátiť sa</string>
     <string name="AA0446">odstrániť zlyhalo</string>
-    <string name="AA0447">demo</string>
+    <string name="AA0447">ipTIME</string>
     <string name="AA0448">Skončiť(%1$s/%2$s)</string>
     <string name="AA0450">Náhľad</string>
     <string name="AA0451">Náhľad(%s)</string>
@@ -423,6 +423,7 @@ Aby sa zabránilo príliš rýchlemu úniku energie, automaticky sa prepol na re
     <string name="AA0530">Návštevník neexistuje</string>
     <string name="AA0531">Iba vlastník zariadenia môže zdieľať/upraviť; Súčasné zariadenie už má vlastníka a zmena hosťa, pretože povolenie vlastníka nie je povolené</string>
     <string name="AA0537">Version</string>
+    <string name="AA0538">Úspešná aktualizácia</string>
     <string name="AA0545">Čítal som a súhlasil s „dohodou o používateľoch“ a „politikou súkromia“</string>
     <string name="AA0546">fotoaparát</string>
     <string name="AA0559">Neplatný QR kód</string>
@@ -459,7 +460,7 @@ Aby sa zabránilo príliš rýchlemu úniku energie, automaticky sa prepol na re
     <string name="AA0613">Nastavenia tlaku správy</string>
     <string name="AA0614">Nastavenia systémových povolení</string>
     <string name="AA0615">Oznámenie o tlačení správy</string>
-    <string name="AA0616">Po aktivácii môžete bezodkladne dostať posledné aktualizácie aplikácie demo</string>
+    <string name="AA0616">Po aktivácii môžete bezodkladne dostať posledné aktualizácie aplikácie ipTIME</string>
     <string name="AA0617">Choď povoliť</string>
     <string name="AA0618">Otvorené</string>
     <string name="AA0619">poloha</string>
@@ -476,7 +477,7 @@ Aby sa zabránilo príliš rýchlemu úniku energie, automaticky sa prepol na re
     <string name="AA0630">Po aktivácii sa môže použiť malá funkcia spätného zobrazovania okna monitorovacieho videa a suspendovaného monitorovacieho zvonku.</string>
     <string name="AA0631">Pop up interface in the background</string>
     <string name="AA0632">Po aktivácii môžete dostať včasné oznámenia od zvonku opatrovateľa</string>
-    <string name="AA0633">Aby ste získali lepšie skúsenosti s užívateľom, demo bude od vás požiadať o nasledujúce povolenia mobilného systému v špecifických scenároch:</string>
+    <string name="AA0633">Aby ste získali lepšie skúsenosti s užívateľom, ipTIME bude od vás požiadať o nasledujúce povolenia mobilného systému v špecifických scenároch:</string>
     <string name="AA0634">Povolené</string>
     <string name="AA0635">Neoprávnené</string>
     <string name="AA0637">Monitorovanie v reálnom čase</string>
@@ -496,4 +497,5 @@ Aby sa zabránilo príliš rýchlemu úniku energie, automaticky sa prepol na re
     <string name="AA0653">Môj rozkaz</string>
     <string name="AA0654">Môj kartový kupón</string>
     <string name="AA0656">Offline, aktualizácia nedostupná</string>
+    <string name="AA0657">Abnormalita systému</string>
 </resources>

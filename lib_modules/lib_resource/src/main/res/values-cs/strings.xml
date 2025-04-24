@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="AA0001">Hello , demo ！</string>
+    <string name="AA0001">Hello , ipTIME ！</string>
     <string name="AA0002">E-mailová adresa / telefonní číslo</string>
     <string name="AA0003">Heslo</string>
     <string name="AA0004">Přihlásit se</string>
@@ -23,7 +23,7 @@
     <string name="AA0025">Heslo musí obsahovat 8-30 znaků, obsahující písmena i číslice.</string>
     <string name="AA0026">Zadejte znovu</string>
     <string name="AA0031">Načíst heslo</string>
-    <string name="AA0032">Prosím, zadejte demo ID</string>
+    <string name="AA0032">Prosím, zadejte ipTIME ID</string>
     <string name="AA0034">Zadejte ověřovací kód</string>
     <string name="AA0035">Ověřovací kód byl zaslán na adresu</string>
     <string name="AA0036">Znovu odeslat</string>
@@ -35,7 +35,7 @@
     <string name="AA0043">Moje</string>
     <string name="AA0044">Souhlas uživatele</string>
     <string name="AA0045">Shrnutí smlouvy o službách pro uživatele a zásadách ochrany osobních údajů</string>
-    <string name="AA0046">Jste vítáni k používání video technologie demo u je online audio platforma vyvinutá a provozovaná společností demo IoT XXXXXXXX., Ltd. (dále jen „Pomůžete nám“). sdílená, videa, která o nás vidíte. Video obrázky, informace o zařízení, protokoly a další osobní informace;\nMůžete získat přístup, opravit a odstranit své oprávnění;\nK ochraně vašich osobních údajů použijeme technologii osobního zabezpečení v nejvyšším operačním středisku. \nPro úplné podrobnosti si můžete přečíst verzi %1$s a %2$s. \nPokud souhlasíte, kliknutím na „Souhlasím“ přijměte naši službu.</string>
+    <string name="AA0046">Jste vítáni k používání video technologie ipTIME u je online audio platforma vyvinutá a provozovaná společností ipTIME IoT XXXXXXXX., Ltd. (dále jen „Pomůžete nám“). sdílená, videa, která o nás vidíte. Video obrázky, informace o zařízení, protokoly a další osobní informace;\nMůžete získat přístup, opravit a odstranit své oprávnění;\nK ochraně vašich osobních údajů použijeme technologii osobního zabezpečení v nejvyšším operačním středisku. \nPro úplné podrobnosti si můžete přečíst verzi %1$s a %2$s. \nPokud souhlasíte, kliknutím na „Souhlasím“ přijměte naši službu.</string>
     <string name="AA0047">%sDomů</string>
     <string name="AA0049">Přidat zařízení</string>
     <string name="AA0050">Sdílení zařízení</string>
@@ -51,11 +51,11 @@
     <string name="AA0062">Skenovat tělo zařízení QR kód a přidat zařízení</string>
     <string name="AA0063">baterka</string>
     <string name="AA0064">Fotoalbum</string>
-    <string name="AA0065">demo chce použít váš fotoaparát</string>
+    <string name="AA0065">ipTIME chce použít váš fotoaparát</string>
     <string name="AA0066">Je potřeba naskenovat QR kód pro připojení a vázat zařízení. Je povoleno otevřít fotoaparát?</string>
     <string name="AA0067">Odmítnout</string>
     <string name="AA0068">Žádné oprávnění fotoaparátu, povolte to prosím v Nastavení y, povolte v nastavení</string>
-    <string name="AA0069">demo chce použít informace o vaší poloze</string>
+    <string name="AA0069">ipTIME chce použít informace o vaší poloze</string>
     <string name="AA0070">Chcete-li úspěšně přidán zařízení, je třeba umožnit využívání služby určování polohy pro získávání informací o Wi-Fi.Prosím, zapněte služby určování polohy.</string>
     <string name="AA0071">Žádné oprávnění k umístění, povolte to prosím v nastavení</string>
     <string name="AA0076">Žádné oprávnění Bluetooth, povolte to prosím v nastavení</string>
@@ -100,8 +100,8 @@
     <string name="AA0145">Vyberte zařízení ke sdílení</string>
     <string name="AA0146">Maximální možný počet návštěvníků je X, pokud chcete pokračovat ve sdílení s dalšími, odstraňte některé stávající návštěvníky.</string>
     <string name="AA0147">Správa sdílení</string>
-    <string name="AA0148">Zadejte účet demo, se kterým chcete zařízení sdílet</string>
-    <string name="AA0149">Prosím zadejte účet demo</string>
+    <string name="AA0148">Zadejte účet ipTIME, se kterým chcete zařízení sdílet</string>
+    <string name="AA0149">Prosím zadejte účet ipTIME</string>
     <string name="AA0150">Nedávno sdílené</string>
     <string name="AA0151">Sdílení tváří v tvář</string>
     <string name="AA0153">Chyba uživatelského jména, prosím znovu zadejte</string>
@@ -109,7 +109,7 @@
     <string name="AA0155">Byl sdílen s tímto přítelem</string>
     <string name="AA0156">Sdílení proběhlo úspěšně</string>
     <string name="AA0157">Datum platnosti</string>
-    <string name="AA0158">Pomocí aplikace demo skenujte výše uvedený QR kód a sdílejte zařízení</string>
+    <string name="AA0158">Pomocí aplikace ipTIME skenujte výše uvedený QR kód a sdílejte zařízení</string>
     <string name="AA0159">Přátelé již sdíleli</string>
     <string name="AA0160">Získání QR kódu selhalo, klikněte na obnovit</string>
     <string name="AA0161">%s s vámi sdílí zařízení</string>
@@ -165,7 +165,7 @@
     <string name="AA0221">jazyk</string>
     <string name="AA0222">Zpětná vazba problémů</string>
     <string name="AA0223">Nápověda a zpětná vazba</string>
-    <string name="AA0224">O demo</string>
+    <string name="AA0224">O ipTIME</string>
     <string name="AA0225">Centrum oznámení</string>
     <string name="AA0227">Zapněte oprávnění k oznámení aplikace Youkanto, abyste mohli včas dostávat nejnovější zprávy</string>
     <string name="AA0228">Žádné další zprávy</string>
@@ -347,7 +347,7 @@
     <string name="AA0444">Pokračujte v přidávání</string>
     <string name="AA0445">vrátit se</string>
     <string name="AA0446">Odstranit selhalo</string>
-    <string name="AA0447">demo</string>
+    <string name="AA0447">ipTIME</string>
     <string name="AA0448">Dokončit(%1$s/%2$s)</string>
     <string name="AA0450">náhled</string>
     <string name="AA0451">náhled(%s)</string>
@@ -424,6 +424,7 @@ Aby se zabránilo příliš rychlému vyčerpání energie, automaticky se přep
     <string name="AA0530">Návštěvník neexistuje</string>
     <string name="AA0531">Sdílet/upravovat může pouze vlastník zařízení; Aktuální zařízení již má vlastníka a úprava hosta jako oprávnění vlastníka není povolena</string>
     <string name="AA0537">Version</string>
+    <string name="AA0538">Upgrade úspěšný</string>
     <string name="AA0545">Přečetl jsem si a souhlasím s \"Uživatelskou smlouvou\" a \"Zásadami ochrany osobních údajů\"</string>
     <string name="AA0546">fotoaparát</string>
     <string name="AA0559">Neplatný QR kód</string>
@@ -460,7 +461,7 @@ Aby se zabránilo příliš rychlému vyčerpání energie, automaticky se přep
     <string name="AA0613">Nastavení odesílání zpráv</string>
     <string name="AA0614">Nastavení systémových oprávnění</string>
     <string name="AA0615">Oznámení push zprávy</string>
-    <string name="AA0616">Po aktivaci můžete okamžitě dostávat nejnovější aktualizace aplikace demo</string>
+    <string name="AA0616">Po aktivaci můžete okamžitě dostávat nejnovější aktualizace aplikace ipTIME</string>
     <string name="AA0617">Přejít autorizovat</string>
     <string name="AA0618">Otevřeno</string>
     <string name="AA0619">poloha</string>
@@ -477,7 +478,7 @@ Aby se zabránilo příliš rychlému vyčerpání energie, automaticky se přep
     <string name="AA0630">Po aktivaci lze použít funkci přehrávání malého okna monitorovacího videa a zavěšený monitorovací zvonek</string>
     <string name="AA0631">Vyskakující rozhraní na pozadí</string>
     <string name="AA0632">Po aktivaci můžete obdržet včasná oznámení od zvonu pečovatele</string>
-    <string name="AA0633">Abychom vám mohli poskytnout lepší uživatelské zkušenosti, demo od vás požádá o následující oprávnění mobilního systému v konkrétních scénářích</string>
+    <string name="AA0633">Abychom vám mohli poskytnout lepší uživatelské zkušenosti, ipTIME od vás požádá o následující oprávnění mobilního systému v konkrétních scénářích</string>
     <string name="AA0634">Povolené</string>
     <string name="AA0635">Neoprávněné</string>
     <string name="AA0637">Sledování v reálném čase</string>
@@ -497,4 +498,5 @@ Aby se zabránilo příliš rychlému vyčerpání energie, automaticky se přep
     <string name="AA0653">Moje objednávka</string>
     <string name="AA0654">Můj poukaz na kartu</string>
     <string name="AA0656">Offline, aktualizace nedostupná</string>
+    <string name="AA0657">Anomálie systému</string>
 </resources>

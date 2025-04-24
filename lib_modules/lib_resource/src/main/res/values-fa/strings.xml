@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="AA0001">Hello , demo ！</string>
+    <string name="AA0001">Hello , ipTIME ！</string>
     <string name="AA0002">ایمیل / شماره تلفن همراه</string>
     <string name="AA0003">گذرواژه</string>
     <string name="AA0004">ورود</string>
@@ -23,7 +23,7 @@
     <string name="AA0025">گذرواژه باید 8 الی 30 کاراکتر و حاوی حرف، عدد و کاراکتر باشد</string>
     <string name="AA0026">دوباره تایپ کنید</string>
     <string name="AA0031">بازیابی گذرواژه</string>
-    <string name="AA0032">لطفا demo ID را وارد کنید</string>
+    <string name="AA0032">لطفا ipTIME ID را وارد کنید</string>
     <string name="AA0034">لطفا کد تایید را وارد نمایید</string>
     <string name="AA0035">کد تصمیم فرستاده شده است</string>
     <string name="AA0036">فرستادن دوباره</string>
@@ -35,7 +35,7 @@
     <string name="AA0043">من</string>
     <string name="AA0044">تفاهم نامه کاربر</string>
     <string name="AA0045">خلاصه توافقنامه خدمات کاربر و خط مشی حریم خصوصی</string>
-    <string name="AA0046">شما به استفاده از فناوری ویدئو خوش آمدید demo  یک پلت فرم صوتی آنلاین است که توسط demo IoT XXXXXXXX., Ltd. توسعه یافته و اداره می شود (از این پس به عنوان \"شما به ما کمک می کنید\" نامیده می شود). لطفاً بدانید که ما جمع آوری، استفاده، نحوه ذخیره اطلاعات و به اشتراک گذاشته شده، ویدیوهایی که درباره ما می بینید. تصاویر ویدئویی، اطلاعات دستگاه، گزارش‌ها و سایر اطلاعات شخصی؛\nشما می‌توانید به مجوز خود دسترسی داشته باشید، تصحیح و حذف کنید؛\nما از فناوری امنیت شخصی در مرکز عملیات برتر برای محافظت از اطلاعات شخصی شما استفاده خواهیم کرد. \nبرای جزئیات کامل می‌توانید نسخه %1$s و %2$s را بخوانید. \nدر صورت موافقت، لطفاً روی \"موافق\" کلیک کنید تا خدمات ما را بپذیرید.</string>
+    <string name="AA0046">شما به استفاده از فناوری ویدئو خوش آمدید ipTIME  یک پلت فرم صوتی آنلاین است که توسط ipTIME IoT XXXXXXXX., Ltd. توسعه یافته و اداره می شود (از این پس به عنوان \"شما به ما کمک می کنید\" نامیده می شود). لطفاً بدانید که ما جمع آوری، استفاده، نحوه ذخیره اطلاعات و به اشتراک گذاشته شده، ویدیوهایی که درباره ما می بینید. تصاویر ویدئویی، اطلاعات دستگاه، گزارش‌ها و سایر اطلاعات شخصی؛\nشما می‌توانید به مجوز خود دسترسی داشته باشید، تصحیح و حذف کنید؛\nما از فناوری امنیت شخصی در مرکز عملیات برتر برای محافظت از اطلاعات شخصی شما استفاده خواهیم کرد. \nبرای جزئیات کامل می‌توانید نسخه %1$s و %2$s را بخوانید. \nدر صورت موافقت، لطفاً روی \"موافق\" کلیک کنید تا خدمات ما را بپذیرید.</string>
     <string name="AA0047">%s Home</string>
     <string name="AA0049">اضافه کردن دستگاه</string>
     <string name="AA0050">شریک دستگاه‌ها</string>
@@ -51,11 +51,11 @@
     <string name="AA0062">Scan device body QR code and add device</string>
     <string name="AA0063">نور چراغ</string>
     <string name="AA0064">آلبوم عکس ها</string>
-    <string name="AA0065">demo می خواهد از دوربین شما استفاده کند</string>
+    <string name="AA0065">ipTIME می خواهد از دوربین شما استفاده کند</string>
     <string name="AA0066">شما نیاز به اسکن کد QR برای اتصال و اتصال دستگاه دارید. مجاز است دوربین را باز کند؟</string>
     <string name="AA0067">رد کردن</string>
     <string name="AA0068">هیچ اجازه دوربین نیست، لطفاً فعالش کنید در Settings</string>
-    <string name="AA0069">demo می خواهد از اطلاعات مکان شما استفاده کند</string>
+    <string name="AA0069">ipTIME می خواهد از اطلاعات مکان شما استفاده کند</string>
     <string name="AA0070">برای موفقیت در تجهیزات اضافه، شما نیاز اجازه استفاده از خدمات محل سکونت برای گرفتن اطلاعات فای.لطفا سرویسهای محل سکونت.</string>
     <string name="AA0071">هیچ اجازه محل وجود ندارد، لطفا در تنظیمات فعالش کنید</string>
     <string name="AA0076">اجازه‌ی بلوتوت نیست، لطفا در تنظیمات فعالش کنید</string>
@@ -99,8 +99,8 @@
     <string name="AA0145">انتخاب یک دستگاه برای تقسیم کردن</string>
     <string name="AA0146">شما تنها می توانید X بازدید کننده را بیافزایید، اگر می خواهید بازدید کننده‌های دیگری بیافزایید، لطفاً ابتدا بعضی از بازدید کننده‌ها را حذف کنید!</string>
     <string name="AA0147">مدیریت اشتراک گذاری</string>
-    <string name="AA0148">وارد حساب demo برای شریک دستگاه با</string>
-    <string name="AA0149">لطفاً حساب demo account</string>
+    <string name="AA0148">وارد حساب ipTIME برای شریک دستگاه با</string>
+    <string name="AA0149">لطفاً حساب ipTIME account</string>
     <string name="AA0150">اخیراً مشترک</string>
     <string name="AA0151">اشتراک گذاری چهره به چهره</string>
     <string name="AA0153">خطای نام کاربر ، لطفاً دوباره وارد کنید</string>
@@ -108,7 +108,7 @@
     <string name="AA0155">Has been shared with this friend</string>
     <string name="AA0156">اشتراک موفقیت آمیز بود</string>
     <string name="AA0157">تاریخ پایان</string>
-    <string name="AA0158">استفاده از کاربرد demo برای اسکن کد QR بالا و شریک دستگاه</string>
+    <string name="AA0158">استفاده از کاربرد ipTIME برای اسکن کد QR بالا و شریک دستگاه</string>
     <string name="AA0159">دوستان قبلا</string>
     <string name="AA0160">دریافت کد QR شکست خورد ، فشار تازگی را فشار دهید</string>
     <string name="AA0161">%s دستگاهی را با شما به اشتراک گذاشت</string>
@@ -346,7 +346,7 @@
     <string name="AA0444">ادامه افزودن</string>
     <string name="AA0445">برگشت</string>
     <string name="AA0446">حذف نشد</string>
-    <string name="AA0447">demo</string>
+    <string name="AA0447">ipTIME</string>
     <string name="AA0448">پایان(%1$s/%2$s)</string>
     <string name="AA0450">پیش نمایش</string>
     <string name="AA0451">پیش نمایش(%s)</string>
@@ -423,6 +423,7 @@
     <string name="AA0530">ملاقات وجود ندارد</string>
     <string name="AA0531">Only the device owner can share/modify; The current device already has the owner, and modifying the guest as the owner permission is not allowed</string>
     <string name="AA0537">Version</string>
+    <string name="AA0538">برنامه‌سازی موفق شد</string>
     <string name="AA0545">من با \"قرارداد کاربر\" و \"سیاست خصوصی\" خوندم و موافقم</string>
     <string name="AA0546">دوربین</string>
     <string name="AA0559">کد QR نامعتبر</string>
@@ -459,7 +460,7 @@
     <string name="AA0613">تنظیمات فشار پیام</string>
     <string name="AA0614">تنظیمات اجازه سیستم</string>
     <string name="AA0615">هشدار فشار پیام</string>
-    <string name="AA0616">بعد از فعالیت، شما می توانید فوراً اخیراً جدیدی از کاربرد demo را دریافت کنید</string>
+    <string name="AA0616">بعد از فعالیت، شما می توانید فوراً اخیراً جدیدی از کاربرد ipTIME را دریافت کنید</string>
     <string name="AA0617">برو اجازه بده</string>
     <string name="AA0618">باز شده</string>
     <string name="AA0619">موقعیت</string>
@@ -496,4 +497,5 @@
     <string name="AA0653">سفارش من</string>
     <string name="AA0654">واچر کارت من</string>
     <string name="AA0656">آفلاین، ارتقا موقتاً غیرممکن است</string>
+    <string name="AA0657">ناعادت سیستم</string>
 </resources>

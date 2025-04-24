@@ -2,6 +2,7 @@ package com.gw.reoqoo.app.crash
 
 import android.app.Application
 import com.gw.reoqoo.BuildConfig
+import com.gw.reoqoosdk.sdk.repository.ConfigEntity
 import com.jwkj.base_crash.IAppInfoCallback
 
 /**
@@ -9,17 +10,20 @@ import com.jwkj.base_crash.IAppInfoCallback
  * Time: 2023/12/20 11:19
  * Description: CrashCallbackImpl
  */
-class CrashCallbackImpl(val app: Application) : IAppInfoCallback {
+class CrashCallbackImpl(
+    private val app: Application,
+    private val mConfig: ConfigEntity
+) : IAppInfoCallback {
     override fun appBuildNum(): String {
-        return BuildConfig.BUILD_NUMBER
+        return com.gw.reoqoosdk.BuildConfig.SDK_BUILD_NUMBER
     }
 
     override fun appBuildTime(): String {
-        return BuildConfig.BUILD_TIME
+        return com.gw.reoqoosdk.BuildConfig.SDK_BUILD_TIME
     }
 
     override fun appBuildType(): String {
-        return BuildConfig.BUILD_TYPE
+        return com.gw.reoqoosdk.BuildConfig.BUILD_TYPE
     }
 
     override fun appContext(): Application {
@@ -27,30 +31,30 @@ class CrashCallbackImpl(val app: Application) : IAppInfoCallback {
     }
 
     override fun appJenkinsBuild(): Boolean {
-        return BuildConfig.IS_JENKINS_ENV
+        return com.gw.reoqoosdk.BuildConfig.IS_JENKINS_ENV
     }
 
     override fun appSubVersion(): String {
-        return BuildConfig.SUB_VERSION
+        return "101"
     }
 
     override fun appVersionCode(): String {
-        return BuildConfig.VERSION_CODE.toString()
+        return com.gw.reoqoosdk.BuildConfig.SDK_VERSION_CODE
     }
 
     override fun appVersionName(): String {
-        return BuildConfig.VERSION_NAME
+        return com.gw.reoqoosdk.BuildConfig.SDK_VERSION_NAME
     }
 
     override fun flavorName(): String {
-        return BuildConfig.FLAVOR
+        return com.gw.reoqoosdk.BuildConfig.FLAVOR
     }
 
     override fun isRelease(): Boolean {
-        return !BuildConfig.DEBUG
+        return !com.gw.reoqoosdk.BuildConfig.DEBUG
     }
 
     override fun packageName(): String {
-        return BuildConfig.APPLICATION_ID
+        return mConfig.appId
     }
 }

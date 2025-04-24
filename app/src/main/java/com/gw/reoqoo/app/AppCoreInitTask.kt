@@ -35,6 +35,9 @@ import com.gw.reoqoo.app.crash.CrashCallbackImpl
 import com.gw.reoqoo.ui.logo.LogoActivity
 import com.gw.reoqoo.ui.main.MainActivity
 import com.gw.reoqoosdk.dev_monitor.IMonitorService
+import com.gw.reoqoosdk.sdk.app_server.AppCoreInitTask
+import com.gw.reoqoosdk.sdk.app_server.AppCoreInitTask.Companion
+import com.gw.reoqoosdk.sdk.repository.ConfigRepository
 import com.gwell.loglibs.GwellLogUtils
 import com.jwkj.base_crash.CrashManager
 import com.jwkj.base_lifecycle.LifecycleInitializer
@@ -98,6 +101,9 @@ class AppCoreInitTask @Inject constructor() : AInitializeTask() {
 
     @Inject
     lateinit var accountMgr: AccountMgr
+
+    @Inject
+    lateinit var repository: ConfigRepository
 
     @Inject
     lateinit var toast: IToast
@@ -276,9 +282,13 @@ class AppCoreInitTask @Inject constructor() : AInitializeTask() {
                     ResponseCode.CODE_10012 -> {
                     }
 
+//                    ResponseCode.CODE_10034 -> {
+//                    }
                     !in ResponseCode.values() -> {
                         // 未知的错误提示
-                        baseResp.msg?.let(toast::show)
+                        GwellLogUtils.i(TAG, "respCode ${respCode?.code} msg ${respCode?.msgRes}")
+//                        toast.show("Request Error")
+//                        baseResp.msg?.let(toast::show)
                     }
 
                     else -> Unit
@@ -317,7 +327,7 @@ class AppCoreInitTask @Inject constructor() : AInitializeTask() {
             countryCode,
             object : IIoTVideoAbility {
                 override fun getAnonymousSecureKey(): Array<String> {
-                    return signApi.getAnonymousInfo(context, appParamApi.getAppID())
+                    return signApi.getAnonymousInfo(context, appParamApi.getAppID(), repository.getConfig()?.appVersion?: BuildConfig.VERSION_NAME)
                 }
 
                 override fun onRedirectRequest(type: RedirectType): String {
@@ -377,12 +387,15 @@ class AppCoreInitTask @Inject constructor() : AInitializeTask() {
         if (StorageUtils.isDocPathAvailable(app)) {
             GwellLogUtils.i(TAG, "initCrash()")
             GwellLogUtils.i(TAG, "crash path: ${StorageUtils.getCrashLogDir(app)}")
-            CrashManager.init(
-                StorageUtils.getCrashLogDir(app),
-                BUGLY_APP_ID,
-                PhoneIDUtils.phoneUniqueId,
-                CrashCallbackImpl(app)
-            )
+            repository.getConfig()?.let {
+                GwellLogUtils.i(TAG, "sdk config: $it")
+                CrashManager.init(
+                    StorageUtils.getCrashLogDir(app),
+                    BUGLY_APP_ID,
+                    PhoneIDUtils.phoneUniqueId,
+                    CrashCallbackImpl(app, it)
+                )
+            }
             // bugly的崩溃监听
             CrashManager.addBuglyCrashListener { uuid, crashType, errorType, errorMessage, errorStack ->
                 GwellLogUtils.i(TAG, "bugly Crash")

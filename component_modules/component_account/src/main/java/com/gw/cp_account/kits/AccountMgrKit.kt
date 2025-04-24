@@ -70,10 +70,14 @@ object AccountMgrKit {
         }
     }
 
-    fun getAnonymousSecureKey(context: Context, appId: String): Array<String> {
-        val appTag = AppTagUtils.instance.getAppTag(context, appId)
-        GwellLogUtils.i(TAG, "appTag: $appTag")
-        return IoTVideoSdk.getAnonymousSecureKey(appTag)
+    /**
+     * 获取匿名签名信息
+     *
+     * @param context Context
+     * @param appId String
+     * @return Array<String>
+     */
+    fun getAnonymousSecureKey(context: Context, appId: String, versionName: String): Array<String> {
+        return IoTVideoSdk.getAnonymousSecureKey(AppTagUtils.getAppTag(context, appId, versionName))
     }
-
 }

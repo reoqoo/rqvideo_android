@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="AA0001">Hello , demo ！</string>
+    <string name="AA0001">Hello , ipTIME ！</string>
     <string name="AA0002">邮箱/⼿机号</string>
     <string name="AA0003">密码</string>
     <string name="AA0004">登录</string>
     <string name="AA0005">忘记密码？</string>
     <string name="AA0006">快速注册</string>
     <string name="AA0007">我已阅读并同意</string>
-    <string name="AA0008">demo用户协议</string>
+    <string name="AA0008">ipTIME用户协议</string>
     <string name="AA0010">同意</string>
     <string name="AA0011">不同意</string>
     <string name="AA0012">请输入正确的邮箱或⼿机号</string>
@@ -17,13 +17,13 @@
     <string name="AA0016">账号注册</string>
     <string name="AA0017">选择您的注册地</string>
     <string name="AA0018">确认</string>
-    <string name="AA0019">输入您可用于demo账号注册的邮箱或⼿机号</string>
+    <string name="AA0019">输入您可用于ipTIME账号注册的邮箱或⼿机号</string>
     <string name="AA0020">获取验证码</string>
     <string name="AA0024">设置密码</string>
     <string name="AA0025">密码为8～30位包含字⺟、数字的字符</string>
     <string name="AA0026">确认密码</string>
     <string name="AA0031">找回密码</string>
-    <string name="AA0032">请输入您的demo账号</string>
+    <string name="AA0032">请输入您的ipTIME账号</string>
     <string name="AA0034">请输入验证码</string>
     <string name="AA0035">验证码已发送⾄</string>
     <string name="AA0036">重新发送</string>
@@ -35,7 +35,7 @@
     <string name="AA0043">我的</string>
     <string name="AA0044">用户协议</string>
     <string name="AA0045">用户服务协议和隐私政策概要</string>
-    <string name="AA0046">欢迎您使用demo！demo是由XXXXXXXX.（以下简称“我们”）研发和运营的在线音视频平台，我们将通过《隐私政策》和《用户协议》帮助您了解我们收集、使用、存储和共享个人信息的情况，以及您所享有的相关权利。
+    <string name="AA0046">欢迎您使用ipTIME！ipTIME是由XXXXXXXX.（以下简称“我们”）研发和运营的在线音视频平台，我们将通过《隐私政策》和《用户协议》帮助您了解我们收集、使用、存储和共享个人信息的情况，以及您所享有的相关权利。
 为了向您提供视频直播、视频回放、收藏订阅、社区互动等服务，我们需要收集您的视频录像、视频图片、设备信息、操作日志等个人信息；
 您可以在个人中心访问、更正、删除您的个人信息并管理您的授权；
 我们会采用业界领先的安全技术保护好您的个人信息。
@@ -56,11 +56,11 @@
     <string name="AA0062">扫描设备机身二维码添加设备</string>
     <string name="AA0063">手电筒</string>
     <string name="AA0064">相册</string>
-    <string name="AA0065">demo想使用您的相机</string>
+    <string name="AA0065">ipTIME想使用您的相机</string>
     <string name="AA0066">需要扫描二维码进行连接和绑定设备，是否允许打开相机？</string>
     <string name="AA0067">拒绝</string>
     <string name="AA0068">没有相机权限，请在设置中开启</string>
-    <string name="AA0069">demo想使用您的定位信息</string>
+    <string name="AA0069">ipTIME想使用您的定位信息</string>
     <string name="AA0070">需要定位权限来获取Wi-Fi信息以进行设备添加，请先开启系统定位</string>
     <string name="AA0071">没有定位权限，请在设置中开启</string>
     <string name="AA0076">没有蓝牙权限，请在设置中开启</string>
@@ -104,8 +104,8 @@
     <string name="AA0145">选择要分享的设备</string>
     <string name="AA0146">最多只能添加%s个访客，如果要继续分享给其他人，请先删除部分访客!</string>
     <string name="AA0147">共享管理</string>
-    <string name="AA0148">输入要共享设备的demo账号</string>
-    <string name="AA0149">请输入demo账号</string>
+    <string name="AA0148">输入要共享设备的ipTIME账号</string>
+    <string name="AA0149">请输入ipTIME账号</string>
     <string name="AA0150">最近分享</string>
     <string name="AA0151">面对面分享</string>
     <string name="AA0153">用户名错误，请重新输入</string>
@@ -113,7 +113,7 @@
     <string name="AA0155">已经分享给该好友了</string>
     <string name="AA0156">分享成功</string>
     <string name="AA0157">有效期至</string>
-    <string name="AA0158">使用demo APP扫描上方二维码共享设备</string>
+    <string name="AA0158">使用ipTIME APP扫描上方二维码共享设备</string>
     <string name="AA0159">已经分享的好友</string>
     <string name="AA0160">二维码获取失败，点击刷新</string>
     <string name="AA0161">收到%s分享的设备</string>
@@ -169,9 +169,9 @@
     <string name="AA0221">语言</string>
     <string name="AA0222">问题反馈</string>
     <string name="AA0223">帮助与反馈</string>
-    <string name="AA0224">关于demo</string>
+    <string name="AA0224">关于ipTIME</string>
     <string name="AA0225">消息中心</string>
-    <string name="AA0227">开启demo APP通知权限，及时获得最新消息</string>
+    <string name="AA0227">开启ipTIME APP通知权限，及时获得最新消息</string>
     <string name="AA0228">暂时没有消息哦</string>
     <string name="AA0230">选择</string>
     <string name="AA0232">分享</string>
@@ -351,7 +351,7 @@
     <string name="AA0444">继续添加</string>
     <string name="AA0445">返回</string>
     <string name="AA0446">删除失败</string>
-    <string name="AA0447">demo</string>
+    <string name="AA0447">ipTIME</string>
     <string name="AA0448">完成(%1$s/%2$s)</string>
     <string name="AA0450">预览</string>
     <string name="AA0451">预览(%s)</string>
@@ -382,7 +382,7 @@
     <string name="AA0477">请尝试以下操作后重试：\n1. 请检查Wi-Fi密码是否正确;\n2.长按复位键重置设备；\n3.请检查路由器是否开启接入限制；\n4.尝试重启路由器。</string>
     <string name="AA0478">不支持的二维码</string>
     <string name="AA0480">1.摄像机可能不支持快速联网 (热点连接)，请按照设备语音提示选择连接方式。\n2.手机与设备距离太远。距离在 30厘米以内比较合适。</string>
-    <string name="AA0481">输入您可用于demo账号注册的邮箱</string>
+    <string name="AA0481">输入您可用于ipTIME账号注册的邮箱</string>
     <string name="AA0482">设备名称不能为空</string>
     <string name="AA0483">（错误码：%s）</string>
     <string name="AA0484">设备名称场景为空</string>
@@ -428,7 +428,8 @@
     <string name="AA0530">访客不存在</string>
     <string name="AA0531">只有设备主人才能分享/修改；当前设备已有主人，不允许修改访客为主人权限</string>
     <string name="AA0537">Version</string>
-    <string name="AA0545">我已阅读并同意《demo用户协议》和《隐私政策》</string>
+    <string name="AA0538">升级成功</string>
+    <string name="AA0545">我已阅读并同意《ipTIME用户协议》和《隐私政策》</string>
     <string name="AA0546">相机</string>
     <string name="AA0559">无效的二维码</string>
     <string name="AA0560">旧二维码已失效</string>
@@ -437,7 +438,7 @@
     <string name="AA0566">目标账号不可用</string>
     <string name="AA0567">目标账号不存在</string>
     <string name="AA0569">《隐私协议》</string>
-    <string name="AA0570">《demo用户协议》</string>
+    <string name="AA0570">《ipTIME用户协议》</string>
     <string name="AA0571">Enjoy your real cool life</string>
     <string name="AA0572">云服务正在升级中，敬请期待</string>
     <string name="AA0573">网络异常</string>
@@ -464,7 +465,7 @@
     <string name="AA0613">消息推送设置</string>
     <string name="AA0614">系统权限设置</string>
     <string name="AA0615">消息推送通知</string>
-    <string name="AA0616">开启后，可及时获得demo APP的最新消息</string>
+    <string name="AA0616">开启后，可及时获得ipTIME APP的最新消息</string>
     <string name="AA0617">去授权</string>
     <string name="AA0618">已开启</string>
     <string name="AA0619">位置</string>
@@ -481,7 +482,7 @@
     <string name="AA0630">开启后，可使用监控视频的小窗播放功能、看护铃悬浮</string>
     <string name="AA0631">后台弹出界面</string>
     <string name="AA0632">开启后，可及时收到看护铃通知</string>
-    <string name="AA0633">为了向您提供更好的用户体验，demo 会在特定场景下向您申请以下手机系统权限</string>
+    <string name="AA0633">为了向您提供更好的用户体验，ipTIME 会在特定场景下向您申请以下手机系统权限</string>
     <string name="AA0634">已授权</string>
     <string name="AA0635">未授权</string>
     <string name="AA0637">实时监控</string>
@@ -501,4 +502,5 @@
     <string name="AA0653">我的订单</string>
     <string name="AA0654">我的卡券</string>
     <string name="AA0656">已离线，暂时无法升级</string>
+    <string name="AA0657">系统异常</string>
 </resources>

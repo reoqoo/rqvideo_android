@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="AA0001">Hello , demo ！</string>
+    <string name="AA0001">Hello , ipTIME ！</string>
     <string name="AA0002">E-mail address/phone number</string>
     <string name="AA0003">Password</string>
     <string name="AA0004">Login</string>
@@ -23,7 +23,7 @@
     <string name="AA0025">Password must contain 8-30 characters include digits and letters</string>
     <string name="AA0026">Enter again</string>
     <string name="AA0031">Retrieve password</string>
-    <string name="AA0032">Please enter demo account</string>
+    <string name="AA0032">Please enter ipTIME account</string>
     <string name="AA0034">Verification code</string>
     <string name="AA0035">The verification code has been sent to</string>
     <string name="AA0036">Re-send</string>
@@ -35,7 +35,7 @@
     <string name="AA0043">Account</string>
     <string name="AA0044">User agreement</string>
     <string name="AA0045">User agreement and privacy policy</string>
-    <string name="AA0046">Welcome to demo! demo is developed and operated by demo IoT XXXXXXXX., Ltd. It\'s a platform to provide online video and audio.\n User Agreement &amp; Privacy Policy will help you get a comprehensive understanding of how we collect, use, store and share your personal information, as well as what rights you enjoy. \n In order to provide services such as live video, video playback, favorite subscription, community interaction, etc., we may collect the following types of personal information, including video recording, videos and pictures, device information, operation logs, etc. \n You can access/update/delete your information and manage the permissions via \"Me\" interface on the app. \n We will take all practicable steps to safeguard your personal information.\n You can get more information via %1$s &amp; %2$s. \n If your agree to it, please click \"Agree\" to get the service.</string>
+    <string name="AA0046">Welcome to ipTIME! ipTIME is developed and operated by ipTIME IoT XXXXXXXX., Ltd. It\'s a platform to provide online video and audio.\n User Agreement &amp; Privacy Policy will help you get a comprehensive understanding of how we collect, use, store and share your personal information, as well as what rights you enjoy. \n In order to provide services such as live video, video playback, favorite subscription, community interaction, etc., we may collect the following types of personal information, including video recording, videos and pictures, device information, operation logs, etc. \n You can access/update/delete your information and manage the permissions via \"Me\" interface on the app. \n We will take all practicable steps to safeguard your personal information.\n You can get more information via %1$s &amp; %2$s. \n If your agree to it, please click \"Agree\" to get the service.</string>
     <string name="AA0047">%s\'s home</string>
     <string name="AA0049">Add device</string>
     <string name="AA0050">Device sharing</string>
@@ -51,11 +51,11 @@
     <string name="AA0062">Scan the QR code on the device</string>
     <string name="AA0063">Flashlight</string>
     <string name="AA0064">Album</string>
-    <string name="AA0065">Allow \"demo\" to use your Camera?</string>
+    <string name="AA0065">Allow \"ipTIME\" to use your Camera?</string>
     <string name="AA0066">Need to scan the QR code to connect and bind the device, is it allowed to open the camera?</string>
     <string name="AA0067">Reject</string>
     <string name="AA0068">No camera authorization, please enable in Settings</string>
-    <string name="AA0069">Allow \"demo\" to use your location information?</string>
+    <string name="AA0069">Allow \"ipTIME\" to use your location information?</string>
     <string name="AA0070">To successfully added equipment, you need allow the use of the Location Services for getting Wi-Fi information.Please turn on Location Services</string>
     <string name="AA0071">The positioning permission is disabled. Please enable it in Settings</string>
     <string name="AA0076">The Bluetooth permission is disabled. Please enable it in Settings</string>
@@ -100,7 +100,7 @@
     <string name="AA0146">%s visitors can be added at most,please delete some if you want to continue sharing with others.</string>
     <string name="AA0147">Sharing</string>
     <string name="AA0148">Enter the account that needs to be shared</string>
-    <string name="AA0149">Please enter demo account</string>
+    <string name="AA0149">Please enter ipTIME account</string>
     <string name="AA0150">Recent share</string>
     <string name="AA0151">Face-to-face sharing</string>
     <string name="AA0153">User name error. Please enter again.</string>
@@ -108,7 +108,7 @@
     <string name="AA0155">Already shared with this friend</string>
     <string name="AA0156">Sharing succeeded</string>
     <string name="AA0157">Valid to</string>
-    <string name="AA0158">Scan the QR code using the demo APP to share</string>
+    <string name="AA0158">Scan the QR code using the ipTIME APP to share</string>
     <string name="AA0159">Friends shared  to</string>
     <string name="AA0160">Failed to get the QR code. Click to refresh</string>
     <string name="AA0161">%s shared a device with you</string>
@@ -164,9 +164,9 @@
     <string name="AA0221">Language</string>
     <string name="AA0222">Problem feedback</string>
     <string name="AA0223">Help and feedback</string>
-    <string name="AA0224">About demo</string>
+    <string name="AA0224">About ipTIME</string>
     <string name="AA0225">Notification center</string>
-    <string name="AA0227">Enable notifications from demo, to get the latest news</string>
+    <string name="AA0227">Enable notifications from ipTIME, to get the latest news</string>
     <string name="AA0228">No more messages</string>
     <string name="AA0230">Select</string>
     <string name="AA0232">Share</string>
@@ -346,7 +346,7 @@
     <string name="AA0444">Keep adding</string>
     <string name="AA0445">Back</string>
     <string name="AA0446">failed to delete</string>
-    <string name="AA0447">demo</string>
+    <string name="AA0447">ipTIME</string>
     <string name="AA0448">Done(%1$s/%2$s)</string>
     <string name="AA0450">Preview</string>
     <string name="AA0451">Preview(%s)</string>
@@ -422,6 +422,7 @@
     <string name="AA0530">Visitor does not exist</string>
     <string name="AA0531">Only the device owner can share/modify; The current device already has the owner, and modifying the guest as the owner permission is not allowed</string>
     <string name="AA0537">Version</string>
+    <string name="AA0538">Upgraded successfully</string>
     <string name="AA0545">I have read and agree to《User agreement》and《Privacy Policy》</string>
     <string name="AA0546">Camera</string>
     <string name="AA0559">Invalid QR code</string>
@@ -458,7 +459,7 @@
     <string name="AA0613">Push notification settings</string>
     <string name="AA0614">System access settings</string>
     <string name="AA0615">Push notifications</string>
-    <string name="AA0616">Enable it to timely receive the latest messages from demo APP</string>
+    <string name="AA0616">Enable it to timely receive the latest messages from ipTIME APP</string>
     <string name="AA0617">Grant permission</string>
     <string name="AA0618">Enabled</string>
     <string name="AA0619">Location</string>
@@ -475,7 +476,7 @@
     <string name="AA0630">Enable it to use mini-window video playback and floating nursing alarm</string>
     <string name="AA0631">Backend pop-up</string>
     <string name="AA0632">Enable it to timely receive nursing alarm notifications</string>
-    <string name="AA0633">To enhance your experience, demo will request the following permissions in specific scenarios</string>
+    <string name="AA0633">To enhance your experience, ipTIME will request the following permissions in specific scenarios</string>
     <string name="AA0634">Authorized</string>
     <string name="AA0635">Unauthorized</string>
     <string name="AA0637">Real-time monitoring</string>
@@ -495,4 +496,5 @@
     <string name="AA0653">My Orders</string>
     <string name="AA0654">My Coupons</string>
     <string name="AA0656">Offline, upgrade unavailable</string>
+    <string name="AA0657">System abnormality</string>
 </resources>

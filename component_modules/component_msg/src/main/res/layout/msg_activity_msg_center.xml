@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             app:main_text="@string/AA0225"
             app:right_icon="@drawable/icon_msg_clean"
-            app:right_icon_visible="false"
+            app:right_icon_visible="true"
             tools:right_icon_visible="true" />
 
         <LinearLayout

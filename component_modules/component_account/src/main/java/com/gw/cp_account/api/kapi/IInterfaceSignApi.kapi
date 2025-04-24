@@ -10,13 +10,13 @@ import android.content.Context
 interface IInterfaceSignApi {
 
     /**
-     * 设置匿名签名信息
-     */
-    fun setAnonymousInfo(appID: String)
-
-    /**
      * 获取匿名签名信息
+     *
+     * @param context Context  上下文
+     * @param appID String     appID
+     * @param appVersion String app版本号
+     * @return Array<String>
      */
-    fun getAnonymousInfo(context: Context, appID: String): Array<String>
+    fun getAnonymousInfo(context: Context, appID: String, appVersion: String): Array<String>
 
 }

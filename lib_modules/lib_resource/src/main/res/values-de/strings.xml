@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="AA0001">Hello , demo ！</string>
+    <string name="AA0001">Hello , ipTIME ！</string>
     <string name="AA0002">E-Mail/Mobiltelefon</string>
     <string name="AA0003">Passwort</string>
     <string name="AA0004">Anmelden</string>
@@ -23,7 +23,7 @@
     <string name="AA0025">Passwort muss 8 - 30 stellig sein (inkl. Buchstaben und Zahlen).</string>
     <string name="AA0026">Erneut eingeben</string>
     <string name="AA0031">Passtwort finden</string>
-    <string name="AA0032">Bitte geben Sie demo ID</string>
+    <string name="AA0032">Bitte geben Sie ipTIME ID</string>
     <string name="AA0034">Geben Sie bitte den Bestätigungscode ein</string>
     <string name="AA0035">Der Verifizierungscode wurde gesendet an</string>
     <string name="AA0036">neu senden</string>
@@ -35,7 +35,7 @@
     <string name="AA0043">Mein</string>
     <string name="AA0044">Vereinbarung</string>
     <string name="AA0045">Zusammenfassung der Nutzerservicevereinbarung und Datenschutzrichtlinie</string>
-    <string name="AA0046">Willkommen bei demo! demo ist eine Online-Audio- und -Videoplattform, die von Shenzhen DophiGo IoT Technology  (im Folgenden als „wir“ bezeichnet) entwickelt und betrieben wird. Wir helfen Ihnen zu verstehen, wie wir Ihre persönlichen Daten im Rahmen der Datenschutzrichtlinie und der Benutzervereinbarung sammeln, verwenden, speichern und weitergeben und was für Rechte Sie haben. \n Um Ihnen Live-Video, Videowiedergabe, Sammlungsabonnement, Community-Interaktion und andere Dienste zur Verfügung zu stellen, müssen wir Ihre persönlichen Daten wie Videoaufzeichnungen, Videobilder, Geräteinformationen, Betriebsprotokolle usw. sammeln. \n Sie können auf Ihre persönlichen Daten zugreifen, diese korrigieren, löschen und Ihre Autorisierung im Persönlichen Zentrum verwalten. \n Wir werden branchenführende Sicherheitstechnologien verwenden, um Ihre persönlichen Daten zu schützen. \n Sie können mehr erfahren, indem Sie die Vollversionen von %1$s und %2$s lesen. \n Wenn Sie damit einverstanden sind, klicken Sie bitte auf „Zustimmen“, um unsere Dienstleistungen zu akzeptieren.</string>
+    <string name="AA0046">Willkommen bei ipTIME! ipTIME ist eine Online-Audio- und -Videoplattform, die von Shenzhen DophiGo IoT Technology  (im Folgenden als „wir“ bezeichnet) entwickelt und betrieben wird. Wir helfen Ihnen zu verstehen, wie wir Ihre persönlichen Daten im Rahmen der Datenschutzrichtlinie und der Benutzervereinbarung sammeln, verwenden, speichern und weitergeben und was für Rechte Sie haben. \n Um Ihnen Live-Video, Videowiedergabe, Sammlungsabonnement, Community-Interaktion und andere Dienste zur Verfügung zu stellen, müssen wir Ihre persönlichen Daten wie Videoaufzeichnungen, Videobilder, Geräteinformationen, Betriebsprotokolle usw. sammeln. \n Sie können auf Ihre persönlichen Daten zugreifen, diese korrigieren, löschen und Ihre Autorisierung im Persönlichen Zentrum verwalten. \n Wir werden branchenführende Sicherheitstechnologien verwenden, um Ihre persönlichen Daten zu schützen. \n Sie können mehr erfahren, indem Sie die Vollversionen von %1$s und %2$s lesen. \n Wenn Sie damit einverstanden sind, klicken Sie bitte auf „Zustimmen“, um unsere Dienstleistungen zu akzeptieren.</string>
     <string name="AA0047">%ss Zuhause</string>
     <string name="AA0049">Geräte hinzufügen</string>
     <string name="AA0050">Gerät teilen</string>
@@ -50,11 +50,11 @@
     <string name="AA0062">QR-Code am Gerät scannen um hinzuzufügen</string>
     <string name="AA0063">Taschenlampe</string>
     <string name="AA0064">Fotoalbum</string>
-    <string name="AA0065">demo will deine Kamera benutzen</string>
+    <string name="AA0065">ipTIME will deine Kamera benutzen</string>
     <string name="AA0066">Sie müssen den QR-Code scannen, um das Gerät anzuschließen und zu verbinden. Ist es erlaubt, die Kamera zu öffnen?</string>
     <string name="AA0067">Ablehnen</string>
     <string name="AA0068">Keine Kameraerlaubnis, bitte in den Einstellungen aktivieren</string>
-    <string name="AA0069">demo möchte Ihre Standortinformationen verwenden</string>
+    <string name="AA0069">ipTIME möchte Ihre Standortinformationen verwenden</string>
     <string name="AA0070">Um erfolgreich hinzugefügt Ausrüstung, müssen Sie die Nutzung der Ortungsdienste ermöglichen bekommen Wi-Fi Informationen. Bitte schalten Sie Location Services.</string>
     <string name="AA0071">Keine Standortberechtigung, bitte in den Einstellungen aktivieren</string>
     <string name="AA0076">Keine Bluetooth-Berechtigung, bitte in den Einstellungen aktivieren</string>
@@ -98,8 +98,8 @@
     <string name="AA0145">Wählen Sie das Gerät zum Teilen aus</string>
     <string name="AA0146">Sie können höchstens X Besucher addieren, wenn Sie mit weiteren Personen teilen möchten, sollten Sie zuerst einige Besucher löschen!</string>
     <string name="AA0147">Teilungsmanagement</string>
-    <string name="AA0148">Geben Sie das demo-Konto zur Gerätenutzung ein</string>
-    <string name="AA0149">Bitte geben Sie das demo-Konto ein</string>
+    <string name="AA0148">Geben Sie das ipTIME-Konto zur Gerätenutzung ein</string>
+    <string name="AA0149">Bitte geben Sie das ipTIME-Konto ein</string>
     <string name="AA0150">Zuletzt geteilt</string>
     <string name="AA0151">Face-to-Face teilen</string>
     <string name="AA0153">Benutzername falsch, bitte erneut eingeben</string>
@@ -107,7 +107,7 @@
     <string name="AA0155">Bereits mit diesem Freund geteilt</string>
     <string name="AA0156">Erfolgreich geteilt</string>
     <string name="AA0157">Gültig bis</string>
-    <string name="AA0158">Scannen Sie den oben genannten QR-Code mit der demo APP, um das Gerät zu teilen</string>
+    <string name="AA0158">Scannen Sie den oben genannten QR-Code mit der ipTIME APP, um das Gerät zu teilen</string>
     <string name="AA0159">Bereits geteilte Freunde</string>
     <string name="AA0160">QR-Code konnte nicht abgerufen werden, klicken Sie, um zu aktualisieren</string>
     <string name="AA0161">%s hat ein Gerät für Sie eingeteilt</string>
@@ -163,9 +163,9 @@
     <string name="AA0221">Sprache</string>
     <string name="AA0222">Feedback</string>
     <string name="AA0223">Hilfe und Feedback</string>
-    <string name="AA0224">Über demo</string>
+    <string name="AA0224">Über ipTIME</string>
     <string name="AA0225">Nachrichtenzentrum</string>
-    <string name="AA0227">Berechtigung zum Erhalt der neusten Nachrichten  über die App demo aktivieren</string>
+    <string name="AA0227">Berechtigung zum Erhalt der neusten Nachrichten  über die App ipTIME aktivieren</string>
     <string name="AA0228">Keine weiteren Nachrichten</string>
     <string name="AA0230">wählen</string>
     <string name="AA0232">Teilen</string>
@@ -344,7 +344,7 @@
     <string name="AA0444">Weiter hinzufügen</string>
     <string name="AA0445">Zurück</string>
     <string name="AA0446">löschen fehlgeschlagen</string>
-    <string name="AA0447">demo</string>
+    <string name="AA0447">ipTIME</string>
     <string name="AA0448">Erledigt(%1$s/%2$s)</string>
     <string name="AA0450">Vorschau</string>
     <string name="AA0451">Vorschau(%s)</string>
@@ -421,7 +421,8 @@ Um zu vermeiden, dass der Strom zu schnell ausgeht, wurde das Gerät automatisch
     <string name="AA0530">Gast existiert nicht</string>
     <string name="AA0531">Nur der Besitzer kann teilen/ändern; aktuelles Gerät hat bereits einen Besitzer, Änderung des Besuchers zu Besitzern nicht erlaubt</string>
     <string name="AA0537">Version</string>
-    <string name="AA0545">Ich habe die demo-Nutzungsvereinbarung und die Datenschutzrichtlinie gelesen und stimme ihnen zu</string>
+    <string name="AA0538">Aktualisierung erfolgreich</string>
+    <string name="AA0545">Ich habe die ipTIME-Nutzungsvereinbarung und die Datenschutzrichtlinie gelesen und stimme ihnen zu</string>
     <string name="AA0546">Eine kamera</string>
     <string name="AA0559">Ungültiger QR-Code.</string>
     <string name="AA0560">Alter QR-Code ungültig.</string>
@@ -457,7 +458,7 @@ Um zu vermeiden, dass der Strom zu schnell ausgeht, wurde das Gerät automatisch
     <string name="AA0613">Einstellungen für Push-Benachrichtigungen</string>
     <string name="AA0614">Einstellungen der Systemberechtigungen</string>
     <string name="AA0615">Benachrichtigung über Push-Mitteilungen</string>
-    <string name="AA0616">Wenn aktiviert, erhalten Sie rechtzeitig die neuesten Nachrichten der demo APP</string>
+    <string name="AA0616">Wenn aktiviert, erhalten Sie rechtzeitig die neuesten Nachrichten der ipTIME APP</string>
     <string name="AA0617">Autorisieren</string>
     <string name="AA0618">Aktiviert</string>
     <string name="AA0619">Standort</string>
@@ -474,7 +475,7 @@ Um zu vermeiden, dass der Strom zu schnell ausgeht, wurde das Gerät automatisch
     <string name="AA0630">Nach Aktivierung kann die Video-Überwachungs-Popup-Funktion und Klingelüberwachung genutzt werden</string>
     <string name="AA0631">Hintergrund-Popup-Oberfläche</string>
     <string name="AA0632">Nach Aktivierung können Sie Benachrichtigungen für die Pflegeklingel erhalten</string>
-    <string name="AA0633">Um Ihnen ein besseres Benutzererlebnis zu bieten, beantragt demo in bestimmten Situationen die folgenden Systemberechtigungen.</string>
+    <string name="AA0633">Um Ihnen ein besseres Benutzererlebnis zu bieten, beantragt ipTIME in bestimmten Situationen die folgenden Systemberechtigungen.</string>
     <string name="AA0634">Genehmigt</string>
     <string name="AA0635">Nicht genehmigt</string>
     <string name="AA0637">Live-Überwachung</string>
@@ -494,4 +495,5 @@ Um zu vermeiden, dass der Strom zu schnell ausgeht, wurde das Gerät automatisch
     <string name="AA0653">Meine Bestellungen</string>
     <string name="AA0654">Meine Gutscheine</string>
     <string name="AA0656">Offline, Update nicht möglich</string>
+    <string name="AA0657">Systemanomalie</string>
 </resources>

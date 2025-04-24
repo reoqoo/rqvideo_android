@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="AA0001">Hello , demo ！</string>
+    <string name="AA0001">Hello , ipTIME ！</string>
     <string name="AA0002">E-mel / nombor telefon bimbit</string>
     <string name="AA0003">Kata laluan</string>
     <string name="AA0004">Log masuk</string>
@@ -23,7 +23,7 @@
     <string name="AA0025">Kata laluan adalah 8 ~ 30 huruf, nombor, mengandungi aksara</string>
     <string name="AA0026">Taip semula</string>
     <string name="AA0031">Pulih kata laluan</string>
-    <string name="AA0032">Sila masukkan akaun demo</string>
+    <string name="AA0032">Sila masukkan akaun ipTIME</string>
     <string name="AA0034">Masukkan kod pengesahan</string>
     <string name="AA0035">Kod pengesahan telah dihantar ke</string>
     <string name="AA0036">Hantar Semula</string>
@@ -35,7 +35,7 @@
     <string name="AA0043">Saya</string>
     <string name="AA0044">Perjanjian Pengguna</string>
     <string name="AA0045">Ringkasan Perjanjian Perkhidmatan dan Polisi Privasi Pengguna</string>
-    <string name="AA0046">Anda dialu-alukan untuk menggunakan teknologi video demo ou ialah platform audio dalam talian yang dibangunkan dan dikendalikan oleh demo IoT XXXXXXXX., Ltd. (selepas ini dirujuk sebagai \"Anda Membantu Kami\"). Harap maklum bahawa kami akan mengumpul, menggunakan, Bagaimana maklumat disimpan dan dikongsi, video yang anda lihat tentang kami. Gambar video, maklumat peranti, log dan maklumat peribadi lain;\nAnda boleh mengakses, membetulkan dan memadamkan kebenaran anda;\nKami akan menggunakan teknologi keselamatan peribadi di pusat operasi teratas untuk melindungi maklumat peribadi anda. \nAnda boleh membaca versi %1$s dan %2$s untuk butiran penuh. \nJika anda bersetuju, sila klik \"Setuju\" untuk menerima perkhidmatan kami.</string>
+    <string name="AA0046">Anda dialu-alukan untuk menggunakan teknologi video ipTIME ou ialah platform audio dalam talian yang dibangunkan dan dikendalikan oleh ipTIME IoT XXXXXXXX., Ltd. (selepas ini dirujuk sebagai \"Anda Membantu Kami\"). Harap maklum bahawa kami akan mengumpul, menggunakan, Bagaimana maklumat disimpan dan dikongsi, video yang anda lihat tentang kami. Gambar video, maklumat peranti, log dan maklumat peribadi lain;\nAnda boleh mengakses, membetulkan dan memadamkan kebenaran anda;\nKami akan menggunakan teknologi keselamatan peribadi di pusat operasi teratas untuk melindungi maklumat peribadi anda. \nAnda boleh membaca versi %1$s dan %2$s untuk butiran penuh. \nJika anda bersetuju, sila klik \"Setuju\" untuk menerima perkhidmatan kami.</string>
     <string name="AA0047">Rumah %s</string>
     <string name="AA0049">Tambah peranti</string>
     <string name="AA0050">Berkongsi peranti</string>
@@ -51,11 +51,11 @@
     <string name="AA0062">Imbas kod QR pada badan peranti untuk menambah peranti</string>
     <string name="AA0063">Lampu suluh</string>
     <string name="AA0064">Album</string>
-    <string name="AA0065">demo mahu menggunakan kamera anda</string>
+    <string name="AA0065">ipTIME mahu menggunakan kamera anda</string>
     <string name="AA0066">Anda perlu mengimbas kod QR untuk menyambung dan mengikat peranti. Adakah ia dibenarkan untuk membuka kamera?</string>
     <string name="AA0067">Menolak</string>
     <string name="AA0068">Tanpa izin kamera, sila aktifkan dalam Tetapan</string>
-    <string name="AA0069">demo mahu menggunakan maklumat lokasi anda</string>
+    <string name="AA0069">ipTIME mahu menggunakan maklumat lokasi anda</string>
     <string name="AA0070">Untuk berjaya menambah peralatan, anda perlu membenarkan penggunaan Perkhidmatan Lokasi untuk mendapatkan maklumat Wi-Fi.Sila hidupkan Perkhidmatan Lokasi.</string>
     <string name="AA0071">Kebenaran kedudukan belum dihidupkan, sila hidupkannya dalam Tetapan</string>
     <string name="AA0076">Tiada kebenaran Bluetooth, sila hidupkan dalam Tetapan</string>
@@ -99,8 +99,8 @@
     <string name="AA0145">Pilih peranti yang ingin anda kongsi</string>
     <string name="AA0146">Hanya menambah sehingga X pelawat,  jika anda mahu terus berkongsi kepada orang lain, sila memadamkan beberapa pengunjung dulu!</string>
     <string name="AA0147">Pengurusan Kongsi</string>
-    <string name="AA0148">Masukkan akaun demo yang perlu dikongsi</string>
-    <string name="AA0149">Sila masukkan akaun demo</string>
+    <string name="AA0148">Masukkan akaun ipTIME yang perlu dikongsi</string>
+    <string name="AA0149">Sila masukkan akaun ipTIME</string>
     <string name="AA0150">Perkongsian terbaru</string>
     <string name="AA0151">Bersemuka Kongsi</string>
     <string name="AA0153">Ralat nama pengguna, sila masukkan semula</string>
@@ -108,7 +108,7 @@
     <string name="AA0155">Sudah berkongsi dengan rakan ini</string>
     <string name="AA0156">Berkongsi berjaya</string>
     <string name="AA0157">Sah ke</string>
-    <string name="AA0158">Imbas kod QR di atas dengan menggunakan APP demo untuk berkongsi peranti</string>
+    <string name="AA0158">Imbas kod QR di atas dengan menggunakan APP ipTIME untuk berkongsi peranti</string>
     <string name="AA0159">Rakan yang telah berkongsi</string>
     <string name="AA0160">Gagal mendapatkan kod QR, klik untuk menyegarkan semula</string>
     <string name="AA0161">%s berkongsi peranti dengan anda</string>
@@ -164,7 +164,7 @@
     <string name="AA0221">Bahasa</string>
     <string name="AA0222">Maklum balas</string>
     <string name="AA0223">Bantuan dan maklum balas</string>
-    <string name="AA0224">Mengenai demo</string>
+    <string name="AA0224">Mengenai ipTIME</string>
     <string name="AA0225">Pusat Mesej</string>
     <string name="AA0227">Hidupkan kebenaran pemberitahuan untuk mendapatkan berita terkini tepat pada masanya</string>
     <string name="AA0228">Mesej tidak lebih</string>
@@ -346,7 +346,7 @@
     <string name="AA0444">Terus menambah</string>
     <string name="AA0445">Kembali</string>
     <string name="AA0446">memadam gagal</string>
-    <string name="AA0447">demo</string>
+    <string name="AA0447">ipTIME</string>
     <string name="AA0448">Selesai(%1$s/%2$s)</string>
     <string name="AA0450">Pratonton</string>
     <string name="AA0451">Pratonton(%s)</string>
@@ -423,6 +423,7 @@ Untuk menghindari kehabisan kuasa terlalu cepat, ia telah menukar secara automat
     <string name="AA0530">Pelawat tidak wujud</string>
     <string name="AA0531">Hanya induk peranti boleh berkongsi/mengubah suai; Peranti semasa sudah mempunyai induk dan mengubah suai pelawat sebagai kebenaran induk tidak dibenarkan</string>
     <string name="AA0537">Version</string>
+    <string name="AA0538">naik taraf berjaya</string>
     <string name="AA0545">Saya telah membaca dan bersetuju dengan \"Perjanjian Pengguna\" dan \"Perjanjian Privasi\"</string>
     <string name="AA0546">Kamera</string>
     <string name="AA0559">Kod QR tidak sah</string>
@@ -459,7 +460,7 @@ Untuk menghindari kehabisan kuasa terlalu cepat, ia telah menukar secara automat
     <string name="AA0613">Tetapan tolak mesej</string>
     <string name="AA0614">Tetapan kebenaran sistem</string>
     <string name="AA0615">Pemberitahuan tolak mesej</string>
-    <string name="AA0616">Selepas hidupkannya, anda boleh dapatkan berita terkini daripada demo APP tepat pada masanya</string>
+    <string name="AA0616">Selepas hidupkannya, anda boleh dapatkan berita terkini daripada ipTIME APP tepat pada masanya</string>
     <string name="AA0617">Pergi membenarkan</string>
     <string name="AA0618">Diaktifkan</string>
     <string name="AA0619">Lokasi</string>
@@ -476,7 +477,7 @@ Untuk menghindari kehabisan kuasa terlalu cepat, ia telah menukar secara automat
     <string name="AA0630">Selepas menghidupkannya, anda boleh menggunakan fungsi main balik tetingkap kecil video pemantauan dan loceng penjagaan terapung</string>
     <string name="AA0631">Antara muka timbul dari latar belakang</string>
     <string name="AA0632">Selepas menghidupkannya, anda boleh menerima pemberitahuan tepat pada masanya daripada loceng penjagaan</string>
-    <string name="AA0633">Untuk memberikan anda pengalaman pengguna yang lebih baik, demo akan memohon kebenaran sistem mudah alih berikut dalam senario tertentu</string>
+    <string name="AA0633">Untuk memberikan anda pengalaman pengguna yang lebih baik, ipTIME akan memohon kebenaran sistem mudah alih berikut dalam senario tertentu</string>
     <string name="AA0634">Dibenarkan</string>
     <string name="AA0635">Tanpa kebenaran</string>
     <string name="AA0637">Pemantauan masa nyata</string>
@@ -496,4 +497,5 @@ Untuk menghindari kehabisan kuasa terlalu cepat, ia telah menukar secara automat
     <string name="AA0653">Arahan saya</string>
     <string name="AA0654">Guru kad saya</string>
     <string name="AA0656">Luar talian, kemas kini tidak tersedia</string>
+    <string name="AA0657">Abnormaliti sistem</string>
 </resources>

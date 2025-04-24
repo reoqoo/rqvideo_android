@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="AA0001">Hello , demo ！</string>
+    <string name="AA0001">Hello , ipTIME ！</string>
     <string name="AA0002">E-posta / Cep telefonu</string>
     <string name="AA0003">Şifre</string>
     <string name="AA0004">Oturum aç</string>
@@ -23,7 +23,7 @@
     <string name="AA0025">Şifre 8 - 30 karakter ve harf, sayı içeriyor</string>
     <string name="AA0026">Yeniden yaz</string>
     <string name="AA0031">Parola Al</string>
-    <string name="AA0032">demo kimliğini girin</string>
+    <string name="AA0032">ipTIME kimliğini girin</string>
     <string name="AA0034">Lütfen doğrulama kodunu giriniz</string>
     <string name="AA0035">Doğrulama kodu şuraya gönderildi:</string>
     <string name="AA0036">Yeniden gönder</string>
@@ -35,7 +35,7 @@
     <string name="AA0043">Benim</string>
     <string name="AA0044">Kullanıcı Sözleşmesi</string>
     <string name="AA0045">Kullanıcı hizmet sözleşmesi ve gizlilik politikasının özeti</string>
-    <string name="AA0046">demo kullandığınız için teşekkür ederiz! demo, demo IoT XXXXXXXX., Ltd. (bundan sonra \"biz\" olarak anılacaktır) tarafından geliştirilen ve işletilen bir çevrimiçi ses ve video platformudur. Gizlilik Sözleşmesi ve  Kullanıcı Sözleşmesi ile kişisel bilgileri topladığımız, kullandığımız, sakladığımız ve paylaştığımız durumu anlamanıza yardım edeceğiz. \n size canlı yayın, video oynatma, koleksiyon aboneliği, topluluk etkileşimi ve diğer hizmetleri sağlamak için video kayıtları, video resimleri, cihaz bilgileri, işlem günlükleri vb. kişisel bilgilerinizi toplamamız gerekir. \n siz kişisel merkezde, kişisel bilgileri gözden geçirme, düzeltme, silme işlemleri ile ilgili yetkilendirme ve yönetme yapabilirsiniz. \n Kişisel bilgilerinizi korumak için sektör lideri güvenlik teknolojisini kullanacaktır. \n siz tam eksiksiz olan %1$s ve %2$s okuyarak detaylı bilgilere sahip olabilirsiniz.  \n Kabul ediyorsanız, hizmetlerimizi kabul etmek için lütfen \"Kabul Ediyorum\" u tıklayın.</string>
+    <string name="AA0046">ipTIME kullandığınız için teşekkür ederiz! ipTIME, ipTIME IoT XXXXXXXX., Ltd. (bundan sonra \"biz\" olarak anılacaktır) tarafından geliştirilen ve işletilen bir çevrimiçi ses ve video platformudur. Gizlilik Sözleşmesi ve  Kullanıcı Sözleşmesi ile kişisel bilgileri topladığımız, kullandığımız, sakladığımız ve paylaştığımız durumu anlamanıza yardım edeceğiz. \n size canlı yayın, video oynatma, koleksiyon aboneliği, topluluk etkileşimi ve diğer hizmetleri sağlamak için video kayıtları, video resimleri, cihaz bilgileri, işlem günlükleri vb. kişisel bilgilerinizi toplamamız gerekir. \n siz kişisel merkezde, kişisel bilgileri gözden geçirme, düzeltme, silme işlemleri ile ilgili yetkilendirme ve yönetme yapabilirsiniz. \n Kişisel bilgilerinizi korumak için sektör lideri güvenlik teknolojisini kullanacaktır. \n siz tam eksiksiz olan %1$s ve %2$s okuyarak detaylı bilgilere sahip olabilirsiniz.  \n Kabul ediyorsanız, hizmetlerimizi kabul etmek için lütfen \"Kabul Ediyorum\" u tıklayın.</string>
     <string name="AA0047">%s\'in evi</string>
     <string name="AA0049">Cihaz ekle</string>
     <string name="AA0050">Cihazı paylaş</string>
@@ -50,11 +50,11 @@
     <string name="AA0062">Cihazda QR kodu tarayın ve ekleyin</string>
     <string name="AA0063">Fener</string>
     <string name="AA0064">Fotoğraf albümü</string>
-    <string name="AA0065">demo kameranızı kullanmak istiyor</string>
+    <string name="AA0065">ipTIME kameranızı kullanmak istiyor</string>
     <string name="AA0066">Cihazı bağlamak ve bağlamak için QR kodunu taramanız gerekir. o kamerayı açmak için izin verilir?</string>
     <string name="AA0067">Reddet</string>
     <string name="AA0068">Kamera izni yok, lütfen Ayarlarda etkinleştirin</string>
-    <string name="AA0069">demo konum bilgilerinizi kullanmak istiyor</string>
+    <string name="AA0069">ipTIME konum bilgilerinizi kullanmak istiyor</string>
     <string name="AA0070">Başarıyla ekipman eklendi için, Wi-Fi bilgi almak için Konum Hizmetlerinin kullanımına izin gerekiyor.Konum Hizmetleri\'ni açın.</string>
     <string name="AA0071">Konum izni yok, lütfen ayarlardan etkinleştirin</string>
     <string name="AA0076">Bluetooth izni yok, lütfen ayarlardan etkinleştirin</string>
@@ -99,8 +99,8 @@
     <string name="AA0145">Paylaşılacak cihazı seçin</string>
     <string name="AA0146">Yalnızca X tane ziyaretçi ekleyebilirsiniz, başkalarına paylaşmak istiyorsanız lütfen önce bazı ziyaretçileri siliniz!</string>
     <string name="AA0147">Paylaşımı yönetin</string>
-    <string name="AA0148">Cihazı paylaşmak için demo hesabını girin</string>
-    <string name="AA0149">Lütfen demo hesabını giriniz</string>
+    <string name="AA0148">Cihazı paylaşmak için ipTIME hesabını girin</string>
+    <string name="AA0149">Lütfen ipTIME hesabını giriniz</string>
     <string name="AA0150">Son paylaşılan</string>
     <string name="AA0151">Yüz yüze paylaşma</string>
     <string name="AA0153">Kullanıcı adı hatalı, lütfen tekrar giriniz</string>
@@ -108,7 +108,7 @@
     <string name="AA0155">Zaten bu arkadaşla paylaşıldı</string>
     <string name="AA0156">Başarıyla paylaşıldı</string>
     <string name="AA0157">Geçerli olduğu tarih</string>
-    <string name="AA0158">Cihazı paylaşmak için yukarıdaki QR kodu demo uygulaması ile tarayın</string>
+    <string name="AA0158">Cihazı paylaşmak için yukarıdaki QR kodu ipTIME uygulaması ile tarayın</string>
     <string name="AA0159">Zaten paylaşılan arkadaşlar</string>
     <string name="AA0160">QR kodu alınamadı, güncellemek için tıklayın</string>
     <string name="AA0161">%s sizinle bir cihaz paylaştı</string>
@@ -164,7 +164,7 @@
     <string name="AA0221">Dil</string>
     <string name="AA0222">Geri Bildirim</string>
     <string name="AA0223">Yardım ve Geri bildirim</string>
-    <string name="AA0224">demo Hakkında</string>
+    <string name="AA0224">ipTIME Hakkında</string>
     <string name="AA0225">Mesaj Merkezi</string>
     <string name="AA0227">En son haberleri zamanında almak için Youkanto APP\'nin bildirim iznini açın</string>
     <string name="AA0228">Başka mesaj yok</string>
@@ -345,7 +345,7 @@
     <string name="AA0444">Eklemeye devam et</string>
     <string name="AA0445">Geri dön</string>
     <string name="AA0446">Sil başarısız</string>
-    <string name="AA0447">demo</string>
+    <string name="AA0447">ipTIME</string>
     <string name="AA0448">Bitiş(%1$s/%2$s)</string>
     <string name="AA0450">Ön izleme</string>
     <string name="AA0451">Ön izleme(%s)</string>
@@ -422,7 +422,8 @@ Pilin çok çabuk bitmesini önlemek için otomatik olarak güç tasarrufu modun
     <string name="AA0530">Ziyaretçi mevcut değil</string>
     <string name="AA0531">Sadece cihaz sahibi paylaşımda veya değişiklikte bulunabilir; mevcut cihazın zaten bir sahibi var, ziyaretçinin sahip olarak değiştirilmesine izin verilmiyor</string>
     <string name="AA0537">Sürüm</string>
-    <string name="AA0545">demo Kullanıcı Sözleşmesi ve Gizlilik Politikasını okudum ve kabul ediyorum</string>
+    <string name="AA0538">Yükseltme başarılı</string>
+    <string name="AA0545">ipTIME Kullanıcı Sözleşmesi ve Gizlilik Politikasını okudum ve kabul ediyorum</string>
     <string name="AA0546">kamera</string>
     <string name="AA0559">Geçersiz QR Kod.</string>
     <string name="AA0560">Eski QR Kod geçersiz.</string>
@@ -458,7 +459,7 @@ Pilin çok çabuk bitmesini önlemek için otomatik olarak güç tasarrufu modun
     <string name="AA0613">Mesaj bildirim ayarları</string>
     <string name="AA0614">Sistem izin ayarları</string>
     <string name="AA0615">Mesaj bildirim bildirimi</string>
-    <string name="AA0616">Açıldığında, demo Uygulamasının en son haberlerini zamanında alabilirsiniz</string>
+    <string name="AA0616">Açıldığında, ipTIME Uygulamasının en son haberlerini zamanında alabilirsiniz</string>
     <string name="AA0617">Yetkilendir</string>
     <string name="AA0618">Açık</string>
     <string name="AA0619">Yer</string>
@@ -475,7 +476,7 @@ Pilin çok çabuk bitmesini önlemek için otomatik olarak güç tasarrufu modun
     <string name="AA0630">Açıldıktan sonra küçük pencerede video oynatma ve gözlem zili bildirim fonksiyonlarını kullanabilirsiniz</string>
     <string name="AA0631">Arka plan açılır pencere arayüzü</string>
     <string name="AA0632">Açıldıktan sonra gözlem zili bildirimlerini alabilirsiniz</string>
-    <string name="AA0633">Daha iyi bir kullanıcı deneyimi sunmak için, demo belirli durumlarda aşağıdaki sistem izinlerini talep eder.</string>
+    <string name="AA0633">Daha iyi bir kullanıcı deneyimi sunmak için, ipTIME belirli durumlarda aşağıdaki sistem izinlerini talep eder.</string>
     <string name="AA0634">İzin Verildi</string>
     <string name="AA0635">İzin Verilmedi</string>
     <string name="AA0637">Canlı İzleme</string>
@@ -495,4 +496,5 @@ Pilin çok çabuk bitmesini önlemek için otomatik olarak güç tasarrufu modun
     <string name="AA0653">Siparişlerim</string>
     <string name="AA0654">Kuponlarım</string>
     <string name="AA0656">Çevrimdışı, güncelleme yok</string>
+    <string name="AA0657">Sistem abnormalliği</string>
 </resources>

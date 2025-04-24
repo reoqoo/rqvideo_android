@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="AA0001">Hello , demo ！</string>
+    <string name="AA0001">Hello , ipTIME ！</string>
     <string name="AA0002">Email/Ponsel</string>
     <string name="AA0003">Kata sandi</string>
     <string name="AA0004">Log masuk</string>
@@ -23,7 +23,7 @@
     <string name="AA0025">Kata sandi 8 ~ 30 huruf, Bilangan, karakter</string>
     <string name="AA0026">Mengetik ulang</string>
     <string name="AA0031">Mengembalikan kata sandi</string>
-    <string name="AA0032">Silakan masukkan akun demo</string>
+    <string name="AA0032">Silakan masukkan akun ipTIME</string>
     <string name="AA0034">Kode verifikasi</string>
     <string name="AA0035">Kode verifikasi telah dikirim ke</string>
     <string name="AA0036">Kirim ulang</string>
@@ -35,7 +35,7 @@
     <string name="AA0043">Milik saya</string>
     <string name="AA0044">Perjanjian Pengguna</string>
     <string name="AA0045">Ringkasan perjanjian layanan pengguna dan kebijakan privasi</string>
-    <string name="AA0046">Selamat menggunakan demo! demo adalah platform audio dan video online yang dikembangkan dan dioperasikan oleh Perusahaan Teknologi demo IoT XXXXXXXX., Ltd.(selanjutnya disebut \"kami\"). Kami akan membantu Anda memahami kondisi pengumpulan, penggunaan, penyimpanan, berbagi data pribadi, serta hak yang Anda dapatkan melalui \"Kebijakan Privasi\" dan \"Perjanjian Pengguna\". \n Untuk menyediakan video live, pemutaran ulang video, koleksi &amp; berlangganan, interaksi komunitas, dan layanan lainnya, kami perlu mengumpulkan informasi pribadi Anda seperti rekaman video, gambar video, informasi perangkat, log operasi, dan informasi pribadi lainnya. \n Anda dapat mengakses, mengoreksi, menghapus informasi pribadi Anda, dan mengelola otorisasi Anda di bagian Pusat Pribadi; \n Kami akan menggunakan teknologi keamanan tercanggih dalam industri untuk melindungi informasi pribadi Anda. \n Anda dapat mempelajari lebih lanjut dengan membaca versi lengkap %1$s dan %2$s. \n Jika Anda setuju, silakan klik \"Setuju\" untuk menerima layanan kami.</string>
+    <string name="AA0046">Selamat menggunakan ipTIME! ipTIME adalah platform audio dan video online yang dikembangkan dan dioperasikan oleh Perusahaan Teknologi ipTIME IoT XXXXXXXX., Ltd.(selanjutnya disebut \"kami\"). Kami akan membantu Anda memahami kondisi pengumpulan, penggunaan, penyimpanan, berbagi data pribadi, serta hak yang Anda dapatkan melalui \"Kebijakan Privasi\" dan \"Perjanjian Pengguna\". \n Untuk menyediakan video live, pemutaran ulang video, koleksi &amp; berlangganan, interaksi komunitas, dan layanan lainnya, kami perlu mengumpulkan informasi pribadi Anda seperti rekaman video, gambar video, informasi perangkat, log operasi, dan informasi pribadi lainnya. \n Anda dapat mengakses, mengoreksi, menghapus informasi pribadi Anda, dan mengelola otorisasi Anda di bagian Pusat Pribadi; \n Kami akan menggunakan teknologi keamanan tercanggih dalam industri untuk melindungi informasi pribadi Anda. \n Anda dapat mempelajari lebih lanjut dengan membaca versi lengkap %1$s dan %2$s. \n Jika Anda setuju, silakan klik \"Setuju\" untuk menerima layanan kami.</string>
     <string name="AA0047">Rumah %s</string>
     <string name="AA0049">Menambah alat</string>
     <string name="AA0050">Berbagi perangkat</string>
@@ -51,11 +51,11 @@
     <string name="AA0062">Pindai kode QR untuk menambahkan perangkat</string>
     <string name="AA0063">Senter</string>
     <string name="AA0064">Album</string>
-    <string name="AA0065">demo ingin menggunakan kamera Anda</string>
+    <string name="AA0065">ipTIME ingin menggunakan kamera Anda</string>
     <string name="AA0066">Anda perlu memindai kode QR untuk menghubungkan dan mengikat perangkat. Apakah diizinkan membuka kamera?</string>
     <string name="AA0067">Ditolak</string>
     <string name="AA0068">Tidak ada izin kamera, harap aktifkan di Pengaturan</string>
-    <string name="AA0069">demo ingin menggunakan informasi lokasi Anda</string>
+    <string name="AA0069">ipTIME ingin menggunakan informasi lokasi Anda</string>
     <string name="AA0070">Untuk berhasil ditambahkan peralatan, Anda perlu mengizinkan penggunaan Layanan Lokasi untuk mendapatkan informasi Wi-Fi.Harap aktifkan Layanan Lokasi</string>
     <string name="AA0071">Tidak ada izin pemosisian. Silakan aktifkan di Pengaturan</string>
     <string name="AA0076">Tidak ada izin akses Bluetooth. Silakan aktifkan di Pengaturan</string>
@@ -99,8 +99,8 @@
     <string name="AA0145">Pilih perangkat yang ingin dibagikan</string>
     <string name="AA0146">Anda hanya dapat menambah pengunjung hingga X, bila anda masih ingin berbagi dengan teman lain, silakan menghapus sebagian pengunjung!</string>
     <string name="AA0147">Pengelolaan berbagi</string>
-    <string name="AA0148">Masukkan akun demo yang ingin dibagikan</string>
-    <string name="AA0149">Silakan masukkan akun demo</string>
+    <string name="AA0148">Masukkan akun ipTIME yang ingin dibagikan</string>
+    <string name="AA0149">Silakan masukkan akun ipTIME</string>
     <string name="AA0150">Baru-baru ini dibagikan</string>
     <string name="AA0151">Berbagi dengan tatap muka</string>
     <string name="AA0153">Nama pengguna salah. Silakan masukkan lagi</string>
@@ -108,7 +108,7 @@
     <string name="AA0155">Sudah berbagi perangkat dengan teman</string>
     <string name="AA0156">Berhasil berbagi</string>
     <string name="AA0157">Berlaku hingga</string>
-    <string name="AA0158">Pindai kode QR di atas dengan Aplikasi demo untuk berbagi perangkat</string>
+    <string name="AA0158">Pindai kode QR di atas dengan Aplikasi ipTIME untuk berbagi perangkat</string>
     <string name="AA0159">Teman yang telah dibagikan</string>
     <string name="AA0160">Gagal mendapatkan kode QR. Klik untuk memuat ulang.</string>
     <string name="AA0161">%s berbagi perangkat dengan Anda</string>
@@ -164,9 +164,9 @@
     <string name="AA0221">Bahasa</string>
     <string name="AA0222">Umpan balik masalah</string>
     <string name="AA0223">Bantuan dan umpan balik</string>
-    <string name="AA0224">Tentang demo</string>
+    <string name="AA0224">Tentang ipTIME</string>
     <string name="AA0225">Pusat Pesan</string>
-    <string name="AA0227">Buka izin pemberitahuan  App demo untuk mendapatkan berita terbaru secara cepat</string>
+    <string name="AA0227">Buka izin pemberitahuan  App ipTIME untuk mendapatkan berita terbaru secara cepat</string>
     <string name="AA0228">tidak ada pesan lagi</string>
     <string name="AA0230">Pilih</string>
     <string name="AA0232">Berbagi</string>
@@ -346,7 +346,7 @@
     <string name="AA0444">Terus menambahkan</string>
     <string name="AA0445">Kembali</string>
     <string name="AA0446">Hapus gagal</string>
-    <string name="AA0447">demo</string>
+    <string name="AA0447">ipTIME</string>
     <string name="AA0448">Selesai(%1$s/%2$s)</string>
     <string name="AA0450">Pratinjau</string>
     <string name="AA0451">Pratinjau(%s)</string>
@@ -423,6 +423,7 @@ Untuk menghindari kehabisan daya terlalu cepat,perangkat telah dialihkan ke mode
     <string name="AA0530">Pengunjung tidak ada</string>
     <string name="AA0531">Hanya pemilik perangkat yang dapat berbagi/memodifikasi; Perangkat saat ini sudah ada pemilik, modifikasi pengunjung tidak dapat dilakukan</string>
     <string name="AA0537">Version</string>
+    <string name="AA0538">berhasil dimuktahirkan</string>
     <string name="AA0545">Saya sudah membaca dan menyetujui \"Perjanjian Pengguna\" dan \"Kebijakan Privasi\".</string>
     <string name="AA0546">Kamera</string>
     <string name="AA0559">Kode QR tidak valid</string>
@@ -459,7 +460,7 @@ Untuk menghindari kehabisan daya terlalu cepat,perangkat telah dialihkan ke mode
     <string name="AA0613">Pengaturan pesan push</string>
     <string name="AA0614">Pengaturan akses sistem</string>
     <string name="AA0615">Notifikasi pesan push</string>
-    <string name="AA0616">Setelah diaktifkan, dapat segera menerima pesan terbaru demo APP</string>
+    <string name="AA0616">Setelah diaktifkan, dapat segera menerima pesan terbaru ipTIME APP</string>
     <string name="AA0617">Pergi izinkan</string>
     <string name="AA0618">Diaktifkan</string>
     <string name="AA0619">Posisi</string>
@@ -476,7 +477,7 @@ Untuk menghindari kehabisan daya terlalu cepat,perangkat telah dialihkan ke mode
     <string name="AA0630">Setelah dibuka, dapat menggunakan fitur putar balik jendela kecil dari kamera pengawas dan bel pengawas melayang</string>
     <string name="AA0631">Antarmuka pop up latar belakang</string>
     <string name="AA0632">Setelah diaktifkan, dapat segera menerima notifikasi bel pengawas</string>
-    <string name="AA0633">Untuk menyediakan pengalaman pengguna yang lebih baik untuk Anda, demo akan mengajukan izin sistem ponsel berikut ini pada adegan tertentu</string>
+    <string name="AA0633">Untuk menyediakan pengalaman pengguna yang lebih baik untuk Anda, ipTIME akan mengajukan izin sistem ponsel berikut ini pada adegan tertentu</string>
     <string name="AA0634">Telah izinkan</string>
     <string name="AA0635">Belum izinkan</string>
     <string name="AA0637">Pemantauan aktual</string>
@@ -496,4 +497,5 @@ Untuk menghindari kehabisan daya terlalu cepat,perangkat telah dialihkan ke mode
     <string name="AA0653">Pesananku</string>
     <string name="AA0654">Kupon  saya</string>
     <string name="AA0656">Offline, pembaruan tidak tersedia</string>
+    <string name="AA0657">Abnormalitas sistem</string>
 </resources>
