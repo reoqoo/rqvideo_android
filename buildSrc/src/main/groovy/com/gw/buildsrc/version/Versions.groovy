@@ -145,7 +145,7 @@ class Versions {
     }
 
     static class ReoqooSdkVer {
-        public static final String VERSION_CODE = "1.1.14"
+        public static final String VERSION_CODE = "1.1.12"
     }
 
     /**
