@@ -14,11 +14,11 @@ project.ext {
 
     // 版本号. 注意: google/local这两个渠道的版本号是不一样的
     //          比如: 国内版打包为780, 国外版打包时为775
-    LOCAL_VERSION_CODE = PropertyUtils.getIntProperty(project, "LOCAL_VERSION_CODE", 1816)
-    GOOGLE_VERSION_CODE = PropertyUtils.getIntProperty(project, "GOOGLE_VERSION_CODE", 1816)
+    LOCAL_VERSION_CODE = PropertyUtils.getIntProperty(project, "LOCAL_VERSION_CODE", 1818)
+    GOOGLE_VERSION_CODE = PropertyUtils.getIntProperty(project, "GOOGLE_VERSION_CODE", 1818)
 
     // 版本名
-    VERSION_NAME = PropertyUtils.getProperty(project, "VERSION_NAME", "01.08.01.06")
+    VERSION_NAME = PropertyUtils.getProperty(project, "VERSION_NAME", "01.08.01.08")
 
     // 子版本号.
     //          local渠道包: 每个版本 第一次 打 集成提测包 时, 都 从 "101" 开始; 后继 每一轮打集成提测包 都 增 1.
