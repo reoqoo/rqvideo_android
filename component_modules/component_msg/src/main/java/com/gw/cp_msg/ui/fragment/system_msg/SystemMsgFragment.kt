@@ -10,6 +10,7 @@ import com.gw.cp_msg.entity.http.MsgDetailEntity
 import com.gw.cp_msg.ui.fragment.system_msg.adapter.SystemMsgAdapter
 import com.gw.cp_msg.ui.fragment.system_msg.vm.SystemMsgVM
 import com.gw.cp_msg.utils.PushUtils
+import com.gw.lib_base_architecture.protocol.IGwBaseVm
 import com.gw.lib_base_architecture.view.ABaseMVVMDBFragment
 import com.gw.lib_utils.ktx.visible
 import com.gwell.loglibs.GwellLogUtils
@@ -141,7 +142,7 @@ class SystemMsgFragment :
                     it.msgTime
                 }
                 mViewBinding.llEmpty.visible(false)
-                adapter?.setNewInstance(msgList)
+                adapter?.setList(msgList)
             }
             mIsMsgEmpty?.invoke(msgList.isNullOrEmpty())
         }
@@ -170,7 +171,12 @@ class SystemMsgFragment :
      * 清除未读消息
      */
     fun cleanUnreadMsg() {
-        mFgViewModel.cleanUnreadMsg()
+        mFgViewModel.loadDialogState.postValue(IGwBaseVm.LOAD_DIALOG_STATE_OPEN)
+        // 一键已读时，先延迟300ms loading，再去清除未读消息
+        mViewBinding.llEmpty.postDelayed({
+            mFgViewModel.cleanUnreadMsg()
+            mFgViewModel.loadDialogState.postValue(IGwBaseVm.LOAD_DIALOG_STATE_CLOSE)
+        }, 300)
     }
 
     override fun getLayoutId(): Int = R.layout.msg_fragment_system_msg

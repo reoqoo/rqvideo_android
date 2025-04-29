@@ -1,6 +1,7 @@
 package com.gw.cp_account.ui.fragment.login
 
 import android.os.Bundle
+import android.text.InputFilter
 import android.text.TextPaint
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.LinkMovementMethod
@@ -50,6 +51,15 @@ class LoginFragment : ABaseMVVMDBFragment<AccountFragmentLoginBinding, LoginFrgV
      * 共享VM，主要处理数据回传的问题
      */
     private val shareVM: ShareVM by activityViewModels()
+
+    // 输入框空字符串过滤器
+    private val mFilter: InputFilter = InputFilter { source, start, end, dest, dstart, dend ->
+        if (source != null && source.toString().trim { it <= ' ' }.isEmpty()) {
+            // 如果输入的是空格，则返回空字符串，从而阻止空格输入
+            return@InputFilter ""
+        }
+        null // 允许其他字符输入
+    }
 
     override fun initView(view: View, savedInstanceState: Bundle?) {
         super.initView(view, savedInstanceState)
@@ -170,6 +180,7 @@ class LoginFragment : ABaseMVVMDBFragment<AccountFragmentLoginBinding, LoginFrgV
             } ?: toast.show(RR.string.AA0017)
         }
 
+        mViewBinding.etAccount.filters = arrayOf(mFilter)
     }
 
     override fun onPreViewCreate() {
