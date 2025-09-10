@@ -22,14 +22,14 @@ class MsgDevUpgradeAdapter(resId: Int, msgInfoList: MutableList<MsgDetailEntity>
             when {
                 GwTimeUtils.isToday(timeMillis) -> {
                     holder.setText(R.id.tv_msg_info_time, buildString {
-                        append(context.getString(com.gw.resource.R.string.AA0416))
+                        append(context.getString(com.gw_reoqoo.resource.R.string.AA0416))
                         append(GwTimeUtils.dateFormatTime(timeMillis, "HH:mm"))
                     })
                 }
 
                 GwTimeUtils.isYesterday(timeMillis) -> {
                     holder.setText(R.id.tv_msg_info_time, buildString {
-                        append(context.getString(com.gw.resource.R.string.AA0417))
+                        append(context.getString(com.gw_reoqoo.resource.R.string.AA0417))
                         append(GwTimeUtils.dateFormatTime(timeMillis, "HH:mm"))
                     })
                 }

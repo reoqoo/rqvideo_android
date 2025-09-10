@@ -1,33 +1,27 @@
+import com.gw.buildsrc.dependlibs.GwDependLibs
 import com.gw.buildsrc.utils.DataUtils
+import com.gw.buildsrc.version.Versions
 
 apply from: "${rootDir.absolutePath}/script/gradle/app_depends.gradle"
 apply from: "${rootDir.absolutePath}/script/gradle/reoqoo.gradle"
-apply from: "${rootDir.absolutePath}/app/config.gradle"
+
 apply plugin: 'com.sensorsdata.analytics.android'
 apply plugin: 'com.google.gms.google-services'
 
+apply from: "${rootDir.absolutePath}/app/common_config.gradle"
+apply from: "${rootDir.absolutePath}/app/flavor_config.gradle"
+
 android {
     namespace = "com.gw.reoqoo"
-
     defaultConfig {
-        applicationId APPLICATION_ID
-        versionCode LOCAL_VERSION_CODE
-        versionName VERSION_NAME
-
-        manifestPlaceholders = [fileProviderAuthority: "${applicationId}"]
-
         ndk {
             abiFilters "armeabi-v7a", "arm64-v8a"
         }
-
         buildConfigField("String", "BUILD_NUMBER", "\"$BUILD_NUMBER\"")
         buildConfigField("boolean", "IS_RELEASE_APK", "$IS_RELEASE_APK")
         buildConfigField("boolean", "IS_PROTECTED_APP", "$IS_PROTECTED_APP")
         buildConfigField("boolean", "IS_JENKINS_ENV", "$IS_JENKINS_ENV")
         buildConfigField("String", "BUILD_TIME", "$BUILD_TIME")
-
-        // 设置支持的语言
-        resConfigs "ko", "en"
     }
 
     testOptions {
@@ -35,25 +29,36 @@ android {
             includeAndroidResources = true
         }
     }
-    def appNamePrefix = "ipTIME_"
 
-    flavorDimensions += "version"
-    productFlavors {
-        create("reoqoosdk") {
-            versionCode = GOOGLE_VERSION_CODE
-            dimension = "version"
-            applicationId = "com.cctv.iptime"
-            buildConfigField("Boolean", "IS_GOOGLE", "true")
-            buildConfigField("String", "SUB_VERSION", "\"$GOOGLE_SUB_VERSION\"")
-            def outputFileName = "$appNamePrefix${VERSION_NAME}.${GOOGLE_SUB_VERSION}_code${GOOGLE_VERSION_CODE}_${DataUtils.getDay()}_db${DB_VERSION}_${BUILD_NUMBER}"
-            setProperty("archivesBaseName", outputFileName)
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
-    sourceSets {
-        getByName("reoqoosdk") {
-            java.srcDirs("src/reoqoosdk/java")
+    flavorDimensions += "version"
+    productFlavors {
+
+        create("google") { flavor ->
+            dimension = "version"
+            project.ext.flavorConfigs.google.applyToApplication(flavor)
+            manifestPlaceholders = [fileProviderAuthority: "${applicationId}"]
+            println("applicationId: ${applicationId}")
         }
+
+        create("iptime") { flavor ->
+            dimension = "version"
+            project.ext.flavorConfigs.iptime.applyToApplication(flavor)
+            manifestPlaceholders = [fileProviderAuthority: "${applicationId}"]
+            println("applicationId: ${applicationId}")
+        }
+
     }
 
     applicationVariants.configureEach { variant ->
@@ -63,26 +68,23 @@ android {
         def buildTypeNameInLowercase = variant.buildType.name
         def flavorNameCapitalized = variant.flavorName.capitalize()
         def buildTypeNameCapitalized = variant.buildType.name.capitalize()
-        // 子版本号
-        def subVersion = LOCAL_SUB_VERSION
         println "flavorNameInLowercase:$flavorNameInLowercase buildTypeNameInLowercase:$buildTypeNameInLowercase"
-        if ("google" == flavorNameInLowercase) {
-            subVersion = GOOGLE_SUB_VERSION
-        }
-
-        def localApkFileName = "$appNamePrefix${variant.versionName}.${subVersion}_code${variant.versionCode}_${DataUtils.getDay()}_db${DB_VERSION}_${BUILD_NUMBER}-${flavorNameInLowercase}-${buildTypeNameInLowercase}.apk"
+        def appNamePrefix = project.ext.flavorConfigs[flavorNameInLowercase].APP_NAME_PREFIX
+        // apk输出文件名称
+        def localApkFileName = "$appNamePrefix${variant.versionName}._code${variant.versionCode}_${DataUtils.getDay()}_db${DB_VERSION}_${BUILD_NUMBER}-${flavorNameInLowercase}-${buildTypeNameInLowercase}.apk"
         variant.outputs.configureEach { output ->
             def outputFile = output.outputFile
-            if (outputFile != null && outputFile.name.endsWith('.apk') && "local" == flavorNameInLowercase) {
-                // 修改打包后的apk文件名
-                outputFileName = localApkFileName
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                if ("local" == flavorNameInLowercase || "google" == flavorNameInLowercase) {
+                    // 修改打包后的apk文件名
+                    outputFileName = localApkFileName
+                }
             }
+            println "outputFileName = ${outputFileName}"
         }
 
         // 配置 工件的assemble任务
         def variantAssembleTask = tasks.getByName("assemble${flavorNameCapitalized}${buildTypeNameCapitalized}")
-        // 配置 工件的bundle任务
-        def variantBundleTask = tasks.getByName("bundle${flavorNameCapitalized}${buildTypeNameCapitalized}")
         variantAssembleTask.doLast {
             def apkFileName = localApkFileName
             println "outputApkName = ${apkFileName}"
@@ -91,17 +93,20 @@ android {
             println "apkFileOriginalInIntermediates = ${apkFileOriginalInIntermediates}"
             def apkFileOriginalInOutputs = file("${project.buildDir}${separator}outputs${separator}apk${separator}${flavorNameInLowercase}${separator}${buildTypeNameInLowercase}${separator}${apkFileName}")
             println "apkFileOriginalInOutputs = ${apkFileOriginalInOutputs}"
-            copyApkOrAabAndMapping(subVersion, flavorNameInLowercase, buildTypeNameInLowercase, buildTypeNameCapitalized, apkFileOriginalInIntermediates, apkFileOriginalInOutputs)
+            copyApkOrAabAndMapping(variant.versionName, flavorNameInLowercase, buildTypeNameInLowercase, buildTypeNameCapitalized, apkFileOriginalInIntermediates, apkFileOriginalInOutputs)
         }
+
+        // 配置 工件的bundle任务
+        def variantBundleTask = tasks.getByName("bundle${flavorNameCapitalized}${buildTypeNameCapitalized}")
         variantBundleTask.doLast {
-            def aabFileName = "$appNamePrefix${variant.versionName}.${subVersion}_code${variant.versionCode}_${DataUtils.getDay()}_db${DB_VERSION}_${BUILD_NUMBER}-${flavorNameInLowercase}-${buildTypeNameInLowercase}.aab"
+            def aabFileName = "$appNamePrefix${variant.versionName}._code${variant.versionCode}_${DataUtils.getDay()}_db${DB_VERSION}_${BUILD_NUMBER}-${flavorNameInLowercase}-${buildTypeNameInLowercase}.aab"
             println "aabFileName = ${aabFileName}"
             // 将 apk文件 复制 到 备份目录 下
-            def apkFileOriginalInIntermediates = file("${project.buildDir}${separator}intermediates${separator}bundle${separator}${flavorNameInLowercase}${buildTypeNameCapitalized}${separator}${aabFileName}")
-            println "apkFileOriginalInIntermediates = ${apkFileOriginalInIntermediates}"
-            def apkFileOriginalInOutputs = file("${project.buildDir}${separator}outputs${separator}bundle${separator}${flavorNameInLowercase}${buildTypeNameCapitalized}${separator}${aabFileName}")
-            println "apkFileOriginalInOutputs = ${apkFileOriginalInOutputs}"
-            copyApkOrAabAndMapping(subVersion, flavorNameInLowercase, buildTypeNameInLowercase, buildTypeNameCapitalized, apkFileOriginalInIntermediates, apkFileOriginalInOutputs)
+            def aabFileOriginalInIntermediates = file("${project.buildDir}${separator}intermediates${separator}bundle${separator}${flavorNameInLowercase}${buildTypeNameCapitalized}${separator}${aabFileName}.aab")
+            println "aabFileOriginalInIntermediates = ${aabFileOriginalInIntermediates}"
+            def aabFileOriginalInOutputs = file("${project.buildDir}${separator}outputs${separator}bundle${separator}${flavorNameInLowercase}${buildTypeNameCapitalized}${separator}${aabFileName}")
+            println "aabFileOriginalInOutputs = ${aabFileOriginalInOutputs}"
+            copyApkOrAabAndMapping(variant.versionName, flavorNameInLowercase, buildTypeNameInLowercase, buildTypeNameCapitalized, aabFileOriginalInIntermediates, aabFileOriginalInOutputs)
         }
     }
 
@@ -133,6 +138,12 @@ android {
             enableSplit = ENABLE_SPLIT_LANGUAGE
         }
     }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
 }
 
 configurations.configureEach {
@@ -140,25 +151,36 @@ configurations.configureEach {
 }
 
 dependencies {
-    implementation(project(":component_modules:component_family_api"))
-    implementation(project(":component_modules:component_account_api"))
-    implementation(project(":component_modules:component_device_share_api"))
-    implementation(project(":component_modules:component_house_watch_api"))
-    implementation(project(":component_modules:component_mine_api"))
-    implementation(project(":component_modules:component_config_api"))
-    implementation(project(":component_modules:component_msg_api"))
-    implementation(project(":component_modules:component_push_api"))
+    implementation project(":main")
+    compileOnly project(":component_modules:component_mine_api")
 
-    implementation(project(":component_modules:component_family"))
-    implementation(project(":component_modules:component_account"))
-    implementation(project(":component_modules:component_device_share"))
-    implementation(project(":component_modules:component_house_watch"))
-    implementation(project(":component_modules:component_mine"))
-    implementation(project(":component_modules:component_config"))
-    implementation(project(":component_modules:component_msg"))
-    implementation(project(":component_modules:component_push"))
+    compileOnly("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_iotapi_plugin_opt_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
+
+    /**
+     * 适配Android 15 yooseeKits依赖的一些库而Reoqoo没有的库,需要引入覆盖so库支持16KB
+     */
+    implementation "com.tencent:mmkv:${Versions.AndroidUtilsVersions.VERSION_MMKV}"
+    implementation "com.gwell:gwvideo_beta:${Versions.GwVersions.VERSION_GWVIDEO_BETA}"
+    implementation "pl.droidsonroids.gif:android-gif-drawable:${Versions.GwVersions.VERSION_GIF_DRAWABLE}"
+}
+
+dependencies {
+    implementation "com.google.firebase:firebase-messaging:${Versions.ThirdVersions.VERSION_FIREBASE_MESSAGE}"
+    compileOnly "com.jakewharton:process-phoenix:${Versions.ThirdVersions.VERSION_PHONENIX}"
 }
 
 kapt {
     correctErrorTypes true
+}
+
+/**
+ *  这段的逻辑是，当发现渠道里的isGoogle是true的时候，才启用
+ *  apply plugin: 'com.google.gms.google-services'
+ */
+afterEvaluate {
+    android.productFlavors.each { flavor ->
+        tasks.matching {
+            it.name.contains('GoogleServices') && it.name.contains(flavor.name.capitalize())
+        }*.enabled = flavor.ext.isGoogle
+    }
 }

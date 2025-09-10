@@ -5,14 +5,16 @@ import android.view.View
 import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gw.cp_msg.R
+import com.gw_reoqoo.resource.R as RR
 import com.gw.cp_msg.databinding.MsgFragmentSystemMsgBinding
 import com.gw.cp_msg.entity.http.MsgDetailEntity
 import com.gw.cp_msg.ui.fragment.system_msg.adapter.SystemMsgAdapter
 import com.gw.cp_msg.ui.fragment.system_msg.vm.SystemMsgVM
 import com.gw.cp_msg.utils.PushUtils
-import com.gw.lib_base_architecture.protocol.IGwBaseVm
-import com.gw.lib_base_architecture.view.ABaseMVVMDBFragment
-import com.gw.lib_utils.ktx.visible
+import com.gw_reoqoo.component_plugin_service.api.BuildConfig
+import com.gw_reoqoo.lib_base_architecture.protocol.IGwBaseVm
+import com.gw_reoqoo.lib_base_architecture.view.ABaseMVVMDBFragment
+import com.gw_reoqoo.lib_utils.ktx.visible
 import com.gwell.loglibs.GwellLogUtils
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -61,6 +63,7 @@ class SystemMsgFragment :
 
     override fun initView(view: View, savedInstanceState: Bundle?) {
         super.initView(view, savedInstanceState)
+        mViewBinding.clPushTip.text = String.format(getString(RR.string.AA0227), getString(RR.string.AA0447))
         mViewBinding.clPushTip.setOnClickListener {
             context?.let {
                 PushUtils.openNotification(it)
@@ -176,6 +179,7 @@ class SystemMsgFragment :
         mViewBinding.llEmpty.postDelayed({
             mFgViewModel.cleanUnreadMsg()
             mFgViewModel.loadDialogState.postValue(IGwBaseVm.LOAD_DIALOG_STATE_CLOSE)
+            toast.show(RR.string.AA0226)
         }, 300)
     }
 

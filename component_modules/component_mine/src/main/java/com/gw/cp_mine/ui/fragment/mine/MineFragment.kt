@@ -5,9 +5,11 @@ import android.view.View
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.gw.component_family.api.interfaces.FamilyModeApi
+import com.gw_reoqoo.component_family.api.interfaces.FamilyModeApi
 import com.gw.component_website.api.interfaces.IWebsiteApi
 import com.gw.component_webview.api.interfaces.IWebViewApi
+import com.gw.cp_config.api.AppChannelName
+import com.gw.cp_config.api.IAppParamApi
 import com.gw.cp_mine.R
 import com.gw.cp_mine.databinding.MineFragmentMineBinding
 import com.gw.cp_mine.entity.MenuListEntity
@@ -16,17 +18,18 @@ import com.gw.cp_mine.ui.fragment.mine.vm.MineFgVM
 import com.gw.cp_mine.ui.fragment.mine.vm.MineFgVM.Companion.MY_COUPONS
 import com.gw.cp_mine.ui.fragment.mine.vm.MineFgVM.Companion.MY_ORDERS
 import com.gw.cp_upgrade.api.interfaces.IUpgradeMgrApi
-import com.gw.lib_base_architecture.view.ABaseMVVMDBFragment
-import com.gw.lib_router.ReoqooRouterPath
-import com.gw.lib_utils.ktx.loadUrl
-import com.gw.lib_utils.ktx.setSingleClickListener
-import com.gw.lib_utils.ktx.visible
+import com.gw_reoqoo.cp_app_setting.api.kapi.IFeedBackApi
+import com.gw_reoqoo.lib_base_architecture.view.ABaseMVVMDBFragment
+import com.gw_reoqoo.lib_router.ReoqooRouterPath
+import com.gw_reoqoo.lib_utils.ktx.loadUrl
+import com.gw_reoqoo.lib_utils.ktx.setSingleClickListener
+import com.gw_reoqoo.lib_utils.ktx.visible
 import com.gwell.loglibs.GwellLogUtils
 import com.therouter.router.Route
 import com.zackratos.ultimatebarx.ultimatebarx.addStatusBarTopPadding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import com.gw.resource.R as RR
+import com.gw_reoqoo.resource.R as RR
 
 /**
 @author: xuhaoyuan
@@ -55,6 +58,12 @@ class MineFragment : ABaseMVVMDBFragment<MineFragmentMineBinding, MineFgVM>() {
 
     @Inject
     lateinit var familyModeApi: FamilyModeApi
+
+    @Inject
+    lateinit var appParamApi: IAppParamApi
+
+    @Inject
+    lateinit var feedbackApi: IFeedBackApi
 
     override fun initView(view: View, savedInstanceState: Bundle?) {
         super.initView(view, savedInstanceState)
@@ -93,7 +102,11 @@ class MineFragment : ABaseMVVMDBFragment<MineFragmentMineBinding, MineFgVM>() {
                         if (_path.isNotEmpty()) {
                             when (_path) {
                                 ReoqooRouterPath.MinePath.ACTIVITY_FEEDBACK -> {
-                                    iWebViewApi.openWebView(websiteApi.getHelpAndFeedbackUrl(), "")
+                                    if (AppChannelName.isIpTimeApp(appParamApi.getAppName())){
+                                        feedbackApi.startFeedbackImpl(null, 0)
+                                    } else {
+                                        iWebViewApi.openWebView(websiteApi.getHelpAndFeedbackUrl(), "")
+                                    }
                                 }
 
                                 MY_ORDERS -> {
@@ -129,6 +142,7 @@ class MineFragment : ABaseMVVMDBFragment<MineFragmentMineBinding, MineFgVM>() {
 
         mFgViewModel.updateUserInfo()
         mFgViewModel.initUpgradeInfo()
+        mFgViewModel.loadBenefits()
     }
 
     override fun onResume() {
@@ -143,6 +157,7 @@ class MineFragment : ABaseMVVMDBFragment<MineFragmentMineBinding, MineFgVM>() {
         GwellLogUtils.i(TAG, "onHiddenChanged $hidden")
         if (!hidden) {
             mFgViewModel.initUpgradeInfo()
+            mFgViewModel.loadBenefits()
         }
     }
 
@@ -157,8 +172,8 @@ class MineFragment : ABaseMVVMDBFragment<MineFragmentMineBinding, MineFgVM>() {
                 mViewBinding.tvUserName.text = this.getInsensitiveName()
                 mViewBinding.ivHead.loadUrl(
                     imageUrl = headUrl,
-                    placeHolder = RR.drawable.icon_default_avatar,
-                    error = RR.drawable.icon_default_avatar,
+                    placeHolder = RR.drawable.gw_reoqoo_icon_default_avatar,
+                    error = RR.drawable.gw_reoqoo_icon_default_avatar,
                 )
             }
         }
@@ -178,6 +193,12 @@ class MineFragment : ABaseMVVMDBFragment<MineFragmentMineBinding, MineFgVM>() {
         mFgViewModel.isSupport4G.observe(this) {
             mViewBinding.btn4g.visible(it)
             updateEquityServicesStatus()
+        }
+
+        mFgViewModel.getUnReadBenefitsCount()?.observe(this) {
+            if (it != null) {
+                mFgViewModel.redPointState.postValue(it > 0)
+            }
         }
 
         familyModeApi.watchDeviceList(mFgViewModel.getUserId()).observe(this) {

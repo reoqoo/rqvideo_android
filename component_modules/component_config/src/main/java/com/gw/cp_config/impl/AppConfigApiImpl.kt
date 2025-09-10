@@ -1,24 +1,31 @@
 package com.gw.cp_config.impl
 
 import android.app.Application
-import com.gw.cp_account.api.kapi.IAccountApi
+import com.gw.cp_config.BuildConfig
+import com.gw_reoqoo.cp_account.api.kapi.IAccountApi
 import com.gw.cp_config.api.IAppConfigApi
 import com.gw.cp_config.api.ProductImgType
 import com.gw.cp_config.data.datastore.IConfigDataStoreApi
 import com.gw.cp_config.data.repository.ConfigRepository
 import com.gw.cp_config.entity.DevConfigEntity
 import com.gwell.loglibs.GwellLogUtils
+import com.tencentcs.iotvideo.http.interceptor.flow.HttpAction
 import com.therouter.router.getStringFromAssets
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
+import java.io.File
 import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * Author: yanzheng@gwell.cc
  * Time: 2023/9/6 20:18
  * Description: GlobalApiImpl
  */
+@Singleton
 class AppConfigApiImpl @Inject constructor(
     private val accountApi: IAccountApi,
 ) : IAppConfigApi {
@@ -32,7 +39,7 @@ class AppConfigApiImpl @Inject constructor(
     /**
      * 是否使用本地配置（用于调试使用）
      */
-    private val userLocalConfig = false
+    private val testConfig = false
 
     @Inject
     lateinit var app: Application
@@ -43,58 +50,103 @@ class AppConfigApiImpl @Inject constructor(
     @Inject
     lateinit var api: IConfigDataStoreApi
 
+    private val mutex = Mutex()
+
+    /**
+     * 异步更新配置
+     */
     override fun uploadConfig() {
-        val currentTime = System.currentTimeMillis()
         scope.launch(Dispatchers.IO) {
-            if (userLocalConfig) {
-                initConfigFromLocal()
-                return@launch
+            updateConfigSync()
+        }
+    }
+
+    /**
+     * 协程同步的方式进行更新配置，带锁
+     */
+    override suspend fun updateConfigSync(retry: Int) {
+        mutex.withLock { updateConfigSyncInner(retry) }
+    }
+
+    /**
+     * 协程同步的方式进行更新配置,无锁
+     */
+    private suspend fun updateConfigSyncInner(retry: Int) {
+        GwellLogUtils.i(TAG, "updateConfigSyncInner(retry=$retry)")
+        if (retry < 0) {
+            GwellLogUtils.e(TAG, "updateConfigSyncInner(retry=$retry)")
+            return
+        }
+        // 测试数据
+        if (testConfig) {
+            GwellLogUtils.i(TAG, "updateConfigSyncInner.testConfig = true")
+            initConfigFromAssets()
+            return
+        }
+        val isLogin = accountApi.isAsyncLogin()
+        val action = repository.getAppConfigAction(isLogin)
+        GwellLogUtils.i(TAG, "updateConfigSyncInner(retry=$retry),action=$action,isLogin=$isLogin")
+        when {
+            action is HttpAction.Success && action.data != null -> {
+                val entity = action.data ?: throw Exception("action.data == null")
+                // 支持短信推送的国家码列表，如不支持则不能通过手机号码注册
+                val countryCodeList = entity.countryCodeList
+                // 信息地址（json 格式，app自定义维护）
+                val productConfUrl = entity.productConfUrl
+                // 产品配置信息版本（app根据版本判断是否加载最新配置）
+                val productConfVer = entity.productConfVer
+
+                if (countryCodeList != null) {
+                    GwellLogUtils.i(TAG, "countryCodeList $countryCodeList")
+                    api.setCountryCodeList(countryCodeList)
+                }
+                // 本地配置文件
+                val configFile = File(repository.getConfigFilePath())
+                // 如果本地配置文件存在，且版本号也相等，则不用更新
+                if (api.getProductConfVer() == productConfVer && configFile.isFile && configFile.exists()) {
+                    GwellLogUtils.i(TAG, "app configVersion is equals remote ConfigVersion")
+                    repository.initConfigFile()
+                    return
+                }
+                // 这里需要下载更新配置文件
+                if (productConfUrl.isNullOrEmpty()) {
+                    // 下载地址没有的话，是会出大问题的
+                    GwellLogUtils.e(TAG, "productConfUrl == null")
+                    return updateConfigSyncInner(retry - 1)
+                }
+                val downloadSuccess =
+                    repository.downloadFile(productConfUrl, configFile.absolutePath)
+                if (!downloadSuccess) {
+                    // 如果下载没有成功，则有问题啊
+                    GwellLogUtils.e(
+                        TAG,
+                        "downloadFile field:url=$productConfUrl,path=${configFile}"
+                    )
+                    return updateConfigSyncInner(retry - 1)
+                }
+                // 下载成功
+                // 更新本地版本号
+                api.setProductConfVer(productConfVer)
+                // 更新时间
+                api.setConfigUpdateTime(System.currentTimeMillis())
+                // 从文件中加载
+                repository.initConfigFile()
+
+                GwellLogUtils.i(TAG, "updateConfigSyncInner success")
             }
-            repository.getGlobalConfig(accountApi.isSyncLogin())
-                .onSuccess {
-                    api.setConfigUpdateTime(currentTime)
-                    GwellLogUtils.i(TAG, "uploadGlobal onSuccess: ${this.toString()}")
-                    if (api.getProductConfVer() == 0) {
-                        initConfigFromLocal()
-                    }
-                    this?.run {
-                        countryCodeList?.let {
-                            GwellLogUtils.i(TAG, "countryCodeList $it")
-                            api.setCountryCodeList(it)
-                        } ?: GwellLogUtils.e(TAG, "uploadGlobal: countryCodeList is null")
-                        GwellLogUtils.i(TAG, "getProductConfVer ${api.getProductConfVer()} productConfVer==$productConfVer")
-                        if (api.getProductConfVer() >= productConfVer) {
-                            repository.initConfigFile()
-                            return@run
-                        }
-                        productConfUrl?.let { _url ->
-                            repository.getConfigFilePath()?.let { _filePath ->
-                                val result = repository.downloadFile(_url, _filePath)
-                                GwellLogUtils.i(TAG, "FileDownloadMgr: download $result")
-                                if (result) {
-                                    api.setProductConfVer(productConfVer)
-                                    repository.initConfigFile()
-                                }
-                            }
-                        } ?: GwellLogUtils.e(TAG, "uploadGlobal: productConfUrl is null")
-                    } ?: GwellLogUtils.e(TAG, "uploadGlobal: GlobalEntity is null")
-                }
 
-                .onServerError { code, msg ->
-                    GwellLogUtils.e(TAG, "uploadGlobal onServerError: code $code, msg $msg")
-                    if (api.getProductConfVer() == 0) {
-                        // 如果配置文件的版本为0，则认为没有从服务器获取到过配置，则使用本地配置文件
-                        initConfigFromLocal()
-                    }
+            else -> {
+                // 获取失败了
+                if (retry > 0) {
+                    // 重试
+                    GwellLogUtils.e(TAG, "updateConfigSyncInner field retry and -1")
+                    updateConfigSyncInner(retry - 1)
+                } else {
+                    // 没拿到配置信息就初始化本地获取配置文件
+                    GwellLogUtils.e(TAG, "updateConfigSyncInner field , will initConfigFromAssets")
+                    initConfigFromAssets()
                 }
-
-                .onLocalError {
-                    GwellLogUtils.e(TAG, "uploadGlobal onLocalError: e ${it.message}")
-                    if (api.getProductConfVer() == 0) {
-                        // 如果配置文件的版本为0，则认为没有从服务器获取到过配置，则使用本地配置文件
-                        initConfigFromLocal()
-                    }
-                }
+            }
         }
     }
 
@@ -155,10 +207,27 @@ class AppConfigApiImpl @Inject constructor(
      *
      * @param pid String?             产品Pid
      * @param imgType ProductImgType  产品图片类型ProductImgType
-     * @return String?
+     * @return String? ⾸⻚、设备列表⻚、分享设备⻚共⽤图
+     * @return String? 配置Wi-Fi⻚、设备控制⻚、共享管理⻚共⽤图
      */
     override fun getProductImgUrl(pid: String?, imgType: ProductImgType): String? {
-        return getDevConfig()?.get(pid)?.productImageURL
+        return getDevConfig()?.get(pid)?.productImageURL_A
+    }
+
+    /**
+     * 根据产品ID获取产品图片
+     * @return String? 配置Wi-Fi⻚、设备控制⻚、共享管理⻚共⽤图
+     */
+    override fun getProductImgUrl_C(pid: String?, imgType: ProductImgType): String? {
+        return getDevConfig()?.get(pid)?.productImageURL_C
+    }
+
+    /**
+     * 根据产品ID获取产品图片
+     * @return String?  设备连接⻚、设备分享弹窗
+     */
+    override fun getProductImgUrl_D(pid: String?, imgType: ProductImgType): String? {
+        return getDevConfig()?.get(pid)?.productImageURL_D
     }
 
     /**
@@ -183,10 +252,14 @@ class AppConfigApiImpl @Inject constructor(
     }
 
     /**
-     * 初始化本地获取配置文件
+     * 用APP内置的文件进行初始化
      */
-    private suspend fun initConfigFromLocal() {
-        val configJson = getStringFromAssets(app.applicationContext, "appConfig.json")
+    private suspend fun initConfigFromAssets() {
+        GwellLogUtils.i(TAG, "initConfigFromAssets")
+        val configJson = getStringFromAssets(
+            app.applicationContext,
+            BuildConfig.APP_CONFIG_FILE_NAME
+        )
         repository.initConfigFile(configJson)
     }
 

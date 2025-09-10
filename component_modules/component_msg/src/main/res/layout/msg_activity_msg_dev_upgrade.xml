@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.gw.lib_widget.title.WidgetCommonTitleView
+        <com.gw_reoqoo.lib_widget.title.WidgetCommonTitleView
             android:id="@+id/layout_title"
             style="@style/titleView"
             app:widgetTitle="@string/AA0219"

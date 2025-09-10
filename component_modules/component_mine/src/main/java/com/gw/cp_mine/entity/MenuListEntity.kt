@@ -1,7 +1,7 @@
 package com.gw.cp_mine.entity
 
 import android.app.Activity
-import com.gw.lib_router.ReoqooRouterPath
+import com.gw_reoqoo.lib_router.ReoqooRouterPath
 
 /**
  * @author: xuhaoyuan

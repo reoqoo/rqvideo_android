@@ -5,7 +5,7 @@ import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.gw.cp_msg.R
 import com.gw.cp_msg.entity.http.MsgInfoListEntity
 import com.jwkj.base_utils.time.GwTimeUtils
-import com.gw.resource.R as RR
+import com.gw_reoqoo.resource.R as RR
 
 /**
  *@message   MsgInfoAdapter

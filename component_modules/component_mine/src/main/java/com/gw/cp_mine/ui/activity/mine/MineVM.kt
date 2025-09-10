@@ -1,6 +1,6 @@
 package com.gw.cp_mine.ui.activity.mine
 
-import com.gw.lib_base_architecture.vm.ABaseVM
+import com.gw_reoqoo.lib_base_architecture.vm.ABaseVM
 
 /**
  * Author: yanzheng@gwell.cc

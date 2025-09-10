@@ -35,7 +35,7 @@
             android:id="@+id/cb_choose"
             android:layout_width="@dimen/dp_24"
             android:layout_height="@dimen/dp_24"
-            android:background="@drawable/widget_selector_checkbox"
+            android:background="@drawable/gw_reoqoo_widget_selector_checkbox"
             android:button="@null"
             android:clickable="false" />
     </LinearLayout>

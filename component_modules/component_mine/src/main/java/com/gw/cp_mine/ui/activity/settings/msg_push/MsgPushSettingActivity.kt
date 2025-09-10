@@ -7,9 +7,9 @@ import com.gw.cp_mine.R
 import com.gw.cp_mine.databinding.MineActivitySettingMsgPushBinding
 import com.gw.cp_mine.ui.activity.settings.SettingsAdapter
 import com.gw.cp_mine.entity.SettingsEntity
-import com.gw.lib_base_architecture.view.ABaseMVVMDBActivity
-import com.gw.lib_router.ReoqooRouterPath
-import com.gw.lib_utils.permission.PermissionUtil
+import com.gw_reoqoo.lib_base_architecture.view.ABaseMVVMDBActivity
+import com.gw_reoqoo.lib_router.ReoqooRouterPath
+import com.gw_reoqoo.lib_utils.permission.PermissionUtil
 import com.therouter.router.Route
 import dagger.hilt.android.AndroidEntryPoint
 

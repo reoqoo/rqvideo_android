@@ -1,11 +1,11 @@
 package com.gw.cp_mine.ui.activity.settings
 
 import com.gw.cp_mine.entity.MenuListEntity
-import com.gw.lib_base_architecture.PageJumpData
-import com.gw.lib_base_architecture.vm.ABaseVM
-import com.gw.lib_router.ReoqooRouterPath
+import com.gw_reoqoo.lib_base_architecture.PageJumpData
+import com.gw_reoqoo.lib_base_architecture.vm.ABaseVM
+import com.gw_reoqoo.lib_router.ReoqooRouterPath
 import com.therouter.TheRouter
-import com.gw.resource.R as RR
+import com.gw_reoqoo.resource.R as RR
 
 /**
  * Author: yanzheng@gwell.cc

@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.gw.cp_mine.R
-import com.gw.lib_utils.ktx.visible
+import com.gw_reoqoo.lib_utils.ktx.visible
 
 /**
  * @author: xuhaoyuan

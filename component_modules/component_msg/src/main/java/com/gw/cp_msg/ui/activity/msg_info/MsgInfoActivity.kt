@@ -3,18 +3,22 @@ package com.gw.cp_msg.ui.activity.msg_info
 import android.os.Bundle
 import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.gw.component_family.api.interfaces.IShareDeviceApi
+import com.gw_reoqoo.component_family.api.interfaces.IShareDeviceApi
 import com.gw.cp_msg.R
 import com.gw.cp_msg.entity.ParamConstant.KEY_CURRENT_MSG
 import com.gw.cp_msg.entity.http.MsgDetailEntity
 import com.gw.cp_msg.entity.http.MsgInfoListEntity
 import com.gw.cp_msg.entity.http.MsgInfoListEntity.MSGInfo.MsgInfoType.SHARE_GUEST_ARRIVE
 import com.gw.cp_msg.entity.http.MsgInfoListEntity.MSGInfo.MsgInfoType.SHARE_GUEST_CONFIRM
+import com.gw.cp_msg.entity.http.MsgInfoListEntity.MSGInfo.MsgInfoType.SHARE_GUEST_DELETE
 import com.gw.cp_msg.databinding.MsgActivityMsgInfoBinding
 import com.gw.cp_msg.ui.activity.msg_info.adapter.MsgInfoAdapter
 import com.gw.cp_msg.ui.activity.msg_info.vm.MsgInfoVM
-import com.gw.lib_base_architecture.view.ABaseMVVMDBActivity
-import com.gw.lib_router.ReoqooRouterPath
+import com.gw_reoqoo.lib_base_architecture.view.ABaseMVVMDBActivity
+import com.gw_reoqoo.lib_router.ReoqooRouterPath
+import com.gw_reoqoo.lib_widget.dialog.comm_dialog.entity.CommDialogAction
+import com.gw_reoqoo.lib_widget.dialog.comm_dialog.entity.TextContent
+import com.gw_reoqoo.lib_widget.dialog.comm_dialog.ext.showCommDialog
 import com.gwell.loglibs.GwellLogUtils
 import com.therouter.router.Autowired
 import com.therouter.router.Route
@@ -95,6 +99,15 @@ class MsgInfoActivity : ABaseMVVMDBActivity<MsgActivityMsgInfoBinding, MsgInfoVM
                     SHARE_GUEST_CONFIRM -> {
                         val deviceId = msgInfo.deviceId
                         mViewModel.goDevManagerPage(deviceId.toString())
+                    }
+
+                    SHARE_GUEST_DELETE -> {
+                        showCommDialog {
+                            content = TextContent(getString(com.gw_reoqoo.resource.R.string.AA0563))
+                            actions = listOf(
+                                CommDialogAction(getString(com.gw_reoqoo.resource.R.string.AA0131))
+                            )
+                        }
                     }
 
                     else -> {

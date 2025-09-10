@@ -8,19 +8,25 @@ import android.os.Looper
 import com.google.gson.JsonObject
 import com.gw.component_push.api.interfaces.INotifyServer
 import com.gw.component_push.datastore.PushDataStore
-import com.gw.cp_account.api.kapi.IAccountApi
+import com.gw.cp_config.api.AppChannelName
+import com.gw_reoqoo.cp_account.api.kapi.IAccountApi
 import com.gw.cp_config.api.IAppParamApi
-import com.gw.lib_utils.ktx.getAppVersionName
+import com.gw_reoqoo.lib_utils.ktx.getAppVersionName
+import com.gw.player.entity.ErrorInfo
 import com.gwell.loglibs.GwellLogUtils
+import com.jwkj.iotvideo.constant.IoTError
+import com.jwkj.iotvideo.init.IoTVideoInitializer
+import com.jwkj.iotvideo.message.IMessageSingleListener
+import com.jwkj.iotvideo.message.MessageMgr
+import com.jwkj.iotvideo.player.api.IIoTCallback
 import com.jwkj.lib_gpush.manager.GPushMgr
-import com.tencentcs.iotvideo.IoTVideoSdk
-import com.tencentcs.iotvideo.messagemgr.AlarmPushMgr
 import com.tencentcs.iotvideo.utils.rxjava.SubscriberListener
 import com.yoosee.lib_gpush.GPushManager
 import com.yoosee.lib_gpush.entity.PushChannel
 import com.yoosee.lib_gpush.listener.IGPushNotificationCallback
 import com.yoosee.lib_gpush.listener.IGPushResultListener
 import com.yoosee.lib_gpush.strategy.SingleStrategy
+import com.yoosee.lib_gpush.utils.DevicePushUtils
 import kotlinx.coroutines.runBlocking
 import java.util.Locale
 import java.util.TimeZone
@@ -71,7 +77,7 @@ object GwPushManager {
             override fun onFailure(errCode: String, errString: String) {
                 GwellLogUtils.e(TAG, "init failure: errCode=$errCode, errString=$errString")
                 isPushInitSuccess = false
-                register(context, appParamApi, dataStore, iAccountApi)
+//                register(context, appParamApi, dataStore, iAccountApi)
             }
 
             override fun onSuccess(channel: String, token: String) {
@@ -134,21 +140,7 @@ object GwPushManager {
      * @param terminalId String 设备ID
      */
     fun unRegisterPush(terminalId: String) {
-        AlarmPushMgr.getInstance().pushService.unRegister(
-            terminalId,
-            object : SubscriberListener {
-                override fun onStart() {
-                    GwellLogUtils.i(TAG, "unRegisterPush start")
-                }
-
-                override fun onSuccess(p0: JsonObject) {
-                    GwellLogUtils.i(TAG, "unRegisterPush success")
-                }
-
-                override fun onFail(throwable: Throwable) {
-                    GwellLogUtils.e(TAG, "unRegisterPush fail: e ${throwable.message}")
-                }
-            })
+        IoTAlarmPushManager.instance().unRegisterPush(terminalId, true)
     }
 
     private fun registerPush(
@@ -158,9 +150,9 @@ object GwPushManager {
         dataStore: PushDataStore,
         context: Context
     ) {
-        val channel = "GOOGLE_FCM"
+        val channel = PushChannel.BRAND_FCM
         // 终端ID
-        val termId = IoTVideoSdk.getTerminalId().toString()
+        val termId = IoTVideoInitializer.p2pAlgorithm.getTerminalId().toString()
         // 系统类型
         val osType = OS_TYPE
         // 时区（单位秒）
@@ -184,11 +176,11 @@ object GwPushManager {
         // 制造商推送Id
         val mfrPushId = token
         // 制造商名称
-        val mfrName = channel
+        val mfrName = channel?.channel
         // 手机型号
         val mfrDevModel = Build.MODEL
         GwellLogUtils.i(TAG, "registerPush -> $userId, $token, $channel")
-        AlarmPushMgr.getInstance().pushService.registerPush(
+        IoTAlarmPushManager.instance().registerIoTPush(
             termId,
             osType,
             timeZone,
@@ -203,20 +195,28 @@ object GwPushManager {
             mfrPushId,
             mfrName,
             mfrDevModel,
-            object : SubscriberListener {
+            object : IIoTCallback<String> {
                 override fun onStart() {
-                    GwellLogUtils.i(TAG, "AlarmPushMgr...registerPush onStart")
+                    GwellLogUtils.i(TAG, "registerPush onStart...")
                 }
 
-                override fun onSuccess(jsonObj: JsonObject) {
-                    GwellLogUtils.i(TAG, "AlarmPushMgr...registerPush onSuccess -> $jsonObj")
+                override fun onSuccess(data: String) {
+                    super.onSuccess(data)
+                    GwellLogUtils.i(TAG, "registerPush onSuccess -> $data")
                     runBlocking { dataStore.saveTokenPushStatus(userId, token, true) }
-                    GwellLogUtils.i(TAG, "AlarmPushMgr...registerPush onSuccess -> saveToken")
+                    GwellLogUtils.i(TAG, "registerPush onSuccess -> saveToken")
                 }
 
-                override fun onFail(t: Throwable) {
+                override fun onError(error: IoTError) {
+                    super.onError(error)
+                    GwellLogUtils.e(TAG, "registerPush onError IoTError:$error")
                     runBlocking { dataStore.saveTokenPushStatus(userId, token, false) }
-                    GwellLogUtils.e(TAG, "AlarmPushMgr...registerPush onFail", t)
+                }
+
+                override fun onError(error: ErrorInfo?) {
+                    super.onError(error)
+                    GwellLogUtils.e(TAG, "registerPush onError ErrorInfo:$error")
+                    runBlocking { dataStore.saveTokenPushStatus(userId, token, false) }
                 }
             }
         )

@@ -1,4 +1,4 @@
-package com.gw.lib_api_root
+package com.gw_reoqoo.lib_api_root
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.gw.lib_api_root.test", appContext.packageName)
+        assertEquals("com.gw_reoqoo.lib_api_root.test", appContext.packageName)
     }
 }

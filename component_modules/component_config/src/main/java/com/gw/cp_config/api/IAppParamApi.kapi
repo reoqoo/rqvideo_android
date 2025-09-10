@@ -13,6 +13,7 @@ interface IAppParamApi {
      * @return String
      */
     fun getAppID(): String
+    fun setAppID(appId: String)
 
     /**
      * 获取app token
@@ -20,6 +21,7 @@ interface IAppParamApi {
      * @return String
      */
     fun getAppToken(): String
+    fun setAppToken(appToken: String)
 
     /**
      * 获取app name
@@ -27,5 +29,12 @@ interface IAppParamApi {
      * @return String
      */
     fun getAppName(): String
+    fun setAppName(appName: String)
 
+    /**
+     * 客户ID
+     */
+    fun getCid():String
+    fun setCid(cid:String)
+    
 }

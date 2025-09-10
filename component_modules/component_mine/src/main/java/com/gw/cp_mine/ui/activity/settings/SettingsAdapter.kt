@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.gw.cp_mine.R
 import com.gw.cp_mine.entity.SettingsEntity
 
-import com.gw.resource.R as RR
+import com.gw_reoqoo.resource.R as RR
 
 /**
  * Author: yanzheng@gwell.cc

@@ -9,11 +9,11 @@
         android:background="@color/color_f2f3f6"
         android:orientation="vertical">
 
-        <com.gw.lib_widget.immersive.ImmersiveView
+        <com.gw_reoqoo.lib_widget.immersive.ImmersiveView
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_0_1" />
 
-        <com.gw.lib_widget.title.AppTitle
+        <com.gw_reoqoo.lib_widget.title.AppTitle
             android:id="@+id/app_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,8 +25,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/dp_16"
-            android:layout_marginTop="@dimen/dp_20"
-            android:background="@drawable/widget_bg_card_12"
+            android:layout_marginTop="@dimen/dp_16"
+            android:background="@drawable/gw_reoqoo_widget_bg_card_12"
             tools:itemCount="3"
             tools:listitem="@layout/mine_rv_language_item" />
     </LinearLayout>

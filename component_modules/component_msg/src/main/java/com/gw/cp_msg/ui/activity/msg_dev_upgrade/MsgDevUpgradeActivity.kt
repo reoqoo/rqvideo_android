@@ -9,10 +9,10 @@ import com.gw.cp_msg.entity.http.MsgDetailEntity
 import com.gw.cp_msg.databinding.MsgActivityMsgDevUpgradeBinding
 import com.gw.cp_msg.ui.activity.msg_dev_upgrade.adapter.MsgDevUpgradeAdapter
 import com.gw.cp_msg.ui.activity.msg_dev_upgrade.vm.MsgDevUpgradeVM
-import com.gw.lib_base_architecture.PageJumpData
-import com.gw.lib_base_architecture.view.ABaseMVVMDBActivity
-import com.gw.lib_http.jsonToEntity
-import com.gw.lib_router.ReoqooRouterPath
+import com.gw_reoqoo.lib_base_architecture.PageJumpData
+import com.gw_reoqoo.lib_base_architecture.view.ABaseMVVMDBActivity
+import com.gw_reoqoo.lib_http.jsonToEntity
+import com.gw_reoqoo.lib_router.ReoqooRouterPath
 import com.therouter.TheRouter
 import com.therouter.router.Autowired
 import com.therouter.router.Route

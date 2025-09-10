@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.widget.LinearLayout
 import com.gw.cp_mine.R
 import com.gw.cp_mine.databinding.MineBtnCustomBinding
-import com.gw.lib_utils.ktx.visible
+import com.gw_reoqoo.lib_utils.ktx.visible
 
 /**
  * Author: yanzheng@gwell.cc

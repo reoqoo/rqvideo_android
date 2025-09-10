@@ -1,5 +1,5 @@
 apply from: "${rootDir.absolutePath}/script/gradle/lib_depends.gradle"
 
 android {
-    namespace 'com.gw.lib_api_root'
+    namespace 'com.gw_reoqoo.lib_api_root'
 }

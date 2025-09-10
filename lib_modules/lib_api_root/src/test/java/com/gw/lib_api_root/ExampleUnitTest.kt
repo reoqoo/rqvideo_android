@@ -1,4 +1,4 @@
-package com.gw.lib_api_root
+package com.gw_reoqoo.lib_api_root
 
 import org.junit.Test
 

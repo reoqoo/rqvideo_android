@@ -35,7 +35,7 @@
     <string name="AA0043">Của tôi</string>
     <string name="AA0044">Thỏa thuận người dùng</string>
     <string name="AA0045">Tóm tắt chính sách riêng tư và hiệp thương dịch vụ người dùng</string>
-    <string name="AA0046">Chào mừng bạn sử dụng ipTIME! ipTIME là nền tảng âm thanh và video trực tuyến do ipTIME IoT XXXXXXXX., Ltd. nghiên cứu và phát triển đồng thời đưa vào hoạt động (Sau đây gọi là \"chúng tôi\"). Chúng tôi sẽ giúp bạn hiểu cách chúng tôi thu thập, sử dụng, lưu trữ và chia sẻ thông tin cá nhân và các quyền liên quan của bạn thông qua \"Chính sách Bảo mật\" và \"Thỏa thuận Người dùng\" của chúng tôi. \nĐể cung cấp cho bạn video phát trực tiếp, phát lại video, đăng ký lưu trữ, tương tác cộng đồng và các dịch vụ khác,chúng tôi cần thu thập thông tin cá nhân của bạn như quay video, hình ảnh video, thông tin thiết bị, nhật ký hoạt động, v.v; \nBạn có thể truy cập, sửa, xóa thông tin cá nhân của mình và quản lý các ủy quyền của bạn trong trung tâm cá nhân; \nChúng tôi bảo vệ thông tin cá nhân của bạn bằng các công nghệ bảo mật hàng đầu trong ngành. \nBạn có thể tìm hiểu thông tin kỹ càng đầy đủ bằng cách đọc phiên bản đầy đủ %1$s và %2$s. \nNếu bạn đồng ý, vui lòng nhấp vào \"Đồng ý\" để chấp nhận dịch vụ của chúng tôi.</string>
+    <string name="AA0046">Chào mừng bạn sử dụng ipTIME! ipTIME là nền tảng âm thanh và video trực tuyến do ipTIME IoT Technology Co., Ltd. nghiên cứu và phát triển đồng thời đưa vào hoạt động (Sau đây gọi là \"chúng tôi\"). Chúng tôi sẽ giúp bạn hiểu cách chúng tôi thu thập, sử dụng, lưu trữ và chia sẻ thông tin cá nhân và các quyền liên quan của bạn thông qua \"Chính sách Bảo mật\" và \"Thỏa thuận Người dùng\" của chúng tôi. \nĐể cung cấp cho bạn video phát trực tiếp, phát lại video, đăng ký lưu trữ, tương tác cộng đồng và các dịch vụ khác,chúng tôi cần thu thập thông tin cá nhân của bạn như quay video, hình ảnh video, thông tin thiết bị, nhật ký hoạt động, v.v; \nBạn có thể truy cập, sửa, xóa thông tin cá nhân của mình và quản lý các ủy quyền của bạn trong trung tâm cá nhân; \nChúng tôi bảo vệ thông tin cá nhân của bạn bằng các công nghệ bảo mật hàng đầu trong ngành. \nBạn có thể tìm hiểu thông tin kỹ càng đầy đủ bằng cách đọc phiên bản đầy đủ %1$s và %2$s. \nNếu bạn đồng ý, vui lòng nhấp vào \"Đồng ý\" để chấp nhận dịch vụ của chúng tôi.</string>
     <string name="AA0047">Nhà của %s</string>
     <string name="AA0049">Thêm thiết bị</string>
     <string name="AA0050">Chia sẻ thiết bị</string>
@@ -58,14 +58,23 @@
     <string name="AA0069">ipTIME muốn sử dụng thông tin vị trí của bạn</string>
     <string name="AA0070">Để thiết bị thêm thành công, bạn cần cho phép việc sử dụng các dịch vụ Location để nhận thông tin Wi-Fi. Hãy bật Location Services</string>
     <string name="AA0071">Không có quyền định vị, vui lòng bật quyền trong Cài đặt</string>
+    <string name="AA0072">Có cho phép ipTIME sử dụng thông tin album của bạn</string>
+    <string name="AA0073">Cần xem và gửi hình. Có được phép mở album không?</string>
+    <string name="AA0074">Có cho phép ipTIME sử dụng thông tin Bluetooth của bạn</string>
+    <string name="AA0075">Cần có quyền Bluetooth để giúp các thiết bị thông minh kết nối với Wi-Fi trong quá trình thêm. Có cho phép?</string>
     <string name="AA0076">Không có quyền Bluetooth, vui lòng bật quyền trong Cài đặt</string>
     <string name="AA0078">Kết nối thiết bị</string>
     <string name="AA0079">Đang quét thiết bị...</string>
     <string name="AA0080">Đang kết nối thiết bị...</string>
     <string name="AA0081">Đang đăng ký thiết bị...</string>
     <string name="AA0082">Vui lòng đảm bảo rằng điện thoại ở gần camera</string>
+    <string name="AA0084">Vui lòng thử thao tác sau rồi thử lại:</string>
+    <string name="AA0085">1. Nhấn và giữ nút Đặt lại để cài lại thiết bị</string>
+    <string name="AA0086">2. Vui lòng kiểm tra xem giới hạn truy cập có được bật trên bộ định tuyến hay không</string>
+    <string name="AA0087">3. Thử khởi động lại bộ định tuyến</string>
     <string name="AA0088">Thử lại</string>
     <string name="AA0089">Đã thêm thành công</string>
+    <string name="AA0090">Đặt tên nhanh</string>
     <string name="AA0099">Khác</string>
     <string name="AA0100">Lưu mã QR của thiết bị vào album</string>
     <string name="AA0101">Bắt đầu sử dụng</string>
@@ -103,6 +112,7 @@
     <string name="AA0149">Vui lòng nhập tài khoản ipTIME của bạn</string>
     <string name="AA0150">Chia sẻ gần đây</string>
     <string name="AA0151">Chia sẻ ngay</string>
+    <string name="AA0152">Chia sẻ</string>
     <string name="AA0153">Tên người dùng sai, vui lòng nhập lại</string>
     <string name="AA0154">Xác nhận muốn chia sẻ thiết bị của mình với %s không?</string>
     <string name="AA0155">Đã chia sẻ với người bạn này</string>
@@ -166,7 +176,8 @@
     <string name="AA0223">Trợ giúp và Phản hồi</string>
     <string name="AA0224">Về ipTIME</string>
     <string name="AA0225">Trung tâm Tin nhắn</string>
-    <string name="AA0227">Bật quyền thông báo của Ứng dụng ipTIME để nhận tin tức mới nhất kịp thời</string>
+    <string name="AA0226">Thao tác thành công</string>
+    <string name="AA0227">Bật quyền thông báo của Ứng dụng %s để nhận tin tức mới nhất kịp thời</string>
     <string name="AA0228">Không có thông tin</string>
     <string name="AA0230">Lựa chọn</string>
     <string name="AA0232">Chia sẻ</string>
@@ -177,6 +188,7 @@
     <string name="AA0245">Video thẻ</string>
     <string name="AA0246">Video đám mây</string>
     <string name="AA0247">Dịch vụ đám mây</string>
+    <string name="AA0248">Sự cố khác</string>
     <string name="AA0249">Phân loại thiết bị</string>
     <string name="AA0250">Vui lòng chọn thiết bị</string>
     <string name="AA0251">Vấn đề gặp phải và đề xuất</string>
@@ -429,6 +441,9 @@
     <string name="AA0559">Mã QR không hợp lệ</string>
     <string name="AA0560">Mã QR cũ đã hết hạn</string>
     <string name="AA0561">Bạn chắc chắn muốn loại bỏ thiết bị?</string>
+    <string name="AA0562">Vui lòng nhập đúng số điện thoại hoặc hộp thư</string>
+    <string name="AA0563">Anh đã tháo thiết bị ra.</string>
+    <string name="AA0564">Số điện thoại/định dạng hộp thư sai</string>
     <string name="AA0565">Chia sẻ đã hết hạn</string>
     <string name="AA0566">Tài khoản đích không khả dụng</string>
     <string name="AA0567">Tài khoản mục tiêu không tồn tại</string>
@@ -482,7 +497,7 @@
     <string name="AA0635">Chưa ủy quyền</string>
     <string name="AA0637">Giám sát thời gian thực</string>
     <string name="AA0638">Thoại</string>
-    <string name="AA0639">Gimbal</string>
+    <string name="AA0639">PTZ</string>
     <string name="AA0640">Xem lại</string>
     <string name="AA0642">Cấu hình thiết bị</string>
     <string name="AA0643">Giám sát thiết bị</string>
@@ -498,4 +513,16 @@
     <string name="AA0654">Phiếu giảm giá</string>
     <string name="AA0656">Ngoại tuyến, không thể nâng cấp</string>
     <string name="AA0657">Hệ thống ngoại lệ</string>
+    <string name="AA0658">Hủy bỏ</string>
+    <string name="AA0659">Phiên bản hiện tại không hỗ trợ liên kết trực tiếp thiết bị này. Vui lòng tải xuống ứng dụng \"ipTIME Cloud\" để thêm và sử dụng.</string>
+    <string name="AA0660">Tải xuống</string>
+    <string name="AA0661">Nhắc nhở thân thiện</string>
+    <string name="AA0662">Các thiết bị sau không khả dụng trong ứng dụng hiện tại</string>
+    <string name="AA0663">Vui lòng tải xuống ứng dụng \"ipTIME Cloud\" để tiếp tục sử dụng</string>
+    <string name="AA0664">Không nhắc lại</string>
+    <string name="AA0665">Về</string>
+    <string name="AA0669">Vui lòng nhập tài khoản</string>
+    <string name="AA0682">Không đồng ý và thoát ứng dụng</string>
+    <string name="AA0689">Vui lòng thử các thao tác sau và thử lại:\n1. Nhấn và giữ nút đặt lại để đặt lại thiết bị;\n2. Vui lòng kiểm tra xem thiết bị có được kết nối với nguồn điện hay không;\n3. Vui lòng kiểm tra xem ăng-ten của thiết bị có bị lỏng hay không;\n4. Vui lòng đảm bảo rằng giao tiếp tín hiệu 4G hiện tại là bình thường.</string>
+    <string name="AA0690">Máy ảnh quá thấp, vui lòng nâng cấp trong trạng thái điện ~</string>
 </resources>

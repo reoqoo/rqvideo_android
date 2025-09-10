@@ -5,12 +5,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.gw.cp_mine.entity.SettingsEntity
 import com.gw.cp_mine.entity.SettingsItemType
-import com.gw.lib_base_architecture.vm.ABaseVM
-import com.gw.lib_utils.permission.PermissionUtil
+import com.gw_reoqoo.lib_base_architecture.vm.ABaseVM
+import com.gw_reoqoo.lib_utils.permission.PermissionUtil
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
-import com.gw.resource.R as RR
+import com.gw_reoqoo.resource.R as RR
 
 /**
  * Author: yanzheng@gwell.cc

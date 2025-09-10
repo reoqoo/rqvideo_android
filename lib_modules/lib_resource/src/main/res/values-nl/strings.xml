@@ -35,7 +35,7 @@
     <string name="AA0043">Mijn</string>
     <string name="AA0044">Gebruikersovereenkomst</string>
     <string name="AA0045">Samenvatting van gebruikersovereenkomst en privacybeleid</string>
-    <string name="AA0046">U bent van harte welkom om ipTIME. ipTIME is een online audioplatform dat is ontwikkeld en beheerd door ipTIME IoT XXXXXXXX., Ltd. (hierna \"You Help Us\" genoemd). Begrijp alsjeblieft dat we zullen verzamelen, gebruiken, hoe informatie wordt opgeslagen en gedeelde video\'s die u over ons ziet. Videobeelden, apparaatinformatie, logboeken en andere persoonlijke informatie;\nU kunt uw autorisatie openen, corrigeren en verwijderen;\nWe zullen persoonlijke beveiligingstechnologie gebruiken in het topoperatiecentrum om uw persoonlijke informatie te beschermen. \nU kunt de versie %1$s en %2$s lezen voor volledige details. \nAls u akkoord gaat, klikt u op \"Akkoord\" om onze service te accepteren.</string>
+    <string name="AA0046">U bent van harte welkom om ipTIME. ipTIME is een online audioplatform dat is ontwikkeld en beheerd door ipTIME IoT Technology Co., Ltd. (hierna \"You Help Us\" genoemd). Begrijp alsjeblieft dat we zullen verzamelen, gebruiken, hoe informatie wordt opgeslagen en gedeelde video\'s die u over ons ziet. Videobeelden, apparaatinformatie, logboeken en andere persoonlijke informatie;\nU kunt uw autorisatie openen, corrigeren en verwijderen;\nWe zullen persoonlijke beveiligingstechnologie gebruiken in het topoperatiecentrum om uw persoonlijke informatie te beschermen. \nU kunt de versie %1$s en %2$s lezen voor volledige details. \nAls u akkoord gaat, klikt u op \"Akkoord\" om onze service te accepteren.</string>
     <string name="AA0047">%s\'s huis</string>
     <string name="AA0049">Apparaat toevoegen</string>
     <string name="AA0050">Apparaat delen</string>
@@ -57,14 +57,23 @@
     <string name="AA0069">ipTIME wil uw locatiegegevens gebruiken</string>
     <string name="AA0070">Om succesvol toegevoegd apparatuur, moet u toestaan bdat het gebruik van de Location Services voor het verkrijgen van Wi-Fi informatie.Schakel op Location Services.</string>
     <string name="AA0071">Geen locatie-rechten, schakel dit in instellingen in</string>
+    <string name="AA0072">ipTIME wil toegang tot je fotoalbum-informatie</string>
+    <string name="AA0073">Noodzaak om de foto te bekijken en te verzenden. Is het toegestaan om het album te openen?</string>
+    <string name="AA0074">ipTIME wil je Bluetooth-informatie gebruiken</string>
+    <string name="AA0075">Bluetooth-machtigingen vereist om slimme apparaten te helpen verbinding maken met Wi-Fi tijdens het toevoegen. Toestaan?</string>
     <string name="AA0076">Geen Bluetooth-rechten, schakel dit in instellingen in</string>
     <string name="AA0078">Verbindend apparaat.</string>
     <string name="AA0079">Apparaat wordt gescand...</string>
     <string name="AA0080">Apparaat wordt verbonden...</string>
     <string name="AA0081">Apparaat wordt geregistreerd...</string>
     <string name="AA0082">Zorg ervoor dat uw telefoon dicht bij de camera staat</string>
+    <string name="AA0084">Probeer het alstublieft opnieuw na de volgende stappen:</string>
+    <string name="AA0085">1. Houd de resetknop ingedrukt om het apparaat te resetten</string>
+    <string name="AA0086">2. Controleer of de router toegangsbeperkingen heeft ingeschakeld</string>
+    <string name="AA0087">3. Probeer de router opnieuw op te starten</string>
     <string name="AA0088">Opnieuw proberen</string>
     <string name="AA0089">Toevoegen gelukt</string>
+    <string name="AA0090">Snelle naamgeving</string>
     <string name="AA0099">Andere</string>
     <string name="AA0100">Bewaar de QR-code van het apparaat in het album</string>
     <string name="AA0101">Begin</string>
@@ -102,6 +111,7 @@
     <string name="AA0149">Voer alstublieft het ipTIME-account in</string>
     <string name="AA0150">Recent gedeeld</string>
     <string name="AA0151">Face-to-face delen</string>
+    <string name="AA0152">Delen</string>
     <string name="AA0153">Foutieve gebruikersnaam, voer opnieuw in</string>
     <string name="AA0154">Apparaat met %s delen?</string>
     <string name="AA0155">Al gedeeld met deze vriend</string>
@@ -165,7 +175,8 @@
     <string name="AA0223">Hulp en feedback</string>
     <string name="AA0224">Over ipTIME</string>
     <string name="AA0225">Notificatie centrum</string>
-    <string name="AA0227">Schakel de meldingstoestemming van Youkanto APP in om het laatste nieuws op tijd te ontvangen</string>
+    <string name="AA0226">Handeling gelukt</string>
+    <string name="AA0227">Schakel de meldingstoestemming van %s APP in om het laatste nieuws op tijd te ontvangen</string>
     <string name="AA0228">Geen nieuwe beirchten meer</string>
     <string name="AA0230">Kiezen</string>
     <string name="AA0232">Delen</string>
@@ -176,6 +187,7 @@
     <string name="AA0245">Kaart video</string>
     <string name="AA0246">cloud video</string>
     <string name="AA0247">Cloudservice</string>
+    <string name="AA0248">Ander probleem</string>
     <string name="AA0249">Apparaatcategorie</string>
     <string name="AA0250">Selecteer een apparaat</string>
     <string name="AA0251">Vragen en suggesties</string>
@@ -427,6 +439,9 @@ Om te voorkomen dat de stroom te snel op raakt, is hij automatisch overgeschakel
     <string name="AA0559">Ongeldige QR-code.</string>
     <string name="AA0560">Oude QR-code verlopen.</string>
     <string name="AA0561">Weet u zeker dat u het apparaat wilt verwijderen?</string>
+    <string name="AA0562">Voer alstublieft een geldig telefoonnummer of e-mailadres in</string>
+    <string name="AA0563">U heeft dit apparaat losgekoppeld</string>
+    <string name="AA0564">Ongeldig telefoon-/e-mailformaat</string>
     <string name="AA0565">Deelverzoek is verlopen</string>
     <string name="AA0566">Doelaccount niet beschikbaar</string>
     <string name="AA0567">Doelaccount bestaat niet</string>
@@ -496,4 +511,16 @@ Om te voorkomen dat de stroom te snel op raakt, is hij automatisch overgeschakel
     <string name="AA0654">Mijn bonnen</string>
     <string name="AA0656">Offline, upgrade niet mogelijk</string>
     <string name="AA0657">Systeemafwijkingen</string>
+    <string name="AA0658">Annuleren</string>
+    <string name="AA0659">De huidige versie ondersteunt het direct binden van dit apparaat niet. Download de \"ipTIME Cloud\"-app om toe te voegen en te gebruiken.</string>
+    <string name="AA0660">Downloaden</string>
+    <string name="AA0661">Vriendelijke Herinnering</string>
+    <string name="AA0662">De volgende apparaten zijn niet beschikbaar in de huidige app</string>
+    <string name="AA0663">Download de \"ipTIME Cloud\"-app om verder te gebruiken</string>
+    <string name="AA0664">Niet opnieuw herinneren</string>
+    <string name="AA0665">Over</string>
+    <string name="AA0669">Voer het account in</string>
+    <string name="AA0682">Niet akkoord en app afsluiten</string>
+    <string name="AA0689">Probeer de volgende handelingen en probeer het opnieuw:\n1. Houd de resetknop ingedrukt om het apparaat te resetten;\n2. Controleer of het apparaat is aangesloten op de stroomvoorziening;\n3. Controleer of de antenne van het apparaat loszit;\n4. Zorg ervoor dat de huidige 4G-signaalcommunicatie normaal is.</string>
+    <string name="AA0690">De camera is te laag, een upgrade in een staat van elektriciteit ~</string>
 </resources>

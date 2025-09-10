@@ -1,0 +1,32 @@
+package com.gw_reoqoo.cp_account.api.kapi
+
+import androidx.lifecycle.LiveData
+import com.gw_reoqoo.lib_room.user.UserInfo
+
+interface ILocalUserDataSource {
+    /**
+     * 主动获取当前用户的信息
+     */
+    suspend fun queryAccount(): UserInfo?
+
+    /**
+     * 监听当前用户的信息
+     */
+    fun watchUserInfo(): LiveData<UserInfo?>
+
+    /**
+     * userinfo的监听
+     */
+    fun watchUserInfo(userId: String): LiveData<UserInfo?>
+
+    /**
+     * 更新用户信息
+     */
+    suspend fun updateAccount(userInfo: UserInfo)
+
+    /**
+     * 用户注册地的监听
+     */
+    fun getUserArea(): LiveData<String?>
+    fun cleanAccount()
+}

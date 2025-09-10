@@ -10,7 +10,7 @@
         android:id="@+id/cl_district_item"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_48"
-        android:background="@drawable/account_area_item_bg">
+        android:background="@drawable/gw_reoqoo_account_area_item_bg">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_district_area"

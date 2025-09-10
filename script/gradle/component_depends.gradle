@@ -15,6 +15,8 @@ apply plugin: 'com.google.dagger.hilt.android'
 import com.gw.buildsrc.dependlibs.GwDependLibs
 import com.gw.buildsrc.version.Versions
 
+apply from: "${rootDir.absolutePath}/app/flavor_config.gradle"
+
 android {
     compileSdkVersion Versions.BuildVersions.VERSION_COMPILE_SDK
     buildToolsVersion Versions.BuildVersions.VERSION_BUILD_TOOLS
@@ -59,16 +61,14 @@ android {
 
     flavorDimensions += "version"
     productFlavors {
-        create("local") {
+        create("google") { flavor ->
             dimension = "version"
+            project.ext.flavorConfigs.google.applyToModule(flavor)
         }
 
-        create("google") {
+        create("iptime") { flavor ->
             dimension = "version"
-        }
-
-        create("reoqoosdk") {
-            dimension = "version"
+            project.ext.flavorConfigs.iptime.applyToModule(flavor)
         }
     }
 
@@ -125,6 +125,8 @@ android {
         pickFirst 'lib/armeabi-v7a/libgwbase.so'
         pickFirst 'lib/armeabi/libgwbase.so'
         pickFirst 'lib/arm64-v8a/libgwbase.so'
+
+
         exclude 'META-INF/DEPENDENCIES'
     }
 }
@@ -204,7 +206,7 @@ dependencies {
     /**
      * IoTVideo库
      */
-    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_IOT_VIDEO}:${Versions.GwVersions.VERSION_IOT_VIDEO}"
+//    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_IOT_VIDEO}:${Versions.GwVersions.VERSION_IOT_VIDEO}"
 
     /**
      * 技威数据统计
@@ -217,16 +219,13 @@ dependencies {
  */
 dependencies {
     implementation(project(":lib_modules:lib_api_root"))
-    implementation("com.reoqoo_lib:lib_resource:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("com.reoqoo_lib:lib_module_mounter:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("com.reoqoo_lib:lib_datastore:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("com.reoqoo_lib:lib_router:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("com.reoqoo_lib:lib_widget:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("com.reoqoo_lib:lib_utils:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("com.reoqoo_lib:lib_http:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("com.reoqoo_lib:lib_architecture:${Versions.ReoqooSdkVer.VERSION_CODE}")
-}
+    implementation(project(":lib_modules:lib_resource"))
 
-dependencies {
-    implementation("com.reoqoo_comp:reoqoo_sdk:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_module_mounter:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_datastore:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_router:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_widget:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_utils:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_http:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_architecture:${Versions.ReoqooSdkVer.VERSION_CODE}")
 }

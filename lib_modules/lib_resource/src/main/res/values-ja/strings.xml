@@ -35,7 +35,7 @@
     <string name="AA0043">私の</string>
     <string name="AA0044">ユーザー规约</string>
     <string name="AA0045">利用规约とプライバシーポリシーの概要</string>
-    <string name="AA0046">ipTIMEへようこそ、ipTIMEはipTIME IoT XXXXXXXX., Ltd.（以下は当社といいます）からオンラインオーディオおよびビデオプラットフォームの研究开発と运用です。＜利用规约＞と＜プライバシーポリシー＞を使用して、个人情报の収集、使用、保存、共有の方法、および关连する権利の理解を支持します。\nライブビデオ、ビデオ再生、コレクション购読、コミュニティインタラクションおよびその他のサービスを提供するために、ビデオ録画、ビデオ写真、デバイス情报、操作ログなどの个人情报を収集する必要があります。センターはお客様の个人情报にアクセスし、修正し、削除し、认证を管理します; \n私たちは业界最先端のセキュリティ技术を使用してお客様の个人情报を保护します。 \nフルバージョン%1$sおよび%2$sを読むことで详细を确认できます。 \n同意する场合は、[同意する]をクリックしてサービスに同意してください。</string>
+    <string name="AA0046">ipTIMEへようこそ、ipTIMEはipTIME IoT Technology Co., Ltd.（以下は当社といいます）からオンラインオーディオおよびビデオプラットフォームの研究开発と运用です。＜利用规约＞と＜プライバシーポリシー＞を使用して、个人情报の収集、使用、保存、共有の方法、および关连する権利の理解を支持します。\nライブビデオ、ビデオ再生、コレクション购読、コミュニティインタラクションおよびその他のサービスを提供するために、ビデオ録画、ビデオ写真、デバイス情报、操作ログなどの个人情报を収集する必要があります。センターはお客様の个人情报にアクセスし、修正し、削除し、认证を管理します; \n私たちは业界最先端のセキュリティ技术を使用してお客様の个人情报を保护します。 \nフルバージョン%1$sおよび%2$sを読むことで详细を确认できます。 \n同意する场合は、[同意する]をクリックしてサービスに同意してください。</string>
     <string name="AA0047">%sの家</string>
     <string name="AA0049">端末の登録</string>
     <string name="AA0050">デバイスの共有</string>
@@ -58,14 +58,23 @@
     <string name="AA0069">ipTIMEはあなたの位置情報を使用したい</string>
     <string name="AA0070">成功した机器を追加するには、无线LANの情报を取得するための位置サービスの使用を许可する必要があります。位置情报サービスをオンにしてください</string>
     <string name="AA0071">位置づけの権限がありません。設定で有効にしてください</string>
+    <string name="AA0072">ipTIMEにアルバムの権限を与えますか</string>
+    <string name="AA0073">写真を见て送る必要があります。 アルバムを开くことはできますか？</string>
+    <string name="AA0074">ipTIMEにBluetoothの権限を与えますか</string>
+    <string name="AA0075">スマートデバイスの追加中にWIFIに接続するためにBluetooth権限が必要ですが、許可しますか。</string>
     <string name="AA0076">Bluetooth権限がないため、設定で有効にしてください</string>
     <string name="AA0078">设备接続</string>
     <string name="AA0079">スキャン中...</string>
     <string name="AA0080">接続中...</string>
     <string name="AA0081">登録中...</string>
     <string name="AA0082">携帯電話がカメラに近いことを確認してください</string>
+    <string name="AA0084">次の通り操作してから再度試してみてください。</string>
+    <string name="AA0085">1.リセットボタンを押して本機をリセットします</string>
+    <string name="AA0086">2.ルーターにアクセス制限がないか確認します</string>
+    <string name="AA0087">3.ルーターを再起動してみます</string>
     <string name="AA0088">もう一度试します</string>
     <string name="AA0089">端末を登録しました</string>
+    <string name="AA0090">ネーミング</string>
     <string name="AA0099">その他</string>
     <string name="AA0100">デバイスのQRコードをアルバムに保存</string>
     <string name="AA0101">スタート</string>
@@ -103,6 +112,7 @@
     <string name="AA0149">ipTIMEアカウントを入力してください</string>
     <string name="AA0150">最近の共有内容</string>
     <string name="AA0151">直対面シェアリング</string>
+    <string name="AA0152">シェア</string>
     <string name="AA0153">ユーザー名エラーです。再度入力してください</string>
     <string name="AA0154">デバイスを%sに共有しますか？</string>
     <string name="AA0155">既にこの友達に共有しました</string>
@@ -166,7 +176,8 @@
     <string name="AA0223">ヘルプ及びフィードバック</string>
     <string name="AA0224">ipTIMEについて</string>
     <string name="AA0225">メッセージセンター</string>
-    <string name="AA0227">Youkanto APPの通知許可をオンにして、最新ニュースを時間内に取得します</string>
+    <string name="AA0226">操作完了しました</string>
+    <string name="AA0227">%s APPの通知許可をオンにして、最新ニュースを時間内に取得します</string>
     <string name="AA0228">情报はこれだけです</string>
     <string name="AA0230">选択</string>
     <string name="AA0232">シェア</string>
@@ -177,6 +188,7 @@
     <string name="AA0245">カードビデオ</string>
     <string name="AA0246">クラウドビデオ</string>
     <string name="AA0247">クラウドサービス</string>
+    <string name="AA0248">他の问题</string>
     <string name="AA0249">デバイス分類</string>
     <string name="AA0250">デバイスを選択してください</string>
     <string name="AA0251">質問と提案</string>
@@ -429,6 +441,9 @@
     <string name="AA0559">無効のQRコード</string>
     <string name="AA0560">旧QRコードは無効です</string>
     <string name="AA0561">本当にデバイスを削除しますか？</string>
+    <string name="AA0562">正しい携帯電話番号やメールアドレスを入力してください</string>
+    <string name="AA0563">デバイスの縛り付けを解除しました</string>
+    <string name="AA0564">携帯番号/メールボックスのフォーマットが間違っている</string>
     <string name="AA0565">共有期限切れ</string>
     <string name="AA0566">ターゲットアカウントは使用できません</string>
     <string name="AA0567">ターゲットアカウントは存在しません</string>
@@ -498,4 +513,16 @@
     <string name="AA0654">マイカード券</string>
     <string name="AA0656">オフライン、アップデート不可</string>
     <string name="AA0657">システム異常</string>
+    <string name="AA0658">取消</string>
+    <string name="AA0659">現在のバージョンでは、このデバイスを直接バインドできません。\"ipTIME Cloud\"アプリをダウンロードして追加し、使用してください。</string>
+    <string name="AA0660">ダウンロード</string>
+    <string name="AA0661">フレンドリーリマインダー</string>
+    <string name="AA0662">以下のデバイスは現在のアプリでは利用できません</string>
+    <string name="AA0663">引き続きご利用いただくには、\"ipTIME Cloud\"アプリをダウンロードしてください</string>
+    <string name="AA0664">再び通知しない</string>
+    <string name="AA0665">について</string>
+    <string name="AA0669">アカウントを入力してください</string>
+    <string name="AA0682">同意せずにアプリを終了</string>
+    <string name="AA0689">以下の操作を試してから再試行してください：\n1. リセットボタンを長押ししてデバイスをリセットします；\n2. デバイスが電源に接続されているか確認してください；\n3. デバイスのアンテナが緩んでいないか確認してください；\n4. 現在の4G信号通信が正常であることを確認してください。</string>
+    <string name="AA0690">カメラが少なすぎる、電力の状態でアップグレードしてください〜</string>
 </resources>

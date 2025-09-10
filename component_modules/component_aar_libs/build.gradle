@@ -1,5 +1,0 @@
-configurations.maybeCreate("default")
-// 需要单独测试插件的时候，即可放开此注释，并把aar文件放到model根目录中
-//artifacts.add("default", file("app-reoqoo-debug.aar"))
-// 添加腾讯的回音消除依赖
-artifacts.add("default", file("txtraevoip-release.aar"))

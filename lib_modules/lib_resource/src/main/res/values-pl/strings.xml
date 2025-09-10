@@ -35,7 +35,7 @@
     <string name="AA0043">O mnie</string>
     <string name="AA0044">Umowa użytkownika</string>
     <string name="AA0045">Podsumowanie umowy o świadczenie usług dla użytkownika i zasad zachowania poufności</string>
-    <string name="AA0046">Witamy w ipTIME! ipTIME jest internetową platformą audio-wideo opracowaną i obsługiwaną przez firmę ipTIME IoT XXXXXXXX., Ltd. (zwaną dalej „my/nas”). Można lepiej zrozumieć zasadę zbierania, wykorzystywania, przechowywania i udostępniania przez nas danych osobowych użytkowników po zapoznaniu się z „Zasadami ochrony prywatności” i „Umowa z użytkownikiem”. \n Aby zapewnić bieżący obraz, odtwarzanie wideo, subskrypcję kolekcji, interakcję ze społecznością i inne usługi, musimy zebrać dane osobowe użytkowników, takie jak nagrania wideo, obrazy wideo, informacje o urządzeniu, dzienniki operacji itp. \nUżytkownik może uzyskać dostęp, korygować, usuwać swoje dane osobowe, a także zarządzać autoryzacją w Centrum Osobistym. \n Będziemy korzystać z wiodącej w branży technologii zabezpieczeń w celu ochrony Twoich danych osobowych. \n Więcej informacji można uzyskać, czytając pełny tekst %1$s i %2$s. \n Jeśli wyrażasz zgodę, naciśnij przycisk „Zgadzam się”, aby zaakceptować nasze warunki świadczenia usług.</string>
+    <string name="AA0046">Witamy w ipTIME! ipTIME jest internetową platformą audio-wideo opracowaną i obsługiwaną przez firmę ipTIME IoT Technology Co., Ltd. (zwaną dalej „my/nas”). Można lepiej zrozumieć zasadę zbierania, wykorzystywania, przechowywania i udostępniania przez nas danych osobowych użytkowników po zapoznaniu się z „Zasadami ochrony prywatności” i „Umowa z użytkownikiem”. \n Aby zapewnić bieżący obraz, odtwarzanie wideo, subskrypcję kolekcji, interakcję ze społecznością i inne usługi, musimy zebrać dane osobowe użytkowników, takie jak nagrania wideo, obrazy wideo, informacje o urządzeniu, dzienniki operacji itp. \nUżytkownik może uzyskać dostęp, korygować, usuwać swoje dane osobowe, a także zarządzać autoryzacją w Centrum Osobistym. \n Będziemy korzystać z wiodącej w branży technologii zabezpieczeń w celu ochrony Twoich danych osobowych. \n Więcej informacji można uzyskać, czytając pełny tekst %1$s i %2$s. \n Jeśli wyrażasz zgodę, naciśnij przycisk „Zgadzam się”, aby zaakceptować nasze warunki świadczenia usług.</string>
     <string name="AA0047">Dom %s</string>
     <string name="AA0049">Dodaj Urządzenie</string>
     <string name="AA0050">Udostępnij urządzenie</string>
@@ -57,14 +57,23 @@
     <string name="AA0069">ipTIME chce użyć informacji o Twojej lokalizacji</string>
     <string name="AA0070">Aby pomyślnie dodany sprzęt, trzeba umożliwić korzystanie z usług lokalizacyjnych na uzyskanie informacji Wi-Fi.Proszę włączyć usługi lokalizacyjne.</string>
     <string name="AA0071">Brak uprawnień do lokalizacji, proszę aktywować w ustawieniach</string>
+    <string name="AA0072">Czy ipTIME chciałby uzyskać dostęp do twoich zdjęć?</string>
+    <string name="AA0073">Musisz wyświetlić i wysłać zdjęcie. Czy wolno otwierać album?</string>
+    <string name="AA0074">Czy ipTIME chciałby używać twoich informacji Bluetooth?</string>
+    <string name="AA0075">Wymagana jest zgoda Bluetooth, aby pomóc urządzeniom inteligentnym w połączeniu z Wi-Fi podczas dodawania. Pozwolić?</string>
     <string name="AA0076">Brak uprawnień Bluetooth, proszę aktywować w ustawieniach</string>
     <string name="AA0078">Łączenie urządzenia</string>
     <string name="AA0079">Skanowanie urządzenia...</string>
     <string name="AA0080">Łączenie urządzenia...</string>
     <string name="AA0081">Rejestracja urządzenia...</string>
     <string name="AA0082">Upewnij się, że telefon jest blisko kamery</string>
+    <string name="AA0084">Proszę spróbować ponownie po wypróbowaniu następujących kroków:</string>
+    <string name="AA0085">1. Przytrzymaj przycisk resetowania, aby zresetować urządzenie</string>
+    <string name="AA0086">2. Sprawdź, czy router ma włączone ograniczenia dostępu</string>
+    <string name="AA0087">3. Spróbuj zrestartować router</string>
     <string name="AA0088">Spróbuj ponownie</string>
     <string name="AA0089">Dodane poprawnie</string>
+    <string name="AA0090">Szybkie nazewnictwo</string>
     <string name="AA0099">Inny</string>
     <string name="AA0100">Zapisz kod QR urządzenia w albumie</string>
     <string name="AA0101">Zacznij</string>
@@ -103,6 +112,7 @@
     <string name="AA0149">Proszę wprowadzić konto ipTIME</string>
     <string name="AA0150">Ostatnio udostępnione</string>
     <string name="AA0151">Współdzielenie twarzą w twarz</string>
+    <string name="AA0152">Udostępnienie</string>
     <string name="AA0153">Niepoprawna nazwa użytkownika, spróbuj ponownie</string>
     <string name="AA0154">Czy na pewno chcesz udostępnić urządzenie dla %s?</string>
     <string name="AA0155">Już udostępniono temu znajomemu</string>
@@ -166,7 +176,8 @@
     <string name="AA0223">Pomoc i opinie</string>
     <string name="AA0224">O ipTIME</string>
     <string name="AA0225">Centrum powiadomień</string>
-    <string name="AA0227">Włącz uprawnienia do powiadomień w aplikacji Youkanto, aby otrzymywać najnowsze wiadomości na czas</string>
+    <string name="AA0226">Operacja wykonana</string>
+    <string name="AA0227">Włącz uprawnienia do powiadomień w aplikacji %s, aby otrzymywać najnowsze wiadomości na czas</string>
     <string name="AA0228">Brak więcej wiadomości</string>
     <string name="AA0230">Wybierz</string>
     <string name="AA0232">Udostępnienie</string>
@@ -177,6 +188,7 @@
     <string name="AA0245">Wideo z karty</string>
     <string name="AA0246">wideo w chmurze</string>
     <string name="AA0247">Usługa w chmurze</string>
+    <string name="AA0248">Inny problem</string>
     <string name="AA0249">Kategoria urządzenia</string>
     <string name="AA0250">Wybierz urządzenie</string>
     <string name="AA0251">Pytania i sugestie</string>
@@ -428,6 +440,9 @@ Aby uniknąć zbyt szybkiego braku mocy, automatycznie przełączył się na try
     <string name="AA0559">Nieprawidłowy kod QR.</string>
     <string name="AA0560">Stary kod QR wygasł.</string>
     <string name="AA0561">Czy na pewno chcesz usunąć urządzenie?</string>
+    <string name="AA0562">Podaj prawidłowy numer telefonu lub adres e-mail</string>
+    <string name="AA0563">Rozłączyłeś to urządzenie</string>
+    <string name="AA0564">Nieprawidłowy format telefonu/e-maila</string>
     <string name="AA0565">Udostępnienie wygasło</string>
     <string name="AA0566">Konto docelowe niedostępne</string>
     <string name="AA0567">Konto docelowe nie istnieje</string>
@@ -497,4 +512,16 @@ Aby uniknąć zbyt szybkiego braku mocy, automatycznie przełączył się na try
     <string name="AA0654">Moje kupony</string>
     <string name="AA0656">Offline, aktualizacja niedostępna</string>
     <string name="AA0657">Nieprawidłowości układu</string>
+    <string name="AA0658">Anuluj</string>
+    <string name="AA0659">Obecna wersja nie obsługuje bezpośredniego wiązania tego urządzenia. Pobierz aplikację \"ipTIME Cloud\", aby dodać i używać.</string>
+    <string name="AA0660">Pobierz</string>
+    <string name="AA0661">Przyjazne Przypomnienie</string>
+    <string name="AA0662">Poniższe urządzenia nie są dostępne w bieżącej aplikacji</string>
+    <string name="AA0663">Proszę pobrać aplikację \"ipTIME Cloud\", aby kontynuować korzystanie</string>
+    <string name="AA0664">Nie Przypominaj Ponownie</string>
+    <string name="AA0665">O</string>
+    <string name="AA0669">Wprowadź konto</string>
+    <string name="AA0682">Nie zgadzam się i wyjdź z aplikacji</string>
+    <string name="AA0689">Spróbuj wykonać następujące czynności i spróbuj ponownie:\n1. Naciśnij i przytrzymaj przycisk resetowania, aby zresetować urządzenie;\n2. Sprawdź, czy urządzenie jest podłączone do zasilania;\n3. Sprawdź, czy antena urządzenia nie jest poluzowana;\n4. Upewnij się, że bieżąca komunikacja sygnału 4G działa normalnie.</string>
+    <string name="AA0690">Kamera jest zbyt niska, proszę uaktualnić w stanie energii elektrycznej ~</string>
 </resources>

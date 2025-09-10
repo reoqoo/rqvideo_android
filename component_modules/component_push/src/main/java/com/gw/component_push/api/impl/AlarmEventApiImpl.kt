@@ -1,5 +1,6 @@
 package com.gw.component_push.api.impl
 
+import com.gw.component_plugin_service.api.IPluginManager
 import com.gw.component_push.api.interfaces.AlarmEventType
 import com.gw.component_push.api.interfaces.IAlarmEventApi
 import com.gw.component_push.entity.AlarmEventData
@@ -7,11 +8,11 @@ import com.gw.component_push.entity.AlarmEventEntity
 import com.gw.component_push.entity.AlarmPushEntity
 import com.gw.component_push.entity.PushMsgContentEntity
 import com.gw.component_push.entity.PushMsgType
-import com.gw.lib_iotvideo.EventTopicType
-import com.gw.lib_utils.ktx.bitAt
-import com.gw.reoqoosdk.dev_monitor.IMonitorService
+import com.gw_reoqoo.component_family.api.interfaces.ILocalDeviceApi
+import com.gw_reoqoo.lib_iotvideo.EventMessage
+import com.gw_reoqoo.lib_iotvideo.EventTopicType
+import com.gw_reoqoo.lib_utils.ktx.bitAt
 import com.gwell.loglibs.GwellLogUtils
-import com.tencentcs.iotvideo.messagemgr.EventMessage
 import com.tencentcs.iotvideo.utils.JSONUtils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
@@ -29,7 +30,8 @@ import javax.inject.Singleton
 @Singleton
 class AlarmEventApiImpl @Inject constructor(
     private val devCallApiImpl: DevCallApiImpl,
-    private val pluginManager: IMonitorService
+    private val pluginManager: IPluginManager,
+    private val localDeviceApiImpl: ILocalDeviceApi
 ) : IAlarmEventApi {
 
     companion object {
@@ -54,7 +56,7 @@ class AlarmEventApiImpl @Inject constructor(
         if (eventMessage.topic == EventTopicType.NOTIFY_PUSH) {
             // 推送消息过来的事件
             val pushMsgContentEntity = JSONUtils.JsonToEntity(
-                eventMessage.data, PushMsgContentEntity::class.java
+                eventMessage.event, PushMsgContentEntity::class.java
             )
             if (pushMsgContentEntity?.data != null) {
                 val pushMsgEntity = pushMsgContentEntity.data
@@ -66,29 +68,44 @@ class AlarmEventApiImpl @Inject constructor(
                     }
                     scope.launch(Dispatchers.Main) {
                         GwellLogUtils.i(TAG, "pushMsgEntity: $pushMsgEntity")
-                        if (pushType.bitAt(AlarmEventType.ALARM_COMMON_PUSH_TYPE) == 1L
-                            && pushMsgEntity.pushContent.type == PushMsgType.EVENT.type
-                        ) {
-                            val isTimeout =
-                                pushMsgEntity.pushTime < System.currentTimeMillis() - CALL_EVENT_OVER_TIME
-                            GwellLogUtils.i(
-                                TAG,
-                                "pushTime: ${pushMsgEntity.pushTime}, currentTime: ${System.currentTimeMillis()}"
+                        // 设备关机
+                        if (pushType.bitAt(AlarmEventType.ALARM_DEVICE_SHUTDOWN) == 1L) {
+                            GwellLogUtils.i(TAG, "pushType == ALARM_DEVICE_SHUTDOWN")
+                            localDeviceApiImpl.updateDevicePowerOn(
+                                pushMsgEntity.deviceId,
+                                false
                             )
-                            val isCallEvent =
-                                pushMsgEntity.pushContent.alarmType.bitAt(AlarmEventType.ALARM_PRESS_CALL)
-                            GwellLogUtils.i(TAG, "isCallEvent: $isCallEvent, isTimeout: $isTimeout")
-                            if (isCallEvent == 1 && !isTimeout) {
-                                // 一键呼叫
-                                GwellLogUtils.i(TAG, "receive call event")
-                                devCallApiImpl.receiveCallEvent(pushMsgContentEntity)
-                            } else {
-                                getAlarmEventDetail(
-                                    isP2pMsg = true,
-                                    tid = pushMsgEntity.deviceId,
-                                    alarmId = pushMsgEntity.pushContent.alarmId,
-                                    alarmType = pushMsgEntity.pushContent.alarmType
+                        // 设备开机
+                        } else if (pushType.bitAt(AlarmEventType.ALARM_DEVICE_POWER_ON) == 1L) {
+                            GwellLogUtils.i(TAG, "pushType == ALARM_DEVICE_POWER_ON")
+                            localDeviceApiImpl.updateDevicePowerOn(
+                                pushMsgEntity.deviceId,
+                                true
+                            )
+                        // 通用推送类型
+                        } else if (pushType.bitAt(AlarmEventType.ALARM_COMMON_PUSH_TYPE) == 1L) {
+                            if (pushMsgEntity.pushContent.type == PushMsgType.EVENT.type) {
+                                val isTimeout =
+                                    pushMsgEntity.pushTime < System.currentTimeMillis() - CALL_EVENT_OVER_TIME
+                                GwellLogUtils.i(
+                                    TAG,
+                                    "pushTime: ${pushMsgEntity.pushTime}, currentTime: ${System.currentTimeMillis()}"
                                 )
+                                val isCallEvent =
+                                    pushMsgEntity.pushContent.alarmType.bitAt(AlarmEventType.ALARM_PRESS_CALL)
+                                GwellLogUtils.i(TAG, "isCallEvent: $isCallEvent, isTimeout: $isTimeout")
+                                if (isCallEvent == 1 && !isTimeout) {
+                                    // 一键呼叫
+                                    GwellLogUtils.i(TAG, "receive call event")
+                                    devCallApiImpl.receiveCallEvent(pushMsgContentEntity)
+                                } else {
+                                    getAlarmEventDetail(
+                                        isP2pMsg = true,
+                                        tid = pushMsgEntity.deviceId,
+                                        alarmId = pushMsgEntity.pushContent.alarmId,
+                                        alarmType = pushMsgEntity.pushContent.alarmType
+                                    )
+                                }
                             }
                         }
                     }
@@ -99,7 +116,7 @@ class AlarmEventApiImpl @Inject constructor(
         } else if (eventMessage.topic == EventTopicType.NOTIFY_ALARM_CHANGE_V2) {
             // 报警推送
             val alarmEventEntity = JSONUtils.JsonToEntity(
-                eventMessage.data, AlarmEventEntity::class.java
+                eventMessage.event, AlarmEventEntity::class.java
             )
             if (alarmEventEntity?.data != null) {
                 val alarmEventData = alarmEventEntity.data
@@ -135,7 +152,7 @@ class AlarmEventApiImpl @Inject constructor(
         } else {
             GwellLogUtils.e(
                 TAG,
-                "eventMessage error: topic-${eventMessage.topic}, data-${eventMessage.data}"
+                "eventMessage error: topic-${eventMessage.topic}, event-${eventMessage.event}"
             )
         }
     }

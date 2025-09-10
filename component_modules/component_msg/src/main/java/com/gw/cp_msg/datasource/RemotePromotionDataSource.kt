@@ -1,8 +1,8 @@
 package com.gw.cp_msg.datasource
 
 import com.gw.cp_msg.entity.http.PromotionListEntity
-import com.gw.lib_http.mapActionFlow
-import com.gw.lib_http.wrapper.HttpServiceWrapper
+import com.gw_reoqoo.lib_http.mapActionFlow
+import com.gw_reoqoo.lib_http.wrapper.HttpServiceWrapper
 import com.tencentcs.iotvideo.http.interceptor.flow.HttpAction
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

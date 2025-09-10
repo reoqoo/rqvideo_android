@@ -15,6 +15,12 @@ interface IDevShareParse {
      */
     fun devShareMsg(shareUrl: String): Map<String, String>?
 
+    /**
+     * 解析分享链接中的信息
+     *
+     * @param url String
+     * @return String
+     */
     fun parseShareUrl(url: String): String
 
 }

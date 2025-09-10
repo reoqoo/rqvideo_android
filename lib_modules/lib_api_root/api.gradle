@@ -4,7 +4,7 @@ apply from: "${rootDir.absolutePath}/script/gradle/lib_depends.gradle"
 apply from: "${rootDir.absolutePath}/script/gradle/reoqoo.gradle"
 
 android {
-    namespace = "com.gw.lib_api_root"
+    namespace = "com.gw_reoqoo.lib_api_root"
 }
 
 dependencies {

@@ -44,6 +44,12 @@ data class DevConfigEntity(
 
     val productImageURL: String? = null,
 
+    val productImageURL_A: String? = null,
+
+    val productImageURL_C: String? = null,
+
+    val productImageURL_D: String? = null,
+
     /**
      * 设备类型的扩展数据
      */
@@ -52,9 +58,13 @@ data class DevConfigEntity(
     /**
      * 设备厂家
      */
-    val factoryName: String? = null
+    val factoryName: String? = null,
+    /**
+     * 设备渠道（Reoqoo还是Yoosee）
+     */
+    val solution: String? = null,
 
-) : Serializable, IJsonEntity
+    ) : Serializable, IJsonEntity
 
 data class ProductNameBean(
     /**

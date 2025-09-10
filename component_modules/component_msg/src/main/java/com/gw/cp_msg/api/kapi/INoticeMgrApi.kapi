@@ -2,6 +2,7 @@ package com.gw.cp_msg.api.kapi
 
 import com.gw.cp_msg.entity.http.BannerEntity
 import com.gw.cp_msg.entity.http.MainNoticeEntity
+import com.gw.cp_msg.entity.http.NoticeEntity
 
 /**
  * Author: yanzheng@gwell.cc
@@ -127,4 +128,9 @@ interface INoticeMgrApi {
      */
     suspend fun setNoticeState(tag: String, state: Int): Boolean?
 
+     /**
+      * 获取 首页跑马灯悬浮公告
+      * @return SystemMessage.Data.Notice
+      */
+     fun getHomeMarqueeNotice(): NoticeEntity?
 }

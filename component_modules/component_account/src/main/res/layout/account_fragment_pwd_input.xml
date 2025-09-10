@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:background="@color/color_ffffff">
 
-        <com.gw.lib_widget.title.WidgetCommonTitleView
+        <com.gw_reoqoo.lib_widget.title.WidgetCommonTitleView
             android:id="@+id/layout_title"
             style="@style/titleView"
             app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +50,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_set_pwd_title"
             tools:text="@string/AA0396" />
 
-        <com.gw.lib_widget.input.PasswordInputLayout
+        <com.gw_reoqoo.lib_widget.input.PasswordInputLayout
             android:id="@+id/layout_set_pwd"
             android:layout_width="@dimen/dp_0"
             android:layout_height="@dimen/dp_56"
@@ -76,7 +76,7 @@
             app:layout_constraintTop_toBottomOf="@+id/layout_set_pwd"
             tools:visibility="visible" />
 
-        <com.gw.lib_widget.input.PasswordInputLayout
+        <com.gw_reoqoo.lib_widget.input.PasswordInputLayout
             android:id="@+id/layout_pwd_confirm"
             android:layout_width="@dimen/dp_0"
             android:layout_height="@dimen/dp_56"

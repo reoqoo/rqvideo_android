@@ -1,4 +1,4 @@
-package com.gw.house_watch
+package com.gw_reoqoo.house_watch
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.gw.house_watch.test", appContext.packageName)
+        assertEquals("com.gw_reoqoo.house_watch.test", appContext.packageName)
     }
 }

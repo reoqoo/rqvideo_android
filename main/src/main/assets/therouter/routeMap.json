@@ -1,0 +1,415 @@
+[
+  {
+    "path": "reoqoo://house_watch/watch_list/video_card",
+    "className": "com.gw_reoqoo.house_watch.ui.video_card.VideoCardFragment",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://house_watch/house_watch_main",
+    "className": "com.gw_reoqoo.house_watch.ui.house_watch.HouseWatchFragment",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://house_watch/house_watch_main/empty",
+    "className": "com.gw_reoqoo.house_watch.ui.empty_device.EmptyDeviceFragment",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://house_watch/house_watch_main/card_list",
+    "className": "com.gw_reoqoo.house_watch.ui.card_list.CardListFragment",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://house_watch/watch_list/active_card",
+    "className": "com.gw_reoqoo.house_watch.ui.active_card.ActiveCardFragment",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://mine/feedback_success",
+    "className": "com.gw_reoqoo.cp_app_setting.ui.activity.feedback.result.FeedbackResultActivity",
+    "action": "",
+    "description": "",
+    "params": {
+      "param_need_login": "false"
+    }
+  },
+  {
+    "path": "reoqoo://mine/feedback",
+    "className": "com.gw_reoqoo.cp_app_setting.ui.activity.feedback.FeedbackActivity",
+    "action": "",
+    "description": "",
+    "params": {
+      "param_need_login": "false"
+    }
+  },
+  {
+    "path": "reoqoo://account/user_info",
+    "className": "com.gw_reoqoo.cp_account.ui.activity.user_info.UserInfoActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://account/show_account",
+    "className": "com.gw_reoqoo.cp_account.ui.activity.show_bind_account.ShowAccountActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://account/modify_pwd",
+    "className": "com.gw_reoqoo.cp_account.ui.activity.modify_pwd.ModifyPwdActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://account/login",
+    "className": "com.gw_reoqoo.cp_account.ui.activity.login.LoginActivity",
+    "action": "",
+    "description": "",
+    "params": {
+      "param_need_login": "false"
+    }
+  },
+  {
+    "path": "reoqoo://account/close_verify",
+    "className": "com.gw_reoqoo.cp_account.ui.activity.close_verify.CloseVerifyActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://account/close_success",
+    "className": "com.gw_reoqoo.cp_account.ui.activity.close_success.CloseSuccessActivity",
+    "action": "",
+    "description": "",
+    "params": {
+      "param_need_login": "false"
+    }
+  },
+  {
+    "path": "reoqoo://account/bind_account",
+    "className": "com.gw_reoqoo.cp_account.ui.activity.bind_account.BindAccountActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://account/close_account",
+    "className": "com.gw_reoqoo.cp_account.ui.activity.account_close.AccountCloseActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://iotapi/plugin/test",
+    "className": "com.gw_reoqoo.component_iotapi_plugin.test.GwIotTestActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://family/scene_list",
+    "className": "com.gw_reoqoo.component_family.ui.scene_list.SceneListFragment",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://family/scene_list/empty",
+    "className": "com.gw_reoqoo.component_family.ui.scene_empty.EmptySceneFragment",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://family/main",
+    "className": "com.gw_reoqoo.component_family.ui.family.FamilyFragment",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://family/device_list",
+    "className": "com.gw_reoqoo.component_family.ui.device_list.DeviceListFragment",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://family/device_list/empty",
+    "className": "com.gw_reoqoo.component_family.ui.device_empty.EmptyDeviceFragment",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://dev_share/share_manager_visitor",
+    "className": "com.gw_reoqoo.component_device_share.ui.share_visitor.ShareVisitorActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://dev_share/share_2_user",
+    "className": "com.gw_reoqoo.component_device_share.ui.share_to_user.Share2UserActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://dev_share/share_manager_owner",
+    "className": "com.gw_reoqoo.component_device_share.ui.share_owner.ShareOwnerActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://dev_share/share_manager",
+    "className": "com.gw_reoqoo.component_device_share.ui.share_manager.ShareManagerActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://dev_share/qrcode_share",
+    "className": "com.gw_reoqoo.component_device_share.ui.qrcode_activity.QRCodeShareActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://dev_share/share_manager_permission",
+    "className": "com.gw_reoqoo.component_device_share.ui.permission_setting.PermissionSettingActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://dev_share/share_device",
+    "className": "com.gw_reoqoo.component_device_share.ui.main_activity.ShareDeviceActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://dev_share/chose_dev_list",
+    "className": "com.gw_reoqoo.component_device_share.ui.device_list.DeviceListFragment",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://app/main",
+    "className": "com.gw.reoqoo.ui.main.MainActivity",
+    "action": "",
+    "description": "",
+    "params": {
+      "param_need_login": "true"
+    }
+  },
+  {
+    "path": "reoqoo://app/logo",
+    "className": "com.gw.reoqoo.ui.logo.LogoActivity",
+    "action": "",
+    "description": "",
+    "params": {
+      "param_need_login": "false"
+    }
+  },
+  {
+    "path": "reoqoo://family/update/list",
+    "className": "com.gw.cp_upgrade.ui.dev_update.DevUpdateActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://msg_center/activity_msg_info",
+    "className": "com.gw.cp_msg.ui.activity.msg_info.MsgInfoActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://msg_center/activity_dev_upgrade",
+    "className": "com.gw.cp_msg.ui.activity.msg_dev_upgrade.MsgDevUpgradeActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://msg_center/activity_msg_center",
+    "className": "com.gw.cp_msg.ui.activity.msg_center.MsgCenterActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://mine/mine_main",
+    "className": "com.gw.cp_mine.ui.fragment.mine.MineFragment",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://mine/setting_sys_permission",
+    "className": "com.gw.cp_mine.ui.activity.settings.sys_permission.SysPermissionSettingActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://mine/setting_msg_push",
+    "className": "com.gw.cp_mine.ui.activity.settings.msg_push.MsgPushSettingActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://mine/settings",
+    "className": "com.gw.cp_mine.ui.activity.settings.SettingsActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://mine/language",
+    "className": "com.gw.cp_mine.ui.activity.language.LanguageActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://mine/about",
+    "className": "com.gw.cp_mine.ui.activity.about.AboutActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://config_net/wifi_config",
+    "className": "com.gw.cp_config_net.ui.wifi_config.WiFiConfigActivity",
+    "action": "",
+    "description": "",
+    "params": {
+      "param_need_login": "true"
+    }
+  },
+  {
+    "path": "reoqoo://config_net/scan_qrcode",
+    "className": "com.gw.cp_config_net.ui.scan_qrcode.ScanQRCodeActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://config_net/manual_ap",
+    "className": "com.gw.cp_config_net.ui.manual_connect.ManualApConnectActivity",
+    "action": "",
+    "description": "",
+    "params": {
+      "param_need_login": "true"
+    }
+  },
+  {
+    "path": "reoqoo://config_net/dev_ready",
+    "className": "com.gw.cp_config_net.ui.device_ready.DevReadyActivity",
+    "action": "",
+    "description": "",
+    "params": {
+      "param_need_login": "true"
+    }
+  },
+  {
+    "path": "reoqoo://config_net/dev_qrcode",
+    "className": "com.gw.cp_config_net.ui.dev_qrcode.DeviceQRCodeActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://config_net/dev_connect",
+    "className": "com.gw.cp_config_net.ui.dev_connect.DevConnectActivity",
+    "action": "",
+    "description": "",
+    "params": {
+      "param_need_login": "true"
+    }
+  },
+  {
+    "path": "reoqoo://config_net/dev_add",
+    "className": "com.gw.cp_config_net.ui.dev_add.DevAddSuccessActivity",
+    "action": "",
+    "description": "",
+    "params": {
+      "param_need_login": "true"
+    }
+  },
+  {
+    "path": "reoqoo://config_net/ble_scan",
+    "className": "com.gw.cp_config_net.ui.config_ble.BleConfigActivity",
+    "action": "",
+    "description": "",
+    "params": {
+      "param_need_login": "true"
+    }
+  },
+  {
+    "path": "reoqoo://config_net/chose_product_list",
+    "className": "com.gw.cp_config_net.ui.chose_produch_list.ChoseProductListActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://web_view/comm_web_view",
+    "className": "com.gw.component_webview.ui.comm_webview.CommWebViewActivity",
+    "action": "",
+    "description": "",
+    "params": {
+      "param_need_login": "false"
+    }
+  },
+  {
+    "path": "reoqoo://web_view/fragment_webview",
+    "className": "com.gw.component_webview.ui.base_webview.WebFragActivity",
+    "action": "",
+    "description": "",
+    "params": {
+      "param_need_login": "false"
+    }
+  },
+  {
+    "path": "reoqoo://debug_model/develop_options",
+    "className": "com.gw.component_debug.ui.activity.develop_options.DevelopOptionsActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://debug_model//developer_detail",
+    "className": "com.gw.component_debug.ui.activity.develop_detail.DeveloperDetailActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "reoqoo://debug_model/debug_mode",
+    "className": "com.gw.component_debug.ui.activity.debug_mode.DebugModeActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  }
+]

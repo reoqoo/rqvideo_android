@@ -56,6 +56,15 @@ class NoticeRepository @Inject constructor(
     }
 
     /**
+     * 获取活动福利列表
+     *
+     * @return Flow<HttpAction<MsgStatusChangeList>>
+     */
+    fun getEventBenefits(): Flow<HttpAction<NoticeList>> {
+        return noticeDataSource.getEventBenefits()
+    }
+
+    /**
      * 获取用户消息
      *
      * @return Flow<HttpAction<UserMessageEntity>>
@@ -88,6 +97,16 @@ class NoticeRepository @Inject constructor(
      */
     suspend fun setMessageStatus(msgId: Long, status: Int): Boolean? {
         return noticeDataSource.setMessageStatus(msgId, status)
+    }
+
+    /**
+     * 设置活动福利状态为已读
+     *
+     * @param activeIds LongArray 活动福利的ids
+     * @return Boolean? 是否成功 true -- 成功， false -- 失败
+     */
+    suspend fun setBenefitsStatusRead(activeIds: LongArray): Boolean? {
+        return noticeDataSource.setBenefitsStatusRead(activeIds)
     }
 
     /**

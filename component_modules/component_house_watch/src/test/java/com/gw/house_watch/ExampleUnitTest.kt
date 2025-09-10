@@ -1,4 +1,4 @@
-package com.gw.house_watch
+package com.gw_reoqoo.house_watch
 
 import org.junit.Test
 

@@ -4,8 +4,7 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
-import com.gw.lib_datastore.DataStoreUtils
-import com.gwell.loglibs.GwellLogUtils
+import com.gw_reoqoo.lib_datastore.DataStoreUtils
 import dagger.*
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext

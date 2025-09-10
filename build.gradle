@@ -4,7 +4,7 @@ import com.gw.buildsrc.version.Versions
 // TODO 需要修改为 kts的配置
 buildscript {
     ext {
-        agp_version = '8.5.0'
+        agp_version = '8.6.1'
     }
     repositories {
         google()
@@ -12,6 +12,9 @@ buildscript {
     }
     dependencies {
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.AndroidUtilsVersions.VERSION_NAVIGATION}")
+
+        // 增加Android Gradle插件版本号配置，{version}为实际的Gradle插件版本号，例如7.1.1。
+        classpath "com.android.tools.build:gradle:${agp_version}"
     }
 
     project.ext.set("isApp", false)

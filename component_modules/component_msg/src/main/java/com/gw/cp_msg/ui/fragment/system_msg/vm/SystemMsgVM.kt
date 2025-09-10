@@ -3,6 +3,7 @@ package com.gw.cp_msg.ui.fragment.system_msg.vm
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.gw.component_webview.api.interfaces.IWebViewApi
 import com.gw.cp_mine.api.kapi.IMineModuleApi
 import com.gw.cp_msg.api.interfaces.ILocalMsgApi
 import com.gw.cp_msg.datastore.IMsgDataStoreApi
@@ -10,13 +11,12 @@ import com.gw.cp_msg.entity.ParamConstant
 import com.gw.cp_msg.entity.http.MsgDetailEntity
 import com.gw.cp_msg.repository.MsgCenterRepository
 import com.gw.cp_msg.utils.PushUtils
-import com.gw.lib_base_architecture.PageJumpData
-import com.gw.lib_base_architecture.protocol.IGwBaseVm
-import com.gw.lib_base_architecture.vm.ABaseVM
-import com.gw.lib_http.toJson
-import com.gw.lib_router.ReoqooRouterPath
-import com.gw.lib_utils.version.Version
-import com.gw.reoqoosdk.paid_service.IPaidService
+import com.gw_reoqoo.lib_base_architecture.PageJumpData
+import com.gw_reoqoo.lib_base_architecture.protocol.IGwBaseVm
+import com.gw_reoqoo.lib_base_architecture.vm.ABaseVM
+import com.gw_reoqoo.lib_http.toJson
+import com.gw_reoqoo.lib_router.ReoqooRouterPath
+import com.gw_reoqoo.lib_utils.version.Version
 import com.gwell.loglibs.GwellLogUtils
 import com.therouter.TheRouter
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -34,7 +34,7 @@ import javax.inject.Inject
 class SystemMsgVM @Inject constructor(
     private val app: Application,
     private val msgApi: ILocalMsgApi,
-    private val iCloudService: IPaidService,
+    private val webViewApi: IWebViewApi,
     private val repository: MsgCenterRepository,
     private val msgDataStore: IMsgDataStoreApi,
     private val mineApi: IMineModuleApi
@@ -131,6 +131,7 @@ class SystemMsgVM @Inject constructor(
                 }
             }
         }
+
         msgListEvent.postValue(msgListEvent.value)
     }
 
@@ -237,7 +238,7 @@ class SystemMsgVM @Inject constructor(
             // 其他消息，有配置url的情况下直接跳转至url
             GwellLogUtils.i(TAG, "msg tag: ${msg.tag}, url ${msg.redirectUrl}")
             if (msg.redirectUrl.isNotEmpty()) {
-                iCloudService.openWebView(msg.redirectUrl, "")
+                webViewApi.openWebView(msg.redirectUrl, "")
             }
         }
     }

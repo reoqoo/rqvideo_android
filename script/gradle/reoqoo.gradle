@@ -20,6 +20,14 @@ def includeWithApi(String moduleName) {
     // 公共模块的位置，预先建了api.gradle文件进去
     String apiGradle = project(":lib_modules:lib_api_root").projectDir
 
+    def is_upload_plugin_mode = System.getenv('IS_UPLOAD_PLUGIN') ?: 'false'
+    println("IS_UPLOAD_PLUGIN: $is_upload_plugin_mode")
+    if ("true" == is_upload_plugin_mode) {
+        // 正常加载新的模块
+        include "$sdkName"
+        return
+    }
+
     // 每次编译删除之前的文件
     deleteDir(targetDir)
 
@@ -56,7 +64,7 @@ def includeWithApi(String moduleName) {
     }
 
     // 修改build.gradle的namespace
-    fileReader("${targetDir}/api.gradle", "com.gw.lib_api_root", "com.gw.${originName}.api")
+    fileReader("${targetDir}/api.gradle", "com.gw_reoqoo.lib_api_root", "com.gw_reoqoo.${originName}.api")
 
 
     // 重命名gradle
@@ -178,12 +186,12 @@ def getLocalProperties() {
     try {
         File localPropertiesFile
         try {
-            localPropertiesFile = new File(rootDir, 'local.properties');
+            localPropertiesFile = new File(rootDir, 'gradle.properties');
             if (localPropertiesFile == null || !localPropertiesFile.exists()) {
-                localPropertiesFile = new File("../local.properties")
+                localPropertiesFile = new File("../gradle.properties")
             }
         } catch (Exception e) {
-            localPropertiesFile = new File("../local.properties")
+            localPropertiesFile = new File("../gradle.properties")
         }
         println("localPropertiesFile===:" + localPropertiesFile.absolutePath)
         properties.load(new FileInputStream(localPropertiesFile))
@@ -319,7 +327,6 @@ def moduleImplementation(String compileStr, Closure configureClosure) {
 
 /**
  * 拷贝apk或aab以及mapping到指定目录下
- * @param subVersion 子版本号
  * @param flavorNameInLowercase 渠道名（全小写）
  * @param buildTypeNameInLowercase 编译方式（全小写）
  * @param buildTypeNameCapitalized 编译方式（首字母大写）
@@ -327,12 +334,12 @@ def moduleImplementation(String compileStr, Closure configureClosure) {
  * @param outputFileOriginalInOutputs 在outputs目录下输出的文件
  * @return
  */
-def copyApkOrAabAndMapping(String subVersion, def flavorNameInLowercase, def buildTypeNameInLowercase, def buildTypeNameCapitalized, def outputFileOriginalInIntermediates, def outputFileOriginalInOutputs) {
+def copyApkOrAabAndMapping(String versionName, def flavorNameInLowercase, def buildTypeNameInLowercase, def buildTypeNameCapitalized, def outputFileOriginalInIntermediates, def outputFileOriginalInOutputs) {
     def separator = File.separator
 
     // 工件备份的目录: `<工程根目录>/artifacts_backup/<app模块名>/<版本名>.<子版本号>/<BUILD_NUMBER>/<flavorNameInLowercase>_<buildTypeNameInLowercase>`
     //          比如: `<工程根目录>/artifacts_backup/app/00.46.01.06.04/201/local_release`
-    def artifactsBackupDir = file("${project.rootProject.rootDir}${separator}artifacts_backup${separator}${project.name}${separator}${VERSION_NAME}.${subVersion}${separator}${BUILD_NUMBER}${separator}${flavorNameInLowercase}_${buildTypeNameInLowercase}")
+    def artifactsBackupDir = file("${project.rootProject.rootDir}${separator}artifacts_backup${separator}${project.name}${separator}.${separator}${BUILD_NUMBER}${separator}${flavorNameInLowercase}_${buildTypeNameInLowercase}")
     println "artifactsBackupDir = ${artifactsBackupDir}"
 
     // 准备好 artifactsBackupDir

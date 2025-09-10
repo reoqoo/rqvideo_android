@@ -58,6 +58,6 @@
         android:textSize="@dimen/sp_13"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_line"
-        tools:text="@string/about" />
+        tools:text="@string/AA0224" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

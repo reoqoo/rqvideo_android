@@ -9,7 +9,7 @@
         android:background="@color/color_f2f3f6"
         android:orientation="vertical">
 
-        <com.gw.lib_widget.title.AppTitle
+        <com.gw_reoqoo.lib_widget.title.AppTitle
             android:id="@+id/layout_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/dp_16"
-            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_16"
             android:background="@drawable/dev_share_bg_white_r12"
             android:orientation="vertical">
 
@@ -34,7 +34,8 @@
                     android:layout_width="@dimen/dp_56"
                     android:layout_height="@dimen/dp_56"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginHorizontal="@dimen/dp_12"
+                    android:layout_marginStart="@dimen/dp_12"
+                    android:layout_marginEnd="@dimen/dp_4"
                     android:scaleType="centerInside"
                     android:src="@drawable/share_manager_ic_device_img" />
 
@@ -44,7 +45,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:textColor="@color/color_000000_90"
-                    android:textSize="@dimen/sp_15"
+                    android:textSize="@dimen/sp_16"
                     tools:text="Reoqoo Cam55" />
             </LinearLayout>
 
@@ -58,13 +59,13 @@
                 android:id="@+id/tv_add_visitor"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_56"
-                android:drawableEnd="@drawable/icon_right_arrow_black"
+                android:drawableEnd="@drawable/gw_reoqoo_icon_right_arrow_black"
                 android:gravity="center_vertical"
                 android:paddingHorizontal="@dimen/dp_12"
                 android:text="@string/AA0648"
                 android:textColor="@color/black_90"
                 android:textSize="@dimen/sp_16"
-                app:drawableEndCompat="@drawable/icon_right_arrow_black" />
+                app:drawableEndCompat="@drawable/gw_reoqoo_icon_right_arrow_black" />
 
             <View
                 android:id="@+id/line_permission"
@@ -77,13 +78,13 @@
                 android:id="@+id/tv_permission_setting"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_56"
-                android:drawableEnd="@drawable/icon_right_arrow_black"
+                android:drawableEnd="@drawable/gw_reoqoo_icon_right_arrow_black"
                 android:gravity="center_vertical"
                 android:paddingHorizontal="@dimen/dp_12"
                 android:text="@string/AA0647"
                 android:textColor="@color/black_90"
                 android:textSize="@dimen/sp_16"
-                app:drawableEndCompat="@drawable/icon_right_arrow_black" />
+                app:drawableEndCompat="@drawable/gw_reoqoo_icon_right_arrow_black" />
 
         </LinearLayout>
 
@@ -110,7 +111,7 @@
                 android:id="@+id/rv_friends"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="wrap_content"
-                android:background="@drawable/widget_bg_card_12"
+                android:background="@drawable/gw_reoqoo_widget_bg_card_12"
                 android:overScrollMode="never"
                 android:paddingTop="@dimen/dp_4"
                 android:paddingBottom="@dimen/dp_4"
@@ -130,6 +131,7 @@
             android:id="@+id/btn_share_stop"
             style="@style/fullWidthButton.AppCompat"
             android:layout_width="match_parent"
+            android:enabled="false"
             android:layout_margin="@dimen/dp_23"
             android:text="@string/AA0649" />
 

@@ -24,27 +24,27 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="中国大陆" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_app_name"
+        <include
+            android:id="@+id/ll_login_top"
+            layout="@layout/account_layout_account_fragment_login_top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/dp_27"
             android:layout_marginTop="@dimen/dp_65"
-            android:text="@string/AA0001"
-            android:textColor="@color/color_000000_90"
-            android:textSize="@dimen/sp_36"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_area" />
 
-        <com.gw.lib_widget.edittext.ClearEditText
+
+        <com.gw_reoqoo.lib_widget.edittext.ClearEditText
             android:id="@+id/et_account"
             android:layout_width="@dimen/dp_0"
             android:layout_height="@dimen/dp_54"
-            android:background="@drawable/widget_input_bg"
-            android:drawableEnd="@drawable/icon_clean"
+            android:background="@drawable/gw_reoqoo_widget_input_bg"
+            android:drawableEnd="@drawable/gw_reoqoo_icon_clean"
             android:hint="@string/AA0002"
-            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
             android:textColor="@color/color_000000_90"
             android:textColorHint="@color/color_000000_38"
             android:textSize="@dimen/sp_16"
@@ -63,7 +63,7 @@
             android:orientation="horizontal"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_app_name">
+            app:layout_constraintTop_toBottomOf="@id/ll_login_top">
 
             <TextView
                 android:id="@+id/tv_area_id"
@@ -88,18 +88,18 @@
             android:layout_height="@dimen/dp_54"
             android:layout_marginHorizontal="@dimen/dp_27"
             android:layout_marginTop="@dimen/dp_18"
-            android:background="@drawable/widget_input_bg"
+            android:background="@drawable/gw_reoqoo_widget_input_bg"
             android:checked="false"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_account">
 
-            <com.gw.lib_widget.edittext.ClearEditText
+            <com.gw_reoqoo.lib_widget.edittext.ClearEditText
                 android:id="@+id/et_pwd"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_0"
                 android:background="@color/transparent"
-                android:drawableEnd="@drawable/icon_clean"
+                android:drawableEnd="@drawable/gw_reoqoo_icon_clean"
                 android:hint="@string/AA0003"
                 android:inputType="textPassword"
                 android:textColor="@color/color_000000_90"
@@ -116,7 +116,7 @@
                 android:layout_height="@dimen/dp_24"
                 android:layout_marginStart="@dimen/dp_19"
                 android:layout_marginEnd="@dimen/dp_12"
-                android:button="@drawable/widget_pwd_icon"
+                android:button="@drawable/gw_reoqoo_widget_pwd_icon"
                 app:layout_constraintBottom_toBottomOf="@id/et_pwd"
                 app:layout_constraintLeft_toRightOf="@id/et_pwd"
                 app:layout_constraintRight_toRightOf="parent"
@@ -169,11 +169,10 @@
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/img_agree"
-            android:layout_width="@dimen/dp_24"
-            android:layout_height="@dimen/dp_24"
+            android:layout_width="@dimen/dp_18"
+            android:layout_height="@dimen/dp_18"
             android:layout_marginStart="@dimen/dp_16"
-            android:layout_marginTop="-3dp"
-            android:background="@drawable/account_agree_bg"
+            android:background="@drawable/gw_reoqoo_account_agree_bg"
             android:button="@null"
             app:layout_constraintEnd_toStartOf="@id/tv_agree"
             app:layout_constraintStart_toStartOf="parent"

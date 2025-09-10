@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.gw.reoqoo"
     tools:ignore="LockedOrientationActivity">
+
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" tools:node="remove" />
 
     <application
         android:name=".app.ReoqooApplication"
@@ -11,15 +12,15 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:extractNativeLibs="true"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/app_icon"
         android:label="@string/appName"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:configChanges="locale"
+        android:localeConfig="@xml/locales_config"
+        android:roundIcon="@mipmap/app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/CustomDarkModeTheme"
-        tools:replace="android:theme,android:label"
-        tools:targetApi="tiramisu">
-
+        tools:replace="android:theme,android:label,android:icon,android:supportsRtl"
+        tools:targetApi="31">
+        
         <activity
             android:name=".ui.logo.LogoActivity"
             android:exported="true"
@@ -39,18 +40,10 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
                     android:host="share"
-                    android:scheme="demo" />
+                    android:scheme="reoqoo" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".ui.main.MainActivity"
-            android:exported="false"
-            android:resizeableActivity="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.Reoqoo.NoActionBar"
-            tools:targetApi="24" />
-
+        
         <activity
             android:name="com.sensorsdata.analytics.android.sdk.dialog.SchemeActivity"
             android:configChanges="orientation|screenSize"
@@ -69,29 +62,24 @@
         </activity>
 
         <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="${fileProviderAuthority}.fileProvider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths" />
-        </provider>
-
-        <provider
             android:name="com.sensorsdata.analytics.android.sdk.data.SensorsDataContentProvider"
             android:authorities="${fileProviderAuthority}.SensorsDataContentProvider"
             android:enabled="true"
             android:exported="true"
             tools:replace="android:exported,android:authorities" />
 
-        <!-- 如果您项目中的所有页面都只需要以高或宽中的一个作为基准进行适配的话, 那就只需要填写高或宽中的一个设计图尺寸即可 -->
-        <meta-data
-            android:name="design_width_in_dp"
-            android:value="360" />
-        <meta-data
-            android:name="design_height_in_dp"
-            android:value="780" />
+        <meta-data android:name="HW_APPID" android:value="114558325" tools:replace="android:value"/>
+        <meta-data android:name="PACKAGE_NAME" android:value="com.xiaotun.pro" tools:replace="android:value"/>
+        <meta-data android:name="MEIZU_APPID" android:value="MZ-155768" tools:replace="android:value"/>
+        <meta-data android:name="MEIZU_APPKEY" android:value="MZ-0dd6b2923d8d427bae02ffd687402522" tools:replace="android:value"/>
+        <meta-data android:name="XIAOMI_APPID" android:value="" tools:replace="android:value"/>
+        <meta-data android:name="XIAOMI_APPKEY" android:value="" tools:replace="android:value"/>
+        <meta-data android:name="OPPO_APPID" android:value="OP-3540345" tools:replace="android:value"/>
+        <meta-data android:name="OPPO_APPKEY" android:value="OP-e733aefd04d54a94b4b4c3d0da0cc103" tools:replace="android:value"/>
+        <meta-data android:name="OPPO_APPSECRET" android:value="OP-43edd230a0ba41f298d5dda9b6f937e2" tools:replace="android:value"/>
+        <meta-data android:name="VIVO_APPID" android:value="105923803" tools:replace="android:value"/>
+        <meta-data android:name="VIVO_APPKEY" android:value="9757494ccc72878547cabad8ed56e452" tools:replace="android:value"/>
+        <meta-data android:name="HONOR_APPID" android:value="104507791" tools:replace="android:value"/>
     </application>
 
 </manifest>

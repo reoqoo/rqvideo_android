@@ -1,4 +1,4 @@
-package com.gw.component_device_share
+package com.gw_reoqoo.component_device_share
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.gw.component_device_share.test", appContext.packageName)
+        assertEquals("com.gw_reoqoo.component_device_share.test", appContext.packageName)
     }
 }

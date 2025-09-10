@@ -35,7 +35,7 @@
     <string name="AA0043">Saya</string>
     <string name="AA0044">Perjanjian Pengguna</string>
     <string name="AA0045">Ringkasan Perjanjian Perkhidmatan dan Polisi Privasi Pengguna</string>
-    <string name="AA0046">Anda dialu-alukan untuk menggunakan teknologi video ipTIME ou ialah platform audio dalam talian yang dibangunkan dan dikendalikan oleh ipTIME IoT XXXXXXXX., Ltd. (selepas ini dirujuk sebagai \"Anda Membantu Kami\"). Harap maklum bahawa kami akan mengumpul, menggunakan, Bagaimana maklumat disimpan dan dikongsi, video yang anda lihat tentang kami. Gambar video, maklumat peranti, log dan maklumat peribadi lain;\nAnda boleh mengakses, membetulkan dan memadamkan kebenaran anda;\nKami akan menggunakan teknologi keselamatan peribadi di pusat operasi teratas untuk melindungi maklumat peribadi anda. \nAnda boleh membaca versi %1$s dan %2$s untuk butiran penuh. \nJika anda bersetuju, sila klik \"Setuju\" untuk menerima perkhidmatan kami.</string>
+    <string name="AA0046">Anda dialu-alukan untuk menggunakan teknologi video ipTIME ou ialah platform audio dalam talian yang dibangunkan dan dikendalikan oleh ipTIME IoT Technology Co., Ltd. (selepas ini dirujuk sebagai \"Anda Membantu Kami\"). Harap maklum bahawa kami akan mengumpul, menggunakan, Bagaimana maklumat disimpan dan dikongsi, video yang anda lihat tentang kami. Gambar video, maklumat peranti, log dan maklumat peribadi lain;\nAnda boleh mengakses, membetulkan dan memadamkan kebenaran anda;\nKami akan menggunakan teknologi keselamatan peribadi di pusat operasi teratas untuk melindungi maklumat peribadi anda. \nAnda boleh membaca versi %1$s dan %2$s untuk butiran penuh. \nJika anda bersetuju, sila klik \"Setuju\" untuk menerima perkhidmatan kami.</string>
     <string name="AA0047">Rumah %s</string>
     <string name="AA0049">Tambah peranti</string>
     <string name="AA0050">Berkongsi peranti</string>
@@ -58,14 +58,23 @@
     <string name="AA0069">ipTIME mahu menggunakan maklumat lokasi anda</string>
     <string name="AA0070">Untuk berjaya menambah peralatan, anda perlu membenarkan penggunaan Perkhidmatan Lokasi untuk mendapatkan maklumat Wi-Fi.Sila hidupkan Perkhidmatan Lokasi.</string>
     <string name="AA0071">Kebenaran kedudukan belum dihidupkan, sila hidupkannya dalam Tetapan</string>
+    <string name="AA0072">Adakah anda mahu membenarkan ipTIME menggunakan maklumat album anda</string>
+    <string name="AA0073">Perlu melihat dan menghantar gambar. Adakah dibenarkan membuka album?</string>
+    <string name="AA0074">Adakah anda mahu membenarkan ipTIME menggunakan maklumat Bluetooth anda</string>
+    <string name="AA0075">Kebenaran Bluetooth diperlukan untuk membantu peranti pintar menyambung ke Wi-Fi semasa proses penambahan. Adakah ini dibenarkan?</string>
     <string name="AA0076">Tiada kebenaran Bluetooth, sila hidupkan dalam Tetapan</string>
     <string name="AA0078">Sambungkan peranti</string>
     <string name="AA0079">Pengimbasan peranti...</string>
     <string name="AA0080">Peranti menyambung...</string>
     <string name="AA0081">Pendaftaran peranti sedang dijalankan...</string>
     <string name="AA0082">Sila pastikan telefon anda dekat dengan kamera</string>
+    <string name="AA0084">Sila cuba lagi selepas operasi berikut:</string>
+    <string name="AA0085">1. Tekan lama butang set semula untuk menetapkan semula peranti</string>
+    <string name="AA0086">2. Semak sama ada sekatan akses dihidupkan pada penghala</string>
+    <string name="AA0087">3. Mulakan semula penghala</string>
     <string name="AA0088">Cuba semula</string>
     <string name="AA0089">Berjaya diletakkan</string>
+    <string name="AA0090">Nama</string>
     <string name="AA0099">Yang lain</string>
     <string name="AA0100">Simpan kod QR peranti pada album</string>
     <string name="AA0101">Mulakan</string>
@@ -103,6 +112,7 @@
     <string name="AA0149">Sila masukkan akaun ipTIME</string>
     <string name="AA0150">Perkongsian terbaru</string>
     <string name="AA0151">Bersemuka Kongsi</string>
+    <string name="AA0152">Kongsi</string>
     <string name="AA0153">Ralat nama pengguna, sila masukkan semula</string>
     <string name="AA0154">Adakah anda pasti untuk berkongsi peranti dengan %s?</string>
     <string name="AA0155">Sudah berkongsi dengan rakan ini</string>
@@ -166,6 +176,7 @@
     <string name="AA0223">Bantuan dan maklum balas</string>
     <string name="AA0224">Mengenai ipTIME</string>
     <string name="AA0225">Pusat Mesej</string>
+    <string name="AA0226">Operasi berjaya</string>
     <string name="AA0227">Hidupkan kebenaran pemberitahuan untuk mendapatkan berita terkini tepat pada masanya</string>
     <string name="AA0228">Mesej tidak lebih</string>
     <string name="AA0230">Pilih</string>
@@ -177,6 +188,7 @@
     <string name="AA0245">Video kad</string>
     <string name="AA0246">Video awan</string>
     <string name="AA0247">Perkhidmatan awan</string>
+    <string name="AA0248">Masalah lain</string>
     <string name="AA0249">Klasifikasi peranti</string>
     <string name="AA0250">Sila pilih peranti</string>
     <string name="AA0251">Soalan dan Cadangan</string>
@@ -429,6 +441,9 @@ Untuk menghindari kehabisan kuasa terlalu cepat, ia telah menukar secara automat
     <string name="AA0559">Kod QR tidak sah</string>
     <string name="AA0560">Kod QR lama telah tamat</string>
     <string name="AA0561">Anda pasti ingin membuang peranti?</string>
+    <string name="AA0562">Sila masukkan nombor telefon atau alamat e-mel yang betul</string>
+    <string name="AA0563">Anda telah melepaskan peranti</string>
+    <string name="AA0564">Ralat format nombor/e-mel bimbit</string>
     <string name="AA0565">Perkongsian telah tamat</string>
     <string name="AA0566">Akaun sasaran tidak tersedia</string>
     <string name="AA0567">Akaun sasaran tidak wujud</string>
@@ -498,4 +513,16 @@ Untuk menghindari kehabisan kuasa terlalu cepat, ia telah menukar secara automat
     <string name="AA0654">Guru kad saya</string>
     <string name="AA0656">Luar talian, kemas kini tidak tersedia</string>
     <string name="AA0657">Abnormaliti sistem</string>
+    <string name="AA0658">Membatalkan</string>
+    <string name="AA0659">Versi semasa tidak menyokong pengikatan langsung peranti ini. Sila muat turun aplikasi \"ipTIME Cloud\" untuk menambah dan menggunakan.</string>
+    <string name="AA0660">Muat turun</string>
+    <string name="AA0661">Peringatan Mesra</string>
+    <string name="AA0662">Peranti berikut tidak tersedia dalam aplikasi semasa</string>
+    <string name="AA0663">Sila muat turun aplikasi \"ipTIME Cloud\" untuk terus menggunakan</string>
+    <string name="AA0664">Jangan Ingatkan Lagi</string>
+    <string name="AA0665">Mengenai</string>
+    <string name="AA0669">Sila masukkan akaun</string>
+    <string name="AA0682">Tidak Setuju dan Keluar Apl</string>
+    <string name="AA0689">Sila cuba operasi berikut dan cuba lagi:\n1. Tekan dan tahan butang reset untuk menetapkan semula peranti;\n2. Sila periksa sama ada peranti disambungkan ke bekalan kuasa;\n3. Sila periksa sama ada antena peranti longgar;\n4. Pastikan komunikasi isyarat 4G semasa adalah normal.</string>
+    <string name="AA0690">Kamera terlalu rendah, sila naik taraf dalam keadaan elektrik ~</string>
 </resources>

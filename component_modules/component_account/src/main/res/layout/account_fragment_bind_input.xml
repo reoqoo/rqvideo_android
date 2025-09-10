@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:background="@color/color_ffffff">
 
-        <com.gw.lib_widget.title.WidgetCommonTitleView
+        <com.gw_reoqoo.lib_widget.title.WidgetCommonTitleView
             android:id="@+id/layout_title"
             style="@style/titleView"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -47,27 +47,63 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_54"
                 android:layout_marginHorizontal="@dimen/dp_27"
-                android:background="@drawable/widget_input_bg_unfocused"
+                android:background="@drawable/gw_reoqoo_widget_input_bg_unfocused"
                 android:gravity="center_vertical"
                 android:textColor="@color/color_000000_60"
                 android:textSize="15sp"
                 tools:text="中国大陆" />
 
-            <com.gw.lib_widget.edittext.ClearEditText
-                android:id="@+id/et_account_number"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_54"
-                android:layout_marginStart="@dimen/dp_27"
-                android:layout_marginTop="@dimen/dp_20"
-                android:layout_marginEnd="@dimen/dp_27"
-                android:background="@drawable/widget_input_bg"
-                android:drawableEnd="@drawable/icon_clean"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:hint="@string/AA0002"
-                android:paddingEnd="@dimen/dp_13"
-                android:textColor="@color/color_000000_90"
-                android:textColorHint="@color/color_000000_38" />
+                android:layout_marginHorizontal="@dimen/dp_27"
+                android:layout_marginTop="@dimen/dp_20">
+
+                <com.gw_reoqoo.lib_widget.edittext.ClearEditText
+                    android:id="@+id/et_account_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_54"
+                    android:background="@drawable/gw_reoqoo_widget_input_bg"
+                    android:drawableEnd="@drawable/gw_reoqoo_icon_clean"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:focusableInTouchMode="true"
+                    android:hint="@string/AA0002"
+                    android:textColor="@color/color_000000_90"
+                    android:textColorHint="@color/color_000000_38"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ll_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_54"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="invisible"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_area_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+86"
+                        android:textColor="@color/black_90"
+                        android:textSize="@dimen/sp_15"
+                        tools:text="+86" />
+
+                    <View
+                        android:layout_width="1px"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_marginHorizontal="@dimen/dp_16"
+                        android:background="@color/black_20" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.AppCompatTextView

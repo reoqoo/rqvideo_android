@@ -2,6 +2,8 @@ package com.gw.cp_mine.api.impl
 
 import android.app.Activity
 import android.app.Application
+import android.content.res.Configuration
+import android.content.Context
 import com.gw.cp_mine.api.kapi.ILocaleApi
 import com.gw.cp_mine.data_store.LocaleDataStoreImpl
 import com.gw.cp_mine.kits.LanguageMgr
@@ -29,18 +31,17 @@ class LocaleApiImpl @Inject constructor(
     /**
      * 初始化app语言
      */
-    override fun initAppLanguage(activity: Activity?) {
+    override fun initAppLanguage(activity: Activity?, newConfig: Configuration?) {
         val language = languageMgr.getAppLanguage()
         val newLocale = language.locale
+        GwellLogUtils.i(TAG, "initAppLanguage: language = $language, newLocale = $newLocale")
         if (newLocale != null) {
             Locale.setDefault(newLocale)
             GwellLogUtils.i(
                 TAG,
                 "initAppLanguage: language = ${newLocale.language}, country = ${newLocale.country}"
             )
-            if (activity != null) {
-                languageMgr.applyAppLanguage(activity)
-            }
+            languageMgr.applyAppLanguage(activity = activity,newConfig = newConfig)
         }
     }
 

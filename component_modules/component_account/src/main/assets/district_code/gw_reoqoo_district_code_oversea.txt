@@ -1,0 +1,1219 @@
+{
+    "districtCodeList": [
+        {
+            "districtName": "Afghanistan",
+            "districtCode": 93,
+            "district": "AF"
+        },
+        {
+            "districtName": "Albania",
+            "districtCode": 355,
+            "district": "AL"
+        },
+        {
+            "districtName": "Algeria",
+            "districtCode": 213,
+            "district": "DZ"
+        },
+        {
+            "districtName": "American Samoa",
+            "districtCode": 1684,
+            "district": "AS"
+        },
+        {
+            "districtName": "Andorra",
+            "districtCode": 376,
+            "district": "AD"
+        },
+        {
+            "districtName": "Angola",
+            "districtCode": 244,
+            "district": "AO"
+        },
+        {
+            "districtName": "Anguilla",
+            "districtCode": 1264,
+            "district": "AI"
+        },
+        {
+            "districtName": "Antarctica",
+            "districtCode": 672,
+            "district": "AQ"
+        },
+        {
+            "districtName": "Antigua and Barbuda",
+            "districtCode": 1268,
+            "district": "AG"
+        },
+        {
+            "districtName": "Argentina",
+            "districtCode": 54,
+            "district": "AR"
+        },
+        {
+            "districtName": "Armenia",
+            "districtCode": 374,
+            "district": "AM"
+        },
+        {
+            "districtName": "Aruba",
+            "districtCode": 297,
+            "district": "AW"
+        },
+        {
+            "districtName": "Australia",
+            "districtCode": 61,
+            "district": "AU"
+        },
+        {
+            "districtName": "Austria",
+            "districtCode": 43,
+            "district": "AT"
+        },
+        {
+            "districtName": "Azerbaijan",
+            "districtCode": 994,
+            "district": "AZ"
+        },
+        {
+            "districtName": "Bahamas",
+            "districtCode": 1242,
+            "district": "BS"
+        },
+        {
+            "districtName": "Bahrain",
+            "districtCode": 973,
+            "district": "BH"
+        },
+        {
+            "districtName": "Bangladesh",
+            "districtCode": 880,
+            "district": "BD"
+        },
+        {
+            "districtName": "Barbados",
+            "districtCode": 1246,
+            "district": "BB"
+        },
+        {
+            "districtName": "Belarus",
+            "districtCode": 375,
+            "district": "BY"
+        },
+        {
+            "districtName": "Belgium",
+            "districtCode": 32,
+            "district": "BE"
+        },
+        {
+            "districtName": "Belize",
+            "districtCode": 501,
+            "district": "BZ"
+        },
+        {
+            "districtName": "Benin",
+            "districtCode": 229,
+            "district": "BJ"
+        },
+        {
+            "districtName": "Bermuda",
+            "districtCode": 1441,
+            "district": "BM"
+        },
+        {
+            "districtName": "Bhutan",
+            "districtCode": 975,
+            "district": "BT"
+        },
+        {
+            "districtName": "Bolivia",
+            "districtCode": 591,
+            "district": "BO"
+        },
+        {
+            "districtName": "Bosnia and Herzegovina",
+            "districtCode": 387,
+            "district": "BA"
+        },
+        {
+            "districtName": "Botswana",
+            "districtCode": 267,
+            "district": "BW"
+        },
+        {
+            "districtName": "Brazil",
+            "districtCode": 55,
+            "district": "BR"
+        },
+        {
+            "districtName": "British Indian Ocean Territory",
+            "districtCode": 246,
+            "district": "IO"
+        },
+        {
+            "districtName": "British Virgin Islands",
+            "districtCode": 1284,
+            "district": "VG"
+        },
+        {
+            "districtName": "Brunei",
+            "districtCode": 673,
+            "district": "BN"
+        },
+        {
+            "districtName": "Bulgaria",
+            "districtCode": 359,
+            "district": "BG"
+        },
+        {
+            "districtName": "Burkina Faso",
+            "districtCode": 226,
+            "district": "BF"
+        },
+        {
+            "districtName": "Burundi",
+            "districtCode": 257,
+            "district": "BI"
+        },
+        {
+            "districtName": "Cambodia",
+            "districtCode": 855,
+            "district": "KH"
+        },
+        {
+            "districtName": "Cameroon",
+            "districtCode": 237,
+            "district": "CM"
+        },
+        {
+            "districtName": "Canada",
+            "districtCode": 1,
+            "district": "CA"
+        },
+        {
+            "districtName": "Cape Verde",
+            "districtCode": 238,
+            "district": "CV"
+        },
+        {
+            "districtName": "Cayman Islands",
+            "districtCode": 1345,
+            "district": "KY"
+        },
+        {
+            "districtName": "Central African Republic",
+            "districtCode": 236,
+            "district": "CF"
+        },
+        {
+            "districtName": "Chad",
+            "districtCode": 235,
+            "district": "TD"
+        },
+        {
+            "districtName": "Chile",
+            "districtCode": 56,
+            "district": "CL"
+        },
+        {
+            "districtName": "China",
+            "districtCode": 86,
+            "district": "CN"
+        },
+        {
+            "districtName": "Christmas Island",
+            "districtCode": 61,
+            "district": "CX"
+        },
+        {
+            "districtName": "Cocos Islands",
+            "districtCode": 61,
+            "district": "CC"
+        },
+        {
+            "districtName": "Colombia",
+            "districtCode": 57,
+            "district": "CO"
+        },
+        {
+            "districtName": "Comoros",
+            "districtCode": 269,
+            "district": "KM"
+        },
+        {
+            "districtName": "Cook Islands",
+            "districtCode": 682,
+            "district": "CK"
+        },
+        {
+            "districtName": "Costa Rica",
+            "districtCode": 506,
+            "district": "CR"
+        },
+        {
+            "districtName": "Croatia",
+            "districtCode": 385,
+            "district": "HR"
+        },
+        {
+            "districtName": "Cuba",
+            "districtCode": 53,
+            "district": "CU"
+        },
+        {
+            "districtName": "Curacao",
+            "districtCode": 599,
+            "district": "CW"
+        },
+        {
+            "districtName": "Cyprus",
+            "districtCode": 357,
+            "district": "CY"
+        },
+        {
+            "districtName": "Czech Republic",
+            "districtCode": 420,
+            "district": "CZ"
+        },
+        {
+            "districtName": "Democratic Republic of the Congo",
+            "districtCode": 243,
+            "district": "CD"
+        },
+        {
+            "districtName": "Denmark",
+            "districtCode": 45,
+            "district": "DK"
+        },
+        {
+            "districtName": "Djibouti",
+            "districtCode": 253,
+            "district": "DJ"
+        },
+        {
+            "districtName": "Dominica",
+            "districtCode": 1767,
+            "district": "DM"
+        },
+        {
+            "districtName": "Dominican Republic",
+            "districtCode": 1809,
+            "district": "DO"
+        },
+        {
+            "districtName": "Dominican Republic",
+            "districtCode": 1829,
+            "district": "DO"
+        },
+        {
+            "districtName": "Dominican Republic",
+            "districtCode": 1849,
+            "district": "DO"
+        },
+        {
+            "districtName": "East Timor",
+            "districtCode": 670,
+            "district": "TL"
+        },
+        {
+            "districtName": "Ecuador",
+            "districtCode": 593,
+            "district": "EC"
+        },
+        {
+            "districtName": "Egypt",
+            "districtCode": 20,
+            "district": "EG"
+        },
+        {
+            "districtName": "El Salvador",
+            "districtCode": 503,
+            "district": "SV"
+        },
+        {
+            "districtName": "Equatorial Guinea",
+            "districtCode": 240,
+            "district": "GQ"
+        },
+        {
+            "districtName": "Eritrea",
+            "districtCode": 291,
+            "district": "ER"
+        },
+        {
+            "districtName": "Estonia",
+            "districtCode": 372,
+            "district": "EE"
+        },
+        {
+            "districtName": "Ethiopia",
+            "districtCode": 251,
+            "district": "ET"
+        },
+        {
+            "districtName": "Falkland Islands",
+            "districtCode": 500,
+            "district": "FK"
+        },
+        {
+            "districtName": "Faroe Islands",
+            "districtCode": 298,
+            "district": "FO"
+        },
+        {
+            "districtName": "Fiji",
+            "districtCode": 679,
+            "district": "FJ"
+        },
+        {
+            "districtName": "Finland",
+            "districtCode": 358,
+            "district": "FI"
+        },
+        {
+            "districtName": "France",
+            "districtCode": 33,
+            "district": "FR"
+        },
+        {
+            "districtName": "French Polynesia",
+            "districtCode": 689,
+            "district": "PF"
+        },
+        {
+            "districtName": "Gabon",
+            "districtCode": 241,
+            "district": "GA"
+        },
+        {
+            "districtName": "Gambia",
+            "districtCode": 220,
+            "district": "GM"
+        },
+        {
+            "districtName": "Georgia",
+            "districtCode": 995,
+            "district": "GE"
+        },
+        {
+            "districtName": "Germany",
+            "districtCode": 49,
+            "district": "DE"
+        },
+        {
+            "districtName": "Ghana",
+            "districtCode": 233,
+            "district": "GH"
+        },
+        {
+            "districtName": "Gibraltar",
+            "districtCode": 350,
+            "district": "GI"
+        },
+        {
+            "districtName": "Greece",
+            "districtCode": 30,
+            "district": "GR"
+        },
+        {
+            "districtName": "Greenland",
+            "districtCode": 299,
+            "district": "GL"
+        },
+        {
+            "districtName": "Grenada",
+            "districtCode": 1473,
+            "district": "GD"
+        },
+        {
+            "districtName": "Guam",
+            "districtCode": 1671,
+            "district": "GU"
+        },
+        {
+            "districtName": "Guatemala",
+            "districtCode": 502,
+            "district": "GT"
+        },
+        {
+            "districtName": "Guernsey",
+            "districtCode": 441481,
+            "district": "GG"
+        },
+        {
+            "districtName": "Guinea",
+            "districtCode": 224,
+            "district": "GN"
+        },
+        {
+            "districtName": "Guinea-Bissau",
+            "districtCode": 245,
+            "district": "GW"
+        },
+        {
+            "districtName": "Guyana",
+            "districtCode": 592,
+            "district": "GY"
+        },
+        {
+            "districtName": "Haiti",
+            "districtCode": 509,
+            "district": "HT"
+        },
+        {
+            "districtName": "Honduras",
+            "districtCode": 504,
+            "district": "HN"
+        },
+        {
+            "districtName": "Hong Kong",
+            "districtCode": 852,
+            "district": "HK"
+        },
+        {
+            "districtName": "Hungary",
+            "districtCode": 36,
+            "district": "HU"
+        },
+        {
+            "districtName": "Iceland",
+            "districtCode": 354,
+            "district": "IS"
+        },
+        {
+            "districtName": "India",
+            "districtCode": 91,
+            "district": "IN"
+        },
+        {
+            "districtName": "Indonesia",
+            "districtCode": 62,
+            "district": "ID"
+        },
+        {
+            "districtName": "Iran",
+            "districtCode": 98,
+            "district": "IR"
+        },
+        {
+            "districtName": "Iraq",
+            "districtCode": 964,
+            "district": "IQ"
+        },
+        {
+            "districtName": "Ireland",
+            "districtCode": 353,
+            "district": "IE"
+        },
+        {
+            "districtName": "Isle of Man",
+            "districtCode": 441624,
+            "district": "IM"
+        },
+        {
+            "districtName": "Israel",
+            "districtCode": 972,
+            "district": "IL"
+        },
+        {
+            "districtName": "Italy",
+            "districtCode": 39,
+            "district": "IT"
+        },
+        {
+            "districtName": "Ivory Coast",
+            "districtCode": 225,
+            "district": "CI"
+        },
+        {
+            "districtName": "Jamaica",
+            "districtCode": 1876,
+            "district": "JM"
+        },
+        {
+            "districtName": "Japan",
+            "districtCode": 81,
+            "district": "JP"
+        },
+        {
+            "districtName": "Jersey",
+            "districtCode": 441534,
+            "district": "JE"
+        },
+        {
+            "districtName": "Jordan",
+            "districtCode": 962,
+            "district": "JO"
+        },
+        {
+            "districtName": "Kazakhstan",
+            "districtCode": 7,
+            "district": "KZ"
+        },
+        {
+            "districtName": "Kenya",
+            "districtCode": 254,
+            "district": "KE"
+        },
+        {
+            "districtName": "Kiribati",
+            "districtCode": 686,
+            "district": "KI"
+        },
+        {
+            "districtName": "Kosovo",
+            "districtCode": 383,
+            "district": "XK"
+        },
+        {
+            "districtName": "Kuwait",
+            "districtCode": 965,
+            "district": "KW"
+        },
+        {
+            "districtName": "Kyrgyzstan",
+            "districtCode": 996,
+            "district": "KG"
+        },
+        {
+            "districtName": "Laos",
+            "districtCode": 856,
+            "district": "LA"
+        },
+        {
+            "districtName": "Latvia",
+            "districtCode": 371,
+            "district": "LV"
+        },
+        {
+            "districtName": "Lebanon",
+            "districtCode": 961,
+            "district": "LB"
+        },
+        {
+            "districtName": "Lesotho",
+            "districtCode": 266,
+            "district": "LS"
+        },
+        {
+            "districtName": "Liberia",
+            "districtCode": 231,
+            "district": "LR"
+        },
+        {
+            "districtName": "Libya",
+            "districtCode": 218,
+            "district": "LY"
+        },
+        {
+            "districtName": "Liechtenstein",
+            "districtCode": 423,
+            "district": "LI"
+        },
+        {
+            "districtName": "Lithuania",
+            "districtCode": 370,
+            "district": "LT"
+        },
+        {
+            "districtName": "Luxembourg",
+            "districtCode": 352,
+            "district": "LU"
+        },
+        {
+            "districtName": "Macau",
+            "districtCode": 853,
+            "district": "MO"
+        },
+        {
+            "districtName": "Macedonia",
+            "districtCode": 389,
+            "district": "MK"
+        },
+        {
+            "districtName": "Madagascar",
+            "districtCode": 261,
+            "district": "MG"
+        },
+        {
+            "districtName": "Malawi",
+            "districtCode": 265,
+            "district": "MW"
+        },
+        {
+            "districtName": "Malaysia",
+            "districtCode": 60,
+            "district": "MY"
+        },
+        {
+            "districtName": "Maldives",
+            "districtCode": 960,
+            "district": "MV"
+        },
+        {
+            "districtName": "Mali",
+            "districtCode": 223,
+            "district": "ML"
+        },
+        {
+            "districtName": "Malta",
+            "districtCode": 356,
+            "district": "MT"
+        },
+        {
+            "districtName": "Marshall Islands",
+            "districtCode": 692,
+            "district": "MH"
+        },
+        {
+            "districtName": "Mauritania",
+            "districtCode": 222,
+            "district": "MR"
+        },
+        {
+            "districtName": "Mauritius",
+            "districtCode": 230,
+            "district": "MU"
+        },
+        {
+            "districtName": "Mayotte",
+            "districtCode": 262,
+            "district": "YT"
+        },
+        {
+            "districtName": "Mexico",
+            "districtCode": 52,
+            "district": "MX"
+        },
+        {
+            "districtName": "Micronesia",
+            "districtCode": 691,
+            "district": "FM"
+        },
+        {
+            "districtName": "Moldova",
+            "districtCode": 373,
+            "district": "MD"
+        },
+        {
+            "districtName": "Monaco",
+            "districtCode": 377,
+            "district": "MC"
+        },
+        {
+            "districtName": "Mongolia",
+            "districtCode": 976,
+            "district": "MN"
+        },
+        {
+            "districtName": "Montenegro",
+            "districtCode": 382,
+            "district": "ME"
+        },
+        {
+            "districtName": "Montserrat",
+            "districtCode": 1664,
+            "district": "MS"
+        },
+        {
+            "districtName": "Morocco",
+            "districtCode": 212,
+            "district": "MA"
+        },
+        {
+            "districtName": "Mozambique",
+            "districtCode": 258,
+            "district": "MZ"
+        },
+        {
+            "districtName": "Myanmar",
+            "districtCode": 95,
+            "district": "MM"
+        },
+        {
+            "districtName": "Namibia",
+            "districtCode": 264,
+            "district": "NA"
+        },
+        {
+            "districtName": "Nauru",
+            "districtCode": 674,
+            "district": "NR"
+        },
+        {
+            "districtName": "Nepal",
+            "districtCode": 977,
+            "district": "NP"
+        },
+        {
+            "districtName": "Netherlands",
+            "districtCode": 31,
+            "district": "NL"
+        },
+        {
+            "districtName": "Netherlands Antilles",
+            "districtCode": 599,
+            "district": "AN"
+        },
+        {
+            "districtName": "New Caledonia",
+            "districtCode": 687,
+            "district": "NC"
+        },
+        {
+            "districtName": "New Zealand",
+            "districtCode": 64,
+            "district": "NZ"
+        },
+        {
+            "districtName": "Nicaragua",
+            "districtCode": 505,
+            "district": "NI"
+        },
+        {
+            "districtName": "Niger",
+            "districtCode": 227,
+            "district": "NE"
+        },
+        {
+            "districtName": "Nigeria",
+            "districtCode": 234,
+            "district": "NG"
+        },
+        {
+            "districtName": "Niue",
+            "districtCode": 683,
+            "district": "NU"
+        },
+        {
+            "districtName": "North Korea",
+            "districtCode": 850,
+            "district": "KP"
+        },
+        {
+            "districtName": "Northern Mariana Islands",
+            "districtCode": 1670,
+            "district": "MP"
+        },
+        {
+            "districtName": "Norway",
+            "districtCode": 47,
+            "district": "NO"
+        },
+        {
+            "districtName": "Oman",
+            "districtCode": 968,
+            "district": "OM"
+        },
+        {
+            "districtName": "Pakistan",
+            "districtCode": 92,
+            "district": "PK"
+        },
+        {
+            "districtName": "Palau",
+            "districtCode": 680,
+            "district": "PW"
+        },
+        {
+            "districtName": "Palestine",
+            "districtCode": 970,
+            "district": "PS"
+        },
+        {
+            "districtName": "Panama",
+            "districtCode": 507,
+            "district": "PA"
+        },
+        {
+            "districtName": "Papua New Guinea",
+            "districtCode": 675,
+            "district": "PG"
+        },
+        {
+            "districtName": "Paraguay",
+            "districtCode": 595,
+            "district": "PY"
+        },
+        {
+            "districtName": "Peru",
+            "districtCode": 51,
+            "district": "PE"
+        },
+        {
+            "districtName": "Philippines",
+            "districtCode": 63,
+            "district": "PH"
+        },
+        {
+            "districtName": "Pitcairn",
+            "districtCode": 64,
+            "district": "PN"
+        },
+        {
+            "districtName": "Poland",
+            "districtCode": 48,
+            "district": "PL"
+        },
+        {
+            "districtName": "Portugal",
+            "districtCode": 351,
+            "district": "PT"
+        },
+        {
+            "districtName": "Puerto Rico",
+            "districtCode": 1787,
+            "district": "PR"
+        },
+        {
+            "districtName": "Puerto Rico",
+            "districtCode": 1939,
+            "district": "PR"
+        },
+        {
+            "districtName": "Qatar",
+            "districtCode": 974,
+            "district": "QA"
+        },
+        {
+            "districtName": "Republic of the Congo",
+            "districtCode": 242,
+            "district": "CG"
+        },
+        {
+            "districtName": "Reunion",
+            "districtCode": 262,
+            "district": "RE"
+        },
+        {
+            "districtName": "Romania",
+            "districtCode": 40,
+            "district": "RO"
+        },
+        {
+            "districtName": "Russia",
+            "districtCode": 7,
+            "district": "RU"
+        },
+        {
+            "districtName": "Rwanda",
+            "districtCode": 250,
+            "district": "RW"
+        },
+        {
+            "districtName": "Saint Barthelemy",
+            "districtCode": 590,
+            "district": "BL"
+        },
+        {
+            "districtName": "Saint Helena",
+            "districtCode": 290,
+            "district": "SH"
+        },
+        {
+            "districtName": "Saint Kitts and Nevis",
+            "districtCode": 1869,
+            "district": "KN"
+        },
+        {
+            "districtName": "Saint Lucia",
+            "districtCode": 1758,
+            "district": "LC"
+        },
+        {
+            "districtName": "Saint Martin",
+            "districtCode": 590,
+            "district": "MF"
+        },
+        {
+            "districtName": "Saint Pierre and Miquelon",
+            "districtCode": 508,
+            "district": "PM"
+        },
+        {
+            "districtName": "Saint Vincent and the Grenadines",
+            "districtCode": 1784,
+            "district": "VC"
+        },
+        {
+            "districtName": "Samoa",
+            "districtCode": 685,
+            "district": "WS"
+        },
+        {
+            "districtName": "San Marino",
+            "districtCode": 378,
+            "district": "SM"
+        },
+        {
+            "districtName": "Sao Tome and Principe",
+            "districtCode": 239,
+            "district": "ST"
+        },
+        {
+            "districtName": "Saudi Arabia",
+            "districtCode": 966,
+            "district": "SA"
+        },
+        {
+            "districtName": "Senegal",
+            "districtCode": 221,
+            "district": "SN"
+        },
+        {
+            "districtName": "Serbia",
+            "districtCode": 381,
+            "district": "RS"
+        },
+        {
+            "districtName": "Seychelles",
+            "districtCode": 248,
+            "district": "SC"
+        },
+        {
+            "districtName": "Sierra Leone",
+            "districtCode": 232,
+            "district": "SL"
+        },
+        {
+            "districtName": "Singapore",
+            "districtCode": 65,
+            "district": "SG"
+        },
+        {
+            "districtName": "Sint Maarten",
+            "districtCode": 1721,
+            "district": "SX"
+        },
+        {
+            "districtName": "Slovakia",
+            "districtCode": 421,
+            "district": "SK"
+        },
+        {
+            "districtName": "Slovenia",
+            "districtCode": 386,
+            "district": "SI"
+        },
+        {
+            "districtName": "Solomon Islands",
+            "districtCode": 677,
+            "district": "SB"
+        },
+        {
+            "districtName": "Somalia",
+            "districtCode": 252,
+            "district": "SO"
+        },
+        {
+            "districtName": "South Africa",
+            "districtCode": 27,
+            "district": "ZA"
+        },
+        {
+            "districtName": "South Korea",
+            "districtCode": 82,
+            "district": "KR"
+        },
+        {
+            "districtName": "South Sudan",
+            "districtCode": 211,
+            "district": "SS"
+        },
+        {
+            "districtName": "Spain",
+            "districtCode": 34,
+            "district": "ES"
+        },
+        {
+            "districtName": "Sri Lanka",
+            "districtCode": 94,
+            "district": "LK"
+        },
+        {
+            "districtName": "Sudan",
+            "districtCode": 249,
+            "district": "SD"
+        },
+        {
+            "districtName": "Suriname",
+            "districtCode": 597,
+            "district": "SR"
+        },
+        {
+            "districtName": "Svalbard and Jan Mayen",
+            "districtCode": 47,
+            "district": "SJ"
+        },
+        {
+            "districtName": "Swaziland",
+            "districtCode": 268,
+            "district": "SZ"
+        },
+        {
+            "districtName": "Sweden",
+            "districtCode": 46,
+            "district": "SE"
+        },
+        {
+            "districtName": "Switzerland",
+            "districtCode": 41,
+            "district": "CH"
+        },
+        {
+            "districtName": "Syria",
+            "districtCode": 963,
+            "district": "SY"
+        },
+        {
+            "districtName": "Taiwan",
+            "districtCode": 886,
+            "district": "TW"
+        },
+        {
+            "districtName": "Tajikistan",
+            "districtCode": 992,
+            "district": "TJ"
+        },
+        {
+            "districtName": "Tanzania",
+            "districtCode": 255,
+            "district": "TZ"
+        },
+        {
+            "districtName": "Thailand",
+            "districtCode": 66,
+            "district": "TH"
+        },
+        {
+            "districtName": "Togo",
+            "districtCode": 228,
+            "district": "TG"
+        },
+        {
+            "districtName": "Tokelau",
+            "districtCode": 690,
+            "district": "TK"
+        },
+        {
+            "districtName": "Tonga",
+            "districtCode": 676,
+            "district": "TO"
+        },
+        {
+            "districtName": "Trinidad and Tobago",
+            "districtCode": 1868,
+            "district": "TT"
+        },
+        {
+            "districtName": "Tunisia",
+            "districtCode": 216,
+            "district": "TN"
+        },
+        {
+            "districtName": "Turkey",
+            "districtCode": 90,
+            "district": "TR"
+        },
+        {
+            "districtName": "Turkmenistan",
+            "districtCode": 993,
+            "district": "TM"
+        },
+        {
+            "districtName": "Turks and Caicos Islands",
+            "districtCode": 1649,
+            "district": "TC"
+        },
+        {
+            "districtName": "Tuvalu",
+            "districtCode": 688,
+            "district": "TV"
+        },
+        {
+            "districtName": "U.S. Virgin Islands",
+            "districtCode": 1340,
+            "district": "VI"
+        },
+        {
+            "districtName": "Uganda",
+            "districtCode": 256,
+            "district": "UG"
+        },
+        {
+            "districtName": "Ukraine",
+            "districtCode": 380,
+            "district": "UA"
+        },
+        {
+            "districtName": "United Arab Emirates",
+            "districtCode": 971,
+            "district": "AE"
+        },
+        {
+            "districtName": "United Kingdom",
+            "districtCode": 44,
+            "district": "GB"
+        },
+        {
+            "districtName": "United States",
+            "districtCode": 1,
+            "district": "US"
+        },
+        {
+            "districtName": "Uruguay",
+            "districtCode": 598,
+            "district": "UY"
+        },
+        {
+            "districtName": "Uzbekistan",
+            "districtCode": 998,
+            "district": "UZ"
+        },
+        {
+            "districtName": "Vanuatu",
+            "districtCode": 678,
+            "district": "VU"
+        },
+        {
+            "districtName": "Vatican",
+            "districtCode": 379,
+            "district": "VA"
+        },
+        {
+            "districtName": "Venezuela",
+            "districtCode": 58,
+            "district": "VE"
+        },
+        {
+            "districtName": "Vietnam",
+            "districtCode": 84,
+            "district": "VN"
+        },
+        {
+            "districtName": "Wallis and Futuna",
+            "districtCode": 681,
+            "district": "WF"
+        },
+        {
+            "districtName": "Western Sahara",
+            "districtCode": 212,
+            "district": "EH"
+        },
+        {
+            "districtName": "Yemen",
+            "districtCode": 967,
+            "district": "YE"
+        },
+        {
+            "districtName": "Zambia",
+            "districtCode": 260,
+            "district": "ZM"
+        },
+        {
+            "districtName": "Zimbabwe",
+            "districtCode": 263,
+            "district": "ZW"
+        }
+    ]
+}

@@ -35,7 +35,7 @@
     <string name="AA0043">Moje</string>
     <string name="AA0044">Súhlas užívateľa</string>
     <string name="AA0045">Zhrnutie zmluvy o službách pre užívateľov a zásadách ochrany osobných údajov</string>
-    <string name="AA0046">Môžete používať videotechnológiu ipTIME je online audio platforma vyvinutá a prevádzkovaná spoločnosťou ipTIME IoT XXXXXXXX., Ltd. (ďalej len „Pomôžete nám“). Prosím, pochopte, že budeme zhromažďovať, používať, ako sa informácie ukladajú a zdieľané, videá, ktoré o nás vidíte. Video obrázky, informácie o zariadení, denníky a ďalšie osobné informácie;\nMôžete pristupovať k svojej autorizácii, opravovať ju a mazať;\nNa ochranu vašich osobných údajov použijeme technológiu ochrany osobných údajov v najvyššom operačnom stredisku. \nÚplné podrobnosti si môžete prečítať vo verzii %1$s a %2$s. \nAk súhlasíte, kliknite na „Súhlasím“ a prijmite našu službu.</string>
+    <string name="AA0046">Môžete používať videotechnológiu ipTIME je online audio platforma vyvinutá a prevádzkovaná spoločnosťou ipTIME IoT Technology Co., Ltd. (ďalej len „Pomôžete nám“). Prosím, pochopte, že budeme zhromažďovať, používať, ako sa informácie ukladajú a zdieľané, videá, ktoré o nás vidíte. Video obrázky, informácie o zariadení, denníky a ďalšie osobné informácie;\nMôžete pristupovať k svojej autorizácii, opravovať ju a mazať;\nNa ochranu vašich osobných údajov použijeme technológiu ochrany osobných údajov v najvyššom operačnom stredisku. \nÚplné podrobnosti si môžete prečítať vo verzii %1$s a %2$s. \nAk súhlasíte, kliknite na „Súhlasím“ a prijmite našu službu.</string>
     <string name="AA0047">%s Home</string>
     <string name="AA0049">Pridať zariadenie</string>
     <string name="AA0050">Spoločné zariadenia</string>
@@ -58,14 +58,23 @@
     <string name="AA0069">Program ipTIME chce použiť informácie o vašej polohe</string>
     <string name="AA0070">Ak chcete úspešne pridaný zariadenie, je potrebné umožniť využívanie služby určovania polohy pre získavanie informácií o Wi-Fi.Prosím, zapnite služby určovania polohy.</string>
     <string name="AA0071">Žiadne povolenie na umiestnenie, prosím, spustite ho v nastaveniach</string>
+    <string name="AA0072">Dovoľujete ipTIME používať informácie o vašom albume?</string>
+    <string name="AA0073">Potreba zobraziť a odoslať obrázok. Je povolené otvoriť album?</string>
+    <string name="AA0074">Dovoľujete ipTIME používať vaše informácie o Bluetoothe?</string>
+    <string name="AA0075">Povolenie Bluetooth sa vyžaduje na pomoc inteligentným zariadeniam spojiť sa s Wi-Fi počas procesu pridania. Je to povolené?</string>
     <string name="AA0076">Žiadne povolenie Bluetooth, prosím, spustite ho v nastaveniach</string>
     <string name="AA0078">Pripájanie zariadenia.</string>
     <string name="AA0079">Skanovanie zariadenia</string>
     <string name="AA0080">Pripojenie zariadenia</string>
     <string name="AA0081">Zariadená registrácia zariadenia</string>
     <string name="AA0082">Prosím, uistite sa, že telefón je blízko kamery.</string>
+    <string name="AA0084">Prosím, skús toto a skús to znova:</string>
+    <string name="AA0085">1. Dlhé stlačte tlačidlo reset na reset zariadenia</string>
+    <string name="AA0086">2. Prosím skontrolujte, či je router povolený obmedzenie prístupu</string>
+    <string name="AA0087">3. Pokús sa opätovne spustiť router</string>
     <string name="AA0088">Skúsiť znova</string>
     <string name="AA0089">Úspešne pridané</string>
+    <string name="AA0090">Rýchle menovanie</string>
     <string name="AA0099">Iné</string>
     <string name="AA0100">Uložiť QR kód zariadenia do albumu</string>
     <string name="AA0101">Začiatok</string>
@@ -103,6 +112,7 @@
     <string name="AA0149">Zadajte prosím účt ipTIME</string>
     <string name="AA0150">Nedávno zdieľané</string>
     <string name="AA0151">Zdieľanie tvárou v tvár</string>
+    <string name="AA0152">Zdieľať</string>
     <string name="AA0153">Chyba používateľského mena, prosím opäť zadajte</string>
     <string name="AA0154">Ste si istý, že budete deliť zariadenie s %s na použitie?</string>
     <string name="AA0155">Bol zdieľaný s týmto priateľom</string>
@@ -166,7 +176,8 @@
     <string name="AA0223">Nápoveď a spätná väzba</string>
     <string name="AA0224">O ipTIME</string>
     <string name="AA0225">Centrum oznámení</string>
-    <string name="AA0227">Ak chcete dostávať najnovšie správy včas, zapnite si povolenie na upozornenia v aplikácii Youkanto</string>
+    <string name="AA0226">Operácia bola úspešná</string>
+    <string name="AA0227">Ak chcete dostávať najnovšie správy včas, zapnite si povolenie na upozornenia v aplikácii %s</string>
     <string name="AA0228">Žiadne ďalšie správy</string>
     <string name="AA0230">Vybrať</string>
     <string name="AA0232">Zdieľať</string>
@@ -177,6 +188,7 @@
     <string name="AA0245">Video karty</string>
     <string name="AA0246">cloud video</string>
     <string name="AA0247">Oblaková služba</string>
+    <string name="AA0248">Iný problém</string>
     <string name="AA0249">Klasifikácia zariadenia</string>
     <string name="AA0250">Vyberte zariadenie</string>
     <string name="AA0251">Otázky a návrhy</string>
@@ -429,6 +441,9 @@ Aby sa zabránilo príliš rýchlemu úniku energie, automaticky sa prepol na re
     <string name="AA0559">Neplatný QR kód</string>
     <string name="AA0560">Starý QR kód sa skončil</string>
     <string name="AA0561">Ste si istý, že chcete odstrániť zariadenie?</string>
+    <string name="AA0562">Prosím, uveďte správne telefónne číslo alebo e-mailová adresa</string>
+    <string name="AA0563">Vyviazali ste zariadenie</string>
+    <string name="AA0564">Chyba formátu mobilného čísla/e-mailu</string>
     <string name="AA0565">Spájanie sa skončilo</string>
     <string name="AA0566">Cieľový účet nie je dostupný</string>
     <string name="AA0567">Cieľový účet neexistuje</string>
@@ -498,4 +513,16 @@ Aby sa zabránilo príliš rýchlemu úniku energie, automaticky sa prepol na re
     <string name="AA0654">Môj kartový kupón</string>
     <string name="AA0656">Offline, aktualizácia nedostupná</string>
     <string name="AA0657">Abnormalita systému</string>
+    <string name="AA0658">Zrušiť</string>
+    <string name="AA0659">Aktuálna verzia nepodporuje priame prepojenie tohto zariadenia. Stiahnite si aplikáciu \"ipTIME Cloud\" a pridajte ju a používajte ju.</string>
+    <string name="AA0660">Stiahnuť</string>
+    <string name="AA0661">Priateľská Pripomienka</string>
+    <string name="AA0662">Nasledujúce zariadenia nie sú k dispozícii v aktuálnej aplikácii</string>
+    <string name="AA0663">Stiahnite si aplikáciu \"ipTIME Cloud\", aby ste mohli pokračovať v používaní</string>
+    <string name="AA0664">Nepripomínať Znova</string>
+    <string name="AA0665">O</string>
+    <string name="AA0669">Zadajte účet</string>
+    <string name="AA0682">Nesúhlasiť a ukončiť aplikáciu</string>
+    <string name="AA0689">Vyskúšajte nasledujúce operácie a skúste to znova:\n1. Stlačte a podržte tlačítko reset, aby ste zariadenie resetovali;\n2. Skontrolujte, či je zariadenie pripojené k napájaniu;\n3. Skontrolujte, či je anténa zariadenia uvoľnená;\n4. Uistite sa, že aktuálna komunikácia 4G signálu je normálna.</string>
+    <string name="AA0690">Fotoaparát je príliš nízka, upgrade v stave elektriny ~</string>
 </resources>

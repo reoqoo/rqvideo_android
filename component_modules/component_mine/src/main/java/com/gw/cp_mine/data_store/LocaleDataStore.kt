@@ -4,8 +4,9 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
+import com.gw.cp_mine.BuildConfig
 import com.gw.cp_mine.entity.Language
-import com.gw.lib_datastore.DataStoreUtils
+import com.gw_reoqoo.lib_datastore.DataStoreUtils
 import com.gwell.loglibs.GwellLogUtils
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.util.Locale.ENGLISH
@@ -22,11 +23,11 @@ private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(na
 
 @Singleton
 class LocaleDataStoreImpl @Inject constructor(
-    @ApplicationContext context: Context,
+    @ApplicationContext val context: Context,
 ) : ILocaleDataStoreApi {
 
     companion object {
-        private const val TAG = "MineDataStore"
+        private const val TAG = "LocaleDataStoreImpl"
 
         private const val KEY_LANGUAGE_TYPE = "key_language_type"
 
@@ -41,13 +42,21 @@ class LocaleDataStoreImpl @Inject constructor(
      * @return Language 当前语言
      */
     override fun getCurrentLanguage(): Language {
-        val langName = DataStoreUtils.getData(dataStore, KEY_LANGUAGE_TYPE, Language.SYSTEM.name)
-        return try {
+        val defaultLanguage = try {
+            Language.valueOf(BuildConfig.DEFAULT_LANGUAGE)
+        } catch (e: Exception) {
+            GwellLogUtils.e(TAG, "getDefaultLanguage error", e)
+            Language.SYSTEM
+        }
+        val langName = DataStoreUtils.getData(dataStore, KEY_LANGUAGE_TYPE, defaultLanguage.name)
+        val language = try {
             Language.valueOf(langName)
         } catch (e: Exception) {
             GwellLogUtils.e(TAG, "getLanguageType", e)
             Language.SYSTEM
         }
+        GwellLogUtils.i(TAG, "getCurrentLanguage: language = ${language.locale?.language}")
+        return language
     }
 
     /**
@@ -65,7 +74,21 @@ class LocaleDataStoreImpl @Inject constructor(
      * @return String 当前国家
      */
     override fun getCurrentCountry(): String {
-        return DataStoreUtils.getData(dataStore, KEY_COUNTRY_TYPE, ENGLISH.country)
+        // 优先取APP的国家
+        val appCountry = context?.resources?.configuration?.locale?.country
+        val defaultLanguage = try {
+            Language.valueOf(BuildConfig.DEFAULT_LANGUAGE)
+        } catch (e: Exception) {
+            GwellLogUtils.e(TAG, "getDefaultLanguage error", e)
+            Language.SYSTEM
+        }
+        val defaultCountry = if (defaultLanguage.locale?.country.isNullOrEmpty()) {
+            appCountry
+        } else {
+            defaultLanguage.locale?.country
+        }
+        GwellLogUtils.i(TAG, "getCurrentCountry: defaultLanguage = $defaultLanguage, defaultCountry = $defaultCountry, appCountry = $appCountry")
+        return DataStoreUtils.getData(dataStore, KEY_COUNTRY_TYPE, defaultCountry?: ENGLISH.country)
     }
 
     /**

@@ -362,7 +362,7 @@ class PropertyUtils {
         } else if (StringUtils.isEmpty(propertyName)) {
             throw new IllegalArgumentException("参数propertyName 值 为 空, 不合法!")
         } else {
-            InputStream inputStream = project.rootProject.file("local.properties").newDataInputStream()
+            InputStream inputStream = project.rootProject.file("gradle.properties").newDataInputStream()
             Properties properties = new Properties()
             properties.load(inputStream)
             return properties.getProperty(propertyName)

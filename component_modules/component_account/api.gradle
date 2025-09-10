@@ -1,7 +1,8 @@
 import com.gw.buildsrc.version.Versions
+import com.gw.buildsrc.dependlibs.GwDependLibs
 
 // TODO SDK模块需要依赖的，后续需要修改
 dependencies {
-//    api project(path: ":lib_modules:lib_room")
-    api("com.reoqoo_lib:lib_room:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    api("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_room:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    api("${GwDependLibs.GwLibs.DEPEND_LIB_IOT_VIDEO}:${Versions.GwVersions.VERSION_IOT_VIDEO}")
 }

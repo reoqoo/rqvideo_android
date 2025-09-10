@@ -35,7 +35,7 @@
     <string name="AA0043">Milik saya</string>
     <string name="AA0044">Perjanjian Pengguna</string>
     <string name="AA0045">Ringkasan perjanjian layanan pengguna dan kebijakan privasi</string>
-    <string name="AA0046">Selamat menggunakan ipTIME! ipTIME adalah platform audio dan video online yang dikembangkan dan dioperasikan oleh Perusahaan Teknologi ipTIME IoT XXXXXXXX., Ltd.(selanjutnya disebut \"kami\"). Kami akan membantu Anda memahami kondisi pengumpulan, penggunaan, penyimpanan, berbagi data pribadi, serta hak yang Anda dapatkan melalui \"Kebijakan Privasi\" dan \"Perjanjian Pengguna\". \n Untuk menyediakan video live, pemutaran ulang video, koleksi &amp; berlangganan, interaksi komunitas, dan layanan lainnya, kami perlu mengumpulkan informasi pribadi Anda seperti rekaman video, gambar video, informasi perangkat, log operasi, dan informasi pribadi lainnya. \n Anda dapat mengakses, mengoreksi, menghapus informasi pribadi Anda, dan mengelola otorisasi Anda di bagian Pusat Pribadi; \n Kami akan menggunakan teknologi keamanan tercanggih dalam industri untuk melindungi informasi pribadi Anda. \n Anda dapat mempelajari lebih lanjut dengan membaca versi lengkap %1$s dan %2$s. \n Jika Anda setuju, silakan klik \"Setuju\" untuk menerima layanan kami.</string>
+    <string name="AA0046">Selamat menggunakan ipTIME! ipTIME adalah platform audio dan video online yang dikembangkan dan dioperasikan oleh Perusahaan Teknologi ipTIME IoT Technology Co., Ltd.(selanjutnya disebut \"kami\"). Kami akan membantu Anda memahami kondisi pengumpulan, penggunaan, penyimpanan, berbagi data pribadi, serta hak yang Anda dapatkan melalui \"Kebijakan Privasi\" dan \"Perjanjian Pengguna\". \n Untuk menyediakan video live, pemutaran ulang video, koleksi &amp; berlangganan, interaksi komunitas, dan layanan lainnya, kami perlu mengumpulkan informasi pribadi Anda seperti rekaman video, gambar video, informasi perangkat, log operasi, dan informasi pribadi lainnya. \n Anda dapat mengakses, mengoreksi, menghapus informasi pribadi Anda, dan mengelola otorisasi Anda di bagian Pusat Pribadi; \n Kami akan menggunakan teknologi keamanan tercanggih dalam industri untuk melindungi informasi pribadi Anda. \n Anda dapat mempelajari lebih lanjut dengan membaca versi lengkap %1$s dan %2$s. \n Jika Anda setuju, silakan klik \"Setuju\" untuk menerima layanan kami.</string>
     <string name="AA0047">Rumah %s</string>
     <string name="AA0049">Menambah alat</string>
     <string name="AA0050">Berbagi perangkat</string>
@@ -58,14 +58,23 @@
     <string name="AA0069">ipTIME ingin menggunakan informasi lokasi Anda</string>
     <string name="AA0070">Untuk berhasil ditambahkan peralatan, Anda perlu mengizinkan penggunaan Layanan Lokasi untuk mendapatkan informasi Wi-Fi.Harap aktifkan Layanan Lokasi</string>
     <string name="AA0071">Tidak ada izin pemosisian. Silakan aktifkan di Pengaturan</string>
+    <string name="AA0072">Izinkan \"ipTIME\" menggunakan informasi album</string>
+    <string name="AA0073">Perlu melihat dan mengirim gambar. Apakah boleh membuka album?</string>
+    <string name="AA0074">Izinkan \"ipTIME\" menggunakan informasi Bluetooth</string>
+    <string name="AA0075">Akses Bluetooth diperlukan untuk membantu perangkat pintar terhubung ke Wi-Fi selama proses penambahan. Izinkan?</string>
     <string name="AA0076">Tidak ada izin akses Bluetooth. Silakan aktifkan di Pengaturan</string>
     <string name="AA0078">Koneksi perangkat</string>
     <string name="AA0079">Sedang memindai…</string>
     <string name="AA0080">Sedang menghubungkan…</string>
     <string name="AA0081">Sedang mendaftarkan…</string>
     <string name="AA0082">Pastikan HP dekat dengan kamera</string>
+    <string name="AA0084">Coba lakukan langkah berikut ini dan coba lagi:</string>
+    <string name="AA0085">1. Tekan lama tombol Reset untuk mereset perangkat</string>
+    <string name="AA0086">2. Periksa apakah pembatasan akses diaktifkan pada perute</string>
+    <string name="AA0087">3. Nyalakan ulang perute</string>
     <string name="AA0088">Mencoba lagi</string>
     <string name="AA0089">Berhasil menambah</string>
+    <string name="AA0090">Nama</string>
     <string name="AA0099">Lain</string>
     <string name="AA0100">Simpan kode QR perangkat ke album</string>
     <string name="AA0101">Mulai</string>
@@ -103,6 +112,7 @@
     <string name="AA0149">Silakan masukkan akun ipTIME</string>
     <string name="AA0150">Baru-baru ini dibagikan</string>
     <string name="AA0151">Berbagi dengan tatap muka</string>
+    <string name="AA0152">Berbagi</string>
     <string name="AA0153">Nama pengguna salah. Silakan masukkan lagi</string>
     <string name="AA0154">Yakin ingin berbagi perangkat dengan %s?</string>
     <string name="AA0155">Sudah berbagi perangkat dengan teman</string>
@@ -166,7 +176,8 @@
     <string name="AA0223">Bantuan dan umpan balik</string>
     <string name="AA0224">Tentang ipTIME</string>
     <string name="AA0225">Pusat Pesan</string>
-    <string name="AA0227">Buka izin pemberitahuan  App ipTIME untuk mendapatkan berita terbaru secara cepat</string>
+    <string name="AA0226">Operasi berhasil</string>
+    <string name="AA0227">Buka izin pemberitahuan  App %s untuk mendapatkan berita terbaru secara cepat</string>
     <string name="AA0228">tidak ada pesan lagi</string>
     <string name="AA0230">Pilih</string>
     <string name="AA0232">Berbagi</string>
@@ -177,6 +188,7 @@
     <string name="AA0245">Video Kartu</string>
     <string name="AA0246">Video Cloud</string>
     <string name="AA0247">Layanan cloud</string>
+    <string name="AA0248">Masalah lainnya</string>
     <string name="AA0249">Klasifikasi perangkat</string>
     <string name="AA0250">Silakan memilih perangkat</string>
     <string name="AA0251">Masalah dan saran</string>
@@ -429,6 +441,9 @@ Untuk menghindari kehabisan daya terlalu cepat,perangkat telah dialihkan ke mode
     <string name="AA0559">Kode QR tidak valid</string>
     <string name="AA0560">Kode QR lama sudah habis</string>
     <string name="AA0561">Anda yakin ingin menghapus perangkatnya?</string>
+    <string name="AA0562">Silakan masukkan nomor telepon atau alamat email yang tepat</string>
+    <string name="AA0563">Anda telah melepaskan perangkat</string>
+    <string name="AA0564">Galat format nomor/email ponsel</string>
     <string name="AA0565">Pembahagian sudah habis</string>
     <string name="AA0566">Akaun sasaran tidak tersedia</string>
     <string name="AA0567">Akaun sasaran tidak ada</string>
@@ -498,4 +513,16 @@ Untuk menghindari kehabisan daya terlalu cepat,perangkat telah dialihkan ke mode
     <string name="AA0654">Kupon  saya</string>
     <string name="AA0656">Offline, pembaruan tidak tersedia</string>
     <string name="AA0657">Abnormalitas sistem</string>
+    <string name="AA0658">Batalkan</string>
+    <string name="AA0659">Versi saat ini tidak mendukung pengikatan langsung perangkat ini. Silakan unduh aplikasi \"ipTIME Cloud\" untuk menambahkan dan menggunakan.</string>
+    <string name="AA0660">Unduh</string>
+    <string name="AA0661">Pengingat Ramah</string>
+    <string name="AA0662">Perangkat berikut tidak tersedia di aplikasi saat ini</string>
+    <string name="AA0663">Silakan unduh aplikasi \"ipTIME Cloud\" untuk terus menggunakan</string>
+    <string name="AA0664">Jangan Ingatkan Lagi</string>
+    <string name="AA0665">ipTIME</string>
+    <string name="AA0669">Silakan masukkan akun</string>
+    <string name="AA0682">Tidak Setuju dan Keluar dari Aplikasi</string>
+    <string name="AA0689">Silakan coba operasi berikut dan coba lagi:\n1. Tekan dan tahan tombol reset untuk mereset perangkat;\n2. Silakan periksa apakah perangkat terhubung ke catu daya;\n3. Silakan periksa apakah antena perangkat longgar;\n4. Pastikan komunikasi sinyal 4G saat ini normal.</string>
+    <string name="AA0690">Kamera terlalu rendah, silakan upgrade dalam keadaan listrik ~</string>
 </resources>

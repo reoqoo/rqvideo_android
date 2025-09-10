@@ -9,9 +9,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/color_f2f3f6">
 
-        <com.gw.lib_widget.title.WidgetCommonTitleView
+        <com.gw_reoqoo.lib_widget.title.WidgetCommonTitleView
             android:id="@+id/layout_title"
             style="@style/titleView"
             app:widgetBackground="@color/transparent"
@@ -23,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/dp_16"
             android:layout_marginTop="@dimen/dp_21"
-            android:background="@drawable/account_btn_logout_bg"
+            android:background="@drawable/gw_reoqoo_account_btn_logout_bg"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:paddingHorizontal="@dimen/dp_12"
@@ -35,7 +36,7 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="@dimen/dp_60"
                 android:layout_height="@dimen/dp_60"
-                android:src="@drawable/icon_close_warm" />
+                android:src="@drawable/gw_reoqoo_icon_close_warm" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"

@@ -9,9 +9,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/color_f2f3f6">
 
-        <com.gw.lib_widget.title.WidgetCommonTitleView
+        <com.gw_reoqoo.lib_widget.title.WidgetCommonTitleView
             android:id="@+id/layout_title"
             style="@style/titleView"
             app:widgetBackground="@color/transparent" />
@@ -22,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/dp_15"
             android:layout_marginTop="@dimen/dp_23"
-            android:background="@drawable/account_btn_logout_bg"
+            android:background="@drawable/gw_reoqoo_account_btn_logout_bg"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +35,7 @@
                 android:layout_width="@dimen/dp_68"
                 android:layout_height="@dimen/dp_68"
                 android:layout_marginTop="@dimen/dp_38"
-                tools:src="@drawable/icon_bind_mobile" />
+                tools:src="@drawable/gw_reoqoo_icon_bind_mobile" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_account"
