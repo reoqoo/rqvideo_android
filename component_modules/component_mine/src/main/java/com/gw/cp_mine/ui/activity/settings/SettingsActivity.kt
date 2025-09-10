@@ -1,14 +1,13 @@
 package com.gw.cp_mine.ui.activity.settings
 
-import android.view.View
 import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gw.cp_mine.R
 import com.gw.cp_mine.databinding.MineActivitySettingsBinding
 import com.gw.cp_mine.entity.MenuListEntity
 import com.gw.cp_mine.ui.fragment.mine.adapter.MenuListAdapter
-import com.gw.lib_base_architecture.view.ABaseMVVMDBActivity
-import com.gw.lib_router.ReoqooRouterPath
+import com.gw_reoqoo.lib_base_architecture.view.ABaseMVVMDBActivity
+import com.gw_reoqoo.lib_router.ReoqooRouterPath
 import com.gwell.loglibs.GwellLogUtils
 import com.therouter.router.Route
 import dagger.hilt.android.AndroidEntryPoint

@@ -6,7 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.gw.cp_msg.entity.http.MainNoticeEntity
 import com.gw.cp_msg.manger.NoticeMgrImpl
 import com.gw.cp_msg.repository.MsgCenterRepository
-import com.gw.lib_base_architecture.vm.ABaseVM
+import com.gw_reoqoo.lib_base_architecture.vm.ABaseVM
 import com.gwell.loglibs.GwellLogUtils
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers

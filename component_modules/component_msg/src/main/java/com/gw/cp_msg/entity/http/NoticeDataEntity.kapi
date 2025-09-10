@@ -76,20 +76,20 @@ data class NoticeEntity(
      * 即, 弹窗地址.
      */
     @Json(name = "url")
-    val url: String? = null,
+    var url: String? = null,
 
     /**
      * 图标Url，活动公告需要（已弃用）.
      * 首页活动的icon
      */
     @Json(name = "iconUrl")
-    val iconUrl: String? = null,
+    var iconUrl: String? = null,
 
     /**
      * 标题(可在公告列表中展示)
      */
     @Json(name = "title")
-    val title: String? = null,
+    var title: String? = null,
 
     /**
      * 显示选项,0表示不弹窗，1表示在首页弹窗，2表示在设备监控页面弹窗，3表示在智能守护页面弹窗，4表示在我的页面弹窗.
@@ -97,7 +97,7 @@ data class NoticeEntity(
      * 参见 [ShowOptType]
      */
     @Json(name = "showOpt")
-    val showOpt: Int = 0,
+    var showOpt: Int = 0,
 
     /**
      * 本地数据，用于区分是否展示过
@@ -125,18 +125,33 @@ data class BannerEntity(
      */
     @Json(name = "picUrl")
     val picUrl: String? = null,
+
+    /**
+     * 公告展示的公告tag,用于去比对NoticeEntity中的tag.
+     */
+    @Json(name = "noticeTag")
+    val noticeTag: String? = null,
+
+    /**
+     * 显示选项,0表示不弹窗，1表示在首页弹窗，2表示在设备监控页面弹窗，3表示在智能守护页面弹窗，4表示在我的页面弹窗.
+     * 在什么界面展示.
+     * 参见 [ShowOptType]
+     */
+    @Json(name = "showOpt")
+    var showOpt: Int = 0,
 ) : Comparable<BannerEntity> {
     override fun compareTo(other: BannerEntity): Int {
         return if (tag == other.tag &&
             url == other.url &&
-            picUrl == other.picUrl
+            picUrl == other.picUrl &&
+            noticeTag == other.noticeTag &&
+            showOpt == other.showOpt
         ) {
             0
         } else {
             -1
         }
     }
-
 }
 
 enum class ShowOptType(val type: Int) {
@@ -221,5 +236,10 @@ enum class BannerTag(val tag: String) {
      * 首页悬浮窗按钮
      */
     BANNER_FLOAT_ICON("floating-icon"),
+
+    /**
+     * 首页跑马灯悬浮公告
+     */
+    BANNER_MARQUEE_NOTICE("important_Home"),
 }
 

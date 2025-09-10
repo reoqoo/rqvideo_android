@@ -2,7 +2,7 @@ package com.gw.cp_msg.repository
 
 import com.gw.cp_msg.datasource.RemoteMsgInfoDataSource
 import com.gw.cp_msg.entity.http.MsgInfoListEntity
-import com.gw.lib_http.RespResult
+import com.gw_reoqoo.lib_http.RespResult
 import javax.inject.Inject
 
 /**

@@ -6,7 +6,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.gw.cp_config.entity.DevConfigEntity
 import com.gw.cp_config.entity.SceneEntity
-import com.gw.lib_datastore.DataStoreUtils
+import com.gw_reoqoo.lib_datastore.DataStoreUtils
 import com.gwell.loglibs.GwellLogUtils
 import dagger.Binds
 import dagger.Module

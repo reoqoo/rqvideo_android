@@ -10,9 +10,14 @@ import com.gw.cp_config.entity.DevConfigEntity
 interface IAppConfigApi {
 
     /**
-     * 同步更新配置
+     * 异步更新配置
      */
     fun uploadConfig()
+
+    /**
+     * 协程同步的方式进行更新配置
+     */
+    suspend fun updateConfigSync(retry: Int = 3)
 
     /**
      * 获取支持手机号的国家码列表
@@ -42,6 +47,16 @@ interface IAppConfigApi {
      * 根据产品ID获取产品图片
      */
     fun getProductImgUrl(pid: String?, imgType: ProductImgType = ProductImgType.LIST): String?
+
+    /**
+     * 根据产品ID获取产品图片
+     */
+    fun getProductImgUrl_C(pid: String?, imgType: ProductImgType = ProductImgType.LIST): String?
+
+    /**
+     * 根据产品ID获取产品图片
+     */
+    fun getProductImgUrl_D(pid: String?, imgType: ProductImgType = ProductImgType.LIST): String?
 
     /**
      * 通过设备pid来获取设备配置信息
@@ -101,4 +116,49 @@ enum class ProductImgType {
      * 介紹
      */
     INTRODUCTION,
+}
+
+
+/**
+ * APP渠道名称: reoqoo, ipTIME, xiaotun,用于区分不同的渠道下UI页面样式的差异性
+ */
+object AppChannelName {
+    /**
+     * reoqoo
+     */
+    const val CHANNEL_REOQOO = "reoqoo"
+
+    /**
+     * ipTIME
+     */
+    const val CHANNEL_IPTIME = "ipTIME"
+
+    /**
+     * xiaotun
+     */
+    const val CHANNEL_XIAOTUN = "xiaotun"
+
+        /**
+         * 是否是reoqoo渠道App
+         * @return Boolean
+         */
+        fun isReoqooApp(appName: String): Boolean {
+            return appName.contains(CHANNEL_REOQOO)
+        }
+
+        /**
+         * 是否是小豚渠道App
+         * @return Boolean
+         */
+        fun isXiaotunApp(appName: String): Boolean {
+            return appName.contains(CHANNEL_XIAOTUN)
+        }
+
+        /**
+         * 是否是ipTIME渠道App
+         * @return Boolean
+         */
+        fun isIpTimeApp(appName: String): Boolean {
+            return appName.contains(CHANNEL_IPTIME)
+        }
 }

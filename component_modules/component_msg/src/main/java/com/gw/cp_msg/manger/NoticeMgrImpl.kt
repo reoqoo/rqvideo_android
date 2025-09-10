@@ -5,6 +5,8 @@ import android.os.Looper
 import android.os.Message
 import android.text.TextUtils
 import androidx.annotation.MainThread
+import com.gw.component_webview.api.interfaces.IWebViewApi
+import com.gw.cp_config_net.api.interfaces.IActivityNameApi
 import com.gw.cp_msg.api.kapi.INoticeMgrApi
 import com.gw.cp_msg.entity.http.BannerEntity
 import com.gw.cp_msg.entity.http.BannerTag
@@ -19,14 +21,12 @@ import com.gw.cp_msg.entity.http.ShowWayType
 import com.gw.cp_msg.entity.http.TagType
 import com.gw.cp_msg.entity.http.UserMessageListBean
 import com.gw.cp_msg.repository.NoticeRepository
-import com.gw.reoqoosdk.net_config.api.INetConfigService
-import com.gw.reoqoosdk.paid_service.IPaidService
-import com.gw.widget_webview.jsinterface.WebViewJSCallbackImpl
 import com.gwell.loglibs.GwellLogUtils
 import com.jwkj.base_lifecycle.activity_lifecycle.ActivityLifecycleManager
 import com.jwkj.base_utils.handler.WeakHandler
 import com.jwkj.base_utils.time.GwTimeUtils
 import com.jwkj.base_utils.ui.DensityUtil
+import com.gw_reoqoo.widget_webview.jsinterface.WebViewJSCallbackImpl
 import com.tencentcs.iotvideo.http.interceptor.flow.HttpAction
 import com.tencentcs.iotvideo.utils.JSONUtils
 import kotlinx.coroutines.Dispatchers
@@ -42,9 +42,9 @@ import javax.inject.Singleton
  */
 @Singleton
 class NoticeMgrImpl @Inject constructor(
-    private val iCloudService: IPaidService,
+    private val webViewApi: IWebViewApi,
     private val repository: NoticeRepository,
-    private val iNetConfigService: INetConfigService
+    private val activityNameApi: IActivityNameApi
 ) : INoticeMgrApi, WeakHandler.IHandler {
 
     companion object {
@@ -292,6 +292,37 @@ class NoticeMgrImpl @Inject constructor(
             }
         }
         return homeBanner
+    }
+
+    /**
+     * 获取 首页跑马灯悬浮公告
+     * @return SystemMessage.Data.NoticeEntity
+     */
+    override fun getHomeMarqueeNotice(): NoticeEntity? {
+        var noticeEntity: NoticeEntity? = null
+        if (banners.isNotEmpty()) {
+            // 先从banner中找到important_Home,然后通过banner里面的noticeTag去notice中通过tag找到对应的notice
+            banners.find { it.tag == BannerTag.BANNER_MARQUEE_NOTICE.tag }?.let { bannerEntity ->
+                notices.find { it.tag == bannerEntity.noticeTag }?.let { notice ->
+                    notice.url = bannerEntity.url
+                    notice.showOpt = bannerEntity.showOpt
+                    noticeEntity = notice
+                }
+            }
+//            for (banner in banners) {
+//                if (BannerTag.BANNER_MARQUEE_NOTICE.tag == banner.tag) {
+//                    for (notice in notices) {
+//                        if (notice.tag == banner.noticeTag) {
+//                            notice.url = banner.url
+//                            notice.showOpt = banner.showOpt
+//                            noticeEntity = notice
+//                            break
+//                        }
+//                    }
+//                }
+//            }
+        }
+        return noticeEntity
     }
 
     /**
@@ -654,8 +685,8 @@ class NoticeMgrImpl @Inject constructor(
         notice: MainNoticeEntity,
     ) {
         val activity = ActivityLifecycleManager.getResumeActivity()
-        val devConnectActivity = iNetConfigService.getDevConnectName()
-        val devAddSuccessActivity = iNetConfigService.getDevAddSuccessName()
+        val devConnectActivity = activityNameApi.getDevConnectName()
+        val devAddSuccessActivity = activityNameApi.getDevAddSuccessName()
         val currentActivity = ActivityLifecycleManager.getResumeActivity()?.javaClass?.simpleName
         GwellLogUtils.i(
             TAG,
@@ -673,7 +704,7 @@ class NoticeMgrImpl @Inject constructor(
         }
         activity?.let {
             Handler(Looper.getMainLooper()).post {
-                iCloudService.openWebViewDialog(
+                webViewApi.showWebViewDialog(
                     activity = it,
                     width = DensityUtil.getScreenWidth(it),
                     height = DensityUtil.getScreenHeight(it),
@@ -691,7 +722,7 @@ class NoticeMgrImpl @Inject constructor(
                                 GwellLogUtils.e(TAG, "openWebView: url is null or empty")
                                 return
                             }
-                            iCloudService.openWebView(
+                            webViewApi.openWebView(
                                 url = url,
                                 title = "",
                                 deviceId = notice.deviceId

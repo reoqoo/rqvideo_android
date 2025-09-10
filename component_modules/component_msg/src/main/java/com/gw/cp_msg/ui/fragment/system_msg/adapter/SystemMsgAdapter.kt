@@ -10,7 +10,7 @@ import com.gw.cp_msg.R
 import com.gw.cp_msg.entity.http.MsgDetailEntity
 import com.jwkj.base_utils.time.GwTimeUtils
 import com.jwkj.base_utils.ui.DensityUtil
-import com.gw.resource.R as RR
+import com.gw_reoqoo.resource.R as RR
 
 /**
  *@message   SystemMsgAdapter

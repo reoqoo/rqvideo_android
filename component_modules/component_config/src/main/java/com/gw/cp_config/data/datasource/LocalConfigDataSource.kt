@@ -3,10 +3,11 @@ package com.gw.cp_config.data.datasource
 import android.app.Application
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.gw.cp_config.BuildConfig
 import com.gw.cp_config.data.datastore.IConfigDataStoreApi
 import com.gw.cp_config.entity.ConfigJsonEntity
 import com.gw.cp_config.entity.DevConfigEntity
-import com.gw.lib_utils.file.StorageMgr
+import com.gw_reoqoo.lib_utils.file.StorageMgr
 import com.gwell.loglibs.GwellLogUtils
 import com.jwkj.base_utils.file.GwFileUtils
 import kotlinx.coroutines.Dispatchers
@@ -29,14 +30,16 @@ class LocalConfigDataSource @Inject constructor(
         /**
          * 配置文件名
          */
-        const val FILE_NAME_CONFIG_PID = "appConfig.json"
+        const val FILE_NAME_CONFIG_PID = BuildConfig.APP_CONFIG_FILE_NAME
     }
 
-    val pidConfigPath: String?
+    val pidConfigPath: String
         get() {
-            return StorageMgr.getInstance(app).appDocPath?.let {
-                "$it/$FILE_NAME_CONFIG_PID"
+            var appDocPath = StorageMgr.getInstance(app).appDocPath
+            if (appDocPath.isNullOrEmpty()) {
+                appDocPath = app.cacheDir.absolutePath
             }
+            return "$appDocPath/$FILE_NAME_CONFIG_PID"
         }
 
     /**

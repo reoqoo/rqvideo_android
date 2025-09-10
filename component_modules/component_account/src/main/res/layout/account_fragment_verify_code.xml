@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:background="@color/color_ffffff">
 
-        <com.gw.lib_widget.title.WidgetCommonTitleView
+        <com.gw_reoqoo.lib_widget.title.WidgetCommonTitleView
             android:id="@+id/layout_title"
             style="@style/titleView"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -48,7 +48,7 @@
             app:layout_constraintTop_toBottomOf="@id/tv_verify_title" />
 
         <!--设置验证码个数-->
-        <com.gw.cp_account.widget.verify_code.AccountVerifyCodeView
+        <com.gw_reoqoo.cp_account.widget.verify_code.AccountVerifyCodeView
             android:id="@+id/et_check_code"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_60"
@@ -69,7 +69,7 @@
             android:background="@color/transparent"
             android:enabled="false"
             android:text="@string/AA0036"
-            android:textColor="@drawable/account_repeat_btn_bg"
+            android:textColor="@drawable/gw_reoqoo_account_repeat_btn_bg"
             android:textSize="@dimen/sp_13"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

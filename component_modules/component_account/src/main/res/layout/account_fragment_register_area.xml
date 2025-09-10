@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:background="@color/color_ffffff">
 
-        <com.gw.lib_widget.title.AppTitle
+        <com.gw_reoqoo.lib_widget.title.AppTitle
             android:id="@+id/app_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -58,8 +58,8 @@
             android:layout_marginLeft="@dimen/dp_27"
             android:layout_marginTop="@dimen/dp_24"
             android:layout_marginRight="@dimen/dp_27"
-            android:background="@drawable/widget_input_bg_unfocused"
-            android:drawableEnd="@drawable/account_icon_next"
+            android:background="@drawable/gw_reoqoo_widget_input_bg_unfocused"
+            android:drawableEnd="@drawable/gw_reoqoo_account_icon_next"
             android:gravity="center_vertical"
             android:paddingEnd="@dimen/dp_13"
             android:textColor="@color/color_000000_90"

@@ -1,10 +1,10 @@
 package com.gw.cp_msg.datasource
 
 import com.gw.cp_msg.entity.http.MsgInfoListEntity
-import com.gw.lib_http.RespResult
-import com.gw.lib_http.ResponseNotSuccessException
-import com.gw.lib_http.typeSubscriber
-import com.gw.lib_http.wrapper.HttpServiceWrapper
+import com.gw_reoqoo.lib_http.RespResult
+import com.gw_reoqoo.lib_http.ResponseNotSuccessException
+import com.gw_reoqoo.lib_http.typeSubscriber
+import com.gw_reoqoo.lib_http.wrapper.HttpServiceWrapper
 import kotlinx.coroutines.channels.Channel
 import javax.inject.Inject
 

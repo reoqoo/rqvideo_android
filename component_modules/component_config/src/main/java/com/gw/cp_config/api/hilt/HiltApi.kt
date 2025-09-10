@@ -8,6 +8,7 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 /**
  * @Description: - 向Hilt注册依赖注入
@@ -19,6 +20,7 @@ import dagger.hilt.components.SingletonComponent
 abstract class HiltApi {
 
     @Binds
+    @Singleton
     abstract fun getConfigApi(apiImpl: AppConfigApiImpl): IAppConfigApi
 
     @Binds

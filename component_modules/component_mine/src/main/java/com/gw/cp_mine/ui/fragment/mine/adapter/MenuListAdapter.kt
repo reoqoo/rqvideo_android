@@ -9,8 +9,8 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.gw.cp_mine.R
 import com.gw.cp_mine.entity.MenuListEntity
-import com.gw.lib_utils.ktx.setSingleClickListener
-import com.gw.lib_utils.ktx.visible
+import com.gw_reoqoo.lib_utils.ktx.setSingleClickListener
+import com.gw_reoqoo.lib_utils.ktx.visible
 
 /**
  * @author: xuhaoyuan

@@ -7,13 +7,14 @@ import com.gw.cp_msg.api.kapi.IMsgExternalApi
 import com.gw.cp_msg.datastore.IMsgDataStoreApi
 import com.gw.cp_msg.entity.http.MsgDetailEntity
 import com.gw.cp_msg.entity.http.MsgInfoListEntity
-import com.gw.cp_msg.entity.http.VersionInfoEntity
+import com.gw_reoqoo.lib_http.entities.VersionInfoEntity
 import com.gw.cp_msg.repository.MsgCenterRepository
-import com.gw.lib_http.entities.AppUpgradeEntity
-import com.gw.lib_utils.version.Version
-import com.gw.resource.R
+import com.gw_reoqoo.lib_http.entities.AppUpgradeEntity
+import com.gw_reoqoo.lib_utils.version.Version
+import com.gw_reoqoo.resource.R
 import com.gwell.loglibs.GwellLogUtils
 import com.jwkj.base_utils.str_utils.GwStringUtils
+import com.reoqoo.component_iotapi_plugin_opt.api.IGWIotOpt
 import com.therouter.inject.Singleton
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
@@ -30,7 +31,8 @@ class LocalMsgExternalManager @Inject constructor(
     private val app: Application,
     private val repository: MsgCenterRepository,
     private val msgDataStore: IMsgDataStoreApi,
-    private val msgCenterRepository: MsgCenterRepository
+    private val msgCenterRepository: MsgCenterRepository,
+    private val gwiotOpt: IGWIotOpt
 ) : ILocalMsgApi, IMsgExternalApi {
 
     companion object {
@@ -97,7 +99,9 @@ class LocalMsgExternalManager @Inject constructor(
     private fun initAllMsg() {
         systemMsgList.clear()
         scope.launch(Dispatchers.IO) {
-            initAppVersionMsg()
+            if (gwiotOpt.showAppUpgradeItem()) {
+                initAppVersionMsg()
+            }
             initDevUpgradeMsg()
             initServerMsg()
             GwellLogUtils.i(TAG, "initAllMsg $systemMsgList")

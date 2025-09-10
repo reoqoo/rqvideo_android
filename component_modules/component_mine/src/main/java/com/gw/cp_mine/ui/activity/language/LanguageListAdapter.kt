@@ -2,11 +2,12 @@ package com.gw.cp_mine.ui.activity.language
 
 import androidx.core.view.isVisible
 import com.gw.cp_mine.R
+import com.gw_reoqoo.resource.R as RR
 import com.gw.cp_mine.databinding.MineRvLanguageItemBinding as Binding
 import com.gw.cp_mine.entity.LanguageEntity
-import com.gw.lib_utils.ktx.draw
-import com.gw.lib_utils.ktx.setSingleClickListener
-import com.gw.lib_widget.adapter.AbsDiffBDAdapter
+import com.gw_reoqoo.lib_utils.ktx.draw
+import com.gw_reoqoo.lib_utils.ktx.setSingleClickListener
+import com.gw_reoqoo.lib_widget.adapter.AbsDiffBDAdapter
 
 /**
 @author: xuhaoyuan
@@ -39,7 +40,7 @@ class LanguageListAdapter : AbsDiffBDAdapter<Binding, LanguageEntity>() {
         binding.root.tag = entity
         binding.tvLangName.setText(entity.language.strRes)
         if (entity.selected) {
-            binding.tvLangName.draw(end = R.drawable.mine_icon_language_check)
+            binding.tvLangName.draw(end = RR.drawable.gw_reoqoo_dev_share_icon_user_check)
         } else {
             binding.tvLangName.draw(end = R.drawable.mine_shape_check_none)
         }

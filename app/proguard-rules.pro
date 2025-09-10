@@ -380,3 +380,33 @@
 # gwell蓝牙模块
 -keep class com.jwsd.bleconfig.** { *; }
 
+-keep class com.yoosee.**
+-keep class com.jwkj.**
+-keep class com.jwkj.iotvideo.**
+-keep class com.gw.gwiotapi.**
+# eventbus
+-keepattributes *Annotation*
+-keepclassmembers class ** {
+    @org.greenrobot.eventbus.Subscribe <methods>;
+}
+-keep enum org.greenrobot.eventbus.ThreadMode { *; }
+
+# Only required if you use AsyncExecutor
+-keepclassmembers class * extends org.greenrobot.eventbus.util.ThrowableFailureEvent {
+    <init>(java.lang.Throwable);
+}
+
+-keep class com.jwkj.lib_saas.utils.AlarmPushService { *; }
+-keep class com.gw.component_push.manager.IoTAlarmPushManager { *; }
+-keep class com.jwkj.iotvideo.httpviap2p.**
+
+# 华为推送混淆
+-ignorewarnings
+-keepattributes *Annotation*
+-keepattributes Exceptions
+-keepattributes InnerClasses
+-keepattributes Signature
+-keepattributes SourceFile,LineNumberTable
+-keep class com.huawei.hianalytics.**{*;}
+-keep class com.huawei.updatesdk.**{*;}
+-keep class com.huawei.hms.**{*;}

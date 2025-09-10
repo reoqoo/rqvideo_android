@@ -2,7 +2,6 @@ package com.gw.cp_msg.entity.http
 
 import com.google.gson.annotations.SerializedName
 import com.jwkj.lib_json_kit.IJsonEntity
-import java.io.Serializable
 
 /**
  * 消息中心数据对象

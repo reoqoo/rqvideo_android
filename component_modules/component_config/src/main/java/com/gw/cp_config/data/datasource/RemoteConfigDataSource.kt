@@ -1,13 +1,14 @@
 package com.gw.cp_config.data.datasource
 
-import com.gw.cp_account.api.kapi.IInterfaceSignApi
+import com.gw_reoqoo.cp_account.api.kapi.IInterfaceSignApi
 import com.gw.cp_config.impl.AppParamApiImpl
-import com.gw.lib_http.RespResult
-import com.gw.lib_http.ResponseNotSuccessException
-import com.gw.lib_http.entities.AppConfigEntity
-import com.gw.lib_http.typeSubscriber
-import com.gw.lib_http.wrapper.HttpServiceWrapper
+import com.gw_reoqoo.lib_http.RespResult
+import com.gw_reoqoo.lib_http.ResponseNotSuccessException
+import com.gw_reoqoo.lib_http.entities.AppConfigEntity
+import com.gw_reoqoo.lib_http.typeSubscriber
+import com.gw_reoqoo.lib_http.wrapper.HttpServiceWrapper
 import com.gwell.loglibs.GwellLogUtils
+import com.tencentcs.iotvideo.http.interceptor.flow.HttpAction
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable
 import kotlinx.coroutines.channels.Channel
@@ -50,12 +51,35 @@ class RemoteConfigDataSource @Inject constructor(
                 }
             }
         )
+        GwellLogUtils.i(TAG, "getAppConfig isLogin = $isLogin")
         if (isLogin) {
             httpService.getReoqooConfigWithLogin(listener)
         } else {
             httpService.getReoqooConfig(listener)
         }
         return result.receive()
+    }
+
+    suspend fun getAppConfigAction(isLogin: Boolean): HttpAction<AppConfigEntity> {
+        val channel = Channel<HttpAction<AppConfigEntity>>(1)
+        val listener = typeSubscriber<AppConfigEntity>(
+            onSuccess = { data ->
+                if (data != null) {
+                    channel.trySend(HttpAction.Success(data))
+                } else {
+                    channel.trySend(HttpAction.Fail(Exception("field:get app config is null")))
+                }
+            },
+            onFail = { t ->
+                channel.trySend(HttpAction.Fail(t))
+            }
+        )
+        if (isLogin) {
+            httpService.getReoqooConfigWithLogin(listener)
+        } else {
+            httpService.getReoqooConfig(listener)
+        }
+        return channel.receive()
     }
 
     suspend fun downloadConfig(url: String, filePath: String): Boolean {

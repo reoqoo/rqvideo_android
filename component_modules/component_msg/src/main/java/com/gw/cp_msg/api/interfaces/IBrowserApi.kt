@@ -3,7 +3,7 @@ package com.gw.cp_msg.api.interfaces
 /**
  * Author: yanzheng@gwell.cc
  * Time: 2024/10/22 11:00
- * Description: IWebivewApi
+ * Description: IWebViewApi
  */
 interface IBrowserApi {
 

@@ -5,7 +5,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/color_f2f3f6">
 
         <!--   背景图     -->
         <ImageView
@@ -22,7 +23,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.gw.lib_widget.immersive.ImmersiveView
+            <com.gw_reoqoo.lib_widget.immersive.ImmersiveView
                 android:layout_width="match_parent"
                 android:layout_height="0.1dp"
                 app:immersive_type="statusBar" />
@@ -31,12 +32,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <com.gw.component_family.widgets.PullToRefreshLayout
+                <com.gw_reoqoo.component_family.widgets.PullToRefreshLayout
                     android:id="@+id/pull_to_refresh_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <com.gw.component_family.widgets.sticky.HeaderScrollView
+                    <com.gw_reoqoo.component_family.widgets.sticky.HeaderScrollView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:descendantFocusability="blocksDescendants"
@@ -48,11 +49,51 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <com.gw.component_family.widgets.sticky.StickyLinearLayout
+                            <com.gw_reoqoo.component_family.widgets.sticky.StickyLinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
                                 tools:visibility="visible">
+
+                                <LinearLayout
+                                    android:id="@+id/ll_marquee_layout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/dp_40"
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical"
+                                    tools:visibility="visible"
+                                    android:visibility="gone"
+                                    android:paddingHorizontal="@dimen/dp_12"
+                                    android:background="@color/color_fff4eb">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/dp_16"
+                                        android:layout_height="@dimen/dp_16"
+                                        android:src="@drawable/gw_reoqoo_ic_marquee_notice"/>
+
+                                    <TextView
+                                        android:id="@+id/tv_marquee_content"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="1"
+                                        android:layout_height="@dimen/dp_40"
+                                        tools:text="跑马灯效果控制示例文本，将重复滚动指定次数。跑马灯效果控制示例文本，将重复滚动指定次数。"
+                                        android:ellipsize="marquee"
+                                        android:marqueeRepeatLimit="-1"
+                                        android:singleLine="true"
+                                        android:focusable="true"
+                                        android:scrollHorizontally="true"
+                                        android:textSize="@dimen/sp_12"
+                                        android:textColor="@color/color_e6ff7500"
+                                        android:focusableInTouchMode="true"
+                                        android:paddingHorizontal="@dimen/dp_8"
+                                        android:gravity="center_vertical"/>
+
+                                    <ImageView
+                                        android:id="@+id/ic_marquee_close"
+                                        android:layout_width="@dimen/dp_16"
+                                        android:layout_height="@dimen/dp_16"
+                                        android:src="@drawable/gw_reoqoo_ic_marquee_close"/>
+                                </LinearLayout>
 
                                 <LinearLayout
                                     android:id="@+id/ll_home_user"
@@ -117,6 +158,62 @@
 
                                     </RelativeLayout>
 
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:id="@+id/ll_home_guide"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/dp_80"
+                                        android:layout_marginHorizontal="@dimen/dp_16"
+                                        android:visibility="visible">
+
+                                        <eightbitlab.com.blurview.BlurView
+                                            android:id="@+id/blurView"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            app:blurOverlayColor="@color/white_40" />
+
+                                        <ImageView
+                                            android:id="@+id/iv_home_bg"
+                                            android:layout_width="@dimen/dp_167"
+                                            android:layout_height="match_parent"
+                                            android:scaleType="fitXY"
+                                            android:src="@drawable/gw_reoqoo_iv_home_bg"
+                                            app:layout_constraintRight_toRightOf="parent" />
+
+                                        <ImageView
+                                            android:id="@+id/iv_home_guide"
+                                            android:layout_width="@dimen/dp_90"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginStart="@dimen/dp_23"
+                                            android:src="@drawable/gw_reoqoo_home_dev_icon"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginEnd="@dimen/dp_4"
+                                            android:gravity="center_vertical|end"
+                                            android:text="@string/AA0498"
+                                            android:textColor="@color/color_000000_90"
+                                            android:textSize="14sp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toStartOf="@id/iv_home_guide_arrow"
+                                            app:layout_constraintStart_toEndOf="@id/iv_home_guide"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <ImageView
+                                            android:id="@+id/iv_home_guide_arrow"
+                                            android:layout_width="@dimen/dp_18"
+                                            android:layout_height="@dimen/dp_18"
+                                            android:layout_marginEnd="@dimen/dp_20"
+                                            android:src="@drawable/gw_reoqoo_ic_home_double_arrow"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
                                     <LinearLayout
                                         android:id="@+id/ll_dev_share_layout"
                                         android:layout_width="match_parent"
@@ -159,7 +256,7 @@
                                                 android:paddingEnd="@dimen/dp_15"
                                                 android:paddingBottom="@dimen/dp_8"
                                                 android:text="@string/AA0162"
-                                                android:textColor="@color/widget_selector_comm_dialog_action_blue_color"
+                                                android:textColor="@color/gw_reoqoo_widget_selector_comm_dialog_action_blue_color"
                                                 android:textSize="@dimen/sp_13" />
 
                                             <TextView
@@ -174,7 +271,7 @@
                                                 android:paddingEnd="@dimen/dp_15"
                                                 android:paddingBottom="@dimen/dp_8"
                                                 android:text="@string/AA0163"
-                                                android:textColor="@color/widget_selector_comm_dialog_action_blue_color"
+                                                android:textColor="@color/gw_reoqoo_widget_selector_comm_dialog_action_blue_color"
                                                 android:textSize="@dimen/sp_13" />
                                         </LinearLayout>
                                     </LinearLayout>
@@ -194,7 +291,7 @@
                                     tools:itemCount="2"
                                     tools:listitem="@layout/family_title_list_item" />
 
-                            </com.gw.component_family.widgets.sticky.StickyLinearLayout>
+                            </com.gw_reoqoo.component_family.widgets.sticky.StickyLinearLayout>
 
                             <androidx.viewpager2.widget.ViewPager2
                                 android:id="@+id/view_pager"
@@ -204,9 +301,9 @@
 
                         </LinearLayout>
 
-                    </com.gw.component_family.widgets.sticky.HeaderScrollView>
+                    </com.gw_reoqoo.component_family.widgets.sticky.HeaderScrollView>
 
-                </com.gw.component_family.widgets.PullToRefreshLayout>
+                </com.gw_reoqoo.component_family.widgets.PullToRefreshLayout>
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
         </LinearLayout>
 

@@ -1,27 +1,29 @@
 package com.gw.cp_mine.ui.fragment.mine.vm
 
 import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.google.gson.Gson
-import com.gw.component_family.api.interfaces.FamilyModeApi
-import com.gw.cp_account.api.kapi.IAccountApi
-import com.gw.cp_account.api.kapi.IUserInfo
+import com.gw_reoqoo.component_family.api.interfaces.FamilyModeApi
+import com.gw.component_plugin_service.api.IPluginManager
+import com.gw_reoqoo.cp_account.api.kapi.IAccountApi
+import com.gw_reoqoo.cp_account.api.kapi.IUserInfo
 import com.gw.cp_mine.R
 import com.gw.cp_mine.entity.MenuListEntity
+import com.gw.cp_msg.api.kapi.IBenefitsApi
 import com.gw.cp_msg.api.kapi.IMsgExternalApi
-import com.gw.lib_base_architecture.PageJumpData
-import com.gw.lib_base_architecture.vm.ABaseVM
-import com.gw.lib_router.ReoqooRouterPath
-import com.gw.reoqoosdk.dev_monitor.IMonitorService
-import com.gw.reoqoosdk.dev_upgrade.IDevUpgradeService
+import com.gw.cp_upgrade.api.interfaces.IUpgradeMgrApi
+import com.gw_reoqoo.lib_base_architecture.PageJumpData
+import com.gw_reoqoo.lib_base_architecture.vm.ABaseVM
+import com.gw_reoqoo.lib_router.ReoqooRouterPath
 import com.gwell.loglibs.GwellLogUtils
 import com.therouter.TheRouter
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import com.gw.resource.R as RR
+import com.gw_reoqoo.resource.R as RR
 
 /**
 @author: xuhaoyuan
@@ -32,10 +34,11 @@ description:
 @HiltViewModel
 class MineFgVM @Inject constructor(
     private var accountApi: IAccountApi,
-    private var pluginManager: IMonitorService,
+    private var pluginManager: IPluginManager,
     private var familyModeApi: FamilyModeApi,
-    private val upgradeApi: IDevUpgradeService,
+    private val upgradeApi: IUpgradeMgrApi,
     private val msgApi: IMsgExternalApi,
+    private val benefitsApi: IBenefitsApi
 ) : ABaseVM() {
 
     companion object {
@@ -180,6 +183,22 @@ class MineFgVM @Inject constructor(
      */
     fun updateMsgRedPoint() {
         msgApi.getUnreadMsgCount(unReadMsgCount)
+    }
+
+    /**
+     * 更新活动福利列表
+     */
+    fun loadBenefits() {
+        benefitsApi.loadBenefits()
+    }
+
+    /**
+     * 获取活动福利未读数量
+     *
+     * @return LiveData<Int>?
+     */
+    fun getUnReadBenefitsCount(): LiveData<Int>? {
+        return benefitsApi.getUnReadBenefitsCount()
     }
 
     /**

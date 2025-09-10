@@ -1,6 +1,6 @@
 package com.gw.component_push.api.interfaces
 
-import com.tencentcs.iotvideo.messagemgr.EventMessage
+import com.gw_reoqoo.lib_iotvideo.EventMessage
 
 /**
  * Author: yanzheng@gwell.cc

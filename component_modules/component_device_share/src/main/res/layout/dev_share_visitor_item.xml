@@ -12,7 +12,7 @@
             android:layout_width="@dimen/dp_35"
             android:layout_height="@dimen/dp_35"
             android:layout_marginStart="@dimen/dp_12"
-            android:src="@drawable/icon_default_avatar"
+            android:src="@drawable/gw_reoqoo_icon_default_avatar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -56,7 +56,7 @@
             android:paddingStart="@dimen/dp_15"
             android:paddingEnd="@dimen/dp_15"
             android:text="@string/AA0182"
-            android:textColor="@color/widget_selector_comm_dialog_action_green_color"
+            android:textColor="@color/gw_reoqoo_widget_selector_comm_dialog_action_green_color"
             android:textSize="@dimen/sp_13"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"

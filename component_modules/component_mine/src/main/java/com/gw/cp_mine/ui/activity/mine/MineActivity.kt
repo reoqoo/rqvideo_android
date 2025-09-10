@@ -3,7 +3,7 @@ package com.gw.cp_mine.ui.activity.mine
 import androidx.lifecycle.ViewModel
 import com.gw.cp_mine.R
 import com.gw.cp_mine.databinding.MineActivityHomeBinding
-import com.gw.lib_base_architecture.view.ABaseMVVMDBActivity
+import com.gw_reoqoo.lib_base_architecture.view.ABaseMVVMDBActivity
 
 /**
  * Author: yanzheng@gwell.cc

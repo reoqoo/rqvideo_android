@@ -35,7 +35,7 @@
     <string name="AA0043">Usuario</string>
     <string name="AA0044">Acuerdo de Usuario</string>
     <string name="AA0045">Resumen del acuerdo de servicio del usuario y la política de privacidad</string>
-    <string name="AA0046">¡Bienvenido a ipTIME! ipTIME es  una plataforma de audio y video en línea desarrollada y operada por ipTIME IoT XXXXXXXX., Ltd. (abreviado en adelante, \"nosotros\"). Le ayudaremos a comprender la situación de nuestra recopilación, uso, almacenamiento y los datos personales compartidos y sus derechos relacionados a través de la \"Política de Privacidad\" y el \"Acuerdo de Usuario\". \n Para proporcionarle los servicios de videos en vivo, reproducción de video, colección de suscripción , interacción con la comunidad , etc., necesitamos recopilar sus datos personales como grabaciones de video, imágenes de video, información del dispositivo, registros de operaciones, etc. ;  \n Puede acceder,corregir, eliminar su información personal y gestionar su autorización en el centro personal;   \n Utilizaremos tecnología de seguridad avanzada en la industria para proteger su información personal. \n Puede aprender más detalles leyendo la versión completa %1$sy%2$s. \n Si está de acuerdo, haga clic en \"De Acuerdo\" para acceder a nuestros servicios.</string>
+    <string name="AA0046">¡Bienvenido a ipTIME! ipTIME es  una plataforma de audio y video en línea desarrollada y operada por ipTIME IoT Technology Co., Ltd. (abreviado en adelante, \"nosotros\"). Le ayudaremos a comprender la situación de nuestra recopilación, uso, almacenamiento y los datos personales compartidos y sus derechos relacionados a través de la \"Política de Privacidad\" y el \"Acuerdo de Usuario\". \n Para proporcionarle los servicios de videos en vivo, reproducción de video, colección de suscripción , interacción con la comunidad , etc., necesitamos recopilar sus datos personales como grabaciones de video, imágenes de video, información del dispositivo, registros de operaciones, etc. ;  \n Puede acceder,corregir, eliminar su información personal y gestionar su autorización en el centro personal;   \n Utilizaremos tecnología de seguridad avanzada en la industria para proteger su información personal. \n Puede aprender más detalles leyendo la versión completa %1$sy%2$s. \n Si está de acuerdo, haga clic en \"De Acuerdo\" para acceder a nuestros servicios.</string>
     <string name="AA0047">Casa de %s</string>
     <string name="AA0049">Añadir dispositivo</string>
     <string name="AA0050">Compartir dispositivo</string>
@@ -57,14 +57,23 @@
     <string name="AA0069">ipTIME quiere usar la información de su ubicación</string>
     <string name="AA0070">Para el equipo agregado con éxito, es necesario permitir el uso de los servicios de localización para obtener información de conexión Wi-Fi.Por favor activar Servicios de ubicación.</string>
     <string name="AA0071">Sin permiso de ubicación, actívelo en los ajustes</string>
+    <string name="AA0072">ipTIME quiere acceder a tu información de álbum</string>
+    <string name="AA0073">Necesitas ver y enviar la foto. ¿Se permite abrir el álbum?</string>
+    <string name="AA0074">ipTIME quiere utilizar tu información de Bluetooth</string>
+    <string name="AA0075">Se requiere permiso Bluetooth para ayudar a los dispositivos inteligentes a conectarse a Wi-Fi durante la adición. ¿Permitir?</string>
     <string name="AA0076">Sin permiso de Bluetooth, actívelo en los ajustes</string>
     <string name="AA0078">Dispositivos de conexión</string>
     <string name="AA0079">Escaneando dispositivo...</string>
     <string name="AA0080">Conectando dispositivo...</string>
     <string name="AA0081">Registrando dispositivo...</string>
     <string name="AA0082">Asegúrate de que el teléfono esté cerca de la cámara.</string>
+    <string name="AA0084">Por favor, intente de nuevo después de realizar las siguientes acciones:</string>
+    <string name="AA0085">1. Mantenga presionado el botón de reinicio para restablecer el dispositivo</string>
+    <string name="AA0086">2. Verifique si el enrutador tiene restricciones de acceso activadas</string>
+    <string name="AA0087">3. Intente reiniciar el enrutador</string>
     <string name="AA0088">Reintentar</string>
     <string name="AA0089">Agregado con éxito</string>
+    <string name="AA0090">Nombrado rápido</string>
     <string name="AA0099">Otro</string>
     <string name="AA0100">Guarde el código QR del dispositivo en el álbum</string>
     <string name="AA0101">Comenzar</string>
@@ -102,6 +111,7 @@
     <string name="AA0149">Por favor, introduce la cuenta ipTIME</string>
     <string name="AA0150">Compartido recientemente</string>
     <string name="AA0151">Compartir cara a cara</string>
+    <string name="AA0152">Compartir</string>
     <string name="AA0153">Nombre de usuario incorrecto, por favor intente de nuevo</string>
     <string name="AA0154">¿Seguro que deseas compartir el dispositivo con %s?</string>
     <string name="AA0155">Ya compartido con este amigo</string>
@@ -165,7 +175,8 @@
     <string name="AA0223">Ayudas y comentarios</string>
     <string name="AA0224">Acerca de ipTIME</string>
     <string name="AA0225">Centro de noticia</string>
-    <string name="AA0227">Habilitar el acceso a notificaciones de la aplicación ipTIME para recibir las últimas noticias</string>
+    <string name="AA0226">Operación correcta</string>
+    <string name="AA0227">Habilitar el acceso a notificaciones de la aplicación %s para recibir las últimas noticias</string>
     <string name="AA0228">No hay más mensajes</string>
     <string name="AA0230">Seleccionar</string>
     <string name="AA0232">Compartir</string>
@@ -176,6 +187,7 @@
     <string name="AA0245">Vídeo de la tarjeta</string>
     <string name="AA0246">Vídeo en la nube</string>
     <string name="AA0247">Servicios en la nube</string>
+    <string name="AA0248">Otros problemas</string>
     <string name="AA0249">Categoría de dispositivo</string>
     <string name="AA0250">Seleccione el equipo</string>
     <string name="AA0251">Problemas y recomendaciones</string>
@@ -197,7 +209,7 @@
     <string name="AA0272">Seguir idioma del sistema</string>
     <string name="AA0273">Guardar</string>
     <string name="AA0274">Actualización de versión</string>
-    <string name="AA0275">Información de cuenta</string>
+    <string name="AA0275">Información de la cuenta</string>
     <string name="AA0276">Avatar</string>
     <string name="AA0277">Cambiar apodo</string>
     <string name="AA0278">Modificar la llave</string>
@@ -254,7 +266,7 @@
     <string name="AA0338">Mantenga presionada la tarjeta del dispositivo para eliminar, arrastre para ordenar</string>
     <string name="AA0339">Haga clic aquí para editar minitarjetas</string>
     <string name="AA0340">Buscando nueva versión...</string>
-    <string name="AA0341">Comprobar actualizaciones</string>
+    <string name="AA0341">Actualizaciones disponibles</string>
     <string name="AA0342">Todos los dispositivos están actualizados</string>
     <string name="AA0343">Nueva versión</string>
     <string name="AA0344">Notas de la nueva versión</string>
@@ -280,7 +292,7 @@
     <string name="AA0369">Introduzca número de celular o email</string>
     <string name="AA0370">Número de teléfono / correo electrónico</string>
     <string name="AA0372">La cuenta no existe</string>
-    <string name="AA0373">Contraseñas inconsistentes</string>
+    <string name="AA0373">Las dos entradas no coinciden</string>
     <string name="AA0374">Teléfono Móvil</string>
     <string name="AA0375">Introduzca contraseña de Wi-Fi</string>
     <string name="AA0376">Red actual no disponible, compruebe la configuración de su red</string>
@@ -325,7 +337,7 @@
     <string name="AA0417">Ayer</string>
     <string name="AA0418">Hecho</string>
     <string name="AA0427">Tutorial para principiantes</string>
-    <string name="AA0428">Fallido de cargar</string>
+    <string name="AA0428">No se ha podido cargar</string>
     <string name="AA0429">seleccione el dispositivo</string>
     <string name="AA0430">Describa el comentario o el problema en detalle, gracias por su apoyo</string>
     <string name="AA0431">Comparta la información de los registros de las aplicaciones y los dispositivos para localizar los problemas</string>
@@ -342,7 +354,7 @@
     <string name="AA0442">No se puede obtener la lista de Wi-Fi sin GPS habilitado, configúrelo ahora.</string>
     <string name="AA0443">Usted elige Wi-Fi 5G, confirme si el dispositivo admite la banda de frecuencia 5G. Si no es compatible, la adición fallará. ¿Continuar agregando?</string>
     <string name="AA0444">Continuar agregando</string>
-    <string name="AA0445">Volver</string>
+    <string name="AA0445">Atrás.</string>
     <string name="AA0446">Supresión anómala</string>
     <string name="AA0447">ipTIME</string>
     <string name="AA0448">Hecho(%1$s/%2$s)</string>
@@ -427,6 +439,9 @@ Se cambia automáticamente al modo de ahorro de energía para evitar que la bate
     <string name="AA0559">Código QR no válido.</string>
     <string name="AA0560">El viejo código QR ha caducado.</string>
     <string name="AA0561">¿Está seguro de que desea eliminar el dispositivo?</string>
+    <string name="AA0562">Por favor, ingrese un número de teléfono o correo electrónico válido</string>
+    <string name="AA0563">Ha desvinculado este dispositivo</string>
+    <string name="AA0564">Formato de teléfono/correo electrónico incorrecto</string>
     <string name="AA0565">La compartición ha expirado</string>
     <string name="AA0566">Cuenta de destino no disponible</string>
     <string name="AA0567">La cuenta objetivo no existe</string>
@@ -496,4 +511,16 @@ Se cambia automáticamente al modo de ahorro de energía para evitar que la bate
     <string name="AA0654">Mis cupones</string>
     <string name="AA0656">Fuera de línea, no disponible</string>
     <string name="AA0657">Anomalías del sistema</string>
+    <string name="AA0658">Cancelar</string>
+    <string name="AA0659">La versión actual no admite la vinculación directa de este dispositivo. Descarga la aplicación \"ipTIME Cloud\" para agregarla y usarla.</string>
+    <string name="AA0660">Descargar</string>
+    <string name="AA0661">Recordatorio Amistoso</string>
+    <string name="AA0662">Los siguientes dispositivos no están disponibles en la aplicación actual</string>
+    <string name="AA0663">Por favor, descarga la aplicación \"ipTIME Cloud\" para seguir usando</string>
+    <string name="AA0664">No Recordar de Nuevo</string>
+    <string name="AA0665">Acerca de</string>
+    <string name="AA0669">Introduzca la cuenta</string>
+    <string name="AA0682">No aceptar y salir de la aplicación</string>
+    <string name="AA0689">Intente las siguientes operaciones y vuelva a intentarlo:\n1. Presione y mantenga presionado el botón de reinicio para reiniciar el dispositivo;\n2. Por favor, compruebe si el dispositivo está conectado a la fuente de alimentación;\n3. Por favor, compruebe si la antena del dispositivo está suelta;\n4. Por favor, asegúrese de que la comunicación de la señal 4G actual sea normal.</string>
+    <string name="AA0690">La cámara es demasiado baja, actualícela en un estado de electricidad ~</string>
 </resources>

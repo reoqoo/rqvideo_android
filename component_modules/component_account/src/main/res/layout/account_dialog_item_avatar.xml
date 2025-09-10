@@ -18,14 +18,14 @@
             android:layout_width="@dimen/dp_58"
             android:layout_height="@dimen/dp_58"
             android:layout_gravity="center"
-            tools:src="@drawable/icon_default_avatar" />
+            tools:src="@drawable/gw_reoqoo_icon_default_avatar" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/iv_select"
             android:layout_width="@dimen/dp_58"
             android:layout_height="@dimen/dp_58"
             android:layout_gravity="center"
-            android:background="@drawable/icon_avatar_select" />
+            android:background="@drawable/gw_reoqoo_icon_avatar_select" />
 
     </FrameLayout>
 </layout>

@@ -13,7 +13,7 @@
 
     <style name="account_dialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowNoTitle">true</item>
-        <item name="android:background">@drawable/dialog_corner_white_bg</item>
+        <item name="android:background">@drawable/gw_reoqoo_dialog_corner_white_bg</item>
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 

@@ -23,6 +23,16 @@
                 android:layout_marginTop="@dimen/dp_50"
                 android:src="@drawable/family_img_dev_empty" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:gravity="center_horizontal"
+                android:text="@string/AA0571"
+                android:textColor="@color/black_90"
+                android:textSize="@dimen/sp_14" />
+
             <Button
                 android:id="@+id/add_btn"
                 style="@style/fullWidthButton.AppCompat"

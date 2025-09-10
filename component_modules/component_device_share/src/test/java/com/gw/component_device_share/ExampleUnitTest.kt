@@ -1,4 +1,4 @@
-package com.gw.component_device_share
+package com.gw_reoqoo.component_device_share
 
 import org.junit.Test
 

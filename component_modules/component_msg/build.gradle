@@ -1,3 +1,4 @@
+import com.gw.buildsrc.dependlibs.GwDependLibs
 import com.gw.buildsrc.version.Versions
 
 apply from: "${rootDir.absolutePath}/script/gradle/component_depends.gradle"
@@ -20,9 +21,9 @@ android {
 }
 
 dependencies {
-    implementation("com.reoqoo_lib:lib_log:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("com.reoqoo_lib:lib_http:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("com.reoqoo_lib:lib_webview:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_log:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_http:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_webview:${Versions.ReoqooSdkVer.VERSION_CODE}")
 }
 
 dependencies {
@@ -55,5 +56,8 @@ dependencies {
     implementation project(":component_modules:component_device_share_api")
     implementation project(":component_modules:component_msg_api")
 
-
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_webview_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_plugin_service_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_config_net_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_iotapi_plugin_opt_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
 }

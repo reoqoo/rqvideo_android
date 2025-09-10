@@ -6,9 +6,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/color_f2f3f6"
         android:orientation="vertical">
 
-        <com.gw.lib_widget.title.AppTitle
+        <com.gw_reoqoo.lib_widget.title.AppTitle
             android:id="@+id/layout_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

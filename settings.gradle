@@ -3,7 +3,7 @@ import java.util.function.Consumer
 pluginManagement {
     repositories {
         maven {
-            url 'https://nexus-sg.gwell.cc/nexus/repository/maven-releases/'
+            url 'https://nexus-sg.gwell.cc/nexus/repository/maven-gwiot/'
             allowInsecureProtocol = true
             credentials {
                 username = 'admin'
@@ -42,8 +42,41 @@ dependencyResolutionManagement {
         maven { url 'https://maven.aliyun.com/repository/google' }
         maven { url "https://jitpack.io" }
 
+        maven {
+            url 'https://nexus-sg.gwell.cc/nexus/repository/maven-gwiot/'
+            allowInsecureProtocol = true
+            credentials {
+                username = 'admin'
+                password = "admin@321GW"
+            }
+        }
+
+        // Yoosee插件要用到的
+        maven {
+            url 'https://mvn.zztfly.com/android'
+            content {
+                includeGroup "cn.fly"
+                includeGroup "cn.fly.verify"
+                includeGroup "cn.fly.verify.plugins"
+            }
+        }
+        maven {
+            url 'https://developer.huawei.com/repo/'
+            content {
+                includeGroupByRegex "com\\.huawei.*"
+            }
+        }
+        maven {
+            url "https://artifact.bytedance.com/repository/Volcengine/"
+        }
+        maven {
+            url "https://artifact.bytedance.com/repository/pangle/"
+        }
+
         google()
         mavenCentral()
+        // 配置HMS Core SDK的Maven仓地址。
+        maven { url 'https://developer.huawei.com/repo/' }
     }
 }
 
@@ -52,7 +85,7 @@ rootProject.name = "reoqooDemo"
 apply from: "${rootDir.absolutePath}/script/gradle/reoqoo.gradle"
 // 壳工程
 include ":app"
-include ":component_modules:component_aar_libs"
+//include ":component_modules:component_aar_libs"
 
 def includeModules = Arrays.asList(
         ":lib_modules:lib_api_root",
@@ -74,6 +107,7 @@ def includeWithApiModules = Arrays.asList(
         ":component_modules:component_mine",
         ":component_modules:component_config",
         ":component_modules:component_msg",
+        ":main"
 )
 includeWithApiModules.forEach(new Consumer<String>() {
     @Override

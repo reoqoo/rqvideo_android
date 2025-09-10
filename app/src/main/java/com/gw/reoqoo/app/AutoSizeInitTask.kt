@@ -3,7 +3,9 @@ package com.gw.reoqoo.app
 import android.app.Activity
 import android.content.Context
 import android.content.res.Configuration
-import com.gw.module_mount.initializetask.AInitializeTask
+import android.util.Log
+import com.gw_reoqoo.module_mount.initializetask.IInitializeTask
+import com.gw_reoqoo.module_mount.initializetask.TaskPriority
 import dagger.hilt.android.qualifiers.ApplicationContext
 import me.jessyan.autosize.AutoSizeConfig
 import me.jessyan.autosize.onAdaptListener
@@ -17,10 +19,9 @@ import javax.inject.Inject
  *
  * @param context app
  */
-class AutoSizeInitTask @Inject constructor(
-    @ApplicationContext private val context: Context
-) : AInitializeTask() {
+class AutoSizeInitTask @Inject constructor(@ApplicationContext private val context: Context) : IInitializeTask {
     companion object {
+        private const val TAG = "AutoSizeInitTask"
         /**
          * 设计图纸的宽度基准单位
          */
@@ -33,9 +34,15 @@ class AutoSizeInitTask @Inject constructor(
     }
 
     private val autoSizeConfig by lazy { AutoSizeConfig.getInstance() }
-    override fun run() {
+    override fun isRunOnMainThread(): Boolean = false
+    override fun priority(): TaskPriority = TaskPriority.PRIORITY_LOW
+
+    override suspend fun run() {
+        Log.i(TAG, "run")
         autoSizeConfig.isExcludeFontScale = true
+        autoSizeConfig.privateFontScale = 1f
         autoSizeConfig.onAdaptListener = object : onAdaptListener {
+
             override fun onAdaptBefore(target: Any?, activity: Activity?) {
                 activity ?: return
                 //使用以下代码, 可以解决横竖屏切换时的屏幕适配问题

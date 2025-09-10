@@ -4,10 +4,10 @@
 
     <size
         android:width="@dimen/dp_24"
-        android:height="@dimen/dp_6" />
+        android:height="@dimen/dp_5" />
 
     <solid android:color="@color/color_2ca74d" />
 
-    <corners android:radius="@dimen/dp_2" />
+    <corners android:radius="@dimen/dp_3" />
 
 </shape>

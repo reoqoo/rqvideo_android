@@ -9,11 +9,11 @@
         android:background="@color/color_f2f3f6"
         android:orientation="vertical">
 
-        <com.gw.lib_widget.immersive.ImmersiveView
+        <com.gw_reoqoo.lib_widget.immersive.ImmersiveView
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_0_1" />
 
-        <com.gw.lib_widget.title.AppTitle
+        <com.gw_reoqoo.lib_widget.title.AppTitle
             android:id="@+id/app_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,11 +25,10 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/image_logo"
-                android:layout_width="@dimen/dp_69"
-                android:layout_height="@dimen/dp_69"
-                android:layout_marginHorizontal="@dimen/dp_100"
-                android:layout_marginTop="@dimen/dp_58"
-                android:src="@drawable/mine_ic_logo"
+                android:layout_width="@dimen/dp_72"
+                android:layout_height="@dimen/dp_72"
+                android:layout_marginTop="@dimen/dp_63"
+                android:src="@drawable/gw_reoqoo_mine_ic_logo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -37,7 +36,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_app_name"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/dp_27"
+                android:layout_height="@dimen/dp_28"
                 android:layout_marginTop="@dimen/dp_12"
                 android:text="@string/AA0447"
                 android:textColor="@color/color_000000_90"
@@ -46,6 +45,17 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/image_logo" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_xiaotun_logo"
+                android:layout_width="@dimen/dp_130"
+                android:layout_height="@dimen/dp_115"
+                android:layout_marginTop="@dimen/dp_60"
+                android:visibility="gone"
+                android:src="@drawable/gw_reoqoo_ic_about_xiaotun_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_app_version"
@@ -69,6 +79,20 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_app_version" />
 
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_record_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/record_number"
+                android:textColor="@color/black_40"
+                android:textSize="@dimen/sp_12"
+                tools:visibility="visible"
+                android:visibility="invisible"
+                android:layout_marginBottom="@dimen/dp_20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.appcompat.widget.LinearLayoutCompat>

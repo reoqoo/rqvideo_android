@@ -1,0 +1,1219 @@
+{
+    "districtCodeList": [
+        {
+            "districtName": "阿富汗",
+            "districtCode": 93,
+            "district": "AF"
+        },
+        {
+            "districtName": "阿爾巴尼亞",
+            "districtCode": 355,
+            "district": "AL"
+        },
+        {
+            "districtName": "阿爾及利亞",
+            "districtCode": 213,
+            "district": "DZ"
+        },
+        {
+            "districtName": "美屬薩摩亞",
+            "districtCode": 1684,
+            "district": "AS"
+        },
+        {
+            "districtName": "安道爾",
+            "districtCode": 376,
+            "district": "AD"
+        },
+        {
+            "districtName": "安哥拉",
+            "districtCode": 244,
+            "district": "AO"
+        },
+        {
+            "districtName": "安圭拉",
+            "districtCode": 1264,
+            "district": "AI"
+        },
+        {
+            "districtName": "南極洲",
+            "districtCode": 672,
+            "district": "AQ"
+        },
+        {
+            "districtName": "安地卡及巴布達",
+            "districtCode": 1268,
+            "district": "AG"
+        },
+        {
+            "districtName": "阿根廷",
+            "districtCode": 54,
+            "district": "AR"
+        },
+        {
+            "districtName": "亞美尼亞",
+            "districtCode": 374,
+            "district": "AM"
+        },
+        {
+            "districtName": "阿魯巴",
+            "districtCode": 297,
+            "district": "AW"
+        },
+        {
+            "districtName": "澳大利亞",
+            "districtCode": 61,
+            "district": "AU"
+        },
+        {
+            "districtName": "奧地利",
+            "districtCode": 43,
+            "district": "AT"
+        },
+        {
+            "districtName": "亞塞拜然",
+            "districtCode": 994,
+            "district": "AZ"
+        },
+        {
+            "districtName": "巴哈馬",
+            "districtCode": 1242,
+            "district": "BS"
+        },
+        {
+            "districtName": "巴林",
+            "districtCode": 973,
+            "district": "BH"
+        },
+        {
+            "districtName": "孟加拉",
+            "districtCode": 880,
+            "district": "BD"
+        },
+        {
+            "districtName": "巴貝多",
+            "districtCode": 1246,
+            "district": "BB"
+        },
+        {
+            "districtName": "白俄羅斯",
+            "districtCode": 375,
+            "district": "BY"
+        },
+        {
+            "districtName": "比利時",
+            "districtCode": 32,
+            "district": "BE"
+        },
+        {
+            "districtName": "貝里斯",
+            "districtCode": 501,
+            "district": "BZ"
+        },
+        {
+            "districtName": "貝南",
+            "districtCode": 229,
+            "district": "BJ"
+        },
+        {
+            "districtName": "百慕達",
+            "districtCode": 1441,
+            "district": "BM"
+        },
+        {
+            "districtName": "不丹",
+            "districtCode": 975,
+            "district": "BT"
+        },
+        {
+            "districtName": "玻利維亞",
+            "districtCode": 591,
+            "district": "BO"
+        },
+        {
+            "districtName": "波士尼亞與赫塞哥維納",
+            "districtCode": 387,
+            "district": "BA"
+        },
+        {
+            "districtName": "波札那",
+            "districtCode": 267,
+            "district": "BW"
+        },
+        {
+            "districtName": "巴西",
+            "districtCode": 55,
+            "district": "BR"
+        },
+        {
+            "districtName": "英屬印度洋領地",
+            "districtCode": 246,
+            "district": "IO"
+        },
+        {
+            "districtName": "英屬維京群島",
+            "districtCode": 1284,
+            "district": "VG"
+        },
+        {
+            "districtName": "汶萊",
+            "districtCode": 673,
+            "district": "BN"
+        },
+        {
+            "districtName": "保加利亞",
+            "districtCode": 359,
+            "district": "BG"
+        },
+        {
+            "districtName": "布吉納法索",
+            "districtCode": 226,
+            "district": "BF"
+        },
+        {
+            "districtName": "蒲隆地",
+            "districtCode": 257,
+            "district": "BI"
+        },
+        {
+            "districtName": "柬埔寨",
+            "districtCode": 855,
+            "district": "KH"
+        },
+        {
+            "districtName": "喀麥隆",
+            "districtCode": 237,
+            "district": "CM"
+        },
+        {
+            "districtName": "加拿大",
+            "districtCode": 1,
+            "district": "CA"
+        },
+        {
+            "districtName": "維德角",
+            "districtCode": 238,
+            "district": "CV"
+        },
+        {
+            "districtName": "開曼群島",
+            "districtCode": 1345,
+            "district": "KY"
+        },
+        {
+            "districtName": "中非共和國",
+            "districtCode": 236,
+            "district": "CF"
+        },
+        {
+            "districtName": "查德",
+            "districtCode": 235,
+            "district": "TD"
+        },
+        {
+            "districtName": "智利",
+            "districtCode": 56,
+            "district": "CL"
+        },
+        {
+            "districtName": "中國",
+            "districtCode": 86,
+            "district": "CN"
+        },
+        {
+            "districtName": "聖誕島",
+            "districtCode": 61,
+            "district": "CX"
+        },
+        {
+            "districtName": "科科斯（基林）群島",
+            "districtCode": 61,
+            "district": "CC"
+        },
+        {
+            "districtName": "哥倫比亞",
+            "districtCode": 57,
+            "district": "CO"
+        },
+        {
+            "districtName": "葛摩",
+            "districtCode": 269,
+            "district": "KM"
+        },
+        {
+            "districtName": "庫克群島",
+            "districtCode": 682,
+            "district": "CK"
+        },
+        {
+            "districtName": "哥斯大黎加",
+            "districtCode": 506,
+            "district": "CR"
+        },
+        {
+            "districtName": "克羅埃西亞",
+            "districtCode": 385,
+            "district": "HR"
+        },
+        {
+            "districtName": "古巴",
+            "districtCode": 53,
+            "district": "CU"
+        },
+        {
+            "districtName": "庫拉索",
+            "districtCode": 599,
+            "district": "CW"
+        },
+        {
+            "districtName": "賽普勒斯",
+            "districtCode": 357,
+            "district": "CY"
+        },
+        {
+            "districtName": "捷克共和國",
+            "districtCode": 420,
+            "district": "CZ"
+        },
+        {
+            "districtName": "剛果民主共和國",
+            "districtCode": 243,
+            "district": "CD"
+        },
+        {
+            "districtName": "丹麥",
+            "districtCode": 45,
+            "district": "DK"
+        },
+        {
+            "districtName": "吉布地",
+            "districtCode": 253,
+            "district": "DJ"
+        },
+        {
+            "districtName": "多米尼克",
+            "districtCode": 1767,
+            "district": "DM"
+        },
+        {
+            "districtName": "多明尼加共和國",
+            "districtCode": 1809,
+            "district": "DO"
+        },
+        {
+            "districtName": "多明尼加共和國",
+            "districtCode": 1829,
+            "district": "DO"
+        },
+        {
+            "districtName": "多明尼加共和國",
+            "districtCode": 1849,
+            "district": "DO"
+        },
+        {
+            "districtName": "東帝汶",
+            "districtCode": 670,
+            "district": "TL"
+        },
+        {
+            "districtName": "厄瓜多",
+            "districtCode": 593,
+            "district": "EC"
+        },
+        {
+            "districtName": "埃及",
+            "districtCode": 20,
+            "district": "EG"
+        },
+        {
+            "districtName": "薩爾瓦多",
+            "districtCode": 503,
+            "district": "SV"
+        },
+        {
+            "districtName": "赤道幾內亞",
+            "districtCode": 240,
+            "district": "GQ"
+        },
+        {
+            "districtName": "厄利垂亞",
+            "districtCode": 291,
+            "district": "ER"
+        },
+        {
+            "districtName": "愛沙尼亞",
+            "districtCode": 372,
+            "district": "EE"
+        },
+        {
+            "districtName": "衣索比亞",
+            "districtCode": 251,
+            "district": "ET"
+        },
+        {
+            "districtName": "福克蘭群島",
+            "districtCode": 500,
+            "district": "FK"
+        },
+        {
+            "districtName": "法羅群島",
+            "districtCode": 298,
+            "district": "FO"
+        },
+        {
+            "districtName": "斐濟",
+            "districtCode": 679,
+            "district": "FJ"
+        },
+        {
+            "districtName": "芬蘭",
+            "districtCode": 358,
+            "district": "FI"
+        },
+        {
+            "districtName": "法國",
+            "districtCode": 33,
+            "district": "FR"
+        },
+        {
+            "districtName": "法屬玻里尼西亞",
+            "districtCode": 689,
+            "district": "PF"
+        },
+        {
+            "districtName": "加彭",
+            "districtCode": 241,
+            "district": "GA"
+        },
+        {
+            "districtName": "甘比亞",
+            "districtCode": 220,
+            "district": "GM"
+        },
+        {
+            "districtName": "喬治亞",
+            "districtCode": 995,
+            "district": "GE"
+        },
+        {
+            "districtName": "德國",
+            "districtCode": 49,
+            "district": "DE"
+        },
+        {
+            "districtName": "迦納",
+            "districtCode": 233,
+            "district": "GH"
+        },
+        {
+            "districtName": "直布羅陀",
+            "districtCode": 350,
+            "district": "GI"
+        },
+        {
+            "districtName": "希臘",
+            "districtCode": 30,
+            "district": "GR"
+        },
+        {
+            "districtName": "格陵蘭",
+            "districtCode": 299,
+            "district": "GL"
+        },
+        {
+            "districtName": "格瑞那達",
+            "districtCode": 1473,
+            "district": "GD"
+        },
+        {
+            "districtName": "關島",
+            "districtCode": 1671,
+            "district": "GU"
+        },
+        {
+            "districtName": "瓜地馬拉",
+            "districtCode": 502,
+            "district": "GT"
+        },
+        {
+            "districtName": "根西",
+            "districtCode": 441481,
+            "district": "GG"
+        },
+        {
+            "districtName": "幾內亞",
+            "districtCode": 224,
+            "district": "GN"
+        },
+        {
+            "districtName": "幾內亞比索",
+            "districtCode": 245,
+            "district": "GW"
+        },
+        {
+            "districtName": "蓋亞那",
+            "districtCode": 592,
+            "district": "GY"
+        },
+        {
+            "districtName": "海地",
+            "districtCode": 509,
+            "district": "HT"
+        },
+        {
+            "districtName": "宏都拉斯",
+            "districtCode": 504,
+            "district": "HN"
+        },
+        {
+            "districtName": "香港",
+            "districtCode": 852,
+            "district": "HK"
+        },
+        {
+            "districtName": "匈牙利",
+            "districtCode": 36,
+            "district": "HU"
+        },
+        {
+            "districtName": "冰島",
+            "districtCode": 354,
+            "district": "IS"
+        },
+        {
+            "districtName": "印度",
+            "districtCode": 91,
+            "district": "IN"
+        },
+        {
+            "districtName": "印尼",
+            "districtCode": 62,
+            "district": "ID"
+        },
+        {
+            "districtName": "伊朗",
+            "districtCode": 98,
+            "district": "IR"
+        },
+        {
+            "districtName": "伊拉克",
+            "districtCode": 964,
+            "district": "IQ"
+        },
+        {
+            "districtName": "愛爾蘭",
+            "districtCode": 353,
+            "district": "IE"
+        },
+        {
+            "districtName": "曼島",
+            "districtCode": 441624,
+            "district": "IM"
+        },
+        {
+            "districtName": "以色列",
+            "districtCode": 972,
+            "district": "IL"
+        },
+        {
+            "districtName": "義大利",
+            "districtCode": 39,
+            "district": "IT"
+        },
+        {
+            "districtName": "象牙海岸",
+            "districtCode": 225,
+            "district": "CI"
+        },
+        {
+            "districtName": "牙買加",
+            "districtCode": 1876,
+            "district": "JM"
+        },
+        {
+            "districtName": "日本",
+            "districtCode": 81,
+            "district": "JP"
+        },
+        {
+            "districtName": "澤西",
+            "districtCode": 441534,
+            "district": "JE"
+        },
+        {
+            "districtName": "約旦",
+            "districtCode": 962,
+            "district": "JO"
+        },
+        {
+            "districtName": "哈薩克",
+            "districtCode": 7,
+            "district": "KZ"
+        },
+        {
+            "districtName": "肯亞",
+            "districtCode": 254,
+            "district": "KE"
+        },
+        {
+            "districtName": "吉里巴斯",
+            "districtCode": 686,
+            "district": "KI"
+        },
+        {
+            "districtName": "科索沃",
+            "districtCode": 383,
+            "district": "XK"
+        },
+        {
+            "districtName": "科威特",
+            "districtCode": 965,
+            "district": "KW"
+        },
+        {
+            "districtName": "吉爾吉斯",
+            "districtCode": 996,
+            "district": "KG"
+        },
+        {
+            "districtName": "寮國",
+            "districtCode": 856,
+            "district": "LA"
+        },
+        {
+            "districtName": "拉脫維亞",
+            "districtCode": 371,
+            "district": "LV"
+        },
+        {
+            "districtName": "黎巴嫩",
+            "districtCode": 961,
+            "district": "LB"
+        },
+        {
+            "districtName": "賴索托",
+            "districtCode": 266,
+            "district": "LS"
+        },
+        {
+            "districtName": "賴比瑞亞",
+            "districtCode": 231,
+            "district": "LR"
+        },
+        {
+            "districtName": "利比亞",
+            "districtCode": 218,
+            "district": "LY"
+        },
+        {
+            "districtName": "列支敦斯登",
+            "districtCode": 423,
+            "district": "LI"
+        },
+        {
+            "districtName": "立陶宛",
+            "districtCode": 370,
+            "district": "LT"
+        },
+        {
+            "districtName": "盧森堡",
+            "districtCode": 352,
+            "district": "LU"
+        },
+        {
+            "districtName": "澳門",
+            "districtCode": 853,
+            "district": "MO"
+        },
+        {
+            "districtName": "馬其頓",
+            "districtCode": 389,
+            "district": "MK"
+        },
+        {
+            "districtName": "馬達加斯加",
+            "districtCode": 261,
+            "district": "MG"
+        },
+        {
+            "districtName": "馬拉威",
+            "districtCode": 265,
+            "district": "MW"
+        },
+        {
+            "districtName": "馬來西亞",
+            "districtCode": 60,
+            "district": "MY"
+        },
+        {
+            "districtName": "馬爾地夫",
+            "districtCode": 960,
+            "district": "MV"
+        },
+        {
+            "districtName": "馬利",
+            "districtCode": 223,
+            "district": "ML"
+        },
+        {
+            "districtName": "馬爾他",
+            "districtCode": 356,
+            "district": "MT"
+        },
+        {
+            "districtName": "馬紹爾群島",
+            "districtCode": 692,
+            "district": "MH"
+        },
+        {
+            "districtName": "茅利塔尼亞",
+            "districtCode": 222,
+            "district": "MR"
+        },
+        {
+            "districtName": "模里西斯",
+            "districtCode": 230,
+            "district": "MU"
+        },
+        {
+            "districtName": "馬約特",
+            "districtCode": 262,
+            "district": "YT"
+        },
+        {
+            "districtName": "墨西哥",
+            "districtCode": 52,
+            "district": "MX"
+        },
+        {
+            "districtName": "密克羅尼西亞",
+            "districtCode": 691,
+            "district": "FM"
+        },
+        {
+            "districtName": "摩爾多瓦",
+            "districtCode": 373,
+            "district": "MD"
+        },
+        {
+            "districtName": "摩納哥",
+            "districtCode": 377,
+            "district": "MC"
+        },
+        {
+            "districtName": "蒙古",
+            "districtCode": 976,
+            "district": "MN"
+        },
+        {
+            "districtName": "蒙特內哥羅",
+            "districtCode": 382,
+            "district": "ME"
+        },
+        {
+            "districtName": "蒙哲臘",
+            "districtCode": 1664,
+            "district": "MS"
+        },
+        {
+            "districtName": "摩洛哥",
+            "districtCode": 212,
+            "district": "MA"
+        },
+        {
+            "districtName": "莫三比克",
+            "districtCode": 258,
+            "district": "MZ"
+        },
+        {
+            "districtName": "緬甸",
+            "districtCode": 95,
+            "district": "MM"
+        },
+        {
+            "districtName": "納米比亞",
+            "districtCode": 264,
+            "district": "NA"
+        },
+        {
+            "districtName": "諾魯",
+            "districtCode": 674,
+            "district": "NR"
+        },
+        {
+            "districtName": "尼泊爾",
+            "districtCode": 977,
+            "district": "NP"
+        },
+        {
+            "districtName": "荷蘭",
+            "districtCode": 31,
+            "district": "NL"
+        },
+        {
+            "districtName": "荷屬安地列斯",
+            "districtCode": 599,
+            "district": "AN"
+        },
+        {
+            "districtName": "新喀里多尼亞",
+            "districtCode": 687,
+            "district": "NC"
+        },
+        {
+            "districtName": "紐西蘭",
+            "districtCode": 64,
+            "district": "NZ"
+        },
+        {
+            "districtName": "尼加拉瓜",
+            "districtCode": 505,
+            "district": "NI"
+        },
+        {
+            "districtName": "尼日",
+            "districtCode": 227,
+            "district": "NE"
+        },
+        {
+            "districtName": "奈及利亞",
+            "districtCode": 234,
+            "district": "NG"
+        },
+        {
+            "districtName": "紐埃",
+            "districtCode": 683,
+            "district": "NU"
+        },
+        {
+            "districtName": "北韓",
+            "districtCode": 850,
+            "district": "KP"
+        },
+        {
+            "districtName": "北馬利安納群島",
+            "districtCode": 1670,
+            "district": "MP"
+        },
+        {
+            "districtName": "挪威",
+            "districtCode": 47,
+            "district": "NO"
+        },
+        {
+            "districtName": "阿曼",
+            "districtCode": 968,
+            "district": "OM"
+        },
+        {
+            "districtName": "巴基斯坦",
+            "districtCode": 92,
+            "district": "PK"
+        },
+        {
+            "districtName": "帛琉",
+            "districtCode": 680,
+            "district": "PW"
+        },
+        {
+            "districtName": "巴勒斯坦",
+            "districtCode": 970,
+            "district": "PS"
+        },
+        {
+            "districtName": "巴拿馬",
+            "districtCode": 507,
+            "district": "PA"
+        },
+        {
+            "districtName": "巴布亞紐幾內亞",
+            "districtCode": 675,
+            "district": "PG"
+        },
+        {
+            "districtName": "巴拉圭",
+            "districtCode": 595,
+            "district": "PY"
+        },
+        {
+            "districtName": "秘魯",
+            "districtCode": 51,
+            "district": "PE"
+        },
+        {
+            "districtName": "菲律賓",
+            "districtCode": 63,
+            "district": "PH"
+        },
+        {
+            "districtName": "皮特肯群島",
+            "districtCode": 64,
+            "district": "PN"
+        },
+        {
+            "districtName": "波蘭",
+            "districtCode": 48,
+            "district": "PL"
+        },
+        {
+            "districtName": "葡萄牙",
+            "districtCode": 351,
+            "district": "PT"
+        },
+        {
+            "districtName": "波多黎各",
+            "districtCode": 1787,
+            "district": "PR"
+        },
+        {
+            "districtName": "波多黎各",
+            "districtCode": 1939,
+            "district": "PR"
+        },
+        {
+            "districtName": "卡達",
+            "districtCode": 974,
+            "district": "QA"
+        },
+        {
+            "districtName": "剛果共和國",
+            "districtCode": 242,
+            "district": "CG"
+        },
+        {
+            "districtName": "留尼旺",
+            "districtCode": 262,
+            "district": "RE"
+        },
+        {
+            "districtName": "羅馬尼亞",
+            "districtCode": 40,
+            "district": "RO"
+        },
+        {
+            "districtName": "俄羅斯",
+            "districtCode": 7,
+            "district": "RU"
+        },
+        {
+            "districtName": "盧安達",
+            "districtCode": 250,
+            "district": "RW"
+        },
+        {
+            "districtName": "聖巴瑟米",
+            "districtCode": 590,
+            "district": "BL"
+        },
+        {
+            "districtName": "聖赫勒拿",
+            "districtCode": 290,
+            "district": "SH"
+        },
+        {
+            "districtName": "聖克里斯多福及尼維斯",
+            "districtCode": 1869,
+            "district": "KN"
+        },
+        {
+            "districtName": "聖露西亞",
+            "districtCode": 1758,
+            "district": "LC"
+        },
+        {
+            "districtName": "法屬聖馬丁",
+            "districtCode": 590,
+            "district": "MF"
+        },
+        {
+            "districtName": "聖皮埃與密克隆群島",
+            "districtCode": 508,
+            "district": "PM"
+        },
+        {
+            "districtName": "聖文森及格瑞那丁",
+            "districtCode": 1784,
+            "district": "VC"
+        },
+        {
+            "districtName": "薩摩亞",
+            "districtCode": 685,
+            "district": "WS"
+        },
+        {
+            "districtName": "聖馬利諾",
+            "districtCode": 378,
+            "district": "SM"
+        },
+        {
+            "districtName": "聖多美普林西比",
+            "districtCode": 239,
+            "district": "ST"
+        },
+        {
+            "districtName": "沙烏地阿拉伯",
+            "districtCode": 966,
+            "district": "SA"
+        },
+        {
+            "districtName": "塞內加爾",
+            "districtCode": 221,
+            "district": "SN"
+        },
+        {
+            "districtName": "塞爾維亞",
+            "districtCode": 381,
+            "district": "RS"
+        },
+        {
+            "districtName": "塞席爾",
+            "districtCode": 248,
+            "district": "SC"
+        },
+        {
+            "districtName": "獅子山",
+            "districtCode": 232,
+            "district": "SL"
+        },
+        {
+            "districtName": "新加坡",
+            "districtCode": 65,
+            "district": "SG"
+        },
+        {
+            "districtName": "荷屬聖馬丁",
+            "districtCode": 1721,
+            "district": "SX"
+        },
+        {
+            "districtName": "斯洛伐克",
+            "districtCode": 421,
+            "district": "SK"
+        },
+        {
+            "districtName": "斯洛維尼亞",
+            "districtCode": 386,
+            "district": "SI"
+        },
+        {
+            "districtName": "索羅門群島",
+            "districtCode": 677,
+            "district": "SB"
+        },
+        {
+            "districtName": "索馬利亞",
+            "districtCode": 252,
+            "district": "SO"
+        },
+        {
+            "districtName": "南非",
+            "districtCode": 27,
+            "district": "ZA"
+        },
+        {
+            "districtName": "南韓",
+            "districtCode": 82,
+            "district": "KR"
+        },
+        {
+            "districtName": "南蘇丹",
+            "districtCode": 211,
+            "district": "SS"
+        },
+        {
+            "districtName": "西班牙",
+            "districtCode": 34,
+            "district": "ES"
+        },
+        {
+            "districtName": "斯里蘭卡",
+            "districtCode": 94,
+            "district": "LK"
+        },
+        {
+            "districtName": "蘇丹",
+            "districtCode": 249,
+            "district": "SD"
+        },
+        {
+            "districtName": "蘇利南",
+            "districtCode": 597,
+            "district": "SR"
+        },
+        {
+            "districtName": "斯瓦巴和揚馬延",
+            "districtCode": 47,
+            "district": "SJ"
+        },
+        {
+            "districtName": "史瓦帝尼",
+            "districtCode": 268,
+            "district": "SZ"
+        },
+        {
+            "districtName": "瑞典",
+            "districtCode": 46,
+            "district": "SE"
+        },
+        {
+            "districtName": "瑞士",
+            "districtCode": 41,
+            "district": "CH"
+        },
+        {
+            "districtName": "敘利亞",
+            "districtCode": 963,
+            "district": "SY"
+        },
+        {
+            "districtName": "臺灣",
+            "districtCode": 886,
+            "district": "TW"
+        },
+        {
+            "districtName": "塔吉克",
+            "districtCode": 992,
+            "district": "TJ"
+        },
+        {
+            "districtName": "坦尚尼亞",
+            "districtCode": 255,
+            "district": "TZ"
+        },
+        {
+            "districtName": "泰國",
+            "districtCode": 66,
+            "district": "TH"
+        },
+        {
+            "districtName": "多哥",
+            "districtCode": 228,
+            "district": "TG"
+        },
+        {
+            "districtName": "托克勞",
+            "districtCode": 690,
+            "district": "TK"
+        },
+        {
+            "districtName": "東加",
+            "districtCode": 676,
+            "district": "TO"
+        },
+        {
+            "districtName": "千里達及托巴哥",
+            "districtCode": 1868,
+            "district": "TT"
+        },
+        {
+            "districtName": "突尼西亞",
+            "districtCode": 216,
+            "district": "TN"
+        },
+        {
+            "districtName": "土耳其",
+            "districtCode": 90,
+            "district": "TR"
+        },
+        {
+            "districtName": "土庫曼",
+            "districtCode": 993,
+            "district": "TM"
+        },
+        {
+            "districtName": "特克斯與凱科斯群島",
+            "districtCode": 1649,
+            "district": "TC"
+        },
+        {
+            "districtName": "吐瓦魯",
+            "districtCode": 688,
+            "district": "TV"
+        },
+        {
+            "districtName": "美屬維京群島",
+            "districtCode": 1340,
+            "district": "VI"
+        },
+        {
+            "districtName": "烏干達",
+            "districtCode": 256,
+            "district": "UG"
+        },
+        {
+            "districtName": "烏克蘭",
+            "districtCode": 380,
+            "district": "UA"
+        },
+        {
+            "districtName": "阿拉伯聯合大公國",
+            "districtCode": 971,
+            "district": "AE"
+        },
+        {
+            "districtName": "英國",
+            "districtCode": 44,
+            "district": "GB"
+        },
+        {
+            "districtName": "美國",
+            "districtCode": 1,
+            "district": "US"
+        },
+        {
+            "districtName": "烏拉圭",
+            "districtCode": 598,
+            "district": "UY"
+        },
+        {
+            "districtName": "烏茲別克",
+            "districtCode": 998,
+            "district": "UZ"
+        },
+        {
+            "districtName": "萬那杜",
+            "districtCode": 678,
+            "district": "VU"
+        },
+        {
+            "districtName": "梵蒂岡",
+            "districtCode": 379,
+            "district": "VA"
+        },
+        {
+            "districtName": "委內瑞拉",
+            "districtCode": 58,
+            "district": "VE"
+        },
+        {
+            "districtName": "越南",
+            "districtCode": 84,
+            "district": "VN"
+        },
+        {
+            "districtName": "瓦利斯和富圖那",
+            "districtCode": 681,
+            "district": "WF"
+        },
+        {
+            "districtName": "西撒哈拉",
+            "districtCode": 212,
+            "district": "EH"
+        },
+        {
+            "districtName": "葉門",
+            "districtCode": 967,
+            "district": "YE"
+        },
+        {
+            "districtName": "尚比亞",
+            "districtCode": 260,
+            "district": "ZM"
+        },
+        {
+            "districtName": "辛巴威",
+            "districtCode": 263,
+            "district": "ZW"
+        }
+    ]
+}

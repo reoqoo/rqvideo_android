@@ -3,7 +3,7 @@
 
     <application>
         <receiver
-            android:name="com.gw.house_watch.receivers.NetworkStatusReceiver"
+            android:name="com.gw_reoqoo.house_watch.receivers.NetworkStatusReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />

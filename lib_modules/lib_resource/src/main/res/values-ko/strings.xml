@@ -35,7 +35,7 @@
     <string name="AA0043">My</string>
     <string name="AA0044">이용 약관</string>
     <string name="AA0045">이용 약관과 개인정보 취급방침 개요</string>
-    <string name="AA0046">ipTIME 사용을 환영합니다. ipTIME 는 ipTIME IoT XXXXXXXX., Ltd.에서 연구개발과 운영하는 온라인 동영상 플랫폼입니다. 당사는 &lt;개인정보 취급방침&gt;과 &lt;서비스 이용 약관&gt;을 통하여 개인정보 수집, 사용, 저장과 공유하는 상황 또는 가지고 계신 권리에 관련된 내용의 이해에 도와 드립니다. \n 온라인 생방송, 동영상 재생, 주문 즐겨찾기, 소셜 채팅 등 서비스를 제공하기 위하여 동영상 녹화, 동영상 및 이미지, 장치의 메세지,  로그 등의 개인정보에 대한 수집이 필요합니다. \n 귀하님께서 개인 정보 홈페이지에서 개인정보 접근, 변경, 삭제 및 권한 관리를 할 수 있습니다. \n 당사가 업계에서 최고의 안전기술로 귀하의 개인정보 안전을 지켜 드리겠습니다.  \n 귀하는 풀버전%1$s 및 %2$s를 통하여 세부 정보를 확인할 수 있습니다. \n 상기 내용에 동의하시면 \"동의\"를 클릭해 주십시오.</string>
+    <string name="AA0046">ipTIME 사용을 환영합니다. ipTIME 는 ipTIME IoT Technology Co., Ltd.에서 연구개발과 운영하는 온라인 동영상 플랫폼입니다. 당사는 &lt;개인정보 취급방침&gt;과 &lt;서비스 이용 약관&gt;을 통하여 개인정보 수집, 사용, 저장과 공유하는 상황 또는 가지고 계신 권리에 관련된 내용의 이해에 도와 드립니다. \n 온라인 생방송, 동영상 재생, 주문 즐겨찾기, 소셜 채팅 등 서비스를 제공하기 위하여 동영상 녹화, 동영상 및 이미지, 장치의 메세지,  로그 등의 개인정보에 대한 수집이 필요합니다. \n 귀하님께서 개인 정보 홈페이지에서 개인정보 접근, 변경, 삭제 및 권한 관리를 할 수 있습니다. \n 당사가 업계에서 최고의 안전기술로 귀하의 개인정보 안전을 지켜 드리겠습니다.  \n 귀하는 풀버전%1$s 및 %2$s를 통하여 세부 정보를 확인할 수 있습니다. \n 상기 내용에 동의하시면 \"동의\"를 클릭해 주십시오.</string>
     <string name="AA0047">%s의 집</string>
     <string name="AA0049">카메라 추가</string>
     <string name="AA0050">장치 공유</string>
@@ -58,14 +58,23 @@
     <string name="AA0069">ipTIME의 위치 사용을 허용하시겠습니까?</string>
     <string name="AA0070">카메라 추가 시, 와이파이 정보를 얻기 위해 위치 권한이 필요합니다. 위치 권한을 활성화하세요</string>
     <string name="AA0071">위치 추적 권한이 없습니다. 설정에서 활성화하세요</string>
+    <string name="AA0072">ipTIME의 앨범 접근을 허용하시겠습니까?</string>
+    <string name="AA0073">사진을 열거나 전송하기 위해 앨범 접근이 필요합니다. 해당 권한을 활성화하세요</string>
+    <string name="AA0074">ipTIME의 블루투스 접근을 허용하시겠습니까?</string>
+    <string name="AA0075">카메라 추가 시, 와이파이 연결을 위해 블루투스 권한이 필요합니다. 해당 권한을 허용하시겠습니까?</string>
     <string name="AA0076">블루투스 권한이 없습니다. 설정에서 활성화하세요</string>
     <string name="AA0078">카메라 연결</string>
     <string name="AA0079">카메라 스캔 중...</string>
     <string name="AA0080">카메라 연결 중...</string>
     <string name="AA0081">카메라 등록 중...</string>
     <string name="AA0082">핸드폰과 카메라를 가깝게 놓아둔 상태인지 확인해 주세요</string>
+    <string name="AA0084">재시도 전에 아래 사항을 확인합니다.</string>
+    <string name="AA0085">1. 리셋 버튼을 길게 눌러 카메라를 초기화합니다</string>
+    <string name="AA0086">2. 공유기의 무선 네트워크 이름를 확인합니다</string>
+    <string name="AA0087">3. 공유기의 무선 네트워크 암호를 확인합니다</string>
     <string name="AA0088">다시 시도</string>
     <string name="AA0089">추가 성공</string>
+    <string name="AA0090">빠른 이름 변경</string>
     <string name="AA0099">기타</string>
     <string name="AA0100">카메라 QR 코드를 앨범에 저장하기</string>
     <string name="AA0101">사용 시작</string>
@@ -103,6 +112,7 @@
     <string name="AA0149">ipTIME 계정을 입력하세요</string>
     <string name="AA0150">최근 공유</string>
     <string name="AA0151">직접 공유</string>
+    <string name="AA0152">공유</string>
     <string name="AA0153">계정 오류.  다시 입력하세요.</string>
     <string name="AA0154">카메라를 %s에게 공유하시겠습니까?</string>
     <string name="AA0155">이미 공유한 친구입니다</string>
@@ -166,7 +176,8 @@
     <string name="AA0223">도움과 피드백</string>
     <string name="AA0224">ipTIME 정보</string>
     <string name="AA0225">정보 센터</string>
-    <string name="AA0227">최신 정보를 받을 수 있도록 ipTIME앱에 권한을 허용해 주세</string>
+    <string name="AA0226">설정 성공</string>
+    <string name="AA0227">최신 정보를 받을 수 있도록 %s앱에 권한을 허용해 주세</string>
     <string name="AA0228">메시지가 없습니다</string>
     <string name="AA0230">선택</string>
     <string name="AA0232">공유</string>
@@ -177,6 +188,7 @@
     <string name="AA0245">카드 녹화</string>
     <string name="AA0246">클라우드 서비스 녹화</string>
     <string name="AA0247">클라우드 서비스</string>
+    <string name="AA0248">기타 문제</string>
     <string name="AA0249">장치 구분</string>
     <string name="AA0250">카메라를 선택하세요</string>
     <string name="AA0251">문제 및 피드백</string>
@@ -428,6 +440,9 @@
     <string name="AA0559">유효하지 않은 QR 코드</string>
     <string name="AA0560">QR코드가 만료되었습니다</string>
     <string name="AA0561">카메라를 삭제하시겠습니까?</string>
+    <string name="AA0562">정확한 이메일 주소를 입력하세요</string>
+    <string name="AA0563">현재 계정과 카메라와의 연결이 해제되었습니다</string>
+    <string name="AA0564">휴대폰 번호 / 이메일 형식 오류</string>
     <string name="AA0565">공유가 만료되었습니다</string>
     <string name="AA0566">대상 계정 사용 불가</string>
     <string name="AA0567">대상 계정이 존재하지 않습니다</string>
@@ -497,4 +512,16 @@
     <string name="AA0654">내 쿠폰</string>
     <string name="AA0656">오프라인, 업그레이드 불가</string>
     <string name="AA0657">시스템 예외</string>
+    <string name="AA0658">전체 선택 취소</string>
+    <string name="AA0659">현재 버전은 이 장치를 직접 바인딩할 수 없습니다. \"ipTIME Cloud\" 앱을 다운로드하여 추가하고 사용하십시오.</string>
+    <string name="AA0660">다운로드</string>
+    <string name="AA0661">친절한 알림</string>
+    <string name="AA0662">다음 장치는 현재 앱에서 사용할 수 없습니다</string>
+    <string name="AA0663">계속 사용하려면 \"ipTIME Cloud\" 앱을 다운로드하십시오</string>
+    <string name="AA0664">다시 알리지 않음</string>
+    <string name="AA0665">정보</string>
+    <string name="AA0669">계정을 입력하세요</string>
+    <string name="AA0682">동의하지 않고 앱 종료</string>
+    <string name="AA0689">다음 작업을 시도한 후 다시 시도하십시오:\n1. 재설정 버튼을 길게 눌러 기기를 재설정하십시오;\n2. 기기가 전원에 연결되어 있는지 확인하십시오;\n3. 기기 안테나가 헐렁한지 확인하십시오;\n4. 현재 4G 신호 통신이 정상인지 확인하십시오.</string>
+    <string name="AA0690">카메라가 너무 낮 으면 전기 상태로 업그레이드하십시오 ~</string>
 </resources>

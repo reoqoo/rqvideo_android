@@ -3,8 +3,9 @@ package com.gw.cp_config.data.repository
 import android.content.Context
 import com.gw.cp_config.data.datasource.LocalConfigDataSource
 import com.gw.cp_config.data.datasource.RemoteConfigDataSource
-import com.gw.lib_http.RespResult
-import com.gw.lib_http.entities.AppConfigEntity
+import com.gw_reoqoo.lib_http.RespResult
+import com.gw_reoqoo.lib_http.entities.AppConfigEntity
+import com.tencentcs.iotvideo.http.interceptor.flow.HttpAction
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -31,6 +32,10 @@ class ConfigRepository @Inject constructor(
      */
     suspend fun getGlobalConfig(isLogin: Boolean): RespResult<AppConfigEntity> = remoteDataSource.getAppConfig(isLogin)
 
+    suspend fun getAppConfigAction(isLogin: Boolean): HttpAction<AppConfigEntity> {
+        return remoteDataSource.getAppConfigAction(isLogin)
+    }
+
     /**
      * 下载配置文件
      *
@@ -56,7 +61,7 @@ class ConfigRepository @Inject constructor(
      *
      * @return String?
      */
-    fun getConfigFilePath(): String? = localDataSource.pidConfigPath
+    fun getConfigFilePath(): String = localDataSource.pidConfigPath
 
     /**
      * 通过Pid获取对应的产品信息

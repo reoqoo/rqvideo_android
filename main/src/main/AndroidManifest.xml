@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="LockedOrientationActivity">
+
+    <application>
+        
+        <activity
+            android:name="com.gw.reoqoo.ui.main.MainActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomDarkModeTheme" />
+
+        <activity
+            android:name="com.sensorsdata.analytics.android.sdk.dialog.SchemeActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="debugmode"
+                    android:scheme="sad996b0dc" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${fileProviderAuthority}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <provider
+            android:name="com.sensorsdata.analytics.android.sdk.data.SensorsDataContentProvider"
+            android:authorities="${fileProviderAuthority}.SensorsDataContentProvider"
+            android:enabled="true"
+            android:exported="true"
+            tools:replace="android:exported,android:authorities" />
+
+        <!-- 如果您项目中的所有页面都只需要以高或宽中的一个作为基准进行适配的话, 那就只需要填写高或宽中的一个设计图尺寸即可 -->
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="375" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="780" />
+    </application>
+
+</manifest>

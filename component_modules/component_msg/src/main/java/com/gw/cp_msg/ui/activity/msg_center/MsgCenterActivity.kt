@@ -8,21 +8,24 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.gw.component_webview.api.interfaces.IWebViewApi
 import com.gw.cp_msg.R
 import com.gw.cp_msg.databinding.MsgActivityMsgCenterBinding
+import com.gw.cp_msg.manger.BenefitsMgrImpl
 import com.gw.cp_msg.ui.activity.msg_center.vm.MsgCenterVM
+import com.gw.cp_msg.ui.fragment.event_benefits.EventBenefitsFragment
 import com.gw.cp_msg.ui.fragment.system_msg.SystemMsgFragment
-import com.gw.lib_base_architecture.view.ABaseMVVMDBActivity
-import com.gw.lib_router.ReoqooRouterPath
-import com.gw.reoqoosdk.paid_service.IPaidService
-import com.gw.widget_webview.jsinterface.WebViewJSCallbackImpl
+import com.gw_reoqoo.lib_base_architecture.view.ABaseMVVMDBActivity
+import com.gw_reoqoo.lib_router.ReoqooRouterPath
+import com.gw_reoqoo.lib_utils.ktx.visible
 import com.gwell.loglibs.GwellLogUtils
 import com.jwkj.base_utils.activity_utils.ActivityUtils
 import com.jwkj.base_utils.ui.DensityUtil
+import com.gw_reoqoo.widget_webview.jsinterface.WebViewJSCallbackImpl
 import com.therouter.router.Route
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import com.gw.resource.R as RR
+import com.gw_reoqoo.resource.R as RR
 
 /**
  * Author: yanzheng@gwell.cc
@@ -55,12 +58,20 @@ class MsgCenterActivity : ABaseMVVMDBActivity<MsgActivityMsgCenterBinding, MsgCe
     private var systemMsgFragment: SystemMsgFragment? = null
 
     /**
+     * 活动福利
+     */
+    private var eventBenefitsFragment: EventBenefitsFragment? = null
+
+    /**
      * 展示哪种消息
      */
     private var showMsgType = SHOW_SYSTEM_MSG_TYPE
 
     @Inject
-    lateinit var iCloudService: IPaidService
+    lateinit var webViewApi: IWebViewApi
+
+    @Inject
+    lateinit var benefitsMgrImpl: BenefitsMgrImpl
 
     override fun initView() {
         mViewBinding.layoutTitle.run {
@@ -73,6 +84,10 @@ class MsgCenterActivity : ABaseMVVMDBActivity<MsgActivityMsgCenterBinding, MsgCe
         if (systemMsgFragment == null) {
             systemMsgFragment = SystemMsgFragment.newInstance()
             systemMsgFragment?.let { childFragments.add(it) }
+        }
+        if (eventBenefitsFragment == null) {
+            eventBenefitsFragment = EventBenefitsFragment.newInstance()
+            eventBenefitsFragment?.let { childFragments.add(it) }
         }
 
         // 设置adapter
@@ -114,7 +129,7 @@ class MsgCenterActivity : ABaseMVVMDBActivity<MsgActivityMsgCenterBinding, MsgCe
         viewModel.mainNoticeEntityList.observe(this) {
             val notice = it[0]
             if (ActivityUtils.isActivityUsable(this@MsgCenterActivity)) {
-                iCloudService.openWebViewDialog(
+                webViewApi.showWebViewDialog(
                     activity = this@MsgCenterActivity,
                     width = DensityUtil.getScreenWidth(this),
                     height = DensityUtil.getScreenHeight(this),
@@ -132,7 +147,7 @@ class MsgCenterActivity : ABaseMVVMDBActivity<MsgActivityMsgCenterBinding, MsgCe
                                 GwellLogUtils.e(TAG, "openWebView: url is null or empty")
                                 return
                             }
-                            iCloudService.openWebView(
+                            webViewApi.openWebView(
                                 url = url,
                                 title = "",
                                 deviceId = notice.deviceId
@@ -141,6 +156,10 @@ class MsgCenterActivity : ABaseMVVMDBActivity<MsgActivityMsgCenterBinding, MsgCe
                     }
                 )
             }
+        }
+
+        benefitsMgrImpl.getUnReadBenefitsCount().observe(this) {
+            mViewBinding.tvActiveMsgCount.visible(it > 0)
         }
     }
 
@@ -152,27 +171,28 @@ class MsgCenterActivity : ABaseMVVMDBActivity<MsgActivityMsgCenterBinding, MsgCe
         if (showSystemMsg) {
             mViewBinding.tvSysMsg.setTextColor(resources.getColor(RR.color.black_90))
             mViewBinding.tvSysMsg.setTextSize(
-                TypedValue.COMPLEX_UNIT_PX, resources.getDimension(RR.dimen.sp_18)
+                TypedValue.COMPLEX_UNIT_PX, resources.getDimension(RR.dimen.sp_20)
             )
             mViewBinding.viewSystemLine.visibility = View.VISIBLE
             mViewBinding.tvActiveMsg.setTextColor(resources.getColor(RR.color.black_60))
             mViewBinding.tvActiveMsg.setTextSize(
-                TypedValue.COMPLEX_UNIT_PX, resources.getDimension(RR.dimen.sp_14)
+                TypedValue.COMPLEX_UNIT_PX, resources.getDimension(RR.dimen.sp_16)
             )
             mViewBinding.tvActiveMsg.typeface = Typeface.DEFAULT
             mViewBinding.viewActiveLine.visibility = View.GONE
         } else {
             mViewBinding.tvActiveMsg.setTextColor(resources.getColor(RR.color.black_90))
             mViewBinding.tvActiveMsg.setTextSize(
-                TypedValue.COMPLEX_UNIT_PX, resources.getDimension(RR.dimen.sp_18)
+                TypedValue.COMPLEX_UNIT_PX, resources.getDimension(RR.dimen.sp_20)
             )
             mViewBinding.viewActiveLine.visibility = View.VISIBLE
             mViewBinding.tvSysMsg.setTextColor(resources.getColor(RR.color.black_60))
             mViewBinding.tvSysMsg.setTextSize(
-                TypedValue.COMPLEX_UNIT_PX, resources.getDimension(RR.dimen.sp_14)
+                TypedValue.COMPLEX_UNIT_PX, resources.getDimension(RR.dimen.sp_16)
             )
             mViewBinding.tvSysMsg.typeface = Typeface.DEFAULT
             mViewBinding.viewSystemLine.visibility = View.GONE
+            benefitsMgrImpl.setBenefitsStatusRead()
         }
     }
 

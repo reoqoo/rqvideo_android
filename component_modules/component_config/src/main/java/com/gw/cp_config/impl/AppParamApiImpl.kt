@@ -2,44 +2,66 @@ package com.gw.cp_config.impl
 
 import com.gw.cp_config.api.IAppParamApi
 import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * Author: yanzheng@gwell.cc
  * Time: 2023/9/26 15:37
  * Description: AppParamApiImpl
  */
+@Singleton
 class AppParamApiImpl @Inject constructor() : IAppParamApi {
 
-    companion object {
+    /**
+     * appID 值
+     */
+    private var APP_ID = ""
 
-        /**
-         * appID 值
-         */
-        private const val APP_ID = "244d1828c953492dacb0ca5201f54221"
+    /**
+     * appToken 值
+     */
+    private var APP_TOKEN = ""
 
-        /**
-         * appToken 值
-         */
-        private const val APP_TOKEN =
-            "0bedfb9f0f8404683a58ff636b7b8c8f0c5e809d72ab9cdc1ed5a64782b9a315"
+    /**
+     * appName 值（这个名称是协议的参数，与app的名称是两个不同的数据）
+     */
+    private var APP_NAME = ""
 
-        /**
-         * appName 值（这个名称是协议的参数，与app的名称是两个不同的数据）
-         */
-        private const val APP_NAME = "ipTIME CCTV_android"
+    /**
+     * 客户ID
+     */
+    private var APP_CID = ""
 
-    }
 
     override fun getAppID(): String {
         return APP_ID
+    }
+
+    override fun setAppID(appId: String) {
+        APP_ID = appId
     }
 
     override fun getAppToken(): String {
         return APP_TOKEN
     }
 
+    override fun setAppToken(appToken: String) {
+        APP_TOKEN = appToken
+    }
+
     override fun getAppName(): String {
         return APP_NAME
     }
 
+    override fun setAppName(appName: String) {
+        APP_NAME = appName
+    }
+
+    override fun getCid(): String {
+        return APP_CID
+    }
+
+    override fun setCid(cid: String) {
+        APP_CID = cid
+    }
 }

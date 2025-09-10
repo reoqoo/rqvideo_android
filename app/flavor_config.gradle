@@ -1,0 +1,207 @@
+project.ext {
+    flavorConfigs = [
+            google    : new FlavorConfig(
+                    APPLICATION_ID: "com.cctv.iptime",
+                    APP_NAME_PREFIX: "ipTIME_V",
+                    VERSION_CODE: 1824,
+                    VERSION_NAME: "01.01.00",
+                    appId: "244d1828c953492dacb0ca5201f54221",
+                    appToken: "0bedfb9f0f8404683a58ff636b7b8c8f0c5e809d72ab9cdc1ed5a64782b9a315",
+                    appName: "ipTIME CCTV_android",
+                    appCid: "01.08",
+                    websiteHostBaseUrl: "https://openapi.dophigo.com/",
+                    websitePluginHostUrl: "https://openapi-plugin.dophigo.com/",
+                    websiteH5HostUrl: "https://trade.dophigo.com/",
+                    websiteIOTUrl: "|list.iotvideo.cloudlinks.cn",
+                    qrCodeDomain: "dophigo.com",
+                    aboutUpdateVersion: "https://reoqoo.com/d/",
+                    isGoogle: true,
+                    websiteHostBaseTestUrl: "https://openapi-test.reoqoo.com/",
+                    websitePluginHostTestUrl: "https://openapi-test-plugin.reoqoo.com/",
+                    websiteH5HostTestUrl: "https://trade-test.reoqoo.com/",
+                    yooseeShareTypes: [YooseeShareType.QRCODE, YooseeShareType.PHONE],
+                    defaultLanguage: Language.EN
+            ),
+            iptime       : new FlavorConfig(
+                    APPLICATION_ID: "com.cctv.iptime",
+                    APP_NAME_PREFIX: "ipTIME_V",
+                    VERSION_CODE: 1824,
+                    VERSION_NAME: "01.01.00",
+                    appId: "244d1828c953492dacb0ca5201f54221",
+                    appToken: "0bedfb9f0f8404683a58ff636b7b8c8f0c5e809d72ab9cdc1ed5a64782b9a315",
+                    appName: "ipTIME CCTV_android",
+                    appCid: "01.08",
+                    websiteHostBaseUrl: "https://openapi.dophigo.com/",
+                    websitePluginHostUrl: "https://openapi-plugin.dophigo.com/",
+                    websiteH5HostUrl: "https://trade.dophigo.com/",
+                    websiteIOTUrl: "|list.iotvideo.cloudlinks.cn",
+                    qrCodeDomain: "dophigo.com",
+                    aboutUpdateVersion: "https://reoqoo.com/d/",
+                    isGoogle: true,
+                    websiteHostBaseTestUrl: "https://openapi-test.reoqoo.com/",
+                    websitePluginHostTestUrl: "https://openapi-test-plugin.reoqoo.com/",
+                    websiteH5HostTestUrl: "https://trade-test.reoqoo.com/",
+                    yooseeShareTypes: [YooseeShareType.QRCODE, YooseeShareType.PHONE],
+                    defaultLanguage: Language.KO
+            )
+    ]
+}
+
+// 打印到终端
+println "----------------------------------------------------------------"
+println "app模块 的 配置:"
+println " flavorConfigs = " + project.ext.flavorConfigs
+println "----------------------------------------------------------------"
+
+/**
+ * 每个渠道不同的配置
+ */
+class FlavorConfig {
+    /**
+     * 包名(APPLICATION_ID)
+     */
+    String APPLICATION_ID = ""
+    /**
+     * 包名前缀
+     */
+    String APP_NAME_PREFIX = ""
+    /**
+     * 版本号.
+     */
+    int VERSION_CODE = 0
+    /**
+     * 版本名
+     */
+    String VERSION_NAME = ""
+    /**
+     * APP_ID
+     */
+    String appId = ""
+    /**
+     * APP_TOKEN
+     */
+    String appToken = ""
+    /**
+     * APP_NAME
+     */
+    String appName = ""
+    /**
+     * APP_CID
+     */
+    String appCid = ""
+    /**
+     * BaseUrl
+     */
+    String websiteHostBaseUrl = ""
+    /**
+     * PluginUrl
+     */
+    String websitePluginHostUrl = ""
+    /**
+     * H5Url
+     */
+    String websiteH5HostUrl = ""
+    /**
+     * IOT的URL
+     */
+    String websiteIOTUrl = ""
+    /**
+     * 生成二维码的域名
+     */
+    String qrCodeDomain = ""
+    /**
+     * 关于我们--版本更新地址
+     */
+    String aboutUpdateVersion = ""
+    /**
+     * 是否是Google包
+     */
+    boolean isGoogle = false
+
+    /**
+     * Debug环境下的BaseUrl
+     */
+    String websiteHostBaseTestUrl = ""
+    /**
+     * Debug环境下的PluginUrl
+     */
+    String websitePluginHostTestUrl = ""
+    /**
+     * Debug环境下的H5Url
+     */
+    String websiteH5HostTestUrl = ""
+
+    /**
+     *  yoosee设备支持的分享类型
+     */
+    YooseeShareType[] yooseeShareTypes
+
+    /**
+     * app默认语言和国家
+     */
+    Language defaultLanguage
+
+    void applyToApplication(flavor) {
+        println("applyToApplication.flavor=" + flavor)
+        flavor.applicationId(APPLICATION_ID)
+        flavor.versionCode(VERSION_CODE)
+        flavor.versionName(VERSION_NAME)
+
+        flavor.ext.isGoogle = isGoogle
+
+        flavor.buildConfigField("Boolean", "IS_GOOGLE", "${isGoogle}")
+        flavor.buildConfigField("String", "APP_ID", "\"${appId}\"")
+        flavor.buildConfigField("String", "APP_TOKEN", "\"${appToken}\"")
+        flavor.buildConfigField("String", "APP_NAME", "\"${appName}\"")
+        flavor.buildConfigField("String", "APP_CID", "\"${appCid}\"")
+
+        flavor.buildConfigField("String", "WEBSITE_HOST_BASE_URL", "\"${websiteHostBaseUrl}\"")
+        flavor.buildConfigField("String", "WEBSITE_PLUGIN_HOST_URL", "\"${websitePluginHostUrl}\"")
+        flavor.buildConfigField("String", "WEBSITE_H5_HOST_URL", "\"${websiteH5HostUrl}\"")
+        flavor.buildConfigField("String", "WEBSITE_IOT_URL", "\"${websiteIOTUrl}\"")
+        flavor.buildConfigField("String", "QRCODE_DOMAIN", "\"${qrCodeDomain}\"")
+        flavor.buildConfigField("String", "ABOUT_UPDATE_VERSION", "\"${aboutUpdateVersion}\"")
+        flavor.buildConfigField("String", "WEBSITE_HOST_BASE_TEST_URL", "\"${websiteHostBaseTestUrl}\"")
+        flavor.buildConfigField("String", "WEBSITE_PLUGIN_HOST_TEST_URL", "\"${websitePluginHostTestUrl}\"")
+        flavor.buildConfigField("String", "WEBSITE_H5_HOST_TEST_URL", "\"${websiteH5HostTestUrl}\"")
+        flavor.buildConfigField("String[]", "YOOSEE_SHARE_TYPES", "{${yooseeShareTypes.collect { "\"${it}\""}.join(",")}}")
+        flavor.buildConfigField("String", "DEFAULT_LANGUAGE", "\"${defaultLanguage.toString()}\"")
+    }
+
+    void applyToModule(flavor) {
+        println("applyToModule.flavor=" + flavor)
+        flavor.buildConfigField("Boolean", "IS_GOOGLE", "${isGoogle}")
+        flavor.buildConfigField("String", "DEFAULT_LANGUAGE", "\"${defaultLanguage.toString()}\"")
+    }
+
+    @Override
+    String toString() {
+        return "{" +
+                "APPLICATION_ID=" + APPLICATION_ID + "," +
+                "APP_NAME_PREFIX=" + APP_NAME_PREFIX + "," +
+                "VERSION_CODE=" + VERSION_CODE + "," +
+                "VERSION_NAME=" + VERSION_NAME + "," +
+                "}"
+    }
+}
+
+/**
+ *  yoosee设备支持的分享类型
+ */
+enum YooseeShareType {
+    QRCODE,
+    PHONE,
+    USER_ID
+}
+
+
+/**
+ * app默认语言和国家
+ */
+enum Language {
+    SYSTEM,
+    ZH_HANS,
+    ZH_HK,
+    EN,
+    KO
+}

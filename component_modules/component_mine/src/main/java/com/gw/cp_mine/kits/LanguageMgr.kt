@@ -3,7 +3,9 @@ package com.gw.cp_mine.kits
 import android.app.Activity
 import android.app.Application
 import android.content.Context
+import android.content.res.Configuration
 import android.content.res.Resources
+import com.gw.cp_mine.api.kapi.ILanguageMgr
 import com.gw.cp_mine.data_store.LocaleDataStoreImpl
 import com.gw.cp_mine.entity.Language
 import java.util.Locale
@@ -18,7 +20,7 @@ import javax.inject.Singleton
 class LanguageMgr @Inject constructor(
     private val app: Application,
     private val dataStoreImpl: LocaleDataStoreImpl,
-) {
+) : ILanguageMgr {
 
     companion object {
 
@@ -107,16 +109,25 @@ class LanguageMgr @Inject constructor(
      * @param context Context 上下文
      * @param locale Locale 语言
      */
-    private fun updateLanguage(context: Context, locale: Locale) {
-        val resources = context.resources
-        val config = resources.configuration
-        val contextLocale = config.locale
-        if (isSameLocale(contextLocale, locale)) {
-            return
+    private fun updateLanguage(context: Context?, newConfig: Configuration?, locale: Locale) {
+        if (context != null) {
+            val resources = context.resources
+            val config = resources.configuration
+            val contextLocale = config.locale
+            if (isSameLocale(contextLocale, locale)) {
+                return
+            }
+            val dm = resources.displayMetrics
+            config.setLocale(locale)
+            resources.updateConfiguration(config, dm)
         }
-        val dm = resources.displayMetrics
-        config.setLocale(locale)
-        resources.updateConfiguration(config, dm)
+        if (newConfig != null) {
+            val contextLocale = newConfig.locale
+            if (isSameLocale(contextLocale, locale)) {
+                return
+            }
+            newConfig.setLocale(locale)
+        }
     }
 
     /**
@@ -124,10 +135,12 @@ class LanguageMgr @Inject constructor(
      *
      * @param activity activity
      */
-    fun applyAppLanguage(activity: Activity) {
+    fun applyAppLanguage(activity: Activity? = null, newConfig: Configuration? = null) {
         val appLocale = currentAppLocale
-        updateLanguage(app.applicationContext, appLocale)
-        updateLanguage(activity, appLocale)
+        // 更新整个Application的语言
+        updateLanguage(app.applicationContext, newConfig = null, appLocale)
+        // 更新当前界面的语言
+        updateLanguage(activity, newConfig = newConfig, appLocale)
     }
 
 
@@ -136,7 +149,7 @@ class LanguageMgr @Inject constructor(
      *
      * @param language
      */
-    fun saveAppLocaleLanguage(language: Language) {
+    override fun saveAppLocaleLanguage(language: Language) {
         dataStoreImpl.setCurrentLanguage(language)
     }
 
@@ -145,7 +158,7 @@ class LanguageMgr @Inject constructor(
      *
      * @return
      */
-    fun getAppLanguage(): Language {
+    override fun getAppLanguage(): Language {
         return dataStoreImpl.getCurrentLanguage()
     }
 

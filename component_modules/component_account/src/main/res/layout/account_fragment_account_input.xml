@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:background="@color/color_ffffff">
 
-        <com.gw.lib_widget.title.AppTitle
+        <com.gw_reoqoo.lib_widget.title.AppTitle
             android:id="@+id/app_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/app_title"
-            tools:text="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
+            tools:text="AAAAAAAAAAA" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_account_notice"
@@ -53,22 +53,22 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/dp_28"
             android:layout_marginTop="@dimen/dp_8"
-            android:text="@string/AA0032"
+            android:text="@string/AA0669"
             android:textColor="@color/color_1f1f1f_60"
             android:textSize="@dimen/sp_13"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_account_title" />
 
-        <com.gw.lib_widget.edittext.ClearEditText
+        <com.gw_reoqoo.lib_widget.edittext.ClearEditText
             android:id="@+id/et_account_number"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_54"
             android:layout_marginStart="@dimen/dp_27"
             android:layout_marginTop="@dimen/dp_24"
             android:layout_marginEnd="@dimen/dp_27"
-            android:background="@drawable/widget_input_bg"
-            android:drawableEnd="@drawable/icon_clean"
+            android:background="@drawable/gw_reoqoo_widget_input_bg"
+            android:drawableEnd="@drawable/gw_reoqoo_icon_clean"
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:hint="@string/AA0002"
@@ -136,11 +136,10 @@
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/img_agree"
-            android:layout_width="@dimen/dp_24"
-            android:layout_height="@dimen/dp_24"
+            android:layout_width="@dimen/dp_18"
+            android:layout_height="@dimen/dp_18"
             android:layout_marginStart="@dimen/dp_16"
-            android:layout_marginTop="-3dp"
-            android:background="@drawable/account_agree_bg"
+            android:background="@drawable/gw_reoqoo_account_agree_bg"
             android:button="@null"
             app:layout_constraintEnd_toStartOf="@id/tv_agree"
             app:layout_constraintStart_toStartOf="parent"
@@ -152,6 +151,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/dp_16"
             android:layout_marginBottom="@dimen/dp_15"
+            android:layout_marginStart="@dimen/dp_6"
             android:textColor="@color/color_000000_38"
             android:textSize="@dimen/sp_12"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -5,7 +5,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/widget_bg_card_12"
+        android:background="@drawable/gw_reoqoo_widget_bg_card_12"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/dp_12"
             android:background="@android:color/transparent"
-            android:button="@drawable/widget_selector_checkbox"
+            android:button="@drawable/gw_reoqoo_widget_selector_checkbox"
             android:clickable="false"
             android:focusable="false" />
     </LinearLayout>

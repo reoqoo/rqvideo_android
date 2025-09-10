@@ -4,8 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.gw.cp_mine.entity.Language
 import com.gw.cp_mine.entity.LanguageEntity
+import com.gw.cp_mine.entity.getReoqooSupportLanguages
 import com.gw.cp_mine.kits.LanguageMgr
-import com.gw.lib_base_architecture.vm.ABaseVM
+import com.gw_reoqoo.lib_base_architecture.vm.ABaseVM
 import com.gwell.loglibs.GwellLogUtils
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -59,7 +60,7 @@ class LanguageVM @Inject constructor(
      * 加载语言列表
      */
     private fun loadLanguageList() {
-        val entities = Language.values().map {
+        val entities = getReoqooSupportLanguages().map {
             LanguageEntity(it, it == currentLanguage)
         }
         _languageList.postValue(entities)

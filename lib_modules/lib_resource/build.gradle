@@ -1,7 +1,7 @@
 apply from: "${rootDir.absolutePath}/script/gradle/lib_depends.gradle"
 
 android {
-    namespace = "com.gw.resource"
+    namespace = "com.gw_reoqoo.resource"
     sourceSets {
         getByName("main") {
             res {

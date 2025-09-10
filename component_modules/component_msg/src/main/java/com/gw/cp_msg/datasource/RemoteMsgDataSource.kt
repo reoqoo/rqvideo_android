@@ -1,20 +1,22 @@
 package com.gw.cp_msg.datasource
 
-import com.gw.component_family.api.interfaces.FamilyModeApi
-import com.gw.cp_account.api.kapi.IAccountApi
+import com.gw_reoqoo.component_family.api.interfaces.FamilyModeApi
+import com.gw_reoqoo.cp_account.api.kapi.IAccountApi
 import com.gw.cp_msg.entity.http.MsgListEntity
 import com.gw.cp_msg.entity.http.MsgReadEntity
-import com.gw.cp_msg.entity.http.VersionInfoEntity
-import com.gw.lib_http.RespResult
-import com.gw.lib_http.ResponseNotSuccessException
-import com.gw.lib_http.entities.AlarmEvent
-import com.gw.lib_http.entities.AlarmEventData
-import com.gw.lib_http.entities.AppUpgradeEntity
-import com.gw.lib_http.mapActionFlow
-import com.gw.lib_http.typeSubscriber
-import com.gw.lib_http.wrapper.HttpServiceWrapper
+import com.gw_reoqoo.lib_http.entities.VersionInfoEntity
+import com.gw_reoqoo.lib_http.DeviceInfoService
+import com.gw_reoqoo.lib_http.IotHttpCallback
+import com.gw_reoqoo.lib_http.RespResult
+import com.gw_reoqoo.lib_http.ResponseNotSuccessException
+import com.gw_reoqoo.lib_http.entities.AlarmEvent
+import com.gw_reoqoo.lib_http.entities.AlarmEventData
+import com.gw_reoqoo.lib_http.entities.AppUpgradeEntity
+import com.gw_reoqoo.lib_http.mapActionFlow
+import com.gw_reoqoo.lib_http.typeSubscriber
+import com.gw_reoqoo.lib_http.wrapper.HttpServiceWrapper
 import com.gwell.loglibs.GwellLogUtils
-import com.tencentcs.iotvideo.messagemgr.DeviceInfoMgr
+import com.jwkj.iotvideo.httpviap2p.HttpViaP2PProxy
 import kotlinx.coroutines.channels.Channel
 import java.util.Locale
 import javax.inject.Inject
@@ -35,7 +37,7 @@ class RemoteMsgDataSource @Inject constructor(
     }
 
     private val devService by lazy {
-        DeviceInfoMgr.getInstance().deviceInfoService
+        HttpViaP2PProxy().create(DeviceInfoService::class.java)
     }
 
     /**
@@ -126,25 +128,22 @@ class RemoteMsgDataSource @Inject constructor(
     suspend fun getDevUpdateMsg(
         deviceId: String,
         curVersion: String
-    ): RespResult<VersionInfoEntity> {
-        val result = Channel<RespResult<VersionInfoEntity>>(1)
-        devService.queryDeviceNewVersionInfo(
+    ): RespResult<VersionInfoEntity?> {
+        val result = Channel<RespResult<VersionInfoEntity?>>(1)
+        devService.queryDeviceNewVersionInfoLocale(
             deviceId,
             "",
             Locale.getDefault(),
             curVersion,
-            typeSubscriber<VersionInfoEntity>(
+            IotHttpCallback.create(
                 onSuccess = {
                     result.trySend(RespResult.Success(it))
                 },
-                onFail = {
-                    if (it is ResponseNotSuccessException) {
-                        result.trySend(RespResult.ServerError(it.code, it.msg))
-                    } else {
-                        result.trySend(RespResult.LocalError(it))
-                    }
+                onFail = { code, msg ->
+                    result.trySend(RespResult.ServerError(code, msg))
                 }
-            ))
+            )
+        )
         return result.receive()
     }
 

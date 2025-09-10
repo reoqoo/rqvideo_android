@@ -1,0 +1,19 @@
+package com.gw.cp_mine.api.kapi
+
+import com.gw.cp_mine.entity.Language
+
+interface ILanguageMgr {
+    /**
+     * 缓存app当前语言
+     *
+     * @param language
+     */
+    fun saveAppLocaleLanguage(language: Language)
+
+    /**
+     * 获取App当前语言
+     *
+     * @return
+     */
+    fun getAppLanguage(): Language
+}

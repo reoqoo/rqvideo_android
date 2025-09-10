@@ -7,13 +7,7 @@ apply plugin: "androidx.navigation.safeargs.kotlin"
 def isApplication = project.name == debug_module_name
 
 android {
-    namespace "com.gw.cp_account"
-
-    defaultConfig {
-        if (isApplication) {
-            applicationId "com.gw.cp_account"
-        }
-    }
+    namespace "com.gw_reoqoo.cp_account"
 
     /**
      * 资源文件前缀
@@ -58,15 +52,21 @@ dependencies {
     implementation project(path: ":component_modules:component_config_api")
     implementation project(path: ":component_modules:component_mine_api")
     implementation project(path: ":component_modules:component_push_api")
+
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_debug_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_iotapi_plugin_opt_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_webview_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_website_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_plugin_service_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
 }
 
 dependencies {
-    implementation("com.reoqoo_lib:lib_room:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("com.reoqoo_lib:lib_widget:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("com.reoqoo_lib:lib_http:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("com.reoqoo_lib:lib_utils:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("com.reoqoo_lib:lib_iotvideo:${Versions.ReoqooSdkVer.VERSION_CODE}")
-
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_utils:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_widget:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_room:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_http:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_iotvideo:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_webview:${Versions.ReoqooSdkVer.VERSION_CODE}")
     if (isApplication) {
         // 屏幕适配
         implementation "me.jessyan:autosize:${Versions.ThirdVersions.VERSION_AUTO_SIZE}"

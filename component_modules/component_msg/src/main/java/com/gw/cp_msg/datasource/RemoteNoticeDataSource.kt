@@ -4,10 +4,10 @@ import com.gw.cp_msg.entity.http.EventBenefitsEntity
 import com.gw.cp_msg.entity.http.NoticeDataEntity
 import com.gw.cp_msg.entity.http.NoticeList
 import com.gw.cp_msg.entity.http.UserMessageData
-import com.gw.lib_http.entities.MsgStatusChangeList
-import com.gw.lib_http.mapActionFlow
-import com.gw.lib_http.typeSubscriber
-import com.gw.lib_http.wrapper.HttpServiceWrapper
+import com.gw_reoqoo.lib_http.entities.MsgStatusChangeList
+import com.gw_reoqoo.lib_http.mapActionFlow
+import com.gw_reoqoo.lib_http.typeSubscriber
+import com.gw_reoqoo.lib_http.wrapper.HttpServiceWrapper
 import com.gwell.loglibs.GwellLogUtils
 import com.tencentcs.iotvideo.http.interceptor.flow.HttpAction
 import kotlinx.coroutines.channels.Channel
@@ -35,6 +35,15 @@ class RemoteNoticeDataSource @Inject constructor(
      */
     fun getNoticeData(notAutoRead: Boolean): Flow<HttpAction<NoticeDataEntity>> {
         return httpService.getNotice(notAutoRead).mapActionFlow()
+    }
+
+    /**
+     * 获取活动福利列表
+     *
+     * @return Flow<HttpAction<MsgStatusChangeList>>
+     */
+    fun getEventBenefits(): Flow<HttpAction<NoticeList>> {
+        return httpService.noticeList.mapActionFlow()
     }
 
     /**
@@ -93,6 +102,29 @@ class RemoteNoticeDataSource @Inject constructor(
                     GwellLogUtils.e(TAG, "setMessageStatus", t)
                 }
             )
+        )
+        return result.receive()
+    }
+
+    /**
+     * 设置活动福利状态为已读
+     *
+     * @param activeIds LongArray 活动福利的ids
+     * @return Boolean? 是否成功 true -- 成功， false -- 失败
+     */
+    suspend fun setBenefitsStatusRead(activeIds: LongArray): Boolean? {
+        val result = Channel<Boolean?>(1)
+        httpService.readActiveMsg(
+            activeIds,
+            typeSubscriber<EventBenefitsEntity>(
+                onSuccess = { data ->
+                    GwellLogUtils.i(TAG, "setBenefitsStatusRead: $data")
+                    val list = data?.dataEntity
+                    result.trySend(list == null)
+                }, onFail = { t ->
+                    result.trySend(null)
+                    GwellLogUtils.e(TAG, "setBenefitsStatusRead", t)
+                })
         )
         return result.receive()
     }

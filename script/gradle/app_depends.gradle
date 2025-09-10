@@ -98,6 +98,11 @@ android {
         pickFirst 'lib/armeabi/libxml2.so'
         pickFirst 'lib/arm64-v8a/libxml2.so'
 
+        pickFirst '**/libcurl.so'
+        pickFirst '**/libgwplayer.so'
+        pickFirst '**/libiotvideomulti.so'
+        pickFirst '**/libmbedtls.so'
+
         exclude 'META-INF/DEPENDENCIES'
     }
 }
@@ -153,17 +158,25 @@ dependencies {
 dependencies {
     implementation(project(":lib_modules:lib_api_root"))
     implementation(project(":lib_modules:lib_resource"))
+
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_module_mounter:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_utils:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_iotvideo:${Versions.ReoqooSdkVer.VERSION_CODE}")
 }
 
 dependencies {
-    api("com.reoqoo_comp:reoqoo_sdk:${Versions.ReoqooSdkVer.VERSION_CODE}")
-}
+    /**
+     * IoTVideo库
+     */
+    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_IOT_VIDEO}:${Versions.GwVersions.VERSION_IOT_VIDEO}"
 
-configurations.configureEach {
-    resolutionStrategy {
-        force "${GwDependLibs.GwLibs.DEPEND_LIB_IOT_ACCOUNT_MGR}:${Versions.GwVersions.VERSION_ACCOUNT_MGR}"
-        /**
-         * 日志库*/
-        force "com.gwell:log-adapter:${Versions.GwVersions.VERSION_GWELL_LOG}"
-    }
+    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_IOT_ACCOUNT_MGR}:${Versions.GwVersions.VERSION_ACCOUNT_MGR}"
+
+    implementation "com.gwell:log-adapter:${Versions.GwVersions.VERSION_GWELL_LOG}"
+
+    implementation "com.gwell:base_utils:${Versions.GwVersions.VERSION_BASE_UTILS}"
+
+    implementation "com.gwell:base_crash:${Versions.GwVersions.VERSION_BASE_CRASH}"
+    implementation "com.gwell:base_lifecycle:${Versions.GwVersions.VERSION_BASE_LIFECYCLE}"
+    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_BASE_STATISTICS}:${Versions.GwVersions.VERSION_BASE_STATISTICS}"
 }

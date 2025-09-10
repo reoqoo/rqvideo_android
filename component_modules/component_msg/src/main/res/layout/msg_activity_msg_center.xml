@@ -9,7 +9,7 @@
         android:background="@color/white_100"
         android:orientation="vertical">
 
-        <com.gw.lib_widget.title.AppTitle
+        <com.gw_reoqoo.lib_widget.title.AppTitle
             android:id="@+id/layout_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/AA0604"
                     android:textColor="@color/black_90"
-                    android:textSize="@dimen/sp_19"
+                    android:textSize="@dimen/sp_20"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -61,8 +61,8 @@
 
                 <View
                     android:id="@+id/view_system_line"
-                    android:layout_width="@dimen/dp_20"
-                    android:layout_height="@dimen/dp_3"
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_5"
                     android:layout_marginBottom="@dimen/dp_2"
                     android:background="@drawable/msg_line_selected_bg"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -75,15 +75,15 @@
                 android:id="@+id/cl_active_msg"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="@dimen/dp_16">
+                android:layout_marginStart="@dimen/dp_24">
 
                 <TextView
                     android:id="@+id/tv_active_msg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/AA0601"
-                    android:textColor="@color/color_666666"
-                    android:textSize="@dimen/sp_15"
+                    android:textColor="@color/black_60"
+                    android:textSize="@dimen/sp_16"
                     android:textStyle="normal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -103,8 +103,8 @@
 
                 <View
                     android:id="@+id/view_active_line"
-                    android:layout_width="@dimen/dp_20"
-                    android:layout_height="@dimen/dp_3"
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_5"
                     android:layout_marginBottom="@dimen/dp_2"
                     android:background="@drawable/msg_line_selected_bg"
                     android:visibility="gone"

@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:background="@color/color_ffffff">
 
-        <com.gw.lib_widget.title.AppTitle
+        <com.gw_reoqoo.lib_widget.title.AppTitle
             android:id="@+id/app_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
             android:layout_width="@dimen/dp_81"
             android:layout_height="@dimen/dp_81"
             android:layout_marginTop="@dimen/dp_44"
-            android:background="@drawable/account_icon_find_success"
+            android:background="@drawable/gw_reoqoo_account_icon_find_success"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/app_title" />

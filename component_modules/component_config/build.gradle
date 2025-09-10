@@ -11,20 +11,12 @@ android {
         if (isApplication) {
             applicationId "com.gw.cp_config"
         }
+        buildConfigField("String", "APP_CONFIG_FILE_NAME", "\"appConfig.json\"")
     }
-
     /**
      * 资源文件前缀
      */
     resourcePrefix("config_")
-    sourceSets {
-        main {
-            assets {
-                srcDirs 'src\\main\\assets'
-            }
-        }
-    }
-
 }
 
 dependencies {
