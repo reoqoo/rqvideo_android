@@ -23,7 +23,7 @@
     <string name="AA0025">Passwort muss 8 - 30 stellig sein (inkl. Buchstaben und Zahlen).</string>
     <string name="AA0026">Erneut eingeben</string>
     <string name="AA0031">Passtwort finden</string>
-    <string name="AA0032">Bitte geben Sie ipTIME ID</string>
+    <string name="AA0032">Bitte geben Sie ID</string>
     <string name="AA0034">Geben Sie bitte den Bestätigungscode ein</string>
     <string name="AA0035">Der Verifizierungscode wurde gesendet an</string>
     <string name="AA0036">neu senden</string>
@@ -50,16 +50,16 @@
     <string name="AA0062">QR-Code am Gerät scannen um hinzuzufügen</string>
     <string name="AA0063">Taschenlampe</string>
     <string name="AA0064">Fotoalbum</string>
-    <string name="AA0065">ipTIME will deine Kamera benutzen</string>
+    <string name="AA0065">APP will deine Kamera benutzen</string>
     <string name="AA0066">Sie müssen den QR-Code scannen, um das Gerät anzuschließen und zu verbinden. Ist es erlaubt, die Kamera zu öffnen?</string>
     <string name="AA0067">Ablehnen</string>
     <string name="AA0068">Keine Kameraerlaubnis, bitte in den Einstellungen aktivieren</string>
     <string name="AA0069">ipTIME möchte Ihre Standortinformationen verwenden</string>
     <string name="AA0070">Um erfolgreich hinzugefügt Ausrüstung, müssen Sie die Nutzung der Ortungsdienste ermöglichen bekommen Wi-Fi Informationen. Bitte schalten Sie Location Services.</string>
     <string name="AA0071">Keine Standortberechtigung, bitte in den Einstellungen aktivieren</string>
-    <string name="AA0072">Möchte ipTIME auf Ihre Fotoalben zugreifen?</string>
+    <string name="AA0072">Möchte APP auf Ihre Fotoalben zugreifen?</string>
     <string name="AA0073">Sie benötigen um das Bild anzuzeigen und zu senden. Ist es erlaubt, das Album zu öffnen?</string>
-    <string name="AA0074">Möchte ipTIME Ihre Bluetooth-Informationen verwenden?</string>
+    <string name="AA0074">Möchte APP Ihre Bluetooth-Informationen verwenden?</string>
     <string name="AA0075">Bluetooth-Berechtigungen erforderlich, um intelligenten Geräten bei der Verbindung mit WLAN während des Hinzufügens zu helfen. Erlauben?</string>
     <string name="AA0076">Keine Bluetooth-Berechtigung, bitte in den Einstellungen aktivieren</string>
     <string name="AA0078">Verbinden Sie das Gerät</string>
@@ -108,7 +108,7 @@
     <string name="AA0146">Sie können höchstens X Besucher addieren, wenn Sie mit weiteren Personen teilen möchten, sollten Sie zuerst einige Besucher löschen!</string>
     <string name="AA0147">Teilungsmanagement</string>
     <string name="AA0148">Geben Sie das ipTIME-Konto zur Gerätenutzung ein</string>
-    <string name="AA0149">Bitte geben Sie das ipTIME-Konto ein</string>
+    <string name="AA0149">Bitte geben Sie ID</string>
     <string name="AA0150">Zuletzt geteilt</string>
     <string name="AA0151">Face-to-Face teilen</string>
     <string name="AA0152">Teilen</string>
@@ -512,15 +512,16 @@ Um zu vermeiden, dass der Strom zu schnell ausgeht, wurde das Gerät automatisch
     <string name="AA0656">Offline, Update nicht möglich</string>
     <string name="AA0657">Systemanomalie</string>
     <string name="AA0658">abbrechen</string>
-    <string name="AA0659">Die aktuelle Version unterstützt die direkte Bindung dieses Geräts nicht. Bitte laden Sie die \"ipTIME Cloud\"-App herunter, um sie hinzuzufügen und zu verwenden.</string>
+    <string name="AA0659">Die aktuelle Version unterstützt die direkte Bindung dieses Geräts nicht. Bitte laden Sie die \"Xiaotun Cloud\"-App herunter, um sie hinzuzufügen und zu verwenden.</string>
     <string name="AA0660">Herunterladen</string>
     <string name="AA0661">Freundliche Erinnerung</string>
     <string name="AA0662">Die folgenden Geräte sind in der aktuellen App nicht verfügbar</string>
-    <string name="AA0663">Bitte laden Sie die \"ipTIME Cloud\"-App herunter, um weiterhin zu verwenden</string>
+    <string name="AA0663">Bitte laden Sie die \"Xiaotun Cloud\"-App herunter, um weiterhin zu verwenden</string>
     <string name="AA0664">Nicht erneut erinnern</string>
     <string name="AA0665">Über</string>
     <string name="AA0669">Bitte geben Sie Konto ein</string>
     <string name="AA0682">Nicht zustimmen und App beenden</string>
     <string name="AA0689">Bitte versuchen Sie die folgenden Schritte und versuchen Sie es erneut:\n1. Drücken und halten Sie die Reset-Taste, um das Gerät zurückzusetzen;\n2. Bitte prüfen Sie, ob das Gerät an die Stromversorgung angeschlossen ist;\n3. Bitte prüfen Sie, ob die Antenne des Geräts lose ist;\n4. Bitte stellen Sie sicher, dass die aktuelle 4G-Signal-Kommunikation normal ist.</string>
     <string name="AA0690">Die Kamera ist zu niedrig, bitte ein Upgrade in einem Zustand von Elektrizität ~</string>
+    <string name="AA0691">Verwendung eines Nicht-WLAN-Netzwerks, das Abspielen kann Datengebühren verursachen</string>
 </resources>

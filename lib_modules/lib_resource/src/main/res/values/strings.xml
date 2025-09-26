@@ -23,7 +23,7 @@
     <string name="AA0025">Password must contain 8-30 characters include digits and letters</string>
     <string name="AA0026">Enter again</string>
     <string name="AA0031">Reset password</string>
-    <string name="AA0032">Please enter ipTIME account</string>
+    <string name="AA0032">Please enter account</string>
     <string name="AA0034">Please enter the verification code</string>
     <string name="AA0035">The verification code has been sent to</string>
     <string name="AA0036">Re-send</string>
@@ -51,16 +51,16 @@
     <string name="AA0062">Scan the QR code on the device</string>
     <string name="AA0063">Flashlight</string>
     <string name="AA0064">Album</string>
-    <string name="AA0065">Allow \"ipTIME\" to use your Camera?</string>
+    <string name="AA0065">Allow \"APP\" to use your Camera?</string>
     <string name="AA0066">Requires scanning a QR code to connect and bind the device. Allow access to the camera?</string>
     <string name="AA0067">Reject</string>
     <string name="AA0068">No camera permissions, please enable it in settings</string>
     <string name="AA0069">Allow APP to use your location information?</string>
     <string name="AA0070">Location permission is required to obtain Wi-Fi information for adding devices; please enable system location</string>
     <string name="AA0071">The positioning permission is disabled. Please enable it in Settings</string>
-    <string name="AA0072">Allow \"ipTIME\" to use your album information？</string>
+    <string name="AA0072">Allow \"APP\" to use your album information？</string>
     <string name="AA0073">Requires viewing and sending pictures. Allow access to the photo album?</string>
-    <string name="AA0074">Allow \"ipTIME\" to use your Bluetooth information？</string>
+    <string name="AA0074">Allow \"APP\" to use your Bluetooth information？</string>
     <string name="AA0075">Bluetooth permission is required to help the smart device connect to Wi-Fi during the adding process. Do you agree to enable it?</string>
     <string name="AA0076">The Bluetooth permission is disabled. Please enable it in Settings</string>
     <string name="AA0078">Connecting to device.</string>
@@ -109,7 +109,7 @@
     <string name="AA0146">%s visitors can be added at most,please delete some if you want to continue sharing with others.</string>
     <string name="AA0147">Sharing</string>
     <string name="AA0148">Enter the account that needs to be shared</string>
-    <string name="AA0149">Please enter ipTIME account</string>
+    <string name="AA0149">Please enter account</string>
     <string name="AA0150">Recent share</string>
     <string name="AA0151">Face-to-face sharing</string>
     <string name="AA0152">Share</string>
@@ -173,7 +173,7 @@
     <string name="AA0220">Do not disturb setting</string>
     <string name="AA0221">Language</string>
     <string name="AA0222">Feedback</string>
-    <string name="AA0223">ipTIME Support</string>
+    <string name="AA0223">Support</string>
     <string name="AA0224">About ipTIME</string>
     <string name="AA0225">Messages</string>
     <string name="AA0226">Operation successful</string>
@@ -388,7 +388,7 @@
     <string name="AA0477">Please try the following and try again:  \n1.Check whether the Wi-Fi password is correct;\n2. Long press the reset button to reset the device; \n3. Check whether access restriction is enabled on the router; \n4. Restart the router.</string>
     <string name="AA0478">Unsupported QR code</string>
     <string name="AA0480">1.The camera may not support quick network connection (hotspot connection). Please follow the device\'s voice prompts to select the connection method. \n2.The distance between the phone and the device is too far. A distance within 30 centimeters is more appropriate.</string>
-    <string name="AA0481">Email</string>
+    <string name="AA0481">Enter the email address you can use for registering a ipTIME account</string>
     <string name="AA0482">The device name cannot be empty</string>
     <string name="AA0483">(Error code: %s)</string>
     <string name="AA0484">The device name scene is empty</string>
@@ -513,7 +513,7 @@
     <string name="AA0656">Offline, upgrade unavailable</string>
     <string name="AA0657">System abnormality</string>
     <string name="AA0658">Cancel</string>
-    <string name="AA0659">The current version does not support direct binding of this device. Please download the \"ipTIME Cloud\" APP to add and use.</string>
+    <string name="AA0659">The current version does not support direct binding of this device. Please download the \"Xiaotun Cloud\" APP to add and use.</string>
     <string name="AA0660">Download</string>
     <string name="AA0661">Friendly Reminder</string>
     <string name="AA0662">The following devices are not available in the current APP</string>
@@ -524,6 +524,6 @@
     <string name="AA0682">Disagree and Exit App</string>
     <string name="AA0689">Please try the following steps before retrying: \n1. Press and hold the reset button to reset the device;\n2. Please check if the device is connected to the power supply;\n3. Please check if the device antenna is loose;\n4. Please ensure that the current 4G signal communication is normal.</string>
     <string name="AA0690">The camera battery is low, please upgrade it when the battery is sufficient.</string>
-    <string name="AA0691">You are not using WLAN. Data cost will be incurred when playing</string>
+    <string name="AA0691">You are not using WLAN. Data costs will be incurred when playing</string>
     <string name="record_number">粤ICP备17085704号-19A</string>
 </resources>

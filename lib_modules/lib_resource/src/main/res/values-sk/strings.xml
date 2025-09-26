@@ -23,7 +23,7 @@
     <string name="AA0025">Heslo musí obsahovať 8-30 znakov a obsahovať písmená aj číslice.</string>
     <string name="AA0026">Zadajte znovu</string>
     <string name="AA0031">Načítať heslo</string>
-    <string name="AA0032">Prosím, zadajte ipTIME ID</string>
+    <string name="AA0032">Prosím, zadajte ID</string>
     <string name="AA0034">Zadajte overovací kód</string>
     <string name="AA0035">Overovací kód bol zaslaný</string>
     <string name="AA0036">Znova odoslať</string>
@@ -51,16 +51,16 @@
     <string name="AA0062">Prehľadať QR kód tela zariadenia a pridať zariadenie</string>
     <string name="AA0063">svetlo</string>
     <string name="AA0064">Fotoalbum</string>
-    <string name="AA0065">Program ipTIME chce použiť váš fotoaparát</string>
+    <string name="AA0065">Program APP chce použiť váš fotoaparát</string>
     <string name="AA0066">Musíte skenovať kód QR na pripojenie a viazanie zariadenia. Je povolené otvoriť fotoaparát?</string>
     <string name="AA0067">Odmietnuť</string>
     <string name="AA0068">Žiadne povolenie na kameru, prosím, spustite ho v Settings</string>
     <string name="AA0069">Program ipTIME chce použiť informácie o vašej polohe</string>
     <string name="AA0070">Ak chcete úspešne pridaný zariadenie, je potrebné umožniť využívanie služby určovania polohy pre získavanie informácií o Wi-Fi.Prosím, zapnite služby určovania polohy.</string>
     <string name="AA0071">Žiadne povolenie na umiestnenie, prosím, spustite ho v nastaveniach</string>
-    <string name="AA0072">Dovoľujete ipTIME používať informácie o vašom albume?</string>
+    <string name="AA0072">Dovoľujete APP používať informácie o vašom albume?</string>
     <string name="AA0073">Potreba zobraziť a odoslať obrázok. Je povolené otvoriť album?</string>
-    <string name="AA0074">Dovoľujete ipTIME používať vaše informácie o Bluetoothe?</string>
+    <string name="AA0074">Dovoľujete APP používať vaše informácie o Bluetoothe?</string>
     <string name="AA0075">Povolenie Bluetooth sa vyžaduje na pomoc inteligentným zariadeniam spojiť sa s Wi-Fi počas procesu pridania. Je to povolené?</string>
     <string name="AA0076">Žiadne povolenie Bluetooth, prosím, spustite ho v nastaveniach</string>
     <string name="AA0078">Pripájanie zariadenia.</string>
@@ -109,7 +109,7 @@
     <string name="AA0146">Maximálny možný počet návštevníkov je X, ak chcete pokračovať v zdieľaní s ďalšími, odstráňte niektorých súčasných návštevníkov.</string>
     <string name="AA0147">Správa zdieľaní</string>
     <string name="AA0148">Zadajte účet ipTIME na zdieľanie zariadenia s</string>
-    <string name="AA0149">Zadajte prosím účt ipTIME</string>
+    <string name="AA0149">Prosím, zadajte ID</string>
     <string name="AA0150">Nedávno zdieľané</string>
     <string name="AA0151">Zdieľanie tvárou v tvár</string>
     <string name="AA0152">Zdieľať</string>
@@ -514,15 +514,16 @@ Aby sa zabránilo príliš rýchlemu úniku energie, automaticky sa prepol na re
     <string name="AA0656">Offline, aktualizácia nedostupná</string>
     <string name="AA0657">Abnormalita systému</string>
     <string name="AA0658">Zrušiť</string>
-    <string name="AA0659">Aktuálna verzia nepodporuje priame prepojenie tohto zariadenia. Stiahnite si aplikáciu \"ipTIME Cloud\" a pridajte ju a používajte ju.</string>
+    <string name="AA0659">Aktuálna verzia nepodporuje priame prepojenie tohto zariadenia. Stiahnite si aplikáciu \"Xiaotun Cloud\" a pridajte ju a používajte ju.</string>
     <string name="AA0660">Stiahnuť</string>
     <string name="AA0661">Priateľská Pripomienka</string>
     <string name="AA0662">Nasledujúce zariadenia nie sú k dispozícii v aktuálnej aplikácii</string>
-    <string name="AA0663">Stiahnite si aplikáciu \"ipTIME Cloud\", aby ste mohli pokračovať v používaní</string>
+    <string name="AA0663">Stiahnite si aplikáciu \"Xiaotun Cloud\", aby ste mohli pokračovať v používaní</string>
     <string name="AA0664">Nepripomínať Znova</string>
     <string name="AA0665">O</string>
     <string name="AA0669">Zadajte účet</string>
     <string name="AA0682">Nesúhlasiť a ukončiť aplikáciu</string>
     <string name="AA0689">Vyskúšajte nasledujúce operácie a skúste to znova:\n1. Stlačte a podržte tlačítko reset, aby ste zariadenie resetovali;\n2. Skontrolujte, či je zariadenie pripojené k napájaniu;\n3. Skontrolujte, či je anténa zariadenia uvoľnená;\n4. Uistite sa, že aktuálna komunikácia 4G signálu je normálna.</string>
     <string name="AA0690">Fotoaparát je príliš nízka, upgrade v stave elektriny ~</string>
+    <string name="AA0691">Využívaním siete, ktorá nie je WLAN, sa spätná prevádzková daň zaplatí</string>
 </resources>

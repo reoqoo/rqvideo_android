@@ -31,6 +31,7 @@
             app:itemTextAppearanceInactive="@style/main_nav_text_active_style"
             app:itemTextColor="@color/gw_reoqoo_selector_main_navi_text_color"
             app:labelVisibilityMode="labeled"
+            app:itemHorizontalTranslationEnabled="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

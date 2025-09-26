@@ -7,7 +7,7 @@ pluginManagement {
             allowInsecureProtocol = true
             credentials {
                 username = 'admin'
-                password = "admin@321GW"
+                password = 'admin@321GW'
             }
         }
 
@@ -32,7 +32,7 @@ dependencyResolutionManagement {
             allowInsecureProtocol = true
             credentials {
                 username = 'admin'
-                password = "admin@321GW"
+                password = 'admin@321GW'
             }
         }
 
@@ -47,7 +47,7 @@ dependencyResolutionManagement {
             allowInsecureProtocol = true
             credentials {
                 username = 'admin'
-                password = "admin@321GW"
+                password = 'admin@321GW'
             }
         }
 

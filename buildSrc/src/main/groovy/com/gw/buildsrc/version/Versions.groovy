@@ -89,7 +89,7 @@ class Versions {
         /**
          * kotlin基础库
          */
-        public static final String VERSION_KOTLIN_CORE = "1.7.0"
+        public static final String VERSION_KOTLIN_CORE = "1.16.0"
         /**
          * material版本
          */
@@ -118,7 +118,7 @@ class Versions {
         /**
          * Hilt依赖注入框架
          */
-        public static final String VERSION_HILT = "2.51"
+        public static final String VERSION_HILT = "2.56.2"
 
 
         public static final String VERSION_COMPOSE = "1.0.0"
@@ -194,7 +194,7 @@ class Versions {
         /**
          * 技威网络请求库
          */
-        public static final String VERSION_ACCOUNT_MGR = "1.0.98"
+        public static final String VERSION_ACCOUNT_MGR = "1.0.101"
 //        public static final String VERSION_ACCOUNT_MGR = "1.0.84-SNAPSHOT"
 
         /**
@@ -247,9 +247,9 @@ class Versions {
 //        public static final String VERSION_BLE_CONFIG = '0.0.8-SNAPSHOT'
 
         /**
-         * 胖豚插件 (ipTIME:0.0.0.82  Reoqoo:0.0.1.37)
+         * 胖豚插件 (ipTIME:0.0.0.82  Reoqoo:0.0.1.39)
          */
-        public static final String VERSION_PT_PLUGIN = "0.0.1.38"
+        public static final String VERSION_PT_PLUGIN = "0.0.1.44"
 //        public static final String VERSION_PT_PLUGIN = "0.0.0.75-SNAPSHOT"
 
         /**
@@ -266,11 +266,11 @@ class Versions {
         /**
          * GWIotApi的版本号
          */
-        public static final String GWIOT_API_VERSION = "1.4.1.0"
+        public static final String GWIOT_API_VERSION = "1.4.4.0"
         /**
          * YooseeKit的版本号
          */
-//        public static final String YOOSEE_KIT_VERSION = "google-release-6.33.0.0.50"
+        public static final String YOOSEE_KIT_VERSION = "google-release-6.34.1.0.6"
 
         /**
          * gwvideo_beta的版本号
@@ -285,7 +285,7 @@ class Versions {
 
     static class ReoqooSdkVer {
         /** 线上包 */
-        public static final String VERSION_CODE = "iptime-release-01.06.01.0.11"
+        public static final String VERSION_CODE = "iptime-release-01.06.01.0.16"
         /** snapshot-包 */
 //        public static final String VERSION_CODE = "1.1.12-SNAPSHOT"
 

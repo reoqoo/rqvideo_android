@@ -23,7 +23,7 @@
     <string name="AA0025">密码为8～30位包含字⺟、数字的字符</string>
     <string name="AA0026">确认密码</string>
     <string name="AA0031">找回密码</string>
-    <string name="AA0032">请输入您的ipTIME账号</string>
+    <string name="AA0032">请输入您的账号</string>
     <string name="AA0034">请输入验证码</string>
     <string name="AA0035">验证码已发送⾄</string>
     <string name="AA0036">重新发送</string>
@@ -56,16 +56,16 @@
     <string name="AA0062">扫描设备机身二维码添加设备</string>
     <string name="AA0063">手电筒</string>
     <string name="AA0064">相册</string>
-    <string name="AA0065">ipTIME想使用您的相机</string>
+    <string name="AA0065">APP想使用您的相机</string>
     <string name="AA0066">需要扫描二维码进行连接和绑定设备，是否允许打开相机？</string>
     <string name="AA0067">拒绝</string>
     <string name="AA0068">没有相机权限，请在设置中开启</string>
     <string name="AA0069">APP想使用您的定位信息</string>
     <string name="AA0070">需要定位权限来获取Wi-Fi信息以进行设备添加，请先开启系统定位</string>
     <string name="AA0071">没有定位权限，请在设置中开启</string>
-    <string name="AA0072">ipTIME想使用您的相册信息</string>
+    <string name="AA0072">APP想使用您的相册信息</string>
     <string name="AA0073">需要查看图片并发送图片，是否允许打开相册？</string>
-    <string name="AA0074">ipTIME想使用您的蓝牙信息</string>
+    <string name="AA0074">APP想使用您的蓝牙信息</string>
     <string name="AA0075">需要蓝牙权限来帮助智能设备在添加过程中连接Wi-Fi，是否允许？</string>
     <string name="AA0076">没有蓝牙权限，请在设置中开启</string>
     <string name="AA0078">连接设备</string>
@@ -114,7 +114,7 @@
     <string name="AA0146">最多只能添加%s个访客，如果要继续分享给其他人，请先删除部分访客!</string>
     <string name="AA0147">共享管理</string>
     <string name="AA0148">输入要共享设备的ipTIME账号</string>
-    <string name="AA0149">请输入ipTIME账号</string>
+    <string name="AA0149">请输入账号</string>
     <string name="AA0150">最近分享</string>
     <string name="AA0151">面对面分享</string>
     <string name="AA0152">共享</string>

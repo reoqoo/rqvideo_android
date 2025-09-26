@@ -23,7 +23,7 @@
     <string name="AA0025">Kata laluan adalah 8 ~ 30 huruf, nombor, mengandungi aksara</string>
     <string name="AA0026">Taip semula</string>
     <string name="AA0031">Pulih kata laluan</string>
-    <string name="AA0032">Sila masukkan akaun ipTIME</string>
+    <string name="AA0032">Sila masukkan akaun</string>
     <string name="AA0034">Masukkan kod pengesahan</string>
     <string name="AA0035">Kod pengesahan telah dihantar ke</string>
     <string name="AA0036">Hantar Semula</string>
@@ -51,16 +51,16 @@
     <string name="AA0062">Imbas kod QR pada badan peranti untuk menambah peranti</string>
     <string name="AA0063">Lampu suluh</string>
     <string name="AA0064">Album</string>
-    <string name="AA0065">ipTIME mahu menggunakan kamera anda</string>
+    <string name="AA0065">APP mahu menggunakan kamera anda</string>
     <string name="AA0066">Anda perlu mengimbas kod QR untuk menyambung dan mengikat peranti. Adakah ia dibenarkan untuk membuka kamera?</string>
     <string name="AA0067">Menolak</string>
     <string name="AA0068">Tanpa izin kamera, sila aktifkan dalam Tetapan</string>
     <string name="AA0069">ipTIME mahu menggunakan maklumat lokasi anda</string>
     <string name="AA0070">Untuk berjaya menambah peralatan, anda perlu membenarkan penggunaan Perkhidmatan Lokasi untuk mendapatkan maklumat Wi-Fi.Sila hidupkan Perkhidmatan Lokasi.</string>
     <string name="AA0071">Kebenaran kedudukan belum dihidupkan, sila hidupkannya dalam Tetapan</string>
-    <string name="AA0072">Adakah anda mahu membenarkan ipTIME menggunakan maklumat album anda</string>
+    <string name="AA0072">Adakah anda mahu membenarkan APP menggunakan maklumat album anda</string>
     <string name="AA0073">Perlu melihat dan menghantar gambar. Adakah dibenarkan membuka album?</string>
-    <string name="AA0074">Adakah anda mahu membenarkan ipTIME menggunakan maklumat Bluetooth anda</string>
+    <string name="AA0074">Adakah anda mahu membenarkan APP menggunakan maklumat Bluetooth anda</string>
     <string name="AA0075">Kebenaran Bluetooth diperlukan untuk membantu peranti pintar menyambung ke Wi-Fi semasa proses penambahan. Adakah ini dibenarkan?</string>
     <string name="AA0076">Tiada kebenaran Bluetooth, sila hidupkan dalam Tetapan</string>
     <string name="AA0078">Sambungkan peranti</string>
@@ -109,7 +109,7 @@
     <string name="AA0146">Hanya menambah sehingga X pelawat,  jika anda mahu terus berkongsi kepada orang lain, sila memadamkan beberapa pengunjung dulu!</string>
     <string name="AA0147">Pengurusan Kongsi</string>
     <string name="AA0148">Masukkan akaun ipTIME yang perlu dikongsi</string>
-    <string name="AA0149">Sila masukkan akaun ipTIME</string>
+    <string name="AA0149">Sila masukkan akaun</string>
     <string name="AA0150">Perkongsian terbaru</string>
     <string name="AA0151">Bersemuka Kongsi</string>
     <string name="AA0152">Kongsi</string>
@@ -514,15 +514,16 @@ Untuk menghindari kehabisan kuasa terlalu cepat, ia telah menukar secara automat
     <string name="AA0656">Luar talian, kemas kini tidak tersedia</string>
     <string name="AA0657">Abnormaliti sistem</string>
     <string name="AA0658">Membatalkan</string>
-    <string name="AA0659">Versi semasa tidak menyokong pengikatan langsung peranti ini. Sila muat turun aplikasi \"ipTIME Cloud\" untuk menambah dan menggunakan.</string>
+    <string name="AA0659">Versi semasa tidak menyokong pengikatan langsung peranti ini. Sila muat turun aplikasi \"Xiaotun Cloud\" untuk menambah dan menggunakan.</string>
     <string name="AA0660">Muat turun</string>
     <string name="AA0661">Peringatan Mesra</string>
     <string name="AA0662">Peranti berikut tidak tersedia dalam aplikasi semasa</string>
-    <string name="AA0663">Sila muat turun aplikasi \"ipTIME Cloud\" untuk terus menggunakan</string>
+    <string name="AA0663">Sila muat turun aplikasi \"Xiaotun Cloud\" untuk terus menggunakan</string>
     <string name="AA0664">Jangan Ingatkan Lagi</string>
     <string name="AA0665">Mengenai</string>
     <string name="AA0669">Sila masukkan akaun</string>
     <string name="AA0682">Tidak Setuju dan Keluar Apl</string>
     <string name="AA0689">Sila cuba operasi berikut dan cuba lagi:\n1. Tekan dan tahan butang reset untuk menetapkan semula peranti;\n2. Sila periksa sama ada peranti disambungkan ke bekalan kuasa;\n3. Sila periksa sama ada antena peranti longgar;\n4. Pastikan komunikasi isyarat 4G semasa adalah normal.</string>
     <string name="AA0690">Kamera terlalu rendah, sila naik taraf dalam keadaan elektrik ~</string>
+    <string name="AA0691">Rangkaian bukan WLAN sedang digunakan. Main akan dikenakan kos data</string>
 </resources>

@@ -14,4 +14,10 @@ interface IMineModuleApi {
      */
     fun appVersionUpgrade(context: Context)
 
+   /**
+     * 使用手机浏览器打开应用市场
+     * @param context Context
+     * @param url String 手机浏览器需要访问的地址
+     */
+    fun openPhoneBrowser(context: Context, url: String)
 }

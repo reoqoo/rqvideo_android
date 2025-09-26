@@ -23,7 +23,7 @@
     <string name="AA0025">Kata sandi 8 ~ 30 huruf, Bilangan, karakter</string>
     <string name="AA0026">Mengetik ulang</string>
     <string name="AA0031">Mengembalikan kata sandi</string>
-    <string name="AA0032">Silakan masukkan akun ipTIME</string>
+    <string name="AA0032">Silakan masukkan akun</string>
     <string name="AA0034">Kode verifikasi</string>
     <string name="AA0035">Kode verifikasi telah dikirim ke</string>
     <string name="AA0036">Kirim ulang</string>
@@ -51,16 +51,16 @@
     <string name="AA0062">Pindai kode QR untuk menambahkan perangkat</string>
     <string name="AA0063">Senter</string>
     <string name="AA0064">Album</string>
-    <string name="AA0065">ipTIME ingin menggunakan kamera Anda</string>
+    <string name="AA0065">APP ingin menggunakan kamera Anda</string>
     <string name="AA0066">Anda perlu memindai kode QR untuk menghubungkan dan mengikat perangkat. Apakah diizinkan membuka kamera?</string>
     <string name="AA0067">Ditolak</string>
     <string name="AA0068">Tidak ada izin kamera, harap aktifkan di Pengaturan</string>
     <string name="AA0069">ipTIME ingin menggunakan informasi lokasi Anda</string>
     <string name="AA0070">Untuk berhasil ditambahkan peralatan, Anda perlu mengizinkan penggunaan Layanan Lokasi untuk mendapatkan informasi Wi-Fi.Harap aktifkan Layanan Lokasi</string>
     <string name="AA0071">Tidak ada izin pemosisian. Silakan aktifkan di Pengaturan</string>
-    <string name="AA0072">Izinkan \"ipTIME\" menggunakan informasi album</string>
+    <string name="AA0072">Izinkan \"APP\" menggunakan informasi album</string>
     <string name="AA0073">Perlu melihat dan mengirim gambar. Apakah boleh membuka album?</string>
-    <string name="AA0074">Izinkan \"ipTIME\" menggunakan informasi Bluetooth</string>
+    <string name="AA0074">Izinkan \"APP\" menggunakan informasi Bluetooth</string>
     <string name="AA0075">Akses Bluetooth diperlukan untuk membantu perangkat pintar terhubung ke Wi-Fi selama proses penambahan. Izinkan?</string>
     <string name="AA0076">Tidak ada izin akses Bluetooth. Silakan aktifkan di Pengaturan</string>
     <string name="AA0078">Koneksi perangkat</string>
@@ -109,7 +109,7 @@
     <string name="AA0146">Anda hanya dapat menambah pengunjung hingga X, bila anda masih ingin berbagi dengan teman lain, silakan menghapus sebagian pengunjung!</string>
     <string name="AA0147">Pengelolaan berbagi</string>
     <string name="AA0148">Masukkan akun ipTIME yang ingin dibagikan</string>
-    <string name="AA0149">Silakan masukkan akun ipTIME</string>
+    <string name="AA0149">Silakan masukkan akun</string>
     <string name="AA0150">Baru-baru ini dibagikan</string>
     <string name="AA0151">Berbagi dengan tatap muka</string>
     <string name="AA0152">Berbagi</string>
@@ -514,15 +514,16 @@ Untuk menghindari kehabisan daya terlalu cepat,perangkat telah dialihkan ke mode
     <string name="AA0656">Offline, pembaruan tidak tersedia</string>
     <string name="AA0657">Abnormalitas sistem</string>
     <string name="AA0658">Batalkan</string>
-    <string name="AA0659">Versi saat ini tidak mendukung pengikatan langsung perangkat ini. Silakan unduh aplikasi \"ipTIME Cloud\" untuk menambahkan dan menggunakan.</string>
+    <string name="AA0659">Versi saat ini tidak mendukung pengikatan langsung perangkat ini. Silakan unduh aplikasi \"Xiaotun Cloud\" untuk menambahkan dan menggunakan.</string>
     <string name="AA0660">Unduh</string>
     <string name="AA0661">Pengingat Ramah</string>
     <string name="AA0662">Perangkat berikut tidak tersedia di aplikasi saat ini</string>
-    <string name="AA0663">Silakan unduh aplikasi \"ipTIME Cloud\" untuk terus menggunakan</string>
+    <string name="AA0663">Silakan unduh aplikasi \"Xiaotun Cloud\" untuk terus menggunakan</string>
     <string name="AA0664">Jangan Ingatkan Lagi</string>
     <string name="AA0665">ipTIME</string>
     <string name="AA0669">Silakan masukkan akun</string>
     <string name="AA0682">Tidak Setuju dan Keluar dari Aplikasi</string>
     <string name="AA0689">Silakan coba operasi berikut dan coba lagi:\n1. Tekan dan tahan tombol reset untuk mereset perangkat;\n2. Silakan periksa apakah perangkat terhubung ke catu daya;\n3. Silakan periksa apakah antena perangkat longgar;\n4. Pastikan komunikasi sinyal 4G saat ini normal.</string>
     <string name="AA0690">Kamera terlalu rendah, silakan upgrade dalam keadaan listrik ~</string>
+    <string name="AA0691">Tidak menggunakan jaringan WLAN, pemutaran akan dikenakan biaya data</string>
 </resources>

@@ -23,7 +23,7 @@
     <string name="AA0025">گذرواژه باید 8 الی 30 کاراکتر و حاوی حرف، عدد و کاراکتر باشد</string>
     <string name="AA0026">دوباره تایپ کنید</string>
     <string name="AA0031">بازیابی گذرواژه</string>
-    <string name="AA0032">لطفا ipTIME ID را وارد کنید</string>
+    <string name="AA0032">لطفا ID را وارد کنید</string>
     <string name="AA0034">لطفا کد تایید را وارد نمایید</string>
     <string name="AA0035">کد تصمیم فرستاده شده است</string>
     <string name="AA0036">فرستادن دوباره</string>
@@ -51,7 +51,7 @@
     <string name="AA0062">Scan device body QR code and add device</string>
     <string name="AA0063">نور چراغ</string>
     <string name="AA0064">آلبوم عکس ها</string>
-    <string name="AA0065">ipTIME می خواهد از دوربین شما استفاده کند</string>
+    <string name="AA0065">APP می خواهد از دوربین شما استفاده کند</string>
     <string name="AA0066">شما نیاز به اسکن کد QR برای اتصال و اتصال دستگاه دارید. مجاز است دوربین را باز کند؟</string>
     <string name="AA0067">رد کردن</string>
     <string name="AA0068">هیچ اجازه دوربین نیست، لطفاً فعالش کنید در Settings</string>
@@ -60,7 +60,7 @@
     <string name="AA0071">هیچ اجازه محل وجود ندارد، لطفا در تنظیمات فعالش کنید</string>
     <string name="AA0072">اجازه میدی که ریوکوئو از اطلاعات آلبوم استفاده کنه؟</string>
     <string name="AA0073">نیاز به مشاهده و ارسال تصویر. آیا اجازه دارد آلبوم را باز کند؟</string>
-    <string name="AA0074">Do you allow ipTIME to use your Bluetooth information?</string>
+    <string name="AA0074">Do you allow APP to use your Bluetooth information?</string>
     <string name="AA0075">اجازه‌ی بلوتوت برای کمک به دستگاه‌های هوشمند در طول فرایند اضافه به Wi Fi نیاز دارد. اجازه دارد؟</string>
     <string name="AA0076">اجازه‌ی بلوتوت نیست، لطفا در تنظیمات فعالش کنید</string>
     <string name="AA0078">اتصال به دستگاه</string>
@@ -109,7 +109,7 @@
     <string name="AA0146">شما تنها می توانید X بازدید کننده را بیافزایید، اگر می خواهید بازدید کننده‌های دیگری بیافزایید، لطفاً ابتدا بعضی از بازدید کننده‌ها را حذف کنید!</string>
     <string name="AA0147">مدیریت اشتراک گذاری</string>
     <string name="AA0148">وارد حساب ipTIME برای شریک دستگاه با</string>
-    <string name="AA0149">لطفاً حساب ipTIME account</string>
+    <string name="AA0149">لطفا ID را وارد کنید</string>
     <string name="AA0150">اخیراً مشترک</string>
     <string name="AA0151">اشتراک گذاری چهره به چهره</string>
     <string name="AA0152">اشتراک گذاری</string>
@@ -514,15 +514,16 @@
     <string name="AA0656">آفلاین، ارتقا موقتاً غیرممکن است</string>
     <string name="AA0657">ناعادت سیستم</string>
     <string name="AA0658">لغو</string>
-    <string name="AA0659">نسخه فعلی از اتصال مستقیم این دستگاه پشتیبانی نمی‌کند. لطفاً برنامه \"ipTIME Cloud\" را دانلود کنید تا اضافه و استفاده کنید.</string>
+    <string name="AA0659">نسخه فعلی از اتصال مستقیم این دستگاه پشتیبانی نمی‌کند. لطفاً برنامه \"Xiaotun Cloud\" را دانلود کنید تا اضافه و استفاده کنید.</string>
     <string name="AA0660">دانلود</string>
     <string name="AA0661">یادآوری دوستانه</string>
     <string name="AA0662">دستگاه‌های زیر در برنامه فعلی در دسترس نیستند</string>
-    <string name="AA0663">لطفاً برنامه \"ipTIME Cloud\" را دانلود کنید تا به استفاده ادامه دهید</string>
+    <string name="AA0663">لطفاً برنامه \"Xiaotun Cloud\" را دانلود کنید تا به استفاده ادامه دهید</string>
     <string name="AA0664">دیگر یادآوری نکن</string>
     <string name="AA0665">درباره</string>
     <string name="AA0669">لطفا حساب را وارد کنید</string>
     <string name="AA0682">مخالفت کنید و از برنامه خارج شوید</string>
     <string name="AA0689">لطفاً عملیات زیر را امتحان کنید و دوباره امتحان کنید:\n1. دکمه بازنشانی را فشار دهید و نگه دارید تا دستگاه بازنشانی شود;\n2. لطفاً بررسی کنید که آیا دستگاه به منبع تغذیه متصل است یا خیر;\n3. لطفاً بررسی کنید که آیا آنتن دستگاه شل شده است یا خیر;\n4. لطفاً اطمینان حاصل کنید که ارتباط سیگنال 4G فعلی طبیعی است.</string>
     <string name="AA0690">دوربین خیلی کم است، لطفا در وضعیت برق ارتقا دهید ~</string>
+    <string name="AA0691">استفاده از شبکه غیر WLAN، بازی کردن بارهای ترافیک</string>
 </resources>

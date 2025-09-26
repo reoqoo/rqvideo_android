@@ -2,6 +2,7 @@ package com.gw.reoqoo.app
 
 import android.app.Activity
 import android.app.Application
+import android.content.ComponentCallbacks
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
@@ -28,6 +29,7 @@ import com.gw_reoqoo.lib_utils.toast.IToast
 import com.gw_reoqoo.lib_utils.version.VersionUtils
 import com.gw_reoqoo.module_mount.initializetask.TaskPriority
 import com.reoqoo.main.BuildConfig
+import com.reoqoo.main.R
 import com.gw.reoqoo.app.crash.CrashCallbackImpl
 import com.gw.reoqoo.ui.logo.LogoActivity
 import com.gw.reoqoo.ui.main.MainActivity
@@ -264,35 +266,41 @@ class AppCoreInitTask @Inject constructor() : IInitializeTask {
      * 生命周期模块的初始化
      */
     private fun initLifecycle(application: Application) {
-        ActivityLifecycleManager.registerActivityLifecycleListener(object :
-            ActivityLifecycleListener {
-            override fun onActivityCreated(p0: Activity, p1: Bundle?) {
+        application.registerActivityLifecycleCallbacks(object :
+            Application.ActivityLifecycleCallbacks {
+            override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
+
+            }
+
+            override fun onActivityStarted(activity: Activity) {
                 // 对Application和Activity更新上下文的语言环境
-                localeApi.initAppLanguage(p0,newConfig = null)
+                localeApi.initAppLanguage(activity, newConfig = null)
             }
 
-            override fun onActivityStarted(p0: Activity) {
+            override fun onActivityResumed(activity: Activity) {
+
             }
 
-            override fun onActivityResumed(p0: Activity) {
+            override fun onActivityPaused(activity: Activity) {
+
             }
 
-            override fun onActivityPaused(p0: Activity) {
+            override fun onActivityStopped(activity: Activity) {
+
             }
 
-            override fun onActivityStopped(p0: Activity) {
+            override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {
+
             }
 
-            override fun onActivitySaveInstanceState(p0: Activity, p1: Bundle) {
-            }
-
-            override fun onActivityDestroyed(p0: Activity) {
-                if (p0 is MainActivity) {
+            override fun onActivityDestroyed(activity: Activity) {
+                if (activity is MainActivity) {
                     // 退出app
                     pluginManager.closeFloatService()
                 }
             }
-
+        })
+        application.registerComponentCallbacks(object : ComponentCallbacks {
             override fun onConfigurationChanged(newConfig: Configuration) {
                 GwellLogUtils.i(TAG, "initLifecycle : newConfig ${newConfig.locale.country}")
                 localeApi.setCurrentCountry(newConfig.locale.country)
@@ -301,10 +309,6 @@ class AppCoreInitTask @Inject constructor() : IInitializeTask {
 
             override fun onLowMemory() {
             }
-
-            override fun onTrimMemory(p0: Int) {
-            }
-
         })
     }
 
@@ -454,7 +458,7 @@ class AppCoreInitTask @Inject constructor() : IInitializeTask {
      * 更新到AccountMgr里作为基础信息
      * @param userInfo IUserInfo?
      */
-   private fun updateAccountMgrBy(userInfo: IUserInfo?) {
+    private fun updateAccountMgrBy(userInfo: IUserInfo?) {
         GwellLogUtils.i(TAG, "initGwHttp-$userInfo")
         val accessId = userInfo?.accessId
         val accessToken = userInfo?.accessToken

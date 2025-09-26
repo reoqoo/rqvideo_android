@@ -11,6 +11,7 @@ import com.gw_reoqoo.lib_http.entities.VersionInfoEntity
 import com.gw.cp_msg.repository.MsgCenterRepository
 import com.gw_reoqoo.lib_http.entities.AppUpgradeEntity
 import com.gw_reoqoo.lib_utils.version.Version
+import com.gw_reoqoo.lib_utils.version.VersionUtils
 import com.gw_reoqoo.resource.R
 import com.gwell.loglibs.GwellLogUtils
 import com.jwkj.base_utils.str_utils.GwStringUtils
@@ -117,8 +118,11 @@ class LocalMsgExternalManager @Inject constructor(
             .onSuccess {
                 this?.let {
                     val appUpdateMsg = initAppUpgrade(it)
-                    GwellLogUtils.i(TAG, "appUpdateMsg: $appUpdateMsg")
-                    systemMsgList.add(appUpdateMsg)
+                    val currentVersionName = VersionUtils.getAppVersionName(app)
+                    GwellLogUtils.i(TAG, "appUpdateMsg: $appUpdateMsg, currentVersionName $currentVersionName")
+                    if (Version.from(appUpdateMsg.appVersion ?: "") > Version.from(currentVersionName)) {
+                        systemMsgList.add(appUpdateMsg)
+                    }
                 }
             }
             .onServerError { code, msg ->

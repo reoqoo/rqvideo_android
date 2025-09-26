@@ -23,7 +23,7 @@
     <string name="AA0025">Wachtwoord moet 8-30 tekens lang zijn, en zowel letters als cijfers bevatten.</string>
     <string name="AA0026">Voer nogmaals in</string>
     <string name="AA0031">Wachtwoord opvragen</string>
-    <string name="AA0032">Vul ipTIME ID</string>
+    <string name="AA0032">Vul ID</string>
     <string name="AA0034">Voer verificatiecode in</string>
     <string name="AA0035">De verificatiecode is verzonden naar</string>
     <string name="AA0036">Opnieuw versturen</string>
@@ -50,16 +50,16 @@
     <string name="AA0062">Scan de QR-code op het apparaat om toe te voegen</string>
     <string name="AA0063">Zaklamp</string>
     <string name="AA0064">Fotoalbum</string>
-    <string name="AA0065">ipTIME wil uw camera gebruiken</string>
+    <string name="AA0065">APP wil uw camera gebruiken</string>
     <string name="AA0066">U moet de QR-code scannen om verbinding te maken en het apparaat te binden. Is het toegestaan om de camera te openen?</string>
     <string name="AA0067">Afwijzen</string>
     <string name="AA0068">Geen cameratoestemming, schakel in de Instellingen in</string>
     <string name="AA0069">ipTIME wil uw locatiegegevens gebruiken</string>
     <string name="AA0070">Om succesvol toegevoegd apparatuur, moet u toestaan bdat het gebruik van de Location Services voor het verkrijgen van Wi-Fi informatie.Schakel op Location Services.</string>
     <string name="AA0071">Geen locatie-rechten, schakel dit in instellingen in</string>
-    <string name="AA0072">ipTIME wil toegang tot je fotoalbum-informatie</string>
+    <string name="AA0072">APP wil toegang tot je fotoalbum-informatie</string>
     <string name="AA0073">Noodzaak om de foto te bekijken en te verzenden. Is het toegestaan om het album te openen?</string>
-    <string name="AA0074">ipTIME wil je Bluetooth-informatie gebruiken</string>
+    <string name="AA0074">APP wil je Bluetooth-informatie gebruiken</string>
     <string name="AA0075">Bluetooth-machtigingen vereist om slimme apparaten te helpen verbinding maken met Wi-Fi tijdens het toevoegen. Toestaan?</string>
     <string name="AA0076">Geen Bluetooth-rechten, schakel dit in instellingen in</string>
     <string name="AA0078">Verbindend apparaat.</string>
@@ -108,7 +108,7 @@
     <string name="AA0146">Er kunnen maximaal X bezoekers worden toegevoegd, verwijder een aantal bezoekers als je wilt blijven delen met anderen.</string>
     <string name="AA0147">Beheer delen</string>
     <string name="AA0148">Voer het ipTIME-account in om het apparaat te delen</string>
-    <string name="AA0149">Voer alstublieft het ipTIME-account in</string>
+    <string name="AA0149">Vul ID</string>
     <string name="AA0150">Recent gedeeld</string>
     <string name="AA0151">Face-to-face delen</string>
     <string name="AA0152">Delen</string>
@@ -512,15 +512,16 @@ Om te voorkomen dat de stroom te snel op raakt, is hij automatisch overgeschakel
     <string name="AA0656">Offline, upgrade niet mogelijk</string>
     <string name="AA0657">Systeemafwijkingen</string>
     <string name="AA0658">Annuleren</string>
-    <string name="AA0659">De huidige versie ondersteunt het direct binden van dit apparaat niet. Download de \"ipTIME Cloud\"-app om toe te voegen en te gebruiken.</string>
+    <string name="AA0659">De huidige versie ondersteunt het direct binden van dit apparaat niet. Download de \"Xiaotun Cloud\"-app om toe te voegen en te gebruiken.</string>
     <string name="AA0660">Downloaden</string>
     <string name="AA0661">Vriendelijke Herinnering</string>
     <string name="AA0662">De volgende apparaten zijn niet beschikbaar in de huidige app</string>
-    <string name="AA0663">Download de \"ipTIME Cloud\"-app om verder te gebruiken</string>
+    <string name="AA0663">Download de \"Xiaotun Cloud\"-app om verder te gebruiken</string>
     <string name="AA0664">Niet opnieuw herinneren</string>
     <string name="AA0665">Over</string>
     <string name="AA0669">Voer het account in</string>
     <string name="AA0682">Niet akkoord en app afsluiten</string>
     <string name="AA0689">Probeer de volgende handelingen en probeer het opnieuw:\n1. Houd de resetknop ingedrukt om het apparaat te resetten;\n2. Controleer of het apparaat is aangesloten op de stroomvoorziening;\n3. Controleer of de antenne van het apparaat loszit;\n4. Zorg ervoor dat de huidige 4G-signaalcommunicatie normaal is.</string>
     <string name="AA0690">De camera is te laag, een upgrade in een staat van elektriciteit ~</string>
+    <string name="AA0691">Gebruik van niet-WLAN-netwerk, afspelen kan datakosten opleveren</string>
 </resources>

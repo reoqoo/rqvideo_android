@@ -494,4 +494,14 @@ class FamilyVM @Inject constructor(
             _historyDeviceList.postValue(deviceList)
         }
     }
+
+
+    /**
+     * 重新设置首页的title
+     */
+    fun resetHomeTitle() {
+        _accountInfo.value?.let {
+            _accountInfo.postValue(it)
+        }
+    }
 }

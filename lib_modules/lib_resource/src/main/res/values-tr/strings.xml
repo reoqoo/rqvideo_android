@@ -23,7 +23,7 @@
     <string name="AA0025">Şifre 8 - 30 karakter ve harf, sayı içeriyor</string>
     <string name="AA0026">Yeniden yaz</string>
     <string name="AA0031">Parola Al</string>
-    <string name="AA0032">ipTIME kimliğini girin</string>
+    <string name="AA0032">kimliğini girin</string>
     <string name="AA0034">Lütfen doğrulama kodunu giriniz</string>
     <string name="AA0035">Doğrulama kodu şuraya gönderildi:</string>
     <string name="AA0036">Yeniden gönder</string>
@@ -50,16 +50,16 @@
     <string name="AA0062">Cihazda QR kodu tarayın ve ekleyin</string>
     <string name="AA0063">Fener</string>
     <string name="AA0064">Fotoğraf albümü</string>
-    <string name="AA0065">ipTIME kameranızı kullanmak istiyor</string>
+    <string name="AA0065">APP kameranızı kullanmak istiyor</string>
     <string name="AA0066">Cihazı bağlamak ve bağlamak için QR kodunu taramanız gerekir. o kamerayı açmak için izin verilir?</string>
     <string name="AA0067">Reddet</string>
     <string name="AA0068">Kamera izni yok, lütfen Ayarlarda etkinleştirin</string>
     <string name="AA0069">ipTIME konum bilgilerinizi kullanmak istiyor</string>
     <string name="AA0070">Başarıyla ekipman eklendi için, Wi-Fi bilgi almak için Konum Hizmetlerinin kullanımına izin gerekiyor.Konum Hizmetleri\'ni açın.</string>
     <string name="AA0071">Konum izni yok, lütfen ayarlardan etkinleştirin</string>
-    <string name="AA0072">ipTIME, albüm bilgilerinize erişmek istiyor</string>
+    <string name="AA0072">APP, albüm bilgilerinize erişmek istiyor</string>
     <string name="AA0073">Resmi görüntülemeniz ve göndermeniz gerekir. Albüm açılmasına izin verildi mi?</string>
-    <string name="AA0074">ipTIME, Bluetooth bilgilerinizden yararlanmak istiyor</string>
+    <string name="AA0074">APP, Bluetooth bilgilerinizden yararlanmak istiyor</string>
     <string name="AA0075">Akıllı cihazların ekleme sırasında Wi-Fi\'ye bağlanmasına yardımcı olmak için Bluetooth izni gerekiyor. İzin verilsin mi?</string>
     <string name="AA0076">Bluetooth izni yok, lütfen ayarlardan etkinleştirin</string>
     <string name="AA0078">Aygıta bağlayın</string>
@@ -109,7 +109,7 @@
     <string name="AA0146">Yalnızca X tane ziyaretçi ekleyebilirsiniz, başkalarına paylaşmak istiyorsanız lütfen önce bazı ziyaretçileri siliniz!</string>
     <string name="AA0147">Paylaşımı yönetin</string>
     <string name="AA0148">Cihazı paylaşmak için ipTIME hesabını girin</string>
-    <string name="AA0149">Lütfen ipTIME hesabını giriniz</string>
+    <string name="AA0149">kimliğini girin</string>
     <string name="AA0150">Son paylaşılan</string>
     <string name="AA0151">Yüz yüze paylaşma</string>
     <string name="AA0152">Paylaş</string>
@@ -513,15 +513,16 @@ Pilin çok çabuk bitmesini önlemek için otomatik olarak güç tasarrufu modun
     <string name="AA0656">Çevrimdışı, güncelleme yok</string>
     <string name="AA0657">Sistem abnormalliği</string>
     <string name="AA0658">İptal et</string>
-    <string name="AA0659">Mevcut sürüm, bu cihazın doğrudan bağlanmasını desteklemiyor. Lütfen eklemek ve kullanmak için \"ipTIME Cloud\" uygulamasını indirin.</string>
+    <string name="AA0659">Mevcut sürüm, bu cihazın doğrudan bağlanmasını desteklemiyor. Lütfen eklemek ve kullanmak için \"Xiaotun Cloud\" uygulamasını indirin.</string>
     <string name="AA0660">İndir</string>
     <string name="AA0661">Dostça Hatırlatma</string>
     <string name="AA0662">Aşağıdaki cihazlar mevcut uygulamada kullanılamıyor</string>
-    <string name="AA0663">Kullanmaya devam etmek için lütfen \"ipTIME Cloud\" uygulamasını indirin</string>
+    <string name="AA0663">Kullanmaya devam etmek için lütfen \"Xiaotun Cloud\" uygulamasını indirin</string>
     <string name="AA0664">Tekrar Hatırlatma</string>
     <string name="AA0665">Hakkında</string>
     <string name="AA0669">Lütfen hesap girin</string>
     <string name="AA0682">Kabul Etme ve Uygulamadan Çık</string>
     <string name="AA0689">Lütfen aşağıdaki işlemleri deneyin ve tekrar deneyin:\n1. Cihazı sıfırlamak için sıfırlama düğmesine basılı tutun;\n2. Lütfen cihazın güç kaynağına bağlı olup olmadığını kontrol edin;\n3. Lütfen cihaz anteninin gevşek olup olmadığını kontrol edin;\n4. Lütfen mevcut 4G sinyal iletişiminin normal olduğundan emin olun.</string>
     <string name="AA0690">Kamera çok düşük, lütfen bir elektrik halinde yükseltin ~</string>
+    <string name="AA0691">Wi-Fi dışı bir ağ kullanıyor, oynatmak veri maliyeti oluşturabilir</string>
 </resources>

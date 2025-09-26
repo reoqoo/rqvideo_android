@@ -23,7 +23,7 @@
     <string name="AA0025">La password ha 8-30 caratteri, contiene lettere e numeri</string>
     <string name="AA0026">Inserisci di nuovo</string>
     <string name="AA0031">Recupera la Password</string>
-    <string name="AA0032">Si prega di inserire ipTIME ID</string>
+    <string name="AA0032">Si prega di inserire ID</string>
     <string name="AA0034">Si prega di inserire il codice di verifica</string>
     <string name="AA0035">Il codice di verifica è stato inviato a</string>
     <string name="AA0036">inviare di nuovo</string>
@@ -50,16 +50,16 @@
     <string name="AA0062">Scansiona il QR sull\'apparecchio per aggiungere</string>
     <string name="AA0063">Torcia</string>
     <string name="AA0064">Album fotografico</string>
-    <string name="AA0065">ipTIME vuole usare la tua fotocamera</string>
+    <string name="AA0065">APP vuole usare la tua fotocamera</string>
     <string name="AA0066">È necessario eseguire la scansione del codice QR per la connessione e associare il dispositivo. È permesso aprire la videocamera?</string>
     <string name="AA0067">Rifiuta</string>
     <string name="AA0068">Nessuna autorizzazione per la fotocamera, si prega di abilitare nelle Impostazioni</string>
     <string name="AA0069">ipTIME desidera utilizzare le informazioni sulla tua posizione</string>
     <string name="AA0070">attrezzature Aggiunto di successo, è necessario consentire l\'utilizzo dei Servizi di localizzazione per ottenere informazioni Wi-Fi.Si prega di attivare i servizi di localizzazione</string>
     <string name="AA0071">Nessuna autorizzazione alla posizione, si prega di attivarla nelle impostazioni</string>
-    <string name="AA0072">ipTIME desidera accedere alle informazioni del tuo album</string>
+    <string name="AA0072">APP desidera accedere alle informazioni del tuo album</string>
     <string name="AA0073">È necessario visualizzare e inviare l\'immagine. È permesso aprire l\'album?</string>
-    <string name="AA0074">ipTIME desidera utilizzare le tue informazioni Bluetooth</string>
+    <string name="AA0074">APP desidera utilizzare le tue informazioni Bluetooth</string>
     <string name="AA0075">Autorizzazione Bluetooth necessaria per aiutare i dispositivi intelligenti nella connessione al Wi-Fi durante l\'aggiunta. Consentire?</string>
     <string name="AA0076">Nessuna autorizzazione Bluetooth, si prega di attivarla nelle impostazioni</string>
     <string name="AA0078">Collegarsi al dispositivo</string>
@@ -108,7 +108,7 @@
     <string name="AA0146">Al massimo possono essere aggiunti X visitatori, se si vuole continuare a condividere con altre persone , prego di cancellare tutti i visitatori!</string>
     <string name="AA0147">Gestione della condivisione</string>
     <string name="AA0148">Inserisci l\'account ipTIME per condividere il dispositivo</string>
-    <string name="AA0149">Inserisci l\'account ipTIME</string>
+    <string name="AA0149">Si prega di inserire ID</string>
     <string name="AA0150">Condivisi di recente</string>
     <string name="AA0151">Condivide faccia a faccia</string>
     <string name="AA0152">Condividere con gli amici</string>
@@ -512,15 +512,16 @@ Al fine di evitare un eccessivo consumo di energia, è stato automaticamente cam
     <string name="AA0656">Offline, aggiornamento non disponibile</string>
     <string name="AA0657">Anomalie del sistema</string>
     <string name="AA0658">Annulla</string>
-    <string name="AA0659">La versione corrente non supporta il collegamento diretto di questo dispositivo. Si prega di scaricare l\'app \"ipTIME Cloud\" per aggiungerlo e utilizzarlo.</string>
+    <string name="AA0659">La versione corrente non supporta il collegamento diretto di questo dispositivo. Si prega di scaricare l\'app \"Xiaotun Cloud\" per aggiungerlo e utilizzarlo.</string>
     <string name="AA0660">Scarica</string>
     <string name="AA0661">Promemoria Gentile</string>
     <string name="AA0662">I seguenti dispositivi non sono disponibili nell\'app corrente</string>
-    <string name="AA0663">Si prega di scaricare l\'app \"ipTIME Cloud\" per continuare a utilizzare</string>
+    <string name="AA0663">Si prega di scaricare l\'app \"Xiaotun Cloud\" per continuare a utilizzare</string>
     <string name="AA0664">Non Ricordare di Nuovo</string>
     <string name="AA0665">Informazioni su</string>
     <string name="AA0669">Inserisci l\'account</string>
     <string name="AA0682">Non accettare e uscire dall\'app</string>
     <string name="AA0689">Provate le seguenti operazioni e riprovate:\n1. Premete e tenete premuto il pulsante di reset per ripristinare il dispositivo;\n2. Verificate se il dispositivo è collegato all\'alimentazione elettrica;\n3. Verificate se l\'antenna del dispositivo è allentata;\n4. Assicuratevi che la comunicazione del segnale 4G attuale sia normale.</string>
     <string name="AA0690">La fotocamera è troppo bassa, si prega di aggiornare in uno stato di elettricità ~</string>
+    <string name="AA0691">Utilizzando una rete non-WLAN, la riproduzione può comportare costi di dati</string>
 </resources>

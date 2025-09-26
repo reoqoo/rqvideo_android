@@ -1,6 +1,5 @@
 package com.gw_reoqoo.component_family.ui.family
 
-import android.content.Context
 import android.graphics.Outline
 import android.os.Bundle
 import android.view.View
@@ -8,7 +7,6 @@ import android.view.ViewGroup
 import android.view.ViewOutlineProvider
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
@@ -36,7 +34,6 @@ import com.gw.cp_msg.api.kapi.INoticeMgrApi
 import com.gw.cp_msg.entity.http.MainNoticeEntity
 import com.gw.cp_msg.entity.http.NoticeEntity
 import com.gw_reoqoo.component_family.BuildConfig
-import com.gw_reoqoo.lib_base_architecture.view.ABaseMVVMActivity
 import com.gw_reoqoo.lib_base_architecture.view.ABaseMVVMDBFragment
 import com.gw_reoqoo.lib_http.ResponseNotSuccessException
 import com.gw_reoqoo.lib_http.entities.MessageBean
@@ -65,7 +62,6 @@ import com.jwkj.base_utils.activity_utils.ActivityUtils
 import com.jwkj.base_utils.package_utils.LaunchAppUtils
 import com.jwkj.base_utils.ui.DensityUtil
 import com.jwkj.iotvideo.message.IMessageMgr
-import com.reoqoo.component_iotapi_plugin_opt.api.IGWIotOpt
 import com.tencentcs.iotvideo.http.interceptor.flow.HttpAction
 import com.tencentcs.iotvideo.utils.JSONUtils
 import com.therouter.router.Autowired
@@ -74,8 +70,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.trySendBlocking
-import kotlinx.coroutines.launch
-import java.lang.Exception
 import javax.inject.Inject
 import com.gw_reoqoo.resource.R as RR
 
@@ -136,9 +130,6 @@ class FamilyFragment : ABaseMVVMDBFragment<FamilyFragmentFamilyBinding, FamilyVM
 
     @Inject
     lateinit var saEventApi: ISaEventApi
-    
-    @Inject
-    lateinit var igwIotOpt: IGWIotOpt
 
     private val mScreenWidth by lazy { DensityUtil.getScreenWidth(context) }
 
@@ -182,7 +173,7 @@ class FamilyFragment : ABaseMVVMDBFragment<FamilyFragmentFamilyBinding, FamilyVM
                     getString(RR.string.AA0050),
                     enable = anyDeviceMaster
                 ) {
-                    // igwIotOpt.assentQrcode() 
+                    // igwIotOpt.assentQrcode()
                     ReoqooRouterPath
                         .DevShare
                         .ACTIVITY_SHARE_DEVICE
@@ -206,10 +197,8 @@ class FamilyFragment : ABaseMVVMDBFragment<FamilyFragmentFamilyBinding, FamilyVM
                         .ACTIVITY_CHOSE_PRODUCT_LIST
                         .navigation(fragment = null)
                 })
-                items.add(CommListPopup.CommItem("测试智能守护") {
-                    lifecycleScope.launch {
-                        igwIotOpt.openSmartGuardPage("343601678647439")
-                    }
+                items.add(CommListPopup.CommItem("测试GwIot") {
+                    ReoqooRouterPath.IotApiPlugin.ACTIVITY_TEST.navigation(context = context)
                 })
             }
             CommListPopup(v.context, items).showAsDropDown(v)
@@ -285,6 +274,7 @@ class FamilyFragment : ABaseMVVMDBFragment<FamilyFragmentFamilyBinding, FamilyVM
         super.initLiveData(viewModel, savedInstanceState)
         // 监听账户信息改动
         viewModel.watchAccountInfo.observe(this) { iUserInfo ->
+            GwellLogUtils.i(TAG, "watchAccountInfo: nickName  ${iUserInfo?.nickName}")
             // 顶部XXX的家
             mViewBinding.tvHomeUser.text =
                 getString(RR.string.AA0047, iUserInfo?.getInsensitiveName(true) ?: "")
@@ -664,6 +654,10 @@ class FamilyFragment : ABaseMVVMDBFragment<FamilyFragmentFamilyBinding, FamilyVM
         mFgViewModel.loadDeviceAndSceneList(this)
         // 获取未读的设备分享消息列表
         mFgViewModel.loadUnRadDevShareList()
+
+        mFgViewModel.watchAccountInfo.value?.let {
+            mFgViewModel.resetHomeTitle()
+        }
     }
 
     override fun onDestroy() {

@@ -1,6 +1,7 @@
 package com.gw.reoqoo.ui.main
 
 import android.app.Application
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.Gravity
 import android.widget.FrameLayout
@@ -203,4 +204,21 @@ class MainActivity : ABaseMVVMDBActivity<AppActivityMainBinding, MainVM>() {
         transaction.commitNowAllowingStateLoss()
     }
 
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        // 配置变化（如语言切换）时刷新菜单
+        refreshBottomMenu()
+    }
+
+    /**
+     * 刷新底部导航菜单（重新加载菜单资源，更新语言文字）
+     */
+    private fun refreshBottomMenu() {
+        val fragment = fragmentsMap[currentItemId]
+        if (fragment != null) {
+            mViewBinding.navBtnMenu.menu.clear()
+            mViewBinding.navBtnMenu.inflateMenu(R.menu.app_bottom_nav_menu)
+            mViewBinding.navBtnMenu.selectedItemId = currentItemId // 恢复当前选中项
+        }
+    }
 }

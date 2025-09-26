@@ -3,8 +3,8 @@ project.ext {
             google    : new FlavorConfig(
                     APPLICATION_ID: "com.cctv.iptime",
                     APP_NAME_PREFIX: "ipTIME_V",
-                    VERSION_CODE: 1824,
-                    VERSION_NAME: "01.01.00",
+                    VERSION_CODE: 1825,
+                    VERSION_NAME: "01.01.01",
                     appId: "244d1828c953492dacb0ca5201f54221",
                     appToken: "0bedfb9f0f8404683a58ff636b7b8c8f0c5e809d72ab9cdc1ed5a64782b9a315",
                     appName: "ipTIME CCTV_android",
@@ -20,13 +20,14 @@ project.ext {
                     websitePluginHostTestUrl: "https://openapi-test-plugin.reoqoo.com/",
                     websiteH5HostTestUrl: "https://trade-test.reoqoo.com/",
                     yooseeShareTypes: [YooseeShareType.QRCODE, YooseeShareType.PHONE],
-                    defaultLanguage: Language.EN
+                    defaultLanguage: Language.EN,
+                    supportGooglePay: false
             ),
             iptime       : new FlavorConfig(
                     APPLICATION_ID: "com.cctv.iptime",
                     APP_NAME_PREFIX: "ipTIME_V",
-                    VERSION_CODE: 1824,
-                    VERSION_NAME: "01.01.00",
+                    VERSION_CODE: 1825,
+                    VERSION_NAME: "01.01.01",
                     appId: "244d1828c953492dacb0ca5201f54221",
                     appToken: "0bedfb9f0f8404683a58ff636b7b8c8f0c5e809d72ab9cdc1ed5a64782b9a315",
                     appName: "ipTIME CCTV_android",
@@ -42,7 +43,8 @@ project.ext {
                     websitePluginHostTestUrl: "https://openapi-test-plugin.reoqoo.com/",
                     websiteH5HostTestUrl: "https://trade-test.reoqoo.com/",
                     yooseeShareTypes: [YooseeShareType.QRCODE, YooseeShareType.PHONE],
-                    defaultLanguage: Language.KO
+                    defaultLanguage: Language.KO,
+                    supportGooglePay: true
             )
     ]
 }
@@ -141,6 +143,11 @@ class FlavorConfig {
      */
     Language defaultLanguage
 
+    /**
+     * 是否支持Google支付
+     */
+    Boolean supportGooglePay = false
+
     void applyToApplication(flavor) {
         println("applyToApplication.flavor=" + flavor)
         flavor.applicationId(APPLICATION_ID)
@@ -166,14 +173,18 @@ class FlavorConfig {
         flavor.buildConfigField("String", "WEBSITE_H5_HOST_TEST_URL", "\"${websiteH5HostTestUrl}\"")
         flavor.buildConfigField("String[]", "YOOSEE_SHARE_TYPES", "{${yooseeShareTypes.collect { "\"${it}\""}.join(",")}}")
         flavor.buildConfigField("String", "DEFAULT_LANGUAGE", "\"${defaultLanguage.toString()}\"")
+        flavor.buildConfigField("Boolean", "SUPPORT_GOOGLE_PAY", "${supportGooglePay}")
     }
 
     void applyToModule(flavor) {
+        def is_upload_plugin_mode = System.getenv('IS_UPLOAD_PLUGIN') ?: 'false'
         println("applyToModule.flavor=" + flavor)
+        println("applyToModule.is_upload_plugin_mode=" + is_upload_plugin_mode)
         flavor.buildConfigField("Boolean", "IS_GOOGLE", "${isGoogle}")
         flavor.buildConfigField("String", "DEFAULT_LANGUAGE", "\"${defaultLanguage.toString()}\"")
+        flavor.buildConfigField("Boolean", "IS_UPLOAD_PLUGIN_MODE", "${is_upload_plugin_mode}")
+        flavor.buildConfigField("Boolean", "SUPPORT_GOOGLE_PAY", "${supportGooglePay}")
     }
-
     @Override
     String toString() {
         return "{" +

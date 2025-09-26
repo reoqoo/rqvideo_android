@@ -23,7 +23,7 @@
     <string name="AA0025">Heslo musí obsahovat 8-30 znaků, obsahující písmena i číslice.</string>
     <string name="AA0026">Zadejte znovu</string>
     <string name="AA0031">Načíst heslo</string>
-    <string name="AA0032">Prosím, zadejte ipTIME ID</string>
+    <string name="AA0032">Prosím, zadejte ID</string>
     <string name="AA0034">Zadejte ověřovací kód</string>
     <string name="AA0035">Ověřovací kód byl zaslán na adresu</string>
     <string name="AA0036">Znovu odeslat</string>
@@ -51,16 +51,16 @@
     <string name="AA0062">Skenovat tělo zařízení QR kód a přidat zařízení</string>
     <string name="AA0063">baterka</string>
     <string name="AA0064">Fotoalbum</string>
-    <string name="AA0065">ipTIME chce použít váš fotoaparát</string>
+    <string name="AA0065">APP chce použít váš fotoaparát</string>
     <string name="AA0066">Je potřeba naskenovat QR kód pro připojení a vázat zařízení. Je povoleno otevřít fotoaparát?</string>
     <string name="AA0067">Odmítnout</string>
     <string name="AA0068">Žádné oprávnění fotoaparátu, povolte to prosím v Nastavení y, povolte v nastavení</string>
     <string name="AA0069">ipTIME chce použít informace o vaší poloze</string>
     <string name="AA0070">Chcete-li úspěšně přidán zařízení, je třeba umožnit využívání služby určování polohy pro získávání informací o Wi-Fi.Prosím, zapněte služby určování polohy.</string>
     <string name="AA0071">Žádné oprávnění k umístění, povolte to prosím v nastavení</string>
-    <string name="AA0072">Umožňujete ipTIME používat informace o vašem albu?</string>
+    <string name="AA0072">Umožňujete APP používat informace o vašem albu?</string>
     <string name="AA0073">Potřebujete prohlížet a odesílat obrázky. Je povoleno otevřít album?</string>
-    <string name="AA0074">Umožňujete ipTIME používat vaše Bluetooth informace?</string>
+    <string name="AA0074">Umožňujete APP používat vaše Bluetooth informace?</string>
     <string name="AA0075">Pro pomoc chytrým zařízením připojení k Wi-Fi během procesu přidávání je vyžadováno oprávnění Bluetooth.</string>
     <string name="AA0076">Žádné oprávnění Bluetooth, povolte to prosím v nastavení</string>
     <string name="AA0078">Připojování zařízení.</string>
@@ -110,7 +110,7 @@
     <string name="AA0146">Maximální možný počet návštěvníků je X, pokud chcete pokračovat ve sdílení s dalšími, odstraňte některé stávající návštěvníky.</string>
     <string name="AA0147">Správa sdílení</string>
     <string name="AA0148">Zadejte účet ipTIME, se kterým chcete zařízení sdílet</string>
-    <string name="AA0149">Prosím zadejte účet ipTIME</string>
+    <string name="AA0149">Prosím, zadejte ID</string>
     <string name="AA0150">Nedávno sdílené</string>
     <string name="AA0151">Sdílení tváří v tvář</string>
     <string name="AA0152">Sdílet</string>
@@ -515,15 +515,16 @@ Aby se zabránilo příliš rychlému vyčerpání energie, automaticky se přep
     <string name="AA0656">Offline, aktualizace nedostupná</string>
     <string name="AA0657">Anomálie systému</string>
     <string name="AA0658">Zrušit</string>
-    <string name="AA0659">Aktuální verze nepodporuje přímé propojení tohoto zařízení. Stáhněte si aplikaci \"ipTIME Cloud\" a přidejte ji a používejte ji.</string>
+    <string name="AA0659">Aktuální verze nepodporuje přímé propojení tohoto zařízení. Stáhněte si aplikaci \"Xiaotun Cloud\" a přidejte ji a používejte ji.</string>
     <string name="AA0660">Stáhnout</string>
     <string name="AA0661">Přátelská Připomínka</string>
     <string name="AA0662">Následující zařízení nejsou dostupná v aktuální aplikaci</string>
-    <string name="AA0663">Stáhněte si aplikaci \"ipTIME Cloud\", abyste mohli dále používat</string>
+    <string name="AA0663">Stáhněte si aplikaci \"Xiaotun Cloud\", abyste mohli dále používat</string>
     <string name="AA0664">Nepřipomínat Znovu</string>
     <string name="AA0665">O</string>
     <string name="AA0669">Zadejte účet</string>
     <string name="AA0682">Nesouhlasit a ukončit aplikaci</string>
     <string name="AA0689">Zkuste následující operace a zkuste to znovu:\n1. Stiskněte a podržte tlačítko reset, abyste zařízení resetovali;\n2. Zkontrolujte, zda je zařízení připojeno k napájení;\n3. Zkontrolujte, zda je anténa zařízení uvolněná;\n4. Ujistěte se, že aktuální komunikace 4G signálu je normální.</string>
     <string name="AA0690">Fotoaparát je příliš nízká, upgrade ve stavu elektřiny ~</string>
+    <string name="AA0691">Při použití sítě bez WLAN budou přehrávání účtovány dopravní poplatky</string>
 </resources>

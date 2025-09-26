@@ -23,7 +23,7 @@
     <string name="AA0025">Mật khẩu gồm 8~30 ký tự, gồm cả chữ và số</string>
     <string name="AA0026">Nhập lần nữa</string>
     <string name="AA0031">Lấy lại mật khẩu</string>
-    <string name="AA0032">Vui lòng nhập tài khoản ipTIME của bạn</string>
+    <string name="AA0032">Vui lòng nhập tài khoản của bạn</string>
     <string name="AA0034">Vui lòng nhập mã xác nhận</string>
     <string name="AA0035">Mã xác minh đã được gửi đến</string>
     <string name="AA0036">Gửi lại</string>
@@ -51,16 +51,16 @@
     <string name="AA0062">Quét mã QR trên thân thiết bị để thêm thiết bị</string>
     <string name="AA0063">Đèn pin</string>
     <string name="AA0064">Album ảnh</string>
-    <string name="AA0065">ipTIME muốn sử dụng máy ảnh của bạn</string>
+    <string name="AA0065">APP muốn sử dụng máy ảnh của bạn</string>
     <string name="AA0066">Bạn cần quét mã QR để kết nối và ràng buộc các thiết bị. Có được phép mở camera không?</string>
     <string name="AA0067">Từ chối</string>
     <string name="AA0068">Không có quyền đối với máy ảnh, vui lòng bật trong Cài đặt</string>
     <string name="AA0069">ipTIME muốn sử dụng thông tin vị trí của bạn</string>
     <string name="AA0070">Để thiết bị thêm thành công, bạn cần cho phép việc sử dụng các dịch vụ Location để nhận thông tin Wi-Fi. Hãy bật Location Services</string>
     <string name="AA0071">Không có quyền định vị, vui lòng bật quyền trong Cài đặt</string>
-    <string name="AA0072">Có cho phép ipTIME sử dụng thông tin album của bạn</string>
+    <string name="AA0072">Có cho phép APP sử dụng thông tin album của bạn</string>
     <string name="AA0073">Cần xem và gửi hình. Có được phép mở album không?</string>
-    <string name="AA0074">Có cho phép ipTIME sử dụng thông tin Bluetooth của bạn</string>
+    <string name="AA0074">Có cho phép APP sử dụng thông tin Bluetooth của bạn</string>
     <string name="AA0075">Cần có quyền Bluetooth để giúp các thiết bị thông minh kết nối với Wi-Fi trong quá trình thêm. Có cho phép?</string>
     <string name="AA0076">Không có quyền Bluetooth, vui lòng bật quyền trong Cài đặt</string>
     <string name="AA0078">Kết nối thiết bị</string>
@@ -109,7 +109,7 @@
     <string name="AA0146">Chỉ có thể chia sẻ cho tối đa %s người, nếu muốn tiếp tục chia sẻ cho người khác, xin hãy xóa bớt một số khách!</string>
     <string name="AA0147">Chia sẻ quản lý</string>
     <string name="AA0148">Nhập tài khoản ipTIME bạn muốn chia sẻ thiết bị</string>
-    <string name="AA0149">Vui lòng nhập tài khoản ipTIME của bạn</string>
+    <string name="AA0149">Vui lòng nhập tài khoản của bạn</string>
     <string name="AA0150">Chia sẻ gần đây</string>
     <string name="AA0151">Chia sẻ ngay</string>
     <string name="AA0152">Chia sẻ</string>
@@ -514,15 +514,16 @@
     <string name="AA0656">Ngoại tuyến, không thể nâng cấp</string>
     <string name="AA0657">Hệ thống ngoại lệ</string>
     <string name="AA0658">Hủy bỏ</string>
-    <string name="AA0659">Phiên bản hiện tại không hỗ trợ liên kết trực tiếp thiết bị này. Vui lòng tải xuống ứng dụng \"ipTIME Cloud\" để thêm và sử dụng.</string>
+    <string name="AA0659">Phiên bản hiện tại không hỗ trợ liên kết trực tiếp thiết bị này. Vui lòng tải xuống ứng dụng \"Xiaotun Cloud\" để thêm và sử dụng.</string>
     <string name="AA0660">Tải xuống</string>
     <string name="AA0661">Nhắc nhở thân thiện</string>
     <string name="AA0662">Các thiết bị sau không khả dụng trong ứng dụng hiện tại</string>
-    <string name="AA0663">Vui lòng tải xuống ứng dụng \"ipTIME Cloud\" để tiếp tục sử dụng</string>
+    <string name="AA0663">Vui lòng tải xuống ứng dụng \"Xiaotun Cloud\" để tiếp tục sử dụng</string>
     <string name="AA0664">Không nhắc lại</string>
     <string name="AA0665">Về</string>
     <string name="AA0669">Vui lòng nhập tài khoản</string>
     <string name="AA0682">Không đồng ý và thoát ứng dụng</string>
     <string name="AA0689">Vui lòng thử các thao tác sau và thử lại:\n1. Nhấn và giữ nút đặt lại để đặt lại thiết bị;\n2. Vui lòng kiểm tra xem thiết bị có được kết nối với nguồn điện hay không;\n3. Vui lòng kiểm tra xem ăng-ten của thiết bị có bị lỏng hay không;\n4. Vui lòng đảm bảo rằng giao tiếp tín hiệu 4G hiện tại là bình thường.</string>
     <string name="AA0690">Máy ảnh quá thấp, vui lòng nâng cấp trong trạng thái điện ~</string>
+    <string name="AA0691">Đang sử dụng mạng không phải WLAN. Phát sẽ phải chịu phí lưu lượng</string>
 </resources>

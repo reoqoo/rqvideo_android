@@ -33,7 +33,7 @@ class MineModuleImpl @Inject constructor() : IMineModuleApi {
     override fun appVersionUpgrade(context: Context) {
         try {
             if (AppChannelName.isXiaotunApp(appParamApi.getAppName())) {
-                openMarketStore(context, gwIotOpt.getAboutVersionUrl())
+                openPhoneBrowser(context, gwIotOpt.getAboutVersionUrl())
             } else {
                 LaunchAppUtils.lunchGoogleMarket(context)
             }
@@ -41,14 +41,19 @@ class MineModuleImpl @Inject constructor() : IMineModuleApi {
         } catch (e: Exception) {
             GwellLogUtils.e(TAG, "appVersionUpgrade fail: reason ${e.message}")
             if (!AppChannelName.isXiaotunApp(appParamApi.getAppName())) {
-                openMarketStore(context, gwIotOpt.getAboutVersionUrl())
+                openPhoneBrowser(context, gwIotOpt.getAboutVersionUrl())
             }
 
         }
     }
 
-    private fun openMarketStore(context: Context, url: String) {
-        GwellLogUtils.i(TAG, "openMarketStore url: $url")
+    /**
+     * 使用手机浏览器打开应用市场
+     * @param context Context
+     * @param url String 手机浏览器需要访问的地址
+     */
+    override fun openPhoneBrowser(context: Context, url: String) {
+        GwellLogUtils.i(TAG, "openPhoneBrowser url: $url")
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         context.startActivity(intent)

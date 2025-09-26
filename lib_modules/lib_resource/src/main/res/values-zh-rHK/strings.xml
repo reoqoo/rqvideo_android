@@ -23,7 +23,7 @@
     <string name="AA0025">密碼為8~30位包含字母、數字的字元</string>
     <string name="AA0026">確認密碼</string>
     <string name="AA0031">找回密碼</string>
-    <string name="AA0032">請輸入ipTIME帳號</string>
+    <string name="AA0032">請輸入帳號</string>
     <string name="AA0034">請輸入驗證碼</string>
     <string name="AA0035">驗證碼已發送至</string>
     <string name="AA0036">重新發送</string>
@@ -51,16 +51,16 @@
     <string name="AA0062">掃描設備機身二維碼添加設備</string>
     <string name="AA0063">手電筒</string>
     <string name="AA0064">相冊</string>
-    <string name="AA0065">ipTIME想使用您的相機</string>
+    <string name="AA0065">APP想使用您的相機</string>
     <string name="AA0066">需要掃描二維碼進行連接和綁定設備，是否允許打開相機？</string>
     <string name="AA0067">拒絕</string>
     <string name="AA0068">沒有相機權限，請在設置中開啟</string>
     <string name="AA0069">APP想使用您的定位信息</string>
     <string name="AA0070">需要定位權限來獲取Wi-Fi信息以進行設備添加，請先開啟系統定位</string>
     <string name="AA0071">沒有定位權限，請在設置中開啟</string>
-    <string name="AA0072">ipTIME想使用您的相冊信息</string>
+    <string name="AA0072">APP想使用您的相冊信息</string>
     <string name="AA0073">需要查看圖片並發送圖片，是否允許打開相冊？</string>
-    <string name="AA0074">ipTIME想使用您的藍牙信息</string>
+    <string name="AA0074">APP想使用您的藍牙信息</string>
     <string name="AA0075">需要藍牙權限來幫助智能設備在添加過程中連接Wi-Fi，是否允許？</string>
     <string name="AA0076">沒有藍牙權限，請在設置中開啟</string>
     <string name="AA0078">連接設備</string>
@@ -109,7 +109,7 @@
     <string name="AA0146">最多只能添加%s個訪客，如果要繼續分享給其他人，請先刪除部分訪客!</string>
     <string name="AA0147">共享管理</string>
     <string name="AA0148">輸入要共享設備的ipTIME賬號</string>
-    <string name="AA0149">請輸入ipTIME賬號</string>
+    <string name="AA0149">請輸入帳號</string>
     <string name="AA0150">最近分享</string>
     <string name="AA0151">面對面分享</string>
     <string name="AA0152">共享</string>
