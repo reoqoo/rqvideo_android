@@ -249,7 +249,7 @@ class Versions {
         /**
          * 胖豚插件 (ipTIME:0.0.0.82  Reoqoo:0.0.1.39)
          */
-        public static final String VERSION_PT_PLUGIN = "0.0.1.44"
+        public static final String VERSION_PT_PLUGIN = "0.0.1.47"
 //        public static final String VERSION_PT_PLUGIN = "0.0.0.75-SNAPSHOT"
 
         /**
@@ -285,7 +285,7 @@ class Versions {
 
     static class ReoqooSdkVer {
         /** 线上包 */
-        public static final String VERSION_CODE = "iptime-release-01.06.01.0.16"
+        public static final String VERSION_CODE = "iptime-release-01.06.01.0.18"
         /** snapshot-包 */
 //        public static final String VERSION_CODE = "1.1.12-SNAPSHOT"
 
