@@ -1,5 +1,8 @@
 package com.gw_reoqoo.cp_account.ui.fragment.login
 
+import android.Manifest
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.text.InputFilter
 import android.text.TextPaint
@@ -8,6 +11,8 @@ import android.text.method.LinkMovementMethod
 import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.view.View
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.findNavController
@@ -55,6 +60,8 @@ class LoginFragment : ABaseMVVMDBFragment<AccountFragmentLoginBinding, LoginFrgV
          * reoqoo
          */
         private const val REO_QOO = "reoqoo"
+
+        private const val NOTIFICATION_PERMISSION_REQUEST_CODE = 1001
     }
 
     @Inject
@@ -273,6 +280,7 @@ class LoginFragment : ABaseMVVMDBFragment<AccountFragmentLoginBinding, LoginFrgV
                     mFgViewModel.isAgreeProtocol(true)
                     gwIotOpt.updateAgreeProtocol()
                     initSaSDK()
+                    requestNotificationPermissions()
                 }, onCancelClick = {
                     mFgViewModel.isAgreeProtocol(false)
                     ActivityLifecycleManager.finishAllActivity()
@@ -359,4 +367,37 @@ class LoginFragment : ABaseMVVMDBFragment<AccountFragmentLoginBinding, LoginFrgV
         return LoginFrgVM::class.java as Class<T>
     }
 
+    /**
+     * Android SDK版本 33+需要动态请求通知栏权限
+     */
+    private fun requestNotificationPermissions() {
+        // 检查 API 版本是否为 33+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            GwellLogUtils.i(TAG, "requestNotificationPermissions")
+            // 检查是否已获得通知权限
+            context?.let {
+                if (ContextCompat.checkSelfPermission(it, Manifest.permission.POST_NOTIFICATIONS)
+                    != PackageManager.PERMISSION_GRANTED
+                ) {
+                    // 请求权限（requestCode 自定义，如 1001）
+                    activity?.let { it1 ->
+                        ActivityCompat.requestPermissions(
+                            it1,
+                            arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+                            NOTIFICATION_PERMISSION_REQUEST_CODE
+                        )
+                    }
+                }
+            }
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        GwellLogUtils.i(TAG, "onRequestPermissionsResult requestCode = $requestCode")
+    }
 }

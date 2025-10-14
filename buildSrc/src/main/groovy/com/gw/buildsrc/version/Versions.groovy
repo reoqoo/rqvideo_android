@@ -400,7 +400,7 @@ class Versions {
         /**
          * firebase-message版本号
          */
-        public static final String VERSION_FIREBASE_MESSAGE = "24.0.0"
+        public static final String VERSION_FIREBASE_MESSAGE = "24.1.2"
 
         /**
          * 流式布局
