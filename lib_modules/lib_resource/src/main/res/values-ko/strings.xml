@@ -177,7 +177,7 @@
     <string name="AA0224">ipTIME 정보</string>
     <string name="AA0225">정보 센터</string>
     <string name="AA0226">설정 성공</string>
-    <string name="AA0227">최신 정보를 받을 수 있도록 %@앱에 권한을 허용해 주세</string>
+    <string name="AA0227">최신 정보를 받을 수 있도록 %s 앱에 권한을 허용해 주세</string>
     <string name="AA0228">메시지가 없습니다</string>
     <string name="AA0230">선택</string>
     <string name="AA0232">공유</string>

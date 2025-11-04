@@ -379,7 +379,7 @@ class LoginFragment : ABaseMVVMDBFragment<AccountFragmentLoginBinding, LoginFrgV
                 if (ContextCompat.checkSelfPermission(it, Manifest.permission.POST_NOTIFICATIONS)
                     != PackageManager.PERMISSION_GRANTED
                 ) {
-                    // 请求权限（requestCode 自定义，如 1001）
+                    // 请求通知栏权限, 自定义权限请求码 NOTIFICATION_PERMISSION_REQUEST_CODE
                     activity?.let { it1 ->
                         ActivityCompat.requestPermissions(
                             it1,

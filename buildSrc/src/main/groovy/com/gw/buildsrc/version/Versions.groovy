@@ -238,7 +238,7 @@ class Versions {
         /**
          * iot-saas
          */
-        public static final String VERSION_IOT_SAAS = "1.0.45.2"
+        public static final String VERSION_IOT_SAAS = "1.0.46.4"
 
         /**
          * 蓝牙配网库
@@ -249,7 +249,7 @@ class Versions {
         /**
          * 胖豚插件 (ipTIME:0.0.0.82  Reoqoo:0.0.1.39)
          */
-        public static final String VERSION_PT_PLUGIN = "0.0.1.47"
+        public static final String VERSION_PT_PLUGIN = "0.0.1.51"
 //        public static final String VERSION_PT_PLUGIN = "0.0.0.75-SNAPSHOT"
 
         /**
@@ -269,8 +269,9 @@ class Versions {
         public static final String GWIOT_API_VERSION = "1.4.4.0"
         /**
          * YooseeKit的版本号
+         * 6.34.1.0.6版本是无values-sw*文件夹的版本，可用于适配无yoosee设备的折叠屏尺寸
          */
-        public static final String YOOSEE_KIT_VERSION = "google-release-6.34.1.0.6"
+        public static final String YOOSEE_KIT_VERSION = "google-release-6.34.1.0.8"
 
         /**
          * gwvideo_beta的版本号
@@ -285,7 +286,7 @@ class Versions {
 
     static class ReoqooSdkVer {
         /** 线上包 */
-        public static final String VERSION_CODE = "iptime-release-01.06.01.0.18"
+        public static final String VERSION_CODE = "iptime-release-01.06.01.0.21"
         /** snapshot-包 */
 //        public static final String VERSION_CODE = "1.1.12-SNAPSHOT"
 
