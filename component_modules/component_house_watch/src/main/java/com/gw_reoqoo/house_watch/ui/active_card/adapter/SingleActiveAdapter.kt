@@ -91,7 +91,8 @@ class SingleActiveAdapter(
         dataBinding.tvTime.text = "%02d:%02d".format(hour, minute)
         dataBinding.tvDevName.text = when (activeTypes.size) {
             1 -> context.getString(RR.string.AA0582, context.getString(activeTypes.first().descRes))
-            else -> context.getString(RR.string.AA0582, context.getString(RR.string.AA0600))
+            in 2..Int.MAX_VALUE -> context.getString(RR.string.AA0692, context.getString(RR.string.AA0600))
+            else -> ""
         }
 
         val isVideo = bean.alarmType.bitAt(AlarmEventType.ALARM_VIDEO_BIT) == 1L

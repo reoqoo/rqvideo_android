@@ -526,4 +526,5 @@
     <string name="AA0690">The camera battery is low, please upgrade it when the battery is sufficient.</string>
     <string name="AA0691">You are not using WLAN. Data costs will be incurred when playing</string>
     <string name="record_number">粤ICP备17085704号-19A</string>
+    <string name="AA0692">%1$s are detected</string>
 </resources>

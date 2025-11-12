@@ -530,4 +530,5 @@
     <string name="AA0689">请尝试以下操作后重试：\n1.长按复位键重置设备；\n2.请检查设备是否连接电源；\n3.请检查设备天线是否松落；\n4.请确保当前4G信号通信正常。</string>
     <string name="AA0690">摄像机电量过低，请在电量充足的状态下升级~</string>
     <string name="AA0691">正在使用非WLAN网络，播放将产生流量费用</string>
+    <string name="AA0692">看到 %1$s</string>
 </resources>

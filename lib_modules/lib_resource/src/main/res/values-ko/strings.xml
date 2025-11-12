@@ -457,12 +457,12 @@
     <string name="AA0579">비밀번호를 입력하세요</string>
     <string name="AA0580">전화번호</string>
     <string name="AA0581">이메일</string>
-    <string name="AA0582">감지됨 %s</string>
+    <string name="AA0582">%1$s 감지됨</string>
     <string name="AA0596">계정 ID</string>
     <string name="AA0597">복사 완료</string>
     <string name="AA0598">카메라가 꺼져있습니다</string>
     <string name="AA0599">피드백 번호</string>
-    <string name="AA0600">여러 건의 사건</string>
+    <string name="AA0600">여러 건의 이벤트</string>
     <string name="AA0601">이벤트 보너스</string>
     <string name="AA0602">유효기간 만료</string>
     <string name="AA0603">이벤트가 끝났습니다~</string>
@@ -525,4 +525,5 @@
     <string name="AA0689">다음 작업을 시도한 후 다시 시도하십시오:\n1. 재설정 버튼을 길게 눌러 기기를 재설정하십시오;\n2. 기기가 전원에 연결되어 있는지 확인하십시오;\n3. 기기 안테나가 헐렁한지 확인하십시오;\n4. 현재 4G 신호 통신이 정상인지 확인하십시오.</string>
     <string name="AA0690">카메라가 너무 낮 으면 전기 상태로 업그레이드하십시오 ~</string>
     <string name="AA0691">Wi-Fi가 아닌 모바일 데이터를 사용하고 있으며 재생 시 데이터 요금이 발생할 수 있습니다</string>
+    <string name="AA0692">%1$s 감지됨</string>
 </resources>

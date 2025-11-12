@@ -3,8 +3,8 @@ project.ext {
             google    : new FlavorConfig(
                     APPLICATION_ID: "com.cctv.iptime",
                     APP_NAME_PREFIX: "ipTIME_V",
-                    VERSION_CODE: 1827,
-                    VERSION_NAME: "01.01.03",
+                    VERSION_CODE: 1828,
+                    VERSION_NAME: "01.01.04",
                     appId: "244d1828c953492dacb0ca5201f54221",
                     appToken: "0bedfb9f0f8404683a58ff636b7b8c8f0c5e809d72ab9cdc1ed5a64782b9a315",
                     appName: "ipTIME CCTV_android",
@@ -26,8 +26,8 @@ project.ext {
             iptime       : new FlavorConfig(
                     APPLICATION_ID: "com.cctv.iptime",
                     APP_NAME_PREFIX: "ipTIME_V",
-                    VERSION_CODE: 1827,
-                    VERSION_NAME: "01.01.03",
+                    VERSION_CODE: 1828,
+                    VERSION_NAME: "01.01.04",
                     appId: "244d1828c953492dacb0ca5201f54221",
                     appToken: "0bedfb9f0f8404683a58ff636b7b8c8f0c5e809d72ab9cdc1ed5a64782b9a315",
                     appName: "ipTIME CCTV_android",
