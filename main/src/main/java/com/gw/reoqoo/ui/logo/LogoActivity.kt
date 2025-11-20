@@ -69,7 +69,8 @@ class LogoActivity : ABaseMVVMDBActivity<AppActivityLogoBinding, LogoVM>() {
         launch {
             delay(1000)
             val userInfo = accountApi.getSyncUserInfo()
-            if (userInfo != null && accountApi.isSyncLogin()) {
+
+            if (userInfo != null && accountApi.isSyncLogin() && mViewModel.checkAutoLoginStatus()) {
                 if (ActivityLifecycleManager.getMainActivity() == null) {
                     mViewModel.goMainAction()
                 }

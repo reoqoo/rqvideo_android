@@ -47,6 +47,11 @@ class AccountDataStore @Inject constructor(@ApplicationContext context: Context)
          * token刷新时间
          */
         private const val TOKEN_REFRESH_TIME = "token_refresh_time"
+
+        /**
+         * 是否勾选了auto login
+         */
+        private const val IS_SELECT_AUTO_LOGIN = "is_select_auto_login"
     }
 
     private val dataStore = context.dataStore
@@ -90,6 +95,14 @@ class AccountDataStore @Inject constructor(@ApplicationContext context: Context)
     override fun setTokenRefreshTime(time: Long) {
         DataStoreUtils.putData(dataStore, TOKEN_REFRESH_TIME, time)
     }
+
+    override fun isSelectAutoLogin(): Boolean {
+        return DataStoreUtils.getData(dataStore, IS_SELECT_AUTO_LOGIN, false)
+    }
+
+    override fun setSelectAutoLogin(isSelect: Boolean) {
+        DataStoreUtils.putData(dataStore, IS_SELECT_AUTO_LOGIN, isSelect)
+    }
 }
 
 interface AccountDataStoreApi: AgreeApi{
@@ -122,6 +135,19 @@ interface AccountDataStoreApi: AgreeApi{
      */
     fun setTokenRefreshTime(time: Long)
 
+    /**
+     * 是否勾选了auto login
+     *
+     * @return Boolean true：勾选了， false：没有勾选
+     */
+    fun isSelectAutoLogin(): Boolean
+
+    /**
+     * 设置是否勾选了auto login
+     *
+     * @param isSelect Boolean true：勾选了， false：没有勾选
+     */
+    fun setSelectAutoLogin(isSelect: Boolean)
 }
 
 interface AgreeApi{

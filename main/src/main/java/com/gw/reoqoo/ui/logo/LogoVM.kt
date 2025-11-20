@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Intent
 import com.gw.component_push.api.interfaces.IPushApi
 import com.gw_reoqoo.cp_account.api.kapi.IUserInfo
+import com.gw_reoqoo.cp_account.datastore.AccountDataStore
 import com.gw_reoqoo.lib_base_architecture.PageJumpData
 import com.gw_reoqoo.lib_base_architecture.vm.ABaseVM
 import com.gw_reoqoo.lib_iotvideo.IoTSdkInitMgr
@@ -25,7 +26,8 @@ class LogoVM @Inject constructor(
     private val app: Application,
     private val pushApi: IPushApi,
     private val ioTSdkInitMgr: IoTSdkInitMgr,
-    val gwiotOpt: IGWIotOpt
+    val gwiotOpt: IGWIotOpt,
+    private val dataStore: AccountDataStore,
 ) : ABaseVM() {
 
     companion object {
@@ -98,4 +100,10 @@ class LogoVM @Inject constructor(
         }
     }
 
+    /**
+     * 检查是否需要自动登录
+     */
+    fun checkAutoLoginStatus(): Boolean {
+        return dataStore.isSelectAutoLogin()
+    }
 }

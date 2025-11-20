@@ -39,6 +39,7 @@ import com.jwkj.base_statistics.sa.kits.SA
 import com.jwkj.base_utils.local.LanguageUtils
 import com.jwkj.base_utils.str_utils.GwStringUtils
 import com.reoqoo.component_iotapi_plugin_opt.api.IGWIotOpt
+import com.gw_reoqoo.lib_http.entities.DistrictEntity
 import com.therouter.TheRouter
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -214,7 +215,7 @@ class LoginFragment : ABaseMVVMDBFragment<AccountFragmentLoginBinding, LoginFrgV
                     dialog.setButtonListener(onSureClick = {
                         mFgViewModel.agreeTxtClick(true)
                         shareVM.districtLD.value?.let { entity ->
-                            mFgViewModel.loginByAccount(entity, account, pwd)
+                            goToLogin(entity, account, pwd)
                         } ?: toast.show(RR.string.AA0017)
                     })
                     dialog.show()
@@ -222,7 +223,7 @@ class LoginFragment : ABaseMVVMDBFragment<AccountFragmentLoginBinding, LoginFrgV
                 }
             }
             shareVM.districtLD.value?.let { entity ->
-                mFgViewModel.loginByAccount(entity, account, pwd)
+                goToLogin(entity, account, pwd)
             } ?: toast.show(RR.string.AA0017)
         }
 
@@ -232,6 +233,19 @@ class LoginFragment : ABaseMVVMDBFragment<AccountFragmentLoginBinding, LoginFrgV
         mViewBinding.llLoginTop.setOnClickListener {
             checkFeedbackInfo()
         }
+    }
+
+    /**
+     * 去登录
+     * @param districtEntity DistrictEntity 地区实体
+     * @param account String 账号
+     * @param pwd String 密码
+     */
+    private fun goToLogin(entity: DistrictEntity, account: String, pwd: String) {
+        // TODO: Please replace cbAutoLogin with your specific Auto Login control ID
+//        mFgViewModel.setSelectAutoLogin(mViewBinding.cbAutoLogin.isChecked)
+
+        mFgViewModel.loginByAccount(entity, account, pwd)
     }
 
     /**
