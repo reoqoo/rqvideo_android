@@ -90,7 +90,7 @@ class ModifyPwdActivity @Inject constructor() :
 
     override fun getLayoutId() = R.layout.account_activity_modify_pwd
 
-    override fun getTitleView() = mViewBinding.appTitle
+    override fun onViewLoadFinish() = setStatusBarColor()
 
     override fun <T : ViewModel?> loadViewModel() = ModifyPwdVM::class.java as Class<T>
 }

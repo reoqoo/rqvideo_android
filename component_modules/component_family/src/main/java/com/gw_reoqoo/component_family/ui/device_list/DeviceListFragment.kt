@@ -45,7 +45,9 @@ import com.reoqoo.component_iotapi_plugin_opt.api.IGWIotOpt
 import com.tencentcs.iotvideo.http.interceptor.flow.HttpAction
 import com.therouter.router.Route
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 import kotlin.math.pow
 import kotlin.math.sqrt
@@ -79,7 +81,7 @@ class DeviceListFragment : ABaseMVVMDBFragment<FamilyFragmentDeviceBinding, Devi
 
     @Inject
     lateinit var igwIotOpt: IGWIotOpt
-    
+
     /**
      * 设备列表适配器
      */
@@ -253,13 +255,23 @@ class DeviceListFragment : ABaseMVVMDBFragment<FamilyFragmentDeviceBinding, Devi
 
     override fun initLiveData(viewModel: DeviceListVM, savedInstanceState: Bundle?) {
         super.initLiveData(viewModel, savedInstanceState)
-        // 设备列表更新通知
-        parentViewModel.deviceList.observe(this) { list ->
-            deviceListAdapter.updateData(list)
-            if (list.isNotEmpty()) {
-                viewModel.loadFirstDeviceGuide()
+        lifecycleScope.launch {
+            // 先拿一遍产品列表，没有就刷新一下再拿一遍
+            val productList = configApi.getDevConfigList()
+            if (productList.isEmpty()) {
+                configApi.updateConfigSync()
+            }
+            withContext(Dispatchers.Main) {
+                // 设备列表更新通知
+                parentViewModel.deviceList.observe(this@DeviceListFragment) { list ->
+                    deviceListAdapter.updateData(list)
+                    if (list.isNotEmpty()) {
+                        viewModel.loadFirstDeviceGuide()
+                    }
+                }
             }
         }
+
         // 新手引导
         viewModel.firstDeviceGuide.observe(this) { shown ->
             if (shown == false) {

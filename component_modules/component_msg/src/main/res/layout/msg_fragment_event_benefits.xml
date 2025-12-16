@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/color_f2f3f6">
+        android:background="@color/color_f2f3f6"
+        android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycle_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginVertical="@dimen/dp_16" />
+            android:layout_height="@dimen/dp_0"
+            android:layout_marginVertical="@dimen/dp_16"
+            android:layout_weight="1" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_1"
+            app:immersive_type="navigationBar" />
+    </LinearLayout>
+
 
 </layout>

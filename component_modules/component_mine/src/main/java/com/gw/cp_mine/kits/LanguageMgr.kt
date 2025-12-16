@@ -135,7 +135,7 @@ class LanguageMgr @Inject constructor(
      *
      * @param activity activity
      */
-    fun applyAppLanguage(activity: Activity? = null, newConfig: Configuration? = null) {
+    override fun applyAppLanguage(activity: Activity?, newConfig: Configuration?) {
         val appLocale = currentAppLocale
         // 更新整个Application的语言
         updateLanguage(app.applicationContext, newConfig = null, appLocale)

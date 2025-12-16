@@ -173,7 +173,7 @@ class FamilyFragment : ABaseMVVMDBFragment<FamilyFragmentFamilyBinding, FamilyVM
                     getString(RR.string.AA0050),
                     enable = anyDeviceMaster
                 ) {
-                    // igwIotOpt.assentQrcode()
+                    // igwIotOpt.assentQrcode() 
                     ReoqooRouterPath
                         .DevShare
                         .ACTIVITY_SHARE_DEVICE
@@ -190,7 +190,7 @@ class FamilyFragment : ABaseMVVMDBFragment<FamilyFragmentFamilyBinding, FamilyVM
                         )
                 },
             )
-            if (BuildConfig.DEBUG) {
+            if (BuildConfig.DEBUG || BuildConfig.DEFAULT_TEST_ENV) {
                 items.add(CommListPopup.CommItem("手动配网") {
                     ReoqooRouterPath
                         .ConfigPath

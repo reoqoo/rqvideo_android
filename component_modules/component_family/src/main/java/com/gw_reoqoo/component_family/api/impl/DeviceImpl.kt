@@ -23,6 +23,7 @@ data class DeviceImpl(
     override val online: Int?,
     override val powerOn: Boolean?,
     override val productId: String?,
+    override val productModule: String?,
     override val sn: String?,
     override val hasShared: Boolean?,
     override val originJson: String?
@@ -38,6 +39,7 @@ data class DeviceImpl(
         online = parcel.readValue(Int::class.java.classLoader) as? Int,
         powerOn = parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
         productId = parcel.readString(),
+        productModule = parcel.readString(),
         sn = parcel.readString(),
         hasShared = parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
         originJson = parcel.readString()
@@ -54,6 +56,7 @@ data class DeviceImpl(
         online = info.online,
         powerOn = info.powerOn,
         productId = info.productId,
+        productModule = info.productModule,
         sn = info.sn,
         hasShared = info.status?.bitAt(1) == 1,
         originJson = info.originJson
@@ -70,6 +73,7 @@ data class DeviceImpl(
         parcel.writeValue(online)
         parcel.writeValue(powerOn)
         parcel.writeString(productId)
+        parcel.writeString(productModule)
         parcel.writeString(sn)
         parcel.writeValue(hasShared)
         parcel.writeString(originJson)

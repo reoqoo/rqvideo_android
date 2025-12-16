@@ -93,15 +93,6 @@ class LoginFrgVM @Inject constructor(
         isAgree.value = state
     }
 
-    /**
-     * 设置是否勾选了auto login
-     *
-     * @param isSelect Boolean true：勾选了， false：没有勾选
-     */
-    fun setSelectAutoLogin(isSelect: Boolean) {
-        dataStore.setSelectAutoLogin(isSelect)
-    }
-
     fun loginByAccount(districtEntity: DistrictEntity, account: String, pwd: String) {
         if (GwStringUtils.isEmailValid(account)) {
             // 优先判断是否邮箱

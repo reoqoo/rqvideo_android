@@ -9,7 +9,7 @@
         android:background="@color/color_f2f3f6"
         android:orientation="vertical">
 
-        <com.gw_reoqoo.lib_widget.immersive.ImmersiveView
+        <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_0_1" />
 
@@ -113,8 +113,10 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone">
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="1"
+            android:visibility="gone"
+            tools:visibility="visible">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view"
@@ -134,5 +136,10 @@
                 tools:listitem="@layout/dev_share_item_near_share_list" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_1"
+            app:immersive_type="navigationBar" />
     </LinearLayout>
 </layout>

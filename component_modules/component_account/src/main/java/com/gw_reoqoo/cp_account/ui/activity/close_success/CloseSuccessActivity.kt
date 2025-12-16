@@ -30,7 +30,7 @@ class CloseSuccessActivity :
 
     override fun <T : ViewModel?> loadViewModel() = CloseSuccessVM::class.java as Class<T>
 
-    override fun getTitleView() = mViewBinding.layoutTitle
+    override fun onViewLoadFinish() = setStatusBarColor()
 
     override fun onBackPressed() {
 //        super.onBackPressed()

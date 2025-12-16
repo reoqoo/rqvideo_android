@@ -51,7 +51,6 @@
     <color name="color_fa2a2d">#FA2A2D</color>
     <color name="color_fa5151">#FA5151</color>
     <color name="color_fa2a2d_38">#61FA2A2D</color>
-    <color name="color_ff7500">#FF7500</color>
     <color name="color_ff7500_20">#33FF7500</color>
     <color name="color_64bb5c">#64BB5C</color>
     <color name="color_f2f3f6">#F2F3F6</color>
@@ -141,7 +140,7 @@
     <color name="color_4d4d4d">#4D4D4D</color>
 
     <!-- 新版本UI -->
-    <color name="color_2ca74d">#649554</color>
+    <color name="color_2ca74d">#2CA74D</color>
     <color name="color_2ca74d_16">#292CA74D</color>
     <color name="color_2ca74d_20">#332CA74D</color>
     <color name="color_2ca74d_38">#9E2CA74D</color>
@@ -150,13 +149,14 @@
     <color name="color_e3e5ea">#E3E5EA</color>
 
     <color name="color_4a68a6">#4A68A6</color>
-    <color name="color_4a68a6_38">#614A68A6</color>
     <color name="color_4a68a6_40">#664A68A6</color>
 
     <color name="color_dadde4">#FFDADDE4</color>
+    <color name="color_38e667">#38E667</color>
 
     <color name="color_fff4eb">#FFF4EB</color>
     <color name="color_e6ff7500">#E6FF7500</color>
+    <color name="color_ff7500">#ff582a</color>
 
     <!--    多渠道配置 次要按钮文本颜色-->
     <color name="btn_text_color_enable">@color/color_2ca74d</color>

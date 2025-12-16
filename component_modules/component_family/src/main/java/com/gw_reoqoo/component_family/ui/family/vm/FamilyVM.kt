@@ -495,7 +495,6 @@ class FamilyVM @Inject constructor(
         }
     }
 
-
     /**
      * 重新设置首页的title
      */

@@ -167,5 +167,5 @@ class MsgInfoActivity : ABaseMVVMDBActivity<MsgActivityMsgInfoBinding, MsgInfoVM
 
     override fun <T : ViewModel?> loadViewModel() = MsgInfoVM::class.java as Class<T>
 
-    override fun getTitleView() = mViewBinding.appTitle
+    override fun onViewLoadFinish() = setStatusBarColor()
 }

@@ -55,7 +55,7 @@
     <string name="AA0066">카메라 등록을 위해 QR코드 스캔이 필요합니다. 스마트폰의 카메라 사용을 허용하시겠습니까?</string>
     <string name="AA0067">거부</string>
     <string name="AA0068">기기의 카메라 접근 권한이 없습니다. 설정에서 활성화하세요</string>
-    <string name="AA0069">ipTIME의 위치 사용을 허용하시겠습니까?</string>
+    <string name="AA0069">APP 의 위치 사용을 허용하시겠습니까?</string>
     <string name="AA0070">카메라 추가 시, 와이파이 정보를 얻기 위해 위치 권한이 필요합니다. 위치 권한을 활성화하세요</string>
     <string name="AA0071">위치 추적 권한이 없습니다. 설정에서 활성화하세요</string>
     <string name="AA0072">APP의 앨범 접근을 허용하시겠습니까?</string>
@@ -118,7 +118,7 @@
     <string name="AA0155">이미 공유한 친구입니다</string>
     <string name="AA0156">공유 성공</string>
     <string name="AA0157">만료시간</string>
-    <string name="AA0158">ipTIME APP으로 위의 QR 코드를 스캔하여 카메라 공유</string>
+    <string name="AA0158">APP으로 위의 QR 코드를 스캔하여 카메라 공유</string>
     <string name="AA0159">공유한 친구</string>
     <string name="AA0160">QR코드 인식에 실패히였습니다. 새로 고침 버튼을 클릭하세요</string>
     <string name="AA0161">%s님이 카메라를 공유하였습니다</string>
@@ -172,8 +172,8 @@
     <string name="AA0219">펌웨어 업데이트</string>
     <string name="AA0220">설정이 진행 중입니다</string>
     <string name="AA0221">언어</string>
-    <string name="AA0222">문제 피드백</string>
-    <string name="AA0223">도움과 피드백</string>
+    <string name="AA0222">문제점 피드백</string>
+    <string name="AA0223">문제점 피드백</string>
     <string name="AA0224">ipTIME 정보</string>
     <string name="AA0225">정보 센터</string>
     <string name="AA0226">설정 성공</string>
@@ -182,7 +182,7 @@
     <string name="AA0230">선택</string>
     <string name="AA0232">공유</string>
     <string name="AA0241">문제 유형</string>
-    <string name="AA0242">문제 유형을 선택해 주세요</string>
+    <string name="AA0242">문제 유형을 선택해 주세요.</string>
     <string name="AA0243">카메라 연결 / 실시간 영상</string>
     <string name="AA0244">알람기능 관련 문제</string>
     <string name="AA0245">SD 카드 녹화</string>
@@ -191,7 +191,7 @@
     <string name="AA0248">기타</string>
     <string name="AA0249">장치 구분</string>
     <string name="AA0250">카메라를 선택하세요</string>
-    <string name="AA0251">문제 및 피드백</string>
+    <string name="AA0251">문제점 상세 내용</string>
     <string name="AA0254">발생 빈도</string>
     <string name="AA0255">드물게 나타남</string>
     <string name="AA0256">매일 한 번</string>
@@ -200,8 +200,8 @@
     <string name="AA0259">문제가 발생한 시간</string>
     <string name="AA0260">시간 선택</string>
     <string name="AA0261">연락처</string>
-    <string name="AA0262">연락 가능한 이메일 주소를 입력하세요</string>
-    <string name="AA0263">제출</string>
+    <string name="AA0262">연락 가능한 전화번호 또는 이메일을 입력해 주세요.</string>
+    <string name="AA0263">보내기</string>
     <string name="AA0265">최대 500문까지 입력 가능</string>
     <string name="AA0267">잘못된 이메일 형식</string>
     <string name="AA0268">복사 완료</string>
@@ -457,7 +457,7 @@
     <string name="AA0579">비밀번호를 입력하세요</string>
     <string name="AA0580">전화번호</string>
     <string name="AA0581">이메일</string>
-    <string name="AA0582">%1$s 감지됨</string>
+    <string name="AA0582">%s 감지됨</string>
     <string name="AA0596">계정 ID</string>
     <string name="AA0597">복사 완료</string>
     <string name="AA0598">카메라가 꺼져있습니다</string>
@@ -469,12 +469,12 @@
     <string name="AA0604">시스템 알림</string>
     <string name="AA0606">APP 및 장치 Log-data 제공</string>
     <string name="AA0607">(문제 분석을 위해 시스템 데이터 및 로그를 제공합니다.)</string>
-    <string name="AA0608">최소 10글자</string>
-    <string name="AA0612">당신의 피드백이나 발생한 문제를 구체적으로 설명해주세요</string>
+    <string name="AA0608">최소 10자 이상</string>
+    <string name="AA0612">문제 내용을 상세히 설명해 주세요.</string>
     <string name="AA0613">메시지 Push 알림 설정</string>
     <string name="AA0614">시스템 권한 설정</string>
     <string name="AA0615">메시지 Push 알림</string>
-    <string name="AA0616">ipTIME APP의 최신 메시지를 즉시 받으실 수 있습니다</string>
+    <string name="AA0616">APP의 최신 메시지를 즉시 받으실 수 있습니다</string>
     <string name="AA0617">허용하기</string>
     <string name="AA0618">활성화됨</string>
     <string name="AA0619">위치</string>
@@ -491,7 +491,7 @@
     <string name="AA0630">실시간 및 녹화 영상을 작은 창에서 재생시 필요한 권한입니다</string>
     <string name="AA0631">백그라운드 팝업 화면</string>
     <string name="AA0632">케어벨 알림을 즉시 받을 때, 필요한 권한입니다</string>
-    <string name="AA0633">더 좋은 사용 경험을 제공하기 위해, ipTIME는 특정 상황에서 다음과 같은 모바일 시스템 권한 허용을 요청드립니다</string>
+    <string name="AA0633">더 좋은 사용 경험을 제공하기 위해, APP는 특정 상황에서 다음과 같은 모바일 시스템 권한 허용을 요청드립니다</string>
     <string name="AA0634">허용됨</string>
     <string name="AA0635">허용 안 됨</string>
     <string name="AA0637">실시간 감시</string>
@@ -513,11 +513,11 @@
     <string name="AA0656">오프라인, 업그레이드 불가</string>
     <string name="AA0657">시스템 예외</string>
     <string name="AA0658">전체 선택 취소</string>
-    <string name="AA0659">현재 버전은 이 장치를 직접 바인딩할 수 없습니다. \"Xiaotun Cloud\" 앱을 다운로드하여 추가하고 사용하십시오.</string>
+    <string name="AA0659">현재 버전은 이 장치를 직접 바인딩할 수 없습니다. \"ipTIME Cloud\" 앱을 다운로드하여 추가하고 사용하십시오.</string>
     <string name="AA0660">다운로드</string>
     <string name="AA0661">친절한 알림</string>
     <string name="AA0662">다음 장치는 현재 앱에서 사용할 수 없습니다</string>
-    <string name="AA0663">계속 사용하려면 \"Xiaotun Cloud\" 앱을 다운로드하십시오</string>
+    <string name="AA0663">계속 사용하려면 \"ipTIME Cloud\" 앱을 다운로드하십시오</string>
     <string name="AA0664">다시 알리지 않음</string>
     <string name="AA0665">정보</string>
     <string name="AA0669">계정을 입력하세요</string>
@@ -525,5 +525,5 @@
     <string name="AA0689">다음 작업을 시도한 후 다시 시도하십시오:\n1. 재설정 버튼을 길게 눌러 기기를 재설정하십시오;\n2. 기기가 전원에 연결되어 있는지 확인하십시오;\n3. 기기 안테나가 헐렁한지 확인하십시오;\n4. 현재 4G 신호 통신이 정상인지 확인하십시오.</string>
     <string name="AA0690">카메라가 너무 낮 으면 전기 상태로 업그레이드하십시오 ~</string>
     <string name="AA0691">Wi-Fi가 아닌 모바일 데이터를 사용하고 있으며 재생 시 데이터 요금이 발생할 수 있습니다</string>
-    <string name="AA0692">%1$s 감지됨</string>
+    <string name="AA0692">%s 감지됨</string>
 </resources>

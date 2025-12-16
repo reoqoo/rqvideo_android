@@ -34,8 +34,8 @@ abstract class HiltApi {
     @Singleton
     @Binds
     abstract fun getInterfaceSignApi(impl: InterfaceSignApiImpl): IInterfaceSignApi
-    
-    
+
+
     @Binds
     abstract fun getLocalUserDataSource(impl: LocalUserDataSourceImpl): ILocalUserDataSource
 

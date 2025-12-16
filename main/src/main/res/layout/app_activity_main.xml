@@ -2,43 +2,42 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:id="@+id/activity_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white_100">
+        android:background="@color/white_100"
+        android:orientation="vertical">
 
         <FrameLayout
             android:id="@+id/menu_frame"
-            android:layout_width="@dimen/dp_0"
+            android:layout_width="match_parent"
             android:layout_height="@dimen/dp_0"
-            app:layout_constraintBottom_toTopOf="@id/nav_btn_menu"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_weight="1" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/nav_btn_menu"
-            android:layout_width="@dimen/dp_0"
+            android:layout_width="match_parent"
             android:layout_height="@dimen/dp_64"
             android:background="@color/white_100"
+            app:elevation="0dp"
             android:stateListAnimator="@null"
             app:itemBackground="@color/white_100"
+            app:itemHorizontalTranslationEnabled="false"
             app:itemIconSize="@dimen/dp_24"
-            app:itemPaddingTop="@dimen/dp_14"
             app:itemPaddingBottom="@dimen/dp_14"
+            app:itemPaddingTop="@dimen/dp_14"
             app:itemTextAppearanceActive="@style/main_nav_text_active_style"
             app:itemTextAppearanceInactive="@style/main_nav_text_active_style"
             app:itemTextColor="@color/gw_reoqoo_selector_main_navi_text_color"
             app:labelVisibilityMode="labeled"
-            app:itemHorizontalTranslationEnabled="false"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             app:menu="@menu/app_bottom_nav_menu" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+        <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
+            android:layout_width="match_parent"
+            app:immersive_type="navigationBar"
+            android:layout_height="@dimen/dp_0_1" />
+    </LinearLayout>
 </layout>
 
 

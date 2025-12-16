@@ -1,6 +1,7 @@
 package com.gw_reoqoo.component_family.services
 
 import android.content.Intent
+import android.os.SystemClock
 import androidx.lifecycle.LifecycleService
 import com.gw_reoqoo.component_family.repository.DeviceRepository
 import com.gw.component_plugin_service.api.IPluginManager
@@ -23,7 +24,18 @@ class DeviceStatusServices : LifecycleService(), IPluginDeviceStatusListener {
 
     companion object {
         private const val TAG = "DeviceStatusServices"
+
+        /**
+         * 1秒间隔（毫秒）
+         */
+        private const val MIN_INTERVAL = 1000L
     }
+
+
+    /**
+     * 上次请求设备状态的时间
+     */
+    private var mLastLoadDeviceTime: Long = 0L
 
     /**
      * 设备管理
@@ -49,6 +61,8 @@ class DeviceStatusServices : LifecycleService(), IPluginDeviceStatusListener {
     override fun onCreate() {
         super.onCreate()
         GwellLogUtils.i(TAG, "onCreate")
+        // 注册
+        pluginManager.registerDeviceStatusListener(this)
         val stateLiveData = iAccountApi.getIotSdkState()
         GwellLogUtils.i(TAG, "onCreate-stateLiveData：$stateLiveData")
         stateLiveData?.observe(this) { state ->
@@ -64,7 +78,7 @@ class DeviceStatusServices : LifecycleService(), IPluginDeviceStatusListener {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         GwellLogUtils.i(TAG, "onStartCommand")
         // 注册
-        pluginManager.registerDeviceStatusListener(this)
+//        pluginManager.registerDeviceStatusListener(this)
         this.loadDeviceStatus()
         return super.onStartCommand(intent, flags, startId)
     }
@@ -73,8 +87,13 @@ class DeviceStatusServices : LifecycleService(), IPluginDeviceStatusListener {
      * 请求设备状态
      */
     private fun loadDeviceStatus() {
-        GwellLogUtils.i(TAG, "loadDeviceStatus")
+        if (SystemClock.uptimeMillis() - mLastLoadDeviceTime < MIN_INTERVAL) {
+            GwellLogUtils.i(TAG, "loadDeviceStatus interval too short")
+            return
+        }
+        mLastLoadDeviceTime = SystemClock.uptimeMillis()
         val userId = iAccountApi.getSyncUserId()
+        GwellLogUtils.i(TAG, "loadDeviceStatus userId:$userId")
         if (userId != null) {
             val device = deviceRepository.getAllDeviceSyncBy(userId)
             val devIds = device.filter {

@@ -156,32 +156,25 @@ class DeviceListAdapter(
         binding.root.tag = info
         binding.tvDevName.text = info.remarkName
         binding.btTurnOffOrOn.cancelAnimation()
-        val pid = info.productId ?: ""
-        when {
-            info.isOnline -> when (info.powerOn) {
-                true -> {
+        info.online?.let {
+            info.powerOn?.let {
+                if (info.isOnline && info.powerOn == true) {
                     binding.tvOnline.setText(RS.string.AA0053)
                     binding.tvOnline.draw(start = R.drawable.family_shape_online_point_online)
                     binding.btTurnOffOrOn.setAnimation(R.raw.family_dev_turnon)
-                }
-
-                false -> {
+                } else if (info.isOnline && info.powerOn == false) {
                     binding.tvOnline.setText(RS.string.AA0502)
                     binding.tvOnline.draw(start = R.drawable.family_shape_online_point_power_off)
                     binding.btTurnOffOrOn.setAnimation(R.raw.family_dev_turnoff)
+                } else {
+                    binding.tvOnline.setText(RS.string.AA0054)
+                    binding.tvOnline.draw(start = R.drawable.family_shape_online_point_offline)
+                    binding.btTurnOffOrOn.setImageResource(R.drawable.family_icon_btn_status_offline)
                 }
-
-                else -> {
-
-                }
-            }
-
-            info.isOffline -> {
-                binding.tvOnline.setText(RS.string.AA0054)
-                binding.tvOnline.draw(start = R.drawable.family_shape_online_point_offline)
-                binding.btTurnOffOrOn.setImageResource(R.drawable.family_icon_btn_status_offline)
             }
         }
+
+        GwellLogUtils.i(TAG, "onBindViewHolder: info: $info")
 
         binding.tvShare.isVisible = !info.isMaster
         binding.btTurnOffOrOn.progress = 0f

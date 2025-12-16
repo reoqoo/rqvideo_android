@@ -26,6 +26,7 @@ object AccountMgrKit {
      */
     fun setAccessInfo(accessId: String?, accessToken: String?) {
         val accountMgr = HiltApi.accountMgr
+        GwellLogUtils.i(TAG, "setAccessInfo(accessId=$accessId,accessToken=$accessToken) stack=:${Exception().stackTraceToString()}")
         if (!TextUtils.isEmpty(accessId) && !TextUtils.isEmpty(accessToken)) {
             accountMgr.setAccessInfo(accessId, accessToken)
             accountMgr.setRegion(LocalUtils.getCountry())
@@ -94,6 +95,7 @@ object AccountMgrKit {
             TAG,
             "setMgrSecretInfo, secretId: $secretId, secretKey: $secretKey, token: $token"
         )
+        GwellLogUtils.i(TAG, "setMgrSecretInfo.stack=${Exception().stackTraceToString()}")
         HiltApi.accountMgr.setSecretInfo(secretId, secretKey, token)
     }
 }

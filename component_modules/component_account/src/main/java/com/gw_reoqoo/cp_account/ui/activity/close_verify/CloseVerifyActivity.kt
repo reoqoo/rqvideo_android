@@ -83,5 +83,5 @@ class CloseVerifyActivity :
 
     override fun <T : ViewModel?> loadViewModel() = CloseVerifyVM::class.java as Class<T>
 
-    override fun getTitleView() = mViewBinding.layoutTitle
+    override fun onViewLoadFinish() = setStatusBarColor()
 }

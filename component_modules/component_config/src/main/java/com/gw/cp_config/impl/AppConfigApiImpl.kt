@@ -102,8 +102,13 @@ class AppConfigApiImpl @Inject constructor(
                 }
                 // 本地配置文件
                 val configFile = File(repository.getConfigFilePath())
-                // 如果本地配置文件存在，且版本号也相等，则不用更新
-                if (api.getProductConfVer() == productConfVer && configFile.isFile && configFile.exists()) {
+                // 如果本地配置文件存在，且版本号也相等,并且存储中的产品列表不是空，则不用更新
+                if (
+                    api.getProductConfVer() == productConfVer &&
+                    configFile.isFile &&
+                    configFile.exists() &&
+                    api.getProductPid().isNotEmpty()
+                ) {
                     GwellLogUtils.i(TAG, "app configVersion is equals remote ConfigVersion")
                     repository.initConfigFile()
                     return
@@ -188,7 +193,15 @@ class AppConfigApiImpl @Inject constructor(
      *
      * @return Map<String, DevConfigEntity>?
      */
-    override fun getDevConfig(): Map<String, DevConfigEntity>? = api.getProductPid()
+    override fun getDevConfig(): Map<String, DevConfigEntity>? {
+        return api.getProductPid().map { entity ->
+            (entity.pid ?: "") to entity
+        }.toMap()
+    }
+
+    override fun getDevConfigList(): List<DevConfigEntity> {
+        return api.getProductPid()
+    }
 
     /**
      * 通过设备pid来获取设备配置信息
@@ -241,6 +254,14 @@ class AppConfigApiImpl @Inject constructor(
         // hk tw hans
         val country = appLocal.country
         return entity?.productName
+    }
+
+    /**
+     * 根据产品型号获取配置信息
+     */
+    override fun getDevConfigByProductModule(module: String): DevConfigEntity? {
+        val configList = getDevConfigList()
+        return configList.firstOrNull { it.productModule == module }
     }
 
     override fun getPermissionMode(): Int {

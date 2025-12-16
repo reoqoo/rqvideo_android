@@ -513,7 +513,7 @@
     <string name="AA0656">Offline, upgrade unavailable</string>
     <string name="AA0657">System abnormality</string>
     <string name="AA0658">Cancel</string>
-    <string name="AA0659">The current version does not support direct binding of this device. Please download the \"Xiaotun Cloud\" APP to add and use.</string>
+    <string name="AA0659">The current version does not support direct binding of this device. Please download the \"ipTIME Cloud\" APP to add and use.</string>
     <string name="AA0660">Download</string>
     <string name="AA0661">Friendly Reminder</string>
     <string name="AA0662">The following devices are not available in the current APP</string>
@@ -525,6 +525,5 @@
     <string name="AA0689">Please try the following steps before retrying: \n1. Press and hold the reset button to reset the device;\n2. Please check if the device is connected to the power supply;\n3. Please check if the device antenna is loose;\n4. Please ensure that the current 4G signal communication is normal.</string>
     <string name="AA0690">The camera battery is low, please upgrade it when the battery is sufficient.</string>
     <string name="AA0691">You are not using WLAN. Data costs will be incurred when playing</string>
-    <string name="record_number">粤ICP备17085704号-19A</string>
-    <string name="AA0692">%1$s are detected</string>
+    <string name="AA0692">%s are detected</string>
 </resources>

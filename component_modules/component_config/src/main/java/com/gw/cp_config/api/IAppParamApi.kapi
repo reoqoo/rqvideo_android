@@ -36,5 +36,10 @@ interface IAppParamApi {
      */
     fun getCid():String
     fun setCid(cid:String)
-    
+
+    /**
+     * 反馈邮箱
+     */
+    fun getFeedbackEmail(): String?
+    fun setFeedbackEmail(email: String?)
 }

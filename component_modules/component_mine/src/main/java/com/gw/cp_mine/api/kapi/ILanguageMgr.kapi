@@ -1,5 +1,7 @@
 package com.gw.cp_mine.api.kapi
 
+import android.app.Activity
+import android.content.res.Configuration
 import com.gw.cp_mine.entity.Language
 
 interface ILanguageMgr {
@@ -9,6 +11,13 @@ interface ILanguageMgr {
      * @param language
      */
     fun saveAppLocaleLanguage(language: Language)
+    
+    /**
+     * 对Application上下文进行替换
+     *
+     * @param activity activity
+     */
+    fun applyAppLanguage(activity: Activity? = null, newConfig: Configuration? = null)
 
     /**
      * 获取App当前语言

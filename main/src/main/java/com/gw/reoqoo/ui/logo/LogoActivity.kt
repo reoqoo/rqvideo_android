@@ -2,7 +2,6 @@ package com.gw.reoqoo.ui.logo
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.gw_reoqoo.cp_account.api.kapi.IAccountApi
 import com.gw.cp_config.api.AppChannelName
@@ -14,7 +13,6 @@ import com.gw_reoqoo.lib_router.RouterParam
 import com.gw_reoqoo.lib_router.navigation
 import com.gw_reoqoo.lib_utils.ktx.launch
 import com.gw_reoqoo.lib_utils.ktx.visible
-import com.reoqoo.main.BuildConfig
 import com.reoqoo.main.R
 import com.reoqoo.main.databinding.AppActivityLogoBinding
 import com.gwell.loglibs.GwellLogUtils
@@ -64,13 +62,12 @@ class LogoActivity : ABaseMVVMDBActivity<AppActivityLogoBinding, LogoVM>() {
     }
 
     override fun initView() {
-        Log.i(TAG, "countryCode ${Locale.getDefault().country}")
+        GwellLogUtils.i(TAG, "countryCode ${Locale.getDefault().country}")
         mViewBinding.ivAppLogo.visible(!AppChannelName.isIpTimeApp(appParamApi.getAppName()))
         launch {
             delay(1000)
             val userInfo = accountApi.getSyncUserInfo()
-
-            if (userInfo != null && accountApi.isSyncLogin() && mViewModel.checkAutoLoginStatus()) {
+            if (userInfo != null && accountApi.isSyncLogin()) {
                 if (ActivityLifecycleManager.getMainActivity() == null) {
                     mViewModel.goMainAction()
                 }
@@ -85,13 +82,6 @@ class LogoActivity : ABaseMVVMDBActivity<AppActivityLogoBinding, LogoVM>() {
     override fun initData(savedInstanceState: Bundle?) {
         super.initData(savedInstanceState)
         mViewModel.initData(intent)
-    }
-
-    override fun initLiveData(viewModel: LogoVM, savedInstanceState: Bundle?) {
-        super.initLiveData(viewModel, savedInstanceState)
-        accountApi.watchUserInfo().observe(this) {
-            mViewModel.iotVideoRegister(it)
-        }
     }
 
     override fun onViewLoadFinish() {

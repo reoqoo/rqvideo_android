@@ -38,10 +38,16 @@ interface IAppConfigApi {
 
     /**
      * 获取所有设备配置信息
-     *
+     * @deprecated 
      * @return Map<String, DevConfigEntity>? String: 设备pid, DevConfigEntity: 产品配置信息
      */
+    @Deprecated("这个API过期了，使用getDevConfigList替代", replaceWith = ReplaceWith("getDevConfigList"))
     fun getDevConfig(): Map<String, DevConfigEntity>?
+
+    /**
+     * 获取所有的配置信息
+     */
+    fun getDevConfigList(): List<DevConfigEntity>
 
     /**
      * 根据产品ID获取产品图片
@@ -65,6 +71,11 @@ interface IAppConfigApi {
      * @return DevConfigEntity? 配置信息
      */
     fun getDevConfigByPid(pid: String): DevConfigEntity?
+
+    /**
+     * 根据产品型号获取配置信息
+     */
+    fun getDevConfigByProductModule(module: String): DevConfigEntity?
 
     /**
      * 根据产品id获取产品名称（自动国际化）

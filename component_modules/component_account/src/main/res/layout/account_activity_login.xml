@@ -10,19 +10,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/color_ffffff">
-        <com.gw_reoqoo.lib_widget.immersive.ImmersiveView
+
+        <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
             android:id="@+id/layout_status_bar"
             android:layout_width="match_parent"
             android:layout_height="0.1dp"
             app:immersive_type="statusBar"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintEnd_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/v_navigator"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -33,11 +34,17 @@
             android:layout_width="@dimen/dp_0"
             android:layout_height="@dimen/dp_0"
             app:defaultNavHost="true"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/v_navigator"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/layout_status_bar"
             app:navGraph="@navigation/gw_reoqoo_account_nav_graph" />
 
+        <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
+            android:id="@+id/v_navigator"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            app:immersive_type="statusBar"
+            app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

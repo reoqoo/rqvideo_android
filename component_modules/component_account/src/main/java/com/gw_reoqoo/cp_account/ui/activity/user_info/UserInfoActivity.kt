@@ -51,6 +51,12 @@ class UserInfoActivity : ABaseMVVMDBActivity<AccountActivityUserInfoBinding, Use
      */
     private var commDialog: CommDialog? = null
 
+    override fun getLayoutId() = R.layout.account_activity_user_info
+
+    override fun <T : ViewModel?> loadViewModel() = UserInfoVM::class.java as Class<T>
+
+    override fun onViewLoadFinish() = setStatusBarColor()
+
     override fun initView() {
 
         mViewBinding.layoutTitle.run {
@@ -254,11 +260,4 @@ class UserInfoActivity : ABaseMVVMDBActivity<AccountActivityUserInfoBinding, Use
             }
         }
     }
-
-    override fun getLayoutId() = R.layout.account_activity_user_info
-
-    override fun <T : ViewModel?> loadViewModel() = UserInfoVM::class.java as Class<T>
-
-    override fun getTitleView() = mViewBinding.layoutTitle
-
 }

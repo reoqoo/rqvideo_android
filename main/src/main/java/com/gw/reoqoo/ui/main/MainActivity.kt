@@ -78,7 +78,7 @@ class MainActivity : ABaseMVVMDBActivity<AppActivityMainBinding, MainVM>() {
             addContentView(img, params)
         }
     }
-
+    
     override fun initData(savedInstanceState: Bundle?) {
         super.initData(savedInstanceState)
         // 启动监听网络状态的广播
@@ -107,26 +107,8 @@ class MainActivity : ABaseMVVMDBActivity<AppActivityMainBinding, MainVM>() {
         setFragment(currentItemId)
     }
 
-    override fun initLiveData(viewModel: MainVM, savedInstanceState: Bundle?) {
-        super.initLiveData(viewModel, savedInstanceState)
-        mViewModel.accountApi.watchUserInfo().observeForever {
-            GwellLogUtils.i(TAG, "watchUserInfo: $it")
-            // 由于在插件OOM时，可能会导致app crash然后application重启，但是不会重新拉起logo页，所以这里增加了IoTSDK的注册逻辑
-            if (it != null) {
-                mViewModel.iotSdkInitMgr.registerSdk(it.accessId, it.accessToken)
-                pluginManager.register(app)
-                // 注册推送服务
-                pushApi.registerPushServer()
-            } else {
-                mViewModel.iotSdkInitMgr.unregisterSdk()
-            }
-        }
-    }
-
-
     override fun onViewLoadFinish() {
-        setStatusBarColor()
-        mViewBinding.activityContainer.addNavigationBarBottomPadding()
+         setStatusBarColor(mLight = true)
     }
 
     override fun onBackPressed() {
@@ -203,6 +185,7 @@ class MainActivity : ABaseMVVMDBActivity<AppActivityMainBinding, MainVM>() {
             .forEach(transaction::hide)
         transaction.commitNowAllowingStateLoss()
     }
+
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)

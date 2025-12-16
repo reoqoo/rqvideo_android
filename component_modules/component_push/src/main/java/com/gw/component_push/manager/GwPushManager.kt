@@ -5,45 +5,59 @@ import android.content.Intent
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
-import com.google.gson.JsonObject
+import com.gw.component_push.BuildConfig
 import com.gw.component_push.api.interfaces.INotifyServer
 import com.gw.component_push.datastore.PushDataStore
 import com.gw.cp_config.api.AppChannelName
+import com.gw.component_push.entity.UploadTokenBean
 import com.gw_reoqoo.cp_account.api.kapi.IAccountApi
 import com.gw.cp_config.api.IAppParamApi
 import com.gw_reoqoo.lib_utils.ktx.getAppVersionName
-import com.gw.player.entity.ErrorInfo
+import com.gw_reoqoo.lib_http.wrapper.HttpServiceWrapper
 import com.gwell.loglibs.GwellLogUtils
-import com.jwkj.iotvideo.constant.IoTError
 import com.jwkj.iotvideo.init.IoTVideoInitializer
-import com.jwkj.iotvideo.message.IMessageSingleListener
-import com.jwkj.iotvideo.message.MessageMgr
-import com.jwkj.iotvideo.player.api.IIoTCallback
 import com.jwkj.lib_gpush.manager.GPushMgr
-import com.tencentcs.iotvideo.utils.rxjava.SubscriberListener
+import com.tencentcs.iotvideo.http.interceptor.flow.HttpAction
 import com.yoosee.lib_gpush.GPushManager
 import com.yoosee.lib_gpush.entity.PushChannel
 import com.yoosee.lib_gpush.listener.IGPushNotificationCallback
 import com.yoosee.lib_gpush.listener.IGPushResultListener
 import com.yoosee.lib_gpush.strategy.SingleStrategy
 import com.yoosee.lib_gpush.utils.DevicePushUtils
+import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import java.util.Locale
 import java.util.TimeZone
 import java.util.UUID
+import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * Author: yanzheng@gwell.cc
  * Time: 2023/7/20 14:02
  * Description: 推送消息管理类
  */
-object GwPushManager {
-    private const val TAG = "GwPushManager"
+@Singleton
+class GwPushManager @Inject constructor(
+    private val httpService: HttpServiceWrapper,
+    private val iAccountApi: IAccountApi,
+    private val appParamApi: IAppParamApi,
+    private val dataStore: PushDataStore,
+    @ApplicationContext private val context: Context
+) {
 
-    /**
-     * 操作系统类型,2是iOS,3是安卓
-     */
-    private const val OS_TYPE = 3
+    companion object {
+        private const val TAG = "GwPushManager"
+
+        /**
+         * 操作系统类型,2是iOS,3是安卓
+         */
+        private const val OS_TYPE = 3
+    }
+
+    private val scope by lazy { MainScope() }
 
     private val notifyServers = mutableListOf<INotifyServer>()
 
@@ -52,17 +66,16 @@ object GwPushManager {
      */
     private var isPushInitSuccess = false
 
+    private val handler by lazy {
+        Handler(Looper.getMainLooper())
+    }
+
     /**
      * Push服务初始化
      *
      * @param context Context 上下文
      */
-    fun init(
-        context: Context,
-        appParamApi: IAppParamApi,
-        dataStore: PushDataStore,
-        iAccountApi: IAccountApi
-    ) {
+    fun init() {
         val appContext = context.applicationContext
         val userId = runBlocking { iAccountApi.getAsyncUserId() }
         GwellLogUtils.i(TAG, "init-userId:$userId")
@@ -72,25 +85,23 @@ object GwPushManager {
 
         // 优先注册通知的监听器
         registerNotifyListener()
-        val singleStrategy = SingleStrategy(40000, PushChannel.BRAND_FCM)
+        // 初始化推送SDK(全部渠道)
+        val singleStrategy = SingleStrategy(40000, getCurrentChannel())
+
         GPushManager.init(appContext, singleStrategy, object : IGPushResultListener {
             override fun onFailure(errCode: String, errString: String) {
                 GwellLogUtils.e(TAG, "init failure: errCode=$errCode, errString=$errString")
                 isPushInitSuccess = false
-//                register(context, appParamApi, dataStore, iAccountApi)
+//                register()
             }
 
             override fun onSuccess(channel: String, token: String) {
                 GwellLogUtils.i(TAG, "init success: channel=$channel, token=$token")
                 isPushInitSuccess = true
                 runBlocking { dataStore.saveToken(userId, token) }
-                register(context, appParamApi, dataStore, iAccountApi)
+                register()
             }
         })
-    }
-
-    private val handler by lazy {
-        Handler(Looper.getMainLooper())
     }
 
     /**
@@ -101,15 +112,10 @@ object GwPushManager {
      * @param iAccountApi IAccountApi  账号api
      * @param appParamApi IAppParamApi 应用参数api
      */
-    fun register(
-        context: Context,
-        appParamApi: IAppParamApi,
-        dataStore: PushDataStore,
-        iAccountApi: IAccountApi
-    ) {
+    fun register() {
         if (!isPushInitSuccess) {
             GwellLogUtils.i(TAG, "register: isPushInitSuccess false")
-            init(context, appParamApi, dataStore, iAccountApi)
+            init()
             return
         }
         val userId = runBlocking { iAccountApi.getAsyncUserId() }
@@ -125,40 +131,38 @@ object GwPushManager {
             return
         }
 
+        val userInfo = runBlocking { iAccountApi.getSyncUserInfo() }
+        if (userInfo?.terminalId.isNullOrEmpty()) {
+            GwellLogUtils.i(TAG, "init terminalId is null")
+            return
+        }
+
         handler.let {
             it.removeCallbacksAndMessages(null)
             it.postDelayed({
-                registerPush(userId, token, appParamApi, dataStore, context)
+                scope.launch {
+                    registerPush(userId, token, userInfo?.terminalId?: "")
+                }
             }, 1000)
         }
 
     }
 
     /**
-     * 注销 设备推送
+     * 向服务器注册推送服务
      *
-     * @param terminalId String 设备ID
+     * @param userId String  用户id
+     * @param token String   推送token
+     * @param terminalId String 终端id
      */
-    fun unRegisterPush(terminalId: String) {
-        IoTAlarmPushManager.instance().unRegisterPush(terminalId, true)
-    }
-
-    private fun registerPush(
-        userId: String,
-        token: String,
-        appParamApi: IAppParamApi,
-        dataStore: PushDataStore,
-        context: Context
-    ) {
-        val channel = PushChannel.BRAND_FCM
-        // 终端ID
-        val termId = IoTVideoInitializer.p2pAlgorithm.getTerminalId().toString()
+    private suspend fun registerPush(userId: String, token: String, terminalId: String) {
+        val channel = getCurrentChannel()
         // 系统类型
         val osType = OS_TYPE
         // 时区（单位秒）
         val timeZone = TimeZone.getDefault().getOffset(System.currentTimeMillis()) / 1000
         // 语言
-        val language = Locale.getDefault().language
+        val language = Locale.getDefault().language ?: "zh"
         // appId
         val appId = appParamApi.getAppID()
         // 手机唯一Id
@@ -176,50 +180,73 @@ object GwPushManager {
         // 制造商推送Id
         val mfrPushId = token
         // 制造商名称
-        val mfrName = channel?.channel
+        val mfrName = channel.channel
         // 手机型号
         val mfrDevModel = Build.MODEL
         GwellLogUtils.i(TAG, "registerPush -> $userId, $token, $channel")
-        IoTAlarmPushManager.instance().registerIoTPush(
-            termId,
-            osType,
-            timeZone,
-            language,
-            appId,
-            phoneId,
-            jPushId,
-            osVer,
-            sdkVer,
-            appVer,
-            osPushId,
-            mfrPushId,
-            mfrName,
-            mfrDevModel,
-            object : IIoTCallback<String> {
-                override fun onStart() {
+
+        val uploadTokenBean = UploadTokenBean(
+            appId = appId,
+            appName = appParamApi.getAppName(),
+            appToken = appParamApi.getAppToken(),
+            appVersion = appVer ?: "",
+            clearOtherTerm = false,
+            jpushId = jPushId,
+            language = language,
+            mfrDevModel = mfrDevModel,
+            mfrName = mfrName,
+            mfrPushId = mfrPushId,
+            osPushId = osPushId,
+            osVer = osVer,
+            phoneId = phoneId,
+            pkgName = context.packageName,
+            region = Locale.getDefault().language ?: "zh",
+            sdkVer = sdkVer,
+            termId = terminalId,
+            terminalOS = osType,
+            zone = timeZone.toLong()
+        )
+
+        val flow = httpService.uploadTokenFlow(
+            uploadTokenBean.appId,
+            uploadTokenBean.appName,
+            uploadTokenBean.appToken,
+            uploadTokenBean.language,
+            uploadTokenBean.pkgName,
+            uploadTokenBean.terminalOS,
+            uploadTokenBean.appVersion,
+            uploadTokenBean.region,
+            uploadTokenBean.termId,
+            uploadTokenBean.zone,
+            uploadTokenBean.osVer,
+            uploadTokenBean.sdkVer,
+            uploadTokenBean.phoneId,
+            uploadTokenBean.jpushId,
+            uploadTokenBean.osPushId,
+            uploadTokenBean.mfrPushId,
+            uploadTokenBean.mfrName,
+            uploadTokenBean.mfrDevModel,
+            uploadTokenBean.clearOtherTerm,
+        )
+
+        flow.collect { action ->
+            when (action) {
+                is HttpAction.Loading -> {
                     GwellLogUtils.i(TAG, "registerPush onStart...")
                 }
 
-                override fun onSuccess(data: String) {
-                    super.onSuccess(data)
-                    GwellLogUtils.i(TAG, "registerPush onSuccess -> $data")
-                    runBlocking { dataStore.saveTokenPushStatus(userId, token, true) }
+                is HttpAction.Fail -> {
+                    GwellLogUtils.e(TAG, "registerPush onError IoTError", action.t)
+                    dataStore.saveTokenPushStatus(userId, token, false)
+                }
+
+                is HttpAction.Success -> {
+                    GwellLogUtils.i(TAG, "registerPush onSuccess -> ${action.data}")
+                    dataStore.saveTokenPushStatus(userId, token, true)
                     GwellLogUtils.i(TAG, "registerPush onSuccess -> saveToken")
                 }
-
-                override fun onError(error: IoTError) {
-                    super.onError(error)
-                    GwellLogUtils.e(TAG, "registerPush onError IoTError:$error")
-                    runBlocking { dataStore.saveTokenPushStatus(userId, token, false) }
-                }
-
-                override fun onError(error: ErrorInfo?) {
-                    super.onError(error)
-                    GwellLogUtils.e(TAG, "registerPush onError ErrorInfo:$error")
-                    runBlocking { dataStore.saveTokenPushStatus(userId, token, false) }
-                }
             }
-        )
+        }
     }
 
 
@@ -285,4 +312,15 @@ object GwPushManager {
         notifyServers.clear()
     }
 
+    /**
+     * 获取当前设备的推送通道
+     * @return PushChannel 推送通道
+     */
+    private fun getCurrentChannel(): PushChannel {
+        return if (BuildConfig.IS_GOOGLE) {
+            PushChannel.BRAND_FCM
+        } else {
+            DevicePushUtils.getDevicePushChannel() ?:PushChannel.BRAND_FCM
+        }
+    }
 }

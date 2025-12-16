@@ -9,6 +9,10 @@
         android:background="@color/color_f2f3f6"
         android:orientation="vertical">
 
+        <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_1" />
+
         <com.gw_reoqoo.lib_widget.title.AppTitle
             android:id="@+id/layout_title"
             android:layout_width="match_parent"
@@ -54,6 +58,11 @@
             android:layout_width="match_parent"
             android:layout_margin="@dimen/dp_23"
             android:text="@string/AA0183" />
+
+        <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_1"
+            app:immersive_type="navigationBar" />
     </LinearLayout>
 
 </layout>

@@ -9,8 +9,7 @@
             android:name="com.gw.reoqoo.ui.main.MainActivity"
             android:exported="false"
             android:resizeableActivity="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/CustomDarkModeTheme" />
+            android:screenOrientation="portrait" />
 
         <activity
             android:name="com.sensorsdata.analytics.android.sdk.dialog.SchemeActivity"

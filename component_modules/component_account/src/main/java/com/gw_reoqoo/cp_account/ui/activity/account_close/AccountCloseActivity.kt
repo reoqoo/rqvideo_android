@@ -58,5 +58,5 @@ class AccountCloseActivity :
 
     override fun <T : ViewModel?> loadViewModel() = AccountCloseVM::class.java as Class<T>
 
-    override fun getTitleView() = mViewBinding.layoutTitle
+    override fun onViewLoadFinish() = setStatusBarColor()
 }

@@ -28,9 +28,7 @@ class LanguageActivity : ABaseMVVMDBActivity<Binding, LanguageVM>() {
 
     override fun getLayoutId(): Int = R.layout.mine_activity_language
     override fun <T : ViewModel?> loadViewModel() = LanguageVM::class.java as Class<T>
-    override fun onViewLoadFinish() {
-        setStatusBarColor()
-    }
+    override fun onViewLoadFinish() = setStatusBarColor()
 
     override fun initView() {
         mViewBinding.appTitle.leftIcon.setOnClickListener { finish() }

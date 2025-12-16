@@ -30,10 +30,8 @@ class ShareDeviceActivity : ABaseMVVMDBActivity<Binding, VM>() {
 
     @Autowired(name = "pageFrom")
     lateinit var pageFrom: String
-    
-    override fun onViewLoadFinish() {
-        setStatusBarColor()
-    }
+
+    override fun onViewLoadFinish() = setStatusBarColor()
 
     override fun initView() {
         mViewBinding.appTitle.leftIcon.setOnClickListener {
@@ -55,6 +53,6 @@ class ShareDeviceActivity : ABaseMVVMDBActivity<Binding, VM>() {
 
     override fun initData(savedInstanceState: Bundle?) {
         super.initData(savedInstanceState)
-        mViewModel.loadDeviceListFragment(if(::device.isInitialized) device else null, pageFrom)
+        mViewModel.loadDeviceListFragment(if (::device.isInitialized) device else null, pageFrom)
     }
 }

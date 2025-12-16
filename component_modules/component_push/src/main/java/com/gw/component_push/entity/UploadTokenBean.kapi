@@ -1,0 +1,83 @@
+package com.gw.component_push.entity
+
+/**
+ * 用来上传Token的实体类
+ */
+data class UploadTokenBean(
+    /**
+     * appID
+     */
+    val appId: String,
+    /**
+     * app名称
+     */
+    val appName: String,
+    /**
+     * token
+     */
+    val appToken: String,
+    /**
+     * app版本
+     */
+    val appVersion: String,
+    /**
+     * 是否清除其他终端token，true:清除，false: 不清除
+     */
+    val clearOtherTerm: Boolean,
+    /**
+     * 极光推送id
+     */
+    val jpushId: String,
+    /**
+     * 语言
+     */
+    val language: String,
+    /**
+     * 制造商手机型号
+     */
+    val mfrDevModel: String,
+    /**
+     * 制造商名称(小米: XIAOMI, 华为: HUAWEI, 荣耀: HONOR, vivo: VIVO, oppo: OPPO )
+     */
+    val mfrName: String,
+    /**
+     * 制造商推送ID(如:华为推送ID、小米推送ID)
+     */
+    val mfrPushId: String?,
+    /**
+     * 系统推送ID(苹果APNS或谷歌GCM)
+     */
+    val osPushId: String,
+    /**
+     * 操作系统版本
+     */
+    val osVer: String,
+    /**
+     * 手机设备唯一性ID
+     */
+    val phoneId: String,
+    /**
+     * 包名
+     */
+    val pkgName: String,
+    /**
+     * 国家二字码
+     */
+    val region: String,
+    /**
+     * sdk版本
+     */
+    val sdkVer: String,
+    /**
+     * saas 终端id
+     */
+    val termId: String,
+    /**
+     * 操作系统
+     */
+    val terminalOS: Int,
+    /**
+     * 时区,有些应用场景可能需要。(如:半夜不发离线推送)
+     */
+    val zone: Long,
+)

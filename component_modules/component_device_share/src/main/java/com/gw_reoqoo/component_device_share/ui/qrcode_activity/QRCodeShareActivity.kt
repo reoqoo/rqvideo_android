@@ -38,9 +38,7 @@ import com.gw_reoqoo.resource.R as RR
 class QRCodeShareActivity : ABaseMVVMDBActivity<Binding, QRCodeShareVM>() {
     override fun getLayoutId() = R.layout.dev_share_activity_qrcode_share
     override fun <T : ViewModel?> loadViewModel() = QRCodeShareVM::class.java as Class<T>
-    override fun onViewLoadFinish() {
-        setStatusBarColor()
-    }
+    override fun onViewLoadFinish() = setStatusBarColor()
 
     @Autowired
     lateinit var device: IDevice

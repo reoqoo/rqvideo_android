@@ -3,12 +3,12 @@ project.ext {
             google    : new FlavorConfig(
                     APPLICATION_ID: "com.cctv.iptime",
                     APP_NAME_PREFIX: "ipTIME_V",
-                    VERSION_CODE: 1828,
-                    VERSION_NAME: "01.01.04",
+                    VERSION_CODE: 1830,
+                    VERSION_NAME: "01.02.00",
                     appId: "244d1828c953492dacb0ca5201f54221",
                     appToken: "0bedfb9f0f8404683a58ff636b7b8c8f0c5e809d72ab9cdc1ed5a64782b9a315",
                     appName: "ipTIME CCTV_android",
-                    appCid: "01.08",
+                    appCid: "08.01",
                     websiteHostBaseUrl: "https://openapi.dophigo.com/",
                     websitePluginHostUrl: "https://openapi-plugin.dophigo.com/",
                     websiteH5HostUrl: "https://trade.dophigo.com/",
@@ -21,17 +21,21 @@ project.ext {
                     websiteH5HostTestUrl: "https://trade-test.reoqoo.com/",
                     yooseeShareTypes: [YooseeShareType.QRCODE, YooseeShareType.PHONE],
                     defaultLanguage: Language.EN,
-                    supportGooglePay: false
+                    supportGooglePay: false,
+                    runAppByReoqooSource: true,
+                    feedbackEmail: "support@reoqoo.com",
+                    googlePayType: GooglePayType.NONE,
+                    isInternalApp: true
             ),
             iptime       : new FlavorConfig(
                     APPLICATION_ID: "com.cctv.iptime",
                     APP_NAME_PREFIX: "ipTIME_V",
-                    VERSION_CODE: 1828,
-                    VERSION_NAME: "01.01.04",
+                    VERSION_CODE: 1830,
+                    VERSION_NAME: "01.02.00",
                     appId: "244d1828c953492dacb0ca5201f54221",
                     appToken: "0bedfb9f0f8404683a58ff636b7b8c8f0c5e809d72ab9cdc1ed5a64782b9a315",
                     appName: "ipTIME CCTV_android",
-                    appCid: "01.08",
+                    appCid: "08.01",
                     websiteHostBaseUrl: "https://openapi.dophigo.com/",
                     websitePluginHostUrl: "https://openapi-plugin.dophigo.com/",
                     websiteH5HostUrl: "https://trade.dophigo.com/",
@@ -44,8 +48,11 @@ project.ext {
                     websiteH5HostTestUrl: "https://trade-test.reoqoo.com/",
                     yooseeShareTypes: [YooseeShareType.QRCODE, YooseeShareType.PHONE],
                     defaultLanguage: Language.KO,
-                    supportGooglePay: true
-            )
+                    runAppByReoqooSource: true,
+                    supportGooglePay: true,
+                    googlePayType: GooglePayType.BILLING,
+                    isInternalApp: false
+            ),
     ]
 }
 
@@ -148,6 +155,31 @@ class FlavorConfig {
      */
     Boolean supportGooglePay = false
 
+    /**
+     * Google支付类型
+     */
+    GooglePayType googlePayType = GooglePayType.NONE
+
+    /**
+     * 通过Reoqoo的源码运行的APP
+     */
+    Boolean runAppByReoqooSource
+
+    /**
+     * 是否默认测试环境
+     */
+    Boolean defaultTestEnv = false
+
+    /**
+     * 反馈邮箱地址，如果不填或者空字符串，则在问题与反馈页面就不显示
+     */
+    String feedbackEmail = null
+
+    /**
+     * 是否是内部应用
+     */
+    Boolean isInternalApp = false
+
     void applyToApplication(flavor) {
         println("applyToApplication.flavor=" + flavor)
         flavor.applicationId(APPLICATION_ID)
@@ -155,12 +187,17 @@ class FlavorConfig {
         flavor.versionName(VERSION_NAME)
 
         flavor.ext.isGoogle = isGoogle
+        flavor.ext.supportGooglePay = supportGooglePay
+        flavor.ext.googlePayType = googlePayType
+        flavor.ext.isInternalApp = isInternalApp
 
         flavor.buildConfigField("Boolean", "IS_GOOGLE", "${isGoogle}")
         flavor.buildConfigField("String", "APP_ID", "\"${appId}\"")
         flavor.buildConfigField("String", "APP_TOKEN", "\"${appToken}\"")
         flavor.buildConfigField("String", "APP_NAME", "\"${appName}\"")
         flavor.buildConfigField("String", "APP_CID", "\"${appCid}\"")
+        flavor.buildConfigField("String", "VERSION_NAME", "\"${VERSION_NAME}\"")
+        flavor.buildConfigField("int", "VERSION_CODE", "${VERSION_CODE}")
 
         flavor.buildConfigField("String", "WEBSITE_HOST_BASE_URL", "\"${websiteHostBaseUrl}\"")
         flavor.buildConfigField("String", "WEBSITE_PLUGIN_HOST_URL", "\"${websitePluginHostUrl}\"")
@@ -171,20 +208,40 @@ class FlavorConfig {
         flavor.buildConfigField("String", "WEBSITE_HOST_BASE_TEST_URL", "\"${websiteHostBaseTestUrl}\"")
         flavor.buildConfigField("String", "WEBSITE_PLUGIN_HOST_TEST_URL", "\"${websitePluginHostTestUrl}\"")
         flavor.buildConfigField("String", "WEBSITE_H5_HOST_TEST_URL", "\"${websiteH5HostTestUrl}\"")
-        flavor.buildConfigField("String[]", "YOOSEE_SHARE_TYPES", "{${yooseeShareTypes.collect { "\"${it}\""}.join(",")}}")
+        flavor.buildConfigField("String[]", "YOOSEE_SHARE_TYPES", "{${yooseeShareTypes.collect { "\"${it}\"" }.join(",")}}")
         flavor.buildConfigField("String", "DEFAULT_LANGUAGE", "\"${defaultLanguage.toString()}\"")
         flavor.buildConfigField("Boolean", "SUPPORT_GOOGLE_PAY", "${supportGooglePay}")
+        flavor.buildConfigField("String", "GOOGLE_PAY_TYPE", "\"${googlePayType.toString()}\"")
+        flavor.buildConfigField("Boolean", "IS_INTERNAL_APP", "${isInternalApp}")
     }
 
     void applyToModule(flavor) {
-        def is_upload_plugin_mode = System.getenv('IS_UPLOAD_PLUGIN') ?: 'false'
         println("applyToModule.flavor=" + flavor)
+        def is_upload_plugin_mode = System.getenv('IS_UPLOAD_PLUGIN') ?: 'false'
+        println("is_upload_plugin_mode=" + is_upload_plugin_mode)
+        println("runAppByReoqooSource=" + runAppByReoqooSource)
+        if (runAppByReoqooSource) {
+            is_upload_plugin_mode = 'false'
+        }
         println("applyToModule.is_upload_plugin_mode=" + is_upload_plugin_mode)
         flavor.buildConfigField("Boolean", "IS_GOOGLE", "${isGoogle}")
         flavor.buildConfigField("String", "DEFAULT_LANGUAGE", "\"${defaultLanguage.toString()}\"")
         flavor.buildConfigField("Boolean", "IS_UPLOAD_PLUGIN_MODE", "${is_upload_plugin_mode}")
         flavor.buildConfigField("Boolean", "SUPPORT_GOOGLE_PAY", "${supportGooglePay}")
+        flavor.buildConfigField("Boolean", "DEFAULT_TEST_ENV", "${defaultTestEnv}")
+        flavor.buildConfigField("String", "GOOGLE_PAY_TYPE", "\"${googlePayType.toString()}\"")
+        flavor.buildConfigField("String", "APP_NAME", "\"${appName}\"")
+        flavor.buildConfigField("String", "APP_CID", "\"${appCid}\"")
+        flavor.buildConfigField("String", "VERSION_NAME", "\"${VERSION_NAME}\"")
+        flavor.buildConfigField("int", "VERSION_CODE", "${VERSION_CODE}")
+        flavor.buildConfigField("Boolean", "IS_INTERNAL_APP", "${isInternalApp}")
+        if (feedbackEmail == null) {
+            flavor.buildConfigField("String", "FEEDBACK_EMAIL", "null")
+        } else {
+            flavor.buildConfigField("String", "FEEDBACK_EMAIL", "\"$feedbackEmail\"")
+        }
     }
+
     @Override
     String toString() {
         return "{" +
@@ -192,6 +249,10 @@ class FlavorConfig {
                 "APP_NAME_PREFIX=" + APP_NAME_PREFIX + "," +
                 "VERSION_CODE=" + VERSION_CODE + "," +
                 "VERSION_NAME=" + VERSION_NAME + "," +
+                "supportGooglePay=" + supportGooglePay + "," +
+                "googlePayType=" + googlePayType + "," +
+                "feedbackEmail=" + feedbackEmail + "," +
+                "isInternalApp=" + isInternalApp + "," +
                 "}"
     }
 }
@@ -215,4 +276,10 @@ enum Language {
     ZH_HK,
     EN,
     KO
+}
+
+enum GooglePayType {
+    NONE,
+    BILLING,
+    PAY
 }

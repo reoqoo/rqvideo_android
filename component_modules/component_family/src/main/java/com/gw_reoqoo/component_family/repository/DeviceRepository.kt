@@ -2,7 +2,7 @@ package com.gw_reoqoo.component_family.repository
 
 import android.content.Context
 import android.content.Intent
-import android.os.Build
+import android.os.SystemClock
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.map
 import com.gw_reoqoo.component_family.api.impl.DeviceImpl
@@ -167,6 +167,7 @@ class DeviceRepository @Inject constructor(
                     permission = deviceModel.saas?.permission?.toIntOrNull() ?: 0,
                     modifyTime = calendar.time.time.toString(),
                     productId = deviceModel.saas?.productId,
+                    productModule = deviceModel.saas?.productModel,
                     sn = deviceModel.saas?.sn,
                     status = deviceModel.status,
                     originJson = deviceModel.toJson()
@@ -236,6 +237,7 @@ class DeviceRepository @Inject constructor(
      * 启动同步设备状态信息服务
      */
     private fun startSyncDeviceStatusService() {
+        GwellLogUtils.i(TAG, "startSyncDeviceStatusService start")
         if (appFrontApi.isAppInBackground() == true) {
             GwellLogUtils.e(TAG, "startSyncDeviceStatusService  app is in background")
             return

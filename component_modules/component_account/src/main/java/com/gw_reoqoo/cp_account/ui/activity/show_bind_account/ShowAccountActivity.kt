@@ -39,7 +39,12 @@ class ShowAccountActivity :
 
     @Autowired(name = ParamConstants.PARAM_ACCOUNT_INFO)
     lateinit var account: String
+    
+    override fun getLayoutId() = R.layout.account_activity_show_account
+    override fun <T : ViewModel?> loadViewModel() = ShowAccountVM::class.java as Class<T>
 
+    override fun onViewLoadFinish() = setStatusBarColor()
+    
     override fun initView() {
         mViewBinding.btnSure.setOnClickListener {
             mViewModel.pageJumpData.postValue(
@@ -88,12 +93,4 @@ class ShowAccountActivity :
             }
         }
     }
-
-    override fun getTitleView(): View? {
-        return mViewBinding.layoutTitle
-    }
-
-    override fun getLayoutId() = R.layout.account_activity_show_account
-
-    override fun <T : ViewModel?> loadViewModel() = ShowAccountVM::class.java as Class<T>
 }

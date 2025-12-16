@@ -48,7 +48,5 @@ class BindAccountActivity : ABaseMVVMDBActivity<AccountActivityBindBinding, Bind
 
     override fun <T : ViewModel?> loadViewModel() = BindAccountVM::class.java as Class<T>
 
-    override fun onViewLoadFinish() {
-        setStatusBarColor()
-    }
+    override fun onViewLoadFinish() = setStatusBarColor()
 }

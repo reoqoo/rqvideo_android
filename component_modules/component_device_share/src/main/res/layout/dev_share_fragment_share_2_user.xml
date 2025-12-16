@@ -9,6 +9,10 @@
         android:background="@color/color_f2f3f6"
         android:orientation="vertical">
 
+        <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_1" />
+
         <com.gw_reoqoo.lib_widget.title.AppTitle
             android:id="@+id/layout_title"
             android:layout_width="match_parent"
@@ -19,11 +23,11 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_48"
             android:layout_marginTop="@dimen/dp_8"
+            android:ellipsize="end"
             android:paddingStart="@dimen/dp_28"
             android:paddingTop="@dimen/dp_18"
             android:paddingEnd="@dimen/dp_0"
             android:singleLine="true"
-            android:ellipsize="end"
             android:text="@string/AA0148"
             android:textColor="@color/black_60"
             android:textSize="@dimen/sp_14" />
@@ -33,11 +37,11 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_56"
             android:layout_marginHorizontal="@dimen/dp_16"
-            android:drawableEnd="@drawable/gw_reoqoo_icon_clean"
             android:background="@drawable/gw_reoqoo_widget_bg_card_12"
+            android:drawableEnd="@drawable/gw_reoqoo_icon_clean"
+            android:gravity="center_vertical"
             android:hint="@string/AA0149"
             android:maxLines="1"
-            android:gravity="center_vertical"
             android:paddingStart="@dimen/dp_12"
             android:paddingEnd="@dimen/dp_12"
             android:singleLine="true"
@@ -103,5 +107,9 @@
             android:enabled="false"
             android:text="@string/AA0152" />
 
+        <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_1"
+            app:immersive_type="navigationBar" />
     </LinearLayout>
 </layout>

@@ -29,6 +29,7 @@ class PushApiImpl @Inject constructor(
     private val dataStore: PushDataStore,
     private val iAccountApi: IAccountApi,
     private val eventApiImpl: AlarmEventApiImpl,
+    private val pushManager: GwPushManager
 ) : IPushApi {
 
     companion object {
@@ -66,25 +67,25 @@ class PushApiImpl @Inject constructor(
     }
 
     override fun initPushServer() {
-        GwPushManager.init(context, appParamApi, dataStore, iAccountApi)
+        pushManager.init()
     }
 
     /**
      * 注册推送服务
      */
     override fun registerPushServer() {
-        GwPushManager.register(context, appParamApi, dataStore, iAccountApi)
+        pushManager.register()
     }
 
     /**
      * 注销推送服务
      */
     override fun unRegisterPushServer(terminalId: String) {
-        GwPushManager.unRegisterPush(terminalId)
+        // pushManager.unRegisterPush(terminalId)
     }
 
     override fun getPushFromIntent(intent: Intent): String? {
-        return GwPushManager.getIntentExtra(intent)
+        return pushManager.getIntentExtra(intent)
     }
 
     /**
@@ -192,6 +193,6 @@ class PushApiImpl @Inject constructor(
     }
 
     override fun addNotificationServer(server: INotifyServer) {
-        GwPushManager.addNotifyServer(server)
+        pushManager.addNotifyServer(server)
     }
 }

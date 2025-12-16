@@ -74,6 +74,6 @@ class MsgDevUpgradeActivity :
      */
     override fun <T : ViewModel?> loadViewModel() = MsgDevUpgradeVM::class.java as Class<T>
 
-    override fun getTitleView() = mViewBinding.layoutTitle
+    override fun onViewLoadFinish() = setStatusBarColor()
 
 }

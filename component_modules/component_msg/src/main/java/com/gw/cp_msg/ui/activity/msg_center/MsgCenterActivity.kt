@@ -73,6 +73,27 @@ class MsgCenterActivity : ABaseMVVMDBActivity<MsgActivityMsgCenterBinding, MsgCe
     @Inject
     lateinit var benefitsMgrImpl: BenefitsMgrImpl
 
+    /**
+     * viewPager adapter
+     */
+    private val fragmentAdapter: FragmentStateAdapter by lazy {
+        object : FragmentStateAdapter(this) {
+            override fun getItemCount(): Int {
+                return childFragments.size
+            }
+
+            override fun createFragment(position: Int): Fragment {
+                return childFragments[position]
+            }
+        }
+    }
+
+    override fun getLayoutId(): Int = R.layout.msg_activity_msg_center
+
+    override fun <T : ViewModel?> loadViewModel(): Class<T> = MsgCenterVM::class.java as Class<T>
+
+    override fun onViewLoadFinish() = setStatusBarColor()
+
     override fun initView() {
         mViewBinding.layoutTitle.run {
             leftIcon.setOnClickListener { finish() }
@@ -196,25 +217,5 @@ class MsgCenterActivity : ABaseMVVMDBActivity<MsgActivityMsgCenterBinding, MsgCe
         }
     }
 
-    /**
-     * viewPager adapter
-     */
-    private val fragmentAdapter: FragmentStateAdapter by lazy {
-        object : FragmentStateAdapter(this) {
-            override fun getItemCount(): Int {
-                return childFragments.size
-            }
-
-            override fun createFragment(position: Int): Fragment {
-                return childFragments[position]
-            }
-        }
-    }
-
-    override fun getLayoutId(): Int = R.layout.msg_activity_msg_center
-
-    override fun <T : ViewModel?> loadViewModel(): Class<T> = MsgCenterVM::class.java as Class<T>
-
-    override fun getTitleView(): View = mViewBinding.layoutTitle
 
 }

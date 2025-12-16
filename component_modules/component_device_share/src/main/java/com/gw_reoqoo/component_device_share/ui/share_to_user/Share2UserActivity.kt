@@ -54,6 +54,13 @@ class Share2UserActivity : ABaseMVVMDBActivity<DevShareFragmentShare2UserBinding
     @Autowired
     lateinit var pageFrom: String
 
+
+    override fun getLayoutId() = R.layout.dev_share_fragment_share_2_user
+
+    override fun <T : ViewModel?> loadViewModel() = Share2UserVM::class.java as Class<T>
+
+    override fun onViewLoadFinish() = setStatusBarColor()
+
     override fun initView() {
         mViewBinding.layoutTitle.leftIcon.setOnClickListener { finish() }
 
@@ -238,11 +245,4 @@ class Share2UserActivity : ABaseMVVMDBActivity<DevShareFragmentShare2UserBinding
             )
         }
     }
-
-    override fun getTitleView() = mViewBinding.layoutTitle
-
-    override fun getLayoutId() = R.layout.dev_share_fragment_share_2_user
-
-    override fun <T : ViewModel?> loadViewModel() = Share2UserVM::class.java as Class<T>
-
 }

@@ -8,7 +8,7 @@
         android:background="@color/color_f2f3f6"
         android:orientation="vertical">
 
-        <com.gw_reoqoo.lib_widget.immersive.ImmersiveView
+        <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_0_1" />
 
@@ -21,8 +21,13 @@
         <FrameLayout
             android:id="@+id/fragment_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="1" />
 
+        <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
+            android:layout_width="match_parent"
+            app:immersive_type="navigationBar"
+            android:layout_height="@dimen/dp_0_1" />
     </LinearLayout>
 
 </layout>

@@ -23,7 +23,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.gw_reoqoo.lib_widget.immersive.ImmersiveView
+            <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
                 android:layout_width="match_parent"
                 android:layout_height="0.1dp"
                 app:immersive_type="statusBar" />

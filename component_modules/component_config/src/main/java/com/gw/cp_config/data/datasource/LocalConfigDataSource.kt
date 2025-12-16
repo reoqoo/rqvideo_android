@@ -49,18 +49,7 @@ class LocalConfigDataSource @Inject constructor(
         withContext(Dispatchers.IO) {
             val json = GwFileUtils.readFile2String(pidConfigPath)
             GwellLogUtils.i(TAG, "initConfig（） json===$json")
-            val configJsonEntity: ConfigJsonEntity? =
-                Gson().fromJson(json, object : TypeToken<ConfigJsonEntity>() {}.type)
-            GwellLogUtils.i(TAG, "configJsonEntity $configJsonEntity")
-            configJsonEntity?.run {
-                if (productList.isNotEmpty()) {
-                    api.setProductPid(productList)
-                }
-                api.setSceneName(sceneList)
-                if (platform != null) {
-                    api.setPermissionMode(platform.mode)
-                }
-            }
+            initConfig(json)
         }
     }
 
@@ -68,19 +57,27 @@ class LocalConfigDataSource @Inject constructor(
      * 初始化产品配置文件，将json保存到DataStore中
      */
     suspend fun initConfig(configJson: String) {
-        withContext(Dispatchers.IO) {
-            val configJsonEntity: ConfigJsonEntity? =
-                Gson().fromJson(configJson, object : TypeToken<ConfigJsonEntity>() {}.type)
-            GwellLogUtils.i(TAG, "configJsonEntity $configJsonEntity")
-            configJsonEntity?.run {
-                if (productList.isNotEmpty()) {
-                    api.setProductPid(productList)
-                }
-                api.setSceneName(sceneList)
-                if (platform != null) {
-                    api.setPermissionMode(platform.mode)
-                }
+        val configJsonEntity: ConfigJsonEntity? = Gson().fromJson(
+            configJson,
+            object : TypeToken<ConfigJsonEntity>() {}.type
+        )
+        GwellLogUtils.i(TAG, "configJsonEntity $configJsonEntity")
+        if (configJsonEntity == null) {
+            return
+        }
+
+        if (!configJsonEntity.products.isNullOrEmpty()) {
+            api.setProductPid(configJsonEntity.products)
+        } else {
+            val products = configJsonEntity.productList.entries.map { (pid, entity) ->
+                entity.pid = pid
+                entity
             }
+            api.setProductPid(products)
+        }
+        api.setSceneName(configJsonEntity.sceneList)
+        if (configJsonEntity.platform != null) {
+            api.setPermissionMode(configJsonEntity.platform.mode)
         }
     }
 
@@ -95,18 +92,26 @@ class LocalConfigDataSource @Inject constructor(
      * @return DevConfigEntity? 详细信息
      */
     fun getProductPid(pid: String): DevConfigEntity? {
-        return api.getProductPid()?.get(pid) ?: kotlin.run {
+        val products = api.getProductPid()
+        if (products.isEmpty()) {
             try {
                 val json = GwFileUtils.readFile2String(pidConfigPath)
-                val configJsonEntity = Gson().fromJson(json, ConfigJsonEntity::class.java)
-                val productPid = configJsonEntity.productList[pid]
-                GwellLogUtils.i(TAG, "productPid: $productPid")
-                return productPid
+                val configJsonEntity: ConfigJsonEntity? = Gson().fromJson(
+                    json, ConfigJsonEntity::class.java
+                )
+                if (configJsonEntity == null) {
+                    return null
+                }
+                if (!configJsonEntity.products.isNullOrEmpty()) {
+                    return configJsonEntity.products.firstOrNull { it.pid == pid }
+                }
+                return configJsonEntity.productList[pid]
             } catch (e: Exception) {
-                GwellLogUtils.e(TAG, "getDevConfigByPid error: e ${e.message}")
+                GwellLogUtils.e(TAG, "getProductPid error, pid=$pid")
                 return null
             }
         }
+        return products.firstOrNull { it.pid == pid }
     }
 
 }

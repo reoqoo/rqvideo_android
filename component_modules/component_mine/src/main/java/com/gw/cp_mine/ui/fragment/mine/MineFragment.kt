@@ -139,7 +139,7 @@ class MineFragment : ABaseMVVMDBFragment<MineFragmentMineBinding, MineFgVM>() {
     override fun initData() {
         super.initData()
         mAdapter?.updateData(mFgViewModel.initLMenuList())
-
+        GwellLogUtils.i(TAG, "initData")
         mFgViewModel.updateUserInfo()
         mFgViewModel.initUpgradeInfo()
         mFgViewModel.loadBenefits()

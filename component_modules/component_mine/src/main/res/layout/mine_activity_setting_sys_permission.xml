@@ -9,7 +9,7 @@
         android:background="@color/color_f2f3f6"
         android:orientation="vertical">
 
-        <com.gw_reoqoo.lib_widget.immersive.ImmersiveView
+        <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_0_1" />
 
@@ -33,12 +33,17 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_setting_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/dp_0"
             android:layout_marginHorizontal="@dimen/dp_16"
             android:layout_marginBottom="@dimen/dp_16"
+            android:layout_weight="1"
             android:background="@drawable/gw_reoqoo_widget_bg_card_12"
             tools:itemCount="3"
             tools:listitem="@layout/mine_list_setting_item" />
-    </LinearLayout>
 
+        <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_1"
+            app:immersive_type="navigationBar" />
+    </LinearLayout>
 </layout>

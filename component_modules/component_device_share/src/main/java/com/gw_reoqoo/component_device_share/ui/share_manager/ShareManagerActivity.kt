@@ -42,7 +42,7 @@ class ShareManagerActivity : ABaseMVVMDBActivity<DevShareActivityManagerBinding,
 
     override fun getLayoutId() = R.layout.dev_share_activity_manager
 
-    override fun getTitleView(): View = mViewBinding.appTitle
+    override fun onViewLoadFinish() = setStatusBarColor(mLight = true)
 
     @Inject
     lateinit var configApi: IAppConfigApi

@@ -37,6 +37,7 @@ interface IDevice {
         const val ONLINE_KEY = "online"
         const val POWERON_KEY = "powerOn"
         const val PRODUCTID_KEY = "productId"
+        const val PRODUCTMODULE_KEY = "productModule"
         const val SN_KEY = "sn"
         const val HASSHARED_KEY = "hasShared"
         const val ORIGINJSON_KEY = "originJson"
@@ -127,6 +128,11 @@ interface IDevice {
     val productId: String?
 
     /**
+     * 产品类型
+     */
+    val productModule: String?
+
+    /**
      * 设备SN码
      */
     val sn: String?
@@ -154,6 +160,7 @@ interface IDevice {
         ONLINE_KEY to online,
         POWERON_KEY to powerOn,
         PRODUCTID_KEY to productId,
+        PRODUCTMODULE_KEY to productModule,
         SN_KEY to sn,
         HASSHARED_KEY to hasShared,
         ORIGINJSON_KEY to originJson,
@@ -175,6 +182,7 @@ data class BundleDevice(private val bundle: Bundle?) : IDevice {
     override val online: Int? get() = bundle?.getInt(IDevice.ONLINE_KEY)
     override val powerOn: Boolean? get() = bundle?.getBoolean(IDevice.POWERON_KEY)
     override val productId: String? get() = bundle?.getString(IDevice.PRODUCTID_KEY)
+    override val productModule: String? get() = bundle?.getString(IDevice.PRODUCTMODULE_KEY)
     override val sn: String? get() = bundle?.getString(IDevice.SN_KEY)
     override val hasShared: Boolean? get() = bundle?.getBoolean(IDevice.HASSHARED_KEY)
     override val originJson: String? get() = bundle?.getString(IDevice.ORIGINJSON_KEY)

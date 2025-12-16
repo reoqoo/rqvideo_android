@@ -9,6 +9,10 @@
         android:background="@color/white_100"
         android:orientation="vertical">
 
+        <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_1" />
+
         <com.gw_reoqoo.lib_widget.title.AppTitle
             android:id="@+id/layout_title"
             android:layout_width="match_parent"
@@ -121,6 +125,5 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1" />
-
     </LinearLayout>
 </layout>

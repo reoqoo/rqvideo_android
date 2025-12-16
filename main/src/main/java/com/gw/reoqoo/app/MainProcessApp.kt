@@ -43,7 +43,8 @@ class MainProcessApp @Inject constructor() : IProcessApp {
         ReoqooLogInitTask(
             StorageUtils.getIotLogDir(appContext),
             cachePath,
-            addDebugApi.getLogsMaxNumber()
+            addDebugApi.getLogsMaxNumber(),
+            logLevelValue = addDebugApi.getLogLevelValue()
         ).initLog()
     }
 

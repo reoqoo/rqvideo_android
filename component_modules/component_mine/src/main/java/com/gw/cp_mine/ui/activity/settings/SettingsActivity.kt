@@ -29,6 +29,10 @@ class SettingsActivity : ABaseMVVMDBActivity<MineActivitySettingsBinding, Settin
 
     override fun getLayoutId() = R.layout.mine_activity_settings
 
+    override fun <T : ViewModel?> loadViewModel() = SettingsVM::class.java as Class<T>
+
+    override fun onViewLoadFinish() = setStatusBarColor()
+
     override fun initView() {
         mViewBinding.appTitle.leftIcon.setOnClickListener { finish() }
         mViewBinding.rvSettingList.layoutManager = LinearLayoutManager(this)
@@ -47,11 +51,4 @@ class SettingsActivity : ABaseMVVMDBActivity<MineActivitySettingsBinding, Settin
         mViewBinding.rvSettingList.adapter = adapter
         adapter.updateData(mViewModel.getItems())
     }
-
-    override fun <T : ViewModel?> loadViewModel() = SettingsVM::class.java as Class<T>
-
-    override fun onViewLoadFinish() {
-        setStatusBarColor()
-    }
-
 }

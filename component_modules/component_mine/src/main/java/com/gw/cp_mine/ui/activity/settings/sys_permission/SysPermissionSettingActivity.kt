@@ -28,7 +28,11 @@ class SysPermissionSettingActivity :
     private var mAdapter: SettingsAdapter? = null
 
     override fun getLayoutId() = R.layout.mine_activity_setting_sys_permission
+    
+    override fun <T : ViewModel?> loadViewModel() = SysPermissionSettingVM::class.java as Class<T>
 
+    override fun onViewLoadFinish() = setStatusBarColor()
+    
     override fun initView() {
         mViewBinding.appTitle.leftIcon.setOnClickListener { finish() }
         mViewBinding.rvSettingList.layoutManager = LinearLayoutManager(this)
@@ -75,11 +79,4 @@ class SysPermissionSettingActivity :
         super.onRestart()
         mViewModel.initSettingsList()
     }
-
-    override fun <T : ViewModel?> loadViewModel() = SysPermissionSettingVM::class.java as Class<T>
-
-    override fun onViewLoadFinish() {
-        setStatusBarColor()
-    }
-
 }

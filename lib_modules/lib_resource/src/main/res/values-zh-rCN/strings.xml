@@ -364,7 +364,7 @@
     <string name="AA0445">返回</string>
     <string name="AA0446">删除失败</string>
     <string name="AA0447">ipTIME</string>
-    <string name="AA0448">完成(%1$s/%2$s)</string>
+    <string name="AA0448">完成(%s/%2$s)</string>
     <string name="AA0450">预览</string>
     <string name="AA0451">预览(%s)</string>
     <string name="AA0452">最多只能选择%s张照片</string>
@@ -431,6 +431,7 @@
     <string name="AA0521">手机验证码不正确</string>
     <string name="AA0522">账号已注销</string>
     <string name="AA0523">国家码不支持发送手机短信</string>
+    <string name="AA0524">手机号已被使用</string>
     <string name="AA0525">邮箱已被使用</string>
     <string name="AA0526">邮件验证码不正确</string>
     <string name="AA0527">必须是主人权限才能操作</string>
@@ -530,5 +531,5 @@
     <string name="AA0689">请尝试以下操作后重试：\n1.长按复位键重置设备；\n2.请检查设备是否连接电源；\n3.请检查设备天线是否松落；\n4.请确保当前4G信号通信正常。</string>
     <string name="AA0690">摄像机电量过低，请在电量充足的状态下升级~</string>
     <string name="AA0691">正在使用非WLAN网络，播放将产生流量费用</string>
-    <string name="AA0692">看到 %1$s</string>
+    <string name="AA0692">看到 %s</string>
 </resources>

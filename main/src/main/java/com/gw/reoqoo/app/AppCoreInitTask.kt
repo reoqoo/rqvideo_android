@@ -149,8 +149,8 @@ class AppCoreInitTask @Inject constructor() : IInitializeTask {
         initIotSdk(app)
         initGwHttp(app)
         initStatistics(app)
-        initPluginService(app)
         initAppConfigModule()
+        initPluginService(app)
         initAccountModule()
         initPushServer(app)
         initResource(app)
@@ -247,8 +247,17 @@ class AppCoreInitTask @Inject constructor() : IInitializeTask {
                 GwellLogUtils.i(TAG,"targetIsActivity = $targetIsActivity className=${routeItem?.className}")
 
                 return if (isNeedLogin && targetIsActivity && !accountApi.isSyncLogin()) {
-                    // 拦截跳转到登录界面
-                    matchRouteMap(ReoqooRouterPath.AccountPath.LOGIN_ACTIVITY_PATH)
+                    GwellLogUtils.e(TAG,"has not login , need login")
+                    if (BuildConfig.IS_UPLOAD_PLUGIN_MODE) {
+                        GwellLogUtils.e(
+                            TAG,
+                            "has not login , need login,but it's Plugin . so have not response"
+                        )
+                        null
+                    } else {
+                        // 拦截跳转到登录界面
+                        matchRouteMap(ReoqooRouterPath.AccountPath.LOGIN_ACTIVITY_PATH)
+                    }
                 } else {
                     routeItem
                 }
@@ -399,11 +408,12 @@ class AppCoreInitTask @Inject constructor() : IInitializeTask {
         }
 
         val countryCode = localeApi.getCurrentCountry()
+        val versionName = AppConfig.instance.VERSION_NAME
 
         accountMgr.init(
             "",
             app.packageName,
-            VersionUtils.getServiceVersion(appParamApi.getCid(), AppConfig.instance.VERSION_NAME),
+            VersionUtils.getServiceVersion(appParamApi.getCid(), versionName),
             AccountMgr.PLATFORM_REOQOO,
             BuildConfig.IS_GOOGLE,
             "",
@@ -413,7 +423,7 @@ class AppCoreInitTask @Inject constructor() : IInitializeTask {
                     return signApi.getAnonymousInfo(
                         app,
                         appParamApi.getAppID(),
-                        AppConfig.instance.VERSION_NAME
+                        versionName
                     )
                 }
 
@@ -438,6 +448,7 @@ class AppCoreInitTask @Inject constructor() : IInitializeTask {
                 }
             }
         )
+        GwellLogUtils.i(TAG, "initAccountMgr init countryCode:$countryCode versionName:$versionName")
         // 设置地区
         accountMgr.setRegion(countryCode)
         // 设置appName,appID,appToken
@@ -458,16 +469,17 @@ class AppCoreInitTask @Inject constructor() : IInitializeTask {
      * 更新到AccountMgr里作为基础信息
      * @param userInfo IUserInfo?
      */
-    private fun updateAccountMgrBy(userInfo: IUserInfo?) {
-        GwellLogUtils.i(TAG, "initGwHttp-$userInfo")
+   private fun updateAccountMgrBy(userInfo: IUserInfo?) {
+        GwellLogUtils.i(TAG, "updateAccountMgrBy-$userInfo")
         val accessId = userInfo?.accessId
         val accessToken = userInfo?.accessToken
         val area = userInfo?.area
         val regRegion = userInfo?.regRegion ?: ""
         val baseUrl = websiteApi.getHostBaseUrl()
-        GwellLogUtils.i(TAG, "initGwHttp-baseUrl:${baseUrl}")
+        GwellLogUtils.i(TAG, "updateAccountMgrBy-baseUrl:${baseUrl}")
         accountMgr.setBaseUrl(baseUrl)
 
+        GwellLogUtils.i(TAG, "updateAccountMgrBy stack=:${Exception().stackTraceToString()}")
         if (accessId != null && accessToken != null) {
             accountMgr.setAccessInfo(accessId, accessToken)
         } else {

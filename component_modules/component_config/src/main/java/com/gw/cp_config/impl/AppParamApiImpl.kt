@@ -1,5 +1,6 @@
 package com.gw.cp_config.impl
 
+import com.gw.cp_config.BuildConfig
 import com.gw.cp_config.api.IAppParamApi
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -32,6 +33,11 @@ class AppParamApiImpl @Inject constructor() : IAppParamApi {
      */
     private var APP_CID = ""
 
+    /**
+     * 反馈邮箱
+     */
+    private var feedbackEmail: String? = null
+
 
     override fun getAppID(): String {
         return APP_ID
@@ -63,5 +69,13 @@ class AppParamApiImpl @Inject constructor() : IAppParamApi {
 
     override fun setCid(cid: String) {
         APP_CID = cid
+    }
+
+    override fun getFeedbackEmail(): String? {
+        return feedbackEmail
+    }
+
+    override fun setFeedbackEmail(email: String?) {
+        this.feedbackEmail = email
     }
 }

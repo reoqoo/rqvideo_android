@@ -63,6 +63,15 @@ data class DevConfigEntity(
      * 设备渠道（Reoqoo还是Yoosee）
      */
     val solution: String? = null,
+    /**
+     * 绑定的渠道（有可能是yoosee或者是reoqoo）
+     */
+    val bindSolution: String? = null,
+    
+    /**
+     * pid
+     */
+    var pid: String? = null,
 
     ) : Serializable, IJsonEntity
 

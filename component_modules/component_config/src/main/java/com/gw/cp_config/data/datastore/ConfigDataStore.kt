@@ -51,6 +51,11 @@ class ConfigDataStore @Inject constructor(@ApplicationContext context: Context) 
         private const val PRODUCT_PID = "product_pid"
 
         /**
+         * 产品配置列表
+         */
+        private const val PRODUCT_LIST = "product_list"
+
+        /**
          * 产品配置权限模式
          */
         private const val PERMISSION_MODE = "permission_mode"
@@ -104,20 +109,20 @@ class ConfigDataStore @Inject constructor(@ApplicationContext context: Context) 
         DataStoreUtils.putData(dataStore, SCENE_NAME, json)
     }
 
-    override fun getProductPid(): Map<String, DevConfigEntity>? {
-        val json = DataStoreUtils.getData(dataStore, PRODUCT_PID, "")
+    override fun getProductPid(): List<DevConfigEntity> {
+        val json = DataStoreUtils.getData(dataStore, PRODUCT_LIST, "")
         GwellLogUtils.i(TAG, "json: $json")
         return if (json.isEmpty()) {
-            null
+            emptyList()
         } else {
-            val type: Type = object : TypeToken<Map<String, DevConfigEntity>>() {}.type
+            val type: Type = object : TypeToken<List<DevConfigEntity>>() {}.type
             Gson().fromJson(json, type)
         }
     }
 
-    override fun setProductPid(map: Map<String, DevConfigEntity>) {
-        val json = Gson().toJson(map)
-        DataStoreUtils.putData(dataStore, PRODUCT_PID, json)
+    override fun setProductPid(products: List<DevConfigEntity>) {
+        val json = Gson().toJson(products)
+        DataStoreUtils.putData(dataStore, PRODUCT_LIST, json)
     }
 
     override fun getPermissionMode(): Int {
@@ -191,16 +196,16 @@ interface IConfigDataStoreApi {
     /**
      * 获取产品配置信息
      *
-     * @return Map<String, DevConfigEntity> String: pid, DevConfigEntity: 产品配置信息
+     * @return 产品配置信息
      */
-    fun getProductPid(): Map<String, DevConfigEntity>?
+    fun getProductPid(): List<DevConfigEntity>
 
     /**
      * 保存产品配置信息
      *
-     * @param map MutableMap<String, DevConfigEntity> String: pid, DevConfigEntity: 产品配置信息
+     * @param products List<DevConfigEntity> 产品配置信息
      */
-    fun setProductPid(map: Map<String, DevConfigEntity>)
+    fun setProductPid(products: List<DevConfigEntity>)
 
     /**
      * 获取配置权限模式

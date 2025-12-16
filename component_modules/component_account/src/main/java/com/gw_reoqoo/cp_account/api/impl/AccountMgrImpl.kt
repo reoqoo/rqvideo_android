@@ -8,10 +8,12 @@ import com.gw_reoqoo.cp_account.api.kapi.IAccountMgrApi
 import com.gw_reoqoo.cp_account.kits.AccountMgrKit
 import com.gw_reoqoo.cp_account.repository.UserInfoRepository
 import com.gw.cp_config.api.IAppParamApi
+import com.gw_reoqoo.cp_account.BuildConfig
 import com.gw_reoqoo.cp_account.ui.activity.login.LoginActivity
 import com.gw_reoqoo.lib_http.HiltApi
 import com.gw_reoqoo.lib_router.ReoqooRouterPath
 import com.gw_reoqoo.lib_router.navigation
+import com.gwell.loglibs.GwellLogUtils
 import com.jwkj.base_lifecycle.activity_lifecycle.ActivityLifecycleManager
 import com.jwkj.base_statistics.sa.kits.SA
 import com.reoqoo.component_iotapi_plugin_opt.api.IGWIotOpt
@@ -35,6 +37,10 @@ class AccountMgrImpl @Inject constructor(
     private val gwiotOpt: IGWIotOpt
 ) : IAccountMgrApi {
 
+    companion object {
+        private const val TAG = "AccountMgrImpl"
+    }
+
     private val scope by lazy {
         MainScope()
     }
@@ -42,11 +48,10 @@ class AccountMgrImpl @Inject constructor(
     /**
      * 退出登录
      */
-    override fun logout(restart: Boolean, block:()->Unit) {
+    override fun logout(restart: Boolean, block: () -> Unit) {
         scope.launch {
             val userInfo = accountApiImpl.getSyncUserInfo()
             val terminalId = userInfo?.terminalId ?: ""
-            pushApi.unRegisterPushServer(terminalId)
             userInfoRepo.userLogout(terminalId)
             SA.saLogout()
             if (restart) {
@@ -62,9 +67,6 @@ class AccountMgrImpl @Inject constructor(
     override fun loginFailure() {
         // 登录失效和退出登录的区别，是不需要调用退出登录的接口
         scope.launch(Dispatchers.Main) {
-            val userInfo = accountApiImpl.getSyncUserInfo()
-            val terminalId = userInfo?.terminalId ?: ""
-            pushApi.unRegisterPushServer(terminalId)
             userInfoRepo.loginFailure()
             setLogoutState()
         }
@@ -80,6 +82,11 @@ class AccountMgrImpl @Inject constructor(
 
         AccountMgrKit.setRegRegion("")
         pluginMgr.onAccountExit()
+        if (BuildConfig.IS_UPLOAD_PLUGIN_MODE) {
+            GwellLogUtils.e(TAG, "setLogoutState. will finish all and navigation to login page")
+            GwellLogUtils.e(TAG, "but it's upload plugin , so skip the logic")
+            return
+        }
         ActivityLifecycleManager.finishAllActivity()
         ReoqooRouterPath.AccountPath.LOGIN_ACTIVITY_PATH.navigation(app)
     }

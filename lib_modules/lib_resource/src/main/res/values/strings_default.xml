@@ -19,12 +19,15 @@
     <string name="error_10017">Parameter %s out of range</string>
     <string name="error_10020">Parameter %s is not a number</string>
     <string name="error_10026">Signature fail:token is expired</string>
-    <string name="error_10012">未找到相关结果</string>
+    <string name="error_1004">Parsing proxy URL error</string>
+    <string name="error_10010">No record found</string>
+    <string name="error_10012">No relevant results found</string>
 
     <string name="four_g">4G</string>
-    <string name="feedback_email_address">demo@demo.com</string>
+    <string name="feedback_email_address">support@reoqoo.com</string>
 
-<!--    <string name="debug_mode">开启调试模式</string>-->
+    <string name="debug_mode">开启调试模式</string>
     <string name="enter_debug_pwd">输入调试密码</string>
     <string name="debug_pwd_error">调试密码错误</string>
+    <string name="record_number">粤ICP备17085704号-19A</string>
 </resources>

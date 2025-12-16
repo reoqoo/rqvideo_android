@@ -6,6 +6,12 @@ apply from: "${rootDir.absolutePath}/script/gradle/reoqoo.gradle"
 
 android {
     namespace 'com.reoqoo.main'
+
+    // 添加默认配置，指定支持的语言
+    defaultConfig {
+        resConfigs "en", "ko" // 仅支持英语和韩语
+    }
+
     sourceSets {
         getByName("iptime") {
             res.srcDirs("src/iptime/res")

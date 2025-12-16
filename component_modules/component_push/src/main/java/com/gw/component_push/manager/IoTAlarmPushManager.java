@@ -8,7 +8,6 @@ import androidx.annotation.Nullable;
 import com.gw.component_push.service.AlarmPushService;
 import com.gw.player.entity.ErrorInfo;
 import com.gwell.loglibs.GwellLogUtils;
-import com.jwkj.iotvideo.constant.IoTError;
 import com.jwkj.iotvideo.httpviap2p.HttpViaP2PProxy;
 import com.jwkj.iotvideo.init.IoTVideoInitializer;
 import com.jwkj.iotvideo.player.api.IIoTCallback;
@@ -76,7 +75,7 @@ public class IoTAlarmPushManager {
 
                     @Override
                     public void onError(@Nullable ErrorInfo errorInfo) {
-
+                        GwellLogUtils.e(TAG, "unregister push failed:" + errorInfo);
                     }
 
                     @Override
@@ -92,11 +91,6 @@ public class IoTAlarmPushManager {
                     public void onStart() {
                         GwellLogUtils.d(TAG, "unregister push start");
                         GwellLogUtils.d(TAG, "registerIoTPush: 厂商, IoT register push start");
-                    }
-
-                    @Override
-                    public void onError(@NonNull IoTError ioTError) {
-                        GwellLogUtils.e(TAG, "unregister push failed:" + ioTError);
                     }
                 });
     }

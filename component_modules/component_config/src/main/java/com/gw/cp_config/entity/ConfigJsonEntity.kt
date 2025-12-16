@@ -29,8 +29,12 @@ data class ConfigJsonEntity(
     /**
      * 场景默认名称
      */
-    @SerializedName("sceneName") val sceneList: SceneEntity
-
+    @SerializedName("sceneName") val sceneList: SceneEntity,
+    
+    /**
+     * 产品列表
+     */
+    @SerializedName("products") val products: List<DevConfigEntity>?
 ) : Serializable, IJsonEntity
 
 data class PlatformEntity(

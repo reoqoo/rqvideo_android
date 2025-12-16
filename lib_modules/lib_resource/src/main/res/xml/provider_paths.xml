@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <paths>
     <external-path name="external_root_path" path="."/>
-    <external-path name="gwErrorLog" path="Android/data/com.cctv.iptime/files/Documents/errorLog/"/>
-    <external-path name="gwLog" path="Android/data/com.cctv.iptime/files/Documents/IotLog/"/>
-    <external-path name="gwPictures" path="Android/data/com.cctv.iptime/files/Pictures/"/>
-    <external-path name="gwMovies" path="Android/data/com.cctv.iptime/files/Movies/"/>
+    <external-path name="gwErrorLog" path="Android/data/com.gw.reoqoo/files/Documents/errorLog/"/>
+    <external-path name="gwLog" path="Android/data/com.gw.reoqoo/files/Documents/IotLog/"/>
+    <external-path name="gwPictures" path="Android/data/com.gw.reoqoo/files/Pictures/"/>
+    <external-path name="gwMovies" path="Android/data/com.gw.reoqoo/files/Movies/"/>
     <external-path
         name="external"
         path="." />

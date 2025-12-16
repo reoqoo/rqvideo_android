@@ -54,7 +54,6 @@ class ActiveAdapter(
         if (iconsAdapter is ActiveIconsAdapter) {
             iconsAdapter.updateData(activeTypes, false)
         }
-
         mBinding.tvTime.text = "%02d:%02d".format(hour, minute)
         mBinding.tvDevName.text = getDeviceName("${bean.devId}")
         mBinding.tvDesc.text = when (activeTypes.size) {

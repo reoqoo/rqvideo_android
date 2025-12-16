@@ -48,7 +48,7 @@ class ShareVisitorActivity :
 
     override fun <T : ViewModel?> loadViewModel(): Class<T> = ShareVisitorVM::class.java as Class<T>
 
-    override fun getTitleView() = mViewBinding.layoutTitle
+    override fun onViewLoadFinish() = setStatusBarColor()
 
     override fun onParseParams(intent: Intent) {
         super.onParseParams(intent)
