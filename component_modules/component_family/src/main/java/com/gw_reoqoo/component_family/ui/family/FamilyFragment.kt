@@ -190,17 +190,6 @@ class FamilyFragment : ABaseMVVMDBFragment<FamilyFragmentFamilyBinding, FamilyVM
                         )
                 },
             )
-            if (BuildConfig.DEBUG || BuildConfig.DEFAULT_TEST_ENV) {
-                items.add(CommListPopup.CommItem("手动配网") {
-                    ReoqooRouterPath
-                        .ConfigPath
-                        .ACTIVITY_CHOSE_PRODUCT_LIST
-                        .navigation(fragment = null)
-                })
-                items.add(CommListPopup.CommItem("测试GwIot") {
-                    ReoqooRouterPath.IotApiPlugin.ACTIVITY_TEST.navigation(context = context)
-                })
-            }
             CommListPopup(v.context, items).showAsDropDown(v)
         }
 
