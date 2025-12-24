@@ -286,7 +286,7 @@ class Versions {
 
     static class ReoqooSdkVer {
         /** 线上包 */
-        public static final String VERSION_CODE = "iptime-release-01.06.01.0.25"
+        public static final String VERSION_CODE = "iptime-release-01.06.01.0.26"
     }
 
     /**
