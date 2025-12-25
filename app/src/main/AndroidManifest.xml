@@ -67,19 +67,6 @@
             android:enabled="true"
             android:exported="true"
             tools:replace="android:exported,android:authorities" />
-
-        <meta-data android:name="HW_APPID" android:value="114558325" tools:replace="android:value"/>
-        <meta-data android:name="PACKAGE_NAME" android:value="com.xiaotun.pro" tools:replace="android:value"/>
-        <meta-data android:name="MEIZU_APPID" android:value="MZ-155768" tools:replace="android:value"/>
-        <meta-data android:name="MEIZU_APPKEY" android:value="MZ-0dd6b2923d8d427bae02ffd687402522" tools:replace="android:value"/>
-        <meta-data android:name="XIAOMI_APPID" android:value="" tools:replace="android:value"/>
-        <meta-data android:name="XIAOMI_APPKEY" android:value="" tools:replace="android:value"/>
-        <meta-data android:name="OPPO_APPID" android:value="OP-3540345" tools:replace="android:value"/>
-        <meta-data android:name="OPPO_APPKEY" android:value="OP-e733aefd04d54a94b4b4c3d0da0cc103" tools:replace="android:value"/>
-        <meta-data android:name="OPPO_APPSECRET" android:value="OP-43edd230a0ba41f298d5dda9b6f937e2" tools:replace="android:value"/>
-        <meta-data android:name="VIVO_APPID" android:value="105923803" tools:replace="android:value"/>
-        <meta-data android:name="VIVO_APPKEY" android:value="9757494ccc72878547cabad8ed56e452" tools:replace="android:value"/>
-        <meta-data android:name="HONOR_APPID" android:value="104507791" tools:replace="android:value"/>
     </application>
 
 </manifest>
