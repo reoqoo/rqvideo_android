@@ -527,4 +527,5 @@
     <string name="AA0690">카메라가 너무 낮 으면 전기 상태로 업그레이드하십시오 ~</string>
     <string name="AA0691">Wi-Fi가 아닌 모바일 데이터를 사용하고 있으며 재생 시 데이터 요금이 발생할 수 있습니다</string>
     <string name="AA0692">%s 감지됨</string>
+    <string name="AA0693">앱이 저장 정보를 사용하려고 합니다</string>
 </resources>

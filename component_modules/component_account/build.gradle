@@ -67,8 +67,8 @@ dependencies {
     implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_http:${Versions.ReoqooSdkVer.VERSION_CODE}")
     implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_iotvideo:${Versions.ReoqooSdkVer.VERSION_CODE}")
     implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_webview:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    if (isApplication) {
-        // 屏幕适配
-        implementation "me.jessyan:autosize:${Versions.ThirdVersions.VERSION_AUTO_SIZE}"
-    }
+//    if (isApplication) {
+//        // 屏幕适配
+//        implementation "me.jessyan:autosize:${Versions.ThirdVersions.VERSION_AUTO_SIZE}"
+//    }
 }

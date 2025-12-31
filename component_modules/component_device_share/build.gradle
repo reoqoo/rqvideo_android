@@ -40,6 +40,7 @@ dependencies {
     implementation project(path: ':component_modules:component_account_api')
     implementation project(path: ':component_modules:component_config_api')
 
+    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_config_net_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
     implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_iotapi_plugin_opt_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
     implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_plugin_service_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
 }

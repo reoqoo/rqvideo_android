@@ -1,13 +1,16 @@
 package com.gw.reoqoo.ui.main
 
+import android.annotation.SuppressLint
 import android.app.Application
-import android.content.res.Configuration
 import android.os.Bundle
 import android.view.Gravity
+import android.view.MenuInflater
 import android.widget.FrameLayout
 import android.widget.ImageView
+import androidx.appcompat.view.menu.MenuBuilder
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
+import com.google.android.material.tabs.TabLayout
 import com.gw.component_debug.api.interfaces.IAppEvnApi
 import com.gw.component_plugin_service.api.IPluginManager
 import com.gw.component_push.api.interfaces.IPushApi
@@ -25,9 +28,7 @@ import com.gw.reoqoo.ui.fragment.MineFragment
 import com.gw_reoqoo.house_watch.ui.video_page.VideoPageFragment
 import com.gwell.loglibs.GwellLogUtils
 import com.jwkj.base_utils.ui.DensityUtil
-import com.jwkj.iotvideo.init.IoTVideoInitializerState
 import com.therouter.router.Route
-import com.zackratos.ultimatebarx.ultimatebarx.addNavigationBarBottomPadding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -63,11 +64,8 @@ class MainActivity : ABaseMVVMDBActivity<AppActivityMainBinding, MainVM>() {
 
     override fun initView() {
         mToolBarConfig.toolBarLoadStrategy = ToolBarLoadStrategy.NO_TOOLBAR
-        mViewBinding.navBtnMenu.itemIconTintList = null
-        mViewBinding.navBtnMenu.setOnItemSelectedListener {
-            setFragment(it.itemId)
-            true
-        }
+        // 初始化TabLayout
+        initTabLayout()
         // 调试模式右上角增加角标
         if (appEnvApi.isDebugEnvMode()) {
             val img = ImageView(this)
@@ -78,7 +76,7 @@ class MainActivity : ABaseMVVMDBActivity<AppActivityMainBinding, MainVM>() {
             addContentView(img, params)
         }
     }
-    
+
     override fun initData(savedInstanceState: Bundle?) {
         super.initData(savedInstanceState)
         // 启动监听网络状态的广播
@@ -108,7 +106,7 @@ class MainActivity : ABaseMVVMDBActivity<AppActivityMainBinding, MainVM>() {
     }
 
     override fun onViewLoadFinish() {
-         setStatusBarColor(mLight = true)
+        setStatusBarColor(mLight = true)
     }
 
     override fun onBackPressed() {
@@ -186,22 +184,39 @@ class MainActivity : ABaseMVVMDBActivity<AppActivityMainBinding, MainVM>() {
         transaction.commitNowAllowingStateLoss()
     }
 
-
-    override fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
-        // 配置变化（如语言切换）时刷新菜单
-        refreshBottomMenu()
-    }
-
     /**
-     * 刷新底部导航菜单（重新加载菜单资源，更新语言文字）
+     *  添加TabLayout初始化方法
      */
-    private fun refreshBottomMenu() {
-        val fragment = fragmentsMap[currentItemId]
-        if (fragment != null) {
-            mViewBinding.navBtnMenu.menu.clear()
-            mViewBinding.navBtnMenu.inflateMenu(R.menu.app_bottom_nav_menu)
-            mViewBinding.navBtnMenu.selectedItemId = currentItemId // 恢复当前选中项
+    @SuppressLint("RestrictedApi")
+    private fun initTabLayout() {
+
+        // 从menu资源添加Tab项（与原BottomNavigationView使用相同的menu资源）
+        val menuInflater = MenuInflater(this)
+        val menu = MenuBuilder(this)
+        menuInflater.inflate(R.menu.app_bottom_nav_menu, menu)
+
+        for (i in 0 until menu.size()) {
+            val menuItem = menu.getItem(i)
+            mViewBinding.tabLayoutMain.addTab(mViewBinding.tabLayoutMain.newTab()
+                .setIcon(menuItem.icon)
+                .setText(menuItem.title))
         }
+
+        // 设置Tab选中监听（替换原BottomNavigationView的选中监听）
+        mViewBinding.tabLayoutMain.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                // 根据选中的Tab切换对应的Fragment
+                val tabId = when (tab.position) {
+                    0 -> R.id.navigation_family
+                    1 -> R.id.navigation_house_keeping
+                    2 -> R.id.navigation_mine
+                    else -> R.id.navigation_family
+                }
+                setFragment(tabId)
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab) {}
+            override fun onTabReselected(tab: TabLayout.Tab) {}
+        })
     }
 }

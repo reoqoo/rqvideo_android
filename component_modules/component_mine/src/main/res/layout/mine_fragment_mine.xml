@@ -19,7 +19,7 @@
         <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
             android:id="@+id/immer_view"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_0_1"
+            android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

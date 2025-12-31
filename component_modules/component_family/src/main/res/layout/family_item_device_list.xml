@@ -119,6 +119,8 @@
                     android:layout_gravity="end|bottom"
                     app:lottie_autoPlay="false"
                     app:lottie_loop="false"
+                    android:visibility="invisible"
+                    tools:visibility="visible"
                     app:lottie_rawRes="@raw/family_dev_turnoff"
                     app:lottie_repeatMode="restart" />
 

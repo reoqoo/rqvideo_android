@@ -15,7 +15,7 @@
 
         <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_0_1" />
+            android:layout_height="wrap_content" />
 
         <com.gw_reoqoo.lib_widget.title.WidgetCommonTitleView
             android:id="@+id/layout_title"

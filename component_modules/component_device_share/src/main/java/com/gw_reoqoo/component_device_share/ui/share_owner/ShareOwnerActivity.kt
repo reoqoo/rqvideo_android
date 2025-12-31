@@ -216,7 +216,7 @@ class ShareOwnerActivity :
         super.initData(savedInstanceState)
         GwellLogUtils.i(TAG, "mEntity $device")
 
-        val devImg = iAppConfigApi.getProductImgUrl(device.productId)
+        val devImg = iAppConfigApi.getProductImgUrl(device.productId, device.productModule)
         GwellLogUtils.i(TAG, "devImg $devImg")
         mViewBinding.ivDeviceIcon.loadUrl(devImg)
 

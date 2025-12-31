@@ -73,6 +73,7 @@ class ShareVisitorActivity :
         }
         val imgUrl = configApi.getProductImgUrl(
             pid = device.productId,
+            module = device.productModule,
             imgType = ProductImgType.INTRODUCTION
         )
         mViewBinding.ivDeviceImg.loadUrl(
@@ -119,7 +120,7 @@ class ShareVisitorActivity :
         super.initData(savedInstanceState)
         mViewModel.queryOwnerInfo()
 
-        val devImg = configApi.getProductImgUrl(device.productId)
+        val devImg = configApi.getProductImgUrl(device.productId, device.productModule)
         GwellLogUtils.i(TAG, "devImg $devImg")
         mViewBinding.ivDeviceImg.loadUrl(devImg)
 

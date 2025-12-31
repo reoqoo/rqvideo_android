@@ -190,6 +190,17 @@ class FamilyFragment : ABaseMVVMDBFragment<FamilyFragmentFamilyBinding, FamilyVM
                         )
                 },
             )
+            if (BuildConfig.DEBUG || BuildConfig.DEFAULT_TEST_ENV) {
+                items.add(CommListPopup.CommItem("手动配网") {
+                    ReoqooRouterPath
+                        .ConfigPath
+                        .ACTIVITY_CHOSE_PRODUCT_LIST
+                        .navigation(fragment = null)
+                })
+                items.add(CommListPopup.CommItem("测试GwIot") {
+                    ReoqooRouterPath.IotApiPlugin.ACTIVITY_TEST.navigation(context = context)
+                })
+            }
             CommListPopup(v.context, items).showAsDropDown(v)
         }
 
@@ -323,9 +334,10 @@ class FamilyFragment : ABaseMVVMDBFragment<FamilyFragmentFamilyBinding, FamilyVM
                                     content = CustomContent(
                                         binding,
                                         initView = { binding ->
-                                            binding.tvProductName.text = data.remarkName ?: appConfigApi.getProductName("${data.pid}")
+                                            binding.tvProductName.text = data.remarkName ?: appConfigApi.getProductName("${data.pid}", data.productModel)
                                             val imgUrl = appConfigApi.getProductImgUrl(
                                                 "${data.pid}",
+                                                module = data.productModel,
                                                 imgType = ProductImgType.INTRODUCTION
                                             )
                                             binding.ivProductImg.loadUrl(imgUrl)
@@ -336,7 +348,8 @@ class FamilyFragment : ABaseMVVMDBFragment<FamilyFragmentFamilyBinding, FamilyVM
                                         CommDialogAction(
                                             text = getString(RR.string.AA0166),
                                             onClick = {
-                                                viewModel.openHome(data.devId)
+                                                val solution = appConfigApi.getProductSolution("${data.pid}", data.productModel)
+                                                viewModel.openHome(data.devId, solution)
                                             }
                                         ),
                                     )

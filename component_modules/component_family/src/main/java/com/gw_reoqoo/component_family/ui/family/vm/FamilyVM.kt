@@ -311,9 +311,9 @@ class FamilyVM @Inject constructor(
         }
     }
 
-    fun openHome(devId: String) {
+    fun openHome(devId: String, solution: String?) {
         viewModelScope.launch {
-            igwIotOpt.openHome(devId)
+            igwIotOpt.openHome(devId, solution)
         }
     }
 
@@ -447,10 +447,9 @@ class FamilyVM @Inject constructor(
         val qrcodeToken = params[DevShareConstant.PARAMS_INVITE_CODE]
         val pid = params[DevShareConstant.PARAM_PID_KEY]
         val deviceId = params[DevShareConstant.PARAMS_DEVICE_ID] ?: ""
-        val productName = configApi.getProductName(pid ?: "") ?: deviceId
         GwellLogUtils.i(
             TAG,
-            "addDeviceByScanShareCode-pid=$pid,productName=$productName,deviceId=$deviceId"
+            "addDeviceByScanShareCode-,params=$params pid=$pid,deviceId=$deviceId"
         )
         if (!qrcodeToken.isNullOrEmpty()) {
             return familyModeApi.addDeviceByScanShareCode(qrcodeToken, deviceId)

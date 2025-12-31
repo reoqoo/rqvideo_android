@@ -375,8 +375,10 @@ class AppCoreInitTask @Inject constructor() : IInitializeTask {
                     !in ResponseCode.values() -> {
                         // 未知的错误提示
                         GwellLogUtils.i(TAG, "respCode ${respCode?.code} msg ${respCode?.msgRes}")
-                        respCode?.code?.let { code ->
-                            toast.show("Request Error respCode %d".format(code))
+                        if (!BuildConfig.IS_UPLOAD_PLUGIN_MODE) {
+                            respCode?.code?.let { code ->
+                                toast.show("Request Error respCode %d".format(code))
+                            }
                         }
 //                        baseResp.msg?.let(toast::show)
                     }
@@ -402,7 +404,10 @@ class AppCoreInitTask @Inject constructor() : IInitializeTask {
                 val now = System.nanoTime() / 1000000L
                 if (now - lastTime >= 5 * 1000) {
                     lastTime = now
-                    toast.show(RR.string.AA0573)
+                    // 不是插件才弹出
+                    if (!BuildConfig.IS_UPLOAD_PLUGIN_MODE) {
+                        toast.show(RR.string.AA0573)
+                    }
                 }
             }
         }
@@ -469,7 +474,7 @@ class AppCoreInitTask @Inject constructor() : IInitializeTask {
      * 更新到AccountMgr里作为基础信息
      * @param userInfo IUserInfo?
      */
-   private fun updateAccountMgrBy(userInfo: IUserInfo?) {
+    private fun updateAccountMgrBy(userInfo: IUserInfo?) {
         GwellLogUtils.i(TAG, "updateAccountMgrBy-$userInfo")
         val accessId = userInfo?.accessId
         val accessToken = userInfo?.accessToken

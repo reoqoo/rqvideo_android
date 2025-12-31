@@ -52,17 +52,17 @@ interface IAppConfigApi {
     /**
      * 根据产品ID获取产品图片
      */
-    fun getProductImgUrl(pid: String?, imgType: ProductImgType = ProductImgType.LIST): String?
+    fun getProductImgUrl(pid: String?, module: String?, imgType: ProductImgType = ProductImgType.LIST): String?
 
     /**
      * 根据产品ID获取产品图片
      */
-    fun getProductImgUrl_C(pid: String?, imgType: ProductImgType = ProductImgType.LIST): String?
+    fun getProductImgUrl_C(pid: String?, module: String?, imgType: ProductImgType = ProductImgType.LIST): String?
 
     /**
      * 根据产品ID获取产品图片
      */
-    fun getProductImgUrl_D(pid: String?, imgType: ProductImgType = ProductImgType.LIST): String?
+    fun getProductImgUrl_D(pid: String?, module: String?, imgType: ProductImgType = ProductImgType.LIST): String?
 
     /**
      * 通过设备pid来获取设备配置信息
@@ -78,9 +78,9 @@ interface IAppConfigApi {
     fun getDevConfigByProductModule(module: String): DevConfigEntity?
 
     /**
-     * 根据产品id获取产品名称（自动国际化）
+     * 根据产品module获取产品名称（自动国际化）
      */
-    fun getProductName(pid: String): String?
+    fun getProductName(pid: String, module: String?): String?
 
     /**
      * 获取配置权限模式
@@ -95,6 +95,14 @@ interface IAppConfigApi {
      * @param mode Int 权限模式（PermissionMode）
      */
     fun setPermissionMode(mode: Int)
+
+    /**
+     *  根据产品module获取设备渠道
+     * @param pid String
+     * @param module String?
+     * @return String?
+     */
+     fun getProductSolution(pid: String, module: String?): String?
 }
 
 enum class PermissionMode(val mode: Int) {

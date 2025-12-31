@@ -17,7 +17,7 @@
 
             <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_0_1" />
+                android:layout_height="wrap_content" />
 
             <com.gw_reoqoo.lib_widget.title.AppTitle
                 android:id="@+id/app_title"
@@ -40,7 +40,7 @@
 
         <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_0_1"
+            android:layout_height="wrap_content"
             app:immersive_type="navigationBar" />
     </LinearLayout>
 

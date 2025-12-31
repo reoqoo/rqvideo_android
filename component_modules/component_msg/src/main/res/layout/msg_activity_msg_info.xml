@@ -10,7 +10,7 @@
 
         <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
             android:layout_width="match_parent"
-            android:layout_height="0.1dp"/>
+            android:layout_height="wrap_content"/>
 
         <com.gw_reoqoo.lib_widget.title.AppTitle
             android:id="@+id/app_title"

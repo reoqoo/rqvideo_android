@@ -15,7 +15,7 @@
 
         <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_0_1" />
+            android:layout_height="wrap_content" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -96,7 +96,7 @@
 
         <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_0_1"
+            android:layout_height="wrap_content"
             app:immersive_type="navigationBar" />
     </LinearLayout>
 

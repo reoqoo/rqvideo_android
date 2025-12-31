@@ -12,31 +12,26 @@
         <FrameLayout
             android:id="@+id/menu_frame"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_0"
+            android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/nav_btn_menu"
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout_main"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_64"
             android:background="@color/white_100"
-            app:elevation="0dp"
-            android:stateListAnimator="@null"
-            app:itemBackground="@color/white_100"
-            app:itemHorizontalTranslationEnabled="false"
-            app:itemIconSize="@dimen/dp_24"
-            app:itemPaddingBottom="@dimen/dp_14"
-            app:itemPaddingTop="@dimen/dp_14"
-            app:itemTextAppearanceActive="@style/main_nav_text_active_style"
-            app:itemTextAppearanceInactive="@style/main_nav_text_active_style"
-            app:itemTextColor="@color/gw_reoqoo_selector_main_navi_text_color"
-            app:labelVisibilityMode="labeled"
-            app:menu="@menu/app_bottom_nav_menu" />
+            app:tabIndicatorHeight="0dp"
+            app:tabTextColor="@color/gw_reoqoo_selector_main_navi_text_color"
+            app:tabTextAppearance="@style/main_nav_text_active_style"
+            app:tabRippleColor="@null"
+            app:tabMode="fixed"
+            app:tabGravity="fill"
+            app:tabPadding="@dimen/dp_8"/>
 
         <com.gw_reoqoo.lib_widget.immersive.RooqooImmersiveView
             android:layout_width="match_parent"
             app:immersive_type="navigationBar"
-            android:layout_height="@dimen/dp_0_1" />
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </layout>
 

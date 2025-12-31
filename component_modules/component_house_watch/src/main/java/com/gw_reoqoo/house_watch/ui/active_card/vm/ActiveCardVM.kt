@@ -178,7 +178,7 @@ class ActiveCardVM @Inject constructor(
         val pid = device?.productId ?: ""
         val remarkName = device?.remarkName ?: ""
         return remarkName.ifEmpty {
-            configApi.getProductName(pid) ?: devId
+            configApi.getProductName(pid, device?.productModule) ?: devId
         }
     }
 

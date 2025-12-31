@@ -194,7 +194,7 @@ class Versions {
         /**
          * 技威网络请求库
          */
-        public static final String VERSION_ACCOUNT_MGR = "1.0.103"
+        public static final String VERSION_ACCOUNT_MGR = "1.0.111"
 //        public static final String VERSION_ACCOUNT_MGR = "1.0.84-SNAPSHOT"
 
         /**
@@ -206,12 +206,12 @@ class Versions {
          * 技威推送库
          */
 //        public static final String VERSION_GW_PUSH = "0.0.0.9"
-        public static final String VERSION_GW_PUSH = "0.0.0.10"
+        public static final String VERSION_GW_PUSH = "0.0.0.12"
 
         /**
          * IotVideo版本
          */
-        public static final String VERSION_IOT_VIDEO = "0.0.0.50-MULTI"
+        public static final String VERSION_IOT_VIDEO = "0.0.0.57"
 //        public static final String VERSION_IOT_VIDEO = "0.0.0.16"
         /**
          * 插件管理库
@@ -228,7 +228,7 @@ class Versions {
          * GwPlayer播放器
          */
 //        public static final String VERSION_GW_PLAYER = "1.0.9.2"
-        public static final String VERSION_GW_PLAYER = "1.0.13.78-MULTI"
+        public static final String VERSION_GW_PLAYER = "1.0.13.85"
 
         /**
          * ijk-cloud-player
@@ -243,13 +243,13 @@ class Versions {
         /**
          * 蓝牙配网库
          */
-        public static final String VERSION_BLE_CONFIG = '1.0.9'
+        public static final String VERSION_BLE_CONFIG = '1.0.10'
 //        public static final String VERSION_BLE_CONFIG = '0.0.8-SNAPSHOT'
 
         /**
          * 胖豚插件 (ipTIME:0.0.0.82  Reoqoo:0.0.1.39)
          */
-        public static final String VERSION_PT_PLUGIN = "0.0.1.65"
+        public static final String VERSION_PT_PLUGIN = "0.0.1.68"
 //        public static final String VERSION_PT_PLUGIN = "0.0.0.75-SNAPSHOT"
 
         /**0
@@ -261,7 +261,7 @@ class Versions {
         /**
          * 回音消除库版本
          */
-        public static final String VERSION_TXTRAEVOIP = "1.0.5"
+        public static final String VERSION_TXTRAEVOIP = "1.0.7"
 
         /**
          * GWIotApi的版本号
@@ -271,7 +271,7 @@ class Versions {
          * YooseeKit的版本号
          * 6.34.1.0.6版本是无values-sw*文件夹的版本，可用于适配无yoosee设备的折叠屏尺寸
          */
-        public static final String YOOSEE_KIT_VERSION = "google-release-6.36.0.0.35.02"
+        public static final String YOOSEE_KIT_VERSION = "google-release-6.38.0.0.5"
 
         /**
          * gwvideo_beta的版本号
@@ -286,7 +286,7 @@ class Versions {
 
     static class ReoqooSdkVer {
         /** 线上包 */
-        public static final String VERSION_CODE = "iptime-release-01.06.01.0.26"
+        public static final String VERSION_CODE = "iptime-release-01.06.01.0.27"
     }
 
     /**

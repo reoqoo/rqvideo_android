@@ -31,7 +31,7 @@ class DeviceListAdapter(
     override fun onBindViewHolder(binding: Binding, position: Int) {
         val wrapper = getItemData(position)
         val device = wrapper.device
-        binding.ivDevImg.loadUrl(iAppConfigApi.getProductImgUrl(device.productId))
+        binding.ivDevImg.loadUrl(iAppConfigApi.getProductImgUrl(device.productId, device.productModule))
         binding.root.tag = wrapper
         binding.tvDevName.text = device.remarkName
         binding.checkbox.isChecked = wrapper.checked

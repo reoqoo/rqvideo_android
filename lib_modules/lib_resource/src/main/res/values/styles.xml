@@ -2,7 +2,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
 
     <!-- 重构之后的新页面都继承自ABaseMVVMActivity，ABaseMVVMActivity继承AppCompatActivity，所以新页面需要继承AppCompat的主题 -->
-    <style name="AppCompatTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
+    <style name="AppCompatTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@color/global_bg_color</item>
         <item name="android:textAllCaps">false</item>
     </style>

@@ -172,21 +172,21 @@ class ShareDeviceImpl @Inject constructor(
             content = CustomContent(
                 binding = FamilyDialogDevShareDetailBinding.inflate(layoutInflater),
                 initView = { binding ->
-                    val devName = detail.remarkName ?: configApi.getProductName("${detail.pid}")
+                    val devName = detail.remarkName ?: configApi.getProductName("${detail.pid}", detail.productModel?: "")
                     binding.tvShareContent.text = context.getString(
                         R.string.AA0164,
                         detail.nickName
                     )
                     binding.tvDevName.text = devName
                     val imgUrl =
-                        configApi.getProductImgUrl_D("${detail.pid}", ProductImgType.INTRODUCTION)
+                        configApi.getProductImgUrl_D("${detail.pid}", detail.productModel, ProductImgType.INTRODUCTION)
                     GwellLogUtils.i(TAG, "imgUrl $imgUrl")
                     binding.ivDevImg.loadUrl(
                         imgUrl
                     )
                     GwellLogUtils.i(
                         TAG,
-                        "devShareDetail,pid:${detail.pid},devName:$devName,productImg:$imgUrl"
+                        "devShareDetail,pid:${detail.pid},devName:$devName,productImg:$imgUrl detail=$detail"
                     )
                 }
             )
@@ -207,7 +207,7 @@ class ShareDeviceImpl @Inject constructor(
                 }),
                 CommDialogAction(context.getString(R.string.AA0165), onClick = {
                     scope.launch {
-                        val devName = detail.remarkName ?: configApi.getProductName("${detail.pid}")
+                        val devName = detail.remarkName ?: configApi.getProductName("${detail.pid}", detail.productModel?: "")
                         GwellLogUtils.i(
                             TAG,
                             "configApi.getProductId(${detail.pid})-> devName $devName"
@@ -229,7 +229,8 @@ class ShareDeviceImpl @Inject constructor(
                                         context.getString(R.string.AA0166),
                                         onClick = {
                                             scope.launch {
-                                                igwIotOpt.openHome(deviceId)
+                                                val solution = configApi.getProductSolution(detail.pid.toString(), detail.productModel)
+                                                igwIotOpt.openHome(deviceId, solution)
                                             }
                                         }),
                                 )

@@ -214,16 +214,23 @@ class DeviceRepository @Inject constructor(
                 if (localDeviceId != null) {
                     val localDevice = localDeviceDataSource.deviceInfo(localDeviceId)
                     if (localDevice != null) {
-                        val newDevice = info.copy(
-                            online = localDevice.online,
-                            powerOn = localDevice.powerOn,
-                        )
+                        val newDevice = info.copy()
+                        localDevice.online?.let {
+                            newDevice.online = it
+                        }
+                        localDevice.powerOn?.let {
+                            newDevice.powerOn = it
+                        }
                         localDeviceDataSource.updateDevice(newDevice)
+//                    } else {
+//                        localDeviceDataSource.updateDevice(info)
+                        GwellLogUtils.i(TAG, "loadDeviceFromRemote update newDevice:${newDevice}")
                     } else {
-                        localDeviceDataSource.addDevice(info)
+                        GwellLogUtils.i(TAG, "loadDeviceFromRemote update DeviceInfo:${info}")
                     }
                 } else {
                     localDeviceDataSource.addDevice(info)
+                    GwellLogUtils.i(TAG, "loadDeviceFromRemote add DeviceInfo:${info}")
                 }
             }
             // 转到主线程，启动服务同步设备在线状态

@@ -87,11 +87,11 @@ class DeviceStatusServices : LifecycleService(), IPluginDeviceStatusListener {
      * 请求设备状态
      */
     private fun loadDeviceStatus() {
-        if (SystemClock.uptimeMillis() - mLastLoadDeviceTime < MIN_INTERVAL) {
-            GwellLogUtils.i(TAG, "loadDeviceStatus interval too short")
-            return
-        }
-        mLastLoadDeviceTime = SystemClock.uptimeMillis()
+//        if (SystemClock.uptimeMillis() - mLastLoadDeviceTime < MIN_INTERVAL) {
+//            GwellLogUtils.i(TAG, "loadDeviceStatus interval too short")
+//            return
+//        }
+//        mLastLoadDeviceTime = SystemClock.uptimeMillis()
         val userId = iAccountApi.getSyncUserId()
         GwellLogUtils.i(TAG, "loadDeviceStatus userId:$userId")
         if (userId != null) {

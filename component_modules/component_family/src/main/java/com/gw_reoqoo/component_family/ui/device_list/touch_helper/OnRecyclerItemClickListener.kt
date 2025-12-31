@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
 import com.gw_reoqoo.component_family.databinding.FamilyItemDeviceListBinding
 import com.gw_reoqoo.lib_room.device.DeviceInfo
+import com.gw_reoqoo.lib_utils.ktx.setSingleClickListener
 import com.gw_reoqoo.lib_widget.adapter.AbsDiffBDAdapter
 import com.gwell.loglibs.GwellLogUtils
 
@@ -71,24 +72,34 @@ abstract class OnRecyclerItemClickListener(private val mRecyclerView: RecyclerVi
      * 手势监听器
      */
     private inner class ItemTouchHelperGestureListener : SimpleOnGestureListener() {
+        private var lastClickTime = 0L
+        private val MIN_TIME = 500L
+        private var touchView: View? = null
         override fun onSingleTapUp(e: MotionEvent): Boolean {
             val childViewUnder = mRecyclerView.findChildViewUnder(e.x, e.y)
             GwellLogUtils.i(TAG, "childViewUnder: $childViewUnder")
             if (childViewUnder != null) {
-                val viewHolder =
-                    mRecyclerView.getChildViewHolder(childViewUnder) as? AbsDiffBDAdapter<FamilyItemDeviceListBinding, DeviceInfo>.ViewHolder<FamilyItemDeviceListBinding>
-                if (viewHolder == null) {
-                    val childViewPosition = mRecyclerView.getChildAdapterPosition(childViewUnder)
-                    val childViewHolder = mRecyclerView.getChildViewHolder(childViewUnder)
-                    onItemClick(childViewHolder, childViewPosition)
-                } else {
-                    val isPositionInside = isPointInsideView(e, viewHolder.binding.btTurnOffOrOn)
-                    GwellLogUtils.i(TAG, "isPointInsideView: $isPositionInside")
-                    if (!isPositionInside) {
+                val now = System.currentTimeMillis()
+                if (now - lastClickTime > MIN_TIME || touchView != childViewUnder) {
+                    touchView = childViewUnder
+                    val viewHolder =
+                        mRecyclerView.getChildViewHolder(childViewUnder) as? AbsDiffBDAdapter<FamilyItemDeviceListBinding, DeviceInfo>.ViewHolder<FamilyItemDeviceListBinding>
+                    lastClickTime = now
+                    if (viewHolder == null) {
                         val childViewPosition =
                             mRecyclerView.getChildAdapterPosition(childViewUnder)
                         val childViewHolder = mRecyclerView.getChildViewHolder(childViewUnder)
                         onItemClick(childViewHolder, childViewPosition)
+                    } else {
+                        val isPositionInside =
+                            isPointInsideView(e, viewHolder.binding.btTurnOffOrOn)
+                        GwellLogUtils.i(TAG, "isPointInsideView: $isPositionInside")
+                        if (!isPositionInside) {
+                            val childViewPosition =
+                                mRecyclerView.getChildAdapterPosition(childViewUnder)
+                            val childViewHolder = mRecyclerView.getChildViewHolder(childViewUnder)
+                            onItemClick(childViewHolder, childViewPosition)
+                        }
                     }
                 }
             }

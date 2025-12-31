@@ -1,0 +1,168 @@
+package com.gw.cp_config.entity
+
+/**
+ * @anchor   Allen
+ * @date     2025/12/4 10:11
+ * @desc     .app 主题颜色实体类
+ */
+data class ThemeColorConfigEntity(
+    /**
+     * 主题色
+     */
+    var brand: String? = null,
+
+    /**
+     * 主题色 highlight
+     */
+    var brandHighlight: String? = null,
+
+    /**
+     * 主题色 disable
+     */
+    var brandDisable: String? = null,
+
+    /**
+     * 次主题色
+     */
+    var brand2: String? = null,
+
+    /**
+     * 次主题色 highlight
+     */
+    var brand2Highlight: String? = null,
+
+    /**
+     * 次主题色 disable
+     */
+    var brand2Disable: String? = null,
+    /**
+     * 字体颜色 一般为黑色
+     */
+    /**
+     *   一级
+     */
+    var text: String? = null,
+
+    /**
+     * 二级
+     */
+    var secondaryText: String? = null,
+
+    /**
+     * 三级
+     */
+    var tertiaryText: String? = null,
+
+    /**
+     * 亮色文字 一般为白色
+     */
+    var lightText: String? = null,
+
+    /**
+     * 链接文字颜色
+     */
+    var linkText: String? = null,
+
+    /**
+     * 不透明背景色
+     */
+    var maskBackground: String? = null,
+
+    /**
+     * HUD 背景色
+     */
+    var hudBackground: String? = null,
+
+    /**
+     * 输入线没选中
+     */
+    var inputLineDisable: String? = null,
+
+    /**
+     * 输入线选中
+     */
+    var inputLineEnable: String? = null,
+
+    /**
+     * 分割线颜色
+     */
+    var separatorLine: String? = null,
+
+    /**
+     * 背景色 一般为白色
+     */
+    var mainBackground: String? = null,
+
+    /**
+     * 二级背景色 一般为浅灰
+     */
+    var secondaryBackground: String? = null,
+
+    /**
+     * 安全色
+     */
+    var stateSafe: String? = null,
+
+    /**
+     * 警告色
+     */
+    var stateWarning: String? = null,
+
+    /**
+     * 错误色
+     */
+    var stateError: String? = null,
+) {
+     /**
+         * 生成按照和H5约定主题协议的字符串
+         */
+        fun toH5JSStr(): String {
+            val map = linkedMapOf(
+                "brand" to brand,
+            )
+
+            val jsonBody = map
+                .filterValues { it != null }
+                .entries
+                .joinToString(separator = ",") { (key, value) ->
+                    "\"$key\":\"${value}\""
+                }
+
+            return "{$jsonBody}"
+        }
+
+        override fun toString(): String {
+            val map = linkedMapOf(
+                "brand" to brand,
+                "brandHighlight" to brandHighlight,
+                "brandDisable" to brandDisable,
+                "brand2" to brand2,
+                "brand2Highlight" to brand2Highlight,
+                "brand2Disable" to brand2Disable,
+                "text" to text,
+                "secondaryText" to secondaryText,
+                "tertiaryText" to tertiaryText,
+                "lightText" to lightText,
+                "linkText" to linkText,
+                "maskBackground" to maskBackground,
+                "hudBackground" to hudBackground,
+                "inputLineDisable" to inputLineDisable,
+                "inputLineEnable" to inputLineEnable,
+                "separatorLine" to separatorLine,
+                "mainBackground" to mainBackground,
+                "secondaryBackground" to secondaryBackground,
+                "stateSafe" to stateSafe,
+                "stateWarning" to stateWarning,
+                "stateError" to stateError
+            )
+
+            val jsonBody = map
+                .filterValues { it != null }
+                .entries
+                .joinToString(separator = ",") { (key, value) ->
+                    "\"$key\":\"${value}\""
+                }
+
+            return "{$jsonBody}"
+        }
+}

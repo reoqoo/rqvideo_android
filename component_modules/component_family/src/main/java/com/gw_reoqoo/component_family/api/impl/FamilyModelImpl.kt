@@ -196,6 +196,7 @@ class FamilyModelImpl @Inject constructor(
     ): Flow<HttpAction<ScanShareQRCodeResult>> {
         return callbackFlow {
             var ownerRemarkName: String? = remarkName
+            var productModel = ""
             // 传进来的备注是空，就查一下
             if (remarkName.isNullOrEmpty()) {
                 val channel = Channel<String?>(1)
@@ -207,6 +208,9 @@ class FamilyModelImpl @Inject constructor(
                             channel.send(null)
                         }
                         is HttpAction.Success -> {
+                            acion.data?.productModel?.let {
+                                productModel = it
+                            }
                             channel.send(acion.data?.remarkName)
                         }
                     }
@@ -233,13 +237,19 @@ class FamilyModelImpl @Inject constructor(
                         close()
                     }
                     is HttpAction.Success -> {
-                        action.data?.remarkName = realReMarkName
+                        action.data?.let {
+                            it.remarkName = realReMarkName
+                            if (it.productModel.isNullOrEmpty()) {
+                                it.productModel = productModel
+                            }
+                        }
+
                         send(action)
                         close()
                     }
                 }
             }
-            
+
             awaitClose { cancel() }
         }
     }

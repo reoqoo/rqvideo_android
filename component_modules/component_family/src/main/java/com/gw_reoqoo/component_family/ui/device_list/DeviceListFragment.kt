@@ -31,6 +31,7 @@ import com.gw_reoqoo.lib_http.error.ResponseCode
 import com.gw.lib_plugin_service.IResultCallback
 import com.gw.lib_plugin_service.constant.PluginCodeConstants
 import com.gw_reoqoo.component_family.api.interfaces.FamilyModeApi
+import com.gw_reoqoo.lib_base_architecture.protocol.IGwBaseVm
 import com.gw_reoqoo.lib_room.device.DeviceInfo
 import com.gw_reoqoo.lib_room.ktx.isMaster
 import com.gw_reoqoo.lib_router.ReoqooRouterPath
@@ -126,14 +127,17 @@ class DeviceListFragment : ABaseMVVMDBFragment<FamilyFragmentDeviceBinding, Devi
             addOnItemTouchListener(object : OnRecyclerItemClickListener(this) {
                 override fun onItemClick(viewHolder: RecyclerView.ViewHolder?, position: Int) {
                     val devInfo = deviceListAdapter.data[position]
+                    GwellLogUtils.i(TAG, "OnItemTouch onItemClick devInfo $devInfo")
                     lifecycleScope.launch {
-                        igwIotOpt.openHome(devInfo.deviceId)
+                        val solution = configApi.getProductSolution(devInfo.productId?: "", devInfo.productModule)
+                        igwIotOpt.openHome(devInfo.deviceId, solution)
                     }
                 }
 
                 override fun onLongClick(viewHolder: RecyclerView.ViewHolder?, position: Int) {
                     val context = context ?: return
                     val info = deviceListAdapter.data[position]
+                    GwellLogUtils.i(TAG, "OnItemTouch onLongClick info $info")
                     itemMenuPopup = ItemMenuPopup(context, info,
                         onShareClick = {
                             lifecycleScope.launch {

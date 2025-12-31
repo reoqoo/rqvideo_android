@@ -92,8 +92,8 @@ class RemoteDevShareDatasource @Inject constructor(
     /**
      * 通过账号分享设备
      */
-    fun shareGuest(deviceId: String, guestId: String): Flow<HttpAction<Any>> {
-        return httpService.shareGuest(deviceId, guestId, FULL_PERMISSION, true).mapActionFlow()
+    fun shareGuest(deviceId: String, guestId: String, guestAccessId: String? = null): Flow<HttpAction<Any>> {
+        return httpService.shareGuest(deviceId, guestId, guestAccessId, FULL_PERMISSION, true).mapActionFlow()
     }
 
     /**

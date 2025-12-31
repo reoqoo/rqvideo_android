@@ -3,6 +3,7 @@ package com.gw.component_push.manager
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.gw.component_push.BuildConfig
@@ -25,9 +26,13 @@ import com.yoosee.lib_gpush.listener.IGPushResultListener
 import com.yoosee.lib_gpush.strategy.SingleStrategy
 import com.yoosee.lib_gpush.utils.DevicePushUtils
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 import java.util.Locale
 import java.util.TimeZone
 import java.util.UUID
@@ -75,6 +80,7 @@ class GwPushManager @Inject constructor(
      *
      * @param context Context 上下文
      */
+    @OptIn(DelicateCoroutinesApi::class)
     fun init() {
         val appContext = context.applicationContext
         val userId = runBlocking { iAccountApi.getAsyncUserId() }
@@ -97,9 +103,11 @@ class GwPushManager @Inject constructor(
 
             override fun onSuccess(channel: String, token: String) {
                 GwellLogUtils.i(TAG, "init success: channel=$channel, token=$token")
-                isPushInitSuccess = true
-                runBlocking { dataStore.saveToken(userId, token) }
-                register()
+                GlobalScope.launch(Dispatchers.IO) {
+                    isPushInitSuccess = true
+                    runBlocking { dataStore.saveToken(userId, token) }
+                    register()
+                }
             }
         })
     }
@@ -287,10 +295,14 @@ class GwPushManager @Inject constructor(
                 }
             }
 
-            override fun notifyReceiver(channel: PushChannel, msg: String) {
-                GwellLogUtils.i(TAG, "notifyReceiver: channel=$channel, msg=$msg")
+            override fun notifyReceiver(
+                channel: PushChannel,
+                msg: Bundle,
+                title: String,
+                content: String
+            ) {
+                GwellLogUtils.i(TAG, "notifyReceiver: channel=$channel, msg=$msg, title=$title, content=$content")
             }
-
         })
     }
 

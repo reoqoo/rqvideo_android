@@ -223,31 +223,54 @@ class AppConfigApiImpl @Inject constructor(
      * @return String? ⾸⻚、设备列表⻚、分享设备⻚共⽤图
      * @return String? 配置Wi-Fi⻚、设备控制⻚、共享管理⻚共⽤图
      */
-    override fun getProductImgUrl(pid: String?, imgType: ProductImgType): String? {
-        return getDevConfig()?.get(pid)?.productImageURL_A
+    override fun getProductImgUrl(pid: String?, module: String?, imgType: ProductImgType): String? {
+        GwellLogUtils.i(TAG, "getProductImgUrl: pid $pid, module $module, imgType $imgType")
+        val entity = if (module.isNullOrEmpty()) {
+            getDevConfigByPid(pid?: "")
+        } else {
+            getDevConfigByProductModule(module)
+        }
+        return entity?.productImageURL_A
     }
 
     /**
      * 根据产品ID获取产品图片
      * @return String? 配置Wi-Fi⻚、设备控制⻚、共享管理⻚共⽤图
      */
-    override fun getProductImgUrl_C(pid: String?, imgType: ProductImgType): String? {
-        return getDevConfig()?.get(pid)?.productImageURL_C
+    override fun getProductImgUrl_C(pid: String?, module: String?, imgType: ProductImgType): String? {
+        GwellLogUtils.i(TAG, "getProductImgUrl_C: pid $pid, module $module, imgType $imgType")
+        val entity = if (module.isNullOrEmpty()) {
+            getDevConfigByPid(pid?: "")
+        } else {
+            getDevConfigByProductModule(module)
+        }
+        return entity?.productImageURL_C
     }
 
     /**
      * 根据产品ID获取产品图片
      * @return String?  设备连接⻚、设备分享弹窗
      */
-    override fun getProductImgUrl_D(pid: String?, imgType: ProductImgType): String? {
-        return getDevConfig()?.get(pid)?.productImageURL_D
+    override fun getProductImgUrl_D(pid: String?, module: String?, imgType: ProductImgType): String? {
+        GwellLogUtils.i(TAG, "getProductImgUrl_D: pid $pid, module $module, imgType $imgType")
+        val entity = if (module.isNullOrEmpty()) {
+            getDevConfigByPid(pid?: "")
+        } else {
+            getDevConfigByProductModule(module)
+        }
+        return entity?.productImageURL_D
     }
 
     /**
-     * 根据产品id获取产品名称（自动国际化）
+     * 根据产品module获取产品名称（自动国际化）
      */
-    override fun getProductName(pid: String): String? {
-        val entity = getDevConfigByPid(pid)
+    override fun getProductName(pid: String, module: String?): String? {
+        GwellLogUtils.i(TAG, "getProductName: pid $pid, module $module")
+        val entity = if (module.isNullOrEmpty()) {
+            getDevConfigByPid(pid)
+        } else {
+            getDevConfigByProductModule(module)
+        }
         val appLocal = app.resources.configuration.locale
         // zh
         val language = appLocal.language
@@ -271,6 +294,24 @@ class AppConfigApiImpl @Inject constructor(
     override fun setPermissionMode(mode: Int) {
         api.setPermissionMode(mode)
     }
+
+
+    /**
+     *  根据产品module获取设备渠道
+     * @param pid String
+     * @param module String?
+     * @return String?
+     */
+    override fun getProductSolution(pid: String, module: String?): String? {
+        GwellLogUtils.i(TAG, "getProductSolution: pid $pid, module $module")
+        val entity = if (module.isNullOrEmpty()) {
+            getDevConfigByPid(pid)
+        } else {
+            getDevConfigByProductModule(module)
+        }
+        return entity?.solution
+    }
+
 
     /**
      * 用APP内置的文件进行初始化

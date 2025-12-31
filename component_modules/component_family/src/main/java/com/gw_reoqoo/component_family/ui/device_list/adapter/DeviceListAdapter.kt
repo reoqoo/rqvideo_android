@@ -182,7 +182,7 @@ class DeviceListAdapter(
         binding.iv4g.visible(false)
         binding.ivCloud.visible(false)
         binding.vSplitLine.visible(false)
-        val productImg = configApi.getProductImgUrl(info.productId)
+        val productImg = configApi.getProductImgUrl(info.productId, info.productModule)
         binding.ivProduct.loadUrl(productImg)
 
         // 判断是否支持开关机,如果不支持，则隐藏按钮
@@ -207,6 +207,6 @@ class DeviceListAdapter(
                 old.online == new.online &&
                 old.powerOn == new.powerOn &&
                 checkCloudOn?.invoke(old.deviceId) == checkCloudOn?.invoke(new.deviceId)
-        
+
     }
 }

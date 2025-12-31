@@ -2,6 +2,7 @@ package com.gw.cp_config.impl
 
 import com.gw.cp_config.BuildConfig
 import com.gw.cp_config.api.IAppParamApi
+import com.gw.cp_config.entity.ThemeColorConfigEntity
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -37,6 +38,8 @@ class AppParamApiImpl @Inject constructor() : IAppParamApi {
      * 反馈邮箱
      */
     private var feedbackEmail: String? = null
+
+    private var uiTheme: ThemeColorConfigEntity? = null
 
 
     override fun getAppID(): String {
@@ -77,5 +80,13 @@ class AppParamApiImpl @Inject constructor() : IAppParamApi {
 
     override fun setFeedbackEmail(email: String?) {
         this.feedbackEmail = email
+    }
+
+    override fun setUIThemeConfig(config: ThemeColorConfigEntity) {
+        uiTheme = config
+    }
+
+    override fun getUIThemeConfig(): ThemeColorConfigEntity? {
+        return uiTheme
     }
 }
