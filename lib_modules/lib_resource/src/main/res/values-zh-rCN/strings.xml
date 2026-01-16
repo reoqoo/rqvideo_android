@@ -533,4 +533,5 @@
     <string name="AA0690">摄像机电量过低，请在电量充足的状态下升级~</string>
     <string name="AA0691">正在使用非WLAN网络，播放将产生流量费用</string>
     <string name="AA0692">看到 %s</string>
+    <string name="AA0693">APP想使用您的存储信息</string>
 </resources>

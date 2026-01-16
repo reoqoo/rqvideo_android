@@ -43,14 +43,14 @@ enum class ActiveType(
         R.drawable.house_watch_icon_call_active
     ),
 
-    /**
-     * 人脸识别
-     */
-    FACE_ACTIVE(
-        RR.string.AA0364,
-        4,
-        R.drawable.house_watch_icon_face_active
-    ),
+//    /**
+//     * 人脸识别
+//     */
+//    FACE_ACTIVE(
+//        RR.string.AA0364,
+//        4,
+//        R.drawable.house_watch_icon_face_active
+//    ),
 
     /**
      * 有人活动

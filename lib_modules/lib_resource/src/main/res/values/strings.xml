@@ -58,7 +58,7 @@
     <string name="AA0069">Allow APP to use your location information?</string>
     <string name="AA0070">Location permission is required to obtain Wi-Fi information for adding devices; please enable system location</string>
     <string name="AA0071">The positioning permission is disabled. Please enable it in Settings</string>
-    <string name="AA0072">Allow \"APP\" to use your album information？</string>
+    <string name="AA0072">Need permission to access your album</string>
     <string name="AA0073">Requires viewing and sending pictures. Allow access to the photo album?</string>
     <string name="AA0074">Allow \"APP\" to use your Bluetooth information？</string>
     <string name="AA0075">Bluetooth permission is required to help the smart device connect to Wi-Fi during the adding process. Do you agree to enable it?</string>
@@ -133,12 +133,12 @@
     <string name="AA0173">Are you sure to delete the device?</string>
     <string name="AA0176">Scan the QR code on the device or the QR code shared by others</string>
     <string name="AA0177">No shared device</string>
-    <string name="AA0178">Shared device</string>
-    <string name="AA0179">From the shared device</string>
+    <string name="AA0178">Shared by Me</string>
+    <string name="AA0179">Shared with Me</string>
     <string name="AA0180">My share</string>
     <string name="AA0181">From sharing</string>
     <string name="AA0182">Remove</string>
-    <string name="AA0183">Device removal</string>
+    <string name="AA0183">Remove device</string>
     <string name="AA0184">Stop sharing</string>
     <string name="AA0185">Are you sure to delete this shared friend?</string>
     <string name="AA0186">Remove successfully</string>
@@ -169,7 +169,7 @@
     <string name="AA0215">More data is being loaded</string>
     <string name="AA0216">Refreshing</string>
     <string name="AA0218">Album</string>
-    <string name="AA0219">Firmware upgrade</string>
+    <string name="AA0219">Firmware Upgrade</string>
     <string name="AA0220">Do not disturb setting</string>
     <string name="AA0221">Language</string>
     <string name="AA0222">Feedback</string>
@@ -527,5 +527,5 @@
     <string name="AA0690">The camera battery is low, please upgrade it when the battery is sufficient.</string>
     <string name="AA0691">You are not using WLAN. Data costs will be incurred when playing</string>
     <string name="AA0692">%s are detected</string>
-    <string name="AA0693">APP wants to use your storage</string>
+    <string name="AA0693">Need permission to access phone storage</string>
 </resources>
