@@ -184,3 +184,20 @@ afterEvaluate {
         }*.enabled = flavor.ext.isGoogle
     }
 }
+
+
+// 添加TheRouter缓存清理任务
+task cleanTheRouterCache(type: Delete) {
+    description = "删除TheRouter默认缓存目录"
+    group = "cleanup"
+
+    // 删除src/main/assets/therouter目录
+    delete "${projectDir}/src/main/assets/therouter"
+
+    doLast {
+        println "TheRouter缓存目录清理完成"
+    }
+}
+
+// clean任务执行时自动清理TheRouter缓存，可以添加以下依赖
+clean.dependsOn cleanTheRouterCache
