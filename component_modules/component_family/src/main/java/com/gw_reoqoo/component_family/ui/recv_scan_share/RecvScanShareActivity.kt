@@ -3,12 +3,14 @@ package com.gw_reoqoo.component_family.ui.recv_scan_share
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.widget.ImageView
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
@@ -17,6 +19,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.Target
 import com.gw_reoqoo.component_family.R
 import com.gw_reoqoo.component_family.databinding.FamilyDialogAddDevSuccessBinding
+import com.gw_reoqoo.lib_base_architecture.view.ABaseMVVMActivity
 import com.gw_reoqoo.lib_base_architecture.view.ABaseMVVMDBActivity
 import com.gw_reoqoo.lib_http.ResponseNotSuccessException
 import com.gw_reoqoo.lib_http.error.ResponseCode
@@ -32,41 +35,35 @@ import kotlinx.coroutines.withContext
 
 @AndroidEntryPoint
 @Route(path = ReoqooRouterPath.Family.FAMILY_ACTIVITY_RECV_SCAN_SHARE)
-class RecvScanShareActivity: ABaseMVVMDBActivity<FamilyDialogAddDevSuccessBinding, RecvScanShareVM>() {
+class RecvScanShareActivity: ABaseMVVMActivity<RecvScanShareVM>() {
 
     companion object {
         private const val TAG = "RecvScanShareActivity"
     }
 
-    override fun getLayoutId(): Int {
-        return R.layout.family_dialog_add_dev_success
-    }
+    private lateinit var mViewBinding: FamilyDialogAddDevSuccessBinding
 
     override fun <T : ViewModel?> loadViewModel(): Class<T> {
         return RecvScanShareVM::class.java as Class<T>
     }
 
-    override fun onPreViewCreate() {
-        super.onPreViewCreate()
-        supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
+    override fun onContentViewLoad(savedInstanceState: Bundle?) {
+        mViewBinding = DataBindingUtil.setContentView(this, R.layout.family_dialog_add_dev_success)
+        window.decorView.setBackgroundColor(Color.TRANSPARENT)
     }
 
     override fun onViewLoadFinish() {
         super.onViewLoadFinish()
         setStatusBarColor()
+        initView()
     }
 
-    override fun initView() {
-        val window = this.window
-        window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        val params = window?.attributes
-        params?.gravity = Gravity.BOTTOM
-        params?.dimAmount = 0.0f
+    private fun initView() {
 
-        window?.attributes = params
+        mViewBinding.activityContainer.setBackgroundResource(com.gw_reoqoo.resource.R.color.transparent)
 
         mViewBinding.ivProductImg.setImageResource(R.drawable.family_icon_device_holder_place)
-        mViewBinding.llContentRoot.visibility = View.GONE
+        mViewBinding.llContentRoot.visibility = View.INVISIBLE
 
         mViewBinding.tvCancel.setOnClickListener {
             finish()
@@ -88,11 +85,8 @@ class RecvScanShareActivity: ABaseMVVMDBActivity<FamilyDialogAddDevSuccessBindin
                     when (action) {
                         is HttpAction.Success -> {
                             GwellLogUtils.i(TAG, "scanShareData Success = ${action.data}")
-                            val window = this@RecvScanShareActivity.window
-                            val params = window?.attributes
                             mViewBinding.llContentRoot.visibility = View.VISIBLE
-                            params?.dimAmount = 0.3f
-                            window?.attributes = params
+                            mViewBinding.activityContainer.setBackgroundResource(com.gw_reoqoo.resource.R.color.black_20)
                             mViewBinding.tvProductName.text = action.data?.remarkName
                             viewModel.getProductImgWithPID(action.data?.pid.toString(), action.data?.productModel)?.let {
                                 Glide.with(this@RecvScanShareActivity)
@@ -130,5 +124,4 @@ class RecvScanShareActivity: ABaseMVVMDBActivity<FamilyDialogAddDevSuccessBindin
             }
         }
     }
-
 }

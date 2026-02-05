@@ -6,5 +6,11 @@
             android:name=".services.DeviceStatusServices"
             android:exported="false"
             android:enabled="true" />
+
+        <activity android:name=".ui.recv_scan_share.RecvScanShareActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/FamilyDialogAnimation.Theme"/>
     </application>
 </manifest>

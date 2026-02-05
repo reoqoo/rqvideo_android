@@ -194,7 +194,7 @@ class Versions {
         /**
          * 技威网络请求库
          */
-        public static final String VERSION_ACCOUNT_MGR = "1.0.111"
+        public static final String VERSION_ACCOUNT_MGR = "1.0.113"
 //        public static final String VERSION_ACCOUNT_MGR = "1.0.84-SNAPSHOT"
 
         /**
@@ -211,7 +211,7 @@ class Versions {
         /**
          * IotVideo版本
          */
-        public static final String VERSION_IOT_VIDEO = "0.0.0.59"
+        public static final String VERSION_IOT_VIDEO = "0.0.0.62"
 //        public static final String VERSION_IOT_VIDEO = "0.0.0.16"
         /**
          * 插件管理库
@@ -228,7 +228,7 @@ class Versions {
          * GwPlayer播放器
          */
 //        public static final String VERSION_GW_PLAYER = "1.0.9.2"
-        public static final String VERSION_GW_PLAYER = "1.0.13.88"
+        public static final String VERSION_GW_PLAYER = "1.0.13.91"
 
         /**
          * ijk-cloud-player
@@ -249,7 +249,7 @@ class Versions {
         /**
          * 胖豚插件 (ipTIME:0.0.0.82  Reoqoo:0.0.1.39)
          */
-        public static final String VERSION_PT_PLUGIN = "0.0.1.70"
+        public static final String VERSION_PT_PLUGIN = "0.0.1.75"
 //        public static final String VERSION_PT_PLUGIN = "0.0.0.75-SNAPSHOT"
 
         /**0
@@ -286,7 +286,7 @@ class Versions {
 
     static class ReoqooSdkVer {
         /** 线上包 */
-        public static final String VERSION_CODE = "iptime-release-01.06.01.0.31"
+        public static final String VERSION_CODE = "iptime-release-01.06.01.0.34"
     }
 
     /**
