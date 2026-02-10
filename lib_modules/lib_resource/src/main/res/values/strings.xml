@@ -528,4 +528,5 @@
     <string name="AA0691">You are not using WLAN. Data costs will be incurred when playing</string>
     <string name="AA0692">%s are detected</string>
     <string name="AA0693">Need permission to access phone storage</string>
+    <string name="AA0705">Please first call the ipTIME customer service hotline (1544–8695) for consultation, and then proceed with "sending feedback" according to the guidance/requirements provided by customer service.</string>
 </resources>

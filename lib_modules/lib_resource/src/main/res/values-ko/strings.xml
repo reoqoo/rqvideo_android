@@ -528,4 +528,5 @@
     <string name="AA0691">Wi-Fi가 아닌 모바일 데이터를 사용하고 있으며 재생 시 데이터 요금이 발생할 수 있습니다</string>
     <string name="AA0692">%s 감지됨</string>
     <string name="AA0693">앱이 저장 정보를 사용하려고 합니다</string>
+    <string name="AA0705">우선 ipTIME 고객상담전화(1544–8695) 로 상담 후, 요청에 따라 피드백 보내기를 진행하시기 바랍니다.</string>
 </resources>
