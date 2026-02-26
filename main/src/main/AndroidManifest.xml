@@ -3,8 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="LockedOrientationActivity">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application>
-        
+
         <activity
             android:name="com.gw.reoqoo.ui.main.MainActivity"
             android:exported="false"
