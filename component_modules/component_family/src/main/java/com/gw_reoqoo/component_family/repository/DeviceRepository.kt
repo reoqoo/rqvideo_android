@@ -54,6 +54,8 @@ class DeviceRepository @Inject constructor(
         private const val TAG = "DeviceRepository"
 
         private const val TIME_ONE_MONTH = 1000 * 60 * 60 * 24 * 30L
+
+        private var mLoadDeviceFinish = true
     }
 
     /**
@@ -156,86 +158,95 @@ class DeviceRepository @Inject constructor(
         mutex.withLock {
             val calendar = Calendar.getInstance()
             val userId = accountApi.getAsyncUserId() ?: return
-            val devListBean = remoteDeviceDataSource.loadRemoteDeviceList() ?: return
-            // 把网络数据转换成本地数据库里的DeviceInfo和ServiceInfo
-            val networkDevicePairs = devListBean.deviceList.map { deviceModel ->
-                val info = DeviceInfo(
-                    deviceId = deviceModel.devId.toString(),
-                    userId = userId,
-                    remarkName = deviceModel.remarkName,
-                    relation = deviceModel.relation,
-                    permission = deviceModel.saas?.permission?.toIntOrNull() ?: 0,
-                    modifyTime = calendar.time.time.toString(),
-                    productId = deviceModel.saas?.productId,
-                    productModule = deviceModel.saas?.productModel,
-                    sn = deviceModel.saas?.sn,
-                    status = deviceModel.status,
-                    originJson = deviceModel.toJson()
-                )
-                val service = DeviceService(
-                    deviceId = deviceModel.devId.toString(),
-                    isAreaSupportVas = deviceModel.vss?.support == 1,
-                    vasType = deviceModel.vss?.type ?: 0,
-                    vasExpireTime = deviceModel.vss?.vssExpireTime?.let { Date(it * 1000) },
-                    isVasReNew = deviceModel.vss?.vssRenew == 1,
-                    vasCornerUrl = deviceModel.vss?.cornerUrl,
-                    isGwell4g = (deviceModel.properties ?: 0L).bitAt(4) == 1L,
-                    isSupport4g = deviceModel.fourCard?.support == 1,
-                    fourGCornerUrl = deviceModel.fourCard?.cornerUrl,
-                    is4gReNew = deviceModel.fourCard?.fgRenew == 1,
-                    fourGExpireTime = deviceModel.fourCard?.fgExpireTime?.let { Date(it * 1000) },
-                    fourGWebUrl = deviceModel.fourCard?.purchaseUrl,
-                    surplusFlow = deviceModel.fourCard?.surplusFlow
-                )
-                info to service
-            }
+            GwellLogUtils.i(TAG, "loadDeviceFromRemote userId:$userId mLoadDeviceFinish= $mLoadDeviceFinish")
+            if (mLoadDeviceFinish) {
+                mLoadDeviceFinish = false
+                try {
+                    val devListBean = remoteDeviceDataSource.loadRemoteDeviceList() ?: return
+                    // 把网络数据转换成本地数据库里的DeviceInfo和ServiceInfo
+                    val networkDevicePairs = devListBean.deviceList.map { deviceModel ->
+                        val info = DeviceInfo(
+                            deviceId = deviceModel.devId.toString(),
+                            userId = userId,
+                            remarkName = deviceModel.remarkName,
+                            relation = deviceModel.relation,
+                            permission = deviceModel.saas?.permission?.toIntOrNull() ?: 0,
+                            modifyTime = calendar.time.time.toString(),
+                            productId = deviceModel.saas?.productId,
+                            productModule = deviceModel.saas?.productModel,
+                            sn = deviceModel.saas?.sn,
+                            status = deviceModel.status,
+                            originJson = deviceModel.toJson()
+                        )
+                        val service = DeviceService(
+                            deviceId = deviceModel.devId.toString(),
+                            isAreaSupportVas = deviceModel.vss?.support == 1,
+                            vasType = deviceModel.vss?.type ?: 0,
+                            vasExpireTime = deviceModel.vss?.vssExpireTime?.let { Date(it * 1000) },
+                            isVasReNew = deviceModel.vss?.vssRenew == 1,
+                            vasCornerUrl = deviceModel.vss?.cornerUrl,
+                            isGwell4g = (deviceModel.properties ?: 0L).bitAt(4) == 1L,
+                            isSupport4g = deviceModel.fourCard?.support == 1,
+                            fourGCornerUrl = deviceModel.fourCard?.cornerUrl,
+                            is4gReNew = deviceModel.fourCard?.fgRenew == 1,
+                            fourGExpireTime = deviceModel.fourCard?.fgExpireTime?.let { Date(it * 1000) },
+                            fourGWebUrl = deviceModel.fourCard?.purchaseUrl,
+                            surplusFlow = deviceModel.fourCard?.surplusFlow
+                        )
+                        info to service
+                    }
 
-            // 根据用户名，查询所有设备
-            val localIds = localDeviceDataSource.getAllDeviceIdSyncBy(userId)
-            // 找出在远程数据中没有的设备列表，意思是远程服务器里，已经被删除的设备列表
-            val needDeleteDeviceIds = localIds.filter { localId ->
-                networkDevicePairs.none { (_, service) ->
-                    service.deviceId == localId
-                }
-            }
-            // 如果需要删除的设备列表不是空，则进行数据库删除
-            if (needDeleteDeviceIds.isNotEmpty()) {
-                localDeviceDataSource.deleteDeviceById(needDeleteDeviceIds)
-                localDeviceServiceDataSource.deleteBy(needDeleteDeviceIds)
-            }
-            // 循环添加或者更新数据
-            for ((info, service) in networkDevicePairs) {
-                if (localDeviceServiceDataSource.deviceServiceExist(service.deviceId)) {
-                    localDeviceServiceDataSource.update(service)
-                } else {
-                    localDeviceServiceDataSource.insert(service)
-                }
-                val localDeviceId = localIds.firstOrNull { localId -> localId == info.deviceId }
-                if (localDeviceId != null) {
-                    val localDevice = localDeviceDataSource.deviceInfo(localDeviceId)
-                    if (localDevice != null) {
-                        val newDevice = info.copy()
-                        localDevice.online?.let {
-                            newDevice.online = it
+                    // 根据用户名，查询所有设备
+                    val localIds = localDeviceDataSource.getAllDeviceIdSyncBy(userId)
+                    // 找出在远程数据中没有的设备列表，意思是远程服务器里，已经被删除的设备列表
+                    val needDeleteDeviceIds = localIds.filter { localId ->
+                        networkDevicePairs.none { (_, service) ->
+                            service.deviceId == localId
                         }
-                        localDevice.powerOn?.let {
-                            newDevice.powerOn = it
+                    }
+                    // 如果需要删除的设备列表不是空，则进行数据库删除
+                    if (needDeleteDeviceIds.isNotEmpty()) {
+                        localDeviceDataSource.deleteDeviceById(needDeleteDeviceIds)
+                        localDeviceServiceDataSource.deleteBy(needDeleteDeviceIds)
+                    }
+                    // 循环添加或者更新数据
+                    for ((info, service) in networkDevicePairs) {
+                        if (localDeviceServiceDataSource.deviceServiceExist(service.deviceId)) {
+                            localDeviceServiceDataSource.update(service)
+                        } else {
+                            localDeviceServiceDataSource.insert(service)
                         }
-                        localDeviceDataSource.updateDevice(newDevice)
+                        val localDeviceId = localIds.firstOrNull { localId -> localId == info.deviceId }
+                        if (localDeviceId != null) {
+                            val localDevice = localDeviceDataSource.deviceInfo(localDeviceId)
+                            if (localDevice != null) {
+                                val newDevice = info.copy()
+                                localDevice.online?.let {
+                                    newDevice.online = it
+                                }
+                                localDevice.powerOn?.let {
+                                    newDevice.powerOn = it
+                                }
+                                localDeviceDataSource.updateDevice(newDevice)
 //                    } else {
 //                        localDeviceDataSource.updateDevice(info)
-                        GwellLogUtils.i(TAG, "loadDeviceFromRemote update newDevice:${newDevice}")
-                    } else {
-                        GwellLogUtils.i(TAG, "loadDeviceFromRemote update DeviceInfo:${info}")
+                                GwellLogUtils.i(TAG, "loadDeviceFromRemote update newDevice:${newDevice}")
+                            } else {
+                                GwellLogUtils.i(TAG, "loadDeviceFromRemote update DeviceInfo:${info}")
+                            }
+                        } else {
+                            localDeviceDataSource.addDevice(info)
+                            GwellLogUtils.i(TAG, "loadDeviceFromRemote add DeviceInfo:${info}")
+                        }
                     }
-                } else {
-                    localDeviceDataSource.addDevice(info)
-                    GwellLogUtils.i(TAG, "loadDeviceFromRemote add DeviceInfo:${info}")
+                    // 转到主线程，启动服务同步设备在线状态
+                    withContext(Dispatchers.Main) {
+                        startSyncDeviceStatusService()
+                    }
+                } finally {
+                    // 确保无论成功或失败都恢复 mLoadDeviceFinish 状态
+                    mLoadDeviceFinish = true
                 }
-            }
-            // 转到主线程，启动服务同步设备在线状态
-            withContext(Dispatchers.Main) {
-                startSyncDeviceStatusService()
             }
         }
     }

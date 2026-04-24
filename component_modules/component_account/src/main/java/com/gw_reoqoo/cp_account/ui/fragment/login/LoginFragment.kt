@@ -9,6 +9,7 @@ import android.text.TextPaint
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.LinkMovementMethod
 import android.text.method.PasswordTransformationMethod
+import android.view.Gravity
 import android.view.View
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -32,6 +33,9 @@ import com.gw_reoqoo.lib_utils.ktx.dp
 import com.gw_reoqoo.lib_utils.ktx.invisible
 import com.gw_reoqoo.lib_utils.version.VersionUtils
 import com.gw_reoqoo.lib_widget.dialog.CommonDialog
+import com.gw_reoqoo.lib_widget.dialog.comm_dialog.entity.CommDialogAction
+import com.gw_reoqoo.lib_widget.dialog.comm_dialog.entity.TextContent
+import com.gw_reoqoo.lib_widget.dialog.comm_dialog.ext.showCommDialog
 import com.gwell.loglibs.GwellLogUtils
 import com.jwkj.base_lifecycle.activity_lifecycle.ActivityLifecycleManager
 import com.jwkj.base_statistics.sa.kits.SA
@@ -340,6 +344,32 @@ class LoginFragment : ABaseMVVMDBFragment<AccountFragmentLoginBinding, LoginFrgV
             if (it) {
                 TheRouter.build(ReoqooRouterPath.MinePath.ACTIVITY_FEEDBACK).navigation()
             }
+        }
+
+
+        // 显示登录限制弹窗
+        mFgViewModel.showLoginLimitDialog.observe(this) { dialogData ->
+            GwellLogUtils.i(TAG, "showLoginLimitDialog dialogData $dialogData")
+            dialogData?.let {
+                showLoginLimitDialog(it.limitTimes, it.disableTimespan / 60)
+                mFgViewModel.clearLoginLimitDialog()
+            }
+        }
+    }
+
+    /**
+     * 显示登录限制弹窗
+     * @param retryCount 连续错误次数
+     * @param limitMinutes 限制登录分钟数
+     */
+    private fun showLoginLimitDialog(limitTimes: String, disableTimespan: Int) {
+        val message = getString(RR.string.AA0706, limitTimes, disableTimespan.toString())
+        showCommDialog {
+            location = Gravity.CENTER
+            content = TextContent(text = message)
+            actions = listOf(
+                CommDialogAction(getString(RR.string.AA0058))
+            )
         }
     }
 

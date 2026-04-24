@@ -353,6 +353,10 @@ class AppCoreInitTask @Inject constructor() : IInitializeTask {
                             toast.show(respCode.msgRes)
                         }
                     }
+                    // 连续输入错误，系统将限制登录xxx分钟，请稍后重试
+                    ResponseCode.CODE_10902016 -> {
+                        GwellLogUtils.i(TAG, "respCode CODE_10902016 msg == ${respCode.msgRes}")
+                    }
 
                     ResponseCode.CODE_10902026 -> {
                         GwellLogUtils.i(TAG, "respCode CODE_10902026 msg == ${respCode.msgRes}")

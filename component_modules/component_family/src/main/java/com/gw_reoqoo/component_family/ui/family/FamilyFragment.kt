@@ -268,6 +268,11 @@ class FamilyFragment : ABaseMVVMDBFragment<FamilyFragmentFamilyBinding, FamilyVM
 
         mFgViewModel.loadNoticeList()
         mFgViewModel.getDeviceHistoryList()
+        // 首页设备列表被多次调用,导致设备状态偶现异常, 所以延迟2.5s重新加载一次
+        mViewBinding.addBtn.postDelayed(
+            { mFgViewModel.loadRemoteDeviceList() },
+            2500
+        )
     }
 
     override fun initLiveData(viewModel: FamilyVM, savedInstanceState: Bundle?) {

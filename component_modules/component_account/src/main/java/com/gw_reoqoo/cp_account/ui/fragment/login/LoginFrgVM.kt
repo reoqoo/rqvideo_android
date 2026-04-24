@@ -5,6 +5,7 @@ import android.os.SystemClock
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.google.gson.Gson
 import com.gw_reoqoo.cp_account.api.impl.AccountMgrImpl
 import com.gw_reoqoo.cp_account.api.impl.UserInfoApiImpl
 import com.gw_reoqoo.cp_account.datastore.AccountDataStore
@@ -65,6 +66,12 @@ class LoginFrgVM @Inject constructor(
      * 是否跳转到反馈页面
      */
     val startFeedbackLD: LiveData<Boolean> = _startFeedbackLD
+
+    /**
+     * 显示登录限制弹窗
+     */
+    private val _showLoginLimitDialog = MutableLiveData<LoginRestrictionBean?>()
+    val showLoginLimitDialog: LiveData<LoginRestrictionBean?> = _showLoginLimitDialog
 
     /**
      * 是否需要展示隐私协议
@@ -154,6 +161,18 @@ class LoginFrgVM @Inject constructor(
                             login(username, password, isLoginByUID)
                         }
 
+                        // 由于连续#次输入错误，系统将限制登录#分钟，请稍后重试
+                        HttpErrorCode.ERROR_10902016 -> {
+                            GwellLogUtils.e(TAG, "login: ERROR_10902016 message: ${throwable?.message}")
+                            throwable?.message?.let { message ->
+                                // 从 throwable 中解析 HttpResp<LoginRestrictionBean> 数据
+                                val restrictionBean = parseLoginRestrictionBean(message)
+                                restrictionBean?.let { bean ->
+                                    _showLoginLimitDialog.postValue(bean)
+                                }
+                            }
+                        }
+
                         else -> {
                             toastIntentData.postValue(ToastIntentData(HttpErrUtils.showErrorToast(it)))
                         }
@@ -212,5 +231,32 @@ class LoginFrgVM @Inject constructor(
             mHits = LongArray(5)
             _startFeedbackLD.postValue(true)
         }
+    }
+
+    /**
+     * 解析登录限制信息
+     * 从服务器返回的 HttpResp<LoginRestrictionBean> JSON 中解析数据
+     * @param errorMsg 错误消息JSON字符串
+     * @return LoginRestrictionBean? 解析后的数据对象
+     */
+    private fun parseLoginRestrictionBean(errorMsg: String): LoginRestrictionBean? {
+        errorMsg.let {
+            try {
+                val gson = Gson()
+                // 解析 HttpResp<LoginRestrictionBean> 格式的数据
+                val httpResp = gson.fromJson(it, HttpRespLoginRestriction::class.java)
+                return httpResp.data
+            } catch (e: Exception) {
+                GwellLogUtils.e(TAG, "parseLoginRestrictionBean error: ${e.message}")
+            }
+        }
+        return null
+    }
+
+    /**
+     * 清除登录限制弹窗数据（在Fragment中显示弹窗后调用）
+     */
+    fun clearLoginLimitDialog() {
+        _showLoginLimitDialog.postValue(null)
     }
 }

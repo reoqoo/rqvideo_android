@@ -317,7 +317,7 @@
     <string name="AA0393">더 이상 추가할 수 없습니다</string>
     <string name="AA0394">유효하지 않은 계정입니다. 계정을 다시 등록하세요</string>
     <string name="AA0395">진행 중인 작업이 있습니다. 잠시 후 다시 시도하세요</string>
-    <string name="AA0396">비밀번호는 영문, 숫자를 포함하여 8~30자리로 입력하세요</string>
+    <string name="AA0396">비밀번호는 8~30자로 알파벳, 숫자 및 특수 문자를 포함해야 합니다.</string>
     <string name="AA0397">인증코드를 받을 수 없습니까?</string>
     <string name="AA0398">이메일을 통한 등록</string>
     <string name="AA0399">연결</string>
@@ -528,5 +528,6 @@
     <string name="AA0691">Wi-Fi가 아닌 모바일 데이터를 사용하고 있으며 재생 시 데이터 요금이 발생할 수 있습니다</string>
     <string name="AA0692">%s 감지됨</string>
     <string name="AA0693">앱이 저장 정보를 사용하려고 합니다</string>
-    <string name="AA0705">우선 ipTIME 고객상담전화(1544–8695) 로 상담 후, 요청에 따라 피드백 보내기를 진행하시기 바랍니다.</string>
+    <string name="AA0705">우선 ipTIME 고객상담전화(1544-8695) 로 상담 후, 요청에 따라 피드백 보내기를 진행하시기 바랍니다.</string>
+    <string name="AA0706">계정 또는 비밀번호를 %1$s회 이상 잘못 입력하여 %2$s분간 로그인이 제한됩니다.</string>
 </resources>

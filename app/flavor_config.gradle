@@ -3,8 +3,8 @@ project.ext {
             google    : new FlavorConfig(
                     APPLICATION_ID: "com.cctv.iptime",
                     APP_NAME_PREFIX: "ipTIME_V",
-                    VERSION_CODE: 1838,
-                    VERSION_NAME: "01.02.08",
+                    VERSION_CODE: 1840,
+                    VERSION_NAME: "01.03.01",
                     appId: "244d1828c953492dacb0ca5201f54221",
                     appToken: "0bedfb9f0f8404683a58ff636b7b8c8f0c5e809d72ab9cdc1ed5a64782b9a315",
                     appName: "ipTIME CCTV_android",
@@ -25,13 +25,13 @@ project.ext {
                     runAppByReoqooSource: true,
                     feedbackEmail: "support@reoqoo.com",
                     googlePayType: GooglePayType.NONE,
-                    isInternalApp: true
+                    customCloudRecord: true
             ),
             iptime       : new FlavorConfig(
                     APPLICATION_ID: "com.cctv.iptime",
                     APP_NAME_PREFIX: "ipTIME_V",
-                    VERSION_CODE: 1838,
-                    VERSION_NAME: "01.02.08",
+                    VERSION_CODE: 1840,
+                    VERSION_NAME: "01.03.01",
                     appId: "244d1828c953492dacb0ca5201f54221",
                     appToken: "0bedfb9f0f8404683a58ff636b7b8c8f0c5e809d72ab9cdc1ed5a64782b9a315",
                     appName: "ipTIME CCTV_android",
@@ -51,7 +51,7 @@ project.ext {
                     runAppByReoqooSource: true,
                     supportGooglePay: true,
                     googlePayType: GooglePayType.BILLING,
-                    isInternalApp: false
+                    customCloudRecord: true,
             ),
     ]
 }
@@ -178,7 +178,7 @@ class FlavorConfig {
     /**
      * 是否是内部应用
      */
-    Boolean isInternalApp = false
+    Boolean customCloudRecord = false
 
     void applyToApplication(flavor) {
         println("applyToApplication.flavor=" + flavor)
@@ -189,7 +189,7 @@ class FlavorConfig {
         flavor.ext.isGoogle = isGoogle
         flavor.ext.supportGooglePay = supportGooglePay
         flavor.ext.googlePayType = googlePayType
-        flavor.ext.isInternalApp = isInternalApp
+        flavor.ext.customCloudRecord = customCloudRecord
 
         flavor.buildConfigField("Boolean", "IS_GOOGLE", "${isGoogle}")
         flavor.buildConfigField("String", "APP_ID", "\"${appId}\"")
@@ -212,7 +212,7 @@ class FlavorConfig {
         flavor.buildConfigField("String", "DEFAULT_LANGUAGE", "\"${defaultLanguage.toString()}\"")
         flavor.buildConfigField("Boolean", "SUPPORT_GOOGLE_PAY", "${supportGooglePay}")
         flavor.buildConfigField("String", "GOOGLE_PAY_TYPE", "\"${googlePayType.toString()}\"")
-        flavor.buildConfigField("Boolean", "IS_INTERNAL_APP", "${isInternalApp}")
+        flavor.buildConfigField("Boolean", "CUSTOM_CLOUD_RECORD", "${customCloudRecord}")
     }
 
     void applyToModule(flavor) {
@@ -234,7 +234,7 @@ class FlavorConfig {
         flavor.buildConfigField("String", "APP_CID", "\"${appCid}\"")
         flavor.buildConfigField("String", "VERSION_NAME", "\"${VERSION_NAME}\"")
         flavor.buildConfigField("int", "VERSION_CODE", "${VERSION_CODE}")
-        flavor.buildConfigField("Boolean", "IS_INTERNAL_APP", "${isInternalApp}")
+        flavor.buildConfigField("Boolean", "CUSTOM_CLOUD_RECORD", "${customCloudRecord}")
         if (feedbackEmail == null) {
             flavor.buildConfigField("String", "FEEDBACK_EMAIL", "null")
         } else {
@@ -252,7 +252,7 @@ class FlavorConfig {
                 "supportGooglePay=" + supportGooglePay + "," +
                 "googlePayType=" + googlePayType + "," +
                 "feedbackEmail=" + feedbackEmail + "," +
-                "isInternalApp=" + isInternalApp + "," +
+                "customCloudRecord=" + customCloudRecord + "," +
                 "}"
     }
 }
