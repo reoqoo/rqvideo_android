@@ -35,7 +35,7 @@
     <string name="AA0043">Account</string>
     <string name="AA0044">User agreement</string>
     <string name="AA0045">User agreement and privacy policy</string>
-    <string name="AA0046">Welcome to ipTIME! ipTIME is developed and operated by ipTIME IoT Technology Co., Ltd. It\'s a platform to provide online video and audio.\n User Agreement &amp; Privacy Policy will help you get a comprehensive understanding of how we collect, use, store and share your personal information, as well as what rights you enjoy. \n In order to provide services such as live video, video playback, favorite subscription, community interaction, etc., we may collect the following types of personal information, including video recording, videos and pictures, device information, operation logs, etc. \n You can access/update/delete your information and manage the permissions via \"Me\" interface on the app. \n We will take all practicable steps to safeguard your personal information.\n You can get more information via %1$s &amp; %2$s. \n If your agree to it, please click \"Agree\" to get the service.</string>
+    <string name="AA0046">Welcome to ipTIME! ipTIME is developed and operated by ipTIME IoT Technology Co., Ltd. It\'s a platform to provide online video and audio.\n User Agreement &amp; Privacy Policy will help you get a comprehensive understanding of how we collect, use, store and share your personal information, as well as what rights you enjoy. \n In order to provide services such as live video, video playback, favorite subscription, community interaction, etc., we may collect the following types of personal information, including video recording, videos and pictures, device information, operation logs, etc. \n You can access/update/delete your information and manage the permissions via \&quot;Me\&quot; interface on the app. \n We will take all practicable steps to safeguard your personal information.\n You can get more information via %1$s &amp; %2$s. \n If your agree to it, please click \&quot;Agree\&quot; to get the service.</string>
     <string name="AA0047">%s\'s home</string>
     <string name="AA0049">Add device</string>
     <string name="AA0050">Device sharing</string>
@@ -51,7 +51,7 @@
     <string name="AA0062">Scan the QR code on the device</string>
     <string name="AA0063">Flashlight</string>
     <string name="AA0064">Album</string>
-    <string name="AA0065">Allow \"APP\" to use your Camera?</string>
+    <string name="AA0065">Allow \&quot;APP\&quot; to use your Camera?</string>
     <string name="AA0066">Requires scanning a QR code to connect and bind the device. Allow access to the camera?</string>
     <string name="AA0067">Reject</string>
     <string name="AA0068">No camera permissions, please enable it in settings</string>
@@ -60,7 +60,7 @@
     <string name="AA0071">The positioning permission is disabled. Please enable it in Settings</string>
     <string name="AA0072">Need permission to access your album</string>
     <string name="AA0073">Requires viewing and sending pictures. Allow access to the photo album?</string>
-    <string name="AA0074">Allow \"APP\" to use your Bluetooth information？</string>
+    <string name="AA0074">Allow \&quot;APP\&quot; to use your Bluetooth information？</string>
     <string name="AA0075">Bluetooth permission is required to help the smart device connect to Wi-Fi during the adding process. Do you agree to enable it?</string>
     <string name="AA0076">The Bluetooth permission is disabled. Please enable it in Settings</string>
     <string name="AA0078">Connecting to device.</string>
@@ -92,13 +92,13 @@
     <string name="AA0121">Model:</string>
     <string name="AA0122">SN：</string>
     <string name="AA0123">Connect device Wi-Fi</string>
-    <string name="AA0124">1. Connect your phone to the camera hotspot: Wi-Fi starting with \"XT-\"</string>
+    <string name="AA0124">1. Connect your phone to the camera hotspot: Wi-Fi starting with \&quot;XT-\&quot;</string>
     <string name="AA0125">2. Return to the APP</string>
-    <string name="AA0126">Cannot find \"XT-\"?</string>
+    <string name="AA0126">Cannot find \&quot;XT-\&quot;?</string>
     <string name="AA0127">1. The device may not support fast networking (hotspot connection).Please follow the device voice prompts to select the connection method.</string>
     <string name="AA0128">2. The distance between the mobile phone and the device is too far. A suitable distance is within 30 cm.</string>
-    <string name="AA0129">Connect the Wi-Fi starting with \"XT-\"</string>
-    <string name="AA0130">Make sure to complete the adding process by returning to APP after connecting to the Wi-Fi that starts with \"XT-\".</string>
+    <string name="AA0129">Connect the Wi-Fi starting with \&quot;XT-\&quot;</string>
+    <string name="AA0130">Make sure to complete the adding process by returning to APP after connecting to the Wi-Fi that starts with \&quot;XT-\&quot;.</string>
     <string name="AA0131">I get it</string>
     <string name="AA0132">Scanning</string>
     <string name="AA0133">Confirm the device is waiting to connect, put your cellphone close to the camera</string>
@@ -514,11 +514,11 @@
     <string name="AA0656">Offline, upgrade unavailable</string>
     <string name="AA0657">System abnormality</string>
     <string name="AA0658">Cancel</string>
-    <string name="AA0659">The current version does not support direct binding of this device. Please download the \"ipTIME Cloud\" APP to add and use.</string>
+    <string name="AA0659">The current version does not support direct binding of this device. Please download the \&quot;ipTIME Cloud\&quot; APP to add and use.</string>
     <string name="AA0660">Download</string>
     <string name="AA0661">Friendly Reminder</string>
     <string name="AA0662">The following devices are not available in the current APP</string>
-    <string name="AA0663">Please download the \"WoWCam\" APP to continue using the device</string>
+    <string name="AA0663">Please download the \&quot;WoWCam\&quot; APP to continue using the device</string>
     <string name="AA0664">Don\'t remind me again</string>
     <string name="AA0665">About</string>
     <string name="AA0669">Please enter account</string>
@@ -528,6 +528,6 @@
     <string name="AA0691">You are not using WLAN. Data costs will be incurred when playing</string>
     <string name="AA0692">%s are detected</string>
     <string name="AA0693">Need permission to access phone storage</string>
-    <string name="AA0705">Please first call the ipTIME customer service hotline (1544-8695) for consultation, then follow the customer service instructions/requirements to \"Send Feedback\".</string>
-    <string name="AA0706">Due to %1$s consecutive incorrect entries, the system will restrict login for %2$s minutes. Please try again later</string>
+    <string name="AA0705">Please first call the ipTIME customer service hotline (1544-8695) for consultation, then follow the customer service instructions/requirements to \&quot;Send Feedback\&quot;.</string>
+    <string name="AA0706">Too many incorrect login attempts (%1$s times). Login has been temporarily locked. Please try again in %2$s minutes.</string>
 </resources>

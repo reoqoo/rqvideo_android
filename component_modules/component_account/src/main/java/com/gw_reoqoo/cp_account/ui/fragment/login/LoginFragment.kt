@@ -351,7 +351,7 @@ class LoginFragment : ABaseMVVMDBFragment<AccountFragmentLoginBinding, LoginFrgV
         mFgViewModel.showLoginLimitDialog.observe(this) { dialogData ->
             GwellLogUtils.i(TAG, "showLoginLimitDialog dialogData $dialogData")
             dialogData?.let {
-                showLoginLimitDialog(it.limitTimes, it.disableTimespan / 60)
+                showLoginLimitDialog(it.limitTimes, (it.disableTimespan + 59) / 60)
                 mFgViewModel.clearLoginLimitDialog()
             }
         }
@@ -368,7 +368,7 @@ class LoginFragment : ABaseMVVMDBFragment<AccountFragmentLoginBinding, LoginFrgV
             location = Gravity.CENTER
             content = TextContent(text = message)
             actions = listOf(
-                CommDialogAction(getString(RR.string.AA0058))
+                CommDialogAction(getString(RR.string.AA0334))
             )
         }
     }
