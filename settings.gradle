@@ -2,6 +2,18 @@ import java.util.function.Consumer
 
 pluginManagement {
     repositories {
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+
+        maven { url 'https://jitpack.io' }
+
         maven {
             url 'https://nexus-sg.cloudlinks.cn/nexus/repository/maven-gwiot/'
             allowInsecureProtocol = true
@@ -9,19 +21,39 @@ pluginManagement {
                 username = 'admin'
                 password = 'admin@321GW'
             }
+            content {
+                excludeGroup "com.android.application"
+                excludeGroup "com.android.library"
+                excludeGroup "org.jetbrains.kotlin.android"
+                excludeGroup "com.google.dagger.hilt.android"
+                excludeGroup "com.google.gms.google-services"
+            }
         }
-
-        maven { url 'https://maven.aliyun.com/repository/central' }
-        maven { url 'https://maven.aliyun.com/repository/jcenter' }
-        maven { url 'https://maven.aliyun.com/repository/public' }
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
-
-        maven { url 'https://jitpack.io' }
-
-        google()
-        mavenCentral()
-        gradlePluginPortal()
+    }
+    resolutionStrategy {
+        eachPlugin {
+            switch (requested.id.id) {
+                case "com.android.application":
+                case "com.android.library":
+                    useModule("com.android.tools.build:gradle:${requested.version}")
+                    break
+                case "org.jetbrains.kotlin.android":
+                    useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
+                    break
+                case "cn.therouter.agp8":
+                    useModule("cn.therouter.agp8:cn.therouter.agp8.gradle.plugin:${requested.version}")
+                    break
+                case "com.google.dagger.hilt.android":
+                    useModule("com.google.dagger:hilt-android-gradle-plugin:${requested.version}")
+                    break
+                case "com.sensorsdata.analytics.android":
+                    useModule("com.sensorsdata.analytics.android:android-gradle-plugin2:${requested.version}")
+                    break
+                case "com.google.gms.google-services":
+                    useModule("com.google.gms:google-services:${requested.version}")
+                    break
+            }
+        }
     }
 }
 dependencyResolutionManagement {
