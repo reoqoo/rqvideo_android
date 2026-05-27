@@ -15,7 +15,7 @@ pluginManagement {
         maven { url 'https://jitpack.io' }
 
         maven {
-            url 'https://nexus-sg.cloudlinks.cn/nexus/repository/maven-gwiot/'
+            url 'https://nexus-sg.gwell.cc/nexus/repository/maven-gwiot/'
             allowInsecureProtocol = true
             credentials {
                 username = 'admin'
@@ -60,7 +60,7 @@ dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         maven {
-            url 'https://nexus-sg.cloudlinks.cn/nexus/repository/maven-releases/'
+            url 'https://nexus-sg.gwell.cc/nexus/repository/maven-releases/'
             allowInsecureProtocol = true
             credentials {
                 username = 'admin'
@@ -75,7 +75,7 @@ dependencyResolutionManagement {
         maven { url "https://jitpack.io" }
 
         maven {
-            url 'https://nexus-sg.cloudlinks.cn/nexus/repository/maven-gwiot/'
+            url 'https://nexus-sg.gwell.cc/nexus/repository/maven-gwiot/'
             allowInsecureProtocol = true
             credentials {
                 username = 'admin'
@@ -104,6 +104,7 @@ dependencyResolutionManagement {
         maven {
             url "https://artifact.bytedance.com/repository/pangle/"
         }
+
 
         google()
         mavenCentral()
