@@ -62,25 +62,11 @@ dependencyResolutionManagement {
         maven {
             url 'https://nexus-sg.gwell.cc/nexus/repository/maven-releases/'
             allowInsecureProtocol = true
-            credentials {
-                username = 'admin'
-                password = 'admin@321GW'
-            }
         }
-
-        maven { url 'https://maven.aliyun.com/repository/central' }
-        maven { url 'https://maven.aliyun.com/repository/jcenter' }
-        maven { url 'https://maven.aliyun.com/repository/public' }
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        maven { url "https://jitpack.io" }
 
         maven {
             url 'https://nexus-sg.gwell.cc/nexus/repository/maven-gwiot/'
             allowInsecureProtocol = true
-            credentials {
-                username = 'admin'
-                password = 'admin@321GW'
-            }
         }
 
         // Yoosee插件要用到的
@@ -105,6 +91,11 @@ dependencyResolutionManagement {
             url "https://artifact.bytedance.com/repository/pangle/"
         }
 
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url "https://jitpack.io" }
 
         google()
         mavenCentral()
