@@ -1,6 +1,5 @@
 package com.gw.cp_config.impl
 
-import com.gw.cp_config.BuildConfig
 import com.gw.cp_config.api.IAppParamApi
 import com.gw.cp_config.entity.ThemeColorConfigEntity
 import javax.inject.Inject
@@ -39,8 +38,15 @@ class AppParamApiImpl @Inject constructor() : IAppParamApi {
      */
     private var feedbackEmail: String? = null
 
+    /**
+     * 主题配置
+     */
     private var uiTheme: ThemeColorConfigEntity? = null
 
+    /**
+     * app名称占位符
+     */
+    private var mAppNamePlaceHolder: String? = null
 
     override fun getAppID(): String {
         return APP_ID
@@ -88,5 +94,13 @@ class AppParamApiImpl @Inject constructor() : IAppParamApi {
 
     override fun getUIThemeConfig(): ThemeColorConfigEntity? {
         return uiTheme
+    }
+
+    override fun setAppNamePlaceHolder(appNamePlaceHolder: String) {
+        this.mAppNamePlaceHolder = appNamePlaceHolder
+    }
+
+    override fun getAppNamePlaceHolder(): String {
+        return mAppNamePlaceHolder ?: APP_NAME
     }
 }

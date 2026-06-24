@@ -14,4 +14,20 @@ interface IMsgExternalApi {
      */
     fun getUnreadMsgCount(unReadMsgCount: ((Int) -> Unit))
 
+    /**
+     * 获取未读消息的数量
+     *
+     * @return Int 未读消息的数量
+     */
+    suspend fun getUnreadMsgCount(): Int
+
+    /**
+     * 标记消息已读
+     *
+     * @param tag 消息标签
+     * @param deviceId 设备ID
+     * @return Boolean 是否标记成功
+     */
+    suspend fun readMessage(tag: String?, deviceId: String?): Boolean
+
 }

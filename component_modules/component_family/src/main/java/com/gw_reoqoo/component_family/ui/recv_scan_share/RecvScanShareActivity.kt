@@ -1,16 +1,8 @@
 package com.gw_reoqoo.component_family.ui.recv_scan_share
 
-import android.content.Intent
 import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
-import android.os.Build
 import android.os.Bundle
-import android.view.Gravity
 import android.view.View
-import android.view.Window
-import android.view.WindowManager
-import android.widget.ImageView
-import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
@@ -19,46 +11,47 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.Target
 import com.gw_reoqoo.component_family.R
 import com.gw_reoqoo.component_family.databinding.FamilyDialogAddDevSuccessBinding
-import com.gw_reoqoo.lib_base_architecture.view.ABaseMVVMActivity
 import com.gw_reoqoo.lib_base_architecture.view.ABaseMVVMDBActivity
 import com.gw_reoqoo.lib_http.ResponseNotSuccessException
 import com.gw_reoqoo.lib_http.error.ResponseCode
 import com.gw_reoqoo.lib_router.ReoqooRouterPath
+import com.gw_reoqoo.lib_widget.dialog.comm_dialog.entity.CommDialogAction
+import com.gw_reoqoo.lib_widget.dialog.comm_dialog.entity.TextContent
+import com.gw_reoqoo.lib_widget.dialog.comm_dialog.ext.showCommDialog
 import com.gwell.loglibs.GwellLogUtils
 import com.tencentcs.iotvideo.http.interceptor.flow.HttpAction
 import com.therouter.router.Route
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 @AndroidEntryPoint
 @Route(path = ReoqooRouterPath.Family.FAMILY_ACTIVITY_RECV_SCAN_SHARE)
-class RecvScanShareActivity: ABaseMVVMActivity<RecvScanShareVM>() {
+class RecvScanShareActivity :
+    ABaseMVVMDBActivity<FamilyDialogAddDevSuccessBinding, RecvScanShareVM>() {
 
     companion object {
         private const val TAG = "RecvScanShareActivity"
     }
 
-    private lateinit var mViewBinding: FamilyDialogAddDevSuccessBinding
+    override fun getLayoutId(): Int {
+        return R.layout.family_dialog_add_dev_success
+    }
 
     override fun <T : ViewModel?> loadViewModel(): Class<T> {
         return RecvScanShareVM::class.java as Class<T>
     }
 
     override fun onContentViewLoad(savedInstanceState: Bundle?) {
-        mViewBinding = DataBindingUtil.setContentView(this, R.layout.family_dialog_add_dev_success)
+        super.onContentViewLoad(savedInstanceState)
         window.decorView.setBackgroundColor(Color.TRANSPARENT)
     }
 
     override fun onViewLoadFinish() {
         super.onViewLoadFinish()
         setStatusBarColor()
-        initView()
     }
 
-    private fun initView() {
+    override fun initView() {
 
         mViewBinding.activityContainer.setBackgroundResource(com.gw_reoqoo.resource.R.color.transparent)
 
@@ -78,17 +71,32 @@ class RecvScanShareActivity: ABaseMVVMActivity<RecvScanShareVM>() {
         (intent.getSerializableExtra("shareData") as? HashMap<String, String>)?.let {
             viewModel.requestShare(it)
         }
-
+        viewModel.showCommDialogLD.observe(this) {
+            GwellLogUtils.i(TAG, "showCommDialogLD = $it")
+            mViewBinding.llContentRoot.visibility = View.GONE
+            if (it == true) {
+                showCommDialog {
+                    content = TextContent(getString(com.gw_reoqoo.resource.R.string.AA0168))
+                    actions = listOf(
+                        CommDialogAction(getString(com.gw_reoqoo.resource.R.string.AA0131), { finish() })
+                    )
+                }
+            }
+        }
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.scanShareFlow.collect { action ->
                     when (action) {
                         is HttpAction.Success -> {
                             GwellLogUtils.i(TAG, "scanShareData Success = ${action.data}")
+                            dismissLoadDialog()
                             mViewBinding.llContentRoot.visibility = View.VISIBLE
                             mViewBinding.activityContainer.setBackgroundResource(com.gw_reoqoo.resource.R.color.black_20)
                             mViewBinding.tvProductName.text = action.data?.remarkName
-                            viewModel.getProductImgWithPID(action.data?.pid.toString(), action.data?.productModel)?.let {
+                            viewModel.getProductImgWithPID(
+                                action.data?.pid.toString(),
+                                action.data?.productModel
+                            )?.let {
                                 Glide.with(this@RecvScanShareActivity)
                                     .load(it)
                                     .override(Target.SIZE_ORIGINAL)

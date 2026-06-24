@@ -9,6 +9,9 @@ import com.gw.cp_msg.entity.http.MsgDetailEntity
 import com.gw.cp_msg.entity.http.MsgInfoListEntity
 import com.gw_reoqoo.lib_http.entities.VersionInfoEntity
 import com.gw.cp_msg.repository.MsgCenterRepository
+import com.gw_reoqoo.lib_http.RespResult.LocalError
+import com.gw_reoqoo.lib_http.RespResult.ServerError
+import com.gw_reoqoo.lib_http.RespResult.Success
 import com.gw_reoqoo.lib_http.entities.AppUpgradeEntity
 import com.gw_reoqoo.lib_utils.version.Version
 import com.gw_reoqoo.lib_utils.version.VersionUtils
@@ -20,6 +23,8 @@ import com.therouter.inject.Singleton
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.suspendCancellableCoroutine
+import java.util.concurrent.CopyOnWriteArrayList
 import javax.inject.Inject
 
 /**
@@ -30,7 +35,6 @@ import javax.inject.Inject
 @Singleton
 class LocalMsgExternalManager @Inject constructor(
     private val app: Application,
-    private val repository: MsgCenterRepository,
     private val msgDataStore: IMsgDataStoreApi,
     private val msgCenterRepository: MsgCenterRepository,
     private val gwiotOpt: IGWIotOpt
@@ -45,12 +49,12 @@ class LocalMsgExternalManager @Inject constructor(
     /**
      * 所有的系统消息
      */
-    private val systemMsgList = mutableListOf<MsgDetailEntity>()
+    private val systemMsgList = CopyOnWriteArrayList<MsgDetailEntity>()
 
     /**
      * 固件升级的列表信息
      */
-    private var upgradeList = mutableListOf<MsgDetailEntity>()
+    private var upgradeList = CopyOnWriteArrayList<MsgDetailEntity>()
 
     /**
      * 结果回调监听
@@ -94,6 +98,101 @@ class LocalMsgExternalManager @Inject constructor(
         })
     }
 
+    override suspend fun cleanUnreadMsgCount() {
+        systemMsgList.forEachIndexed { index, msgDetailEntity ->
+            if (msgDetailEntity.unreadCnt > 0) {
+                msgDetailEntity.unreadCnt = 0
+            }
+            GwellLogUtils.i(TAG, "map $msgDetailEntity")
+            when (msgDetailEntity.tag) {
+                MsgDetailEntity.TAG_MSG_CENTER_APP_UPGRADE -> {
+                    val curVersion = Version.from(msgDataStore.getAppUpgradeRead() ?: "")
+                    val tagVersion = Version.from(msgDetailEntity.appVersion ?: "")
+                    if (tagVersion > curVersion) {
+                        msgDataStore.setAppUpgradeRead(msgDetailEntity.appVersion ?: "")
+                    }
+                }
+
+                MsgDetailEntity.TAG_MSG_CENTER_FIRMWARE_UPDATE -> {
+                    msgDataStore.setDevUpgradeRead(
+                        msgDetailEntity.deviceId.toString(),
+                        msgDetailEntity.appVersion ?: ""
+                    )
+                }
+
+                else -> {
+                    msgCenterRepository.readMsg(null, null)
+                        .onSuccess {
+                            GwellLogUtils.i(TAG, "onSuccess: readSystemMsg success")
+                        }
+                        .onServerError { code, msg ->
+                            GwellLogUtils.e(TAG, "onServerError: code $code, msg $msg")
+                        }
+                        .onLocalError {
+                            GwellLogUtils.e(TAG, "onLocalError: it $it")
+                        }
+                }
+            }
+        }
+    }
+
+    override suspend fun getUnreadMsgCount(): Int = suspendCancellableCoroutine { continuation ->
+        var unReadCount = 0
+        // 保存原始的onResult回调以便恢复
+        val originalOnResult = mOnResult
+        // 设置一个新的回调来等待初始化完成
+        mOnResult = { result ->
+            // 恢复原始回调
+            mOnResult = originalOnResult
+            // 计算未读消息总数
+            for (msg in systemMsgList) {
+                msg.let {
+                    GwellLogUtils.i(TAG, "msg.unread ${msg.unreadCnt}, total $unReadCount")
+                    unReadCount += it.unreadCnt
+                }
+            }
+            // 返回结果
+            continuation.resume(unReadCount, null)
+        }
+        // 每次都重新初始化所有消息
+        initAllMsg()
+    }
+
+    override suspend fun readMessage(
+        tag: String?,
+        deviceId: String?
+    ): Boolean {
+        if (tag.isNullOrEmpty() && deviceId.isNullOrEmpty()) {
+            cleanUnreadMsgCount()
+            return true
+        }
+        try {
+            val deviceId = deviceId?.toLong()
+            val result = msgCenterRepository.readMsg(tag = tag, deviceId = deviceId)
+            when (result) {
+                is Success -> {
+                    GwellLogUtils.i(TAG, "readMessage success ${result.data}")
+                    return true
+                }
+
+                is LocalError -> {
+                    GwellLogUtils.e(TAG, "readMessage error: ${result.t.message}")
+                }
+
+                is ServerError -> {
+                    GwellLogUtils.e(
+                        TAG,
+                        "readMessage error: code ${result.code}, msg ${result.msg}"
+                    )
+                }
+            }
+        } catch (e: Exception) {
+            GwellLogUtils.e(TAG, "readMessage error: ${e.message}")
+            false
+        }
+        return false
+    }
+
     /**
      * 初始化所有消息
      */
@@ -114,13 +213,19 @@ class LocalMsgExternalManager @Inject constructor(
      * 初始化app版本升级消息
      */
     private suspend fun initAppVersionMsg() {
-        repository.getAppUpdateMsg()
+        msgCenterRepository.getAppUpdateMsg()
             .onSuccess {
                 this?.let {
                     val appUpdateMsg = initAppUpgrade(it)
                     val currentVersionName = VersionUtils.getAppVersionName(app)
-                    GwellLogUtils.i(TAG, "appUpdateMsg: $appUpdateMsg, currentVersionName $currentVersionName")
-                    if (Version.from(appUpdateMsg.appVersion ?: "") > Version.from(currentVersionName)) {
+                    GwellLogUtils.i(
+                        TAG,
+                        "appUpdateMsg: $appUpdateMsg, currentVersionName $currentVersionName"
+                    )
+                    if (Version.from(appUpdateMsg.appVersion ?: "") > Version.from(
+                            currentVersionName
+                        )
+                    ) {
                         systemMsgList.add(appUpdateMsg)
                     }
                 }
@@ -155,7 +260,7 @@ class LocalMsgExternalManager @Inject constructor(
      */
     private suspend fun initServerMsg() {
         // 获取消息列表数据
-        repository.getMsgList()
+        msgCenterRepository.getMsgList()
             .onSuccess {
                 GwellLogUtils.i(TAG, "MsgListEntity: $this")
                 this?.list?.run {

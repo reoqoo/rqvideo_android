@@ -2,6 +2,9 @@ package com.gw.component_push.api.impl
 
 import android.content.Context
 import android.content.Intent
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import com.gw.component_push.BuildConfig
 import com.gw.component_push.api.interfaces.INotifyServer
 import com.gw.component_push.api.interfaces.IPushApi
 import com.gw.component_push.datastore.PushDataStore
@@ -64,6 +67,11 @@ class PushApiImpl @Inject constructor(
          * 消息中心离线推送
          */
         const val PUSH_TYPE_MSG_CENTER = "MsgCenter"
+
+        /**
+         * 小豚的推送消息数据 key
+         */
+        const val DOPHIGO_PUSH_DATA = "DophiGoBase"
     }
 
     override fun initPushServer() {
@@ -85,7 +93,7 @@ class PushApiImpl @Inject constructor(
     }
 
     override fun getPushFromIntent(intent: Intent): String? {
-        return pushManager.getIntentExtra(intent)
+        return parsePushExtrasData(intent)
     }
 
     /**
@@ -109,7 +117,7 @@ class PushApiImpl @Inject constructor(
      *
      * @param pushInfo String
      */
-    private fun handlingPush(pushInfo: String) {
+    override fun handlingPush(pushInfo: String) {
         val pushJson = JSONObject(pushInfo)
         if (pushJson.has(KEY_PUSH_TYPE)) {
             val pusType = pushJson.optString(KEY_PUSH_TYPE).replace("\"", "")
@@ -194,5 +202,47 @@ class PushApiImpl @Inject constructor(
 
     override fun addNotificationServer(server: INotifyServer) {
         pushManager.addNotifyServer(server)
+    }
+
+    override fun removeNotificationConsumer(consumer: INotifyServer) {
+        pushManager.removeNotifyConsumer(consumer)
+    }
+
+    override fun isAutoRegistration(isAutoRegistration: Boolean) {
+        pushManager.setAutoRegistration(isAutoRegistration)
+    }
+
+    private fun parsePushExtrasData(intent: Intent): String {
+        val bundle = intent.extras
+        if (BuildConfig.DEBUG) {
+            if (bundle != null) {
+                for (key in bundle.keySet()) {
+                    val value = bundle.get(key)
+                    // 使用key和value进行适当的操作
+                    GwellLogUtils.i(TAG, "key = $key, value = $value")
+                }
+            }
+        }
+        return bundle?.let {
+            val gson = GsonBuilder()
+                .disableHtmlEscaping()
+                .create()
+            if (it.containsKey(KEY_PUSH_TYPE) &&
+                (it.containsKey(KEY_PUSH_CONTENT) || it.containsKey(KEY_PUSH_DATA))
+            ) {
+                val mapParams = mutableMapOf<String, String?>()
+                mapParams[KEY_PUSH_TYPE] = it.getString(KEY_PUSH_TYPE)
+                mapParams[KEY_PUSH_CONTENT] = it.getString(KEY_PUSH_CONTENT)
+                mapParams[KEY_PUSH_DATA] = it.getString(KEY_PUSH_DATA)
+                return gson.toJson(mapParams)
+            } else if (it.containsKey(DOPHIGO_PUSH_DATA)) {
+                val mapParams = mutableMapOf<String, String?>()
+                mapParams[DOPHIGO_PUSH_DATA] = it.getString(DOPHIGO_PUSH_DATA)
+                return gson.toJson(mapParams)
+            } else {
+                GwellLogUtils.e(TAG, "bundle has no push_type or content")
+                ""
+            }
+        } ?: ""
     }
 }

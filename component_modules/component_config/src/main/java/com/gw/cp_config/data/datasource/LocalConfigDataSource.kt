@@ -75,7 +75,9 @@ class LocalConfigDataSource @Inject constructor(
             }
             api.setProductPid(products)
         }
-        api.setSceneName(configJsonEntity.sceneList)
+        if (configJsonEntity.sceneList != null) {
+            api.setSceneName(configJsonEntity.sceneList)
+        }
         if (configJsonEntity.platform != null) {
             api.setPermissionMode(configJsonEntity.platform.mode)
         }

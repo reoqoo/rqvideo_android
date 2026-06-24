@@ -229,8 +229,19 @@ class ShareDeviceImpl @Inject constructor(
                                         context.getString(R.string.AA0166),
                                         onClick = {
                                             scope.launch {
-                                                val solution = configApi.getProductSolution(detail.pid.toString(), detail.productModel)
-                                                igwIotOpt.openHome(deviceId, solution)
+                                                val isBound = igwIotOpt.isDeviceBound(deviceId)
+                                                GwellLogUtils.i(TAG, "isBound $isBound")
+                                                if (isBound) {
+                                                    val solution = configApi.getProductSolution(detail.pid.toString(), detail.productModel)
+                                                    igwIotOpt.openHome(deviceId, solution)
+                                                } else {
+                                                    context.showCommDialog {
+                                                        content = TextContent(context.getString(R.string.AA0168))
+                                                        actions = listOf(
+                                                            CommDialogAction(context.getString(R.string.AA0131))
+                                                        )
+                                                    }
+                                                }
                                             }
                                         }),
                                 )

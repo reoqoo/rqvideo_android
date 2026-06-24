@@ -9,6 +9,7 @@ import android.webkit.WebView
 import androidx.appcompat.app.AppCompatDelegate
 import com.gw.cp_mine.api.kapi.ILocaleApi
 import com.gw.reoqoo.BuildConfig
+import com.gw.reoqoo.R
 import com.gw.reoqoo.ui.main.MainActivity
 import com.gw_reoqoo.module_mount.app.BaseApplication
 import com.gwell.loglibs.GwellLogUtils
@@ -60,7 +61,7 @@ class ReoqooApplication : BaseApplication() {
             versionCode = BuildConfig.VERSION_CODE,
             appId = BuildConfig.APP_ID,
             appToken = BuildConfig.APP_TOKEN,
-            appName = BuildConfig.APP_NAME,
+            appName = resources.getString(com.gw_reoqoo.resource.R.string.AA0447),
             cId = BuildConfig.APP_CID,
             iotUrl = BuildConfig.WEBSITE_IOT_URL,
             baseUrl = BuildConfig.WEBSITE_HOST_BASE_URL,
@@ -72,7 +73,9 @@ class ReoqooApplication : BaseApplication() {
             baseTestUrl = BuildConfig.WEBSITE_HOST_BASE_TEST_URL,
             pluginTestUrl = BuildConfig.WEBSITE_PLUGIN_HOST_TEST_URL,
             h5TestUrl = BuildConfig.WEBSITE_H5_HOST_TEST_URL,
-            yooseeShareOptionStr = BuildConfig.YOOSEE_SHARE_TYPES
+            yooseeShareOptionStr = BuildConfig.YOOSEE_SHARE_TYPES,
+            disableAccountService = BuildConfig.DISABLE_ACCOUNT_SERVICE,
+            disableMultiLiveView = false
         )
         Log.i(TAG, "onCreate: runBlocking. init finish")
         gwIotOpt.initUI(this@ReoqooApplication, MainR.string.appName)
@@ -82,6 +85,7 @@ class ReoqooApplication : BaseApplication() {
             autoSizeInitTask.run()
             Log.i(TAG, "onCreate: runBlocking.finish")
         }
+
         WebView(this).destroy()
         // 获取当前系统语言
         GwellLogUtils.i(

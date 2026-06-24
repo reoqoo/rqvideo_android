@@ -1,5 +1,7 @@
 package com.gw.component_push.api.interfaces
 
+import android.os.Bundle
+
 /**
  * Author: yanzheng@gwell.cc
  * Time: 2023/7/23 23:09
@@ -15,4 +17,17 @@ interface INotifyServer {
      */
     fun onNotifyMsgClick(channel: String, msg: String)
 
+    /**
+     * 收到厂商推送消息，一般是进程在前台的时候收到，比如Google的fcm在线厂商推送
+     * @param channel 推送厂商，这里为了不引入推送sdk的感染，所以故意把枚举换成了字符串，这个和推送sdk中枚举对应的字符串是一致的
+     * @param msg 消息内容
+     * @param title 消息标题
+     * @param content 消息体
+     */
+    fun notifyReceiver(
+        channel: String,
+        msg: Bundle,
+        title: String,
+        content: String
+    )
 }

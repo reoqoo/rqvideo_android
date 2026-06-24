@@ -284,6 +284,7 @@ class AppConfigApiImpl @Inject constructor(
      */
     override fun getDevConfigByProductModule(module: String): DevConfigEntity? {
         val configList = getDevConfigList()
+        GwellLogUtils.i(TAG, "getDevConfigByProductModule: module $module, configList $configList")
         return configList.firstOrNull { it.productModule == module }
     }
 

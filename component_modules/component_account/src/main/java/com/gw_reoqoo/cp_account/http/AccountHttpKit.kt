@@ -52,16 +52,16 @@ object AccountHttpKit {
         val httpService = HiltApi.httpServiceWrapper
         val pwdMD5 = HttpUtils.md5(password)
         if (GwStringUtils.isEmailValid(userName)) {
-            httpService.emailLogin(userName, pwdMD5, uuid, listener)
+            httpService.emailLogin(userName, pwdMD5, uuid, "", listener)
         } else if (userName.startsWith("-")) {
-            httpService.userIdLogin(userName, pwdMD5, uuid, listener)
+            httpService.userIdLogin(userName, pwdMD5, uuid, "", listener)
         } else {
             if (userName.contains("-")) {
                 val phone =
                     userName.split("-".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-                httpService.mobileLogin(phone[1], phone[0], pwdMD5, uuid, listener)
+                httpService.mobileLogin(phone[1], phone[0], pwdMD5, uuid, "", listener)
             } else {
-                httpService.mobileLogin(userName, "0", pwdMD5, uuid, listener)
+                httpService.mobileLogin(userName, "0", pwdMD5, uuid, "", listener)
             }
         }
     }

@@ -61,6 +61,16 @@ class AccountMgrImpl @Inject constructor(
         }
     }
 
+    override fun logoutWithoutService(block: () -> Unit) {
+        scope.launch {
+            userInfoRepo.loginFailure()
+            AccountMgrKit.setRegRegion("")
+            pluginMgr.onAccountExit()
+            SA.saLogout()
+            block.invoke()
+        }
+    }
+
     /**
      * 登录失效
      */
@@ -70,6 +80,11 @@ class AccountMgrImpl @Inject constructor(
             userInfoRepo.loginFailure()
             setLogoutState()
         }
+    }
+
+    override fun updateLanguage(language: String) {
+        GwellLogUtils.i(TAG, "updateLanguage(language=$language)")
+        AccountMgrKit.setLanguage(language)
     }
 
     /**

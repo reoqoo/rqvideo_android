@@ -30,4 +30,9 @@ interface ILocalMsgApi {
      */
     fun getUnreadMsgCount(unReadMsgCount: ((Int) -> Unit))
 
+    /**
+     * 清空未读消息
+     */
+    suspend fun cleanUnreadMsgCount()
+
 }

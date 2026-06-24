@@ -12,7 +12,19 @@ interface IAccountMgrApi {
     fun logout(restart: Boolean = true, block: () -> Unit = {})
 
     /**
+     * 退出登录状态（不调用服务端接口）
+     */
+    fun logoutWithoutService(block: () -> Unit = {})
+
+    /**
      * 登录失效
      */
     fun loginFailure()
+
+    /**
+     * 更新网络请求库语言
+     *
+     * @param language String 语言Code
+     */
+    fun updateLanguage(language: String)
 }

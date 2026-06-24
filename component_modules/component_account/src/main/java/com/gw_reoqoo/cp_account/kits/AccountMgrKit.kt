@@ -2,11 +2,13 @@ package com.gw_reoqoo.cp_account.kits
 
 import android.content.Context
 import android.text.TextUtils
+import com.gw.cp_mine.entity.Language
 import com.gw_reoqoo.cp_account.utils.AppTagUtils
 import com.gw_reoqoo.lib_http.HiltApi
 import com.gwell.loglibs.GwellLogUtils
 import com.jwkj.base_utils.local.LocalUtils
 import com.jwkj.iotvideo.init.IoTVideoInitializer
+import java.util.Locale
 
 /**
  * Author: yanzheng@gwell.cc
@@ -26,7 +28,10 @@ object AccountMgrKit {
      */
     fun setAccessInfo(accessId: String?, accessToken: String?) {
         val accountMgr = HiltApi.accountMgr
-        GwellLogUtils.i(TAG, "setAccessInfo(accessId=$accessId,accessToken=$accessToken) stack=:${Exception().stackTraceToString()}")
+        GwellLogUtils.i(
+            TAG,
+            "setAccessInfo(accessId=$accessId,accessToken=$accessToken) stack=:${Exception().stackTraceToString()}"
+        )
         if (!TextUtils.isEmpty(accessId) && !TextUtils.isEmpty(accessToken)) {
             accountMgr.setAccessInfo(accessId, accessToken)
             accountMgr.setRegion(LocalUtils.getCountry())
@@ -75,7 +80,7 @@ object AccountMgrKit {
         versionName: String
     ): Array<String> {
         return IoTVideoInitializer.p2pAlgorithm.getAnonymousSecureKey(
-            AppTagUtils.getAppTag(
+            AppTagUtils.getAppTagByName(
                 context,
                 cid,
                 appId,
@@ -97,5 +102,15 @@ object AccountMgrKit {
         )
         GwellLogUtils.i(TAG, "setMgrSecretInfo.stack=${Exception().stackTraceToString()}")
         HiltApi.accountMgr.setSecretInfo(secretId, secretKey, token)
+    }
+
+    /**
+     * 设置语言
+     *
+     * @param language String 语言
+     */
+    fun setLanguage(language: String) {
+        GwellLogUtils.i(TAG, "setLanguage: language = $language")
+        HiltApi.accountMgr.changeAccessLanguage(language)
     }
 }

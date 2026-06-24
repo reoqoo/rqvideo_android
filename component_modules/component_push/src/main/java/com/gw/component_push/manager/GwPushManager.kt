@@ -16,8 +16,8 @@ import com.gw.cp_config.api.IAppParamApi
 import com.gw_reoqoo.lib_utils.ktx.getAppVersionName
 import com.gw_reoqoo.lib_http.wrapper.HttpServiceWrapper
 import com.gwell.loglibs.GwellLogUtils
-import com.jwkj.iotvideo.init.IoTVideoInitializer
 import com.jwkj.lib_gpush.manager.GPushMgr
+import com.reoqoo.component_iotapi_plugin_opt.api.IGWIotOpt
 import com.tencentcs.iotvideo.http.interceptor.flow.HttpAction
 import com.yoosee.lib_gpush.GPushManager
 import com.yoosee.lib_gpush.entity.PushChannel
@@ -49,6 +49,7 @@ class GwPushManager @Inject constructor(
     private val httpService: HttpServiceWrapper,
     private val iAccountApi: IAccountApi,
     private val appParamApi: IAppParamApi,
+    private val gwIotOpt: IGWIotOpt,
     private val dataStore: PushDataStore,
     @ApplicationContext private val context: Context
 ) {
@@ -67,12 +68,21 @@ class GwPushManager @Inject constructor(
     private val notifyServers = mutableListOf<INotifyServer>()
 
     /**
+     * 是否自动注册推送服务
+     */
+    private var isAutoRegistration: Boolean = true
+
+    /**
      * 推送SDK是否初始化成功
      */
     private var isPushInitSuccess = false
 
     private val handler by lazy {
         Handler(Looper.getMainLooper())
+    }
+
+    fun setAutoRegistration(autoRegistration: Boolean) {
+        isAutoRegistration = autoRegistration
     }
 
     /**
@@ -82,6 +92,10 @@ class GwPushManager @Inject constructor(
      */
     @OptIn(DelicateCoroutinesApi::class)
     fun init() {
+        if (!isAutoRegistration) {
+            GwellLogUtils.e(TAG, "init: isAutoRegistration false")
+            return
+        }
         val appContext = context.applicationContext
         val userId = runBlocking { iAccountApi.getAsyncUserId() }
         GwellLogUtils.i(TAG, "init-userId:$userId")
@@ -121,6 +135,10 @@ class GwPushManager @Inject constructor(
      * @param appParamApi IAppParamApi 应用参数api
      */
     fun register() {
+        if (!isAutoRegistration) {
+            GwellLogUtils.e(TAG, "init: isAutoRegistration false")
+            return
+        }
         if (!isPushInitSuccess) {
             GwellLogUtils.i(TAG, "register: isPushInitSuccess false")
             init()
@@ -149,7 +167,7 @@ class GwPushManager @Inject constructor(
             it.removeCallbacksAndMessages(null)
             it.postDelayed({
                 scope.launch {
-                    registerPush(userId, token, userInfo?.terminalId?: "")
+                    registerPush(userId, token, userInfo?.terminalId ?: "")
                 }
             }, 1000)
         }
@@ -193,12 +211,13 @@ class GwPushManager @Inject constructor(
         val mfrDevModel = Build.MODEL
         GwellLogUtils.i(TAG, "registerPush -> $userId, $token, $channel")
 
+        val clearOtherTerm = gwIotOpt.getDisableMultipleLogins()
         val uploadTokenBean = UploadTokenBean(
             appId = appId,
             appName = appParamApi.getAppName(),
             appToken = appParamApi.getAppToken(),
             appVersion = appVer ?: "",
-            clearOtherTerm = false,
+            clearOtherTerm = clearOtherTerm,
             jpushId = jPushId,
             language = language,
             mfrDevModel = mfrDevModel,
@@ -301,7 +320,13 @@ class GwPushManager @Inject constructor(
                 title: String,
                 content: String
             ) {
-                GwellLogUtils.i(TAG, "notifyReceiver: channel=$channel, msg=$msg, title=$title, content=$content")
+                GwellLogUtils.i(
+                    TAG,
+                    "notifyReceiver: channel=$channel, msg=$msg, title=$title, content=$content"
+                )
+                for (notifyServer in notifyServers) {
+                    notifyServer.notifyReceiver(channel.channel, msg, title, content)
+                }
             }
         })
     }
@@ -315,6 +340,10 @@ class GwPushManager @Inject constructor(
         if (!notifyServers.contains(server)) {
             notifyServers.add(server)
         }
+    }
+
+    fun removeNotifyConsumer(consumer: INotifyServer) {
+        notifyServers.remove(consumer)
     }
 
     /**
@@ -332,7 +361,7 @@ class GwPushManager @Inject constructor(
         return if (BuildConfig.IS_GOOGLE) {
             PushChannel.BRAND_FCM
         } else {
-            DevicePushUtils.getDevicePushChannel() ?:PushChannel.BRAND_FCM
+            DevicePushUtils.getDevicePushChannel() ?: PushChannel.BRAND_FCM
         }
     }
 }

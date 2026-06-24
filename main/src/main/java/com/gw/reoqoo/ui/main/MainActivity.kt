@@ -14,6 +14,7 @@ import com.google.android.material.tabs.TabLayout
 import com.gw.component_debug.api.interfaces.IAppEvnApi
 import com.gw.component_plugin_service.api.IPluginManager
 import com.gw.component_push.api.interfaces.IPushApi
+import com.gw.cp_config.api.IAppParamApi
 import com.gw_reoqoo.house_watch.receivers.api.INetworkStatusApi
 import com.gw_reoqoo.lib_base_architecture.ToolBarLoadStrategy
 import com.gw_reoqoo.lib_base_architecture.view.ABaseMVVMDBActivity

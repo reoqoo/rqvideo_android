@@ -43,10 +43,28 @@ interface IPushApi {
     fun parsePushFromIntent(intent: Intent): Boolean
 
     /**
+     * 处理离线push消息
+     * @param pushInfo 消息实体json string
+     */
+    fun handlingPush(pushInfo: String)
+
+    /**
      * 添加通知消息监听服务
      *
      * @param server INotificationServer 监听服务
      */
     fun addNotificationServer(server: INotifyServer)
+
+    /**
+     * 移除通知消息监听服务
+     * @param consumer 服务监听器
+     */
+    fun removeNotificationConsumer(consumer: INotifyServer)
+
+    /**
+     * 设置是否自动注册推送服务
+     * @param isAutoRegistration 是否自动注册推送服务
+     */
+    fun isAutoRegistration(isAutoRegistration: Boolean)
 
 }

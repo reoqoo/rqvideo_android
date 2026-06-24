@@ -1,7 +1,6 @@
 package com.gw_reoqoo.component_family.services
 
 import android.content.Intent
-import android.os.SystemClock
 import androidx.lifecycle.LifecycleService
 import com.gw_reoqoo.component_family.repository.DeviceRepository
 import com.gw.component_plugin_service.api.IPluginManager
@@ -11,6 +10,7 @@ import com.gw.lib_plugin_service.IPluginDeviceStatusListener
 import com.gw_reoqoo.component_family.api.interfaces.FamilyModeApi
 import com.gwell.loglibs.GwellLogUtils
 import com.jwkj.iotvideo.init.IoTVideoInitializerState
+import com.reoqoo.component_iotapi_plugin_opt.api.IGWIotOpt
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -58,6 +58,9 @@ class DeviceStatusServices : LifecycleService(), IPluginDeviceStatusListener {
     @Inject
     lateinit var familyModeApi: FamilyModeApi
 
+    @Inject
+    lateinit var iGWIotOpt: IGWIotOpt
+
     override fun onCreate() {
         super.onCreate()
         GwellLogUtils.i(TAG, "onCreate")
@@ -70,6 +73,9 @@ class DeviceStatusServices : LifecycleService(), IPluginDeviceStatusListener {
             when (state) {
                 IoTVideoInitializerState.ONLINE -> this.loadDeviceStatus()
                 IoTVideoInitializerState.OFFLINE -> Unit
+                IoTVideoInitializerState.KICK_OFF -> {
+                    iGWIotOpt.tickedOut()
+                }
                 else -> {}
             }
         }

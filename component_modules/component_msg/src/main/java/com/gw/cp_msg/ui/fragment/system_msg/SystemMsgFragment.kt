@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.gw.cp_config.api.IAppParamApi
 import com.gw.cp_msg.R
 import com.gw_reoqoo.resource.R as RR
 import com.gw.cp_msg.databinding.MsgFragmentSystemMsgBinding
@@ -11,12 +12,12 @@ import com.gw.cp_msg.entity.http.MsgDetailEntity
 import com.gw.cp_msg.ui.fragment.system_msg.adapter.SystemMsgAdapter
 import com.gw.cp_msg.ui.fragment.system_msg.vm.SystemMsgVM
 import com.gw.cp_msg.utils.PushUtils
-import com.gw_reoqoo.component_plugin_service.api.BuildConfig
 import com.gw_reoqoo.lib_base_architecture.protocol.IGwBaseVm
 import com.gw_reoqoo.lib_base_architecture.view.ABaseMVVMDBFragment
 import com.gw_reoqoo.lib_utils.ktx.visible
 import com.gwell.loglibs.GwellLogUtils
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 /**
  * Author: yanzheng@gwell.cc
@@ -38,6 +39,9 @@ class SystemMsgFragment :
         }
 
     }
+
+    @Inject
+    lateinit var appParamApi: IAppParamApi
 
     private var mLoadUnReadMsgCount: ((Int) -> Unit?)? = null
 

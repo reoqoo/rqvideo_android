@@ -55,4 +55,17 @@ interface IAppParamApi {
      * @return 返回空表示获取失败或者没有这个配置
      */
     fun getUIThemeConfig(): ThemeColorConfigEntity?
+
+    /**
+     * 设置app名称占位符
+     *
+     * @param appNamePlaceHolder String app名称占位符
+     */
+    fun setAppNamePlaceHolder(appNamePlaceHolder: String)
+
+    /**
+     * 获取app名称占位符
+     * @return String app名称占位符
+     */
+    fun getAppNamePlaceHolder(): String
 }

@@ -1,5 +1,6 @@
 package com.gw_reoqoo.component_family.ui.recv_scan_share
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.gw.cp_config.api.IAppConfigApi
 import com.gw.cp_config.api.ProductImgType
@@ -20,7 +21,6 @@ import kotlinx.coroutines.TimeoutCancellationException
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withTimeout
 import kotlinx.coroutines.withTimeoutOrNull
@@ -46,6 +46,11 @@ class RecvScanShareVM @Inject constructor(
         HttpAction.Loading()
     )
     val scanShareFlow: StateFlow<HttpAction<ScanShareQRCodeResult>> = _scanShareFlow
+
+    /**
+     * 展示分享失效弹框
+     */
+    val showCommDialogLD = MutableLiveData<Boolean>()
 
     /**
      * 发起扫码分享添加设备
@@ -131,10 +136,16 @@ class RecvScanShareVM @Inject constructor(
         // 这里任务有一定耗时，需要用户点击立即查看以后马上关闭Activity，如果用viewmodelScope会在
         // 调用finish Activity以后这个任务会被异常终止，导致打开主页失败，所以使用了应用级别的scope
         GlobalScope.launch(Dispatchers.IO) {
-            finishActivityLD.postValue(true)
             // 设置一个超时时间，防止打开主页失败导致内存泄漏
             withTimeoutOrNull(TIMEOUT_MS) {
-                igwIotOpt.openHome(deviceId, solution)
+                val isBound = igwIotOpt.isDeviceBound(deviceId)
+                GwellLogUtils.i(TAG, "isBound $isBound")
+                if (isBound) {
+                    finishActivityLD.postValue(true)
+                    igwIotOpt.openHome(deviceId, solution)
+                } else {
+                    showCommDialogLD.postValue(true)
+                }
             }
         }
     }

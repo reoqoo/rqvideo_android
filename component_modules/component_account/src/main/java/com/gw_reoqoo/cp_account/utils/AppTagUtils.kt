@@ -49,6 +49,19 @@ object AppTagUtils {
     }
 
     /**
+     * 根据版本名获取应用信息
+     *
+     * @param context Context 上下文
+     * @param appId String    应用Id
+     * @param verName String  应用版本号
+     * @return String 签名信息
+     */
+    fun getAppTagByName(context: Context, cid: String, appId: String, verName: String): String {
+        val appIntStringVersion = getAppVersion(context, cid, verName)
+        return appId + appIntStringVersion
+    }
+
+    /**
      * 获取app的版本号
      *
      * @param context Context 上下文

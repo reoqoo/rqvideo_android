@@ -16,6 +16,7 @@ import okhttp3.ResponseBody
 import okio.BufferedSink
 import okio.buffer
 import okio.sink
+import retrofit2.Response
 import java.io.File
 import java.io.IOException
 import javax.inject.Inject
@@ -85,7 +86,7 @@ class RemoteConfigDataSource @Inject constructor(
     suspend fun downloadConfig(url: String, filePath: String): Boolean {
         val result = Channel<Boolean>(1)
 
-        httpService.downloadFile(url, object : Observer<ResponseBody> {
+        httpService.downloadFile(url, null, object : Observer<Response<ResponseBody>> {
             override fun onSubscribe(d: Disposable) {
             }
 
@@ -97,15 +98,20 @@ class RemoteConfigDataSource @Inject constructor(
                 GwellLogUtils.i(TAG, "downloadConfig onComplete")
             }
 
-            override fun onNext(t: ResponseBody) {
+            override fun onNext(t: Response<ResponseBody>) {
                 GwellLogUtils.i(TAG, "downloadConfig onNext")
                 // 文件下载成功
                 try {
                     // 创建文件
                     val file = File(filePath)
                     // 将ResponseBody写入文件
-//                    GwellLogUtils.i(TAG, "downloadFile onSuccess: $t")
-                    result.trySend(writeResponseBodyToDisk(t, file))
+                    val responseBody = t.body()
+                    GwellLogUtils.i(TAG, "downloadFile onSuccess: $responseBody")
+                    if (responseBody != null) {
+                        result.trySend(writeResponseBodyToDisk(responseBody, file))
+                    } else {
+                        result.trySend(false)
+                    }
                 } catch (e: IOException) {
                     GwellLogUtils.e(TAG, "downloadFile IOException: ${e.message}")
                     result.trySend(false)

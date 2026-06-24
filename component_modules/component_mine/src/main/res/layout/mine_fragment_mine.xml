@@ -37,6 +37,7 @@
                 android:id="@+id/ll_message"
                 android:layout_width="@dimen/dp_26"
                 android:layout_height="@dimen/dp_26"
+                android:visibility="invisible"
                 android:layout_marginTop="@dimen/dp_10"
                 android:layout_marginEnd="@dimen/dp_24">
 

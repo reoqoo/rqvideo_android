@@ -29,6 +29,7 @@ dependencies {
     implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_iotapi_plugin_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
     implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_iotapi_plugin_opt:${Versions.ReoqooSdkVer.VERSION_CODE}")
     implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_iotapi_plugin_opt_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation "com.gwell:gwiotapi:${Versions.GwVersions.GWIOT_API_VERSION}"
 }
 
 dependencies {
