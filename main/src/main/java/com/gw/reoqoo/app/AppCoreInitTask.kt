@@ -20,7 +20,6 @@ import com.gw_reoqoo.cp_account.api.kapi.IUserInfo
 import com.gw.cp_config.api.IAppConfigApi
 import com.gw.cp_config.api.IAppParamApi
 import com.gw.cp_mine.api.kapi.ILocaleApi
-import com.gw.gwiotapi.GWIoT
 import com.gw_reoqoo.lib_http.HttpResp
 import com.gw_reoqoo.lib_http.error.ResponseCode
 import com.gw_reoqoo.lib_http.jsonToEntity
@@ -47,9 +46,6 @@ import com.jwkj.base_utils.local.LanguageUtils
 import com.jwkj.iotvideo.init.IoTVideoInitializer
 import com.reoqoo.component_iotapi_plugin_opt.api.AppConfig
 import com.reoqoo.component_iotapi_plugin_opt.api.IGWIotOpt
-import com.gw.gwiotapi.entities.AppTexts
-import com.gw.gwiotapi.entities.UIConfiguration
-import com.gw.gwiotapi.entities.Theme
 import com.tencentcs.iotvideo.accountmgr.AccountMgr
 import com.tencentcs.iotvideo.http.interceptor.RedirectType
 import com.tencentcs.iotvideo.accountmgr.IIoTVideoAbility
@@ -160,9 +156,6 @@ class AppCoreInitTask @Inject constructor() : IInitializeTask {
         initAccountModule()
         initPushServer(app)
         initResource(app)
-        setColorTheme()
-        appParamApi.setAppName(context.getString(com.gw_reoqoo.resource.R.string.AA0447))
-        appParamApi.setAppNamePlaceHolder(context.getString(com.gw_reoqoo.resource.R.string.AA0447))
     }
 
 
@@ -592,23 +585,5 @@ class AppCoreInitTask @Inject constructor() : IInitializeTask {
                 }
             }
         }
-    }
-
-    private fun setColorTheme() {
-        GWIoT.setUIConfiguration(
-            UIConfiguration(
-                theme = Theme().apply {
-                    colors = Theme.Colors().apply {
-                        brand = "#%06X".format(0xFFFFFF and context.getColor(com.gw_reoqoo.resource.R.color.color_2ca74d))
-                        brand2 = "#%06X".format(0xFFFFFF and context.getColor(com.gw_reoqoo.resource.R.color.color_279645))
-                        brandHighlight = "#%06X".format(0xFFFFFF and context.getColor(com.gw_reoqoo.resource.R.color.color_ff7500))
-                        brandDisable = "#%06X".format(0xFFFFFF and context.getColor(com.gw_reoqoo.resource.R.color.color_e3e5ea))
-                    }
-                },
-                texts = AppTexts(
-                    appNamePlaceHolder = context.getString(com.gw_reoqoo.resource.R.string.AA0447),
-                )
-            )
-        )
     }
 }

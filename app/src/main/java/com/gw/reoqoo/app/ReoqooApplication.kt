@@ -61,7 +61,7 @@ class ReoqooApplication : BaseApplication() {
             versionCode = BuildConfig.VERSION_CODE,
             appId = BuildConfig.APP_ID,
             appToken = BuildConfig.APP_TOKEN,
-            appName = resources.getString(com.gw_reoqoo.resource.R.string.AA0447),
+            appName = resources.getString(MainR.string.appName),
             cId = BuildConfig.APP_CID,
             iotUrl = BuildConfig.WEBSITE_IOT_URL,
             baseUrl = BuildConfig.WEBSITE_HOST_BASE_URL,
