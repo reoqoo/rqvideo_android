@@ -9,8 +9,6 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gw_reoqoo.component_device_share.R
-import com.gw_reoqoo.component_device_share.api.DevShareApi.Companion.KEY_PARAM_PAGE_FROM
-import com.gw_reoqoo.component_device_share.api.DevShareApi.Companion.PARAM_DEV_SHARE_ENTITY
 import com.gw_reoqoo.component_device_share.entities.DeviceWrapper
 import com.gw_reoqoo.component_device_share.sa.SaEvent
 import com.gw_reoqoo.component_device_share.sa.SaEvent.Attr.DEVICE_ID
@@ -33,6 +31,7 @@ import com.gw_reoqoo.lib_widget.dialog.comm_dialog.entity.TextContent
 import com.gw_reoqoo.lib_widget.dialog.comm_dialog.ext.showCommDialog
 import com.gwell.loglibs.GwellLogUtils
 import com.jwkj.base_statistics.sa.kits.SA
+import com.reoqoo.component_iotapi_plugin_opt.api.IGWIotOpt
 import com.tencentcs.iotvideo.http.interceptor.flow.HttpAction
 import com.therouter.router.Autowired
 import com.therouter.router.Route
