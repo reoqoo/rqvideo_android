@@ -69,6 +69,9 @@ class DeviceListFragment : ABaseMVVMDBFragment<Binding, DeviceListVM>() {
     @Inject
     lateinit var iAppConfigApi: IAppConfigApi
 
+    @Inject
+    lateinit var igwIotOpt: IGWIotOpt
+
     private val shareDeviceVM: ShareDeviceVM by activityViewModels()
 
     override fun initView(view: View, savedInstanceState: Bundle?) {
@@ -144,16 +147,7 @@ class DeviceListFragment : ABaseMVVMDBFragment<Binding, DeviceListVM>() {
                                             )
                                         }
                                     } else {
-                                        ReoqooRouterPath
-                                            .DevShare
-                                            .ACTIVITY_SHARE_MANAGER_OWNER_PATH
-                                            .navigation(
-                                                fragment = this@DeviceListFragment,
-                                                with = mapOf(
-                                                    PARAM_DEV_SHARE_ENTITY to device,
-                                                    KEY_PARAM_PAGE_FROM to pageFrom
-                                                )
-                                            )
+                                        igwIotOpt.openDevSharePage(device.deviceId)
                                     }
                                 }
                             }

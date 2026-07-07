@@ -2,16 +2,20 @@ package com.gw_reoqoo.component_family.services
 
 import android.content.Intent
 import androidx.lifecycle.LifecycleService
+import androidx.lifecycle.lifecycleScope
 import com.gw_reoqoo.component_family.repository.DeviceRepository
 import com.gw.component_plugin_service.api.IPluginManager
 import com.gw_reoqoo.cp_account.api.kapi.IAccountApi
 import com.gw.cp_upgrade.api.interfaces.IUpgradeMgrApi
 import com.gw.lib_plugin_service.IPluginDeviceStatusListener
 import com.gw_reoqoo.component_family.api.interfaces.FamilyModeApi
+import com.gw.lib_plugin_service.constant.PluginCodeConstants
 import com.gwell.loglibs.GwellLogUtils
 import com.jwkj.iotvideo.init.IoTVideoInitializerState
 import com.reoqoo.component_iotapi_plugin_opt.api.IGWIotOpt
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 /**
@@ -108,6 +112,31 @@ class DeviceStatusServices : LifecycleService(), IPluginDeviceStatusListener {
             }.map { it.deviceId }
             pluginManager.getDevicePowerStatus(devIds)
             pluginManager.getDeviceOnlineStatus(devIds)
+
+            lifecycleScope.launch(Dispatchers.IO) {
+                val nonReoqooDevIds = device.filter {
+                    val pid = it.productId
+                    !familyModeApi.isReoqooDevice(pid ?: "")
+                }.map { it.deviceId }
+                nonReoqooDevIds.forEach { deviceId ->
+                    val deviceProp = iGWIotOpt.getIoTProps(deviceId)
+                    deviceProp?.let {
+                        deviceRepository.updateDeviceOnlineStatus(
+                            deviceId, if (it.isOnline) {
+                                PluginCodeConstants.DeviceOnlineStatus.ONLINE
+                            } else {
+                                PluginCodeConstants.DeviceOnlineStatus.OFFLINE
+                            }
+                        )
+
+                        deviceRepository.updateDevicePowerOn(deviceId, it.isPowerOn)
+                        GwellLogUtils.i(
+                            TAG,
+                            "loadDeviceStatus deviceId:$deviceId isOnline:${it.isOnline} isPowerOn:${it.isPowerOn}"
+                        )
+                    }
+                }
+            }
         }
     }
 

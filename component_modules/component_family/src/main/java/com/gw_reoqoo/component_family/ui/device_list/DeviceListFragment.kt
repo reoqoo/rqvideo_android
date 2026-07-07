@@ -12,10 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SimpleItemAnimator
-import com.gw_reoqoo.component_device_share.api.DevShareApi.Companion.KEY_PARAM_PAGE_FROM
-import com.gw_reoqoo.component_device_share.api.DevShareApi.Companion.PARAM_DEV_SHARE_ENTITY
 import com.gw_reoqoo.component_family.R
-import com.gw_reoqoo.component_family.api.impl.DeviceImpl
 import com.gw_reoqoo.component_family.databinding.FamilyFragmentDeviceBinding
 import com.gw_reoqoo.component_family.ui.device_list.adapter.DeviceListAdapter
 import com.gw_reoqoo.component_family.ui.device_list.popups.ItemMenuPopup

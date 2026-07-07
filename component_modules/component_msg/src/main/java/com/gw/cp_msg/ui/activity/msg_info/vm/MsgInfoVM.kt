@@ -53,6 +53,9 @@ class MsgInfoVM @Inject constructor() : ABaseVM() {
     @Inject
     lateinit var iBrowserApi: IBrowserApi
 
+    @Inject
+    lateinit var igwIotOpt: IGWIotOpt
+
     /**
      * 获取消息详情列表成功
      */

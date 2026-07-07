@@ -245,7 +245,7 @@ class Versions {
         /**
          * 胖豚插件 (ipTIME:0.0.0.82  Reoqoo:0.0.1.39)
          */
-        public static final String VERSION_PT_PLUGIN = "0.0.1.99"
+        public static final String VERSION_PT_PLUGIN = "0.0.1.100"
 
         /**0
          * 插件对接库版本
@@ -265,7 +265,7 @@ class Versions {
          * YooseeKit的版本号
          * 6.34.1.0.6版本是无values-sw*文件夹的版本，可用于适配无yoosee设备的折叠屏尺寸
          */
-        public static final String YOOSEE_KIT_VERSION = "google-release-6.43.0.0.5"
+        public static final String YOOSEE_KIT_VERSION = "google-release-6.43.0.0.5.1"
 
         /**
          * gwvideo_beta的版本号
@@ -280,7 +280,7 @@ class Versions {
 
     static class ReoqooSdkVer {
         /** 线上包 */
-        public static final String VERSION_CODE = "iptime-release-01.06.01.0.51"
+        public static final String VERSION_CODE = "iptime-release-01.06.01.0.52"
     }
 
     /**
