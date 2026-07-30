@@ -542,5 +542,5 @@
     <string name="AA0715">Enable Location Services</string>
     <string name="AA0716">To detect nearby Bluetooth cameras</string>
     <string name="AA0717">Complete the settings below to successfully add your camera.</string>
-    <string name="AA0718">当前处于Root状态，不满足APP的安全运行环境，APP无法使用。请还原至非Root系统后重试。</string>
+    <string name="AA0718">The device is rooted and does not meet the security requirements for this app. Please restore to a non-rooted system and try again.</string>
 </resources>
