@@ -106,7 +106,8 @@
     </style>
 
     <style name="main_nav_text_active_style">
-        <item name="android:textSize">@dimen/sp_10</item>
+        <item name="android:textSize">@dimen/dp_10</item>
+        <item name="android:paddingTop">4dp</item>
     </style>
 
     <style name="main_nav_text_inactive_style">

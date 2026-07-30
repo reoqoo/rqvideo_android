@@ -19,7 +19,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_weight="1"
+            android:layout_height="@dimen/dp_0">
 
             <com.gw_reoqoo.lib_widget.title.WidgetCommonTitleView
                 android:id="@+id/layout_title"

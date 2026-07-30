@@ -9,7 +9,6 @@ import com.gw.buildsrc.version.Versions
 
 android {
     compileSdkVersion Versions.BuildVersions.VERSION_COMPILE_SDK
-    buildToolsVersion Versions.BuildVersions.VERSION_BUILD_TOOLS
     defaultConfig {
         minSdkVersion Versions.BuildVersions.VERSION_MIN_SDK
         targetSdkVersion Versions.BuildVersions.VERSION_TARGET_SDK
@@ -98,8 +97,17 @@ android {
         pickFirst 'lib/armeabi/libxml2.so'
         pickFirst 'lib/arm64-v8a/libxml2.so'
 
+        pickFirst 'lib/armeabi-v7a/libgwplayer.so'
+        pickFirst 'lib/armeabi/libgwplayer.so'
+        pickFirst 'lib/arm64-v8a/libgwplayer.so'
+        
+        pickFirst '**/libaudiodsp_dynamic.so'
+        pickFirst '**/libtxTraeVoip.so'
         pickFirst '**/libcurl.so'
-        pickFirst '**/libgwplayer.so'
+        pickFirst '**/libijkffmpeg.so'
+        pickFirst '**/libijkplayer.so'
+        pickFirst '**/libijksdl.so'
+        pickFirst '**/libbleconfig.so'
         pickFirst '**/libiotvideomulti.so'
         pickFirst '**/libmbedtls.so'
 
@@ -111,26 +119,31 @@ android {
  * android库
  */
 dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:${Versions.BuildVersions.VERSION_KOTLIN}"
-    implementation "androidx.core:core-ktx:${Versions.AndroidUtilsVersions.VERSION_KOTLIN_CORE}"
-    implementation "androidx.appcompat:appcompat:${Versions.AndroidUtilsVersions.VERSION_APPCOMPAT}"
-    implementation "androidx.recyclerview:recyclerview:${Versions.AndroidUtilsVersions.VERSION_RECYCLERVIEW}"
 
-    implementation "com.google.android.material:material:${Versions.AndroidUtilsVersions.VERSION_MATERIAL}"
-    implementation "androidx.constraintlayout:constraintlayout:${Versions.AndroidUtilsVersions.VERSION_CONSTRAINT_LAYOUT}"
-    implementation "androidx.navigation:navigation-fragment-ktx:${Versions.AndroidUtilsVersions.VERSION_NAVIGATION}"
-    implementation "androidx.navigation:navigation-ui-ktx:${Versions.AndroidUtilsVersions.VERSION_NAVIGATION}"
-    implementation "androidx.lifecycle:lifecycle-extensions:${Versions.AndroidUtilsVersions.VERSION_LIFE_CYCLE_EXTENSIONS}"
-    implementation "androidx.lifecycle:lifecycle-livedata:${Versions.AndroidUtilsVersions.VERSION_LIFE_CYCLE}"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.AndroidUtilsVersions.VERSION_LIFE_CYCLE}"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.AndroidUtilsVersions.VERSION_LIFE_CYCLE}"
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation libs.kotlin.stdlib
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.recyclerview
+
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.test.junit
+    androidTestImplementation libs.androidx.test.espresso
+
+    implementation libs.material
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.navigation.fragment.ktx
+    implementation libs.androidx.navigation.ui.ktx
+    implementation libs.androidx.lifecycle.extensions
+    implementation libs.androidx.lifecycle.livedata
+    implementation libs.androidx.lifecycle.livedata.ktx
+    implementation libs.androidx.lifecycle.viewmodel.ktx
 
     // 依赖注入框架
-    implementation("com.google.dagger:hilt-android:${Versions.AndroidUtilsVersions.VERSION_HILT}", {
+    implementation(libs.hilt.android, {
         exclude group: ("androidx.lifecycle")
     })
-    kapt "com.google.dagger:hilt-compiler:${Versions.AndroidUtilsVersions.VERSION_HILT}"
+    kapt libs.hilt.compiler
 
 }
 
@@ -139,17 +152,54 @@ dependencies {
  */
 dependencies {
     // 路由框架
-    kapt "cn.therouter:apt:${Versions.ThirdVersions.VERSION_THEAROUTER}"
-    implementation "cn.therouter:router:${Versions.ThirdVersions.VERSION_THEAROUTER}"
+    kapt libs.therouter.apt
+    implementation libs.therouter
     // 状态栏适配器
-    implementation "com.gitee.zackratos:UltimateBarX:${Versions.ThirdVersions.VERSION_ULTIMATE_BAR_X}"
+    implementation libs.ultimate.bar.x
     // 屏幕适配
-    implementation "me.jessyan:autosize:${Versions.ThirdVersions.VERSION_AUTO_SIZE}"
+    implementation libs.auto.size
+    // 内存泄露检测
+    // debugImplementation libs.leakcanary
+}
 
-//    api("com.gwell:aar_plugin_service:${Versions.ThirdVersions.VERSION_PT_PLUGIN}") {
-//        exclude group: 'com.tencentcs'
-//        exclude group: 'org.permissionsdispatcher'
-//    }
+/**
+ * 技威仓库
+ */
+dependencies {
+    /**
+     * 技威日志打印库（需要提前初始化）
+     */
+    implementation libs.gw.log.adapter
+
+    /**
+     * 技威工具库（不需要单独初始化）
+     */
+    implementation libs.gw.base.utils
+
+    /**
+     * 崩溃收集和日志上传(需要提前初始化日志路径等参数)
+     */
+    implementation libs.gw.crash
+
+    /**
+     * 技威数据统计
+     */
+    implementation libs.gw.statistics
+
+    /**
+     * 技威生命周期管理
+     */
+    implementation libs.gw.base.lifecycle
+
+    /**
+     * 技威网络请求
+     */
+    implementation libs.gw.account.mgr
+
+    /**
+     * IoTVideo库
+     */
+    implementation libs.gw.iot.video
 }
 
 /**
@@ -160,23 +210,5 @@ dependencies {
     implementation(project(":lib_modules:lib_resource"))
 
     implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_module_mounter:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_utils:${Versions.ReoqooSdkVer.VERSION_CODE}")
     implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_iotvideo:${Versions.ReoqooSdkVer.VERSION_CODE}")
-}
-
-dependencies {
-    /**
-     * IoTVideo库
-     */
-    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_IOT_VIDEO}:${Versions.GwVersions.VERSION_IOT_VIDEO}"
-
-    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_IOT_ACCOUNT_MGR}:${Versions.GwVersions.VERSION_ACCOUNT_MGR}"
-
-    implementation "com.gwell:log-adapter:${Versions.GwVersions.VERSION_GWELL_LOG}"
-
-    implementation "com.gwell:base_utils:${Versions.GwVersions.VERSION_BASE_UTILS}"
-
-    implementation "com.gwell:base_crash:${Versions.GwVersions.VERSION_BASE_CRASH}"
-    implementation "com.gwell:base_lifecycle:${Versions.GwVersions.VERSION_BASE_LIFECYCLE}"
-    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_BASE_STATISTICS}:${Versions.GwVersions.VERSION_BASE_STATISTICS}"
 }

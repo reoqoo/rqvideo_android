@@ -75,7 +75,10 @@ class ReoqooApplication : BaseApplication() {
             h5TestUrl = BuildConfig.WEBSITE_H5_HOST_TEST_URL,
             yooseeShareOptionStr = BuildConfig.YOOSEE_SHARE_TYPES,
             disableAccountService = BuildConfig.DISABLE_ACCOUNT_SERVICE,
-            disableMultiLiveView = false
+            disableMultiLiveView = false,
+            BuildConfig.HELPER_PAGE_URL,
+            isHiddenFeedbackEnter = BuildConfig.IS_HIDDEN_FEEDBACK_ENTER,
+            soundOnByDefault = BuildConfig.SOUND_ON_BY_DEFAULT
         )
         Log.i(TAG, "onCreate: runBlocking. init finish")
         gwIotOpt.initUI(this@ReoqooApplication, MainR.string.appName)
@@ -85,9 +88,8 @@ class ReoqooApplication : BaseApplication() {
             autoSizeInitTask.run()
             Log.i(TAG, "onCreate: runBlocking.finish")
         }
-
         WebView(this).destroy()
-        // 获取当前系统语言
+        // 获取当前app语言
         GwellLogUtils.i(
             TAG,
             "system local ${Locale.getDefault().country}, language ${Locale.getDefault().language}"
@@ -115,6 +117,13 @@ class ReoqooApplication : BaseApplication() {
             override fun onConfigurationChanged(p0: Configuration) = Unit
             override fun onLowMemory() = Unit
         })
+
+        // 初始化 Root 监听，注册生命周期回调
+        val rootStateManager = RootStateManager.getInstance(this)
+        rootStateManager.register(this)
+
+        // 启动时立即检测一次（App 首次启动时处于前台）
+        rootStateManager.checkRootStatus()
     }
 
     /**

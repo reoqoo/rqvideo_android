@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/dp_32"
+        android:layout_marginRight="@dimen/dp_32"
+        android:background="@drawable/dialog_bg_white_rounded_frame"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_16"
+        android:paddingTop="32dp"
+        android:paddingRight="@dimen/dp_16">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:gravity="center"
+            android:text="@string/AA0718"
+            android:textColor="@color/c_e6000000"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:id="@+id/btnExit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_56"
+            android:layout_marginTop="@dimen/dp_32"
+            android:gravity="center"
+            android:text="@string/i_see"
+            android:textColor="@color/c_0a59f7"
+            android:textSize="@dimen/sp_16" />
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,198 @@
+[versions]
+# ============== SDK Build Versions ==============
+compilesdk = "36"
+rootbeer-lib = "0.1.2"
+rxpermissions = "0.11"
+rxjava = "2.2.21"
+targetsdk = "36"
+minsdk = "24"
+buildtools = "34.0.0"
+kotlin = "2.2.20"
+navigation-plugin = "2.5.3"
+agp = "8.9.1"
+
+# jetbrains官方的
+kotlin-coroutines = "1.7.1"
+kotlin-serialization = "1.7.3"
+
+# ============== AndroidX Versions ==============
+appcompat = "1.7.1"
+fragment-ktx = "1.4.1"
+recyclerview = "1.2.1"
+lifecycle = "2.5.1"
+lifecycle-extensions = "2.2.0"
+lifecycle-common = "2.4.0"
+navigation = "2.5.0"
+kotlin-core = "1.16.0"
+material = "1.5.0"
+constraintlayout = "2.1.4"
+cardview = "1.0.0"
+paging-runtime = "3.1.1"
+splashscreen = "1.0.0"
+datastore = "1.0.0"
+preference = "1.2.1"
+swipe-refresh-layout = "1.1.0"
+room = "2.7.1"
+coordinatorlayout = "1.2.0"
+hilt-android = "2.57.1"
+
+# ============== Test Versions ==============
+junit = "4.13.2"
+test-junit = "1.1.5"
+espresso = "3.5.1"
+
+# ============== 技威私有库 Versions ==============
+gw-log = "1.0.5"
+gw-base-utils = "0.0.0.3"
+gw-crash = "0.0.0.6"
+gw-statistics = "0.0.0.3"
+gw-base-lifecycle = "0.0.0.2"
+gw-account-mgr = "1.0.127"
+gw-json-kit = "0.0.0.1"
+gw-push = "0.0.0.12"
+gw-iot-video = "0.0.0.84"
+gw-iot-vas = "1.0.127"
+gw-player = "1.0.14.07"
+gw-iot-saas = "1.0.46.8"
+gw-ble-config = "1.0.14"
+gw-iot-api = "1.7.4.2"
+
+# ============== SDK Version ==============
+reoqoo-sdk = "1.1.15"
+
+# ============== 第三方开源库 Versions ==============
+therouter = "1.2.3-rc1"
+permission-dispatcher = "4.9.2"
+glide = "4.15.1"
+ultimate-bar-x = "0.8.0"
+zxing = "2.1.1"
+recyclerview-adapter-helper = "3.0.4"
+fastjson = "1.2.25"
+photoview = "2.3.0"
+sensors-analytics = "4.0.6"
+indicator = "1.2.3"
+leakcanary = "2.12"
+auto-size = "1.2.1"
+lottie = "6.1.0"
+moshi = "1.14.0"
+smart-refresh-layout = "2.1.0"
+phoenix = "2.1.2"
+picture-selector = "v3.11.1"
+wheel-picker = "1.1.3"
+zip4j = "2.10.0"
+flexbox = "2.0.1"
+blur-view = "version-2.0.4"
+gson = "2.9.1"
+google-pay = "7.0.0"
+play-wallet = "19.0.0"
+firebase-message = "24.1.2"
+iot-utils = "1.0.0"
+androidx-navigation-safeargs = "2.5.3"
+
+annotation = "1.3.0"
+
+# 这里放置的要么是plugins，要么是classpath
+google-gms-services = "4.4.3"
+huawei-agcp = "1.9.3.300"
+honor-asplugin = "2.0.1.300"
+
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+google-gms-services = { id = "com.google.gms.google-services", version.ref = "google-gms-services" }
+sensors-analytics = { id = "com.sensorsdata.analytics.android", version.ref = "sensors-analytics" }
+navigation-safeargs = { id = "androidx.navigation.safeargs", version.ref = "androidx-navigation-safeargs" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
+[libraries]
+# ============== AndroidX ==============
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "kotlin-core" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragment-ktx" }
+androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
+androidx-lifecycle-extensions = { module = "androidx.lifecycle:lifecycle-extensions", version.ref = "lifecycle-extensions" }
+androidx-lifecycle-livedata = { module = "androidx.lifecycle:lifecycle-livedata", version.ref = "lifecycle" }
+androidx-lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle-common" }
+androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
+androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+androidx-cardview = { module = "androidx.cardview:cardview", version.ref = "cardview" }
+androidx-paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "paging-runtime" }
+androidx-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "splashscreen" }
+androidx-datastore = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore" }
+androidx-preference = { module = "androidx.preference:preference", version.ref = "preference" }
+androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swipe-refresh-layout" }
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+androidx-coordinatorlayout = { module = "androidx.coordinatorlayout:coordinatorlayout", version.ref = "coordinatorlayout" }
+androidx-legacy-support-v4 = { module = "androidx.legacy:legacy-support-v4", version.ref = "annotation" }
+android-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+huawei-agcp = { group = "com.huawei.agconnect", name = "agcp", version.ref = "huawei-agcp" }
+
+# Material
+material = { module = "com.google.android.material:material", version.ref = "material" }
+
+# kotlin官方的
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlin-coroutines" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlin-serialization" }
+
+# ============== Test ==============
+junit = { module = "junit:junit", version.ref = "junit" }
+androidx-test-junit = { module = "androidx.test.ext:junit", version.ref = "test-junit" }
+androidx-test-espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" }
+
+# ============== 技威私有库 ==============
+gw-log-adapter = { module = "com.gwell:log-adapter", version.ref = "gw-log" }
+gw-base-utils = { module = "com.gwell:base_utils", version.ref = "gw-base-utils" }
+gw-crash = { module = "com.gwell:base_crash", version.ref = "gw-crash" }
+gw-statistics = { module = "com.gwell:base_statistics", version.ref = "gw-statistics" }
+gw-base-lifecycle = { module = "com.gwell:base_lifecycle", version.ref = "gw-base-lifecycle" }
+gw-account-mgr = { module = "com.tencentcs:accountmgr", version.ref = "gw-account-mgr" }
+gw-json-kit = { module = "com.gwell:lib_json_kit", version.ref = "gw-json-kit" }
+gw-push = { module = "com.gwell.lib_gpush:version_local_brand", version.ref = "gw-push" }
+gw-push-google = { module = "com.gwell.lib_gpush:version_google_brand", version.ref = "gw-push" }
+gw-iot-video = { module = "com.gwell:iotvideo-multiplatform", version.ref = "gw-iot-video" }
+gw-iot-vas = { module = "com.tencentcs:iotvas_beta", version.ref = "gw-iot-vas" }
+gw-player = { module = "com.gwell:cloud_player", version.ref = "gw-player" }
+gw-iot-saas = { module = "com.gwell:iot-saas", version.ref = "gw-iot-saas" }
+gw-ble-config = { module = "com.gwell:bleconfig", version.ref = "gw-ble-config" }
+gw-iot-api = { module = "com.gwell:gwiotapi", version.ref = "gw-iot-api" }
+
+# ============== 第三方开源库 ==============
+rootbeer-lib = { module = "com.scottyab:rootbeer-lib", version.ref = "rootbeer-lib" }
+rxjava = { module = "io.reactivex.rxjava2:rxjava", version.ref = "rxjava" }
+rxpermissions = { module = "com.github.tbruyelle:rxpermissions", version.ref = "rxpermissions" }
+therouter = { module = "cn.therouter:router", version.ref = "therouter" }
+therouter-apt = { module = "cn.therouter:apt", version.ref = "therouter" }
+permission-dispatcher = { module = "com.github.permissions-dispatcher:permissionsdispatcher", version.ref = "permission-dispatcher" }
+permission-dispatcher-processor = { module = "com.github.permissions-dispatcher:permissionsdispatcher-processor", version.ref = "permission-dispatcher" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+ultimate-bar-x = { module = "com.gitee.zackratos:UltimateBarX", version.ref = "ultimate-bar-x" }
+recyclerview-adapter-helper = { module = "com.github.CymChad:BaseRecyclerViewAdapterHelper", version.ref = "recyclerview-adapter-helper" }
+moshi = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
+leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakcanary" }
+lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+firebase-messaging = { module = "com.google.firebase:firebase-messaging", version.ref = "firebase-message" }
+phoenix = { module = "com.jakewharton:process-phoenix", version.ref = "phoenix" }
+zip4j = { module = "net.lingala.zip4j:zip4j", version.ref = "zip4j" }
+picture-selector = { module = "io.github.lucksiege:pictureselector", version.ref = "picture-selector" }
+wheel-picker = { module = "cn.aigestudio.wheelpicker:WheelPicker", version.ref = "wheel-picker" }
+auto-size = { module = "me.jessyan:autosize", version.ref = "auto-size" }
+
+# ============== Kotlin ==============
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt-android" }
+hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt-android" }
+
+[bundles]
+androidx-ui = ["androidx-appcompat", "androidx-recyclerview", "material"]
+androidx-lifecycle = ["androidx-lifecycle-livedata", "androidx-lifecycle-livedata-ktx", "androidx-lifecycle-viewmodel-ktx"]

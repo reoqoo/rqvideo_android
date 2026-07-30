@@ -8,7 +8,7 @@ package com.gw_reoqoo.cp_account.utils
 object AccountUtils {
 
     /**
-     * 密码格式校验（长度8-30个字符，包含字母和数字）
+     * 密码格式校验（长度8-30个字符，包含字母、数字和特殊字符）
      *
      * @param input String?
      * @return Boolean

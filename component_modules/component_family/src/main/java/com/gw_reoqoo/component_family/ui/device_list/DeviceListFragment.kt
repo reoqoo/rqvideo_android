@@ -28,7 +28,6 @@ import com.gw_reoqoo.lib_http.error.ResponseCode
 import com.gw.lib_plugin_service.IResultCallback
 import com.gw.lib_plugin_service.constant.PluginCodeConstants
 import com.gw_reoqoo.component_family.api.interfaces.FamilyModeApi
-import com.gw_reoqoo.lib_base_architecture.protocol.IGwBaseVm
 import com.gw_reoqoo.lib_room.device.DeviceInfo
 import com.gw_reoqoo.lib_room.ktx.isMaster
 import com.gw_reoqoo.lib_router.ReoqooRouterPath
@@ -241,8 +240,21 @@ class DeviceListFragment : ABaseMVVMDBFragment<FamilyFragmentDeviceBinding, Devi
                         getString(RR.string.AA0058),
                         isDestructiveAction = true,
                         onClick = {
-                            turnOnOrOffDevice(info, view)
-                            onConfirm.invoke()
+                            val isReoqooDevice = familyModeApi.isReoqooDevice(info.productId?: "")
+                            if (isReoqooDevice) {
+                                turnOnOrOffDevice(info, view)
+                                onConfirm.invoke()
+                            } else {
+                                lifecycleScope.launch {
+                                    val isSuccess = igwIotOpt.setPowerStatus(info.deviceId, !powerOn)
+                                    GwellLogUtils.i(TAG, "setOnTurnOnOrOffClick setPowerStatus: $isSuccess powerOn: $powerOn")
+                                    onConfirm.invoke()
+                                    if (isSuccess) {
+                                        info.powerOn = !powerOn
+                                        parentViewModel.updateDevicePowerOn(deviceId = info.deviceId, isPowerOn = !powerOn)
+                                    }
+                                }
+                            }
                         }
                     ),
                 )

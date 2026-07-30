@@ -268,10 +268,11 @@ class FamilyFragment : ABaseMVVMDBFragment<FamilyFragmentFamilyBinding, FamilyVM
 
         mFgViewModel.loadNoticeList()
         mFgViewModel.getDeviceHistoryList()
-        // 首页设备列表被多次调用,导致设备状态偶现异常, 所以延迟2.5s重新加载一次
+
+        // 首页设备列表被多次调用,导致设备状态偶现异常, 所以延迟2s重新加载一次
         mViewBinding.addBtn.postDelayed(
             { mFgViewModel.loadRemoteDeviceList() },
-            2500
+            2000
         )
     }
 

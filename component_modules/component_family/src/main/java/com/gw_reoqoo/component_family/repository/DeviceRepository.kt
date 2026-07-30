@@ -154,7 +154,7 @@ class DeviceRepository @Inject constructor(
     /**
      * 从远程加载设备列表
      */
-    suspend fun loadDeviceFromRemote() {
+    suspend fun loadDeviceFromRemote(callBack: (() -> Unit)? = null) {
         mutex.withLock {
             val calendar = Calendar.getInstance()
             val userId = accountApi.getAsyncUserId() ?: return
@@ -243,6 +243,7 @@ class DeviceRepository @Inject constructor(
                     withContext(Dispatchers.Main) {
                         startSyncDeviceStatusService()
                     }
+                    callBack?.invoke()
                 } finally {
                     // 确保无论成功或失败都恢复 mLoadDeviceFinish 状态
                     mLoadDeviceFinish = true

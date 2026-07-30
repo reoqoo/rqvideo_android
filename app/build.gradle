@@ -159,14 +159,18 @@ dependencies {
     /**
      * 适配Android 15 yooseeKits依赖的一些库而Reoqoo没有的库,需要引入覆盖so库支持16KB
      */
-//    implementation "com.tencent:mmkv:${Versions.AndroidUtilsVersions.VERSION_MMKV}"
-//    implementation "com.gwell:gwvideo_beta:${Versions.GwVersions.VERSION_GWVIDEO_BETA}"
-//    implementation "pl.droidsonroids.gif:android-gif-drawable:${Versions.GwVersions.VERSION_GIF_DRAWABLE}"
+    // implementation "com.tencent:mmkv:${Versions.AndroidUtilsVersions.VERSION_MMKV}"
+    // implementation "com.gwell:gwvideo_beta:${Versions.GwVersions.VERSION_GWVIDEO_BETA}"
+    // implementation "pl.droidsonroids.gif:android-gif-drawable:${Versions.GwVersions.VERSION_GIF_DRAWABLE}"
+
+    // root权限检测库
+    implementation libs.rootbeer.lib
+
 }
 
 dependencies {
-    implementation "com.google.firebase:firebase-messaging:${Versions.ThirdVersions.VERSION_FIREBASE_MESSAGE}"
-    compileOnly "com.jakewharton:process-phoenix:${Versions.ThirdVersions.VERSION_PHONENIX}"
+    implementation libs.firebase.messaging
+    compileOnly libs.phoenix
 }
 
 kapt {

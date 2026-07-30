@@ -549,4 +549,11 @@
     <string name="AA0708">发现可添加的摄像机</string>
     <string name="AA0709">忽略</string>
     <string name="AA0710">设备ID</string>
+    <string name="AA0711">获取定位权限</string>
+    <string name="AA0712">精确定位摄像机可连接的网络</string>
+    <string name="AA0713">允许访问附近的设备</string>
+    <string name="AA0714">用于蓝牙/局域网扫描，发现并连接摄像机</string>
+    <string name="AA0715">开启定位服务</string>
+    <string name="AA0716">用于发现蓝牙摄像机</string>
+    <string name="AA0717">完成以下设置，以正常添加摄像机</string>
 </resources>

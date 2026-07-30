@@ -19,7 +19,6 @@ apply from: "${rootDir.absolutePath}/app/flavor_config.gradle"
 
 android {
     compileSdkVersion Versions.BuildVersions.VERSION_COMPILE_SDK
-    buildToolsVersion Versions.BuildVersions.VERSION_BUILD_TOOLS
     defaultConfig {
         minSdkVersion Versions.BuildVersions.VERSION_MIN_SDK
         targetSdkVersion Versions.BuildVersions.VERSION_TARGET_SDK
@@ -137,29 +136,29 @@ android {
 dependencies {
 
     implementation fileTree(dir: "libs", include: ["*.jar", "*.aar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:${Versions.BuildVersions.VERSION_KOTLIN}"
-    implementation "androidx.core:core-ktx:${Versions.AndroidUtilsVersions.VERSION_KOTLIN_CORE}"
-    implementation "androidx.appcompat:appcompat:${Versions.AndroidUtilsVersions.VERSION_APPCOMPAT}"
-    implementation "androidx.recyclerview:recyclerview:${Versions.AndroidUtilsVersions.VERSION_RECYCLERVIEW}"
+    implementation libs.kotlin.stdlib
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.recyclerview
 
-    testImplementation "junit:junit:${Versions.AndroidUtilsVersions.VERSION_JUNIT}"
-    androidTestImplementation "androidx.test.ext:junit:${Versions.AndroidUtilsVersions.VERSION_TEST_JUNIT}"
-    androidTestImplementation "androidx.test.espresso:espresso-core:${Versions.AndroidUtilsVersions.VERSION_ESPRESSO}"
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.test.junit
+    androidTestImplementation libs.androidx.test.espresso
 
-    implementation "com.google.android.material:material:${Versions.AndroidUtilsVersions.VERSION_MATERIAL}"
-    implementation "androidx.constraintlayout:constraintlayout:${Versions.AndroidUtilsVersions.VERSION_CONSTRAINT_LAYOUT}"
-    implementation "androidx.navigation:navigation-fragment-ktx:${Versions.AndroidUtilsVersions.VERSION_NAVIGATION}"
-    implementation "androidx.navigation:navigation-ui-ktx:${Versions.AndroidUtilsVersions.VERSION_NAVIGATION}"
-    implementation "androidx.lifecycle:lifecycle-extensions:${Versions.AndroidUtilsVersions.VERSION_LIFE_CYCLE_EXTENSIONS}"
-    implementation "androidx.lifecycle:lifecycle-livedata:${Versions.AndroidUtilsVersions.VERSION_LIFE_CYCLE}"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.AndroidUtilsVersions.VERSION_LIFE_CYCLE}"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.AndroidUtilsVersions.VERSION_LIFE_CYCLE}"
+    implementation libs.material
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.navigation.fragment.ktx
+    implementation libs.androidx.navigation.ui.ktx
+    implementation libs.androidx.lifecycle.extensions
+    implementation libs.androidx.lifecycle.livedata
+    implementation libs.androidx.lifecycle.livedata.ktx
+    implementation libs.androidx.lifecycle.viewmodel.ktx
 
     // 依赖注入框架
-    implementation("com.google.dagger:hilt-android:${Versions.AndroidUtilsVersions.VERSION_HILT}", {
+    implementation(libs.hilt.android, {
         exclude group: 'androidx.lifecycle'
     })
-    kapt "com.google.dagger:hilt-compiler:${Versions.AndroidUtilsVersions.VERSION_HILT}"
+    kapt libs.hilt.compiler
 }
 
 /**
@@ -169,20 +168,20 @@ dependencies {
     /**
      * 路由库
      */
-    implementation "cn.therouter:router:${Versions.ThirdVersions.VERSION_THEAROUTER}"
-    kapt "cn.therouter:apt:${Versions.ThirdVersions.VERSION_THEAROUTER}"
+    implementation libs.therouter
+    kapt libs.therouter.apt
 
     /**
      * 动态权限库
      */
-//    implementation "com.github.getActivity:XXPermissions:${Versions.ThirdVersions.VERSION_XX_PERMISSIONS}"
-    implementation "com.github.permissions-dispatcher:permissionsdispatcher:${Versions.ThirdVersions.VERSION_PERMISSION_DISPATCHER}"
-    kapt "com.github.permissions-dispatcher:permissionsdispatcher-processor:${Versions.ThirdVersions.VERSION_PERMISSION_DISPATCHER}"
+//    implementation libs.xxpermissions
+    implementation libs.permission.dispatcher
+    kapt libs.permission.dispatcher.processor
 
     /**
      * 沉浸式状态栏第三方库: UltimateBarX
      */
-    implementation "com.gitee.zackratos:UltimateBarX:${Versions.ThirdVersions.VERSION_ULTIMATE_BAR_X}"
+    implementation libs.ultimate.bar.x
 }
 
 /**
@@ -192,26 +191,26 @@ dependencies {
     /**
      * 日志库
      */
-    implementation "com.gwell:log-adapter:${Versions.GwVersions.VERSION_GWELL_LOG}"
+    implementation libs.gw.log.adapter
     /**
      * 工具库
      */
-    implementation "com.gwell:base_utils:${Versions.GwVersions.VERSION_BASE_UTILS}"
+    implementation libs.gw.base.utils
 
     /**
      * 技威网络请求
      */
-    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_IOT_ACCOUNT_MGR}:${Versions.GwVersions.VERSION_ACCOUNT_MGR}"
+    implementation libs.gw.account.mgr
 
     /**
      * IoTVideo库
      */
-//    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_IOT_VIDEO}:${Versions.GwVersions.VERSION_IOT_VIDEO}"
+//    implementation libs.gw.iot.video
 
     /**
      * 技威数据统计
      */
-    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_BASE_STATISTICS}:${Versions.GwVersions.VERSION_BASE_STATISTICS}"
+    implementation libs.gw.statistics
 }
 
 /**

@@ -534,4 +534,11 @@
     <string name="AA0708">추가 가능한 카메라가 감지되었습니다.</string>
     <string name="AA0709">나중에</string>
     <string name="AA0710">카메라 ID</string>
+    <string name="AA0711">위치 권한</string>
+    <string name="AA0712">카메라가 연결할 수 있는 네트워크 식별</string>
+    <string name="AA0713">근처 기기 접근 허용</string>
+    <string name="AA0714">블루투스/LAN 스캔으로 카메라 발견 및 연결용</string>
+    <string name="AA0715">위치 서비스 활성화</string>
+    <string name="AA0716">블루투스 카메라 발견용</string>
+    <string name="AA0717">카메라를 추가하려면 다음 단계를 완료하세요</string>
 </resources>
