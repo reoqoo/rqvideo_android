@@ -45,6 +45,7 @@ android {
 
         create("iptime") {
             dimension = "version"
+            matchingFallbacks = ['oem']
         }
     }
 

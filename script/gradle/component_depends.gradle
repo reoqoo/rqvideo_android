@@ -67,6 +67,7 @@ android {
 
         create("iptime") { flavor ->
             dimension = "version"
+            matchingFallbacks = ['oem']
             project.ext.flavorConfigs.iptime.applyToModule(flavor)
         }
     }

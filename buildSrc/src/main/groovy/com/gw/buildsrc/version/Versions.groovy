@@ -255,18 +255,11 @@ class Versions {
         public static final String GWIOT_API_VERSION = "1.7.6.2"
 //        public static final String GWIOT_API_VERSION = "1.7.6.0-SNAPSHOT"
 
-        /**
-         * YooseeKit的版本号
-         * 6.34.1.0.6版本是无values-sw*文件夹的版本，可用于适配无yoosee设备的折叠屏尺寸
-         */
-        public static final String YOOSEE_KIT_VERSION = "google-release-6.44.0.0.8"
-//        public static final String YOOSEE_KIT_VERSION = "google-debug-6.44.0.0.17-SNAPSHOT"
-
     }
 
     static class ReoqooSdkVer {
         /** 线上包 */
-        public static final String VERSION_CODE = "iptime-release-01.09.07"
+        public static final String VERSION_CODE = "oem-release-01.10.04"
     }
 
     /**
