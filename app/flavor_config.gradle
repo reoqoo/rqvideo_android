@@ -56,7 +56,8 @@ project.ext {
                     customCloudRecord: true,
                     soundOnByDefault: false,
                     disableAccountService: false,
-                    isHiddenFeedbackEnter: true
+                    isHiddenFeedbackEnter: true,
+                    disableBleScanOnQRCodePage: true
             ),
     ]
 }
@@ -199,6 +200,12 @@ class FlavorConfig {
 
     String helperPageUrl = null
 
+    /**
+     * 是否禁用扫码页蓝牙功能
+     */
+    Boolean disableBleScanOnQRCodePage = false
+
+
     void applyToApplication(flavor) {
         println("applyToApplication.flavor=" + flavor)
         flavor.applicationId(APPLICATION_ID)
@@ -241,6 +248,7 @@ class FlavorConfig {
         flavor.buildConfigField("Boolean", "DISABLE_ACCOUNT_SERVICE", "${disableAccountService}")
         flavor.buildConfigField("Boolean", "IS_HIDDEN_FEEDBACK_ENTER", "${isHiddenFeedbackEnter}")
         flavor.buildConfigField("String", "HELPER_PAGE_URL", "${helperPageUrl}")
+        flavor.buildConfigField("Boolean", "DISABLE_BLE_SCAN_ON_QRCODEPAGE", "${disableBleScanOnQRCodePage}")
     }
 
     void applyToModule(flavor) {
@@ -270,6 +278,7 @@ class FlavorConfig {
         flavor.buildConfigField("String", "VERSION_NAME", "\"${VERSION_NAME}\"")
         flavor.buildConfigField("int", "VERSION_CODE", "${VERSION_CODE}")
         flavor.buildConfigField("String", "HELPER_PAGE_URL", "${helperPageUrl}")
+        flavor.buildConfigField("Boolean", "DISABLE_BLE_SCAN_ON_QRCODEPAGE", "${disableBleScanOnQRCodePage}")
         if (feedbackEmail == null) {
             flavor.buildConfigField("String", "FEEDBACK_EMAIL", "null")
         } else {

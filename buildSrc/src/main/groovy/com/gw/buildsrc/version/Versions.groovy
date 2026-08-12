@@ -259,7 +259,7 @@ class Versions {
 
     static class ReoqooSdkVer {
         /** 线上包 */
-        public static final String VERSION_CODE = "oem-release-01.10.04"
+        public static final String VERSION_CODE = "oem-release-01.10.07"
     }
 
     /**

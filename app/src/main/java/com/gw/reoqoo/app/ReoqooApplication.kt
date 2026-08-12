@@ -78,7 +78,8 @@ class ReoqooApplication : BaseApplication() {
             disableMultiLiveView = false,
             BuildConfig.HELPER_PAGE_URL,
             isHiddenFeedbackEnter = BuildConfig.IS_HIDDEN_FEEDBACK_ENTER,
-            soundOnByDefault = BuildConfig.SOUND_ON_BY_DEFAULT
+            soundOnByDefault = BuildConfig.SOUND_ON_BY_DEFAULT,
+            BuildConfig.DISABLE_BLE_SCAN_ON_QRCODEPAGE
         )
         Log.i(TAG, "onCreate: runBlocking. init finish")
         gwIotOpt.initUI(this@ReoqooApplication, MainR.string.appName)
