@@ -27,7 +27,8 @@ project.ext {
                     googlePayType: GooglePayType.NONE,
                     customCloudRecord: true,
                     disableAccountService: false,
-                    helperPageUrl: "https://trade.reoqoo.com/h5/views/helpCenter/helpFeedback"
+                    helperPageUrl: "https://trade.reoqoo.com/h5/views/helpCenter/helpFeedback",
+                    disableBleScanOnQRCodePage: true
             ),
             iptime       : new FlavorConfig(
                     APPLICATION_ID: "com.cctv.iptime",
