@@ -4,9 +4,11 @@ import com.gw.cp_msg.api.interfaces.IBrowserApi
 import com.gw.cp_msg.api.interfaces.IDevShareParse
 import com.gw.cp_msg.api.interfaces.ILocalMsgApi
 import com.gw.cp_msg.api.kapi.IBenefitsApi
+import com.gw.cp_msg.api.kapi.IDevShareApi
 import com.gw.cp_msg.api.kapi.IMsgExternalApi
 import com.gw.cp_msg.api.kapi.INoticeMgrApi
 import com.gw.cp_msg.impl.BrowserImpl
+import com.gw.cp_msg.impl.DevShareApiImpl
 import com.gw.cp_msg.impl.DevShareParseImpl
 import com.gw.cp_msg.manger.BenefitsMgrImpl
 import com.gw.cp_msg.manger.LocalMsgExternalManager
@@ -49,5 +51,9 @@ abstract class HiltApi {
     @Singleton
     @Binds
     abstract fun getDevShareParseApi(impl: DevShareParseImpl): IDevShareParse
+
+    @Singleton
+    @Binds
+    abstract fun getDevShareApi(impl: DevShareApiImpl): IDevShareApi
 
 }

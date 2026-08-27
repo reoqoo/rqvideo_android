@@ -30,6 +30,7 @@ import com.gw_reoqoo.resource.R
 import com.gwell.loglibs.GwellLogUtils
 import com.reoqoo.component_iotapi_plugin_opt.api.IGWIotOpt
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.launch
 import java.util.Calendar
 import javax.inject.Inject
@@ -147,6 +148,54 @@ class ShareDeviceImpl @Inject constructor(
      * @param deviceId 设备ID
      * @param onClickAccept 当点击同意
      */
+
+    override suspend fun acceptShareDevice(inviteToken: String, deviceId: String): Int {
+        val result = Channel<Int>(1)
+        userMsgDataSource.acceptDeviceShareFlow(inviteToken, deviceId).collect { action ->
+            when (action) {
+                is HttpAction.Loading -> Unit
+                is HttpAction.Fail -> {
+                    val error = getShareError(action.t)
+                    GwellLogUtils.e(TAG, "acceptShareDevice error: $error")
+                    result.trySend(error)
+                }
+
+                is HttpAction.Success -> {
+                    result.trySend(0)
+                }
+            }
+        }
+        return result.receive()
+    }
+
+    override suspend fun rejectShareDevice(deviceId: String, inviteToken: String): Int {
+        val result = Channel<Int>(1)
+        userMsgDataSource.rejectDeviceShare(deviceId, inviteToken).collect { action ->
+            when (action) {
+                is HttpAction.Loading -> Unit
+                is HttpAction.Fail -> {
+                    val error = getShareError(action.t)
+                    GwellLogUtils.e(TAG, "rejectShareDevice error: $error")
+                    result.trySend(error)
+                }
+
+                is HttpAction.Success -> {
+                    result.trySend(0)
+                }
+            }
+        }
+        return result.receive()
+    }
+
+    private fun getShareError(t: Throwable): Int {
+        return if (t is ResponseNotSuccessException) {
+            val respCode = ResponseCode.getRespCode(t.code)
+            respCode?.code ?: -1
+        } else {
+            -1
+        }
+    }
+
     private fun showInviteDetail(
         context: Context,
         scope: CoroutineScope,

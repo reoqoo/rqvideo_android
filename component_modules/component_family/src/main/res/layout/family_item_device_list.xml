@@ -41,7 +41,7 @@
                     android:drawableStart="@drawable/family_shape_online_point_online"
                     android:drawablePadding="@dimen/dp_4"
                     android:textColor="@color/black_50"
-                    android:textSize="@dimen/sp_12"
+                    android:textSize="12sp"
                     tools:text="在线" />
 
                 <View
@@ -105,7 +105,7 @@
                         android:padding="@dimen/dp_2"
                         android:text="@string/AA0232"
                         android:textColor="@color/black_60"
-                        android:textSize="@dimen/sp_10" />
+                        android:textSize="10sp" />
                 </FrameLayout>
 
                 <View
@@ -115,8 +115,8 @@
 
                 <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/bt_turn_off_or_on"
-                    android:layout_width="@dimen/dp_29"
-                    android:layout_height="@dimen/dp_29"
+                    android:layout_width="29dp"
+                    android:layout_height="29dp"
                     android:layout_gravity="end|bottom"
                     app:lottie_autoPlay="false"
                     app:lottie_loop="false"

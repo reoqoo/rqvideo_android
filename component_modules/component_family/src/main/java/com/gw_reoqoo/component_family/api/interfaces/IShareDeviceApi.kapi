@@ -35,4 +35,22 @@ interface IShareDeviceApi {
         sharerName: String?,
         onClickAccept: () -> Unit,
     )
+
+    /**
+     * 接受通过邀请链接分享的设备
+     *
+     * @param inviteToken 分享token
+     * @param deviceId 设备ID
+     * @return 0 成功，其他为错误码
+     */
+    suspend fun acceptShareDevice(inviteToken: String, deviceId: String): Int
+
+    /**
+     * 拒绝通过邀请链接分享的设备
+     *
+     * @param deviceId 设备ID
+     * @param inviteToken 分享token
+     * @return 1 成功，0 失败
+     */
+    suspend fun rejectShareDevice(deviceId: String, inviteToken: String): Int
 }

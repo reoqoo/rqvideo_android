@@ -3,6 +3,7 @@ package com.gw_reoqoo.component_family.datasource
 import com.gw_reoqoo.lib_http.datasource.HttpDataSource
 import com.gw.lib_http.entities.DeviceHistoryBean
 import com.gw.lib_http.entities.DeviceHistoryResp
+import com.gw_reoqoo.lib_http.entities.ConfirmDevShareBean
 import com.gw_reoqoo.lib_http.entities.DeviceShareDetail
 import com.gw_reoqoo.lib_http.entities.MessageBean
 import com.gw_reoqoo.lib_http.entities.MessageList
@@ -128,6 +129,13 @@ class RemoteUserMsgDataSource @Inject constructor(
                 }
             }
         return result.receive()
+    }
+
+    /**
+     * 访客确认接受主人对设备的分享
+     */
+    fun acceptDeviceShareFlow(inviteToken: String, remarkName: String): Flow<HttpAction<ConfirmDevShareBean>> {
+        return httpDataSource.confirmShare(inviteToken, remarkName)
     }
 
     /**

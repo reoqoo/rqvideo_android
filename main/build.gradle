@@ -87,5 +87,5 @@ dependencies {
     implementation "com.gwell:base_lifecycle:${Versions.GwVersions.VERSION_BASE_LIFECYCLE}"
 
     // 添加腾讯的回音消除依赖
-    implementation "com.tencentcs:txtraevoip:${Versions.GwVersions.VERSION_TXTRAEVOIP}"
+    implementation libs.gw.txtraevoip
 }

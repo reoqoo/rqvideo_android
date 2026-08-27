@@ -56,12 +56,14 @@ gw-player = "1.0.14.07"
 gw-iot-saas = "1.0.46.8"
 gw-ble-config = "1.0.14"
 gw-iot-api = "1.7.4.2"
+txtraevoip = "1.0.8"
 
 # ============== SDK Version ==============
 reoqoo-sdk = "1.1.15"
 
 # ============== 第三方开源库 Versions ==============
 therouter = "1.2.3-rc1"
+therouter-plugin = "1.2.2"
 permission-dispatcher = "4.9.2"
 glide = "4.15.1"
 ultimate-bar-x = "0.8.0"
@@ -107,6 +109,8 @@ google-gms-services = { id = "com.google.gms.google-services", version.ref = "go
 sensors-analytics = { id = "com.sensorsdata.analytics.android", version.ref = "sensors-analytics" }
 navigation-safeargs = { id = "androidx.navigation.safeargs", version.ref = "androidx-navigation-safeargs" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+therouter-agp8 = { id = "cn.therouter.agp8", version.ref = "therouter-plugin" }
+hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt-android" }
 
 [libraries]
 # ============== AndroidX ==============
@@ -164,6 +168,7 @@ gw-player = { module = "com.gwell:cloud_player", version.ref = "gw-player" }
 gw-iot-saas = { module = "com.gwell:iot-saas", version.ref = "gw-iot-saas" }
 gw-ble-config = { module = "com.gwell:bleconfig", version.ref = "gw-ble-config" }
 gw-iot-api = { module = "com.gwell:gwiotapi", version.ref = "gw-iot-api" }
+gw-txtraevoip = { module = "com.gwell:txtraevoip", version.ref = "txtraevoip" }
 
 # ============== 第三方开源库 ==============
 rootbeer-lib = { module = "com.scottyab:rootbeer-lib", version.ref = "rootbeer-lib" }
