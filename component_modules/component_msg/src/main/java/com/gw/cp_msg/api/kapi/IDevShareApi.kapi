@@ -1,0 +1,26 @@
+package com.gw.cp_msg.api.kapi
+
+interface IDevShareApi {
+
+    /**
+     * 打开邀请链接
+     *
+     * @param inviteUrl 邀请链接
+     */
+    suspend fun openInviteUrl(inviteUrl: String)
+
+    /**
+     * 接受通过邀请链接分享的设备
+     *
+     * @param inviteUrl 邀请链接
+     */
+    suspend fun acceptShareDeviceByUrl(inviteUrl: String): Int
+
+    /**
+     * 拒绝通过邀请链接分享的设备
+     *
+     * @param inviteUrl 邀请链接
+     */
+    suspend fun rejectShareDeviceByUrl(inviteUrl: String): Int
+
+}
