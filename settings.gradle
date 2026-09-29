@@ -2,18 +2,6 @@ import java.util.function.Consumer
 
 pluginManagement {
     repositories {
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        maven { url 'https://maven.aliyun.com/repository/central' }
-        maven { url 'https://maven.aliyun.com/repository/jcenter' }
-        maven { url 'https://maven.aliyun.com/repository/public' }
-        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
-
-        google()
-        mavenCentral()
-        gradlePluginPortal()
-
-        maven { url 'https://jitpack.io' }
-
         maven {
             url 'https://nexus-sg.gwell.cc/nexus/repository/maven-gwiot/'
             allowInsecureProtocol = true
@@ -29,6 +17,17 @@ pluginManagement {
                 excludeGroup "com.google.gms.google-services"
             }
         }
+
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://jitpack.io' }
+
+        google()
+        mavenCentral()
+        gradlePluginPortal()
     }
     resolutionStrategy {
         eachPlugin {
@@ -45,6 +44,9 @@ pluginManagement {
                     break
                 case "com.google.dagger.hilt.android":
                     useModule("com.google.dagger:hilt-android-gradle-plugin:${requested.version}")
+                    break
+                case "com.google.devtools.ksp":
+                    useModule("com.google.devtools.ksp:symbol-processing-gradle-plugin:${requested.version}")
                     break
                 case "com.sensorsdata.analytics.android":
                     useModule("com.sensorsdata.analytics.android:android-gradle-plugin2:${requested.version}")
@@ -84,13 +86,6 @@ dependencyResolutionManagement {
                 includeGroupByRegex "com\\.huawei.*"
             }
         }
-        maven {
-            url "https://artifact.bytedance.com/repository/Volcengine/"
-        }
-        maven {
-            url "https://artifact.bytedance.com/repository/pangle/"
-        }
-
         maven { url 'https://maven.aliyun.com/repository/central' }
         maven { url 'https://maven.aliyun.com/repository/jcenter' }
         maven { url 'https://maven.aliyun.com/repository/public' }

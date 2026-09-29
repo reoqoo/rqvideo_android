@@ -1,6 +1,3 @@
-import com.gw.buildsrc.dependlibs.GwDependLibs
-import com.gw.buildsrc.version.Versions
-
 apply from: "${rootDir.absolutePath}/script/gradle/component_depends.gradle"
 
 android {
@@ -14,27 +11,27 @@ android {
 }
 
 dependencies {
-    implementation "com.gwell.lib_gpush:version_google_brand:${Versions.GwVersions.VERSION_GW_PUSH}"
+    implementation libs.gw.push.google
 
-    implementation "com.google.firebase:firebase-messaging:${Versions.ThirdVersions.VERSION_FIREBASE_MESSAGE}"
+    implementation libs.firebase.messaging
 
-    implementation("com.squareup.moshi:moshi-kotlin:${Versions.ThirdVersions.VERSION_MOSHI}")
+    implementation(libs.moshi.kotlin)
 
     /**
      * 云存相关
      */
-    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_IOT_VAS}:${Versions.GwVersions.VERSION_IOT_VAS}"
+    implementation libs.gw.iot.vas
 
     /**
      * 技威云存播放器库
      */
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_CLOUD_PLAYER}:${Versions.GwVersions.VERSION_GW_PLAYER}")
+    implementation(libs.gw.cloud.player)
 }
 
 dependencies {
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_iotvideo:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_plugin_service_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_iotapi_plugin_opt_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation(libs.reoqoo.lib.iotvideo)
+    implementation(libs.reoqoo.component.plugin.service.api)
+    implementation(libs.reoqoo.component.iotapi.plugin.opt.api)
 
     implementation project(path: ':component_modules:component_push_api')
     implementation project(path: ':component_modules:component_config_api')

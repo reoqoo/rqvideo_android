@@ -1,6 +1,3 @@
-import com.gw.buildsrc.dependlibs.GwDependLibs
-import com.gw.buildsrc.version.Versions
-
 apply from: "${rootDir.absolutePath}/script/gradle/component_depends.gradle"
 def isApplication = project.name == debug_module_name
 android {
@@ -20,39 +17,39 @@ dependencies {
     /**
      * 云存相关
      */
-    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_IOT_VAS}:${Versions.GwVersions.VERSION_IOT_VAS}"
+    implementation libs.gw.iot.vas
 }
 
 dependencies {
-    implementation "com.github.bumptech.glide:glide:${Versions.ThirdVersions.VERSION_GLIDE}"
+    implementation libs.glide
     // 下拉刷新上拉加载 核心必须依赖
-    implementation "io.github.scwang90:refresh-layout-kernel:${Versions.ThirdVersions.SMART_REFRESH_LAYOUT}"
+    implementation libs.refresh.layout.kernel
 
-    implementation("com.squareup.moshi:moshi-kotlin:${Versions.ThirdVersions.VERSION_MOSHI}")
+    implementation(libs.moshi.kotlin)
 
-    implementation("com.airbnb.android:lottie:${Versions.ThirdVersions.VERSION_LOTTIE}", {
+    implementation(libs.lottie) {
         exclude group: 'androidx.lifecycle'
         exclude group: 'androidx.appcompat'
         exclude group: 'androidx.activity'
         exclude group: 'androidx.core'
         exclude group: 'androidx.annotation'
-    })
+    }
     // RecyclerView流式布局
-    implementation "com.google.android:flexbox:${Versions.ThirdVersions.VERSION_FLEXBOX}"
+    implementation libs.flexbox
 }
 
 dependencies {
     implementation(project(":lib_modules:lib_resource"))
 
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_router:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_architecture:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    compileOnly("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_qrcode:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_cloud_player:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation(libs.reoqoo.lib.router)
+    implementation(libs.reoqoo.lib.architecture)
+    compileOnly(libs.reoqoo.lib.qrcode)
+    implementation(libs.reoqoo.lib.cloud.player)
 }
 
 dependencies {
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_iotapi_plugin_opt_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_plugin_service_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation(libs.reoqoo.component.iotapi.plugin.opt.api)
+    implementation(libs.reoqoo.component.plugin.service.api)
 
     implementation project(path: ':component_modules:component_family_api')
     implementation project(path: ':component_modules:component_account_api')

@@ -1,0 +1,84 @@
+// 内联后的 buildSrc 工具方法(PropertyUtils/DataUtils 最小集), 供模块/工程 script 复用.
+project.ext {
+    _gwIsEmpty = { s -> s == null || s.toString().isEmpty() }
+
+    _gwGetProjectProp = { name ->
+        project.hasProperty(name) ? project.property(name).toString() : null
+    }
+    _gwGetGradleProp = { name ->
+        def p = project
+        while (p != null) {
+            if (p.hasProperty(name)) {
+                return p.property(name).toString()
+            }
+            p = p.parent
+        }
+        return null
+    }
+    _gwGetSystemProp = { name ->
+        def v = System.properties[name]
+        return v != null ? v.toString() : null
+    }
+    _gwGetEnv = { name ->
+        def v = System.getenv(name)
+        return v != null ? v.toString() : null
+    }
+    _gwRawGetProperty = { name ->
+        def v = _gwGetProjectProp(name)
+        if (v != null) return v
+        v = _gwGetGradleProp(name)
+        if (v != null) return v
+        v = _gwGetSystemProp(name)
+        if (v != null) return v
+        v = _gwGetEnv(name)
+        return v
+    }
+
+    // PropertyUtils
+    gwGetProperty = { name, defaultValue ->
+        def v = _gwRawGetProperty(name)
+        return (v != null && !_gwIsEmpty(v)) ? v : defaultValue
+    }
+    gwGetIntProperty = { name, defaultValue ->
+        def v = _gwRawGetProperty(name)
+        if (v != null && !_gwIsEmpty(v)) {
+            def s = v.toString()
+            if (s.isInteger()) {
+                return s.toInteger()
+            }
+            throw new IllegalArgumentException("参数propertyName(${name}) 的 属性类型 为 int, 但是 属性值 为 ${s}. 不合法!")
+        }
+        return defaultValue
+    }
+    gwGetBooleanProperty = { name, defaultValue ->
+        def v = _gwRawGetProperty(name)
+        if (v != null && !_gwIsEmpty(v)) {
+            def s = v.toString()
+            if (s == "false" || s == "0") return false
+            if (s == "true" || s == "1") return true
+            throw new IllegalArgumentException("参数propertyName(${name}) 的 属性类型 为 boolean, 但是 属性值 为 ${s}. 不合法!")
+        }
+        return defaultValue
+    }
+    gwGetLocalProperty = { name, defaultValue ->
+        def f = project.rootProject.file("gradle.properties")
+        if (f.exists()) {
+            def props = new Properties()
+            f.withInputStream { props.load(it) }
+            def v = props.getProperty(name)
+            return v != null ? v : defaultValue
+        }
+        return defaultValue
+    }
+
+    // DataUtils
+    gwDateDay = { new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC")) }
+    gwDateTime = {
+        def d = new Date()
+        "\"" + d.format("yyyy-MM-dd HH:mm:ss", TimeZone.getTimeZone("GMT+08:00")) + "\""
+    }
+    gwDateCurrent = {
+        def d = new Date()
+        d.format("MMddHHmm", TimeZone.getTimeZone("GMT+08:00"))
+    }
+}

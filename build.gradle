@@ -1,39 +1,40 @@
-import com.gw.buildsrc.version.Versions
-
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-// TODO 需要修改为 kts的配置
 buildscript {
-    ext {
-        agp_version = '8.6.1'
-    }
     repositories {
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        maven { url 'https://maven.aliyun.com/repository/central' }
-        maven { url 'https://maven.aliyun.com/repository/public' }
-        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
         google()
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
         mavenCentral()
+        maven {
+            setUrl("https://jitpack.io")
+            content {
+                includeGroup("com.github.aasitnikov")
+            }
+        }
     }
     dependencies {
-        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.AndroidUtilsVersions.VERSION_NAVIGATION}")
-        classpath "org.jetbrains.kotlin:kotlin-serialization:2.1.0"
         // 增加Android Gradle插件版本号配置，{version}为实际的Gradle插件版本号，例如7.1.1。
-        classpath "com.android.tools.build:gradle:${agp_version}"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.0"
-        classpath "cn.therouter.agp8:cn.therouter.agp8.gradle.plugin:1.2.2"
-        classpath "com.google.dagger:hilt-android-gradle-plugin:2.56.2"
-        classpath "com.sensorsdata.analytics.android:android-gradle-plugin2:4.0.2"
-        classpath "com.google.gms:google-services:4.3.15"
+        classpath (libs.android.gradle.plugin)
     }
 
     project.ext.set("isApp", false)
 
-    // TODO主要用于插件源码依赖
-//    ext.kotlin_version = "1.6.10"
 }
 
-// TODO主要用于插件源码依赖
-//apply from: "config.gradle"
+plugins {
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.android.library) apply false
+    alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.kotlin.kapt) apply false
+    alias(libs.plugins.kotlin.serialization) apply false
+    alias(libs.plugins.ksp) apply false
+    alias(libs.plugins.hilt.android) apply false
+    alias(libs.plugins.therouter.agp8) apply false
+    alias(libs.plugins.navigation.safeargs) apply false
+    alias(libs.plugins.google.gms.services) apply false
+    alias(libs.plugins.sensors.analytics) apply false
+}
 
 tasks.register('clean', Delete) {
     delete rootProject.buildDir

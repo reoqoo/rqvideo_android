@@ -1,5 +1,3 @@
-import com.gw.buildsrc.version.Versions
-
 apply from: "${rootDir.absolutePath}/script/gradle/component_depends.gradle"
 
 def isApplication = project.name == debug_module_name
@@ -28,7 +26,7 @@ dependencies {
     /**
      * json库
      */
-    implementation "com.gwell:lib_json_kit:${Versions.GwVersions.VERSION_JSON_KIT}"
+    implementation libs.gw.json.kit
 
-    implementation("com.squareup.moshi:moshi-kotlin:${Versions.ThirdVersions.VERSION_MOSHI}")
+    implementation(libs.moshi.kotlin)
 }

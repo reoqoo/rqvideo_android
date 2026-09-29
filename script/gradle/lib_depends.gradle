@@ -1,16 +1,13 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
-
-import com.gw.buildsrc.dependlibs.GwDependLibs
-import com.gw.buildsrc.version.Versions
+apply plugin: 'com.google.devtools.ksp'
 
 android {
-    compileSdkVersion Versions.BuildVersions.VERSION_COMPILE_SDK
-    buildToolsVersion Versions.BuildVersions.VERSION_BUILD_TOOLS
+    compileSdk = libs.versions.compileSdk.get().toInteger()
+    buildToolsVersion = libs.versions.buildTools.get()
     defaultConfig {
-        minSdkVersion Versions.BuildVersions.VERSION_MIN_SDK
-        targetSdkVersion Versions.BuildVersions.VERSION_TARGET_SDK
+        minSdk = libs.versions.minSdk.get().toInteger()
+        targetSdk = libs.versions.targetSdk.get().toInteger()
         versionCode 1
         versionName "1.0.0"
         multiDexEnabled true
@@ -46,6 +43,8 @@ android {
 
         create("iptime") {
             dimension = "version"
+            // 消费 reoqookit oem 渠道远程 AAR 时回退其 oem 口味变体
+            matchingFallbacks = ["oem", "release"]
         }
     }
 
@@ -67,17 +66,17 @@ android {
  */
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:${Versions.BuildVersions.VERSION_KOTLIN}"
-    implementation "androidx.core:core-ktx:${Versions.AndroidUtilsVersions.VERSION_KOTLIN_CORE}"
-    implementation "androidx.appcompat:appcompat:${Versions.AndroidUtilsVersions.VERSION_APPCOMPAT}"
-    implementation "androidx.recyclerview:recyclerview:${Versions.AndroidUtilsVersions.VERSION_RECYCLERVIEW}"
-    implementation "com.google.android.material:material:${Versions.AndroidUtilsVersions.VERSION_MATERIAL}"
-    
-    testImplementation "junit:junit:${Versions.AndroidUtilsVersions.VERSION_JUNIT}"
-    androidTestImplementation "androidx.test.ext:junit:${Versions.AndroidUtilsVersions.VERSION_TEST_JUNIT}"
-    androidTestImplementation "androidx.test.espresso:espresso-core:${Versions.AndroidUtilsVersions.VERSION_ESPRESSO}"
+    implementation libs.kotlin.stdlib
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.recyclerview
+    implementation libs.material
 
-    implementation "${GwDependLibs.GwLibs.LIB_LIFECYCLE_COMMON}:${Versions.AndroidUtilsVersions.VERSION_LIFECYCLE_COMMON}"
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.test.junit
+    androidTestImplementation libs.androidx.test.espresso
+
+    implementation libs.androidx.lifecycle.runtime.ktx
 }
 
 /**
@@ -93,13 +92,13 @@ dependencies {
     /**
      * 日志库
      */
-    implementation "com.gwell:log-adapter:${Versions.GwVersions.VERSION_GWELL_LOG}"
+    implementation libs.gw.log.adapter
     /**
      * 工具库
      */
-    implementation "com.gwell:base_utils:${Versions.GwVersions.VERSION_BASE_UTILS}"
+    implementation libs.gw.base.utils
     /**
      * json库
      */
-    implementation "com.gwell:lib_json_kit:${Versions.GwVersions.VERSION_JSON_KIT}"
+    implementation libs.gw.json.kit
 }

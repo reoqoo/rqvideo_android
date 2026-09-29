@@ -1,6 +1,3 @@
-import com.gw.buildsrc.dependlibs.GwDependLibs
-import com.gw.buildsrc.version.Versions
-
 apply from: "${rootDir.absolutePath}/script/gradle/component_depends.gradle"
 apply plugin: "androidx.navigation.safeargs.kotlin"
 
@@ -19,32 +16,32 @@ dependencies {
     /**
      * json库
      */
-    implementation "com.gwell:lib_json_kit:${Versions.GwVersions.VERSION_JSON_KIT}"
+    implementation libs.gw.json.kit
 
     /**
      * 云存相关
      */
-    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_IOT_VAS}:${Versions.GwVersions.VERSION_IOT_VAS}"
+    implementation libs.gw.iot.vas
 
     /**
      * 技威生命周期管理
      */
-    implementation "com.gwell:base_lifecycle:${Versions.GwVersions.VERSION_BASE_LIFECYCLE}"
+    implementation libs.gw.base.lifecycle
 
     /**
      * 技威数据统计
      */
-    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_BASE_STATISTICS}:${Versions.GwVersions.VERSION_BASE_STATISTICS}"
+    implementation libs.gw.base.statistics
 
     /**
      * adapter
      */
-    implementation "com.github.CymChad:BaseRecyclerViewAdapterHelper:${Versions.ThirdVersions.VERSION_RECYCLERVIEW_ADAPTER_HELPER}"
+    implementation libs.recyclerview.adapter.helper
 
     /**
      * json工具类
      */
-    implementation("com.squareup.moshi:moshi-kotlin:${Versions.ThirdVersions.VERSION_MOSHI}")
+    implementation(libs.moshi.kotlin)
 }
 
 dependencies {
@@ -53,22 +50,22 @@ dependencies {
     implementation project(path: ":component_modules:component_mine_api")
     implementation project(path: ":component_modules:component_push_api")
 
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_debug_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_iotapi_plugin_opt_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_webview_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_website_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_plugin_service_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation(libs.reoqoo.component.debug.api)
+    implementation(libs.reoqoo.component.iotapi.plugin.opt.api)
+    implementation(libs.reoqoo.component.webview.api)
+    implementation(libs.reoqoo.component.website.api)
+    implementation(libs.reoqoo.component.plugin.service.api)
 }
 
 dependencies {
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_utils:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_widget:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_room:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_http:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_iotvideo:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_webview:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation(libs.reoqoo.lib.utils)
+    implementation(libs.reoqoo.lib.widget)
+    implementation(libs.reoqoo.lib.room)
+    implementation(libs.reoqoo.lib.http)
+    implementation(libs.reoqoo.lib.iotvideo)
+    implementation(libs.reoqoo.lib.webview)
 //    if (isApplication) {
 //        // 屏幕适配
-//        implementation "me.jessyan:autosize:${Versions.ThirdVersions.VERSION_AUTO_SIZE}"
+//        implementation libs.auto.size
 //    }
 }

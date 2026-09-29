@@ -1,5 +1,3 @@
-import com.gw.buildsrc.version.Versions
-
 apply from: "${rootDir.absolutePath}/script/gradle/lib_depends.gradle"
 apply from: "${rootDir.absolutePath}/script/gradle/reoqoo.gradle"
 
@@ -13,12 +11,12 @@ dependencies {
      */
     // TODO lib_json_kit使用api的原因是:
     //   api中实现IJsonEntity类会报错unresolved supertypes: com.jwkj.lib_json_kit.IJsonEntity，所以暂时放到后面去处理
-    api "com.gwell:lib_json_kit:${Versions.GwVersions.VERSION_JSON_KIT}"
+    api libs.gw.json.kit
 
     /**
      * 路由库
      */
-    implementation "cn.therouter:router:${Versions.ThirdVersions.VERSION_THEAROUTER}"
-    kapt "cn.therouter:apt:${Versions.ThirdVersions.VERSION_THEAROUTER}"
+    implementation libs.therouter
+    ksp libs.therouter.apt
 
 }

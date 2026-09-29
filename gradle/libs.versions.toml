@@ -1,0 +1,182 @@
+[versions]
+# ============== Build / Toolchain ==============
+compileSdk = "36"
+targetSdk = "36"
+minSdk = "24"
+buildTools = "34.0.0"
+kotlin = "2.2.20"
+ksp = "2.2.20-2.0.4"
+agp = "8.9.1"
+
+# ============== SDK Version ==============
+reoqoo-sdk = "oem-release-01.12.03"
+
+# ============== AndroidX Versions ==============
+kotlin-core = "1.16.0"
+appcompat = "1.7.1"
+recyclerview = "1.2.1"
+material = "1.5.0"
+constraintlayout = "2.1.4"
+navigation = "2.5.3"
+navigation-plugin = "2.5.3"
+lifecycle = "2.5.1"
+lifecycle-extensions = "2.2.0"
+lifecycle-common = "2.4.0"
+hilt = "2.57.2"
+
+# ============== Test Versions ==============
+junit = "4.13.2"
+test-junit = "1.1.5"
+espresso = "3.5.1"
+
+# ============== 技威私有库 Versions ==============
+gw-log = "1.0.5"
+gw-base-utils = "0.0.0.3"
+gw-json-kit = "0.0.0.1"
+gw-account-mgr = "1.0.134"
+gw-iot-video = "0.0.1.08"
+gw-iot-vas = "1.0.127"
+gw-player = "1.0.14.31"
+gw-crash = "0.0.0.6"
+gw-base-lifecycle = "0.0.0.2"
+gw-statistics = "0.0.0.3"
+gw-push = "0.0.0.12"
+txtraevoip = "1.0.8"
+
+# ============== 第三方开源库 Versions ==============
+therouter = "1.2.3-rc1"
+therouter-plugin = "1.2.2"
+permission-dispatcher = "4.9.2"
+ultimate-bar-x = "0.8.0"
+auto-size = "1.2.1"
+phoenix = "2.1.2"
+moshi = "1.14.0"
+gson = "2.9.1"
+glide = "4.15.1"
+smart-refresh = "2.1.0"
+lottie = "6.1.0"
+flexbox = "2.0.1"
+blur-view = "version-2.0.4"
+picture-selector = "v3.11.1"
+recyclerview-adapter-helper = "3.0.4"
+wheel-picker = "1.1.3"
+zip4j = "2.10.0"
+firebase-message = "24.1.2"
+google-gms-services = "4.3.15"
+sensors-analytics-plugin = "4.0.6"
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+therouter-agp8 = { id = "cn.therouter.agp8", version.ref = "therouter-plugin" }
+navigation-safeargs = { id = "androidx.navigation.safeargs", version.ref = "navigation-plugin" }
+google-gms-services = { id = "com.google.gms.google-services", version.ref = "google-gms-services" }
+sensors-analytics = { id = "com.sensorsdata.analytics.android", version.ref = "sensors-analytics-plugin" }
+
+[libraries]
+# ============== Kotlin / AndroidX ==============
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "kotlin-core" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
+androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
+androidx-lifecycle-extensions = { module = "androidx.lifecycle:lifecycle-extensions", version.ref = "lifecycle-extensions" }
+androidx-lifecycle-livedata = { module = "androidx.lifecycle:lifecycle-livedata", version.ref = "lifecycle" }
+androidx-lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle-common" }
+
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+
+# ============== Test ==============
+junit = { module = "junit:junit", version.ref = "junit" }
+androidx-test-junit = { module = "androidx.test.ext:junit", version.ref = "test-junit" }
+androidx-test-espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" }
+
+# ============== 技威私有库 ==============
+gw-log-adapter = { module = "com.gwell:log-adapter", version.ref = "gw-log" }
+gw-base-utils = { module = "com.gwell:base_utils", version.ref = "gw-base-utils" }
+gw-json-kit = { module = "com.gwell:lib_json_kit", version.ref = "gw-json-kit" }
+gw-account-mgr = { module = "com.tencentcs:accountmgr", version.ref = "gw-account-mgr" }
+gw-iot-video = { module = "com.gwell:iotvideo-multiplatform", version.ref = "gw-iot-video" }
+gw-iot-vas = { module = "com.tencentcs:iotvas_beta", version.ref = "gw-iot-vas" }
+gw-cloud-player = { module = "com.gwell:cloud_player", version.ref = "gw-player" }
+gw-base-crash = { module = "com.gwell:base_crash", version.ref = "gw-crash" }
+gw-base-lifecycle = { module = "com.gwell:base_lifecycle", version.ref = "gw-base-lifecycle" }
+gw-base-statistics = { module = "com.gwell:base_statistics", version.ref = "gw-statistics" }
+gw-txtraevoip = { module = "com.gwell :txtraevoip", version.ref = "txtraevoip" }
+gw-push-google = { module = "com.gwell.lib_gpush:version_google_brand", version.ref = "gw-push" }
+
+# ============== 第三方开源库 ==============
+therouter = { module = "cn.therouter:router", version.ref = "therouter" }
+therouter-apt = { module = "cn.therouter:apt", version.ref = "therouter" }
+permission-dispatcher = { module = "com.github.permissions-dispatcher:permissionsdispatcher", version.ref = "permission-dispatcher" }
+permission-dispatcher-processor = { module = "com.github.permissions-dispatcher:permissionsdispatcher-processor", version.ref = "permission-dispatcher" }
+ultimate-bar-x = { module = "com.gitee.zackratos:UltimateBarX", version.ref = "ultimate-bar-x" }
+auto-size = { module = "me.jessyan:autosize", version.ref = "auto-size" }
+process-phoenix = { module = "com.jakewharton:process-phoenix", version.ref = "phoenix" }
+moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+refresh-layout-kernel = { module = "io.github.scwang90:refresh-layout-kernel", version.ref = "smart-refresh" }
+lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
+flexbox = { module = "com.google.android:flexbox", version.ref = "flexbox" }
+blur-view = { module = "com.github.Dimezis:BlurView", version.ref = "blur-view" }
+picture-selector = { module = "io.github.lucksiege:pictureselector", version.ref = "picture-selector" }
+recyclerview-adapter-helper = { module = "com.github.CymChad:BaseRecyclerViewAdapterHelper", version.ref = "recyclerview-adapter-helper" }
+wheel-picker = { module = "cn.aigestudio.wheelpicker:WheelPicker", version.ref = "wheel-picker" }
+zip4j = { module = "net.lingala.zip4j:zip4j", version.ref = "zip4j" }
+firebase-messaging = { module = "com.google.firebase:firebase-messaging", version.ref = "firebase-message" }
+
+# ============== com.reoqoo.gw_plugin_hub (预编译 SDK) ==============
+reoqoo-lib-module-mounter =   { group = "com.reoqoo.gw_plugin_hub", name = "lib_module_mounter",   version.ref = "reoqoo-sdk" }
+reoqoo-lib-datastore =        { group = "com.reoqoo.gw_plugin_hub", name = "lib_datastore",        version.ref = "reoqoo-sdk" }
+reoqoo-lib-router =           { group = "com.reoqoo.gw_plugin_hub", name = "lib_router",           version.ref = "reoqoo-sdk" }
+reoqoo-lib-widget =           { group = "com.reoqoo.gw_plugin_hub", name = "lib_widget",           version.ref = "reoqoo-sdk" }
+reoqoo-lib-utils =            { group = "com.reoqoo.gw_plugin_hub", name = "lib_utils",            version.ref = "reoqoo-sdk" }
+reoqoo-lib-http =             { group = "com.reoqoo.gw_plugin_hub", name = "lib_http",             version.ref = "reoqoo-sdk" }
+reoqoo-lib-architecture =     { group = "com.reoqoo.gw_plugin_hub", name = "lib_architecture",     version.ref = "reoqoo-sdk" }
+reoqoo-lib-iotvideo =         { group = "com.reoqoo.gw_plugin_hub", name = "lib_iotvideo",         version.ref = "reoqoo-sdk" }
+reoqoo-lib-log =              { group = "com.reoqoo.gw_plugin_hub", name = "lib_log",              version.ref = "reoqoo-sdk" }
+reoqoo-lib-webview =          { group = "com.reoqoo.gw_plugin_hub", name = "lib_webview",          version.ref = "reoqoo-sdk" }
+reoqoo-lib-room =             { group = "com.reoqoo.gw_plugin_hub", name = "lib_room",             version.ref = "reoqoo-sdk" }
+reoqoo-lib-qrcode =           { group = "com.reoqoo.gw_plugin_hub", name = "lib_qrcode",           version.ref = "reoqoo-sdk" }
+reoqoo-lib-cloud-player =     { group = "com.reoqoo.gw_plugin_hub", name = "lib_cloud_player",     version.ref = "reoqoo-sdk" }
+
+reoqoo-component-iotapi-plugin =         { group = "com.reoqoo.gw_plugin_hub", name = "component_iotapi_plugin",         version.ref = "reoqoo-sdk" }
+reoqoo-component-iotapi-plugin-api =     { group = "com.reoqoo.gw_plugin_hub", name = "component_iotapi_plugin_api",     version.ref = "reoqoo-sdk" }
+reoqoo-component-iotapi-plugin-opt =     { group = "com.reoqoo.gw_plugin_hub", name = "component_iotapi_plugin_opt",     version.ref = "reoqoo-sdk" }
+reoqoo-component-iotapi-plugin-opt-api = { group = "com.reoqoo.gw_plugin_hub", name = "component_iotapi_plugin_opt_api", version.ref = "reoqoo-sdk" }
+reoqoo-component-webview =               { group = "com.reoqoo.gw_plugin_hub", name = "component_webview",               version.ref = "reoqoo-sdk" }
+reoqoo-component-webview-api =           { group = "com.reoqoo.gw_plugin_hub", name = "component_webview_api",           version.ref = "reoqoo-sdk" }
+reoqoo-component-website =               { group = "com.reoqoo.gw_plugin_hub", name = "component_website",               version.ref = "reoqoo-sdk" }
+reoqoo-component-website-api =           { group = "com.reoqoo.gw_plugin_hub", name = "component_website_api",           version.ref = "reoqoo-sdk" }
+reoqoo-component-plugin-service =        { group = "com.reoqoo.gw_plugin_hub", name = "component_plugin_service",        version.ref = "reoqoo-sdk" }
+reoqoo-component-plugin-service-api =    { group = "com.reoqoo.gw_plugin_hub", name = "component_plugin_service_api",    version.ref = "reoqoo-sdk" }
+reoqoo-component-debug =                 { group = "com.reoqoo.gw_plugin_hub", name = "component_debug",                 version.ref = "reoqoo-sdk" }
+reoqoo-component-debug-api =             { group = "com.reoqoo.gw_plugin_hub", name = "component_debug_api",             version.ref = "reoqoo-sdk" }
+reoqoo-component-upgrade =               { group = "com.reoqoo.gw_plugin_hub", name = "component_upgrade",               version.ref = "reoqoo-sdk" }
+reoqoo-component-upgrade-api =           { group = "com.reoqoo.gw_plugin_hub", name = "component_upgrade_api",           version.ref = "reoqoo-sdk" }
+reoqoo-component-config-net =            { group = "com.reoqoo.gw_plugin_hub", name = "component_config_net",            version.ref = "reoqoo-sdk" }
+reoqoo-component-config-net-api =        { group = "com.reoqoo.gw_plugin_hub", name = "component_config_net_api",        version.ref = "reoqoo-sdk" }
+reoqoo-component-app-setting =           { group = "com.reoqoo.gw_plugin_hub", name = "component_app_setting",           version.ref = "reoqoo-sdk" }
+reoqoo-component-app-setting-api =       { group = "com.reoqoo.gw_plugin_hub", name = "component_app_setting_api",       version.ref = "reoqoo-sdk" }
+
+# ============== Gradle Build 插件 classpath（供 legacy apply plugin 的子项目继承） ==============
+android-gradle-plugin =            { group = "com.android.tools.build", name = "gradle",                                version.ref = "agp" }
+kotlin-gradle-plugin =             { module = "org.jetbrains.kotlin:kotlin-gradle-plugin",                               version.ref = "kotlin" }
+ksp-gradle-plugin =                { module = "com.google.devtools.ksp:symbol-processing-gradle-plugin",                 version.ref = "ksp" }
+hilt-gradle-plugin =               { module = "com.google.dagger:hilt-android-gradle-plugin",                            version.ref = "hilt" }
+therouter-gradle-plugin =          { module = "cn.therouter.agp8:cn.therouter.agp8.gradle.plugin",                       version.ref = "therouter-plugin" }
+navigation-safeargs-plugin =       { module = "androidx.navigation:navigation-safe-args-gradle-plugin",                  version.ref = "navigation" }
+sensors-data-plugin =              { module = "com.sensorsdata.analytics.android:android-gradle-plugin2",                version.ref = "sensors-analytics-plugin" }
+google-services-plugin =           { module = "com.google.gms:google-services",                                          version.ref = "google-gms-services" }

@@ -1,10 +1,6 @@
 apply from: "${rootDir.absolutePath}/script/gradle/component_depends.gradle"
 def isApplication = project.name == debug_module_name
 
-
-import com.gw.buildsrc.dependlibs.GwDependLibs
-import com.gw.buildsrc.version.Versions
-
 android {
     namespace 'com.gw_reoqoo.component_family'
     defaultConfig {
@@ -21,34 +17,34 @@ android {
 dependencies {
     implementation project(":lib_modules:lib_resource")
 
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_router:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_room:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    compileOnly("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_qrcode:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_architecture:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_http:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_iotvideo:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_webview:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation(libs.reoqoo.lib.router)
+    implementation(libs.reoqoo.lib.room)
+    compileOnly(libs.reoqoo.lib.qrcode)
+    implementation(libs.reoqoo.lib.architecture)
+    implementation(libs.reoqoo.lib.http)
+    implementation(libs.reoqoo.lib.iotvideo)
+    implementation(libs.reoqoo.lib.webview)
 }
 
 dependencies {
     /**
      * json库
      */
-    implementation "com.gwell:lib_json_kit:${Versions.GwVersions.VERSION_JSON_KIT}"
+    implementation libs.gw.json.kit
 
-    implementation "com.github.bumptech.glide:glide:${Versions.ThirdVersions.VERSION_GLIDE}"
+    implementation libs.glide
 
-    compileOnly("com.squareup.moshi:moshi-kotlin:${Versions.ThirdVersions.VERSION_MOSHI}")
+    compileOnly(libs.moshi.kotlin)
 
-    compileOnly "com.gwell:base_lifecycle:${Versions.GwVersions.VERSION_BASE_LIFECYCLE}"
+    compileOnly libs.gw.base.lifecycle
 
-    implementation("com.airbnb.android:lottie:${Versions.ThirdVersions.VERSION_LOTTIE}", {
+    implementation(libs.lottie) {
         exclude group: 'androidx.lifecycle'
         exclude group: 'androidx.appcompat'
         exclude group: 'androidx.activity'
         exclude group: 'androidx.core'
         exclude group: 'androidx.annotation'
-    })
+    }
 }
 
 dependencies {
@@ -60,17 +56,17 @@ dependencies {
     implementation project(path: ":component_modules:component_mine_api")
     implementation project(path: ":component_modules:component_device_share_api")
 
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_upgrade_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_iotapi_plugin_opt_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation(libs.reoqoo.component.upgrade.api)
+    implementation(libs.reoqoo.component.iotapi.plugin.opt.api)
 
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_plugin_service_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_config_net_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_webview_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_website_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_debug_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_iotapi_plugin_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation(libs.reoqoo.component.plugin.service.api)
+    implementation(libs.reoqoo.component.config.net.api)
+    implementation(libs.reoqoo.component.webview.api)
+    implementation(libs.reoqoo.component.website.api)
+    implementation(libs.reoqoo.component.debug.api)
+    implementation(libs.reoqoo.component.iotapi.plugin.api)
 }
 
 dependencies {
-    implementation "com.github.Dimezis:BlurView:${Versions.ThirdVersions.VERSION_BLUR_VIEW}"
+    implementation libs.blur.view
 }

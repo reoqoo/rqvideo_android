@@ -1,11 +1,8 @@
-import com.gw.buildsrc.dependlibs.GwDependLibs
-import com.gw.buildsrc.version.Versions
-
 dependencies {
     /**
      * IoTVideo库
      */
-    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_IOT_VIDEO}:${Versions.GwVersions.VERSION_IOT_VIDEO}"
+    implementation libs.gw.iot.video
 
-    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_iotvideo:${Versions.ReoqooSdkVer.VERSION_CODE}"
+    implementation(libs.reoqoo.lib.iotvideo)
 }

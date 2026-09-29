@@ -1,7 +1,3 @@
-import com.gw.buildsrc.dependlibs.GwDependLibs
-import com.gw.buildsrc.utils.DataUtils
-import com.gw.buildsrc.version.Versions
-
 apply from: "${rootDir.absolutePath}/script/gradle/app_depends.gradle"
 apply from: "${rootDir.absolutePath}/script/gradle/reoqoo.gradle"
 
@@ -54,6 +50,8 @@ android {
 
         create("iptime") { flavor ->
             dimension = "version"
+            // 消费 reoqookit oem 渠道远程 AAR 时回退其 oem 口味变体
+            matchingFallbacks = ["oem", "release"]
             project.ext.flavorConfigs.iptime.applyToApplication(flavor)
             manifestPlaceholders = [fileProviderAuthority: "${applicationId}"]
             println("applicationId: ${applicationId}")
@@ -71,7 +69,7 @@ android {
         println "flavorNameInLowercase:$flavorNameInLowercase buildTypeNameInLowercase:$buildTypeNameInLowercase"
         def appNamePrefix = project.ext.flavorConfigs[flavorNameInLowercase].APP_NAME_PREFIX
         // apk输出文件名称
-        def localApkFileName = "$appNamePrefix${variant.versionName}._code${variant.versionCode}_${DataUtils.getDay()}_db${DB_VERSION}_${BUILD_NUMBER}-${flavorNameInLowercase}-${buildTypeNameInLowercase}.apk"
+        def localApkFileName = "$appNamePrefix${variant.versionName}._code${variant.versionCode}_${project.gwDateDay()}_db${DB_VERSION}_${BUILD_NUMBER}-${flavorNameInLowercase}-${buildTypeNameInLowercase}.apk"
         variant.outputs.configureEach { output ->
             def outputFile = output.outputFile
             if (outputFile != null && outputFile.name.endsWith('.apk')) {
@@ -99,7 +97,7 @@ android {
         // 配置 工件的bundle任务
         def variantBundleTask = tasks.getByName("bundle${flavorNameCapitalized}${buildTypeNameCapitalized}")
         variantBundleTask.doLast {
-            def aabFileName = "$appNamePrefix${variant.versionName}._code${variant.versionCode}_${DataUtils.getDay()}_db${DB_VERSION}_${BUILD_NUMBER}-${flavorNameInLowercase}-${buildTypeNameInLowercase}.aab"
+            def aabFileName = "$appNamePrefix${variant.versionName}._code${variant.versionCode}_${project.gwDateDay()}_db${DB_VERSION}_${BUILD_NUMBER}-${flavorNameInLowercase}-${buildTypeNameInLowercase}.aab"
             println "aabFileName = ${aabFileName}"
             // 将 apk文件 复制 到 备份目录 下
             def aabFileOriginalInIntermediates = file("${project.buildDir}${separator}intermediates${separator}bundle${separator}${flavorNameInLowercase}${buildTypeNameCapitalized}${separator}${aabFileName}.aab")
@@ -154,7 +152,7 @@ dependencies {
     implementation project(":main")
     compileOnly project(":component_modules:component_mine_api")
 
-    compileOnly("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_iotapi_plugin_opt_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    compileOnly libs.reoqoo.component.iotapi.plugin.opt.api
 
     /**
      * 适配Android 15 yooseeKits依赖的一些库而Reoqoo没有的库,需要引入覆盖so库支持16KB
@@ -165,12 +163,8 @@ dependencies {
 }
 
 dependencies {
-    implementation "com.google.firebase:firebase-messaging:${Versions.ThirdVersions.VERSION_FIREBASE_MESSAGE}"
-    compileOnly "com.jakewharton:process-phoenix:${Versions.ThirdVersions.VERSION_PHONENIX}"
-}
-
-kapt {
-    correctErrorTypes true
+    implementation libs.firebase.messaging
+    compileOnly libs.process.phoenix
 }
 
 /**

@@ -1,6 +1,3 @@
-import com.gw.buildsrc.dependlibs.GwDependLibs
-import com.gw.buildsrc.version.Versions
-
 apply from: "${rootDir.absolutePath}/script/gradle/component_depends.gradle"
 apply from: "${rootDir.absolutePath}/script/gradle/reoqoo.gradle"
 
@@ -20,20 +17,19 @@ android {
 }
 
 dependencies {
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_utils:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_router:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_architecture:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_log:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_http:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_iotapi_plugin:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_iotapi_plugin_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_iotapi_plugin_opt:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_iotapi_plugin_opt_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation(libs.reoqoo.lib.utils)
+    implementation(libs.reoqoo.lib.router)
+    implementation(libs.reoqoo.lib.architecture)
+    implementation(libs.reoqoo.lib.log)
+    implementation(libs.reoqoo.lib.http)
+    implementation(libs.reoqoo.component.iotapi.plugin)
+    implementation(libs.reoqoo.component.iotapi.plugin.api)
+    implementation(libs.reoqoo.component.iotapi.plugin.opt)
+    implementation(libs.reoqoo.component.iotapi.plugin.opt.api)
 }
 
 dependencies {
     implementation project(":main_api")
-    
 
     implementation project(":component_modules:component_family")
     implementation project(":component_modules:component_family_api")
@@ -59,33 +55,33 @@ dependencies {
     implementation project(":component_modules:component_push")
     implementation project(":component_modules:component_push_api")
 
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_webview:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_webview_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation(libs.reoqoo.component.webview)
+    implementation(libs.reoqoo.component.webview.api)
 
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_website:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_website_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation(libs.reoqoo.component.website)
+    implementation(libs.reoqoo.component.website.api)
 
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_plugin_service:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_plugin_service_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation(libs.reoqoo.component.plugin.service)
+    implementation(libs.reoqoo.component.plugin.service.api)
 
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_debug:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_debug_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation(libs.reoqoo.component.debug)
+    implementation(libs.reoqoo.component.debug.api)
 
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_upgrade:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_upgrade_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation(libs.reoqoo.component.upgrade)
+    implementation(libs.reoqoo.component.upgrade.api)
 
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_config_net:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_config_net_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation(libs.reoqoo.component.config.net)
+    implementation(libs.reoqoo.component.config.net.api)
 
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_app_setting:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:component_app_setting_api:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation(libs.reoqoo.component.app.setting)
+    implementation(libs.reoqoo.component.app.setting.api)
 }
 
 dependencies {
-    implementation "com.jakewharton:process-phoenix:${Versions.ThirdVersions.VERSION_PHONENIX}"
-    implementation "com.gwell:base_crash:${Versions.GwVersions.VERSION_BASE_CRASH}"
-    implementation "com.gwell:base_lifecycle:${Versions.GwVersions.VERSION_BASE_LIFECYCLE}"
+    implementation libs.process.phoenix
+    implementation libs.gw.base.crash
+    implementation libs.gw.base.lifecycle
 
     // 添加腾讯的回音消除依赖
-    implementation "com.tencentcs:txtraevoip:${Versions.GwVersions.VERSION_TXTRAEVOIP}"
+    implementation libs.gw.txtraevoip
 }

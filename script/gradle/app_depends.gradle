@@ -1,18 +1,15 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.devtools.ksp'
 apply plugin: 'com.google.dagger.hilt.android'
 apply plugin: 'therouter'
 
-import com.gw.buildsrc.dependlibs.GwDependLibs
-import com.gw.buildsrc.version.Versions
-
 android {
-    compileSdkVersion Versions.BuildVersions.VERSION_COMPILE_SDK
-    buildToolsVersion Versions.BuildVersions.VERSION_BUILD_TOOLS
+    compileSdk = libs.versions.compileSdk.get().toInteger()
+    buildToolsVersion = libs.versions.buildTools.get()
     defaultConfig {
-        minSdkVersion Versions.BuildVersions.VERSION_MIN_SDK
-        targetSdkVersion Versions.BuildVersions.VERSION_TARGET_SDK
+        minSdk = libs.versions.minSdk.get().toInteger()
+        targetSdk = libs.versions.targetSdk.get().toInteger()
         versionCode 1
         versionName "1.0.0"
         multiDexEnabled true
@@ -39,11 +36,6 @@ android {
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17.toString()
-    }
-
-    // Allow references to generated code
-    kapt {
-        correctErrorTypes true
     }
 
     packagingOptions {
@@ -112,25 +104,25 @@ android {
  */
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:${Versions.BuildVersions.VERSION_KOTLIN}"
-    implementation "androidx.core:core-ktx:${Versions.AndroidUtilsVersions.VERSION_KOTLIN_CORE}"
-    implementation "androidx.appcompat:appcompat:${Versions.AndroidUtilsVersions.VERSION_APPCOMPAT}"
-    implementation "androidx.recyclerview:recyclerview:${Versions.AndroidUtilsVersions.VERSION_RECYCLERVIEW}"
+    implementation libs.kotlin.stdlib
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.recyclerview
 
-    implementation "com.google.android.material:material:${Versions.AndroidUtilsVersions.VERSION_MATERIAL}"
-    implementation "androidx.constraintlayout:constraintlayout:${Versions.AndroidUtilsVersions.VERSION_CONSTRAINT_LAYOUT}"
-    implementation "androidx.navigation:navigation-fragment-ktx:${Versions.AndroidUtilsVersions.VERSION_NAVIGATION}"
-    implementation "androidx.navigation:navigation-ui-ktx:${Versions.AndroidUtilsVersions.VERSION_NAVIGATION}"
-    implementation "androidx.lifecycle:lifecycle-extensions:${Versions.AndroidUtilsVersions.VERSION_LIFE_CYCLE_EXTENSIONS}"
-    implementation "androidx.lifecycle:lifecycle-livedata:${Versions.AndroidUtilsVersions.VERSION_LIFE_CYCLE}"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.AndroidUtilsVersions.VERSION_LIFE_CYCLE}"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.AndroidUtilsVersions.VERSION_LIFE_CYCLE}"
+    implementation libs.material
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.navigation.fragment.ktx
+    implementation libs.androidx.navigation.ui.ktx
+    implementation libs.androidx.lifecycle.extensions
+    implementation libs.androidx.lifecycle.livedata
+    implementation libs.androidx.lifecycle.livedata.ktx
+    implementation libs.androidx.lifecycle.viewmodel.ktx
 
     // 依赖注入框架
-    implementation("com.google.dagger:hilt-android:${Versions.AndroidUtilsVersions.VERSION_HILT}", {
+    implementation(libs.hilt.android) {
         exclude group: ("androidx.lifecycle")
-    })
-    kapt "com.google.dagger:hilt-compiler:${Versions.AndroidUtilsVersions.VERSION_HILT}"
+    }
+    ksp libs.hilt.compiler
 
 }
 
@@ -139,12 +131,12 @@ dependencies {
  */
 dependencies {
     // 路由框架
-    kapt "cn.therouter:apt:${Versions.ThirdVersions.VERSION_THEAROUTER}"
-    implementation "cn.therouter:router:${Versions.ThirdVersions.VERSION_THEAROUTER}"
+    ksp libs.therouter.apt
+    implementation libs.therouter
     // 状态栏适配器
-    implementation "com.gitee.zackratos:UltimateBarX:${Versions.ThirdVersions.VERSION_ULTIMATE_BAR_X}"
+    implementation libs.ultimate.bar.x
     // 屏幕适配
-    implementation "me.jessyan:autosize:${Versions.ThirdVersions.VERSION_AUTO_SIZE}"
+    implementation libs.auto.size
 
 //    api("com.gwell:aar_plugin_service:${Versions.ThirdVersions.VERSION_PT_PLUGIN}") {
 //        exclude group: 'com.tencentcs'
@@ -159,24 +151,24 @@ dependencies {
     implementation(project(":lib_modules:lib_api_root"))
     implementation(project(":lib_modules:lib_resource"))
 
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_module_mounter:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_utils:${Versions.ReoqooSdkVer.VERSION_CODE}")
-    implementation("${GwDependLibs.GwLibs.DEPEND_LIB_API_COMPONENT}:lib_iotvideo:${Versions.ReoqooSdkVer.VERSION_CODE}")
+    implementation(libs.reoqoo.lib.module.mounter)
+    implementation(libs.reoqoo.lib.utils)
+    implementation(libs.reoqoo.lib.iotvideo)
 }
 
 dependencies {
     /**
      * IoTVideo库
      */
-    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_IOT_VIDEO}:${Versions.GwVersions.VERSION_IOT_VIDEO}"
+    implementation libs.gw.iot.video
 
-    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_IOT_ACCOUNT_MGR}:${Versions.GwVersions.VERSION_ACCOUNT_MGR}"
+    implementation libs.gw.account.mgr
 
-    implementation "com.gwell:log-adapter:${Versions.GwVersions.VERSION_GWELL_LOG}"
+    implementation libs.gw.log.adapter
 
-    implementation "com.gwell:base_utils:${Versions.GwVersions.VERSION_BASE_UTILS}"
+    implementation libs.gw.base.utils
 
-    implementation "com.gwell:base_crash:${Versions.GwVersions.VERSION_BASE_CRASH}"
-    implementation "com.gwell:base_lifecycle:${Versions.GwVersions.VERSION_BASE_LIFECYCLE}"
-    implementation "${GwDependLibs.GwLibs.DEPEND_LIB_BASE_STATISTICS}:${Versions.GwVersions.VERSION_BASE_STATISTICS}"
+    implementation libs.gw.base.crash
+    implementation libs.gw.base.lifecycle
+    implementation libs.gw.base.statistics
 }
