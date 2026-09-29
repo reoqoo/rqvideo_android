@@ -17,15 +17,18 @@ android {
 }
 
 dependencies {
-    implementation(libs.reoqoo.lib.utils)
-    implementation(libs.reoqoo.lib.router)
-    implementation(libs.reoqoo.lib.architecture)
-    implementation(libs.reoqoo.lib.log)
-    implementation(libs.reoqoo.lib.http)
-    implementation(libs.reoqoo.component.iotapi.plugin)
-    implementation(libs.reoqoo.component.iotapi.plugin.api)
-    implementation(libs.reoqoo.component.iotapi.plugin.opt)
-    implementation(libs.reoqoo.component.iotapi.plugin.opt.api)
+    // Exposed with api: the app module's Hilt aggregation (hiltJavaCompile) compiles the
+    // generated injectors against the whole reoqoo SDK closure, so these must be on the
+    // compile classpath of every module depending on :main, not just :main itself.
+    api(libs.reoqoo.lib.utils)
+    api(libs.reoqoo.lib.router)
+    api(libs.reoqoo.lib.architecture)
+    api(libs.reoqoo.lib.log)
+    api(libs.reoqoo.lib.http)
+    api(libs.reoqoo.component.iotapi.plugin)
+    api(libs.reoqoo.component.iotapi.plugin.api)
+    api(libs.reoqoo.component.iotapi.plugin.opt)
+    api(libs.reoqoo.component.iotapi.plugin.opt.api)
 }
 
 dependencies {
@@ -55,26 +58,26 @@ dependencies {
     implementation project(":component_modules:component_push")
     implementation project(":component_modules:component_push_api")
 
-    implementation(libs.reoqoo.component.webview)
-    implementation(libs.reoqoo.component.webview.api)
+    api(libs.reoqoo.component.webview)
+    api(libs.reoqoo.component.webview.api)
 
-    implementation(libs.reoqoo.component.website)
-    implementation(libs.reoqoo.component.website.api)
+    api(libs.reoqoo.component.website)
+    api(libs.reoqoo.component.website.api)
 
-    implementation(libs.reoqoo.component.plugin.service)
-    implementation(libs.reoqoo.component.plugin.service.api)
+    api(libs.reoqoo.component.plugin.service)
+    api(libs.reoqoo.component.plugin.service.api)
 
-    implementation(libs.reoqoo.component.debug)
-    implementation(libs.reoqoo.component.debug.api)
+    api(libs.reoqoo.component.debug)
+    api(libs.reoqoo.component.debug.api)
 
-    implementation(libs.reoqoo.component.upgrade)
-    implementation(libs.reoqoo.component.upgrade.api)
+    api(libs.reoqoo.component.upgrade)
+    api(libs.reoqoo.component.upgrade.api)
 
-    implementation(libs.reoqoo.component.config.net)
-    implementation(libs.reoqoo.component.config.net.api)
+    api(libs.reoqoo.component.config.net)
+    api(libs.reoqoo.component.config.net.api)
 
-    implementation(libs.reoqoo.component.app.setting)
-    implementation(libs.reoqoo.component.app.setting.api)
+    api(libs.reoqoo.component.app.setting)
+    api(libs.reoqoo.component.app.setting.api)
 }
 
 dependencies {

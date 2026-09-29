@@ -40,6 +40,10 @@ class MineModuleImpl @Inject constructor() : IMineModuleApi {
 
         } catch (e: Exception) {
             GwellLogUtils.e(TAG, "appVersionUpgrade fail: reason ${e.message}")
+            if (!AppChannelName.isXiaotunApp(appParamApi.getAppName())) {
+                openPhoneBrowser(context, gwIotOpt.getAboutVersionUrl())
+            }
+
         }
     }
 

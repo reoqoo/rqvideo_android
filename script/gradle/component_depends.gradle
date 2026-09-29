@@ -220,11 +220,11 @@ dependencies {
     implementation(project(":lib_modules:lib_api_root"))
     implementation(project(":lib_modules:lib_resource"))
 
-    implementation(libs.reoqoo.lib.module.mounter)
-    implementation(libs.reoqoo.lib.datastore)
-    implementation(libs.reoqoo.lib.router)
-    implementation(libs.reoqoo.lib.widget)
-    implementation(libs.reoqoo.lib.utils)
-    implementation(libs.reoqoo.lib.http)
-    implementation(libs.reoqoo.lib.architecture)
+    api(libs.reoqoo.lib.module.mounter)
+    api(libs.reoqoo.lib.datastore)
+    api(libs.reoqoo.lib.router)
+    api(libs.reoqoo.lib.widget)
+    api(libs.reoqoo.lib.utils)
+    api(libs.reoqoo.lib.http)
+    api(libs.reoqoo.lib.architecture)
 }

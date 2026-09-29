@@ -351,7 +351,7 @@
     <string name="AA0436">Minute</string>
     <string name="AA0437">Cancel live feed</string>
     <string name="AA0438">Enable Bluetooth on your cellphone to add a device quickly</string>
-    <string name="AA0439">Please allow new connection in Settings</string>
+    <string name="AA0439">Please enable Bluetooth permission for the app in Settings</string>
     <string name="AA0440">Wi-Fi connection timeout</string>
     <string name="AA0441">Add again</string>
     <string name="AA0442">GPS is not enabled, so the Wi-Fi list cannot be retrieved. Please set it up now.</string>

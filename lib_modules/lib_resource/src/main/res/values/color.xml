@@ -119,7 +119,7 @@
     <color name="color_66d1d1d1">#66D1D1D1</color>
 
     <!-- webview模块 -->
-    <color name="webview_bg">#1E2A46</color>
+    <color name="webview_bg">#FFFFFF</color>
     <color name="webview_process">#3fc259</color>
     <color name="color_ffc100">#FFC100</color>
     <color name="color_2c2c30">#2c2c30</color>

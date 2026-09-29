@@ -7,6 +7,7 @@ buildTools = "34.0.0"
 kotlin = "2.2.20"
 ksp = "2.2.20-2.0.4"
 agp = "8.9.1"
+rootbeer-lib = "0.1.2"
 
 # ============== SDK Version ==============
 reoqoo-sdk = "oem-release-01.12.03"
@@ -119,6 +120,7 @@ gw-push-google = { module = "com.gwell.lib_gpush:version_google_brand", version.
 # ============== 第三方开源库 ==============
 therouter = { module = "cn.therouter:router", version.ref = "therouter" }
 therouter-apt = { module = "cn.therouter:apt", version.ref = "therouter" }
+rootbeer-lib = { module = "com.scottyab:rootbeer-lib", version.ref = "rootbeer-lib" }
 permission-dispatcher = { module = "com.github.permissions-dispatcher:permissionsdispatcher", version.ref = "permission-dispatcher" }
 permission-dispatcher-processor = { module = "com.github.permissions-dispatcher:permissionsdispatcher-processor", version.ref = "permission-dispatcher" }
 ultimate-bar-x = { module = "com.gitee.zackratos:UltimateBarX", version.ref = "ultimate-bar-x" }

@@ -55,6 +55,9 @@ class DeviceRepository @Inject constructor(
 
         private const val TIME_ONE_MONTH = 1000 * 60 * 60 * 24 * 30L
 
+        /**
+         * 数据加载结束
+         */
         private var mLoadDeviceFinish = true
     }
 

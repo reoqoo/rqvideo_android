@@ -361,7 +361,7 @@
     <string name="AA0436">分</string>
     <string name="AA0437">取消直播</string>
     <string name="AA0438">打开手机蓝牙，快速添加设备</string>
-    <string name="AA0439">请在设置中允许新连接</string>
+    <string name="AA0439">请在设置中为应用开启蓝牙权限</string>
     <string name="AA0440">Wi-Fi连接超时</string>
     <string name="AA0441">重新添加</string>
     <string name="AA0442">未开启GPS无法获取到Wi-Fi列表,请立即设置</string>

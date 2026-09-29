@@ -31,7 +31,6 @@ import com.gw_reoqoo.component_family.api.interfaces.FamilyModeApi
 import com.gw_reoqoo.lib_room.device.DeviceInfo
 import com.gw_reoqoo.lib_room.ktx.isMaster
 import com.gw_reoqoo.lib_router.ReoqooRouterPath
-import com.gw_reoqoo.lib_router.navigation
 import com.gw_reoqoo.lib_utils.ktx.launch
 import com.gw_reoqoo.lib_widget.dialog.comm_dialog.entity.CommDialogAction
 import com.gw_reoqoo.lib_widget.dialog.comm_dialog.entity.TextContent

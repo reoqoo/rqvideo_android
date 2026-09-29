@@ -167,12 +167,12 @@ dependencies {
     /**
      * 崩溃收集和日志上传(需要提前初始化日志路径等参数)
      */
-    implementation libs.gw.crash
+    implementation libs.gw.base.crash
 
     /**
      * 技威数据统计
      */
-    implementation libs.gw.statistics
+    implementation libs.gw.base.statistics
 
     /**
      * 技威生命周期管理

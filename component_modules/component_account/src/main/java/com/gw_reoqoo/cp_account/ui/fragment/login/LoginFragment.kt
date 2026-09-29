@@ -350,6 +350,7 @@ class LoginFragment : ABaseMVVMDBFragment<AccountFragmentLoginBinding, LoginFrgV
         // 显示登录限制弹窗
         mFgViewModel.showLoginLimitDialog.observe(this) { dialogData ->
             GwellLogUtils.i(TAG, "showLoginLimitDialog dialogData $dialogData")
+            // 使用 (a + b - 1) / b 来实现向上取整, 这种方法避免了浮点运算的精度问题，并且性能更好。
             dialogData?.let {
                 showLoginLimitDialog(it.limitTimes, (it.disableTimespan + 59) / 60)
                 mFgViewModel.clearLoginLimitDialog()
@@ -359,8 +360,8 @@ class LoginFragment : ABaseMVVMDBFragment<AccountFragmentLoginBinding, LoginFrgV
 
     /**
      * 显示登录限制弹窗
-     * @param retryCount 连续错误次数
-     * @param limitMinutes 限制登录分钟数
+     * @param limitTimes 达到的失败限制次数
+     * @param disableTimespan 剩余封禁时间
      */
     private fun showLoginLimitDialog(limitTimes: String, disableTimespan: Int) {
         val message = getString(RR.string.AA0706, limitTimes, disableTimespan.toString())

@@ -31,7 +31,7 @@ class AppParamApiImpl @Inject constructor() : IAppParamApi {
     /**
      * 客户ID
      */
-    private var APP_CID = ""
+    private var APP_CID = "0.0"
 
     /**
      * 反馈邮箱

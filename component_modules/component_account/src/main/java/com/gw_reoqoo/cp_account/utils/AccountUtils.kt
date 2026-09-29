@@ -18,6 +18,7 @@ object AccountUtils {
             return false
         }
         val regex = Regex("^(?=.*[a-zA-Z])(?=.*\\d).{8,30}$")
+//        val regex = Regex("^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[^a-zA-Z0-9]).{8,30}$")
         return regex.matches(input)
     }
 
