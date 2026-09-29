@@ -268,6 +268,11 @@ class Versions {
         public static final String YOOSEE_KIT_VERSION = "google-release-6.46.0.0.02"
 
         /**
+         * YooseeCompose SDK（gwell-yooseecompose-app-sdk）的版本号
+         */
+        public static final String VERSION_YOOSEE_COMPOSE_SDK = "6.46.1.3"
+
+        /**
          * gwvideo_beta的版本号
          */
         public static final String VERSION_GWVIDEO_BETA = "0.1.1.33"

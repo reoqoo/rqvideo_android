@@ -64,5 +64,25 @@ class GwDependLibs {
          * 技威基础工具库
          */
         public static final String DEPEND_LIB_API_COMPONENT = "com.reoqoo.gw_plugin_hub"
+
+        /**
+         * YooseeCompose SDK基础资源库
+         */
+        public static final String DEPEND_LIB_KMPBASE_RESOURCE = "com.yoosee.kmp:kmpbase-resource"
+
+        /**
+         * YooseeCompose SDK基础公共库
+         */
+        public static final String DEPEND_LIB_KMPBASE_COMMON = "com.yoosee.kmp:kmpbase-common"
+
+        /**
+         * YooseeCompose SDK蓝牙库
+         */
+        public static final String DEPEND_LIB_KMPBASE_GWBLE = "com.yoosee.kmp:kmpbase-gwble"
+
+        /**
+         * YooseeCompose SDK蓝牙绑定库
+         */
+        public static final String DEPEND_LIB_KMP_BLEBIND = "com.yoosee.kmp:kmpsaas-blebind"
     }
 }
