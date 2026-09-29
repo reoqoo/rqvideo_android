@@ -97,7 +97,7 @@ class Versions {
         /**
          * room组件
          */
-        public static final String VERSION_ROOM = "2.6.1"
+        public static final String VERSION_ROOM = "2.7.1"
         /**
          * CoordinatorLayout
          * */
@@ -210,7 +210,7 @@ class Versions {
         /**
          * IotVideo版本
          */
-        public static final String VERSION_IOT_VIDEO = "0.0.0.84"
+        public static final String VERSION_IOT_VIDEO = "0.0.1.08"
 //        public static final String VERSION_IOT_VIDEO = "0.0.0.16"
         /**
          * 插件管理库
@@ -225,7 +225,7 @@ class Versions {
         /**
          * GwPlayer播放器
          */
-        public static final String VERSION_GW_PLAYER = "1.0.14.07"
+        public static final String VERSION_GW_PLAYER = "1.0.14.31"
 
         /**
          * ijk-cloud-player
@@ -245,7 +245,7 @@ class Versions {
         /**
          * 胖豚插件 (ipTIME:0.0.0.82  Reoqoo:0.0.1.39)
          */
-        public static final String VERSION_PT_PLUGIN = "0.0.1.100"
+        public static final String VERSION_PT_PLUGIN = "0.0.1.104"
 
         /**0
          * 插件对接库版本
@@ -255,17 +255,17 @@ class Versions {
         /**
          * 回音消除库版本
          */
-        public static final String VERSION_TXTRAEVOIP = "1.0.7"
+        public static final String VERSION_TXTRAEVOIP = "1.0.8"
 
         /**
          * GWIotApi的版本号
          */
-        public static final String GWIOT_API_VERSION = "1.7.3.1"
+        public static final String GWIOT_API_VERSION = "1.8.0.6"
         /**
          * YooseeKit的版本号
          * 6.34.1.0.6版本是无values-sw*文件夹的版本，可用于适配无yoosee设备的折叠屏尺寸
          */
-        public static final String YOOSEE_KIT_VERSION = "google-release-6.43.0.0.5.1"
+        public static final String YOOSEE_KIT_VERSION = "google-release-6.46.0.0.02"
 
         /**
          * gwvideo_beta的版本号
