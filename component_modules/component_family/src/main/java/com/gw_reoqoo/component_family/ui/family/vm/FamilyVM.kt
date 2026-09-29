@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.asFlow
+import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewModelScope
 import com.gw.component_debug.api.interfaces.IShakeApi
 import com.gw_reoqoo.component_family.api.interfaces.IGuideDataStore
@@ -24,7 +25,10 @@ import com.gw.cp_msg.entity.http.BannerEntity
 import com.gw.cp_msg.entity.http.MainNoticeEntity
 import com.gw.cp_msg.entity.http.NoticeEntity
 import com.gw.lib_http.entities.DeviceHistoryBean
+import com.gw.lib_plugin_service.constant.PluginCodeConstants
 import com.gw_reoqoo.component_family.api.interfaces.FamilyModeApi
+import com.gw_reoqoo.component_family.services.DeviceStatusServices
+import com.gw_reoqoo.component_family.services.DeviceStatusServices.Companion
 import com.gw_reoqoo.lib_base_architecture.vm.ABaseVM
 import com.gw_reoqoo.lib_http.entities.MessageBean
 import com.gw_reoqoo.lib_http.entities.MessageStatus
@@ -306,9 +310,50 @@ class FamilyVM @Inject constructor(
         GwellLogUtils.i(TAG, "loadRemoteDeviceList")
         viewModelScope.launch {
             igwIotOpt.refreshDevices()
-            deviceRepository.loadDeviceFromRemote()
+            deviceRepository.loadDeviceFromRemote {
+                getYooseeDeviceProp()
+            }
             callBack?.invoke()
         }
+    }
+
+    /**
+       获取yoosee设备开关机和在线离线状态
+     */
+    private fun getYooseeDeviceProp() {
+        viewModelScope.launch(Dispatchers.IO) {
+            val userId = accountApi.getSyncUserId() ?: return@launch
+            val device = deviceRepository.getAllDeviceSyncBy(userId)
+            val nonReoqooDevIds = device.filter {
+                val pid = it.productId
+                !familyModeApi.isReoqooDevice(pid ?: "")
+            }.map { it.deviceId }
+            nonReoqooDevIds.forEach { deviceId ->
+                val deviceProp = igwIotOpt.getIoTProps(deviceId)
+                deviceProp?.let {
+                    deviceRepository.updateDeviceOnlineStatus(
+                        deviceId, if (it.isOnline) {
+                            PluginCodeConstants.DeviceOnlineStatus.ONLINE
+                        } else {
+                            PluginCodeConstants.DeviceOnlineStatus.OFFLINE
+                        }
+                    )
+
+                    updateDevicePowerOn(deviceId, it.isPowerOn)
+                    GwellLogUtils.i(TAG,"loadDeviceStatus deviceId:$deviceId isOnline:${it.isOnline} isPowerOn:${it.isPowerOn}"
+                    )
+                }
+            }
+        }
+    }
+
+    /**
+     * 更新设备开关机状态
+     * @param deviceId String 设备ID
+     * @param isPowerOn Boolean 是否开机
+     */
+    fun updateDevicePowerOn(deviceId: String, isPowerOn: Boolean) {
+        deviceRepository.updateDevicePowerOn(deviceId, isPowerOn)
     }
 
     fun openHome(devId: String, solution: String?) {

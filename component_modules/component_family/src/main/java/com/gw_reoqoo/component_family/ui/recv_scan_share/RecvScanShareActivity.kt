@@ -68,6 +68,7 @@ class RecvScanShareActivity :
 
     override fun initLiveData(viewModel: RecvScanShareVM, savedInstanceState: Bundle?) {
         super.initLiveData(viewModel, savedInstanceState)
+        showLoadDialog()
         (intent.getSerializableExtra("shareData") as? HashMap<String, String>)?.let {
             viewModel.requestShare(it)
         }
@@ -106,6 +107,7 @@ class RecvScanShareActivity :
                         }
 
                         is HttpAction.Fail -> {
+                            dismissLoadDialog()
                             when (val error = action.t) {
                                 is ResponseNotSuccessException -> {
                                     when (val respCode = ResponseCode.getRespCode(error.code)) {
@@ -131,5 +133,7 @@ class RecvScanShareActivity :
                 }
             }
         }
+
     }
+
 }

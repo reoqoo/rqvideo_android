@@ -90,8 +90,17 @@ android {
         pickFirst 'lib/armeabi/libxml2.so'
         pickFirst 'lib/arm64-v8a/libxml2.so'
 
+        pickFirst 'lib/armeabi-v7a/libgwplayer.so'
+        pickFirst 'lib/armeabi/libgwplayer.so'
+        pickFirst 'lib/arm64-v8a/libgwplayer.so'
+
+        pickFirst '**/libaudiodsp_dynamic.so'
+        pickFirst '**/libtxTraeVoip.so'
         pickFirst '**/libcurl.so'
-        pickFirst '**/libgwplayer.so'
+        pickFirst '**/libijkffmpeg.so'
+        pickFirst '**/libijkplayer.so'
+        pickFirst '**/libijksdl.so'
+        pickFirst '**/libbleconfig.so'
         pickFirst '**/libiotvideomulti.so'
         pickFirst '**/libmbedtls.so'
 
@@ -137,11 +146,48 @@ dependencies {
     implementation libs.ultimate.bar.x
     // 屏幕适配
     implementation libs.auto.size
+    // 内存泄露检测
+    // debugImplementation libs.leakcanary
+}
 
-//    api("com.gwell:aar_plugin_service:${Versions.ThirdVersions.VERSION_PT_PLUGIN}") {
-//        exclude group: 'com.tencentcs'
-//        exclude group: 'org.permissionsdispatcher'
-//    }
+/**
+ * 技威仓库
+ */
+dependencies {
+    /**
+     * 技威日志打印库（需要提前初始化）
+     */
+    implementation libs.gw.log.adapter
+
+    /**
+     * 技威工具库（不需要单独初始化）
+     */
+    implementation libs.gw.base.utils
+
+    /**
+     * 崩溃收集和日志上传(需要提前初始化日志路径等参数)
+     */
+    implementation libs.gw.crash
+
+    /**
+     * 技威数据统计
+     */
+    implementation libs.gw.statistics
+
+    /**
+     * 技威生命周期管理
+     */
+    implementation libs.gw.base.lifecycle
+
+    /**
+     * 技威网络请求
+     */
+    implementation libs.gw.account.mgr
+
+    /**
+     * IoTVideo库
+     */
+    implementation libs.gw.iot.video
 }
 
 /**

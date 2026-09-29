@@ -2,6 +2,7 @@ package com.gw.cp_msg.ui.activity.msg_info.vm
 
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewModelScope
 import com.gw_reoqoo.component_device_share.api.DevShareApi.Companion.PARAM_DEV_SHARE_ENTITY
 import com.gw_reoqoo.component_family.api.interfaces.FamilyModeApi
@@ -17,8 +18,8 @@ import com.gw_reoqoo.lib_http.HttpErrUtils
 import com.gw_reoqoo.lib_router.ReoqooRouterPath
 import com.gw_reoqoo.lib_router.with
 import com.gwell.loglibs.GwellLogUtils
-import com.therouter.TheRouter
 import com.reoqoo.component_iotapi_plugin_opt.api.IGWIotOpt
+import com.therouter.TheRouter
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -144,17 +145,10 @@ class MsgInfoVM @Inject constructor() : ABaseVM() {
      * @param deviceId String 设备ID
      */
     fun goDevManagerPage(deviceId: String) {
-        familyModeApi.deviceInfo(deviceId)?.let {
-            pageJumpData.postValue(
-                PageJumpData(
-                    TheRouter.build(
-                        ReoqooRouterPath
-                            .DevShare
-                            .ACTIVITY_SHARE_MANAGER_OWNER_PATH
-                    ).with(mapOf(PARAM_DEV_SHARE_ENTITY to it))
-                )
-            )
-        } ?: GwellLogUtils.e(TAG, "goDevManagerPage fail: deviceInfo is null, deviceId = $deviceId")
+        viewModelScope.launch {
+            GwellLogUtils.i(TAG, "goDevManagerPage, deviceId = $deviceId")
+            igwIotOpt.openDevSharePage(deviceId)
+        }
     }
 
 }

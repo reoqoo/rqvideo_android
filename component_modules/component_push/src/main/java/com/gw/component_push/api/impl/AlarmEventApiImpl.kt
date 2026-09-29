@@ -13,6 +13,7 @@ import com.gw_reoqoo.lib_iotvideo.EventMessage
 import com.gw_reoqoo.lib_iotvideo.EventTopicType
 import com.gw_reoqoo.lib_utils.ktx.bitAt
 import com.gwell.loglibs.GwellLogUtils
+import com.reoqoo.component_iotapi_plugin_opt.api.IGWIotOpt
 import com.tencentcs.iotvideo.utils.JSONUtils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
@@ -31,7 +32,8 @@ import javax.inject.Singleton
 class AlarmEventApiImpl @Inject constructor(
     private val devCallApiImpl: DevCallApiImpl,
     private val pluginManager: IPluginManager,
-    private val localDeviceApiImpl: ILocalDeviceApi
+    private val localDeviceApiImpl: ILocalDeviceApi,
+    private val gwIotOpt: IGWIotOpt
 ) : IAlarmEventApi {
 
     companion object {
@@ -61,6 +63,11 @@ class AlarmEventApiImpl @Inject constructor(
             if (pushMsgContentEntity?.data != null) {
                 val pushMsgEntity = pushMsgContentEntity.data
                 try {
+                    val isReoqooDev = gwIotOpt.isReoqooDev(pushMsgEntity.deviceId)
+                    if (!isReoqooDev) {
+                        GwellLogUtils.e(TAG, "isnot reoqoo dev")
+                        return
+                    }
                     val pushType = pushMsgEntity.pushType
                     if (pushType == 1L shl AlarmEventType.ALARM_VIDEO_BIT) {
                         GwellLogUtils.i(TAG, "video bit alarm,need return")
@@ -120,6 +127,11 @@ class AlarmEventApiImpl @Inject constructor(
             )
             if (alarmEventEntity?.data != null) {
                 val alarmEventData = alarmEventEntity.data
+                val isReoqooDev = gwIotOpt.isReoqooDev(alarmEventData.deviceId)
+                if (!isReoqooDev) {
+                    GwellLogUtils.e(TAG, "isnot reoqoo dev")
+                    return
+                }
                 try {
                     val alarmType: Int = alarmEventData.alarmType.toInt()
                     if (alarmType == 1 shl AlarmEventType.ALARM_VIDEO_BIT) {

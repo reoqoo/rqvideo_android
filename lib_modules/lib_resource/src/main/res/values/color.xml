@@ -164,4 +164,6 @@
 
     <color name="btn_dev_upgrade_stroke_color">@color/color_2ca74d_60</color>
     <color name="btn_dev_upgrade_solid_color">@color/color_2ca74d_16</color>
+
+    <color name="color_F6F6F6">#F6F6F6</color>
 </resources>

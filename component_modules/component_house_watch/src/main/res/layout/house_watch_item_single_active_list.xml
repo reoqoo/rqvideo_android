@@ -38,6 +38,7 @@
                     android:id="@+id/tv_time"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFeatureSettings="tnum"
                     android:textColor="@color/black_90"
                     android:textSize="@dimen/sp_15"
                     tools:text="13:21" />
@@ -119,6 +120,7 @@
                     android:layout_height="@dimen/dp_13"
                     android:layout_marginStart="@dimen/dp_6"
                     android:layout_marginBottom="@dimen/dp_4"
+                    android:fontFeatureSettings="tnum"
                     android:textColor="@color/white_100"
                     android:textSize="@dimen/sp_10"
                     app:layout_constraintBottom_toBottomOf="parent"

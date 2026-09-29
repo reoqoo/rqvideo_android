@@ -21,7 +21,6 @@ android {
         }
     }
     buildFeatures {
-        // for view binding :
         buildConfig true
     }
 
@@ -44,7 +43,7 @@ android {
         create("iptime") {
             dimension = "version"
             // 消费 reoqookit oem 渠道远程 AAR 时回退其 oem 口味变体
-            matchingFallbacks = ["oem", "release"]
+            matchingFallbacks = ['oem']
         }
     }
 
@@ -71,11 +70,6 @@ dependencies {
     implementation libs.androidx.appcompat
     implementation libs.androidx.recyclerview
     implementation libs.material
-
-    testImplementation libs.junit
-    androidTestImplementation libs.androidx.test.junit
-    androidTestImplementation libs.androidx.test.espresso
-
     implementation libs.androidx.lifecycle.runtime.ktx
 }
 

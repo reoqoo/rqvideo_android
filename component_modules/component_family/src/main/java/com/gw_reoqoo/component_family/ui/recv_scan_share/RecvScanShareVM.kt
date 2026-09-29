@@ -25,6 +25,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withTimeout
 import kotlinx.coroutines.withTimeoutOrNull
 import javax.inject.Inject
+import kotlin.time.Duration.Companion.milliseconds
 
 @HiltViewModel
 class RecvScanShareVM @Inject constructor(
@@ -59,7 +60,7 @@ class RecvScanShareVM @Inject constructor(
     fun requestShare(params: Map<String, String>) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                withTimeout(TIMEOUT_MS) {
+                withTimeout(TIMEOUT_MS.milliseconds) {
                     _scanShareFlow.emit(HttpAction.Loading())
                     configApi.updateConfigSync()
 
@@ -137,7 +138,7 @@ class RecvScanShareVM @Inject constructor(
         // 调用finish Activity以后这个任务会被异常终止，导致打开主页失败，所以使用了应用级别的scope
         GlobalScope.launch(Dispatchers.IO) {
             // 设置一个超时时间，防止打开主页失败导致内存泄漏
-            withTimeoutOrNull(TIMEOUT_MS) {
+            withTimeoutOrNull(TIMEOUT_MS.milliseconds) {
                 val isBound = igwIotOpt.isDeviceBound(deviceId)
                 GwellLogUtils.i(TAG, "isBound $isBound")
                 if (isBound) {

@@ -56,10 +56,10 @@ class ActiveAdapter(
         }
         mBinding.tvTime.text = "%02d:%02d".format(hour, minute)
         mBinding.tvDevName.text = getDeviceName("${bean.devId}")
-        mBinding.tvDesc.text = when (activeTypes.size) {
-            1 -> context.getString(RR.string.AA0582, context.getString(activeTypes.first().descRes))
-            in 2..Int.MAX_VALUE -> context.getString(RR.string.AA0692, context.getString(RR.string.AA0600))
-            else -> ""
+        mBinding.tvDesc.text = if (activeTypes.size == 1) {
+            context.getString(RR.string.AA0582, context.getString(activeTypes.first().descRes))
+        } else {
+            ""
         }
 
         val isVideo = bean.alarmType.bitAt(AlarmEventType.ALARM_VIDEO_BIT) == 1L

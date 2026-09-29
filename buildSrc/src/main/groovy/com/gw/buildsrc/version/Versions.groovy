@@ -9,11 +9,11 @@ class Versions {
         /**
          * 编译版本
          */
-        public static final int VERSION_COMPILE_SDK = 35
+        public static final int VERSION_COMPILE_SDK = 36
         /**
          * 当前版本
          */
-        public static final int VERSION_TARGET_SDK = 35
+        public static final int VERSION_TARGET_SDK = 36
         /**
          * 最低版本
          */
@@ -25,7 +25,7 @@ class Versions {
         /**
          * kotlin版本
          */
-        public static final String VERSION_KOTLIN = "1.9.10"
+        public static final String VERSION_KOTLIN = "2.2.20"
         /**
          * navigation插件版本
          */
@@ -81,7 +81,7 @@ class Versions {
         /**
          * navigation版本
          */
-        public static final String VERSION_NAVIGATION = "2.5.0"
+        public static final String VERSION_NAVIGATION = "2.5.3"
         /**
          * browser版本
          */
@@ -118,7 +118,7 @@ class Versions {
         /**
          * Hilt依赖注入框架
          */
-        public static final String VERSION_HILT = "2.56.2"
+        public static final String VERSION_HILT = "2.57.1"
 
 
         public static final String VERSION_COMPOSE = "1.0.0"
@@ -178,13 +178,11 @@ class Versions {
          * 技威崩溃收集和日志上传
          */
         public static final String VERSION_BASE_CRASH = "0.0.0.6"
-//        public static final String VERSION_BASE_CRASH = "0.0.0.3-SNAPSHOT"
 
         /**
          * 技威统计库
          */
         public static final String VERSION_BASE_STATISTICS = "0.0.0.3"
-//        public static final String VERSION_BASE_STATISTICS = "0.0.0.2-SNAPSHOT"
 
         /**
          * 技威生命周期管理
@@ -194,7 +192,7 @@ class Versions {
         /**
          * 技威网络请求库
          */
-        public static final String VERSION_ACCOUNT_MGR = "1.0.127"
+        public static final String VERSION_ACCOUNT_MGR = "1.0.134"
 
         /**
          * 技威json库
@@ -204,7 +202,6 @@ class Versions {
         /**
          * 技威推送库
          */
-//        public static final String VERSION_GW_PUSH = "0.0.0.9"
         public static final String VERSION_GW_PUSH = "0.0.0.12"
 
         /**
@@ -240,14 +237,14 @@ class Versions {
         /**
          * 蓝牙配网库
          */
-        public static final String VERSION_BLE_CONFIG = '1.0.14'
+        public static final String VERSION_BLE_CONFIG = '1.0.20'
 
         /**
          * 胖豚插件 (ipTIME:0.0.0.82  Reoqoo:0.0.1.39)
          */
         public static final String VERSION_PT_PLUGIN = "0.0.1.104"
 
-        /**0
+        /**
          * 插件对接库版本
          */
         public static final String VERSION_LIB_PLUGIN_SERVICE = "0.0.15"
@@ -267,20 +264,11 @@ class Versions {
          */
         public static final String YOOSEE_KIT_VERSION = "google-release-6.46.0.0.03"
 
-        /**
-         * gwvideo_beta的版本号
-         */
-        public static final String VERSION_GWVIDEO_BETA = "0.1.1.33"
-
-        /**
-         * gifDrawable的版本号
-         */
-        public static final String VERSION_GIF_DRAWABLE = "1.2.29"
     }
 
     static class ReoqooSdkVer {
         /** 线上包 */
-        public static final String VERSION_CODE = "iptime-release-01.06.01.0.53"
+        public static final String VERSION_CODE = "oem-release-01.11.03"
     }
 
     /**
@@ -408,7 +396,7 @@ class Versions {
         /**
          * Google Play Billing结算库依赖
          */
-        public static final String VERSION_GOOGLE_PAY = "7.0.0"
+        public static final String VERSION_GOOGLE_PAY = "8.3.0"
         /**
          * 添加 Google Play 结算库依赖 play-services-wallet
          */

@@ -16,6 +16,7 @@ import com.gw.cp_config.api.IAppParamApi
 import com.gw_reoqoo.lib_http.jsonToEntity
 import com.gwell.loglibs.GwellLogUtils
 import dagger.hilt.android.qualifiers.ApplicationContext
+import org.json.JSONException
 import org.json.JSONObject
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -219,7 +220,7 @@ class PushApiImpl @Inject constructor(
                 for (key in bundle.keySet()) {
                     val value = bundle.get(key)
                     // 使用key和value进行适当的操作
-                    GwellLogUtils.i(TAG, "key = $key, value = $value")
+                    GwellLogUtils.i(TAG, "key = $key, value = $value, valueType = ${value?.javaClass?.name ?: "null"}")
                 }
             }
         }
@@ -230,11 +231,11 @@ class PushApiImpl @Inject constructor(
             if (it.containsKey(KEY_PUSH_TYPE) &&
                 (it.containsKey(KEY_PUSH_CONTENT) || it.containsKey(KEY_PUSH_DATA))
             ) {
-                val mapParams = mutableMapOf<String, String?>()
-                mapParams[KEY_PUSH_TYPE] = it.getString(KEY_PUSH_TYPE)
-                mapParams[KEY_PUSH_CONTENT] = it.getString(KEY_PUSH_CONTENT)
-                mapParams[KEY_PUSH_DATA] = it.getString(KEY_PUSH_DATA)
-                return gson.toJson(mapParams)
+                val jsonObject = JSONObject()
+                jsonObject.put(KEY_PUSH_TYPE, cleanJsonStringValue(it.getString(KEY_PUSH_TYPE)))
+                jsonObject.put(KEY_PUSH_CONTENT, parseJsonString(it.getString(KEY_PUSH_CONTENT)) ?: it.getString(KEY_PUSH_CONTENT))
+                jsonObject.put(KEY_PUSH_DATA, parseJsonString(it.getString(KEY_PUSH_DATA)) ?: it.getString(KEY_PUSH_DATA))
+                return jsonObject.toString()
             } else if (it.containsKey(DOPHIGO_PUSH_DATA)) {
                 val mapParams = mutableMapOf<String, String?>()
                 mapParams[DOPHIGO_PUSH_DATA] = it.getString(DOPHIGO_PUSH_DATA)
@@ -244,5 +245,45 @@ class PushApiImpl @Inject constructor(
                 ""
             }
         } ?: ""
+    }
+
+    /**
+     * 清理 JSON 字符串值
+     * 1. 如果是 JSON 格式数据，返回原值
+     * 2. 如果不是 JSON 格式且包含双引号，则去掉双引号
+     * @param value 字符串值
+     * @return 清理后的字符串
+     */
+    private fun cleanJsonStringValue(value: String?): String? {
+        if (value.isNullOrEmpty()) return value
+        // 先判断是否是 JSON 格式
+        return try {
+            JSONObject(value)
+            value
+        } catch (e: JSONException) {
+            GwellLogUtils.e(TAG, "cleanJsonStringValue: invalid json, error = ${e.message}")
+            // 不是 JSON 格式，检查是否包含双引号，有则去掉
+            if (value.contains("\"")) {
+                GwellLogUtils.w(TAG, "cleanJsonStringValue: removing quotes from value = $value")
+                value.replace("\"", "")
+            } else {
+                value
+            }
+        }
+    }
+
+    /**
+     * 将 JSON 字符串解析为 JSONObject
+     * @param jsonString JSON 字符串
+     * @return JSONObject，解析失败返回 null
+     */
+    private fun parseJsonString(jsonString: String?): JSONObject? {
+        if (jsonString.isNullOrEmpty()) return null
+        return try {
+            JSONObject(jsonString)
+        } catch (e: JSONException) {
+            GwellLogUtils.e(TAG, "parseJsonString: invalid json, error = ${e.message}")
+            null
+        }
     }
 }
