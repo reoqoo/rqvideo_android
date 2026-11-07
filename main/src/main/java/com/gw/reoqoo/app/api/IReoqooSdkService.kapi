@@ -15,4 +15,10 @@ interface IReoqooSdkService {
      * 初始化平台sdk
      */
     suspend fun initService()
+
+    /**
+     * 初始化网络请求库
+     */
+    fun initAccountMgr()
+
 }
