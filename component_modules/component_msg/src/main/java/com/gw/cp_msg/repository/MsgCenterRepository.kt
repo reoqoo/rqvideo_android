@@ -100,38 +100,41 @@ class MsgCenterRepository @Inject constructor(
      * @return List<VersionInfoEntity>?
      */
     suspend fun getUpdateDeviceMsg(): List<VersionInfoEntity>? {
-        val version = Channel<List<VersionInfoEntity>>(1)
-        withContext(Dispatchers.IO) {
-            val versionList = mutableListOf<VersionInfoEntity>()
-            accountApi.getAsyncUserId()?.run {
-                familyModeApi.getDeviceList(this).mapNotNull { iDevice ->
-                    if (iDevice.isMaster && iDevice.isOnline) {
-                        val curVersion = getDevVersionForPlugin(iDevice.deviceId)
-                        if (curVersion.isNullOrEmpty()) {
-                            return@mapNotNull null
-                        }
-                        remoteMsgDataSource.getDevUpdateMsg(iDevice.deviceId, curVersion)
-                            .onSuccess {
-                                this?.run {
-                                    this.deviceId = iDevice.deviceId
-                                    this.devName = iDevice.remarkName
-                                    versionList.add(this)
-                                } ?: GwellLogUtils.e(TAG, "version is null")
-                            }
-                            .onServerError { code, msg ->
-                                GwellLogUtils.e(TAG, "onServerError: code $code, msg $msg")
-                            }
-                            .onLocalError {
-                                GwellLogUtils.e(TAG, "onLocalError: throwable $it")
-                            }
-                    } else {
-                        null
-                    }
-                }
-                version.trySend(versionList)
+        return withContext(Dispatchers.IO) {
+            val userId = accountApi.getAsyncUserId()
+            if (userId.isNullOrEmpty()) {
+                GwellLogUtils.w(TAG, "getUpdateDeviceMsg skipped: userId is empty")
+                return@withContext emptyList()
             }
+
+            val versionList = mutableListOf<VersionInfoEntity>()
+            familyModeApi.getDeviceList(userId).forEach { device ->
+                if (!device.isMaster || !device.isOnline) {
+                    return@forEach
+                }
+
+                val currentVersion = getDevVersionForPlugin(device.deviceId)
+                if (currentVersion.isNullOrEmpty()) {
+                    return@forEach
+                }
+
+                remoteMsgDataSource.getDevUpdateMsg(device.deviceId, currentVersion)
+                    .onSuccess {
+                        this?.let { version ->
+                            version.deviceId = device.deviceId
+                            version.devName = device.remarkName
+                            versionList.add(version)
+                        } ?: GwellLogUtils.w(TAG, "device update response is empty, deviceId=${device.deviceId}")
+                    }
+                    .onServerError { code, msg ->
+                        GwellLogUtils.e(TAG, "device update request failed, code=$code, deviceId=${device.deviceId}")
+                    }
+                    .onLocalError {
+                        GwellLogUtils.e(TAG, "device update request local error, deviceId=${device.deviceId}", it)
+                    }
+            }
+            versionList
         }
-        return version.receive()
     }
 
     suspend fun readMsg(tag: String?, deviceId: Long?): RespResult<MsgReadEntity> {

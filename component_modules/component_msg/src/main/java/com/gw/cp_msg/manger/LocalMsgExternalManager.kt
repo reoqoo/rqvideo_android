@@ -20,10 +20,14 @@ import com.gwell.loglibs.GwellLogUtils
 import com.jwkj.base_utils.str_utils.GwStringUtils
 import com.reoqoo.component_iotapi_plugin_opt.api.IGWIotOpt
 import com.therouter.inject.Singleton
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.suspendCancellableCoroutine
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import java.util.concurrent.CopyOnWriteArrayList
 import javax.inject.Inject
 
@@ -45,6 +49,17 @@ class LocalMsgExternalManager @Inject constructor(
     }
 
     private val scope = MainScope()
+
+    /**
+     * 串行化加载锁，避免并发初始化互相踩踏。
+     */
+    private val initMutex = Mutex()
+
+    /**
+     * 在途加载任务，用于 single-flight 合并相同请求，
+     * 避免 N 个并发调用触发 N 次完整网络加载（惊群）。
+     */
+    private var inFlight: Deferred<List<MsgDetailEntity>>? = null
 
     /**
      * 所有的系统消息
@@ -136,26 +151,14 @@ class LocalMsgExternalManager @Inject constructor(
         }
     }
 
-    override suspend fun getUnreadMsgCount(): Int = suspendCancellableCoroutine { continuation ->
+    override suspend fun getUnreadMsgCount(): Int {
+        val msgList = loadAllMsg()
         var unReadCount = 0
-        // 保存原始的onResult回调以便恢复
-        val originalOnResult = mOnResult
-        // 设置一个新的回调来等待初始化完成
-        mOnResult = { result ->
-            // 恢复原始回调
-            mOnResult = originalOnResult
-            // 计算未读消息总数
-            for (msg in systemMsgList) {
-                msg.let {
-                    GwellLogUtils.i(TAG, "msg.unread ${msg.unreadCnt}, total $unReadCount")
-                    unReadCount += it.unreadCnt
-                }
-            }
-            // 返回结果
-            continuation.resume(unReadCount, null)
+        for (msg in msgList) {
+            GwellLogUtils.i(TAG, "msg.unread ${msg.unreadCnt}, total $unReadCount")
+            unReadCount += msg.unreadCnt
         }
-        // 每次都重新初始化所有消息
-        initAllMsg()
+        return unReadCount
     }
 
     override suspend fun readMessage(
@@ -196,23 +199,77 @@ class LocalMsgExternalManager @Inject constructor(
     /**
      * 初始化所有消息
      */
-    private fun initAllMsg() {
-        systemMsgList.clear()
+    private fun initAllMsg(onResult: ((List<MsgDetailEntity>?) -> Unit)? = null) {
         scope.launch(Dispatchers.IO) {
-            if (gwiotOpt.showAppUpgradeItem()) {
-                initAppVersionMsg()
+            val msgList = loadAllMsg()
+            onResult?.invoke(msgList)
+            if (onResult == null) {
+                mOnResult?.invoke(msgList)
             }
-            initDevUpgradeMsg()
-            initServerMsg()
-            GwellLogUtils.i(TAG, "initAllMsg $systemMsgList")
-            mOnResult?.invoke(systemMsgList)
         }
+    }
+
+    /**
+     * 加载所有系统消息。
+     *
+     * 优化一(single-flight)：并发调用共享同一次加载，避免多次网络请求；
+     * 由 [initMutex] 做创建竞态的双检锁，任务结束后释放 [inFlight]。
+     */
+    private suspend fun loadAllMsg(): List<MsgDetailEntity> {
+        inFlight?.let { return it.await() }
+        return initMutex.withLock {
+            inFlight?.let { return it.await() }
+            scope.async(Dispatchers.IO) {
+                try {
+                    doLoad()
+                } finally {
+                    inFlight = null
+                }
+            }
+        }.also { inFlight = it }.await()
+    }
+
+    /**
+     * 实际拉取逻辑。
+     *
+     * 优化二(失败兜底)：先写入临时快照，全部成功后一次性覆盖成员列表；
+     * 任一子请求失败时，保留已拉取到的部分或上次快照，避免未读数"假清零"。
+     */
+    private suspend fun doLoad(): List<MsgDetailEntity> {
+        val snapshot = ArrayList<MsgDetailEntity>()
+        val upgradeSnapshot = ArrayList<MsgDetailEntity>()
+        try {
+            if (gwiotOpt.showAppUpgradeItem()) {
+                initAppVersionMsg(snapshot)
+            }
+            initDevUpgradeMsg(upgradeSnapshot, snapshot)
+            initServerMsg(snapshot)
+            // 全部成功后一次性覆盖
+            systemMsgList.clear()
+            systemMsgList.addAll(snapshot)
+            upgradeList.clear()
+            upgradeList.addAll(upgradeSnapshot)
+        } catch (e: CancellationException) {
+            throw e
+        } catch (e: Throwable) {
+            GwellLogUtils.e(TAG, "doLoad failed, keep previous snapshot", e)
+            // 部分成功则保留已拉取到的数据，否则维持上次快照，避免假清零
+            if (snapshot.isNotEmpty()) {
+                systemMsgList.clear()
+                systemMsgList.addAll(snapshot)
+            }
+            if (upgradeSnapshot.isNotEmpty()) {
+                upgradeList.clear()
+                upgradeList.addAll(upgradeSnapshot)
+            }
+        }
+        return ArrayList(systemMsgList)
     }
 
     /**
      * 初始化app版本升级消息
      */
-    private suspend fun initAppVersionMsg() {
+    private suspend fun initAppVersionMsg(target: MutableList<MsgDetailEntity>) {
         msgCenterRepository.getAppUpdateMsg()
             .onSuccess {
                 this?.let {
@@ -226,7 +283,7 @@ class LocalMsgExternalManager @Inject constructor(
                             currentVersionName
                         )
                     ) {
-                        systemMsgList.add(appUpdateMsg)
+                        target.add(appUpdateMsg)
                     }
                 }
             }
@@ -241,16 +298,19 @@ class LocalMsgExternalManager @Inject constructor(
     /**
      * 初始化固件升级的消息
      */
-    private suspend fun initDevUpgradeMsg() {
+    private suspend fun initDevUpgradeMsg(
+        upgradeSnapshot: MutableList<MsgDetailEntity>,
+        systemSnapshot: MutableList<MsgDetailEntity>
+    ) {
         // 初始化固件升级消息
         msgCenterRepository.getUpdateDeviceMsg()?.let {
             GwellLogUtils.i(TAG, "getUpdateDeviceMsg $it")
-            upgradeList.clear()
+            upgradeSnapshot.clear()
             val list = initDevUpgrade(it)
             GwellLogUtils.i(TAG, "initDevUpgrade $list")
-            upgradeList.addAll(list)
+            upgradeSnapshot.addAll(list)
             if (list.isNotEmpty()) {
-                systemMsgList.add(list.first())
+                systemSnapshot.add(list.first())
             }
         } ?: GwellLogUtils.i(TAG, "getUpdateDeviceMsg is null")
     }
@@ -258,13 +318,13 @@ class LocalMsgExternalManager @Inject constructor(
     /**
      * 初始化服务器消息
      */
-    private suspend fun initServerMsg() {
+    private suspend fun initServerMsg(target: MutableList<MsgDetailEntity>) {
         // 获取消息列表数据
         msgCenterRepository.getMsgList()
             .onSuccess {
                 GwellLogUtils.i(TAG, "MsgListEntity: $this")
                 this?.list?.run {
-                    initCustomerMsg(this)
+                    initCustomerMsg(this, target)
                 }
                 GwellLogUtils.i(TAG, "systemMsgList: $systemMsgList")
             }
@@ -351,8 +411,9 @@ class LocalMsgExternalManager @Inject constructor(
      * 处理客服消息
      *
      * @param msgList List<Msg?>
+     * @param target  写入的系统消息快照列表
      */
-    private fun initCustomerMsg(msgList: List<MsgDetailEntity>) {
+    private fun initCustomerMsg(msgList: List<MsgDetailEntity>, target: MutableList<MsgDetailEntity>) {
         val customerMsg = ArrayList<MsgDetailEntity>()
         for (msg in msgList) {
             // 区分客服消息和其他消息（客服消息需要App处理是否有详情页）
@@ -360,7 +421,7 @@ class LocalMsgExternalManager @Inject constructor(
             if (MsgDetailEntity.TAG_MSG_CENTER_CUSTOMER_SRV == msg.tag) {
                 customerMsg.add(msg)
             } else {
-                systemMsgList.add(msg)
+                target.add(msg)
             }
         }
         // 如果有两条以上的客服消息
@@ -369,9 +430,9 @@ class LocalMsgExternalManager @Inject constructor(
             msg.isHeap = true
             msg.customerMsg = ArrayList()
             msg.customerMsg?.addAll(initCustomerMsgInfo(customerMsg))
-            systemMsgList.add(msg)
+            target.add(msg)
         } else {
-            systemMsgList.addAll(customerMsg)
+            target.addAll(customerMsg)
         }
         GwellLogUtils.i(TAG, "customerMsg: $customerMsg")
     }
