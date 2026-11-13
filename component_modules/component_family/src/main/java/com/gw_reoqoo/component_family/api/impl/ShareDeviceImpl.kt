@@ -15,6 +15,7 @@ import com.gw_reoqoo.component_family.repository.UserMsgRepository
 import com.gw.component_plugin_service.api.IPluginManager
 import com.gw.cp_config.api.IAppConfigApi
 import com.gw.cp_config.api.ProductImgType
+import com.gw_reoqoo.lib_base_architecture.widget.LoadingDialog
 import com.gw_reoqoo.lib_base_architecture.SingleLiveEvent
 import com.gw_reoqoo.lib_http.ResponseNotSuccessException
 import com.gw_reoqoo.lib_http.entities.DeviceShareDetail
@@ -256,15 +257,20 @@ class ShareDeviceImpl @Inject constructor(
                 }),
                 CommDialogAction(context.getString(R.string.AA0165), onClick = {
                     scope.launch {
-                        val devName = detail.remarkName ?: configApi.getProductName("${detail.pid}", detail.productModel?: "")
-                        GwellLogUtils.i(
-                            TAG,
-                            "configApi.getProductId(${detail.pid})-> devName $devName"
-                        )
-                        val result = userMsgRepository.acceptDeviceShare(
-                            inviteToken,
-                            devName ?: deviceId
-                        )
+                        val loadingDialog = LoadingDialog(context).also {
+                            it.visibleLoadTxt(false)
+                            it.show()
+                        }
+                        val result = try {
+                            val devName = detail.remarkName ?: configApi.getProductName("${detail.pid}", detail.productModel ?: "")
+                            GwellLogUtils.i(TAG, "configApi.getProductId(${detail.pid})-> devName $devName")
+                            userMsgRepository.acceptDeviceShare(
+                                inviteToken,
+                                devName ?: deviceId
+                            )
+                        } finally {
+                            loadingDialog.dismiss()
+                        }
                         if (result == true) {
                             onClickAccept.invoke()
                             igwIotOpt.refreshDevices()
