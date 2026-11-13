@@ -542,4 +542,12 @@
     <string name="AA0716">블루투스 카메라 발견용</string>
     <string name="AA0717">카메라를 추가하려면 다음 단계를 완료하세요</string>
     <string name="AA0718">고객님의 소중한 정보 보호를 위해 루팅(탈옥)된 기기에서는 서비스 이용이 제한됩니다. 기기를 초기 상태로 복원하신 후 이용해 주시기 바랍니다.</string>
+    <string name="AA0726">자기 자신에게는 공유할 수 없습니다</string>
+    <string name="AA0231">모든 기기</string>
+    <string name="AA0233">삭제</string>
+    <string name="AA0236">모두 선택</string>
+    <string name="AA0237">선택된 항목 %s개</string>
+    <string name="AA0238">이 기록을 삭제하시겠습니까?</string>
+    <string name="AA0239">%s건의 기록을 삭제하시겠습니까?</string>
+    <string name="AA0727">로딩중...</string>
 </resources>

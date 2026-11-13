@@ -557,4 +557,12 @@
     <string name="AA0716">用于发现蓝牙摄像机</string>
     <string name="AA0717">完成以下设置，以正常添加摄像机</string>
     <string name="AA0718">当前处于Root状态，不满足APP的安全运行环境，APP无法使用。请还原至非Root系统后重试。</string>
+    <string name="AA0726">你不能分享给自己</string>
+    <string name="AA0231">所有设备</string>
+    <string name="AA0233">删除</string>
+    <string name="AA0236">全选</string>
+    <string name="AA0237">已选择%s项</string>
+    <string name="AA0238">是否删除此记录？</string>
+    <string name="AA0239">是否删除%s个记录？</string>
+    <string name="AA0727">加载中…</string>
 </resources>

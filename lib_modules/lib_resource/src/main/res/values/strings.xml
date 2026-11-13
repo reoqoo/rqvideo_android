@@ -543,4 +543,12 @@
     <string name="AA0716">To detect nearby Bluetooth cameras</string>
     <string name="AA0717">Complete the settings below to successfully add your camera.</string>
     <string name="AA0718">The device is rooted and does not meet the security requirements for this app. Please restore to a non-rooted system and try again.</string>
+    <string name="AA0726">You can\'t share to yourself</string>
+    <string name="AA0231">All devices</string>
+    <string name="AA0233">Delete</string>
+    <string name="AA0236">Select all</string>
+    <string name="AA0237">%s item selected</string>
+    <string name="AA0238">Are you sure to delete this record?</string>
+    <string name="AA0239">Are you sure to delete %s records?</string>
+    <string name="AA0727">Loading…</string>
 </resources>
