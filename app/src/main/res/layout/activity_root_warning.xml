@@ -32,8 +32,8 @@
             android:layout_height="@dimen/dp_56"
             android:layout_marginTop="@dimen/dp_32"
             android:gravity="center"
-            android:text="@string/i_see"
-            android:textColor="@color/c_0a59f7"
+            android:text="@string/AA0334"
+            android:textColor="#0a59f7"
             android:textSize="@dimen/sp_16" />
     </LinearLayout>
 </FrameLayout>
