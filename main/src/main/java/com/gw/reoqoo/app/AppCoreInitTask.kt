@@ -559,6 +559,7 @@ class AppCoreInitTask @Inject constructor() : IInitializeTask {
     private fun initIotSdk(app: Application) {
         GwellLogUtils.i(TAG, "initIotSdk()")
         ioTSdkInitMgr.initIoTSdk(app, false)
+        optApi.registerYooseeKitNotify()
     }
 
     private fun initPushServer(app: Application) {
