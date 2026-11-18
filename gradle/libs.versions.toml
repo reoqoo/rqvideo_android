@@ -10,7 +10,7 @@ agp = "8.9.1"
 rootbeer-lib = "0.1.2"
 
 # ============== SDK Version ==============
-reoqoo-sdk = "iptime-release-1.13.05"
+reoqoo-sdk = "iptime-release-1.13.07"
 
 # ============== AndroidX Versions ==============
 kotlin-core = "1.16.0"
