@@ -48,7 +48,6 @@ class ShareDeviceImpl @Inject constructor(
     private val userMsgDataSource: RemoteUserMsgDataSource,
     private val toast: IToast,
     private val configApi: IAppConfigApi,
-    private val pluginManager: IPluginManager,
     private val igwIotOpt: IGWIotOpt,
 ) : IShareDeviceApi {
 
@@ -60,6 +59,19 @@ class ShareDeviceImpl @Inject constructor(
      * onScanShareDevice 的真实实现类
      */
     private val _onScanShareQRCode = SingleLiveEvent<Map<String, String>>()
+
+    private val _onShareHandled = SingleLiveEvent<Unit>()
+
+    override val onShareHandled: LiveData<Unit>
+        get() = _onShareHandled
+
+    override fun notifyShareHandled() {
+        if (Thread.currentThread() == Looper.getMainLooper().thread) {
+            _onShareHandled.call()
+        } else {
+            _onShareHandled.postValue(Unit)
+        }
+    }
 
     /**
      * 当扫码成功，则把参数解析成 key-value，调用此函数
@@ -93,6 +105,7 @@ class ShareDeviceImpl @Inject constructor(
         deviceId: String,
         sharerName: String?,
         onClickAccept: () -> Unit,
+        onClickReject: (() -> Unit)?,
     ) {
         require(owner is Fragment || owner is Activity) { "required owner is fragment or activity" }
         val scope = owner.lifecycleScope
@@ -133,7 +146,8 @@ class ShareDeviceImpl @Inject constructor(
                             detail,
                             inviteToken,
                             deviceId,
-                            onClickAccept
+                            onClickAccept,
+                            onClickReject
                         )
                     }
                 }
@@ -204,6 +218,7 @@ class ShareDeviceImpl @Inject constructor(
         inviteToken: String,
         deviceId: String,
         onClickAccept: () -> Unit,
+        onClickReject: (() -> Unit)? = null,
     ) {
         val layoutInflater = LayoutInflater.from(context)
         val now = Calendar.getInstance().timeInMillis
@@ -245,12 +260,16 @@ class ShareDeviceImpl @Inject constructor(
                     val flow = userMsgDataSource.rejectDeviceShare(deviceId, inviteToken)
                     scope.launch {
                         flow.collect { action ->
-                            if (action is HttpAction.Fail) {
-                                val t = action.t
-                                if (t is ResponseNotSuccessException) {
-                                    val respCode = ResponseCode.getRespCode(t.code)
-                                    respCode?.msgRes?.let(toast::show)
+                            when (action) {
+                                is HttpAction.Success -> onClickReject?.invoke()
+                                is HttpAction.Fail -> {
+                                    val t = action.t
+                                    if (t is ResponseNotSuccessException) {
+                                        val respCode = ResponseCode.getRespCode(t.code)
+                                        respCode?.msgRes?.let(toast::show)
+                                    }
                                 }
+                                is HttpAction.Loading -> Unit
                             }
                         }
                     }

@@ -267,6 +267,10 @@ class FamilyFragment : ABaseMVVMDBFragment<FamilyFragmentFamilyBinding, FamilyVM
 
     override fun initLiveData(viewModel: FamilyVM, savedInstanceState: Bundle?) {
         super.initLiveData(viewModel, savedInstanceState)
+        shareDeviceApi.onShareHandled.observe(viewLifecycleOwner) {
+            mViewBinding.llDevShareLayout.isVisible = false
+            viewModel.ignoreAndRestoreDevShareMessage()
+        }
         // 监听账户信息改动
         viewModel.watchAccountInfo.observe(this) { iUserInfo ->
             GwellLogUtils.i(TAG, "watchAccountInfo: nickName  ${iUserInfo?.nickName}")

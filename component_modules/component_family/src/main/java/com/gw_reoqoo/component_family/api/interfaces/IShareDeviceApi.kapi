@@ -19,7 +19,14 @@ interface IShareDeviceApi {
      * 当扫描成功，并且解析的livedata
      */
     val onScanShareDevice: LiveData<Map<String, String>>
-    
+
+    /**
+     * 分享邀请被接受或拒绝后的单次通知
+     */
+    val onShareHandled: LiveData<Unit>
+
+    fun notifyShareHandled()
+
     /**
      * 显示分享详情的弹窗
      * @param owner 上下文 fragment 或者 activity
@@ -34,6 +41,7 @@ interface IShareDeviceApi {
         deviceId: String,
         sharerName: String?,
         onClickAccept: () -> Unit,
+        onClickReject: (() -> Unit)? = null,
     )
 
     /**

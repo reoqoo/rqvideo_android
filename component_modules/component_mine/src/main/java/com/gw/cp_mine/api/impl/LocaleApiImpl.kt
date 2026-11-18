@@ -3,11 +3,11 @@ package com.gw.cp_mine.api.impl
 import android.app.Activity
 import android.app.Application
 import android.content.res.Configuration
-import android.content.Context
 import com.gw.cp_mine.api.kapi.ILocaleApi
 import com.gw.cp_mine.data_store.LocaleDataStoreImpl
 import com.gw.cp_mine.kits.LanguageMgr
 import com.gwell.loglibs.GwellLogUtils
+import com.reoqoo.component_iotapi_plugin_opt.api.IGWIotOpt
 import java.util.Locale
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -21,7 +21,8 @@ import javax.inject.Singleton
 class LocaleApiImpl @Inject constructor(
     private val app: Application,
     private val dataStoreImpl: LocaleDataStoreImpl,
-    private val languageMgr: LanguageMgr
+    private val languageMgr: LanguageMgr,
+    private val iGWIotOpt: IGWIotOpt
 ) : ILocaleApi {
 
     companion object {
@@ -41,7 +42,11 @@ class LocaleApiImpl @Inject constructor(
                 TAG,
                 "initAppLanguage: language = ${newLocale.language}, country = ${newLocale.country}"
             )
-            languageMgr.applyAppLanguage(activity = activity,newConfig = newConfig)
+            languageMgr.applyAppLanguage(activity = activity, newConfig = newConfig)
+            val language = newConfig?.locale?.language
+            if (!language.isNullOrEmpty()) {
+                iGWIotOpt.setYooseeKitLanguage(language)
+            }
         }
     }
 
