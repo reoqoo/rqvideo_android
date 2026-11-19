@@ -550,4 +550,5 @@
     <string name="AA0238">이 기록을 삭제하시겠습니까?</string>
     <string name="AA0239">%s건의 기록을 삭제하시겠습니까?</string>
     <string name="AA0727">로딩중...</string>
+    <string name="AA2919">아기 울음소리 감지</string>
 </resources>

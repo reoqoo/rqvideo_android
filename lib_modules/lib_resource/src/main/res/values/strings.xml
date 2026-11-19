@@ -551,4 +551,5 @@
     <string name="AA0238">Are you sure to delete this record?</string>
     <string name="AA0239">Are you sure to delete %s records?</string>
     <string name="AA0727">Loading…</string>
+    <string name="AA2919">Crying Detection</string>
 </resources>
