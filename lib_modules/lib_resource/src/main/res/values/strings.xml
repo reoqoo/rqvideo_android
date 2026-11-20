@@ -543,4 +543,5 @@
     <string name="AA0716">To detect nearby Bluetooth cameras</string>
     <string name="AA0717">Complete the settings below to successfully add your camera.</string>
     <string name="AA0718">The device is rooted and does not meet the security requirements for this app. Please restore to a non-rooted system and try again.</string>
+    <string name="AA2919">Crying Detection</string>
 </resources>
